@@ -12,4 +12,8 @@ describe("A Calculator", function() {
     expect(calculator.subtract(3, 2)).toEqual(1);
   });
 
+  it("should be able to subtract two numbers again", function() {
+    expect(calculator.subtract(4, 3)).toEqual(1);
+  });
+
 });
