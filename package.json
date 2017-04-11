@@ -1,22 +1,29 @@
 {
-  "name": "Calculator",
-  "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "canivete",
+  "version": "0.0.1",
+  "description": "Personal Javascript toolkit",
   "scripts": {
     "test": "npm run -s test:build && npm run -s test:run",
-    "test:build": "rollup ./test/main.js > test/bundle.js",
-    "test:run": "karma start",
-    "build": "rollup --format iife --name calculator ./src/calculator.js > index.js"
+    "test:build": "rollup -c .rollup.config.js",
+    "test:run": "karma start .karma.config.js"
   },
-  "author": "",
-  "license": "BSD-2-Clause",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leofavre/canivete.git"
+  },
+  "author": "Leonardo Favre <contato@leofavre.com> (http://www.leofavre.com/)",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/leofavre/canivete/issues"
+  },
+  "homepage": "https://github.com/leofavre/canivete#readme",
   "devDependencies": {
-    "karma-firefox-launcher": "~0.1.6",
-    "jasmine-core": "~2.3.4",
-    "karma-jasmine": "~0.3.6",
-    "rollup": "~0.20.5",
     "jasmine": "~2.3.2",
-    "karma": "~0.13.15"
+    "jasmine-core": "~2.3.4",
+    "karma": "~0.13.15",
+    "karma-firefox-launcher": "~0.1.6",
+    "karma-jasmine": "~0.3.6",
+    "rollup": "^0.41.6",
+    "rollup-plugin-multi-entry": "^2.0.1"
   }
 }
