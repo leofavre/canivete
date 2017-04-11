@@ -1,0 +1,22 @@
+{
+  "name": "Calculator",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run -s test:build && npm run -s test:run",
+    "test:build": "rollup ./test/main.js > test/bundle.js",
+    "test:run": "karma start",
+    "build": "rollup --format iife --name calculator ./src/calculator.js > index.js"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "karma-firefox-launcher": "~0.1.6",
+    "jasmine-core": "~2.3.4",
+    "karma-jasmine": "~0.3.6",
+    "rollup": "~0.20.5",
+    "jasmine": "~2.3.2",
+    "karma": "~0.13.15"
+  }
+}
