@@ -1,3 +1,5 @@
+!(https://travis-ci.org/leofavre/canivete-teste.svg?branch=master)
+
 # rollup-karma-jasmine-example
 >An example calculator project that bundles es6-modules with Rollup. Tests use Jasmine and are run in the browser with Karma.
 
