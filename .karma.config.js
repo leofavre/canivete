@@ -1,10 +1,10 @@
-const caniveteConfig = require("./canivete.config.js");
+const can = require("./.canivete.config.js");
 
 module.exports = function(config) {
 	config.set({
 		basePath: '',
 		frameworks: ['jasmine'],
-		files: [caniveteConfig.karma.input],
+		files: [can.karma.input],
 		exclude: [],
 		preprocessors: {},
 		reporters: ['progress'],
