@@ -1,7 +1,11 @@
 <div>
 	<h3 id="beforeLast"><a href="#beforeLast" class="fa fa-link"></a><code>_.beforeLast(array, value, [fromIndex=0])</code></h3>
 	<p><a href="https://github.com/lodash/lodash/blob/4.17.4/lodash.js#L7467">source</a> <a href="https://www.npmjs.com/package/lodash.indexof">npm package</a></p>
-	<p>Gets the index at which the first occurrence of <code>value</code> is found in <code>array</code> using <a href="http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero"><code>SameValueZero</code></a> for equality comparisons. If <code>fromIndex</code> is negative, it's used as the offset from the end of <code>array</code>.</p>
+	<p>Dadas duas strings – sentença e delimitador –,
+retorna uma string com os caracteres **anteriores
+à última ocorrência** do delimitador na sentença.
+Caso o delimitador não seja encontrado, retorna
+uma string vazia.></p>
 	<h4>Since</h4>
 	<p>0.1.0</p>
 	<h4>Arguments</h4>
@@ -12,15 +16,10 @@
 	</ol>
 	<h4>Returns</h4>
 	<p><em>(number)</em>: Returns the index of the matched value, else <code>-1</code>.</p>
-	<h4>Example</h4>
-	<div class="highlight js">
-		<div>_<span class="delimiter method">.</span><span class="support">beforeLast</span>([<span class="numeric">1</span><span class="delimiter">,</span>&nbsp;<span class="numeric">2</span><span class="delimiter">,</span>&nbsp;<span class="numeric">1</span><span class="delimiter">,</span>&nbsp;<span class="numeric">2</span>]<span class="delimiter">,</span>&nbsp;<span class="numeric">2</span>);</div>
-		<div><span class="comment">//&nbsp;=&gt;&nbsp;1</span></div>
-		<div>&nbsp;</div>
-		<div><span class="comment">//&nbsp;Search&nbsp;from&nbsp;the&nbsp;`fromIndex`.</span></div>
-		<div>_<span class="delimiter method">.</span><span class="support">beforeLast</span>([<span class="numeric">1</span><span class="delimiter">,</span>&nbsp;<span class="numeric">2</span><span class="delimiter">,</span>&nbsp;<span class="numeric">1</span><span class="delimiter">,</span>&nbsp;<span class="numeric">2</span>]<span class="delimiter">,</span>&nbsp;<span class="numeric">2</span><span class="delimiter">,</span>&nbsp;<span class="numeric">2</span>);</div>
-		<div><span class="comment">//&nbsp;=&gt;&nbsp;3</span></div>
-	</div>
-	<a class="btn-repl">Try in REPL</a>
+	
+		<h4>Example</h4>
+		<div class="highlight js"><pre>beforeLast(&#34;paralelepípedo&#34;, &#34;le&#34;);
+// =&gt; &#34;parale&#34;</pre></div>
+	
 </div>
 

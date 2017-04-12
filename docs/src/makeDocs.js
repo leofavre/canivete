@@ -27,7 +27,8 @@ readJsonPromise("./docs/src/data.json")
 		docs.forEach(doc => {
 			if (doc.name != undefined) {
 				let docJson = JSON.stringify(doc);
-				exec(`ejs-cli ./docs/templates/post.ejs > ./docs/dist/${doc.name}.html -O '{"name":"${doc.name}"}'`);
+				// console.log(docJson);
+				exec(`ejs-cli ./docs/templates/post.ejs > ./docs/dist/${doc.name}.html -O '${docJson}'`);
 			}
 		});
 	})
