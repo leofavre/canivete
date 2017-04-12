@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Personal Javascript toolkit",
   "scripts": {
-    "test": "npm run -s test:build && npm run -s test:run",
+    "test": "npm run -s test:run",
     "test:build": "rollup -c .rollup.config.js",
     "test:run": "karma start .karma.config.js"
   },

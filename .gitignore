@@ -1,5 +1,5 @@
 node_modules
-test/bundle.js
+tests/bundle
 index.js
 
 dist/scrapeNirvanaProduct.js

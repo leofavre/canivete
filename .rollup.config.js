@@ -1,4 +1,4 @@
-import multiEntry from 'rollup-plugin-multi-entry';
+import multiEntry from "rollup-plugin-multi-entry";
 
 export default {
 	entry: "tests/**/*.js",
@@ -7,4 +7,4 @@ export default {
 		multiEntry()
 	],
 	format: "es"
-};
+}
