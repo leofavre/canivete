@@ -1,0 +1,26 @@
+<div>
+	<h3 id="afterFirst"><a href="#afterFirst" class="fa fa-link"></a><code>_.afterFirst(array, value, [fromIndex=0])</code></h3>
+	<p><a href="https://github.com/lodash/lodash/blob/4.17.4/lodash.js#L7467">source</a> <a href="https://www.npmjs.com/package/lodash.indexof">npm package</a></p>
+	<p>Gets the index at which the first occurrence of <code>value</code> is found in <code>array</code> using <a href="http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero"><code>SameValueZero</code></a> for equality comparisons. If <code>fromIndex</code> is negative, it's used as the offset from the end of <code>array</code>.</p>
+	<h4>Since</h4>
+	<p>0.1.0</p>
+	<h4>Arguments</h4>
+	<ol>
+		<li><code>array</code> <em>(Array)</em>: The array to inspect.</li>
+		<li><code>value</code> <em>(*)</em>: The value to search for.</li>
+		<li><code>[fromIndex=0]</code> <em>(number)</em>: The index to search from.</li>
+	</ol>
+	<h4>Returns</h4>
+	<p><em>(number)</em>: Returns the index of the matched value, else <code>-1</code>.</p>
+	<h4>Example</h4>
+	<div class="highlight js">
+		<div>_<span class="delimiter method">.</span><span class="support">afterFirst</span>([<span class="numeric">1</span><span class="delimiter">,</span>&nbsp;<span class="numeric">2</span><span class="delimiter">,</span>&nbsp;<span class="numeric">1</span><span class="delimiter">,</span>&nbsp;<span class="numeric">2</span>]<span class="delimiter">,</span>&nbsp;<span class="numeric">2</span>);</div>
+		<div><span class="comment">//&nbsp;=&gt;&nbsp;1</span></div>
+		<div>&nbsp;</div>
+		<div><span class="comment">//&nbsp;Search&nbsp;from&nbsp;the&nbsp;`fromIndex`.</span></div>
+		<div>_<span class="delimiter method">.</span><span class="support">afterFirst</span>([<span class="numeric">1</span><span class="delimiter">,</span>&nbsp;<span class="numeric">2</span><span class="delimiter">,</span>&nbsp;<span class="numeric">1</span><span class="delimiter">,</span>&nbsp;<span class="numeric">2</span>]<span class="delimiter">,</span>&nbsp;<span class="numeric">2</span><span class="delimiter">,</span>&nbsp;<span class="numeric">2</span>);</div>
+		<div><span class="comment">//&nbsp;=&gt;&nbsp;3</span></div>
+	</div>
+	<a class="btn-repl">Try in REPL</a>
+</div>
+

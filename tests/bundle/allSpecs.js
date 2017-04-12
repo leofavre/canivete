@@ -9,7 +9,8 @@ function _sliceOnOccurrence(slice, position, delimiter, str) {
  * à primeira ocorrência** do delimitador na sentença.
  * Caso o delimitador não seja encontrado, retorna
  * uma string vazia.
- * 
+ *
+ * @category String
  * @param  {string} str
  * @param  {string} delimiter
  * @return {string}
@@ -59,7 +60,8 @@ describe("afterFirst", function() {
  * à última ocorrência** do delimitador na sentença.
  * Caso o delimitador não seja encontrado, retorna
  * uma string vazia.
- * 
+ *
+ * @category String
  * @param  {string} str
  * @param  {string} delimiter
  * @return {string}
@@ -109,7 +111,8 @@ describe("afterLast", function() {
  * à primeira ocorrência** do delimitador na sentença.
  * Caso o delimitador não seja encontrado, retorna
  * uma string vazia.
- * 
+ *
+ * @category String
  * @param  {string} str
  * @param  {string} delimiter
  * @return {string}
@@ -159,7 +162,8 @@ describe("beforeFirst", function() {
  * à última ocorrência** do delimitador na sentença.
  * Caso o delimitador não seja encontrado, retorna
  * uma string vazia.
- * 
+ *
+ * @category String
  * @param  {string} str
  * @param  {string} delimiter
  * @return {string}

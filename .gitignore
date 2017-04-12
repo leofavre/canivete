@@ -1,7 +1,8 @@
 dist/scrapeNirvanaProduct.js
 dist/internal/nirvana
-docs/src
-docs/templates
+# docs/src
+docs/src/data.json
+# docs/templates
 node_modules
 tests/bundle
 
