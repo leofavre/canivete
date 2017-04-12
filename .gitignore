@@ -4,6 +4,7 @@ index.js
 
 dist/scrapeNirvanaProduct.js
 dist/internal/nirvana
+docs/src.json
 
 .eslint
 .jsbeautifyrc
