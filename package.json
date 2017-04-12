@@ -5,7 +5,11 @@
   "scripts": {
     "test": "npm run -s test:build && npm run -s test:run",
     "test:build": "rollup -c .rollup.config.js",
-    "test:run": "karma start .karma.config.js"
+    "test:run": "karma start .karma.config.js",
+    "docs": "npm run -s docs:dir && npm run -s docs:src && npm run -s docs:build",
+    "docs:dir": "mkdir -p ./docs/src",
+    "docs:src": "jsdoc ./dist -t node_modules/jsdoc-json -d ./docs/src/data.json",
+    "docs:build": "node ./docs/src/makeDocs.js"
   },
   "repository": {
     "type": "git",

@@ -1,10 +1,9 @@
-node_modules
-tests/bundle
-index.js
-
 dist/scrapeNirvanaProduct.js
 dist/internal/nirvana
-docs/src.json
+docs/src
+docs/templates
+node_modules
+tests/bundle
 
 .eslint
 .jsbeautifyrc
