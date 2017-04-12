@@ -3,33 +3,30 @@ const exec = require("child_process").exec;
 
 function readJsonPromise(file, charset = "utf8") {
 	return new Promise(function(resolve, reject) {
-		fs.readFile(file, charset, (err, data) => {
+		fs.readFile(file, charset, (err, json) => {
 			if (err) {
-				console.log("Falha ao carregar o JSON da documentação.");
+				console.log("Falha ao carregar o JSON.");
 				reject();
 			}
 			else {
-				resolve(JSON.parse(data));
+				resolve(JSON.parse(json));
 			}
 		});
 	});
 }
 
-function getTitles(docs) {
-	let names = docs.map(doc => doc.name).filter(name => name != null);
-	console.log(names);
-	return names;
-}
+const getDocsFromJson = json => json.docs ? json.docs.filter(doc => doc.name != undefined) : [];
+
+const exportDocs = docs => docs.forEach(exportDoc);
+
+const exportDoc = doc => {
+	let content = prepareContent(doc);
+	exec(`ejs-cli ./docs/templates/post.ejs > ./docs/${doc.name}.html -O '${content}'`);
+};
+
+const prepareContent = (doc, menu) => JSON.stringify(doc);
 
 readJsonPromise("./docs/src/data.json")
-	.then(data => {
-		let docs = data.docs;
-		docs.forEach(doc => {
-			if (doc.name != undefined) {
-				let docJson = JSON.stringify(doc);
-				// console.log(docJson);
-				exec(`ejs-cli ./docs/templates/post.ejs > ./docs/dist/${doc.name}.html -O '${docJson}'`);
-			}
-		});
-	})
+	.then(getDocsFromJson)
+	.then(exportDocs)
 	.catch();
