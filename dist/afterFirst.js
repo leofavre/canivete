@@ -6,7 +6,8 @@ import _sliceOnOccurrence from "./internal/string/_sliceOnOccurrence";
  * à primeira ocorrência** do delimitador na sentença.
  * Caso o delimitador não seja encontrado, retorna
  * uma string vazia.
- * 
+ *
+ * @category String
  * @param  {string} str
  * @param  {string} delimiter
  * @return {string}
