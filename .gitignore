@@ -2,5 +2,5 @@ node_modules
 test/bundle.js
 index.js
 
-scrapeNirvanaProduct.js
+dist/scrapeNirvanaProduct.js
 dist/internal/nirvana
