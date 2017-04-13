@@ -1,11 +1,8 @@
 dist/scrapeNirvanaProduct.js
 dist/internal/nirvana
-# doc/src
-doc/src/data.json
-# doc/templates
 node_modules
-test/bundle
-
+test/temp
+doc/temp
 .eslint
 .jsbeautifyrc
 .DS_Store
