@@ -25,12 +25,12 @@ const exportDocs = docs => docs.forEach(exportDoc);
 
 const exportDoc = doc => {
 	let content = prepareContent(doc);
-	return execPromise(`ejs-cli ./docs/templates/post.ejs > ./docs/${doc.name}.html -O '${content}'`);
+	return execPromise(`ejs-cli ./doc/templates/post.ejs > ./doc/${doc.name}.html -O '${content}'`);
 };
 
 const prepareContent = (doc, menu) => JSON.stringify(doc);
 
-readJsonPromise("./docs/src/data.json")
+readJsonPromise("./doc/src/data.json")
 	.then(getDocsFromJson)
 	.then(exportDocs)
 	.catch();

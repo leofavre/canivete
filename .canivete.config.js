@@ -1,16 +1,16 @@
 module.exports = {
 	rollup: {
-		input: "./tests/*.js",
-		output: "./tests/bundle/allSpecs.js",
-		outputDir: "./tests/bundle"
+		input: "./test/*.js",
+		output: "./test/bundle/allSpecs.js",
+		outputDir: "./test/bundle"
 	},
 	karma: {
-		input: "./tests/bundle/allSpecs.js"
+		input: "./test/bundle/allSpecs.js"
 	},
 	jsdoc: {
-		data: "./docs/bundle/data.json",
+		data: "./doc/bundle/data.json",
 		inputDir: "./dist",
-		outputDir: "./docs/bundle",
+		outputDir: "./doc/bundle",
 		template: "./node_modules/jsdoc-json"
 	}
 };

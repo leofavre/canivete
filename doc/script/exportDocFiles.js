@@ -21,10 +21,10 @@ function getTitles(docs) {
 
 function exportDoc(doc) {
 	let docJson = JSON.stringify(doc);
-	exec(`ejs-cli ./docs/templates/post.ejs > ./docs/${doc.name}.html -O '${docJson}'`);
+	exec(`ejs-cli ./doc/templates/post.ejs > ./doc/${doc.name}.html -O '${docJson}'`);
 }
 
-readJsonPromise("./docs/src/data.json")
+readJsonPromise("./doc/src/data.json")
 	.then(data => {
 		return data.docs.forEach(exportDoc);
 	})
