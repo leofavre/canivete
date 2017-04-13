@@ -1,23 +1,23 @@
 const read = require("fs").readFile;
 const exec = require("child_process").exec;
 
-function toPromise(func, target, errMsg = "", processFunc = arg => arg) {
+function toPromise(func, target, options, errMsg = "", processOut = arg => arg, processErr = processOut) {
 	return new Promise((resolve, reject) => {
-		func(target, (err, success) => {
-			if (err) {
+		func(target, options, (err, stdout, stderr) => {
+			if (err != null) {
 				console.log(errMsg);
-				reject(err);
+				reject(processErr(stderr));
 			}
 			else {
-				resolve(processFunc(success));
+				resolve(processOut(stdout));
 			}
 		});
 	});
 }
 
-const readJsonPromise = target => toPromise(read, target, "Falha ao carregar o JSON.", JSON.parse);
+const readJsonPromise = (target, options) => toPromise(read, target, options, "Falha ao carregar o JSON.", JSON.parse);
 
-const execPromise = target => toPromise(exec, target, "Falha ao executar comando no terminal.");
+const execPromise = (target, options) => toPromise(exec, target, options, "Falha ao executar comando no terminal.");
 
 const getDocsFromJson = json => json.docs ? json.docs.filter(doc => doc.name != undefined) : [];
 
