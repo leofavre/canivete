@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Canivete Javascript toolkit",
   "scripts": {
-    "test": "mkdir -p ./test/temp && rollup -c .rollup.config.js && karma start .karma.config.js && rm -r ./test/temp",
+    "test": "mkdir -p ./test/temp && rollup -c && karma start && rm -r ./test/temp",
     "doc": "node ./doc/script/run"
   },
   "repository": {
