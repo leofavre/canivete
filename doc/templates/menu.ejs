@@ -1,16 +1,4 @@
-<%if(menu.length > 0){%>
-	<ul>	
-		<%menu.forEach(category => {%>
-			<li>
-				<a href="#"><%=category.name%></a>
-				<%if(category.items.length > 0){%>
-					<ul>
-						<%category.items.forEach(item => {%>
-							<li><a href="#"><%=item%></a></li>
-						<%})%>
-					</ul>
-				<%}%>
-			</li>
-		<%})%>
-	</ul>
-<%}%>
+<%menu.forEach(category => {-%>
+#### <%=category.name%>
+<%-include menusub.ejs-%>
+<%})-%>

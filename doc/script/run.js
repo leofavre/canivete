@@ -1,6 +1,8 @@
-const read = require("fs").readFile;
+const ejs = require("ejs");
 const exec = require("child_process").exec;
 const groupBy = require("lodash/groupBy");
+const markdown = require("markdown");
+const read = require("fs").readFile;
 
 
 
@@ -32,6 +34,8 @@ const removeDir = path => () => execAsPromise(`rm -r ${path}`);
 
 const inAlphabeticalOrder = (strA, strB) => (strA > strB) ? +1 : (strA < strB) ? -1 : 0;
 
+const removeNewslines = str => str.replace(/(?:\r\n|\r|\n)/g, " ");
+
 
 
 
@@ -52,20 +56,21 @@ const exportDocsUsingTemplate = (path, template) => docs => {
 const exportDocUsingTemplate = (path, template, menu) => doc => {
 	let content = prepareContent(doc, menu);
 	let name = getDocName(doc);
-	return execAsPromise(`ejs-cli ${template} > ${path}/${name}.html -O '${content}'`);
+	console.log(name);
+	return execAsPromise(`ejs-cli ${template} > ${path}/${name}.md -O '${content}'`);
 };
 
 const prepareMenu = docs => {
-	let groupedMenu = groupBy(docs, byCategoryName);
-	let categoryNames = Object.keys(groupedMenu);
+	let groupedDocs = groupBy(docs, byCategoryName);
+	let categoryNames = Object.keys(groupedDocs);
 
 	return categoryNames
 		.sort(inAlphabeticalOrder)
-		.map(prepareSubmenu(groupedMenu));
+		.map(prepareSubmenu(groupedDocs));
 };
 
-const prepareSubmenu = (groupedMenu) => categoryName => {
-	let categoryDoc = groupedMenu[categoryName];
+const prepareSubmenu = (groupedDocs) => categoryName => {
+	let categoryDoc = groupedDocs[categoryName];
 	return {
 		name: categoryName,
 		items: getCategoryFunctions(categoryDoc)
@@ -74,6 +79,7 @@ const prepareSubmenu = (groupedMenu) => categoryName => {
 
 const prepareContent = (doc, menu) => {
 	doc.menu = menu;
+	doc.description = removeNewslines(doc.description);
 	return JSON.stringify(doc);
 };
 
@@ -89,7 +95,7 @@ Promise.resolve()
 	.then(readJsonFile("./doc/temp/data.json")) // *
 	.then(parseJsonFile)
 	.then(exportDocsUsingTemplate("./doc", "./doc/templates/index.ejs"))
-	// .then(removeDir("./doc/temp")) // *
+	.then(removeDir("./doc/temp")) // *
 	.catch();
 
 // * etapas desnecessárias se eu conseguisse exportar o conteúdo do JSON na Promise, e não num arquivo
