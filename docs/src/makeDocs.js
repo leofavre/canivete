@@ -15,9 +15,9 @@ function toPromise(func, target, errMsg = "", processFunc = arg => arg) {
 	});
 }
 
-const readJsonPromise = (target) => toPromise(read, target, "Falha ao carregar o JSON.", data => JSON.parse(data));
+const readJsonPromise = target => toPromise(read, target, "Falha ao carregar o JSON.", JSON.parse);
 
-const execPromise = (target) => toPromise(exec, target, "Falha ao executar comando no terminal.");
+const execPromise = target => toPromise(exec, target, "Falha ao executar comando no terminal.");
 
 const getDocsFromJson = json => json.docs ? json.docs.filter(doc => doc.name != undefined) : [];
 
