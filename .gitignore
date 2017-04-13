@@ -8,3 +8,4 @@ test/bundle
 
 .eslint
 .jsbeautifyrc
+.DS_Store

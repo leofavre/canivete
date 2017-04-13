@@ -3,11 +3,8 @@
   "version": "0.0.1",
   "description": "Canivete Javascript toolkit",
   "scripts": {
-    "test": "node ./test/script/run",
-    "doc": "npm run doc:dir && npm run doc:src && npm run doc:build",
-    "doc:dir": "mkdir -p ./doc/src",
-    "doc:src": "jsdoc ./dist -t node_modules/jsdoc-json -d ./doc/src/data.json",
-    "doc:build": "node ./doc/src/makeDocs.js"
+    "test": "mkdir -p ./test/temp && rollup -c .rollup.config.js && karma start .karma.config.js && rm -r ./test/temp",
+    "doc": "node ./doc/script/run"
   },
   "repository": {
     "type": "git",
