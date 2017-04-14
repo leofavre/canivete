@@ -2,7 +2,7 @@
  * Atrasa o encadeamento de uma Promise por um tempo
  * determinado.
  * 
- * @category String
+ * @category Promise
  * @param  {number} delay Tempo do atraso em milisegundos
  * @return {Promise}
  * @public
