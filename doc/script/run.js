@@ -8,7 +8,7 @@ const read = require("fs").readFile;
 
 // basic functions, like creating or removing folders or loading JSON files.
 
-function toPromise(func, target, options, errMsg = "", processOut = arg => arg, processErr = processOut) {
+function asPromise(func, target, options, errMsg = "", processOut = arg => arg, processErr = processOut) {
 	return new Promise((resolve, reject) => {
 		func(target, options, (err, stdout, stderr) => {
 			if (err != null) {
@@ -22,9 +22,9 @@ function toPromise(func, target, options, errMsg = "", processOut = arg => arg, 
 	});
 }
 
-const readJsonAsPromise = (target, options) => toPromise(read, target, options, "Falha ao carregar o JSON.", JSON.parse);
+const readJsonAsPromise = (target, options) => asPromise(read, target, options, "Falha ao carregar o JSON.", JSON.parse);
 
-const execAsPromise = (target, options) => toPromise(exec, target, options, "Falha ao executar comando no terminal.");
+const execAsPromise = (target, options) => asPromise(exec, target, options, "Falha ao executar comando no terminal.");
 
 const createDir = path => () => execAsPromise(`mkdir -p ${path}`);
 
@@ -40,7 +40,9 @@ const removeNewslines = str => str.replace(/(?:\r\n|\r|\n)/g, " ");
 
 // functions for generating, parsing and exporting jsdoc as a single markdown file.
 
-const jsdocAsJson = (path, data, template = "./node_modules/jsdoc-json") => () => execAsPromise(`jsdoc ${path} -d ${data} -t ${template}`);
+const jsdocAsJson = (path, data, template = "./node_modules/jsdoc-json") => () => {
+	return execAsPromise(`jsdoc ${path} -d ${data} -t ${template}`);
+};
 
 const readJsonFile = data => () => readJsonAsPromise(data);
 
@@ -98,3 +100,6 @@ Promise.resolve()
 	.then(exportDocsUsingTemplate("./doc", "./doc/templates/index.ejs"))
 	.then(removeDir("./doc/temp")) // *
 	.catch();
+
+// if i could stream jsdocAsJson into exportDocsUsingTemplate,
+// steps marked with an '*' would be unnecessary.
