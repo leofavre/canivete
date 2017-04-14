@@ -3,6 +3,7 @@
 * afterLast
 * beforeFirst
 * beforeLast
+* waitInPromise
 
 ---
 
@@ -42,6 +43,18 @@ Dadas duas strings – sentença e delimitador –, retorna uma string com os ca
 ```
 beforeLast("paralelepípedo", "le");
 // => "parale"
+```
+
+### waitInPromise
+
+Atrasa o encadeamento de uma Promise por um tempo determinado.
+
+```
+Promise.resolve("aguardando")
+	.then(waitInPromise(500))
+	.then(console.log);
+//=> "aguardando"
+// mostrado depois de 500 milisegundos.
 ```
 
 

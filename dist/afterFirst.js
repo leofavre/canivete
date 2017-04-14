@@ -8,8 +8,8 @@ import _sliceOnOccurrence from "./internal/string/_sliceOnOccurrence";
  * uma string vazia.
  *
  * @category String
- * @param  {string} str
- * @param  {string} delimiter
+ * @param  {string} str Senteça
+ * @param  {string} delimiter Delimitador
  * @return {string}
  * @public
  *
