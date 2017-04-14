@@ -1,14 +1,12 @@
-const ejs = require("ejs");
 const exec = require("child_process").exec;
 const groupBy = require("lodash/groupBy");
-const markdown = require("markdown");
 const read = require("fs").readFile;
 
 
 
 
 
-// funções básicas, como criar e remover pastas ou carregar um JSON de um arquivo.
+// basic functions, like creating or removing folders or loading JSON files.
 
 function toPromise(func, target, options, errMsg = "", processOut = arg => arg, processErr = processOut) {
 	return new Promise((resolve, reject) => {
@@ -40,7 +38,7 @@ const removeNewslines = str => str.replace(/(?:\r\n|\r|\n)/g, " ");
 
 
 
-// funções de exportação 
+// functions for generating, parsing and exporting jsdoc as a single markdown file.
 
 const jsdocAsJson = (path, data, template = "./node_modules/jsdoc-json") => () => execAsPromise(`jsdoc ${path} -d ${data} -t ${template}`);
 
@@ -100,5 +98,3 @@ Promise.resolve()
 	.then(exportDocsUsingTemplate("./doc", "./doc/templates/index.ejs"))
 	.then(removeDir("./doc/temp")) // *
 	.catch();
-
-// * etapas desnecessárias se eu conseguisse exportar o conteúdo do JSON na Promise, e não num arquivo
