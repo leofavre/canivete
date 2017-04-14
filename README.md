@@ -1,4 +1,4 @@
-![](https://travis-ci.org/leofavre/canivete-teste.svg?branch=master)
+![](https://travis-ci.org/leofavre/canivete.svg?branch=master)
 
 # Canivete
 
