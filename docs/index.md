@@ -1,17 +1,17 @@
-#### Promise
-* waitInPromise
+#### [Promise](#promise)
+* [waitInPromise](#waitInPromise)
 
-#### String
-* afterFirst
-* afterLast
-* beforeFirst
-* beforeLast
+#### [String](#string)
+* [afterFirst](#afterFirst)
+* [afterLast](#afterLast)
+* [beforeFirst](#beforeFirst)
+* [beforeLast](#beforeLast)
 
 ---
 
 ## Promise
 
-### waitInPromise
+### `waitInPromise([delay = 0])`
 
 Atrasa o encadeamento de uma Promise por um tempo determinado.
 
@@ -26,7 +26,7 @@ Promise.resolve("aguardando")
 
 ## String
 
-### afterFirst
+### `afterFirst(str, delimiter)`
 
 Dadas duas strings – sentença e delimitador –, retorna uma string com os caracteres **posteriores à primeira ocorrência** do delimitador na sentença. Caso o delimitador não seja encontrado, retorna uma string vazia.
 
@@ -36,7 +36,7 @@ afterFirst("paralelepípedo", "le");
 // => "lepípedo"
 ```
 
-### afterLast
+### `afterLast(str, delimiter)`
 
 Dadas duas strings – sentença e delimitador –, retorna uma string com os caracteres **posteriores à última ocorrência** do delimitador na sentença. Caso o delimitador não seja encontrado, retorna uma string vazia.
 
@@ -46,7 +46,7 @@ afterLast("paralelepípedo", "le");
 // => "pípedo"
 ```
 
-### beforeFirst
+### `beforeFirst(str, delimiter)`
 
 Dadas duas strings – sentença e delimitador –, retorna uma string com os caracteres **anteriores à primeira ocorrência** do delimitador na sentença. Caso o delimitador não seja encontrado, retorna uma string vazia.
 
@@ -56,7 +56,7 @@ beforeFirst("paralelepípedo", "le");
 // => "para"
 ```
 
-### beforeLast
+### `beforeLast(str, delimiter)`
 
 Dadas duas strings – sentença e delimitador –, retorna uma string com os caracteres **anteriores à última ocorrência** do delimitador na sentença. Caso o delimitador não seja encontrado, retorna uma string vazia.
 

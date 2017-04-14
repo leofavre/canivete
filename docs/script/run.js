@@ -1,3 +1,4 @@
+const camelCase = require("lodash/camelCase");
 const exec = require("child_process").exec;
 const flow = require("lodash/flow");
 const groupBy = require("lodash/groupBy");
@@ -51,14 +52,37 @@ const parseJsonFile = json => json.docs ? json.docs.filter(doc => doc.name != un
 
 const exportDocsUsingTemplate = (path, template) => docs => {
 	let data = JSON.stringify(processDocs(docs));
+	console.log(data);
 	return execAsPromise(`ejs-cli ${template} > ${path}/index.md -O '${data}'`);
 };
 
-const correctDocsMarkdown = docs => docs.map(correctDocMarkdown);
+const formatDocs = docs => docs.map(formatDoc);
 
-const correctDocMarkdown = doc => {
-	doc.description = removeNewslines(doc.description);
+const formatDoc = doc => {
+	doc.description = formatDescription(doc.description);
+	doc.href = formatHref(doc.name);
+	doc.signature = formatSignature(doc.name, doc.params);
 	return doc;
+};
+
+const formatDescription = description => removeNewslines(description);
+
+const formatHref = name => camelCase(name);
+
+const formatSignature = (name, params) => {
+	params = formatSignatureParams(params);
+	return `${name}(${params})`;
+};
+
+const formatSignatureParams = params => {
+	return params.map(formatSignatureParam).join(", ");
+};
+
+const formatSignatureParam = param => {
+	let preParam = param.optional ? "[" : "";
+	let postParam = param.optional ? "]" : "";
+	let defaultValue = param.defaultvalue != null ? ` = ${param.defaultvalue}` : "";
+	return `${preParam}${param.name}${defaultValue}${postParam}`;
 };
 
 const groupDocsByCategoryName = docs => groupBy(docs, byCategoryName);
@@ -77,6 +101,7 @@ const prepareDoc = groupedDocs => categoryName => {
 	let categoryDoc = groupedDocs[categoryName];
 	return {
 		name: categoryName,
+		href: formatHref(categoryName),
 		items: categoryDoc
 	};
 };
@@ -88,7 +113,7 @@ const wrapDocs = preparedDocs => {
 };
 
 const processDocs = flow([
-	correctDocsMarkdown,
+	formatDocs,
 	groupDocsByCategoryName,
 	prepareDocs,
 	wrapDocs

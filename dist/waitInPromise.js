@@ -3,7 +3,7 @@
  * determinado.
  * 
  * @category Promise
- * @param  {number} delay Tempo do atraso em milisegundos
+ * @param  {number} [delay = 0] Tempo do atraso em milisegundos
  * @return {Promise}
  * @public
  *
@@ -15,9 +15,9 @@
  * // => "aguardando"
  * // mostrado depois de 500 milisegundos.
  */
-function waitInPromise(delay) {
+function waitInPromise(delay = 0) {
 	return function(arg) {
-		if (delay != null && delay > 0) {
+		if (delay > 0) {
 			return new Promise(resolve => {
 				setTimeout(() => resolve(arg), delay);
 			});
