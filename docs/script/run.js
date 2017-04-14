@@ -8,7 +8,7 @@ const read = require("fs").readFile;
 
 
 
-// basic functions, like creating or removing folders or loading JSON files.
+// Basic functions, like creating or removing folders or loading JSON files.
 
 function asPromise(func, target, options, errMsg = "", processOut = arg => arg, processErr = processOut) {
 	return new Promise((resolve, reject) => {
@@ -32,15 +32,15 @@ const createDir = path => () => execAsPromise(`mkdir -p ${path}`);
 
 const removeDir = path => () => execAsPromise(`rm -r ${path}`);
 
-const inAlphabeticalOrder = (strA, strB) => (strA > strB) ? +1 : (strA < strB) ? -1 : 0;
+const byAlphabeticalOrder = (strA, strB) => (strA > strB) ? +1 : (strA < strB) ? -1 : 0;
 
-const removeNewslines = str => str.replace(/(?:\r\n|\r|\n)/g, " ");
-
-
+const removeNewslines = str => str; // str.replace(/(?:\r\n|\r|\n)/g, " ");
 
 
 
-// functions for generating, parsing and exporting jsdoc as a single markdown file.
+
+
+// Functions for generating, parsing and exporting jsdoc to a single markdown file.
 
 const jsdocAsJson = (path, data, template = "./node_modules/jsdoc-json") => () => {
 	return execAsPromise(`jsdoc ${path} -d ${data} -t ${template}`);
@@ -112,7 +112,7 @@ const prepareDocs = groupedDocs => {
 	let categoryNames = Object.keys(groupedDocs);
 
 	return categoryNames
-		.sort(inAlphabeticalOrder)
+		.sort(byAlphabeticalOrder)
 		.map(prepareDoc(groupedDocs));
 };
 
@@ -147,5 +147,5 @@ Promise.resolve()
 	.then(removeDir("./docs/temp")) // *
 	.catch();
 
-// if i could stream jsdocAsJson into exportDocsUsingTemplate,
+// If I could stream jsdocAsJson into exportDocsUsingTemplate,
 // steps marked with an '*' would be unnecessary.

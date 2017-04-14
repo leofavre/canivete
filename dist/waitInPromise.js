@@ -3,7 +3,7 @@
  * determinado.
  * 
  * @category Promise
- * @param  {number} [delay = 0] Tempo do atraso em milisegundos
+ * @param  {number} [delay = 0] Atraso em milisegundos
  * @return {Promise}
  * @public
  *

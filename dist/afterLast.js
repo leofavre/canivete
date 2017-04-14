@@ -9,7 +9,7 @@ import _sliceOnOccurrence from "./internal/string/_sliceOnOccurrence";
  *
  * @category String
  * @param  {string} str Senteça
- * @param  {string} delimiter Delimitador
+ * @param  {string} separator Delimitador
  * @return {string}
  * @public
  *
@@ -18,6 +18,6 @@ import _sliceOnOccurrence from "./internal/string/_sliceOnOccurrence";
  *
  * // => "pípedo"
  */
-const afterLast = (str, delimiter) => _sliceOnOccurrence("after", "last", delimiter, str);
+const afterLast = (str, separator) => _sliceOnOccurrence("after", "last", str, separator);
 
 export default afterLast;

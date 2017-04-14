@@ -1,33 +1,47 @@
 import beforeFirst from "../dist/beforeFirst";
 
 describe("beforeFirst", function() {
-	it("“Paralelepípedo” antes do primeiro “a” é “P”.", function() {
+	it(`Should find "P" before the first "a" in "Parallelepiped".`, function() {
 		expect(
-			beforeFirst("Paralelepípedo", "a")
+			beforeFirst("Parallelepiped", "a")
 		).toBe("P");
 	});
 
-	it("“Paralelepípedo” antes do primeiro “e” é “Paral”.", function() {
+	it(`Should find "Parall" before the first "e" in "Parallelepiped".`, function() {
 		expect(
-			beforeFirst("Paralelepípedo", "e")
+			beforeFirst("Parallelepiped", "e")
+		).toBe("Parall");
+	});
+
+	it(`"Should find "Paral" before the first "le" in "Parallelepiped".`, function() {
+		expect(
+			beforeFirst("Parallelepiped", "le")
 		).toBe("Paral");
 	});
 
-	it("“Paralelepípedo” antes do primeiro “le” é “Para”.", function() {
+	it(`"Should not find anything before the first "P" in "Parallelepiped".`, function() {
 		expect(
-			beforeFirst("Paralelepípedo", "le")
-		).toBe("Para");
-	});
-
-	it("“Paralelepípedo” antes do primeiro “P” é “”.", function() {
-		expect(
-			beforeFirst("Paralelepípedo", "P")
+			beforeFirst("Parallelepiped", "P")
 		).toBe("");
 	});
 
-	it("“Paralelepípedo” antes do primeiro “x” (não encontrado) é “”.", function() {
+	it(`"Should not find anything before the first "x" in "Parallelepiped".`, function() {
 		expect(
-			beforeFirst("Paralelepípedo", "x")
+			beforeFirst("Parallelepiped", "x")
 		).toBe("");
+	});
+
+	it(`"Should return undefined if two strings are not passed as parameters.`, function() {
+		expect(
+			beforeFirst()
+		).toBe(undefined);
+
+		expect(
+			beforeFirst("Parallelepiped")
+		).toBe(undefined);
+
+		expect(
+			beforeFirst(6215, 15)
+		).toBe(undefined);
 	});
 });

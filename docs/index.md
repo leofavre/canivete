@@ -14,10 +14,11 @@
 <a name="waitInPromise"></a>
 ### `waitInPromise([delay = 0])`
 
-Atrasa o encadeamento de uma Promise por um tempo determinado.
+Atrasa o encadeamento de uma Promise por um tempo
+determinado.
 
 #### Parameters
-`[delay = 0]`*{number}*: Tempo do atraso em milisegundos<br/>
+`[delay = 0]`*{number}*: Atraso em milisegundos<br/>
 
 #### Returns
 *{Promise}*<br/>
@@ -36,13 +37,17 @@ Promise.resolve("aguardando")
 ## String
 
 <a name="afterFirst"></a>
-### `afterFirst(str, delimiter)`
+### `afterFirst(str, separator)`
 
-Dadas duas strings – sentença e delimitador –, retorna uma string com os caracteres **posteriores à primeira ocorrência** do delimitador na sentença. Caso o delimitador não seja encontrado, retorna uma string vazia.
+Dadas duas strings – sentença e delimitador –,
+retorna uma string com os caracteres **posteriores
+à primeira ocorrência** do delimitador na sentença.
+Caso o delimitador não seja encontrado, retorna
+uma string vazia.
 
 #### Parameters
 `str`*{string}*: Senteça<br/>
-`delimiter`*{string}*: Delimitador<br/>
+`separator`*{string}*: Delimitador<br/>
 
 #### Returns
 *{string}*<br/>
@@ -56,13 +61,17 @@ afterFirst("paralelepípedo", "le");
 ```
 
 <a name="afterLast"></a>
-### `afterLast(str, delimiter)`
+### `afterLast(str, separator)`
 
-Dadas duas strings – sentença e delimitador –, retorna uma string com os caracteres **posteriores à última ocorrência** do delimitador na sentença. Caso o delimitador não seja encontrado, retorna uma string vazia.
+Dadas duas strings – sentença e delimitador –,
+retorna uma string com os caracteres **posteriores
+à última ocorrência** do delimitador na sentença.
+Caso o delimitador não seja encontrado, retorna
+uma string vazia.
 
 #### Parameters
 `str`*{string}*: Senteça<br/>
-`delimiter`*{string}*: Delimitador<br/>
+`separator`*{string}*: Delimitador<br/>
 
 #### Returns
 *{string}*<br/>
@@ -76,13 +85,20 @@ afterLast("paralelepípedo", "le");
 ```
 
 <a name="beforeFirst"></a>
-### `beforeFirst(str, delimiter)`
+### `beforeFirst(str, separator)`
 
-Dadas duas strings – sentença e delimitador –, retorna uma string com os caracteres **anteriores à primeira ocorrência** do delimitador na sentença. Caso o delimitador não seja encontrado, retorna uma string vazia.
+Given two strings, returns a new string formed
+by the characters **previous to the first
+occurrence** of the second string in the first.
+
+If nothing is not found, returns an empty string.
+
+Returns `undefined` if two strings are not
+passed as parameters.
 
 #### Parameters
-`str`*{string}*: Senteça<br/>
-`delimiter`*{string}*: Delimitador<br/>
+`str`*{string}*: Base string<br/>
+`separator`*{string}*: String to be found<br/>
 
 #### Returns
 *{string}*<br/>
@@ -90,19 +106,26 @@ Dadas duas strings – sentença e delimitador –, retorna uma string com os ca
 #### Example
 
 ```javascript
-beforeFirst("paralelepípedo", "le");
+beforeFirst("parallelepiped", "le");
 
-// => "para"
+// => "paral"
 ```
 
 <a name="beforeLast"></a>
-### `beforeLast(str, delimiter)`
+### `beforeLast(str, separator)`
 
-Dadas duas strings – sentença e delimitador –, retorna uma string com os caracteres **anteriores à última ocorrência** do delimitador na sentença. Caso o delimitador não seja encontrado, retorna uma string vazia.
+Given two strings, returns a new string formed
+by the characters **previous to the last
+occurrence** of the second string in the first.
+
+If nothing is not found, returns an empty string.
+
+Returns `undefined` if two strings are not
+passed as parameters.
 
 #### Parameters
-`str`*{string}*: Senteça<br/>
-`delimiter`*{string}*: Delimitador<br/>
+`str`*{string}*: Base string<br/>
+`separator`*{string}*: String to be found<br/>
 
 #### Returns
 *{string}*<br/>
@@ -110,9 +133,9 @@ Dadas duas strings – sentença e delimitador –, retorna uma string com os ca
 #### Example
 
 ```javascript
-beforeLast("paralelepípedo", "le");
+beforeLast("parallelepiped", "le");
 
-// => "parale"
+// => "paralle"
 ```
 
 

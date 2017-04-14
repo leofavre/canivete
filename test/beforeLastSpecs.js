@@ -1,33 +1,47 @@
 import beforeLast from "../dist/beforeLast";
 
 describe("beforeLast", function() {
-	it("“Paralelepípedo” antes do último “a” é “Par”.", function() {
+	it(`Should find "P" before the last "a" in "Parallelepiped".`, function() {
 		expect(
-			beforeLast("Paralelepípedo", "a")
+			beforeLast("Parallelepiped", "a")
 		).toBe("Par");
 	});
 
-	it("“Paralelepípedo” antes do último “e” é “Paralelepíp”.", function() {
+	it(`Should find "Parall" before the last "e" in "Parallelepiped".`, function() {
 		expect(
-			beforeLast("Paralelepípedo", "e")
-		).toBe("Paralelepíp");
+			beforeLast("Parallelepiped", "e")
+		).toBe("Parallelepip");
 	});
 
-	it("“Paralelepípedo” antes do último “le” é “Parale”.", function() {
+	it(`"Should find "Paral" before the last "le" in "Parallelepiped".`, function() {
 		expect(
-			beforeLast("Paralelepípedo", "le")
-		).toBe("Parale");
+			beforeLast("Parallelepiped", "le")
+		).toBe("Paralle");
 	});
 
-	it("“Paralelepípedo” antes do último “P” é “”.", function() {
+	it(`"Should not find anything before the last "P" in "Parallelepiped".`, function() {
 		expect(
-			beforeLast("Paralelepípedo", "P")
+			beforeLast("Parallelepiped", "P")
 		).toBe("");
 	});
 
-	it("“Paralelepípedo” antes do último “x” (não encontrado) é “”.", function() {
+	it(`"Should not find anything before the last "x" in "Parallelepiped".`, function() {
 		expect(
-			beforeLast("Paralelepípedo", "x")
+			beforeLast("Parallelepiped", "x")
 		).toBe("");
+	});
+
+	it(`"Should return undefined if two strings are not passed as parameters.`, function() {
+		expect(
+			beforeLast()
+		).toBe(undefined);
+
+		expect(
+			beforeLast("Parallelepiped")
+		).toBe(undefined);
+
+		expect(
+			beforeLast(6215, 15)
+		).toBe(undefined);
 	});
 });

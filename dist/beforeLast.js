@@ -1,23 +1,26 @@
 import _sliceOnOccurrence from "./internal/string/_sliceOnOccurrence";
 
 /**
- * Dadas duas strings – sentença e delimitador –,
- * retorna uma string com os caracteres **anteriores
- * à última ocorrência** do delimitador na sentença.
- * Caso o delimitador não seja encontrado, retorna
- * uma string vazia.
+ * Given two strings, returns a new string formed
+ * by the characters **previous to the last
+ * occurrence** of the second string in the first.
+ *
+ * If nothing is not found, returns an empty string.
+ *
+ * Returns `undefined` if two strings are not
+ * passed as parameters.
  *
  * @category String
- * @param  {string} str Senteça
- * @param  {string} delimiter Delimitador
+ * @param  {string} str Base string
+ * @param  {string} separator String to be found
  * @return {string}
  * @public
  *
  * @example
- * beforeLast("paralelepípedo", "le");
+ * beforeLast("parallelepiped", "le");
  *
- * // => "parale"
+ * // => "paralle"
  */
-const beforeLast = (str, delimiter) => _sliceOnOccurrence("before", "last", delimiter, str);
+const beforeLast = (str, separator) => _sliceOnOccurrence("before", "last", str, separator);
 
 export default beforeLast;
