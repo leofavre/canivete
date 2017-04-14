@@ -11,7 +11,8 @@
  * Promise.resolve("aguardando")
  * 	.then(waitInPromise(500))
  * 	.then(console.log);
- * //=> "aguardando"
+ *
+ * // => "aguardando"
  * // mostrado depois de 500 milisegundos.
  */
 function waitInPromise(delay) {

@@ -95,12 +95,12 @@ const processDocs = flow([
 ]);
 
 Promise.resolve()
-	.then(createDir("./doc/temp")) // *
-	.then(jsdocAsJson("./dist", "./doc/temp/data.json"))
-	.then(readJsonFile("./doc/temp/data.json")) // *
+	.then(createDir("./docs/temp")) // *
+	.then(jsdocAsJson("./dist", "./docs/temp/data.json"))
+	.then(readJsonFile("./docs/temp/data.json")) // *
 	.then(parseJsonFile)
-	.then(exportDocsUsingTemplate("./doc", "./doc/templates/index.ejs"))
-	.then(removeDir("./doc/temp")) // *
+	.then(exportDocsUsingTemplate("./docs", "./docs/templates/index.ejs"))
+	.then(removeDir("./docs/temp")) // *
 	.catch();
 
 // if i could stream jsdocAsJson into exportDocsUsingTemplate,

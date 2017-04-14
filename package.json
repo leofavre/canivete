@@ -4,7 +4,7 @@
   "description": "Canivete Javascript toolkit",
   "scripts": {
     "test": "mkdir -p ./test/temp && rollup -c && karma start && rm -r ./test/temp",
-    "doc": "node ./doc/script/run"
+    "doc": "node ./docs/script/run"
   },
   "repository": {
     "type": "git",
@@ -25,7 +25,6 @@
     "karma-firefox-launcher": "~0.1.6",
     "karma-jasmine": "~0.3.6",
     "lodash": "^4.17.4",
-    "markdown": "^0.5.0",
     "rollup": "^0.41.6",
     "rollup-plugin-multi-entry": "^2.0.1"
   }
