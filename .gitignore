@@ -3,6 +3,7 @@ dist/internal/nirvana
 node_modules
 test/temp
 doc/temp
+doc/script/example.json
 .eslint
 .jsbeautifyrc
 .DS_Store

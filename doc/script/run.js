@@ -1,4 +1,5 @@
 const exec = require("child_process").exec;
+const flow = require("lodash/flow");
 const groupBy = require("lodash/groupBy");
 const read = require("fs").readFile;
 
@@ -49,48 +50,49 @@ const readJsonFile = data => () => readJsonAsPromise(data);
 const parseJsonFile = json => json.docs ? json.docs.filter(doc => doc.name != undefined) : [];
 
 const exportDocsUsingTemplate = (path, template) => docs => {
-	docs = docs.map(prepareDoc);
-	let menu = prepareMenu(docs);
-	let page = joinDocsAndMenu(docs, menu);
-
-	let data = JSON.stringify(page);
+	let data = JSON.stringify(processDocs(docs));
 	return execAsPromise(`ejs-cli ${template} > ${path}/index.md -O '${data}'`);
 };
 
-const prepareMenu = docs => {
-	let groupedDocs = groupBy(docs, byCategoryName);
+const groupDocsByCategoryName = docs => {
+	docs = docs.map(prepareDoc);
+	return groupBy(docs, byCategoryName);
+};
+
+const prepareDocs = groupedDocs => {
 	let categoryNames = Object.keys(groupedDocs);
 
 	return categoryNames
 		.sort(inAlphabeticalOrder)
-		.map(prepareSubmenu(groupedDocs));
+		.map(prepareSubdoc(groupedDocs));
 };
 
-const prepareSubmenu = (groupedDocs) => categoryName => {
+const prepareSubdoc = groupedDocs => categoryName => {
 	let categoryDoc = groupedDocs[categoryName];
 	return {
 		name: categoryName,
-		items: getCategoryFunctions(categoryDoc)
+		items: categoryDoc
 	};
 };
+
+const wrapDocs = preparedDocs => {
+	return {
+		docs: preparedDocs
+	};
+};
+
+const processDocs = flow([
+	groupDocsByCategoryName,
+	prepareDocs,
+	wrapDocs
+]);
 
 const prepareDoc = doc => {
 	doc.description = removeNewslines(doc.description);
 	return doc;
 };
 
-const joinDocsAndMenu = (docs, menu) => {
-	let page = {};
-	page.body = docs;
-	page.menu = menu;
-	return page;
-};
-
 const byCategoryName = doc => doc.tags.filter(tag => tag.title === "category")[0].value;
-
-const getDocName = doc => doc.name;
-
-const getCategoryFunctions = categoryDoc => categoryDoc.map(getDocName);
 
 Promise.resolve()
 	.then(createDir("./doc/temp")) // *
