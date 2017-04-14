@@ -1,5 +1,6 @@
 #### Promise
 * waitInPromise
+
 #### String
 * afterFirst
 * afterLast
