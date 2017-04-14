@@ -76,7 +76,7 @@ const formatTableParams = params => {
 
 const formatTableParam = param => {
 	let name = param ? "`" + formatParam(param) + "`" : "";
-	let type = (param.type && param.type.names.length > 0) ? " *" + formatType(param.type.names) + "*" : "";
+	let type = param.type && param.type.names.length > 0 ? "*" + formatType(param.type.names) + "*" : "";
 	let description = ": " + formatDescription(param.description);
 	return `${name}${type}${description}`;
 };
