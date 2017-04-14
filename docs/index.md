@@ -1,11 +1,11 @@
-#### [Promise](#promise)
-* [waitInPromise](#waitInPromise)
+#### Promise
+* waitInPromise
 
-#### [String](#string)
-* [afterFirst](#afterFirst)
-* [afterLast](#afterLast)
-* [beforeFirst](#beforeFirst)
-* [beforeLast](#beforeLast)
+#### String
+* afterFirst
+* afterLast
+* beforeFirst
+* beforeLast
 
 ---
 
