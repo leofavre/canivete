@@ -1,7 +1,7 @@
-#### Promise
+#### [Promise](#promise)
 * waitInPromise
 
-#### String
+#### [String](#string)
 * afterFirst
 * afterLast
 * beforeFirst
