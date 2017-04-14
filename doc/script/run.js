@@ -54,20 +54,26 @@ const exportDocsUsingTemplate = (path, template) => docs => {
 	return execAsPromise(`ejs-cli ${template} > ${path}/index.md -O '${data}'`);
 };
 
-const groupDocsByCategoryName = docs => {
-	docs = docs.map(prepareDoc);
-	return groupBy(docs, byCategoryName);
+const correctDocsMarkdown = docs => docs.map(correctDocMarkdown);
+
+const correctDocMarkdown = doc => {
+	doc.description = removeNewslines(doc.description);
+	return doc;
 };
+
+const groupDocsByCategoryName = docs => groupBy(docs, byCategoryName);
+
+const byCategoryName = doc => doc.tags.filter(tag => tag.title === "category")[0].value;
 
 const prepareDocs = groupedDocs => {
 	let categoryNames = Object.keys(groupedDocs);
 
 	return categoryNames
 		.sort(inAlphabeticalOrder)
-		.map(prepareSubdoc(groupedDocs));
+		.map(prepareDoc(groupedDocs));
 };
 
-const prepareSubdoc = groupedDocs => categoryName => {
+const prepareDoc = groupedDocs => categoryName => {
 	let categoryDoc = groupedDocs[categoryName];
 	return {
 		name: categoryName,
@@ -82,17 +88,11 @@ const wrapDocs = preparedDocs => {
 };
 
 const processDocs = flow([
+	correctDocsMarkdown,
 	groupDocsByCategoryName,
 	prepareDocs,
 	wrapDocs
 ]);
-
-const prepareDoc = doc => {
-	doc.description = removeNewslines(doc.description);
-	return doc;
-};
-
-const byCategoryName = doc => doc.tags.filter(tag => tag.title === "category")[0].value;
 
 Promise.resolve()
 	.then(createDir("./doc/temp")) // *
