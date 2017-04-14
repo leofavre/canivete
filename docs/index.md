@@ -17,6 +17,7 @@
 Atrasa o encadeamento de uma Promise por um tempo determinado.
 
 #### Parameters
+
 **[delay = 0]** *{number}*: Tempo do atraso em milisegundos
 
 #### Returns
@@ -40,7 +41,9 @@ Promise.resolve("aguardando")
 Dadas duas strings – sentença e delimitador –, retorna uma string com os caracteres **posteriores à primeira ocorrência** do delimitador na sentença. Caso o delimitador não seja encontrado, retorna uma string vazia.
 
 #### Parameters
+
 **str** *{string}*: Senteça
+
 **delimiter** *{string}*: Delimitador
 
 #### Returns
@@ -59,7 +62,9 @@ afterFirst("paralelepípedo", "le");
 Dadas duas strings – sentença e delimitador –, retorna uma string com os caracteres **posteriores à última ocorrência** do delimitador na sentença. Caso o delimitador não seja encontrado, retorna uma string vazia.
 
 #### Parameters
+
 **str** *{string}*: Senteça
+
 **delimiter** *{string}*: Delimitador
 
 #### Returns
@@ -78,7 +83,9 @@ afterLast("paralelepípedo", "le");
 Dadas duas strings – sentença e delimitador –, retorna uma string com os caracteres **anteriores à primeira ocorrência** do delimitador na sentença. Caso o delimitador não seja encontrado, retorna uma string vazia.
 
 #### Parameters
+
 **str** *{string}*: Senteça
+
 **delimiter** *{string}*: Delimitador
 
 #### Returns
@@ -97,7 +104,9 @@ beforeFirst("paralelepípedo", "le");
 Dadas duas strings – sentença e delimitador –, retorna uma string com os caracteres **anteriores à última ocorrência** do delimitador na sentença. Caso o delimitador não seja encontrado, retorna uma string vazia.
 
 #### Parameters
+
 **str** *{string}*: Senteça
+
 **delimiter** *{string}*: Delimitador
 
 #### Returns
