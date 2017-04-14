@@ -61,7 +61,8 @@ const formatDocs = docs => docs.map(formatDoc);
 const formatDoc = doc => {
 	doc.description = formatDescription(doc.description);
 	doc.href = formatHref(doc.name);
-	doc.paramsTable = formatTableParams(doc.params);
+	doc.paramsTable = formatTable(doc.params);
+	doc.returnsTable = formatTable(doc.returns);
 	doc.signature = formatSignature(doc.name, doc.params);
 	return doc;
 };
@@ -70,15 +71,15 @@ const formatDescription = description => removeNewslines(description);
 
 const formatHref = name => camelCase(name);
 
-const formatTableParams = params => {
-	return params.map(formatTableParam);
+const formatTable = params => {
+	return params.map(formatTableLine);
 };
 
-const formatTableParam = param => {
-	let name = param ? "`" + formatParam(param) + "`" : "";
+const formatTableLine = param => {
+	let name = param.name ? "`" + formatParam(param) + "`" : "";
 	let type = param.type && param.type.names.length > 0 ? "*" + formatType(param.type.names) + "*" : "";
-	let description = ": " + formatDescription(param.description);
-	return `${name}${type}${description}`;
+	let desc = param.description ? ": " + formatDescription(param.description) : "";
+	return `${name}${type}${desc}`;
 };
 
 const formatSignature = (name, params) => {

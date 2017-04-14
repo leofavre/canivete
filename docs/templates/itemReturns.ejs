@@ -1,4 +1,7 @@
-<%if(item.returns && item.returns.length > 0){-%>
+<%if(item.returnsTable && item.returnsTable.length > 0){-%>
 
 #### Returns
+<%item.returnsTable.forEach(param => {-%>
+<%=param%><br/>
+<%})-%>
 <%}-%>

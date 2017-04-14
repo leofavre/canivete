@@ -20,6 +20,7 @@ Atrasa o encadeamento de uma Promise por um tempo determinado.
 `[delay = 0]`*{number}*: Tempo do atraso em milisegundos<br/>
 
 #### Returns
+*{Promise}*<br/>
 
 #### Example
 
@@ -44,6 +45,7 @@ Dadas duas strings – sentença e delimitador –, retorna uma string com os ca
 `delimiter`*{string}*: Delimitador<br/>
 
 #### Returns
+*{string}*<br/>
 
 #### Example
 
@@ -63,6 +65,7 @@ Dadas duas strings – sentença e delimitador –, retorna uma string com os ca
 `delimiter`*{string}*: Delimitador<br/>
 
 #### Returns
+*{string}*<br/>
 
 #### Example
 
@@ -82,6 +85,7 @@ Dadas duas strings – sentença e delimitador –, retorna uma string com os ca
 `delimiter`*{string}*: Delimitador<br/>
 
 #### Returns
+*{string}*<br/>
 
 #### Example
 
@@ -101,6 +105,7 @@ Dadas duas strings – sentença e delimitador –, retorna uma string com os ca
 `delimiter`*{string}*: Delimitador<br/>
 
 #### Returns
+*{string}*<br/>
 
 #### Example
 
