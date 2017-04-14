@@ -71,11 +71,14 @@ const formatDescription = description => removeNewslines(description);
 const formatHref = name => camelCase(name);
 
 const formatTableParams = params => {
-	return params.map(formatTableParam).join("\n");
+	return params.map(formatTableParam);
 };
 
 const formatTableParam = param => {
-	return "| " + formatParam(param) + " | " + formatType(param.type.names) + " | " + formatDescription(param.description) + " |";
+	let name = param ? "**" + formatParam(param) + "**" : "";
+	let type = (param.type && param.type.names.length > 0) ? " *" + formatType(param.type.names) + "*" : "";
+	let description = ": " + formatDescription(param.description);
+	return `${name}${type}${description}`;
 };
 
 const formatSignature = (name, params) => {

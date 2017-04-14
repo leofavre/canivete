@@ -49,7 +49,7 @@
 			"___id": "T000002R000010",
 			"___s": true,
 			"href": "waitInPromise",
-			"paramsTable": "| [delay = 0] | {number} | Tempo do atraso em milisegundos |",
+			"paramsTable": ["**[delay = 0]** *{number}*: Tempo do atraso em milisegundos"],
 			"signature": "waitInPromise([delay = 0])"
 		}]
 	}, {
@@ -102,7 +102,7 @@
 			"___id": "T000002R000002",
 			"___s": true,
 			"href": "afterFirst",
-			"paramsTable": "| str | {string} | Senteça |\n| delimiter | {string} | Delimitador |",
+			"paramsTable": ["**str** *{string}*: Senteça", "**delimiter** *{string}*: Delimitador"],
 			"signature": "afterFirst(str, delimiter)"
 		}, {
 			"comment": "/**\n * Dadas duas strings – sentença e delimitador –,\n * retorna uma string com os caracteres **posteriores\n * à última ocorrência** do delimitador na sentença.\n * Caso o delimitador não seja encontrado, retorna\n * uma string vazia.\n *\n * @category String\n * @param  {string} str Senteça\n * @param  {string} delimiter Delimitador\n * @return {string}\n * @public\n *\n * @example\n * afterLast(\"paralelepípedo\", \"le\");\n *\n * // => \"pípedo\"\n */",
@@ -151,7 +151,7 @@
 			"___id": "T000002R000004",
 			"___s": true,
 			"href": "afterLast",
-			"paramsTable": "| str | {string} | Senteça |\n| delimiter | {string} | Delimitador |",
+			"paramsTable": ["**str** *{string}*: Senteça", "**delimiter** *{string}*: Delimitador"],
 			"signature": "afterLast(str, delimiter)"
 		}, {
 			"comment": "/**\n * Dadas duas strings – sentença e delimitador –,\n * retorna uma string com os caracteres **anteriores\n * à primeira ocorrência** do delimitador na sentença.\n * Caso o delimitador não seja encontrado, retorna\n * uma string vazia.\n *\n * @category String\n * @param  {string} str Senteça\n * @param  {string} delimiter Delimitador\n * @return {string}\n * @public\n *\n * @example\n * beforeFirst(\"paralelepípedo\", \"le\");\n *\n * // => \"para\"\n */",
@@ -200,7 +200,7 @@
 			"___id": "T000002R000006",
 			"___s": true,
 			"href": "beforeFirst",
-			"paramsTable": "| str | {string} | Senteça |\n| delimiter | {string} | Delimitador |",
+			"paramsTable": ["**str** *{string}*: Senteça", "**delimiter** *{string}*: Delimitador"],
 			"signature": "beforeFirst(str, delimiter)"
 		}, {
 			"comment": "/**\n * Dadas duas strings – sentença e delimitador –,\n * retorna uma string com os caracteres **anteriores\n * à última ocorrência** do delimitador na sentença.\n * Caso o delimitador não seja encontrado, retorna\n * uma string vazia.\n *\n * @category String\n * @param  {string} str Senteça\n * @param  {string} delimiter Delimitador\n * @return {string}\n * @public\n *\n * @example\n * beforeLast(\"paralelepípedo\", \"le\");\n *\n * // => \"parale\"\n */",
@@ -249,7 +249,7 @@
 			"___id": "T000002R000008",
 			"___s": true,
 			"href": "beforeLast",
-			"paramsTable": "| str | {string} | Senteça |\n| delimiter | {string} | Delimitador |",
+			"paramsTable": ["**str** *{string}*: Senteça", "**delimiter** *{string}*: Delimitador"],
 			"signature": "beforeLast(str, delimiter)"
 		}]
 	}]

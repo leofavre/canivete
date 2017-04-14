@@ -1,7 +1,7 @@
-<%if(item.paramsTable){-%>
+<%if(item.paramsTable && item.paramsTable.length > 0){-%>
 
 #### Parameters
-| name | type | description |
-|--|--|--|
-<%=item.paramsTable%>
+<%item.paramsTable.forEach(param => {-%>
+<%-param%>
+<%})-%>
 <%}-%>
