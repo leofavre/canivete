@@ -18,6 +18,7 @@ Atrasa o encadeamento de uma Promise por um tempo determinado.
 Promise.resolve("aguardando")
 	.then(waitInPromise(500))
 	.then(console.log);
+
 // => "aguardando"
 // mostrado depois de 500 milisegundos.
 ```
@@ -30,6 +31,7 @@ Dadas duas strings – sentença e delimitador –, retorna uma string com os ca
 
 ```
 afterFirst("paralelepípedo", "le");
+
 // => "lepípedo"
 ```
 
@@ -39,6 +41,7 @@ Dadas duas strings – sentença e delimitador –, retorna uma string com os ca
 
 ```
 afterLast("paralelepípedo", "le");
+
 // => "pípedo"
 ```
 
@@ -48,6 +51,7 @@ Dadas duas strings – sentença e delimitador –, retorna uma string com os ca
 
 ```
 beforeFirst("paralelepípedo", "le");
+
 // => "para"
 ```
 
@@ -57,6 +61,7 @@ Dadas duas strings – sentença e delimitador –, retorna uma string com os ca
 
 ```
 beforeLast("paralelepípedo", "le");
+
 // => "parale"
 ```
 
