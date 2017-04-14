@@ -6,4 +6,4 @@
 
 **Canivete** is not meant to be downloaded as a single file, its methods should be imported as needed and concatenated with a module bundler like [rollup](https://rollupjs.org/).
 
-Documentation and more functions will be added soon.
+[See documentation](https://leofavre.github.io/canivete).
