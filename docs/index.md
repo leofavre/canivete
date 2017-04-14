@@ -15,7 +15,7 @@
 
 Atrasa o encadeamento de uma Promise por um tempo determinado.
 
-```
+```javascript
 Promise.resolve("aguardando")
 	.then(waitInPromise(500))
 	.then(console.log);
@@ -30,7 +30,7 @@ Promise.resolve("aguardando")
 
 Dadas duas strings – sentença e delimitador –, retorna uma string com os caracteres **posteriores à primeira ocorrência** do delimitador na sentença. Caso o delimitador não seja encontrado, retorna uma string vazia.
 
-```
+```javascript
 afterFirst("paralelepípedo", "le");
 
 // => "lepípedo"
@@ -40,7 +40,7 @@ afterFirst("paralelepípedo", "le");
 
 Dadas duas strings – sentença e delimitador –, retorna uma string com os caracteres **posteriores à última ocorrência** do delimitador na sentença. Caso o delimitador não seja encontrado, retorna uma string vazia.
 
-```
+```javascript
 afterLast("paralelepípedo", "le");
 
 // => "pípedo"
@@ -50,7 +50,7 @@ afterLast("paralelepípedo", "le");
 
 Dadas duas strings – sentença e delimitador –, retorna uma string com os caracteres **anteriores à primeira ocorrência** do delimitador na sentença. Caso o delimitador não seja encontrado, retorna uma string vazia.
 
-```
+```javascript
 beforeFirst("paralelepípedo", "le");
 
 // => "para"
@@ -60,7 +60,7 @@ beforeFirst("paralelepípedo", "le");
 
 Dadas duas strings – sentença e delimitador –, retorna uma string com os caracteres **anteriores à última ocorrência** do delimitador na sentença. Caso o delimitador não seja encontrado, retorna uma string vazia.
 
-```
+```javascript
 beforeLast("paralelepípedo", "le");
 
 // => "parale"
