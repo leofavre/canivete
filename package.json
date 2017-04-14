@@ -4,7 +4,7 @@
   "description": "Canivete Javascript toolkit",
   "scripts": {
     "test": "mkdir -p ./test/temp && rollup -c && karma start && rm -r ./test/temp",
-    "doc": "node ./docs/script/run"
+    "docs": "node ./docs/script/run"
   },
   "repository": {
     "type": "git",
