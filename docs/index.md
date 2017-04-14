@@ -23,11 +23,11 @@ Atrasa o encadeamento de uma Promise por um tempo determinado.
 #### Example
 
 ```javascript
-Promise.resolve(&#34;aguardando&#34;)
+Promise.resolve("aguardando")
 	.then(waitInPromise(500))
 	.then(console.log);
 
-// =&gt; &#34;aguardando&#34;
+// => "aguardando"
 // mostrado depois de 500 milisegundos.
 ```
 
@@ -45,9 +45,9 @@ Dadas duas strings – sentença e delimitador –, retorna uma string com os ca
 #### Example
 
 ```javascript
-afterFirst(&#34;paralelepípedo&#34;, &#34;le&#34;);
+afterFirst("paralelepípedo", "le");
 
-// =&gt; &#34;lepípedo&#34;
+// => "lepípedo"
 ```
 
 <a name="afterLast"></a>
@@ -62,9 +62,9 @@ Dadas duas strings – sentença e delimitador –, retorna uma string com os ca
 #### Example
 
 ```javascript
-afterLast(&#34;paralelepípedo&#34;, &#34;le&#34;);
+afterLast("paralelepípedo", "le");
 
-// =&gt; &#34;pípedo&#34;
+// => "pípedo"
 ```
 
 <a name="beforeFirst"></a>
@@ -79,9 +79,9 @@ Dadas duas strings – sentença e delimitador –, retorna uma string com os ca
 #### Example
 
 ```javascript
-beforeFirst(&#34;paralelepípedo&#34;, &#34;le&#34;);
+beforeFirst("paralelepípedo", "le");
 
-// =&gt; &#34;para&#34;
+// => "para"
 ```
 
 <a name="beforeLast"></a>
@@ -96,9 +96,9 @@ Dadas duas strings – sentença e delimitador –, retorna uma string com os ca
 #### Example
 
 ```javascript
-beforeLast(&#34;paralelepípedo&#34;, &#34;le&#34;);
+beforeLast("paralelepípedo", "le");
 
-// =&gt; &#34;parale&#34;
+// => "parale"
 ```
 
 
