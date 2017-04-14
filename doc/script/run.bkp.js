@@ -49,12 +49,14 @@ const readJsonFile = data => () => readJsonAsPromise(data);
 const parseJsonFile = json => json.docs ? json.docs.filter(doc => doc.name != undefined) : [];
 
 const exportDocsUsingTemplate = (path, template) => docs => {
-	docs = docs.map(prepareDoc);
 	let menu = prepareMenu(docs);
-	let page = joinDocsAndMenu(docs, menu);
+	return docs.forEach(exportDocUsingTemplate(path, template, menu));
+};
 
-	let data = JSON.stringify(page);
-	return execAsPromise(`ejs-cli ${template} > ${path}/index.md -O '${data}'`);
+const exportDocUsingTemplate = (path, template, menu) => doc => {
+	let content = prepareContent(doc, menu);
+	let name = getDocName(doc);
+	return execAsPromise(`ejs-cli ${template} > ${path}/${name}.md -O '${content}'`);
 };
 
 const prepareMenu = docs => {
@@ -74,16 +76,10 @@ const prepareSubmenu = (groupedDocs) => categoryName => {
 	};
 };
 
-const prepareDoc = doc => {
+const prepareContent = (doc, menu) => {
+	doc.menu = menu;
 	doc.description = removeNewslines(doc.description);
-	return doc;
-};
-
-const joinDocsAndMenu = (docs, menu) => {
-	let page = {};
-	page.body = docs;
-	page.menu = menu;
-	return page;
+	return JSON.stringify(doc);
 };
 
 const byCategoryName = doc => doc.tags.filter(tag => tag.title === "category")[0].value;
