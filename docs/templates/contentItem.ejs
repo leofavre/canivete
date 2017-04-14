@@ -2,7 +2,6 @@
 ### `<%=item.signature%>`
 
 <%=item.description%>
-
-```javascript
-<%-item.examples[0]%>
-```
+<%-include itemParameters.ejs-%>
+<%-include itemReturns.ejs-%>
+<%-include itemExamples.ejs-%>

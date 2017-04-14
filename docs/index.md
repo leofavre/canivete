@@ -16,12 +16,18 @@
 
 Atrasa o encadeamento de uma Promise por um tempo determinado.
 
+#### Parameters
+
+#### Returns
+
+#### Example
+
 ```javascript
-Promise.resolve("aguardando")
+Promise.resolve(&#34;aguardando&#34;)
 	.then(waitInPromise(500))
 	.then(console.log);
 
-// => "aguardando"
+// =&gt; &#34;aguardando&#34;
 // mostrado depois de 500 milisegundos.
 ```
 
@@ -32,10 +38,16 @@ Promise.resolve("aguardando")
 
 Dadas duas strings – sentença e delimitador –, retorna uma string com os caracteres **posteriores à primeira ocorrência** do delimitador na sentença. Caso o delimitador não seja encontrado, retorna uma string vazia.
 
-```javascript
-afterFirst("paralelepípedo", "le");
+#### Parameters
 
-// => "lepípedo"
+#### Returns
+
+#### Example
+
+```javascript
+afterFirst(&#34;paralelepípedo&#34;, &#34;le&#34;);
+
+// =&gt; &#34;lepípedo&#34;
 ```
 
 <a name="afterLast"></a>
@@ -43,10 +55,16 @@ afterFirst("paralelepípedo", "le");
 
 Dadas duas strings – sentença e delimitador –, retorna uma string com os caracteres **posteriores à última ocorrência** do delimitador na sentença. Caso o delimitador não seja encontrado, retorna uma string vazia.
 
-```javascript
-afterLast("paralelepípedo", "le");
+#### Parameters
 
-// => "pípedo"
+#### Returns
+
+#### Example
+
+```javascript
+afterLast(&#34;paralelepípedo&#34;, &#34;le&#34;);
+
+// =&gt; &#34;pípedo&#34;
 ```
 
 <a name="beforeFirst"></a>
@@ -54,10 +72,16 @@ afterLast("paralelepípedo", "le");
 
 Dadas duas strings – sentença e delimitador –, retorna uma string com os caracteres **anteriores à primeira ocorrência** do delimitador na sentença. Caso o delimitador não seja encontrado, retorna uma string vazia.
 
-```javascript
-beforeFirst("paralelepípedo", "le");
+#### Parameters
 
-// => "para"
+#### Returns
+
+#### Example
+
+```javascript
+beforeFirst(&#34;paralelepípedo&#34;, &#34;le&#34;);
+
+// =&gt; &#34;para&#34;
 ```
 
 <a name="beforeLast"></a>
@@ -65,10 +89,16 @@ beforeFirst("paralelepípedo", "le");
 
 Dadas duas strings – sentença e delimitador –, retorna uma string com os caracteres **anteriores à última ocorrência** do delimitador na sentença. Caso o delimitador não seja encontrado, retorna uma string vazia.
 
-```javascript
-beforeLast("paralelepípedo", "le");
+#### Parameters
 
-// => "parale"
+#### Returns
+
+#### Example
+
+```javascript
+beforeLast(&#34;paralelepípedo&#34;, &#34;le&#34;);
+
+// =&gt; &#34;parale&#34;
 ```
 
 
