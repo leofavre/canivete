@@ -52,7 +52,7 @@ const parseJsonFile = json => json.docs ? json.docs.filter(doc => doc.name != un
 
 const exportDocsUsingTemplate = (path, template) => docs => {
 	let data = JSON.stringify(processDocs(docs));
-	// console.log(data);
+	console.log(data);
 	return execAsPromise(`ejs-cli ${template} > ${path}/index.md -O '${data}'`);
 };
 
@@ -61,6 +61,7 @@ const formatDocs = docs => docs.map(formatDoc);
 const formatDoc = doc => {
 	doc.description = formatDescription(doc.description);
 	doc.href = formatHref(doc.name);
+	doc.paramsTable = formatTableParams(doc.params);
 	doc.signature = formatSignature(doc.name, doc.params);
 	return doc;
 };
@@ -69,20 +70,34 @@ const formatDescription = description => removeNewslines(description);
 
 const formatHref = name => camelCase(name);
 
+const formatTableParams = params => {
+	return params.map(formatTableParam).join("\n");
+};
+
+const formatTableParam = param => {
+	return "| " + formatParam(param) + " | " + formatType(param.type.names) + " | " + formatDescription(param.description) + " |";
+};
+
 const formatSignature = (name, params) => {
 	params = formatSignatureParams(params);
 	return `${name}(${params})`;
 };
 
 const formatSignatureParams = params => {
-	return params.map(formatSignatureParam).join(", ");
+	return params.map(formatParam).join(", ");
 };
 
-const formatSignatureParam = param => {
+const formatParam = param => {
 	let preParam = param.optional ? "[" : "";
 	let postParam = param.optional ? "]" : "";
 	let defaultValue = param.defaultvalue != null ? ` = ${param.defaultvalue}` : "";
 	return `${preParam}${param.name}${defaultValue}${postParam}`;
+};
+
+const formatType = typeNames => {
+	if (typeNames != null && typeNames.length > 0) {
+		return "{" + typeNames.join("|") + "}";
+	}
 };
 
 const groupDocsByCategoryName = docs => groupBy(docs, byCategoryName);

@@ -1,4 +1,7 @@
-<%if(item.params && item.params.length > 0){-%>
+<%if(item.paramsTable){-%>
 
 #### Parameters
+| name | type | description |
+|--|--|--|
+<%=item.paramsTable%>
 <%}-%>
