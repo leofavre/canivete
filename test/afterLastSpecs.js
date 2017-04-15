@@ -25,6 +25,12 @@ describe("afterLast", function() {
 		).toBe("arallelepiped");
 	});
 
+	it(`"Should find "👌" after the last "📋" in "😋📋👌".`, function() {
+		expect(
+			afterLast("😋📋👌", "📋")
+		).toBe("👌");
+	});
+
 	it(`"Should not find anything after the last "x" in "Parallelepiped".`, function() {
 		expect(
 			afterLast("Parallelepiped", "x")

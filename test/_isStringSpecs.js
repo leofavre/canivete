@@ -20,5 +20,6 @@ describe("_isString", function() {
 		expect(_isString("")).toBe(true);
 		expect(_isString("345")).toBe(true);
 		expect(_isString(new String("window"))).toBe(true);
+		expect(_isString(new String("😋📋👌"))).toBe(true);
 	});
 });

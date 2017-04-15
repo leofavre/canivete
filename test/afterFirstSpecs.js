@@ -31,6 +31,12 @@ describe("afterFirst", function() {
 		).toBe("");
 	});
 
+	it(`"Should find "👌" after the first "📋" in "😋📋👌".`, function() {
+		expect(
+			afterFirst("😋📋👌", "📋")
+		).toBe("👌");
+	});
+
 	it(`"Should return undefined if two strings are not passed as parameters.`, function() {
 		expect(
 			afterFirst()

@@ -25,6 +25,12 @@ describe("beforeFirst", function() {
 		).toBe("");
 	});
 
+	it(`"Should find "😋" before the first "📋" in "😋📋👌".`, function() {
+		expect(
+			beforeFirst("😋📋👌", "📋")
+		).toBe("😋");
+	});
+
 	it(`"Should not find anything before the first "x" in "Parallelepiped".`, function() {
 		expect(
 			beforeFirst("Parallelepiped", "x")

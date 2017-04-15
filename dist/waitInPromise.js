@@ -14,7 +14,7 @@ import _isNumber from "./internal/number/_isNumber";
  * 
  * @category Promise
  * @param  {number} delay Delay in milliseconds
- * @return {Promise} Resolved value from the previous step.
+ * @return {Promise} Resolved value from the previous step
  * @public
  *
  * @example
@@ -23,7 +23,7 @@ import _isNumber from "./internal/number/_isNumber";
  * 	.then(console.log);
  *
  * // => "waiting"
- * // shown after 500ms.
+ * // shown after 500ms
  */
 function waitInPromise(delay) {
 	return function(arg) {

@@ -7,13 +7,17 @@ describe("toAverage", function() {
 		).toBe(6);
 	});
 
-	it(`Should discard non-numeric.`, function() {
+	it(`Should not try to treat non-numeric values.`, function() {
 		expect(
 			[4, 8, undefined, "level42"].reduce(toAverage)
-		).toBe(6);
+		).toBeNaN();
 
 		expect(
 			[3, undefined, "level42"].reduce(toAverage)
-		).toBe(3);
+		).toBeNaN();
+
+		expect(
+			[undefined].reduce(toAverage)
+		).toBe(undefined);
 	});
 });

@@ -7,13 +7,17 @@ describe("toSum", function() {
 		).toBe(24);
 	});
 
-	it(`Should convert non-numeric values to zero.`, function() {
+	it(`Should not try to treat non-numeric values.`, function() {
 		expect(
 			[4, 8, 16, undefined, "level42"].reduce(toSum)
-		).toBe(28);
+		).toBe("NaNlevel42");
 
 		expect(
 			[undefined, "level42"].reduce(toSum)
-		).toBe(0);
+		).toBe("undefinedlevel42");
+
+		expect(
+			[undefined].reduce(toSum)
+		).toBe(undefined);
 	});
 });

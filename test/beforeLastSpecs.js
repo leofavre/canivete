@@ -25,6 +25,12 @@ describe("beforeLast", function() {
 		).toBe("");
 	});
 
+	it(`"Should find "😋" before the last "📋" in "😋📋👌".`, function() {
+		expect(
+			beforeLast("😋📋👌", "📋")
+		).toBe("😋");
+	});
+
 	it(`"Should not find anything before the last "x" in "Parallelepiped".`, function() {
 		expect(
 			beforeLast("Parallelepiped", "x")

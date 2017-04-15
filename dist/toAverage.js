@@ -1,33 +1,32 @@
-import _isNumber from "./internal/number/_isNumber";
-import _numericOnly from "./internal/number/_numericOnly";
-
 /**
  * Used as the parameter for `Array.prototype.reduce()`,
  * this function will return the average of all the
  * items in an array.
  *
- * Non-numeric parameters will be discarded.
+ * Note that non-numeric values passed to the function
+ * are not treated and can lead to unexpected results.
  *
  * @category Reduce
  * @param {number} prevNum
  * @param {number} nextNum
  * @param {number} index
  * @param {Array} arr
- * @returns {number} The average of the numbers in an array
+ * @returns {number} The average of the items in an array
+ * @public
  *
  * @example
  * [3, 5, 7, 9].reduce(toAverage);
+ * // (3 + 5 + 7 + 9) / 4
  * // => 6
  */
 const toAverage = (prevNum, nextNum, index, arr) => {
-	let isLastItem = (index === arr.length - 1);
-	let sumNumeric = (numA, numB) => _numericOnly(numA) + _numericOnly(numB);
+	let isLastIteration = (index === arr.length - 1);
 
-	if (!isLastItem) {
-		return sumNumeric(prevNum, nextNum);
+	if (!isLastIteration) {
+		return prevNum + nextNum;
 	}
 	else {
-		return sumNumeric(prevNum, nextNum) / arr.filter(_isNumber).length;
+		return (prevNum + nextNum) / arr.length;
 	}
 };
 
