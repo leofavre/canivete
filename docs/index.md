@@ -26,7 +26,7 @@ the `.then()` method, passing along the resolved
 value of the previous Promise step to the next.
 
 If a non-numeric parameter is passed, the Promise
-will resolve without delay, skipping the internal
+resolves without delay, skipping the internal
 `setTimeout()`.
 
 #### Parameters
@@ -52,7 +52,7 @@ Promise.resolve("waiting")
 ### `toAverage(prevNum, nextNum, index, arr)`
 
 Used as the parameter for `Array.prototype.reduce()`,
-this function will return the average of all the
+this function returns the average of all the
 items in an array.
 
 Note that non-numeric values passed to the function
@@ -79,7 +79,7 @@ are not treated and can lead to unexpected results.
 ### `toSum(prevNum, nextNum)`
 
 Used as the parameter for `Array.prototype.reduce()`,
-this function will return the sum of all the items
+this function returns the sum of all the items
 in an array.
 
 Note that non-numeric values passed to the function
