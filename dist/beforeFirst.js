@@ -12,7 +12,7 @@ import _sliceOnOccurrence from "./internal/string/_sliceOnOccurrence";
  *
  * @category String
  * @param  {string} str Base string
- * @param  {string} separator String to be found
+ * @param  {string} delimiter String to be found
  * @return {string}
  * @public
  *
@@ -21,6 +21,6 @@ import _sliceOnOccurrence from "./internal/string/_sliceOnOccurrence";
  *
  * // => "paral"
  */
-const beforeFirst = (str, separator) => _sliceOnOccurrence("before", "first", str, separator);
+const beforeFirst = (str, delimiter) => _sliceOnOccurrence("before", "first", str, delimiter);
 
 export default beforeFirst;

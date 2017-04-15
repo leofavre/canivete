@@ -12,7 +12,7 @@ import _sliceOnOccurrence from "./internal/string/_sliceOnOccurrence";
  *
  * @category String
  * @param  {string} str Base string
- * @param  {string} separator String to be found
+ * @param  {string} delimiter String to be found
  * @return {string}
  * @public
  *
@@ -21,6 +21,6 @@ import _sliceOnOccurrence from "./internal/string/_sliceOnOccurrence";
  *
  * // => "lepiped"
  */
-const afterFirst = (str, separator) => _sliceOnOccurrence("after", "first", str, separator);
+const afterFirst = (str, delimiter) => _sliceOnOccurrence("after", "first", str, delimiter);
 
 export default afterFirst;

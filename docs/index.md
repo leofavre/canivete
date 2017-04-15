@@ -12,7 +12,7 @@
 ## Promise
 
 <a name="waitInPromise"></a>
-### `waitInPromise([delay = 0])`
+### `waitInPromise(delay)`
 
 Delays the chaining of a Promise by a specified
 time in milliseconds.
@@ -22,10 +22,11 @@ the `.then()` method, passing along the resolved
 value of the previous Promise step to the next.
 
 If a non-numeric parameter is passed, the Promise
-will resolve without delay.
+will resolve without delay, skipping the internal
+`setTimeout()`.
 
 #### Parameters
-`[delay = 0]`*{number}*: Delay in milliseconds<br/>
+`delay`*{number}*: Delay in milliseconds<br/>
 
 #### Returns
 *{Promise}*: Resolved value from the previous step.<br/>
@@ -44,7 +45,7 @@ Promise.resolve("waiting")
 ## String
 
 <a name="afterFirst"></a>
-### `afterFirst(str, separator)`
+### `afterFirst(str, delimiter)`
 
 Given two strings, returns a new one formed
 by the characters **after the first
@@ -52,12 +53,12 @@ occurrence** of the second string in the first.
 
 Returns an empty string if nothing is found.
 
-Returns `undefined` the parameters passed to
+Returns `undefined` if the parameters passed to
 the function are not two strings.
 
 #### Parameters
 `str`*{string}*: Base string<br/>
-`separator`*{string}*: String to be found<br/>
+`delimiter`*{string}*: String to be found<br/>
 
 #### Returns
 *{string}*<br/>
@@ -71,7 +72,7 @@ afterFirst("parallelepiped", "le");
 ```
 
 <a name="afterLast"></a>
-### `afterLast(str, separator)`
+### `afterLast(str, delimiter)`
 
 Given two strings, returns a new one formed
 by the characters **after the last
@@ -79,12 +80,12 @@ occurrence** of the second string in the first.
 
 Returns an empty string if nothing is found.
 
-Returns `undefined` the parameters passed to
+Returns `undefined` if the parameters passed to
 the function are not two strings.
 
 #### Parameters
 `str`*{string}*: Base string<br/>
-`separator`*{string}*: String to be found<br/>
+`delimiter`*{string}*: String to be found<br/>
 
 #### Returns
 *{string}*<br/>
@@ -98,7 +99,7 @@ afterLast("parallelepiped", "le");
 ```
 
 <a name="beforeFirst"></a>
-### `beforeFirst(str, separator)`
+### `beforeFirst(str, delimiter)`
 
 Given two strings, returns a new one formed
 by the characters **before the first
@@ -106,12 +107,12 @@ occurrence** of the second string in the first.
 
 Returns an empty string if nothing is found.
 
-Returns `undefined` the parameters passed to
+Returns `undefined` if the parameters passed to
 the function are not two strings.
 
 #### Parameters
 `str`*{string}*: Base string<br/>
-`separator`*{string}*: String to be found<br/>
+`delimiter`*{string}*: String to be found<br/>
 
 #### Returns
 *{string}*<br/>
@@ -125,7 +126,7 @@ beforeFirst("parallelepiped", "le");
 ```
 
 <a name="beforeLast"></a>
-### `beforeLast(str, separator)`
+### `beforeLast(str, delimiter)`
 
 Given two strings, returns a new one formed
 by the characters **before the last
@@ -133,12 +134,12 @@ occurrence** of the second string in the first.
 
 Returns an empty string if nothing is found.
 
-Returns `undefined` the parameters passed to
+Returns `undefined` if the parameters passed to
 the function are not two strings.
 
 #### Parameters
 `str`*{string}*: Base string<br/>
-`separator`*{string}*: String to be found<br/>
+`delimiter`*{string}*: String to be found<br/>
 
 #### Returns
 *{string}*<br/>
