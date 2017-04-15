@@ -21,8 +21,8 @@ This function is curried so as to be used inside
 the `.then()` method, passing along the resolved
 value of the previous Promise step.
 
-If a non-numeric parameter is passed as delay,
-the Promise will resolve immediately.
+If a non-numeric parameter is passed, the Promise
+will resolve without delay.
 
 #### Parameters
 `[delay = 0]`*{number}*: Delay in milliseconds<br/>
@@ -38,7 +38,7 @@ Promise.resolve("waiting")
 	.then(console.log);
 
 // => "waiting"
-// shown afetr 500ms.
+// shown after 500ms.
 ```
 
 ## String
