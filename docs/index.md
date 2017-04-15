@@ -2,6 +2,7 @@
   * [waitInPromise](#waitInPromise)
 
 * **[Reduce](#reduce)**
+  * [toAverage](#toAverage)
   * [toSum](#toSum)
 
 * **[String](#string)**
@@ -46,6 +47,29 @@ Promise.resolve("waiting")
 ```
 
 ## Reduce
+
+<a name="toAverage"></a>
+### `toAverage(prevNum, nextNum)`
+
+Used as a parameter for `Array.prototype.reduce()`,
+this function will return the average of all the
+items in an array.
+
+Non-numeric parameters will be discarded.
+
+#### Parameters
+`prevNum`*{number}*<br/>
+`nextNum`*{number}*<br/>
+
+#### Returns
+*{number}*<br/>
+
+#### Example
+
+```javascript
+[3, 5, 7, 9].reduce(toAverage);
+// => 6
+```
 
 <a name="toSum"></a>
 ### `toSum(prevNum, nextNum)`
