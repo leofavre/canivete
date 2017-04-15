@@ -1,7 +1,7 @@
 import _numericOnly from "./internal/number/_numericOnly";
 
 /**
- * Used as a parameter for `Array.prototype.reduce()`,
+ * Used as the parameter for `Array.prototype.reduce()`,
  * this function will return the sum of all the items
  * in an array.
  *
