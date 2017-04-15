@@ -13,7 +13,7 @@ import _isNumber from "./internal/number/_isNumber";
  * 
  * @category Promise
  * @param  {number} [delay = 0] Delay in milliseconds
- * @return {Promise}
+ * @return {Promise} Resolved value from the previous step.
  * @public
  *
  * @example

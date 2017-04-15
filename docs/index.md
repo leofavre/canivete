@@ -28,7 +28,7 @@ will resolve without delay.
 `[delay = 0]`*{number}*: Delay in milliseconds<br/>
 
 #### Returns
-*{Promise}*<br/>
+*{Promise}*: Resolved value from the previous step.<br/>
 
 #### Example
 
