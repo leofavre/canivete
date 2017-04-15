@@ -33,7 +33,7 @@ will resolve without delay, skipping the internal
 `delay`*{number}*: Delay in milliseconds<br/>
 
 #### Returns
-*{Promise}*: Resolved value from the previous step.<br/>
+*{Promise}*: Resolved value from the previous step<br/>
 
 #### Example
 
@@ -43,7 +43,7 @@ Promise.resolve("waiting")
 	.then(console.log);
 
 // => "waiting"
-// shown after 500ms.
+// shown after 500ms
 ```
 
 ## Reduce
@@ -55,7 +55,8 @@ Used as the parameter for `Array.prototype.reduce()`,
 this function will return the average of all the
 items in an array.
 
-Non-numeric parameters will be discarded.
+Note that non-numeric values passed to the function
+are not treated and can lead to unexpected results.
 
 #### Parameters
 `prevNum`*{number}*<br/>
@@ -64,12 +65,13 @@ Non-numeric parameters will be discarded.
 `arr`*{Array}*<br/>
 
 #### Returns
-*{number}*: The average of the numbers in an array<br/>
+*{number}*: The average of the items in an array<br/>
 
 #### Example
 
 ```javascript
 [3, 5, 7, 9].reduce(toAverage);
+// (3 + 5 + 7 + 9) / 4
 // => 6
 ```
 
@@ -80,7 +82,8 @@ Used as the parameter for `Array.prototype.reduce()`,
 this function will return the sum of all the items
 in an array.
 
-Non-numeric parameters will be converted to zero;
+Note that non-numeric values passed to the function
+are not treated and can lead to unexpected results.
 
 #### Parameters
 `prevNum`*{number}*<br/>
