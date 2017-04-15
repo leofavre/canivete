@@ -1,4 +1,4 @@
-import _isNumber from "./internal/number/_isNumber";
+import _numericOnly from "./internal/number/_numericOnly";
 
 /**
  * Used as a parameter for `Array.prototype.reduce()`,
@@ -16,9 +16,6 @@ import _isNumber from "./internal/number/_isNumber";
  * [3, 5, 7, 9].reduce(toSum);
  * // => 24
  */
-const toSum = (prevNum, nextNum) => {
-	let numericOnly = arg => _isNumber(arg) ? arg : 0;
-	return numericOnly(prevNum) + numericOnly(nextNum);
-};
+const toSum = (prevNum, nextNum) => _numericOnly(prevNum) + _numericOnly(nextNum);
 
 export default toSum;
