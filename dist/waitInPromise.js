@@ -9,7 +9,7 @@ import _isNumber from "./internal/number/_isNumber";
  * value of the previous Promise step to the next.
  *
  * If a non-numeric parameter is passed, the Promise
- * will resolve without delay, skipping the internal
+ * will resolves delay, skipping the internal
  * `setTimeout()`.
  * 
  * @category Promise

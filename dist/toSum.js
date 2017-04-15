@@ -1,6 +1,6 @@
 /**
  * Used as the parameter for `Array.prototype.reduce()`,
- * this function will return the sum of all the items
+ * this function returns the sum of all the items
  * in an array.
  *
  * Note that non-numeric values passed to the function
