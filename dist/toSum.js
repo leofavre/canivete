@@ -8,6 +8,8 @@ import _numericOnly from "./internal/number/_numericOnly";
  * Non-numeric parameters will be converted to zero;
  *
  * @category Reduce
+ * @param {number} prevNum
+ * @param {number} nextNum
  * @returns {number} The sum of the numbers in an array
  *
  * @example

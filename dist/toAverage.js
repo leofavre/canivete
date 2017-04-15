@@ -9,6 +9,10 @@ import _numericOnly from "./internal/number/_numericOnly";
  * Non-numeric parameters will be discarded.
  *
  * @category Reduce
+ * @param {number} prevNum
+ * @param {number} nextNum
+ * @param {number} index
+ * @param {Array} arr
  * @returns {number} The average of the numbers in an array
  *
  * @example

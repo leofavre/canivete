@@ -88,7 +88,7 @@ const formatSignature = (name, params) => {
 };
 
 const formatSignatureParams = params => {
-	return params.map(formatParam).join(", ");
+	return (params != null) ? params.map(formatParam).join(", ") : "";
 };
 
 const formatParam = param => {
