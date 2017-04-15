@@ -1,23 +1,32 @@
+import _isNumber from "./internal/number/_isNumber";
+
 /**
- * Atrasa o encadeamento de uma Promise por um tempo
- * determinado.
+ * Delays the chaining of a Promise by a specified
+ * time, in milliseconds.
+ *
+ * This function is curried so as to be used inside
+ * the `.then()` method, passing along the resolved
+ * value of the previous Promise step.
+ *
+ * If a non-numeric parameter is passed, the Promise
+ * will resolve without delay.
  * 
  * @category Promise
- * @param  {number} [delay = 0] Atraso em milisegundos
+ * @param  {number} [delay = 0] Delay in milliseconds
  * @return {Promise}
  * @public
  *
  * @example
- * Promise.resolve("aguardando")
+ * Promise.resolve("waiting")
  * 	.then(waitInPromise(500))
  * 	.then(console.log);
  *
- * // => "aguardando"
- * // mostrado depois de 500 milisegundos.
+ * // => "waiting"
+ * // shown after 500ms.
  */
 function waitInPromise(delay = 0) {
 	return function(arg) {
-		if (delay > 0) {
+		if (_isNumber(delay) && delay > 0) {
 			return new Promise(resolve => {
 				setTimeout(() => resolve(arg), delay);
 			});

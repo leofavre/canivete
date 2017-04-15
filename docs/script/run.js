@@ -52,7 +52,7 @@ const parseJsonFile = json => json.docs ? json.docs.filter(doc => doc.name != un
 
 const exportDocsUsingTemplate = (path, template) => docs => {
 	let data = JSON.stringify(processDocs(docs));
-	console.log(data);
+	// console.log(data);
 	return execAsPromise(`ejs-cli ${template} > ${path}/index.md -O '${data}'`);
 };
 

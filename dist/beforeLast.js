@@ -1,14 +1,14 @@
 import _sliceOnOccurrence from "./internal/string/_sliceOnOccurrence";
 
 /**
- * Given two strings, returns a new string formed
- * by the characters **previous to the last
+ * Given two strings, returns a new one formed
+ * by the characters **before the last
  * occurrence** of the second string in the first.
  *
- * If nothing is not found, returns an empty string.
+ * Returns an empty string if nothing is found.
  *
- * Returns `undefined` if two strings are not
- * passed as parameters.
+ * Returns `undefined` the parameters passed to
+ * the function are not two strings.
  *
  * @category String
  * @param  {string} str Base string

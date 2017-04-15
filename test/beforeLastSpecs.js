@@ -1,19 +1,19 @@
 import beforeLast from "../dist/beforeLast";
 
 describe("beforeLast", function() {
-	it(`Should find "P" before the last "a" in "Parallelepiped".`, function() {
+	it(`Should find "Par" before the last "a" in "Parallelepiped".`, function() {
 		expect(
 			beforeLast("Parallelepiped", "a")
 		).toBe("Par");
 	});
 
-	it(`Should find "Parall" before the last "e" in "Parallelepiped".`, function() {
+	it(`Should find "Parallelepip" before the last "e" in "Parallelepiped".`, function() {
 		expect(
 			beforeLast("Parallelepiped", "e")
 		).toBe("Parallelepip");
 	});
 
-	it(`"Should find "Paral" before the last "le" in "Parallelepiped".`, function() {
+	it(`"Should find "Paralle" before the last "le" in "Parallelepiped".`, function() {
 		expect(
 			beforeLast("Parallelepiped", "le")
 		).toBe("Paralle");

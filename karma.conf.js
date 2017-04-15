@@ -13,5 +13,5 @@ module.exports = function(config) {
 		browsers: ["Firefox"],
 		singleRun: true,
 		concurrency: Infinity
-	})
-}
+	});
+};
