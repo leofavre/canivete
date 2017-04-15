@@ -1,6 +1,9 @@
 * **[Promise](#promise)**
   * [waitInPromise](#waitInPromise)
 
+* **[Reduce](#reduce)**
+  * [toSum](#toSum)
+
 * **[String](#string)**
   * [afterFirst](#afterFirst)
   * [afterLast](#afterLast)
@@ -40,6 +43,31 @@ Promise.resolve("waiting")
 
 // => "waiting"
 // shown after 500ms.
+```
+
+## Reduce
+
+<a name="toSum"></a>
+### `toSum(prevNum, nextNum)`
+
+Used as a parameter for `Array.prototype.reduce()`,
+this function will return the sum of all the items
+in an array.
+
+Non-numeric parameters will be converted to zero;
+
+#### Parameters
+`prevNum`*{number}*<br/>
+`nextNum`*{number}*<br/>
+
+#### Returns
+*{number}*<br/>
+
+#### Example
+
+```javascript
+[3, 5, 7, 9].reduce(toSum);
+// => 24
 ```
 
 ## String

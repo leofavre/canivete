@@ -72,7 +72,7 @@ const formatDescription = description => removeNewslines(description);
 const formatHref = name => camelCase(name);
 
 const formatTable = params => {
-	return params.map(formatTableLine);
+	return (params != null) ? params.map(formatTableLine) : undefined;
 };
 
 const formatTableLine = param => {
