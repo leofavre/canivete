@@ -12,7 +12,7 @@ import _isNumber from "./internal/number/_isNumber";
  * will resolve without delay.
  * 
  * @category Promise
- * @param  {number} [delay = 0] Delay in milliseconds
+ * @param  {number} delay Delay in milliseconds
  * @return {Promise} Resolved value from the previous step.
  * @public
  *
@@ -24,7 +24,7 @@ import _isNumber from "./internal/number/_isNumber";
  * // => "waiting"
  * // shown after 500ms.
  */
-function waitInPromise(delay = 0) {
+function waitInPromise(delay) {
 	return function(arg) {
 		if (_isNumber(delay) && delay > 0) {
 			return new Promise(resolve => {
