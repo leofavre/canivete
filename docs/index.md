@@ -49,20 +49,14 @@ Promise.resolve("waiting")
 ## Reduce
 
 <a name="toAverage"></a>
-### `toAverage(prevNum, nextNum, index, arr)`
+### `toAverage()`
 
-Used as the parameter for `Array.prototype.reduce()`,
-this function returns the average of all the
-items in an array.
+This function returns the average of the items
+in an array when used as the first parameter of
+`Array.prototype.reduce()`
 
-Note that non-numeric values passed to the function
-are not treated and can lead to unexpected results.
-
-#### Parameters
-`prevNum`*{number}*<br/>
-`nextNum`*{number}*<br/>
-`index`*{number}*<br/>
-`arr`*{Array}*<br/>
+Note that reducing arrays with non-numeric values
+using `toAverage` can lead to unexpected results.
 
 #### Returns
 *{number}*: The average of the items in an array<br/>
@@ -76,18 +70,14 @@ are not treated and can lead to unexpected results.
 ```
 
 <a name="toSum"></a>
-### `toSum(prevNum, nextNum)`
+### `toSum()`
 
-Used as the parameter for `Array.prototype.reduce()`,
-this function returns the sum of all the items
-in an array.
+This function returns the sum of the items in
+an array when used as the first parameter of
+`Array.prototype.reduce()`
 
-Note that non-numeric values passed to the function
-are not treated and can lead to unexpected results.
-
-#### Parameters
-`prevNum`*{number}*<br/>
-`nextNum`*{number}*<br/>
+Note that reducing arrays with non-numeric values
+using `toSum` can lead to unexpected results.
 
 #### Returns
 *{number}*: The sum of the numbers in an array<br/>
