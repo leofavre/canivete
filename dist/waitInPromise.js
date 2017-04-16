@@ -26,7 +26,7 @@ import _isNumber from "./internal/number/_isNumber";
  * // shown after 500ms
  */
 function waitInPromise(delay) {
-	return function(arg) {
+	return arg => {
 		if (_isNumber(delay) && delay > 0) {
 			return new Promise(resolve => {
 				setTimeout(() => resolve(arg), delay);

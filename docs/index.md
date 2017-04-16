@@ -51,12 +51,13 @@ Promise.resolve("waiting")
 <a name="toAverage"></a>
 ### `toAverage()`
 
-This function returns the average of the items
-in an array when used as the first parameter of
-`Array.prototype.reduce()`
+Returns the average of the items in an array.
+
+This function is curried so as to be used as the
+first parameter of `Array.prototype.reduce()`.
 
 Note that reducing arrays with non-numeric values
-using `toAverage` can lead to unexpected results.
+using `toAverage()` can lead to unexpected results.
 
 #### Returns
 *{number}*: The average of the items in an array<br/>
@@ -64,7 +65,7 @@ using `toAverage` can lead to unexpected results.
 #### Example
 
 ```javascript
-[3, 5, 7, 9].reduce(toAverage);
+[3, 5, 7, 9].reduce(toAverage());
 // (3 + 5 + 7 + 9) / 4
 // => 6
 ```
@@ -72,12 +73,13 @@ using `toAverage` can lead to unexpected results.
 <a name="toSum"></a>
 ### `toSum()`
 
-This function returns the sum of the items in
-an array when used as the first parameter of
-`Array.prototype.reduce()`
+Returns the sum of the items in an array.
+
+This function is curried so as to be used as the
+first parameter of `Array.prototype.reduce()`.
 
 Note that reducing arrays with non-numeric values
-using `toSum` can lead to unexpected results.
+using `toSum()` can lead to unexpected results.
 
 #### Returns
 *{number}*: The sum of the numbers in an array<br/>
@@ -85,7 +87,7 @@ using `toSum` can lead to unexpected results.
 #### Example
 
 ```javascript
-[3, 5, 7, 9].reduce(toSum);
+[3, 5, 7, 9].reduce(toSum());
 // => 24
 ```
 
