@@ -11,8 +11,8 @@ import _sliceOnOccurrence from "./internal/string/_sliceOnOccurrence";
  * to string, which can lead to unexpected results.
  *
  * @category String
- * @param  {string} str Base string
- * @param  {string} delimiter String to be found
+ * @param  {string} str The base string.
+ * @param  {string} delimiter The string to be found.
  * @return {string}
  * @public
  *

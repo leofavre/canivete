@@ -1,19 +1,17 @@
 /**
- * Returns the average of the items in an array.
- * 
- * This function is curried so as to be used as the
- * first parameter of `Array.prototype.reduce()`.
+ * When used as the first parameter of
+ * `Array.prototype.reduce()`, returns the average
+ * of the values in an array.
  *
  * Note that reducing arrays with non-numeric values
  * using `toAverage()` can lead to unexpected results.
  *
  * @category Reduce
- * @return {number} The average of the items in an array
+ * @return {number} The average of the values in an array.
  * @public
  *
  * @example
  * [3, 5, 7, 9].reduce(toAverage());
- * // (3 + 5 + 7 + 9) / 4
  * // => 6
  */
 const toAverage = () => (prevNum, nextNum, index, arr) => {

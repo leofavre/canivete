@@ -1,14 +1,13 @@
 /**
- * Returns the sum of the items in an array.
- * 
- * This function is curried so as to be used as the
- * first parameter of `Array.prototype.reduce()`.
+ * When used as the first parameter of
+ * `Array.prototype.reduce()`, returns the sum
+ * of the values in an array.
  *
  * Note that reducing arrays with non-numeric values
  * using `toSum()` can lead to unexpected results.
  *
  * @category Reduce
- * @return {number} The sum of the numbers in an array
+ * @return {number} The sum of the values in an array.
  * @public
  *
  * @example

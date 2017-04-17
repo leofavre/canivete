@@ -2,18 +2,17 @@ import toAverage from "./toAverage";
 import at from "../node_modules/lodash-es/at";
 
 /**
- * Given an array of objects, returns the one in which an
- * specified property has the closest value to the average.
- * 
- * This function is curried so as to be used as the
- * first parameter of `Array.prototype.reduce()`.
+ * When used as the first parameter of
+ * `Array.prototype.reduce()`, returns the object in
+ * which an specific property, passed as parameter, has
+ * the closest value to the average.
  *
- * Note that this function considers that all objects in
- * the array have the same set of properties.
+ * This function expects that the array being reduced to
+ * be formed by objects with the same set of properties.
  *
  * @category Reduce
- * @param {string} path The path to the property of an object
- * @return {object} The object in which an specified property has the closest value to the average
+ * @param {string} path The path to the property of an object.
+ * @return {object} The object in which an specific property has the closest value to the average.
  * @public
  *
  * @example

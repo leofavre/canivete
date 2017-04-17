@@ -1,11 +1,11 @@
 {
   "docs": [
     {
-      "comment": "/**\n * Given two strings, returns a new one formed\n * by the characters **after the first\n * occurrence** of the second string in the first.\n *\n * Returns an empty string if nothing is found.\n *\n * Note that non-string parameters will be converted\n * to string, which can lead to unexpected results.\n *\n * @category String\n * @param  {string} str Base string\n * @param  {string} delimiter String to be found\n * @return {string}\n * @public\n *\n * @example\n * afterFirst(\"parallelepiped\", \"le\");\n *\n * // => \"lepiped\"\n */",
+      "comment": "/**\n * Given two strings, returns a new one formed\n * by the characters **after the first\n * occurrence** of the second string in the first.\n *\n * Returns an empty string if nothing is found.\n *\n * Note that non-string parameters will be converted\n * to string, which can lead to unexpected results.\n *\n * @category String\n * @param  {string} str The base string.\n * @param  {string} delimiter The string to be found.\n * @return {string}\n * @public\n *\n * @example\n * afterFirst(\"parallelepiped\", \"le\");\n *\n * // => \"lepiped\"\n */",
       "meta": {
         "range": [
-          597,
-          682
+          607,
+          692
         ],
         "filename": "afterFirst.js",
         "lineno": 24,
@@ -32,7 +32,7 @@
               "string"
             ]
           },
-          "description": "Base string",
+          "description": "The base string.",
           "name": "str"
         },
         {
@@ -41,7 +41,7 @@
               "string"
             ]
           },
-          "description": "String to be found",
+          "description": "The string to be found.",
           "name": "delimiter"
         }
       ],
@@ -66,11 +66,11 @@
       "___s": true
     },
     {
-      "comment": "/**\n * Given two strings, returns a new one formed\n * by the characters **after the last\n * occurrence** of the second string in the first.\n *\n * Returns an empty string if nothing is found.\n *\n * Note that non-string parameters will be converted\n * to string, which can lead to unexpected results.\n *\n * @category String\n * @param  {string} str Base string\n * @param  {string} delimiter String to be found\n * @return {string}\n * @public\n *\n * @example\n * afterLast(\"parallelepiped\", \"le\");\n *\n * // => \"piped\"\n */",
+      "comment": "/**\n * Given two strings, returns a new one formed\n * by the characters **after the last\n * occurrence** of the second string in the first.\n *\n * Returns an empty string if nothing is found.\n *\n * Note that non-string parameters will be converted\n * to string, which can lead to unexpected results.\n *\n * @category String\n * @param  {string} str The base string.\n * @param  {string} delimiter The string to be found.\n * @return {string}\n * @public\n *\n * @example\n * afterLast(\"parallelepiped\", \"le\");\n *\n * // => \"piped\"\n */",
       "meta": {
         "range": [
-          593,
-          676
+          603,
+          686
         ],
         "filename": "afterLast.js",
         "lineno": 24,
@@ -97,7 +97,7 @@
               "string"
             ]
           },
-          "description": "Base string",
+          "description": "The base string.",
           "name": "str"
         },
         {
@@ -106,7 +106,7 @@
               "string"
             ]
           },
-          "description": "String to be found",
+          "description": "The string to be found.",
           "name": "delimiter"
         }
       ],
@@ -131,11 +131,11 @@
       "___s": true
     },
     {
-      "comment": "/**\n * Given two strings, returns a new one formed\n * by the characters **before the first\n * occurrence** of the second string in the first.\n *\n * Returns an empty string if nothing is found.\n *\n * Note that non-string parameters will be converted\n * to string, which can lead to unexpected results.\n *\n * @category String\n * @param  {string} str Base string\n * @param  {string} delimiter String to be found\n * @return {string}\n * @public\n *\n * @example\n * beforeFirst(\"parallelepiped\", \"le\");\n *\n * // => \"paral\"\n */",
+      "comment": "/**\n * Given two strings, returns a new one formed\n * by the characters **before the first\n * occurrence** of the second string in the first.\n *\n * Returns an empty string if nothing is found.\n *\n * Note that non-string parameters will be converted\n * to string, which can lead to unexpected results.\n *\n * @category String\n * @param  {string} str The base string.\n * @param  {string} delimiter The string to be found.\n * @return {string}\n * @public\n *\n * @example\n * beforeFirst(\"parallelepiped\", \"le\");\n *\n * // => \"paral\"\n */",
       "meta": {
         "range": [
-          597,
-          684
+          607,
+          694
         ],
         "filename": "beforeFirst.js",
         "lineno": 24,
@@ -162,7 +162,7 @@
               "string"
             ]
           },
-          "description": "Base string",
+          "description": "The base string.",
           "name": "str"
         },
         {
@@ -171,7 +171,7 @@
               "string"
             ]
           },
-          "description": "String to be found",
+          "description": "The string to be found.",
           "name": "delimiter"
         }
       ],
@@ -196,11 +196,11 @@
       "___s": true
     },
     {
-      "comment": "/**\n * Given two strings, returns a new one formed\n * by the characters **before the last\n * occurrence** of the second string in the first.\n *\n * Returns an empty string if nothing is found.\n *\n * Note that non-string parameters will be converted\n * to string, which can lead to unexpected results.\n *\n * @category String\n * @param  {string} str Base string\n * @param  {string} delimiter String to be found\n * @return {string}\n * @public\n *\n * @example\n * beforeLast(\"parallelepiped\", \"le\");\n *\n * // => \"paralle\"\n */",
+      "comment": "/**\n * Given two strings, returns a new one formed\n * by the characters **before the last\n * occurrence** of the second string in the first.\n *\n * Returns an empty string if nothing is found.\n *\n * Note that non-string parameters will be converted\n * to string, which can lead to unexpected results.\n *\n * @category String\n * @param  {string} str The base string.\n * @param  {string} delimiter The string to be found.\n * @return {string}\n * @public\n *\n * @example\n * beforeLast(\"parallelepiped\", \"le\");\n *\n * // => \"paralle\"\n */",
       "meta": {
         "range": [
-          597,
-          682
+          607,
+          692
         ],
         "filename": "beforeLast.js",
         "lineno": 24,
@@ -227,7 +227,7 @@
               "string"
             ]
           },
-          "description": "Base string",
+          "description": "The base string.",
           "name": "str"
         },
         {
@@ -236,7 +236,7 @@
               "string"
             ]
           },
-          "description": "String to be found",
+          "description": "The string to be found.",
           "name": "delimiter"
         }
       ],
@@ -261,14 +261,14 @@
       "___s": true
     },
     {
-      "comment": "/**\n * Returns the average of the items in an array.\n * \n * This function is curried so as to be used as the\n * first parameter of `Array.prototype.reduce()`.\n *\n * Note that reducing arrays with non-numeric values\n * using `toAverage()` can lead to unexpected results.\n *\n * @category Reduce\n * @return {number} The average of the items in an array\n * @public\n *\n * @example\n * [3, 5, 7, 9].reduce(toAverage());\n * // (3 + 5 + 7 + 9) / 4\n * // => 6\n */",
+      "comment": "/**\n * When used as the first parameter of\n * `Array.prototype.reduce()`, returns the average\n * of the items in an array.\n *\n * Note that reducing arrays with non-numeric values\n * using `toAverage()` can lead to unexpected results.\n *\n * @category Reduce\n * @return {number} The average of the values in an array.\n * @public\n *\n * @example\n * [3, 5, 7, 9].reduce(toAverage());\n * // => 6\n */",
       "meta": {
         "range": [
-          460,
-          677
+          400,
+          617
         ],
         "filename": "toAverage.js",
-        "lineno": 19,
+        "lineno": 17,
         "path": "/Users/leonardofavre/Dropbox (Pessoal)/Websites/websites/canivete/dist",
         "code": {
           "id": "astnode100000078",
@@ -279,7 +279,7 @@
           "": null
         }
       },
-      "description": "Returns the average of the items in an array.\n\nThis function is curried so as to be used as the\nfirst parameter of `Array.prototype.reduce()`.\n\nNote that reducing arrays with non-numeric values\nusing `toAverage()` can lead to unexpected results.",
+      "description": "When used as the first parameter of\n`Array.prototype.reduce()`, returns the average\nof the items in an array.\n\nNote that reducing arrays with non-numeric values\nusing `toAverage()` can lead to unexpected results.",
       "tags": [
         {
           "originalTitle": "category",
@@ -295,12 +295,12 @@
               "number"
             ]
           },
-          "description": "The average of the items in an array"
+          "description": "The average of the values in an array."
         }
       ],
       "access": "public",
       "examples": [
-        "[3, 5, 7, 9].reduce(toAverage());\n// (3 + 5 + 7 + 9) / 4\n// => 6"
+        "[3, 5, 7, 9].reduce(toAverage());\n// => 6"
       ],
       "name": "toAverage",
       "longname": "toAverage",
@@ -310,14 +310,14 @@
       "___s": true
     },
     {
-      "comment": "/**\n * Given an array of objects, returns the one in which an\n * specified property has the closest value to the average.\n * \n * This function is curried so as to be used as the\n * first parameter of `Array.prototype.reduce()`.\n *\n * Note that this function considers that all objects in\n * the array have the same set of properties.\n *\n * @category Reduce\n * @param {string} path The path to the property of an object\n * @return {object} The object in which an specified property has the closest value to the average\n * @public\n *\n * @example\n * var cities = [{\n * \tcity: \"Rio de Janeiro\",\n * \ttemperature: 96,\n * \tdemographics: {\n * \t\tpopulation: 6.32\n * \t}\n * }, {\n * \tcity: \"São Paulo\",\n * \ttemperature: 82.5,\n * \tdemographics: {\n * \t\tpopulation: 12.04\n * \t}\n * }, {\n * \tcity: \"Curitiba\",\n * \ttemperature: 70,\n * \tdemographics: {\n * \t\tpopulation: 1.752\n * \t}\n * }, {\n * \tcity: \"Florianópolis\",\n * \ttemperature: 86,\n * \tdemographics: {\n * \t\tpopulation: 0.249\n * \t}\n * }];\n *\n * // cities.reduce(toAverageProp(\"temperature\"));\n * // => { city: \"São Paulo\", [...] }\n *\n * // cities.reduce(toAverageProp(\"demographics.population\"));\n * // => { city: \"Rio de Janeiro\", [...] }\n */",
+      "comment": "/**\n * Given a property path\n * \n * This function is curried so as to be used as the\n * first parameter of `Array.prototype.reduce()`.\n *\n * Note that this function considers that all objects in\n * the array have the same set of properties.\n *\n * @category Reduce\n * @param {string} path The path to the property of an object\n * @return {object} The object in which an specified property has the closest value to the average\n * @public\n *\n * @example\n * var cities = [{\n * \tcity: \"Rio de Janeiro\",\n * \ttemperature: 96,\n * \tdemographics: {\n * \t\tpopulation: 6.32\n * \t}\n * }, {\n * \tcity: \"São Paulo\",\n * \ttemperature: 82.5,\n * \tdemographics: {\n * \t\tpopulation: 12.04\n * \t}\n * }, {\n * \tcity: \"Curitiba\",\n * \ttemperature: 70,\n * \tdemographics: {\n * \t\tpopulation: 1.752\n * \t}\n * }, {\n * \tcity: \"Florianópolis\",\n * \ttemperature: 86,\n * \tdemographics: {\n * \t\tpopulation: 0.249\n * \t}\n * }];\n *\n * // cities.reduce(toAverageProp(\"temperature\"));\n * // => { city: \"São Paulo\", [...] }\n *\n * // cities.reduce(toAverageProp(\"demographics.population\"));\n * // => { city: \"Rio de Janeiro\", [...] }\n */",
       "meta": {
         "range": [
-          1271,
-          1588
+          1178,
+          1495
         ],
         "filename": "toAverageProp.js",
-        "lineno": 52,
+        "lineno": 51,
         "path": "/Users/leonardofavre/Dropbox (Pessoal)/Websites/websites/canivete/dist",
         "code": {
           "id": "astnode100000126",
@@ -329,7 +329,7 @@
           "": null
         }
       },
-      "description": "Given an array of objects, returns the one in which an\nspecified property has the closest value to the average.\n\nThis function is curried so as to be used as the\nfirst parameter of `Array.prototype.reduce()`.\n\nNote that this function considers that all objects in\nthe array have the same set of properties.",
+      "description": "Given a property path\n\nThis function is curried so as to be used as the\nfirst parameter of `Array.prototype.reduce()`.\n\nNote that this function considers that all objects in\nthe array have the same set of properties.",
       "tags": [
         {
           "originalTitle": "category",
@@ -371,14 +371,14 @@
       "___s": true
     },
     {
-      "comment": "/**\n * Returns the first item in an array the has the\n * closest value to another number, specified as\n * parameter.\n * \n * This function is curried so as to be used as the\n * first parameter of `Array.prototype.reduce()`.\n *\n * Note that reducing arrays with non-numeric values\n * using `toClosest()` can lead to unexpected results.\n *\n * @category Reduce\n * @param {number} num The value to be compared with\n * @return {number} The item in an array that is closest to a number\n * @public\n *\n * @example\n * [3, 5, 7, 9].reduce(toClosest(6));\n * // => 5\n *\n * [3, 5, 7, 9].reduce(toClosest(-2));\n * // => 3\n */",
+      "comment": "/**\n * When used as the first parameter of\n * `Array.prototype.reduce()`, returns the first\n * item the has the closest value to the one\n * specified as a parameter.\n *\n * Note that reducing arrays with non-numeric values\n * using `toClosest()` can lead to unexpected results.\n *\n * @category Reduce\n * @param {number} num The value to be compared with.\n * @return {number} The value in an array which is the closest to the compared value.\n * @public\n *\n * @example\n * [3, 5, 7, 9].reduce(toClosest(6));\n * // => 5\n *\n * [3, 5, 7, 9].reduce(toClosest(-2));\n * // => 3\n */",
       "meta": {
         "range": [
-          617,
-          770
+          578,
+          731
         ],
         "filename": "toClosest.js",
-        "lineno": 24,
+        "lineno": 22,
         "path": "/Users/leonardofavre/Dropbox (Pessoal)/Websites/websites/canivete/dist",
         "code": {
           "id": "astnode100000199",
@@ -389,7 +389,7 @@
           "": null
         }
       },
-      "description": "Returns the first item in an array the has the\nclosest value to another number, specified as\nparameter.\n\nThis function is curried so as to be used as the\nfirst parameter of `Array.prototype.reduce()`.\n\nNote that reducing arrays with non-numeric values\nusing `toClosest()` can lead to unexpected results.",
+      "description": "When used as the first parameter of\n`Array.prototype.reduce()`, returns the first\nitem the has the closest value to the one\nspecified as a parameter.\n\nNote that reducing arrays with non-numeric values\nusing `toClosest()` can lead to unexpected results.",
       "tags": [
         {
           "originalTitle": "category",
@@ -405,7 +405,7 @@
               "number"
             ]
           },
-          "description": "The value to be compared with",
+          "description": "The value to be compared with.",
           "name": "num"
         }
       ],
@@ -416,7 +416,7 @@
               "number"
             ]
           },
-          "description": "The item in an array that is closest to a number"
+          "description": "The value in an array which is the closest to the compared value."
         }
       ],
       "access": "public",
@@ -431,14 +431,14 @@
       "___s": true
     },
     {
-      "comment": "/**\n * Returns the sum of the items in an array.\n * \n * This function is curried so as to be used as the\n * first parameter of `Array.prototype.reduce()`.\n *\n * Note that reducing arrays with non-numeric values\n * using `toSum()` can lead to unexpected results.\n *\n * @category Reduce\n * @return {number} The sum of the numbers in an array\n * @public\n *\n * @example\n * [3, 5, 7, 9].reduce(toSum());\n * // => 24\n */",
+      "comment": "/**\n * When used as the first parameter of\n * `Array.prototype.reduce()`, returns the sum\n * of the items in an array.\n *\n * Note that reducing arrays with non-numeric values\n * using `toSum()` can lead to unexpected results.\n *\n * @category Reduce\n * @return {number} The sum of the values in an array.\n * @public\n *\n * @example\n * [3, 5, 7, 9].reduce(toSum());\n * // => 24\n */",
       "meta": {
         "range": [
-          421,
-          474
+          385,
+          438
         ],
         "filename": "toSum.js",
-        "lineno": 18,
+        "lineno": 17,
         "path": "/Users/leonardofavre/Dropbox (Pessoal)/Websites/websites/canivete/dist",
         "code": {
           "id": "astnode100000359",
@@ -449,7 +449,7 @@
           "": null
         }
       },
-      "description": "Returns the sum of the items in an array.\n\nThis function is curried so as to be used as the\nfirst parameter of `Array.prototype.reduce()`.\n\nNote that reducing arrays with non-numeric values\nusing `toSum()` can lead to unexpected results.",
+      "description": "When used as the first parameter of\n`Array.prototype.reduce()`, returns the sum\nof the items in an array.\n\nNote that reducing arrays with non-numeric values\nusing `toSum()` can lead to unexpected results.",
       "tags": [
         {
           "originalTitle": "category",
@@ -465,7 +465,7 @@
               "number"
             ]
           },
-          "description": "The sum of the numbers in an array"
+          "description": "The sum of the values in an array."
         }
       ],
       "access": "public",

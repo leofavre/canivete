@@ -53,30 +53,27 @@ Promise.resolve("waiting")
 <a name="toAverage"></a>
 ### `toAverage()`
 
-Returns the average of the items in an array.
-
-This function is curried so as to be used as the
-first parameter of `Array.prototype.reduce()`.
+When used as the first parameter of
+`Array.prototype.reduce()`, returns the average
+of the items in an array.
 
 Note that reducing arrays with non-numeric values
 using `toAverage()` can lead to unexpected results.
 
 #### Returns
-*{number}*: The average of the items in an array<br/>
+*{number}*: The average of the values in an array.<br/>
 
 #### Example
 
 ```javascript
 [3, 5, 7, 9].reduce(toAverage());
-// (3 + 5 + 7 + 9) / 4
 // => 6
 ```
 
 <a name="toAverageProp"></a>
 ### `toAverageProp(path)`
 
-Given an array of objects, returns the one in which an
-specified property has the closest value to the average.
+Given a property path
 
 This function is curried so as to be used as the
 first parameter of `Array.prototype.reduce()`.
@@ -129,21 +126,19 @@ var cities = [{
 <a name="toClosest"></a>
 ### `toClosest(num)`
 
-Returns the first item in an array the has the
-closest value to another number, specified as
-parameter.
-
-This function is curried so as to be used as the
-first parameter of `Array.prototype.reduce()`.
+When used as the first parameter of
+`Array.prototype.reduce()`, returns the first
+item the has the closest value to the one
+specified as a parameter.
 
 Note that reducing arrays with non-numeric values
 using `toClosest()` can lead to unexpected results.
 
 #### Parameters
-`num`*{number}*: The value to be compared with<br/>
+`num`*{number}*: The value to be compared with.<br/>
 
 #### Returns
-*{number}*: The item in an array that is closest to a number<br/>
+*{number}*: The value in an array which is the closest to the compared value.<br/>
 
 #### Example
 
@@ -158,16 +153,15 @@ using `toClosest()` can lead to unexpected results.
 <a name="toSum"></a>
 ### `toSum()`
 
-Returns the sum of the items in an array.
-
-This function is curried so as to be used as the
-first parameter of `Array.prototype.reduce()`.
+When used as the first parameter of
+`Array.prototype.reduce()`, returns the sum
+of the items in an array.
 
 Note that reducing arrays with non-numeric values
 using `toSum()` can lead to unexpected results.
 
 #### Returns
-*{number}*: The sum of the numbers in an array<br/>
+*{number}*: The sum of the values in an array.<br/>
 
 #### Example
 
@@ -191,8 +185,8 @@ Note that non-string parameters will be converted
 to string, which can lead to unexpected results.
 
 #### Parameters
-`str`*{string}*: Base string<br/>
-`delimiter`*{string}*: String to be found<br/>
+`str`*{string}*: The base string.<br/>
+`delimiter`*{string}*: The string to be found.<br/>
 
 #### Returns
 *{string}*<br/>
@@ -218,8 +212,8 @@ Note that non-string parameters will be converted
 to string, which can lead to unexpected results.
 
 #### Parameters
-`str`*{string}*: Base string<br/>
-`delimiter`*{string}*: String to be found<br/>
+`str`*{string}*: The base string.<br/>
+`delimiter`*{string}*: The string to be found.<br/>
 
 #### Returns
 *{string}*<br/>
@@ -245,8 +239,8 @@ Note that non-string parameters will be converted
 to string, which can lead to unexpected results.
 
 #### Parameters
-`str`*{string}*: Base string<br/>
-`delimiter`*{string}*: String to be found<br/>
+`str`*{string}*: The base string.<br/>
+`delimiter`*{string}*: The string to be found.<br/>
 
 #### Returns
 *{string}*<br/>
@@ -272,8 +266,8 @@ Note that non-string parameters will be converted
 to string, which can lead to unexpected results.
 
 #### Parameters
-`str`*{string}*: Base string<br/>
-`delimiter`*{string}*: String to be found<br/>
+`str`*{string}*: The base string.<br/>
+`delimiter`*{string}*: The string to be found.<br/>
 
 #### Returns
 *{string}*<br/>

@@ -1,17 +1,18 @@
 /**
- * Returns the first item in an array the has the
- * closest value to another number, specified as
- * parameter.
- * 
- * This function is curried so as to be used as the
- * first parameter of `Array.prototype.reduce()`.
+ * When used as the first parameter of
+ * `Array.prototype.reduce()`, returns the closest
+ * value to the base value, specified as a parameter.
+ *
+ * If two or more values are as close to the base
+ * value as each other, the first that was found
+ * will prevail.
  *
  * Note that reducing arrays with non-numeric values
  * using `toClosest()` can lead to unexpected results.
  *
  * @category Reduce
- * @param {number} num The value to be compared with
- * @return {number} The item in an array that is closest to a number
+ * @param {number} num The base value.
+ * @return {number} The value in an array closest to the base value.
  * @public
  *
  * @example
