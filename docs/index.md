@@ -42,7 +42,7 @@ parameters are not a DOM element and a string.
 #### Parameters
 `domElement`*{HTMLElement}*: The DOM element.<br/>
 `eventName`*{String}*: The name of the event that will be listened for.<br/>
-`[hasAlreadyHappened = domElement =&gt; false]`*{function}*: The verification function.<br/>
+`[hasAlreadyHappened = domElement => false]`*{function}*: The verification function.<br/>
 
 #### Returns
 *{Promise}*: When fulfilled, returns the DOM element.<br/>
