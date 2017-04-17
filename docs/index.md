@@ -117,10 +117,10 @@ var cities = [{
 	}
 }];
 
-// cities.reduce(toAverageProp("temperature"));
+cities.reduce(toAverageProp("temperature"));
 // => { city: "São Paulo", [...] }
 
-// cities.reduce(toAverageProp("demographics.population"));
+cities.reduce(toAverageProp("demographics.population"));
 // => { city: "Rio de Janeiro", [...] }
 ```
 
@@ -200,10 +200,10 @@ var cities = [{
 	}
 }];
 
-// cities.reduce(toClosestProp("temperature", 75));
+cities.reduce(toClosestProp("temperature", 75));
 // => { city: "Curitiba", [...] }
 
-// cities.reduce(toClosestProp("demographics.population", 5));
+cities.reduce(toClosestProp("demographics.population", 5));
 // => { city: "Rio de Janeiro", [...] }
 ```
 
@@ -252,10 +252,10 @@ var cities = [{
 	}
 }];
 
-// cities.reduce(toLargestProp("temperature"));
+cities.reduce(toLargestProp("temperature"));
 // => { city: "Rio de Janeiro", [...] }
 
-// cities.reduce(toLargestProp("demographics.population"));
+cities.reduce(toLargestProp("demographics.population"));
 // => { city: "São Paulo", [...] }
 ```
 
@@ -304,10 +304,10 @@ var cities = [{
 	}
 }];
 
-// cities.reduce(toSmallestProp("temperature"));
+cities.reduce(toSmallestProp("temperature"));
 // => { city: "Curitiba", [...] }
 
-// cities.reduce(toSmallestProp("demographics.population"));
+cities.reduce(toSmallestProp("demographics.population"));
 // => { city: "Florianópolis", [...] }
 ```
 
@@ -355,7 +355,6 @@ to string, which can lead to unexpected results.
 
 ```javascript
 afterFirst("parallelepiped", "le");
-
 // => "lepiped"
 ```
 
@@ -382,7 +381,6 @@ to string, which can lead to unexpected results.
 
 ```javascript
 afterLast("parallelepiped", "le");
-
 // => "piped"
 ```
 
@@ -409,7 +407,6 @@ to string, which can lead to unexpected results.
 
 ```javascript
 beforeFirst("parallelepiped", "le");
-
 // => "paral"
 ```
 
@@ -436,7 +433,6 @@ to string, which can lead to unexpected results.
 
 ```javascript
 beforeLast("parallelepiped", "le");
-
 // => "paralle"
 ```
 
