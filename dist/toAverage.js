@@ -6,7 +6,7 @@
  * using `toAverage()` can lead to unexpected results.
  *
  * @category Reduce
- * @return {number} The average of the values in an array.
+ * @return {Number} The average of the values in an array.
  * @public
  *
  * @example

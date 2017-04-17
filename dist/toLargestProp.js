@@ -12,8 +12,8 @@ import at from "../node_modules/lodash-es/at";
  * formed by objects with the same set of properties.
  *
  * @category Reduce
- * @param {string} path The path to the property of an object.
- * @return {object} The object in which a specific property has the largest value.
+ * @param {String} path The path to the property of an object.
+ * @return {Object} The object in which a specific property has the largest value.
  * @public
  *
  * @example

@@ -13,8 +13,8 @@ import _isNumber from "./internal/number/_isNumber";
  * `setTimeout()`.
  * 
  * @category Promise
- * @param  {number} delay The delay in milliseconds.
- * @return {Promise} The resolved value from the previous steps of the Promise.
+ * @param  {Number} delay The delay in milliseconds.
+ * @return {Promise} When fullfiled, returns the resolved value from the previous step.
  * @public
  *
  * @example
