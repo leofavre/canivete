@@ -44,6 +44,9 @@ import at from "../node_modules/lodash-es/at";
  * 	}
  * }];
  *
+ * // average temperature: 83.625
+ * // average population: 5.09025
+ *
  * cities.reduce(toAverageProp("temperature"));
  * // => { city: "São Paulo", [...] }
  *
