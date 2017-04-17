@@ -38,4 +38,27 @@ describe("toSmallestProp", function() {
 			mockup.reduce(toSmallestProp("demographics.population"))
 		).toBe(mockup[3]); // Florianópolis
 	});
+
+	var test = [{
+		n: "a",
+		p: 2
+	}, {
+		n: "b",
+		p: 8
+	}, {
+		n: "c",
+		p: 6
+	}, {
+		n: "d",
+		p: 2
+	}, {
+		n: "e",
+		p: 8
+	}];
+
+	it(`Should return the first result when two or more are found.`, function() {
+		expect(
+			test.reduce(toSmallestProp("p"))
+		).toBe(test[0]);
+	});
 });

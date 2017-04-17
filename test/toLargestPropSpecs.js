@@ -38,4 +38,27 @@ describe("toLargestProp", function() {
 			mockup.reduce(toLargestProp("demographics.population"))
 		).toBe(mockup[1]); // São Paulo
 	});
+
+	var test = [{
+		n: "a",
+		p: 2
+	}, {
+		n: "b",
+		p: 8
+	}, {
+		n: "c",
+		p: 6
+	}, {
+		n: "d",
+		p: 2
+	}, {
+		n: "e",
+		p: 8
+	}];
+
+	it(`Should return the first result when two or more are found.`, function() {
+		expect(
+			test.reduce(toLargestProp("p"))
+		).toBe(test[1]);
+	});
 });

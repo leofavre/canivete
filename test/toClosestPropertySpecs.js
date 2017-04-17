@@ -38,4 +38,27 @@ describe("toClosestProp", function() {
 			mockup.reduce(toClosestProp("demographics.population", 5))
 		).toBe(mockup[0]); // Rio de Janeiro
 	});
+
+	var test = [{
+		n: "a",
+		p: 2
+	}, {
+		n: "b",
+		p: 4
+	}, {
+		n: "c",
+		p: 6
+	}, {
+		n: "d",
+		p: 2
+	}, {
+		n: "e",
+		p: 4
+	}];
+
+	it(`Should return the first result when two or more are found.`, function() {
+		expect(
+			test.reduce(toClosestProp("p", 3))
+		).toBe(test[0]);
+	});
 });

@@ -79,6 +79,9 @@ When used with `Array.prototype.reduce()`, returns
 the object in an array in which a specific property,
 passed as parameter, has the closest value to the average.
 
+If two or more results are found, the first one
+is returned.
+
 Note that this function expects the reduced array to be
 formed by objects with the same set of properties.
 
@@ -130,9 +133,8 @@ cities.reduce(toAverageProp("demographics.population"));
 When used with `Array.prototype.reduce()`, returns
 the closest value to the one passed as parameter.
 
-If two or more values are as close to the base
-value as each other, the first one found will
-prevail.
+If two or more results are found, the first one
+is returned.
 
 Note that reducing arrays with non-numeric values
 using `toClosest()` can lead to unexpected results.
@@ -160,6 +162,9 @@ When used with `Array.prototype.reduce()`, returns
 the object in an array in which a specific property,
 passed as parameter, has the closest value to another,
 also passed as parameter.
+
+If two or more results are found, the first one
+is returned.
 
 Note that this function expects the reduced array to be
 formed by objects with the same set of properties.
@@ -214,6 +219,9 @@ When used with `Array.prototype.reduce()`, returns
 the object in an array in which a specific property
 has the largest property.
 
+If two or more results are found, the first one
+is returned.
+
 Note that this function expects the reduced array to be
 formed by objects with the same set of properties.
 
@@ -265,6 +273,9 @@ cities.reduce(toLargestProp("demographics.population"));
 When used with `Array.prototype.reduce()`, returns
 the object in an array in which a specific property
 has the smallest property.
+
+If two or more results are found, the first one
+is returned.
 
 Note that this function expects the reduced array to be
 formed by objects with the same set of properties.

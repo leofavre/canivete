@@ -2,9 +2,8 @@
  * When used with `Array.prototype.reduce()`, returns
  * the closest value to the one passed as parameter.
  *
- * If two or more values are as close to the base
- * value as each other, the first one found will
- * prevail.
+ * If two or more results are found, the first one
+ * is returned.
  *
  * Note that reducing arrays with non-numeric values
  * using `toClosest()` can lead to unexpected results.

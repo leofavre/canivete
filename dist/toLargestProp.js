@@ -5,6 +5,9 @@ import at from "../node_modules/lodash-es/at";
  * the object in an array in which a specific property
  * has the largest property.
  *
+ * If two or more results are found, the first one
+ * is returned.
+ *
  * Note that this function expects the reduced array to be
  * formed by objects with the same set of properties.
  *
