@@ -1,21 +1,27 @@
+import _isString from "./internal/string/_isString";
+import isElement from "../node_modules/lodash-es/isElement";
+
 /**
- * Treats a DOM Event as a Promise.
+ * Treats a DOM event as a promise.
  * 
- * This functions takes as parameters: a DOM Element,
+ * This functions takes as parameters: a DOM element,
  * the name of the event that will be listened for
  * and a function that verifies if the event has already
- * happened, which, in turn, receives the DOM Element
+ * happened, which, in turn, receives the DOM element
  * as parameter.
  *
- * Like all Promises in Javascript, this function will
+ * Like all promises in Javascript, this function will
  * only fulfill once, either when the verification function
  * returns true or when the event occurs for the first time.
  *
+ * Note that the function throws an error is the first two
+ * parameters are not a DOM element and a string.
+ *
  * @category Promise
- * @param  {HTMLElement} domElement The DOM Element.
+ * @param  {HTMLElement} domElement The DOM element.
  * @param  {String} eventName The name of the event that will be listened for.
  * @param  {Function} [hasAlreadyHappened = domElement => false] The verification function.
- * @return {Promise} When fulfilled, returns the DOM Element.
+ * @return {Promise} When fulfilled, returns the DOM element.
  *
  * @example
  * var checkbox = document.createElement("input");
@@ -29,6 +35,10 @@
  * // shown as soon as the checkbox is clicked for the first time
  */
 const eventAsPromise = (domElement, eventName, hasAlreadyHappened = domElement => false) => {
+	if (!isElement(domElement) || !_isString(eventName)) {
+		throw new Error("A DOM element and a string are expected as parameters.");
+	}
+
 	return new Promise(resolve => {
 		const dealWithEvent = evt => {
 			domElement.removeEventListener(eventName, dealWithEvent, true);

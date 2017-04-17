@@ -1,15 +1,15 @@
 import _isNumber from "./internal/number/_isNumber";
 
 /**
- * Delays the chaining of a Promise by a specified
+ * Delays the chaining of a promise by a specified
  * time in milliseconds.
  *
  * This function is curried so as to be used inside
  * the `.then()` method, passing along the resolved
- * value of the previous Promise step to the next.
+ * value of the previous promise step to the next.
  *
  * Note that if a non-numeric parameter is passed,
- * the Promise resolves without delay, skipping the
+ * the promise resolves without delay, skipping the
  * internal `setTimeout()`.
  * 
  * @category Promise
