@@ -261,11 +261,11 @@
       "___s": true
     },
     {
-      "comment": "/**\n * When used as the first parameter of\n * `Array.prototype.reduce()`, returns the average\n * of the items in an array.\n *\n * Note that reducing arrays with non-numeric values\n * using `toAverage()` can lead to unexpected results.\n *\n * @category Reduce\n * @return {number} The average of the values in an array.\n * @public\n *\n * @example\n * [3, 5, 7, 9].reduce(toAverage());\n * // => 6\n */",
+      "comment": "/**\n * When used as the first parameter of\n * `Array.prototype.reduce()`, returns the average\n * of the values in an array.\n *\n * Note that reducing arrays with non-numeric values\n * using `toAverage()` can lead to unexpected results.\n *\n * @category Reduce\n * @return {number} The average of the values in an array.\n * @public\n *\n * @example\n * [3, 5, 7, 9].reduce(toAverage());\n * // => 6\n */",
       "meta": {
         "range": [
-          400,
-          617
+          401,
+          618
         ],
         "filename": "toAverage.js",
         "lineno": 17,
@@ -279,7 +279,7 @@
           "": null
         }
       },
-      "description": "When used as the first parameter of\n`Array.prototype.reduce()`, returns the average\nof the items in an array.\n\nNote that reducing arrays with non-numeric values\nusing `toAverage()` can lead to unexpected results.",
+      "description": "When used as the first parameter of\n`Array.prototype.reduce()`, returns the average\nof the values in an array.\n\nNote that reducing arrays with non-numeric values\nusing `toAverage()` can lead to unexpected results.",
       "tags": [
         {
           "originalTitle": "category",
@@ -310,11 +310,11 @@
       "___s": true
     },
     {
-      "comment": "/**\n * Given a property path\n * \n * This function is curried so as to be used as the\n * first parameter of `Array.prototype.reduce()`.\n *\n * Note that this function considers that all objects in\n * the array have the same set of properties.\n *\n * @category Reduce\n * @param {string} path The path to the property of an object\n * @return {object} The object in which an specified property has the closest value to the average\n * @public\n *\n * @example\n * var cities = [{\n * \tcity: \"Rio de Janeiro\",\n * \ttemperature: 96,\n * \tdemographics: {\n * \t\tpopulation: 6.32\n * \t}\n * }, {\n * \tcity: \"São Paulo\",\n * \ttemperature: 82.5,\n * \tdemographics: {\n * \t\tpopulation: 12.04\n * \t}\n * }, {\n * \tcity: \"Curitiba\",\n * \ttemperature: 70,\n * \tdemographics: {\n * \t\tpopulation: 1.752\n * \t}\n * }, {\n * \tcity: \"Florianópolis\",\n * \ttemperature: 86,\n * \tdemographics: {\n * \t\tpopulation: 0.249\n * \t}\n * }];\n *\n * // cities.reduce(toAverageProp(\"temperature\"));\n * // => { city: \"São Paulo\", [...] }\n *\n * // cities.reduce(toAverageProp(\"demographics.population\"));\n * // => { city: \"Rio de Janeiro\", [...] }\n */",
+      "comment": "/**\n * When used as the first parameter of\n * `Array.prototype.reduce()`, returns the object in\n * which an specific property, passed as parameter, has\n * the closest value to the average.\n *\n * This function expects that the array being reduced to\n * be formed by objects with the same set of properties.\n *\n * @category Reduce\n * @param {string} path The path to the property of an object.\n * @return {object} The object in which an specific property has the closest value to the average.\n * @public\n *\n * @example\n * var cities = [{\n * \tcity: \"Rio de Janeiro\",\n * \ttemperature: 96,\n * \tdemographics: {\n * \t\tpopulation: 6.32\n * \t}\n * }, {\n * \tcity: \"São Paulo\",\n * \ttemperature: 82.5,\n * \tdemographics: {\n * \t\tpopulation: 12.04\n * \t}\n * }, {\n * \tcity: \"Curitiba\",\n * \ttemperature: 70,\n * \tdemographics: {\n * \t\tpopulation: 1.752\n * \t}\n * }, {\n * \tcity: \"Florianópolis\",\n * \ttemperature: 86,\n * \tdemographics: {\n * \t\tpopulation: 0.249\n * \t}\n * }];\n *\n * // cities.reduce(toAverageProp(\"temperature\"));\n * // => { city: \"São Paulo\", [...] }\n *\n * // cities.reduce(toAverageProp(\"demographics.population\"));\n * // => { city: \"Rio de Janeiro\", [...] }\n */",
       "meta": {
         "range": [
-          1178,
-          1495
+          1244,
+          1561
         ],
         "filename": "toAverageProp.js",
         "lineno": 51,
@@ -329,7 +329,7 @@
           "": null
         }
       },
-      "description": "Given a property path\n\nThis function is curried so as to be used as the\nfirst parameter of `Array.prototype.reduce()`.\n\nNote that this function considers that all objects in\nthe array have the same set of properties.",
+      "description": "When used as the first parameter of\n`Array.prototype.reduce()`, returns the object in\nwhich an specific property, passed as parameter, has\nthe closest value to the average.\n\nThis function expects that the array being reduced to\nbe formed by objects with the same set of properties.",
       "tags": [
         {
           "originalTitle": "category",
@@ -345,7 +345,7 @@
               "string"
             ]
           },
-          "description": "The path to the property of an object",
+          "description": "The path to the property of an object.",
           "name": "path"
         }
       ],
@@ -356,7 +356,7 @@
               "object"
             ]
           },
-          "description": "The object in which an specified property has the closest value to the average"
+          "description": "The object in which an specific property has the closest value to the average."
         }
       ],
       "access": "public",
@@ -371,14 +371,14 @@
       "___s": true
     },
     {
-      "comment": "/**\n * When used as the first parameter of\n * `Array.prototype.reduce()`, returns the first\n * item the has the closest value to the one\n * specified as a parameter.\n *\n * Note that reducing arrays with non-numeric values\n * using `toClosest()` can lead to unexpected results.\n *\n * @category Reduce\n * @param {number} num The value to be compared with.\n * @return {number} The value in an array which is the closest to the compared value.\n * @public\n *\n * @example\n * [3, 5, 7, 9].reduce(toClosest(6));\n * // => 5\n *\n * [3, 5, 7, 9].reduce(toClosest(-2));\n * // => 3\n */",
+      "comment": "/**\n * When used as the first parameter of\n * `Array.prototype.reduce()`, returns the closest\n * value to the base value, specified as a parameter.\n *\n * If two or more values are as close to the base\n * value as each other, the first that was found\n * will prevail.\n *\n * Note that reducing arrays with non-numeric values\n * using `toClosest()` can lead to unexpected results.\n *\n * @category Reduce\n * @param {number} num The base value.\n * @return {number} The value in an array closest to the base value.\n * @public\n *\n * @example\n * [3, 5, 7, 9].reduce(toClosest(6));\n * // => 5\n *\n * [3, 5, 7, 9].reduce(toClosest(-2));\n * // => 3\n */",
       "meta": {
         "range": [
-          578,
-          731
+          647,
+          800
         ],
         "filename": "toClosest.js",
-        "lineno": 22,
+        "lineno": 25,
         "path": "/Users/leonardofavre/Dropbox (Pessoal)/Websites/websites/canivete/dist",
         "code": {
           "id": "astnode100000199",
@@ -389,7 +389,7 @@
           "": null
         }
       },
-      "description": "When used as the first parameter of\n`Array.prototype.reduce()`, returns the first\nitem the has the closest value to the one\nspecified as a parameter.\n\nNote that reducing arrays with non-numeric values\nusing `toClosest()` can lead to unexpected results.",
+      "description": "When used as the first parameter of\n`Array.prototype.reduce()`, returns the closest\nvalue to the base value, specified as a parameter.\n\nIf two or more values are as close to the base\nvalue as each other, the first that was found\nwill prevail.\n\nNote that reducing arrays with non-numeric values\nusing `toClosest()` can lead to unexpected results.",
       "tags": [
         {
           "originalTitle": "category",
@@ -405,7 +405,7 @@
               "number"
             ]
           },
-          "description": "The value to be compared with.",
+          "description": "The base value.",
           "name": "num"
         }
       ],
@@ -416,7 +416,7 @@
               "number"
             ]
           },
-          "description": "The value in an array which is the closest to the compared value."
+          "description": "The value in an array closest to the base value."
         }
       ],
       "access": "public",
@@ -431,11 +431,11 @@
       "___s": true
     },
     {
-      "comment": "/**\n * When used as the first parameter of\n * `Array.prototype.reduce()`, returns the sum\n * of the items in an array.\n *\n * Note that reducing arrays with non-numeric values\n * using `toSum()` can lead to unexpected results.\n *\n * @category Reduce\n * @return {number} The sum of the values in an array.\n * @public\n *\n * @example\n * [3, 5, 7, 9].reduce(toSum());\n * // => 24\n */",
+      "comment": "/**\n * When used as the first parameter of\n * `Array.prototype.reduce()`, returns the sum\n * of the values in an array.\n *\n * Note that reducing arrays with non-numeric values\n * using `toSum()` can lead to unexpected results.\n *\n * @category Reduce\n * @return {number} The sum of the values in an array.\n * @public\n *\n * @example\n * [3, 5, 7, 9].reduce(toSum());\n * // => 24\n */",
       "meta": {
         "range": [
-          385,
-          438
+          386,
+          439
         ],
         "filename": "toSum.js",
         "lineno": 17,
@@ -449,7 +449,7 @@
           "": null
         }
       },
-      "description": "When used as the first parameter of\n`Array.prototype.reduce()`, returns the sum\nof the items in an array.\n\nNote that reducing arrays with non-numeric values\nusing `toSum()` can lead to unexpected results.",
+      "description": "When used as the first parameter of\n`Array.prototype.reduce()`, returns the sum\nof the values in an array.\n\nNote that reducing arrays with non-numeric values\nusing `toSum()` can lead to unexpected results.",
       "tags": [
         {
           "originalTitle": "category",
@@ -480,11 +480,11 @@
       "___s": true
     },
     {
-      "comment": "/**\n * Delays the chaining of a Promise by a specified\n * time in milliseconds.\n *\n * This function is curried so as to be used inside\n * the `.then()` method, passing along the resolved\n * value of the previous Promise step to the next.\n *\n * If a non-numeric parameter is passed, the Promise\n * resolves without delay, skipping the internal\n * `setTimeout()`.\n * \n * @category Promise\n * @param  {number} delay Delay in milliseconds\n * @return {Promise} Resolved value from the previous step\n * @public\n *\n * @example\n * Promise.resolve(\"waiting\")\n * \t.then(waitInPromise(500))\n * \t.then(console.log);\n *\n * // => \"waiting\"\n * // shown after 500ms\n */",
+      "comment": "/**\n * Delays the chaining of a Promise by a specified\n * time in milliseconds.\n *\n * This function is curried so as to be used inside\n * the `.then()` method, passing along the resolved\n * value of the previous Promise step to the next.\n *\n * If a non-numeric parameter is passed, the Promise\n * resolves without delay, skipping the internal\n * `setTimeout()`.\n * \n * @category Promise\n * @param  {number} delay The delay in milliseconds.\n * @return {Promise} The resolved value from the previous steps of the Promise.\n * @public\n *\n * @example\n * Promise.resolve(\"waiting\")\n * \t.then(waitInPromise(500))\n * \t.then(console.log);\n *\n * // => \"waiting\"\n * // shown after 500ms\n */",
       "meta": {
         "range": [
-          708,
-          921
+          734,
+          947
         ],
         "filename": "waitInPromise.js",
         "lineno": 28,
@@ -517,7 +517,7 @@
               "number"
             ]
           },
-          "description": "Delay in milliseconds",
+          "description": "The delay in milliseconds.",
           "name": "delay"
         }
       ],
@@ -528,7 +528,7 @@
               "Promise"
             ]
           },
-          "description": "Resolved value from the previous step"
+          "description": "The resolved value from the previous steps of the Promise."
         }
       ],
       "access": "public",

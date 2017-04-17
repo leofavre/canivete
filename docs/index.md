@@ -32,10 +32,10 @@ resolves without delay, skipping the internal
 `setTimeout()`.
 
 #### Parameters
-`delay`*{number}*: Delay in milliseconds<br/>
+`delay`*{number}*: The delay in milliseconds.<br/>
 
 #### Returns
-*{Promise}*: Resolved value from the previous step<br/>
+*{Promise}*: The resolved value from the previous steps of the Promise.<br/>
 
 #### Example
 
@@ -55,7 +55,7 @@ Promise.resolve("waiting")
 
 When used as the first parameter of
 `Array.prototype.reduce()`, returns the average
-of the items in an array.
+of the values in an array.
 
 Note that reducing arrays with non-numeric values
 using `toAverage()` can lead to unexpected results.
@@ -73,19 +73,19 @@ using `toAverage()` can lead to unexpected results.
 <a name="toAverageProp"></a>
 ### `toAverageProp(path)`
 
-Given a property path
+When used as the first parameter of
+`Array.prototype.reduce()`, returns the object in
+which an specific property, passed as parameter, has
+the closest value to the average.
 
-This function is curried so as to be used as the
-first parameter of `Array.prototype.reduce()`.
-
-Note that this function considers that all objects in
-the array have the same set of properties.
+This function expects that the array being reduced to
+be formed by objects with the same set of properties.
 
 #### Parameters
-`path`*{string}*: The path to the property of an object<br/>
+`path`*{string}*: The path to the property of an object.<br/>
 
 #### Returns
-*{object}*: The object in which an specified property has the closest value to the average<br/>
+*{object}*: The object in which an specific property has the closest value to the average.<br/>
 
 #### Example
 
@@ -127,18 +127,21 @@ var cities = [{
 ### `toClosest(num)`
 
 When used as the first parameter of
-`Array.prototype.reduce()`, returns the first
-item the has the closest value to the one
-specified as a parameter.
+`Array.prototype.reduce()`, returns the closest
+value to the base value, specified as a parameter.
+
+If two or more values are as close to the base
+value as each other, the first that was found
+will prevail.
 
 Note that reducing arrays with non-numeric values
 using `toClosest()` can lead to unexpected results.
 
 #### Parameters
-`num`*{number}*: The value to be compared with.<br/>
+`num`*{number}*: The base value.<br/>
 
 #### Returns
-*{number}*: The value in an array which is the closest to the compared value.<br/>
+*{number}*: The value in an array closest to the base value.<br/>
 
 #### Example
 
@@ -155,7 +158,7 @@ using `toClosest()` can lead to unexpected results.
 
 When used as the first parameter of
 `Array.prototype.reduce()`, returns the sum
-of the items in an array.
+of the values in an array.
 
 Note that reducing arrays with non-numeric values
 using `toSum()` can lead to unexpected results.
