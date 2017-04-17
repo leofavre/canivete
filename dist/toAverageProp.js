@@ -3,7 +3,7 @@ import at from "../node_modules/lodash-es/at";
 
 /**
  * When used with `Array.prototype.reduce()`, returns
- * the object in an array the in which a specific property,
+ * the object in an array in which a specific property,
  * passed as parameter, has the closest value to the average.
  *
  * Note that this function expects the reduced array to be

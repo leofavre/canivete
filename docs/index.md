@@ -75,7 +75,7 @@ using `toAverage()` can lead to unexpected results.
 ### `toAverageProp(path)`
 
 When used with `Array.prototype.reduce()`, returns
-the object in an array the in which a specific property,
+the object in an array in which a specific property,
 passed as parameter, has the closest value to the average.
 
 Note that this function expects the reduced array to be
@@ -140,7 +140,7 @@ using `toClosest()` can lead to unexpected results.
 `num`*{number}*: The base value.<br/>
 
 #### Returns
-*{number}*: The value from an array, closest to the base value.<br/>
+*{number}*: The value, from an array, closest to the base value.<br/>
 
 #### Example
 
@@ -156,8 +156,8 @@ using `toClosest()` can lead to unexpected results.
 ### `toLargestProp(path)`
 
 When used with `Array.prototype.reduce()`, returns
-the object in an array that has the largest value
-for a specific property.
+the object in an array in which a specific property
+has the largest property.
 
 Note that this function expects the reduced array to be
 formed by objects with the same set of properties.
@@ -166,7 +166,7 @@ formed by objects with the same set of properties.
 `path`*{string}*: The path to the property of an object.<br/>
 
 #### Returns
-*{object}*: The object in which an specific property has the largest value.<br/>
+*{object}*: The object in which a specific property has the largest value.<br/>
 
 #### Example
 
@@ -208,8 +208,8 @@ var cities = [{
 ### `toSmallestProp(path)`
 
 When used with `Array.prototype.reduce()`, returns
-the object in an array that has the smallest value
-for a specific property.
+the object in an array in which a specific property
+has the smallest property.
 
 Note that this function expects the reduced array to be
 formed by objects with the same set of properties.
@@ -218,7 +218,7 @@ formed by objects with the same set of properties.
 `path`*{string}*: The path to the property of an object.<br/>
 
 #### Returns
-*{object}*: The object in which an specific property has the smallest value.<br/>
+*{object}*: The object in which a specific property has the smallest value.<br/>
 
 #### Example
 

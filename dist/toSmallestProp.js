@@ -2,15 +2,15 @@ import at from "../node_modules/lodash-es/at";
 
 /**
  * When used with `Array.prototype.reduce()`, returns
- * the object in an array that has the smallest value
- * for a specific property.
+ * the object in an array in which a specific property
+ * has the smallest property.
  *
  * Note that this function expects the reduced array to be
  * formed by objects with the same set of properties.
  *
  * @category Reduce
  * @param {string} path The path to the property of an object.
- * @return {object} The object in which an specific property has the smallest value.
+ * @return {object} The object in which a specific property has the smallest value.
  * @public
  *
  * @example

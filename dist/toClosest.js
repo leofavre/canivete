@@ -11,7 +11,7 @@
  *
  * @category Reduce
  * @param {number} num The base value.
- * @return {number} The value from an array, closest to the base value.
+ * @return {number} The value, from an array, closest to the base value.
  * @public
  *
  * @example
