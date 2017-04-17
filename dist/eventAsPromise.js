@@ -42,7 +42,7 @@ import _isElement from "./internal/node/_isElement";
  * 	.then(domElement => console.log(domElement.src));
  *
  * // => "https://www.w3.org/Icons/w3c_home"
- * // shown as soon as the image is loaded, even if loading happens before the promise is created.
+ * // shown as soon as the image is loaded, even if it happened before the promise was created.
  */
 const eventAsPromise = (domElement, eventName, hasAlreadyHappened = domElement => false) => {
 	if (!_isElement(domElement) || !_isString(eventName)) {
