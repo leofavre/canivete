@@ -144,7 +144,7 @@ Promise.resolve()
 	.then(readJsonFile("./docs/temp/data.json")) // *
 	.then(parseJsonFile)
 	.then(exportDocsUsingTemplate("./docs", "./docs/templates/index.ejs"))
-	// .then(removeDir("./docs/temp")) // *
+	.then(removeDir("./docs/temp")) // *
 	.catch();
 
 // If I could stream jsdocAsJson into exportDocsUsingTemplate,

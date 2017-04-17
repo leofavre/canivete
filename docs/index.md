@@ -5,6 +5,8 @@
   * [toAverage](#toAverage)
   * [toAverageProp](#toAverageProp)
   * [toClosest](#toClosest)
+  * [toLargestProp](#toLargestProp)
+  * [toSmallestProp](#toSmallestProp)
   * [toSum](#toSum)
 
 * **[String](#string)**
@@ -78,8 +80,8 @@ When used as the first parameter of
 which an specific property, passed as parameter, has
 the closest value to the average.
 
-This function expects that the array being reduced to
-be formed by objects with the same set of properties.
+This function expects the reduced array to be formed
+by objects with the same set of properties.
 
 #### Parameters
 `path`*{string}*: The path to the property of an object.<br/>
@@ -151,6 +153,112 @@ using `toClosest()` can lead to unexpected results.
 
 [3, 5, 7, 9].reduce(toClosest(-2));
 // => 3
+```
+
+<a name="toLargestProp"></a>
+### `toLargestProp(path)`
+
+When used as the first parameter of
+`Array.prototype.reduce()`, returns the object in
+which an specific property, passed as parameter,
+is the largest.
+
+This function expects the reduced array to be formed
+by objects with the same set of properties.
+
+#### Parameters
+`path`*{string}*: The path to the property of an object.<br/>
+
+#### Returns
+*{object}*: The object in which an specific property is the largest.<br/>
+
+#### Example
+
+```javascript
+var cities = [{
+	city: "Rio de Janeiro",
+	temperature: 96,
+	demographics: {
+		population: 6.32
+	}
+}, {
+	city: "São Paulo",
+	temperature: 82.5,
+	demographics: {
+		population: 12.04
+	}
+}, {
+	city: "Curitiba",
+	temperature: 70,
+	demographics: {
+		population: 1.752
+	}
+}, {
+	city: "Florianópolis",
+	temperature: 86,
+	demographics: {
+		population: 0.249
+	}
+}];
+
+// cities.reduce(toLargestProp("temperature"));
+// => { city: "Rio de Janeiro", [...] }
+
+// cities.reduce(toLargestProp("demographics.population"));
+// => { city: "São Paulo", [...] }
+```
+
+<a name="toSmallestProp"></a>
+### `toSmallestProp(path)`
+
+When used as the first parameter of
+`Array.prototype.reduce()`, returns the object in
+which an specific property, passed as parameter,
+is the smallest.
+
+This function expects the reduced array to be formed
+by objects with the same set of properties.
+
+#### Parameters
+`path`*{string}*: The path to the property of an object.<br/>
+
+#### Returns
+*{object}*: The object in which an specific property is the smallest.<br/>
+
+#### Example
+
+```javascript
+var cities = [{
+	city: "Rio de Janeiro",
+	temperature: 96,
+	demographics: {
+		population: 6.32
+	}
+}, {
+	city: "São Paulo",
+	temperature: 82.5,
+	demographics: {
+		population: 12.04
+	}
+}, {
+	city: "Curitiba",
+	temperature: 70,
+	demographics: {
+		population: 1.752
+	}
+}, {
+	city: "Florianópolis",
+	temperature: 86,
+	demographics: {
+		population: 0.249
+	}
+}];
+
+// cities.reduce(toSmallestProp("temperature"));
+// => { city: "Curitiba", [...] }
+
+// cities.reduce(toSmallestProp("demographics.population"));
+// => { city: "Florianópolis", [...] }
 ```
 
 <a name="toSum"></a>

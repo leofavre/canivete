@@ -1,7 +1,6 @@
 /**
- * When used as the first parameter of
- * `Array.prototype.reduce()`, returns the average
- * of the values in an array.
+ * When used with `Array.prototype.reduce()`, returns
+ * the average of the values in an array.
  *
  * Note that reducing arrays with non-numeric values
  * using `toAverage()` can lead to unexpected results.
