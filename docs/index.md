@@ -1,4 +1,5 @@
 * **[Promise](#promise)**
+  * [eventAsPromise](#eventAsPromise)
   * [waitInPromise](#waitInPromise)
 
 * **[Reduce](#reduce)**
@@ -20,6 +21,43 @@
 
 ## Promise
 
+<a name="eventAsPromise"></a>
+### `eventAsPromise(domElement, eventName, [hasAlreadyHappened = domElement =&gt; false])`
+
+Treats a DOM Event as a Promise.
+
+This functions takes as parameters: a DOM Element,
+the name of the event that will be listened for
+and a function that verifies if the event has already
+happened, which, in turn, receives the DOM Element
+as parameter.
+
+Like all Promises in Javascript, this function will
+only fulfill once, either when the verification function
+returns true or when the event occurs for the first time.
+
+#### Parameters
+`domElement`*{HTMLElement}*: The DOM Element.<br/>
+`eventName`*{String}*: The name of the event that will be listened for.<br/>
+`[hasAlreadyHappened = domElement =&gt; false]`*{function}*: The verification function.<br/>
+
+#### Returns
+*{Promise}*: When fulfilled, returns the DOM Element.<br/>
+
+#### Example
+
+```javascript
+var checkbox = document.createElement("input");
+checkbox.type = "checkbox";
+document.body.appendChild(checkbox);
+
+eventAsPromise(checkbox, "change")
+	.then(domElement => console.log(domElement.checked));
+
+// => true
+// shown as soon as the checkbox is clicked for the first time
+```
+
 <a name="waitInPromise"></a>
 ### `waitInPromise(delay)`
 
@@ -30,15 +68,15 @@ This function is curried so as to be used inside
 the `.then()` method, passing along the resolved
 value of the previous Promise step to the next.
 
-If a non-numeric parameter is passed, the Promise
-resolves without delay, skipping the internal
-`setTimeout()`.
+Note that if a non-numeric parameter is passed,
+the Promise resolves without delay, skipping the
+internal `setTimeout()`.
 
 #### Parameters
-`delay`*{number}*: The delay in milliseconds.<br/>
+`delay`*{Number}*: The delay in milliseconds.<br/>
 
 #### Returns
-*{Promise}*: The resolved value from the previous steps of the Promise.<br/>
+*{Promise}*: When fulfilled, returns the resolved value from the previous step.<br/>
 
 #### Example
 
@@ -63,7 +101,7 @@ Note that reducing arrays with non-numeric values
 using `toAverage()` can lead to unexpected results.
 
 #### Returns
-*{number}*: The average of the values in an array.<br/>
+*{Number}*: The average of the values in an array.<br/>
 
 #### Example
 
@@ -86,10 +124,10 @@ Note that this function expects the reduced array to be
 formed by objects with the same set of properties.
 
 #### Parameters
-`path`*{string}*: The path to the property of an object.<br/>
+`path`*{String}*: The path to the property of an object.<br/>
 
 #### Returns
-*{object}*: The object in which an specific property has the closest value to the average.<br/>
+*{Object}*: The object in which an specific property has the closest value to the average.<br/>
 
 #### Example
 
@@ -143,10 +181,10 @@ Note that reducing arrays with non-numeric values
 using `toClosest()` can lead to unexpected results.
 
 #### Parameters
-`num`*{number}*: The base value.<br/>
+`num`*{Number}*: The base value.<br/>
 
 #### Returns
-*{number}*: The value, from an array, closest to the base value.<br/>
+*{Number}*: The value, from an array, closest to the base value.<br/>
 
 #### Example
 
@@ -173,11 +211,11 @@ Note that this function expects the reduced array to be
 formed by objects with the same set of properties.
 
 #### Parameters
-`path`*{string}*: The path to the property of an object.<br/>
-`num`*{string}*: The base value.<br/>
+`path`*{String}*: The path to the property of an object.<br/>
+`num`*{String}*: The base value.<br/>
 
 #### Returns
-*{object}*: The object in which an specific property has the closest value to the base value.<br/>
+*{Object}*: The object in which an specific property has the closest value to the base value.<br/>
 
 #### Example
 
@@ -229,10 +267,10 @@ Note that this function expects the reduced array to be
 formed by objects with the same set of properties.
 
 #### Parameters
-`path`*{string}*: The path to the property of an object.<br/>
+`path`*{String}*: The path to the property of an object.<br/>
 
 #### Returns
-*{object}*: The object in which a specific property has the largest value.<br/>
+*{Object}*: The object in which a specific property has the largest value.<br/>
 
 #### Example
 
@@ -284,10 +322,10 @@ Note that this function expects the reduced array to be
 formed by objects with the same set of properties.
 
 #### Parameters
-`path`*{string}*: The path to the property of an object.<br/>
+`path`*{String}*: The path to the property of an object.<br/>
 
 #### Returns
-*{object}*: The object in which a specific property has the smallest value.<br/>
+*{Object}*: The object in which a specific property has the smallest value.<br/>
 
 #### Example
 
@@ -335,7 +373,7 @@ Note that reducing arrays with non-numeric values
 using `toSum()` can lead to unexpected results.
 
 #### Returns
-*{number}*: The sum of the values in an array.<br/>
+*{Number}*: The sum of the values in an array.<br/>
 
 #### Example
 
@@ -355,15 +393,15 @@ occurrence** of the second string in the first.
 
 Returns an empty string if nothing is found.
 
-Note that non-string parameters will be converted
-to string, which can lead to unexpected results.
+Note that non-string parameters will be
+automatically converted to strings.
 
 #### Parameters
-`str`*{string}*: The base string.<br/>
-`delimiter`*{string}*: The string to be found.<br/>
+`str`*{String}*: The base string.<br/>
+`delimiter`*{String}*: The string to be found.<br/>
 
 #### Returns
-*{string}*<br/>
+*{String}*<br/>
 
 #### Example
 
@@ -381,15 +419,15 @@ occurrence** of the second string in the first.
 
 Returns an empty string if nothing is found.
 
-Note that non-string parameters will be converted
-to string, which can lead to unexpected results.
+Note that non-string parameters will be
+automatically converted to strings.
 
 #### Parameters
-`str`*{string}*: The base string.<br/>
-`delimiter`*{string}*: The string to be found.<br/>
+`str`*{String}*: The base string.<br/>
+`delimiter`*{String}*: The string to be found.<br/>
 
 #### Returns
-*{string}*<br/>
+*{String}*<br/>
 
 #### Example
 
@@ -407,15 +445,15 @@ occurrence** of the second string in the first.
 
 Returns an empty string if nothing is found.
 
-Note that non-string parameters will be converted
-to string, which can lead to unexpected results.
+Note that non-string parameters will be
+automatically converted to strings.
 
 #### Parameters
-`str`*{string}*: The base string.<br/>
-`delimiter`*{string}*: The string to be found.<br/>
+`str`*{String}*: The base string.<br/>
+`delimiter`*{String}*: The string to be found.<br/>
 
 #### Returns
-*{string}*<br/>
+*{String}*<br/>
 
 #### Example
 
@@ -433,15 +471,15 @@ occurrence** of the second string in the first.
 
 Returns an empty string if nothing is found.
 
-Note that non-string parameters will be converted
-to string, which can lead to unexpected results.
+Note that non-string parameters will be
+automatically converted to strings.
 
 #### Parameters
-`str`*{string}*: The base string.<br/>
-`delimiter`*{string}*: The string to be found.<br/>
+`str`*{String}*: The base string.<br/>
+`delimiter`*{String}*: The string to be found.<br/>
 
 #### Returns
-*{string}*<br/>
+*{String}*<br/>
 
 #### Example
 

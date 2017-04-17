@@ -8,13 +8,13 @@ import _isNumber from "./internal/number/_isNumber";
  * the `.then()` method, passing along the resolved
  * value of the previous Promise step to the next.
  *
- * If a non-numeric parameter is passed, the Promise
- * resolves without delay, skipping the internal
- * `setTimeout()`.
+ * Note that if a non-numeric parameter is passed,
+ * the Promise resolves without delay, skipping the
+ * internal `setTimeout()`.
  * 
  * @category Promise
  * @param  {Number} delay The delay in milliseconds.
- * @return {Promise} When fullfiled, returns the resolved value from the previous step.
+ * @return {Promise} When fulfilled, returns the resolved value from the previous step.
  * @public
  *
  * @example

@@ -7,11 +7,15 @@
  * happened, which, in turn, receives the DOM Element
  * as parameter.
  *
+ * Like all Promises in Javascript, this function will
+ * only fulfill once, either when the verification function
+ * returns true or when the event occurs for the first time.
+ *
  * @category Promise
  * @param  {HTMLElement} domElement The DOM Element.
  * @param  {String} eventName The name of the event that will be listened for.
  * @param  {Function} [hasAlreadyHappened = domElement => false] The verification function.
- * @return {Promise} When fullfiled, returns the DOM Element.
+ * @return {Promise} When fulfilled, returns the DOM Element.
  *
  * @example
  * var checkbox = document.createElement("input");
