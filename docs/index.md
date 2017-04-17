@@ -22,7 +22,7 @@
 ## Promise
 
 <a name="eventAsPromise"></a>
-### `eventAsPromise(domElement, eventName, [hasAlreadyHappened = domElement =&gt; false])`
+### `eventAsPromise(domElement, eventName, [hasAlreadyHappened = domElement => false])`
 
 Treats a DOM event as a promise.
 
