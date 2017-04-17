@@ -27,13 +27,13 @@ describe("toAverageProp", function() {
 		}
 	}];
 
-	it(``, function() {
+	it(`Should conclude that São Paulo has the average temperature amongst the cities in the array.`, function() {
 		expect(
 			mockup.reduce(toAverageProp("temperature"))
 		).toBe(mockup[1]); // São Paulo
 	});
 
-	it(``, function() {
+	it(`Should conclude that Rio de Janeiro has the average population amongst the cities in the array.`, function() {
 		expect(
 			mockup.reduce(toAverageProp("demographics.population"))
 		).toBe(mockup[0]); // Rio de Janeiro

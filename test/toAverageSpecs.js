@@ -1,7 +1,7 @@
 import toAverage from "../dist/toAverage";
 
 describe("toAverage", function() {
-	it(`Should return the average of all items in an array when used as a parameter for Array.prototype.reduce().`, function() {
+	it(`Should return the average of all items in an array when used with Array.prototype.reduce().`, function() {
 		expect(
 			[3, 5, 7, 9].reduce(toAverage())
 		).toBe(6);

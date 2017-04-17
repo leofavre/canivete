@@ -27,13 +27,13 @@ describe("toSmallestProp", function() {
 		}
 	}];
 
-	it(``, function() {
+	it(`Should conclude that Curitiba has the smallest temperature amongst the cities in the array.`, function() {
 		expect(
 			mockup.reduce(toSmallestProp("temperature"))
 		).toBe(mockup[2]); // Curitiba
 	});
 
-	it(``, function() {
+	it(`Should conclude that Florianópolis has the smallest temperature amongst the cities in the array.`, function() {
 		expect(
 			mockup.reduce(toSmallestProp("demographics.population"))
 		).toBe(mockup[3]); // Florianópolis

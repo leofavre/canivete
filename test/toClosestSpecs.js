@@ -1,7 +1,7 @@
 import toClosest from "../dist/toClosest";
 
 describe("toClosest", function() {
-	it(`Should return the closest value to a specific number in an array when used as a parameter for Array.prototype.reduce().`, function() {
+	it(`Should return the closest value to a specific number in an array when used with Array.prototype.reduce().`, function() {
 		expect(
 			[3, 5, 7, 9].reduce(toClosest(6))
 		).toBe(5);

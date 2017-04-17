@@ -27,13 +27,13 @@ describe("toLargestProp", function() {
 		}
 	}];
 
-	it(``, function() {
+	it(`Should conclude that Rio de Janeiro has the largest temperature amongst the cities in the array.`, function() {
 		expect(
 			mockup.reduce(toLargestProp("temperature"))
 		).toBe(mockup[0]); // Rio de Janeiro
 	});
 
-	it(``, function() {
+	it(`Should conclude that São Paulo has the largest population amongst the cities in the array.`, function() {
 		expect(
 			mockup.reduce(toLargestProp("demographics.population"))
 		).toBe(mockup[1]); // São Paulo
