@@ -1,5 +1,5 @@
 import _isString from "./internal/string/_isString";
-import _isElement from "./internal/node/_isElement";
+import _isElement from "./internal/dom/_isElement";
 
 /**
  * Treats a DOM event as a promise.
@@ -29,10 +29,10 @@ import _isElement from "./internal/node/_isElement";
  * document.body.appendChild(checkbox);
  *
  * eventAsPromise(checkbox, "change")
- * 	.then(domElement => console.log(domElement.checked));
+ * 	.then(checkbox => console.log(checkbox.checked));
  *
  * // => true
- * // shown as soon as the checkbox is clicked for the first time
+ * // shown as soon as the checkbox is clicked for the first time.
  *
  * var image = document.createElement("img");
  * image.src = "https://www.w3.org/Icons/w3c_home";
@@ -42,7 +42,7 @@ import _isElement from "./internal/node/_isElement";
  * 	.then(domElement => console.log(domElement.src));
  *
  * // => "https://www.w3.org/Icons/w3c_home"
- * // shown as soon as the image is loaded, even if it happened before the promise was created.
+ * // shown as soon as the image is loaded, even if it has loaded before the promise creation.
  */
 const eventAsPromise = (domElement, eventName, hasAlreadyHappened = domElement => false) => {
 	if (!_isElement(domElement) || !_isString(eventName)) {

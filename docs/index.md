@@ -55,10 +55,10 @@ checkbox.type = "checkbox";
 document.body.appendChild(checkbox);
 
 eventAsPromise(checkbox, "change")
-	.then(domElement => console.log(domElement.checked));
+	.then(checkbox => console.log(checkbox.checked));
 
 // => true
-// shown as soon as the checkbox is clicked for the first time
+// shown as soon as the checkbox is clicked for the first time.
 
 var image = document.createElement("img");
 image.src = "https://www.w3.org/Icons/w3c_home";
@@ -68,7 +68,7 @@ eventAsPromise(image, "load", image => image.complete)
 	.then(domElement => console.log(domElement.src));
 
 // => "https://www.w3.org/Icons/w3c_home"
-// shown as soon as the image is loaded, even if it happened before the promise was created.
+// shown as soon as the image is loaded, even if it has loaded before the promise creation.
 ```
 
 <a name="waitInPromise"></a>
