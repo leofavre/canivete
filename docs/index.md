@@ -3,6 +3,7 @@
 
 * **[Reduce](#reduce)**
   * [toAverage](#toAverage)
+  * [toAverageProp](#toAverageProp)
   * [toClosest](#toClosest)
   * [toSum](#toSum)
 
@@ -71,6 +72,60 @@ using `toAverage()` can lead to unexpected results.
 // => 6
 ```
 
+<a name="toAverageProp"></a>
+### `toAverageProp(path)`
+
+Given an array of objects, returns the one in which an
+specified property has the closest value to the average.
+
+This function is curried so as to be used as the
+first parameter of `Array.prototype.reduce()`.
+
+Note that this function considers that all objects in
+the array have the same set of properties.
+
+#### Parameters
+`path`*{string}*: The path to the property of an object<br/>
+
+#### Returns
+*{object}*: The object in which an specified property has the closest value to the average<br/>
+
+#### Example
+
+```javascript
+var cities = [{
+	city: "Rio de Janeiro",
+	temperature: 96,
+	demographics: {
+		population: 6.32
+	}
+}, {
+	city: "São Paulo",
+	temperature: 82.5,
+	demographics: {
+		population: 12.04
+	}
+}, {
+	city: "Curitiba",
+	temperature: 70,
+	demographics: {
+		population: 1.752
+	}
+}, {
+	city: "Florianópolis",
+	temperature: 86,
+	demographics: {
+		population: 0.249
+	}
+}];
+
+// cities.reduce(toAverageProp("temperature"));
+// => { city: "São Paulo", [...] }
+
+// cities.reduce(toAverageProp("demographics.population"));
+// => { city: "Rio de Janeiro", [...] }
+```
+
 <a name="toClosest"></a>
 ### `toClosest(num)`
 
@@ -132,8 +187,8 @@ occurrence** of the second string in the first.
 
 Returns an empty string if nothing is found.
 
-Returns `undefined` if the parameters passed to
-the function are not two strings.
+Note that non-string parameters will be converted
+to string, which can lead to unexpected results.
 
 #### Parameters
 `str`*{string}*: Base string<br/>
@@ -159,8 +214,8 @@ occurrence** of the second string in the first.
 
 Returns an empty string if nothing is found.
 
-Returns `undefined` if the parameters passed to
-the function are not two strings.
+Note that non-string parameters will be converted
+to string, which can lead to unexpected results.
 
 #### Parameters
 `str`*{string}*: Base string<br/>
@@ -186,8 +241,8 @@ occurrence** of the second string in the first.
 
 Returns an empty string if nothing is found.
 
-Returns `undefined` if the parameters passed to
-the function are not two strings.
+Note that non-string parameters will be converted
+to string, which can lead to unexpected results.
 
 #### Parameters
 `str`*{string}*: Base string<br/>
@@ -213,8 +268,8 @@ occurrence** of the second string in the first.
 
 Returns an empty string if nothing is found.
 
-Returns `undefined` if the parameters passed to
-the function are not two strings.
+Note that non-string parameters will be converted
+to string, which can lead to unexpected results.
 
 #### Parameters
 `str`*{string}*: Base string<br/>

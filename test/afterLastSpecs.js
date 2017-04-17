@@ -36,4 +36,10 @@ describe("afterLast", function() {
 			afterLast("Parallelepiped", "x")
 		).toBe("");
 	});
+
+	it(`"Should find "125" after the last 3 in 9873125.`, function() {
+		expect(
+			afterLast(9873125, 3)
+		).toBe("125");
+	});
 });

@@ -36,4 +36,10 @@ describe("beforeLast", function() {
 			beforeLast("Parallelepiped", "x")
 		).toBe("");
 	});
+
+	it(`"Should find "987" before the last 3 in 9873125.`, function() {
+		expect(
+			beforeLast(9873125, 3)
+		).toBe("987");
+	});
 });

@@ -8,7 +8,7 @@ import _sliceOnOccurrence from "./internal/string/_sliceOnOccurrence";
  * Returns an empty string if nothing is found.
  *
  * Note that non-string parameters will be converted
- * to string.
+ * to string, which can lead to unexpected results.
  *
  * @category String
  * @param  {string} str Base string

@@ -12,34 +12,42 @@ import at from "../node_modules/lodash-es/at";
  * the array have the same set of properties.
  *
  * @category Reduce
- * @param {string} path The path to an object's property
- * @return {number} The one in which an specified property has the closest value to the average
+ * @param {string} path The path to the property of an object
+ * @return {object} The object in which an specified property has the closest value to the average
  * @public
  *
  * @example
  * var cities = [{
- *		city: "Rio de Janeiro",
- *		temperature: 96
- *	}, {
- *		city: "São Paulo",
- *		temperature: 82.5
- *	}, {
- *		city: "Curitiba",
- *		temperature: 70
- *	}, {
- *		city: "Florianópolis",
- *		temperature: 86
- *	}];
+ * 	city: "Rio de Janeiro",
+ * 	temperature: 96,
+ * 	demographics: {
+ * 		population: 6.32
+ * 	}
+ * }, {
+ * 	city: "São Paulo",
+ * 	temperature: 82.5,
+ * 	demographics: {
+ * 		population: 12.04
+ * 	}
+ * }, {
+ * 	city: "Curitiba",
+ * 	temperature: 70,
+ * 	demographics: {
+ * 		population: 1.752
+ * 	}
+ * }, {
+ * 	city: "Florianópolis",
+ * 	temperature: 86,
+ * 	demographics: {
+ * 		population: 0.249
+ * 	}
+ * }];
  *
  * // cities.reduce(toAverageProp("temperature"));
- * // => {
- * // 	city: "Rio de Janeiro",
- * // 	temperature: 96
- * // }
+ * // => { city: "São Paulo", [...] }
  *
- * // average temperature: 83.625
- * // the city in which its temperature is the
- * // closest to the average temperature: São Paulo.
+ * // cities.reduce(toAverageProp("demographics.population"));
+ * // => { city: "Rio de Janeiro", [...] }
  */
 const toAverageProp = path => {
 	let average;

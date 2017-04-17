@@ -3,21 +3,39 @@ import toAverageProp from "../dist/toAverageProp";
 describe("toAverageProp", function() {
 	var mockup = [{
 		city: "Rio de Janeiro",
-		temperature: 36
+		temperature: 96,
+		demographics: {
+			population: 6.32
+		}
 	}, {
 		city: "São Paulo",
-		temperature: 28
+		temperature: 82.5,
+		demographics: {
+			population: 12.04
+		}
 	}, {
 		city: "Curitiba",
-		temperature: 21
+		temperature: 70,
+		demographics: {
+			population: 1.752
+		}
 	}, {
 		city: "Florianópolis",
-		temperature: 30
+		temperature: 86,
+		demographics: {
+			population: 0.249
+		}
 	}];
 
 	it(``, function() {
 		expect(
 			mockup.reduce(toAverageProp("temperature"))
 		).toBe(mockup[1]); // São Paulo
+	});
+
+	it(``, function() {
+		expect(
+			mockup.reduce(toAverageProp("demographics.population"))
+		).toBe(mockup[0]); // Rio de Janeiro
 	});
 });

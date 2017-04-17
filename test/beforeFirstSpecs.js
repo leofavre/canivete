@@ -36,4 +36,10 @@ describe("beforeFirst", function() {
 			beforeFirst("Parallelepiped", "x")
 		).toBe("");
 	});
+
+	it(`"Should find "987" before the first 3 in 9873125.`, function() {
+		expect(
+			beforeFirst(9873125, 3)
+		).toBe("987");
+	});
 });
