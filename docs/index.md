@@ -24,25 +24,28 @@
 <a name="eventAsPromise"></a>
 ### `eventAsPromise(domElement, eventName, [hasAlreadyHappened = domElement =&gt; false])`
 
-Treats a DOM Event as a Promise.
+Treats a DOM event as a promise.
 
-This functions takes as parameters: a DOM Element,
+This functions takes as parameters: a DOM element,
 the name of the event that will be listened for
 and a function that verifies if the event has already
-happened, which, in turn, receives the DOM Element
+happened, which, in turn, receives the DOM element
 as parameter.
 
-Like all Promises in Javascript, this function will
+Like all promises in Javascript, this function will
 only fulfill once, either when the verification function
 returns true or when the event occurs for the first time.
 
+Note that the function throws an error is the first two
+parameters are not a DOM element and a string.
+
 #### Parameters
-`domElement`*{HTMLElement}*: The DOM Element.<br/>
+`domElement`*{HTMLElement}*: The DOM element.<br/>
 `eventName`*{String}*: The name of the event that will be listened for.<br/>
 `[hasAlreadyHappened = domElement =&gt; false]`*{function}*: The verification function.<br/>
 
 #### Returns
-*{Promise}*: When fulfilled, returns the DOM Element.<br/>
+*{Promise}*: When fulfilled, returns the DOM element.<br/>
 
 #### Example
 
@@ -61,15 +64,15 @@ eventAsPromise(checkbox, "change")
 <a name="waitInPromise"></a>
 ### `waitInPromise(delay)`
 
-Delays the chaining of a Promise by a specified
+Delays the chaining of a promise by a specified
 time in milliseconds.
 
 This function is curried so as to be used inside
 the `.then()` method, passing along the resolved
-value of the previous Promise step to the next.
+value of the previous promise step to the next.
 
 Note that if a non-numeric parameter is passed,
-the Promise resolves without delay, skipping the
+the promise resolves without delay, skipping the
 internal `setTimeout()`.
 
 #### Parameters
