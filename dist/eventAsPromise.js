@@ -1,5 +1,5 @@
 import _isString from "./internal/string/_isString";
-import isElement from "../node_modules/lodash-es/isElement";
+import _isElement from "./internal/node/_isElement";
 
 /**
  * Treats a DOM event as a promise.
@@ -35,7 +35,7 @@ import isElement from "../node_modules/lodash-es/isElement";
  * // shown as soon as the checkbox is clicked for the first time
  */
 const eventAsPromise = (domElement, eventName, hasAlreadyHappened = domElement => false) => {
-	if (!isElement(domElement) || !_isString(eventName)) {
+	if (!_isElement(domElement) || !_isString(eventName)) {
 		throw new Error("A DOM element and a string are expected as parameters.");
 	}
 

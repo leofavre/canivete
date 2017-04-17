@@ -12,7 +12,7 @@ import _sliceOnOccurrence from "./internal/string/_sliceOnOccurrence";
  *
  * @category String
  * @param  {String} str The base string.
- * @param  {String} delimiter The string to be found.
+ * @param  {String} delimiter The delimiter string.
  * @return {String}
  * @public
  *

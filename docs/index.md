@@ -401,7 +401,7 @@ automatically converted to strings.
 
 #### Parameters
 `str`*{String}*: The base string.<br/>
-`delimiter`*{String}*: The string to be found.<br/>
+`delimiter`*{String}*: The delimiter string.<br/>
 
 #### Returns
 *{String}*<br/>
@@ -427,7 +427,7 @@ automatically converted to strings.
 
 #### Parameters
 `str`*{String}*: The base string.<br/>
-`delimiter`*{String}*: The string to be found.<br/>
+`delimiter`*{String}*: The delimiter string.<br/>
 
 #### Returns
 *{String}*<br/>
@@ -453,7 +453,7 @@ automatically converted to strings.
 
 #### Parameters
 `str`*{String}*: The base string.<br/>
-`delimiter`*{String}*: The string to be found.<br/>
+`delimiter`*{String}*: The delimiter string.<br/>
 
 #### Returns
 *{String}*<br/>
@@ -479,7 +479,7 @@ automatically converted to strings.
 
 #### Parameters
 `str`*{String}*: The base string.<br/>
-`delimiter`*{String}*: The string to be found.<br/>
+`delimiter`*{String}*: The delimiter string.<br/>
 
 #### Returns
 *{String}*<br/>
