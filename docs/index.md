@@ -55,9 +55,8 @@ Promise.resolve("waiting")
 <a name="toAverage"></a>
 ### `toAverage()`
 
-When used as the first parameter of
-`Array.prototype.reduce()`, returns the average
-of the values in an array.
+When used with `Array.prototype.reduce()`, returns
+the average of the values in an array.
 
 Note that reducing arrays with non-numeric values
 using `toAverage()` can lead to unexpected results.
@@ -75,13 +74,12 @@ using `toAverage()` can lead to unexpected results.
 <a name="toAverageProp"></a>
 ### `toAverageProp(path)`
 
-When used as the first parameter of
-`Array.prototype.reduce()`, returns the object in
-which an specific property, passed as parameter, has
-the closest value to the average.
+When used with `Array.prototype.reduce()`, returns
+the object in an array the in which a specific property,
+passed as parameter, has the closest value to the average.
 
-This function expects the reduced array to be formed
-by objects with the same set of properties.
+Note that this function expects the reduced array to be
+formed by objects with the same set of properties.
 
 #### Parameters
 `path`*{string}*: The path to the property of an object.<br/>
@@ -128,13 +126,12 @@ var cities = [{
 <a name="toClosest"></a>
 ### `toClosest(num)`
 
-When used as the first parameter of
-`Array.prototype.reduce()`, returns the closest
-value to the base value, specified as a parameter.
+When used with `Array.prototype.reduce()`, returns
+the closest value to the one passed as parameter.
 
 If two or more values are as close to the base
-value as each other, the first that was found
-will prevail.
+value as each other, the first one found will
+prevail.
 
 Note that reducing arrays with non-numeric values
 using `toClosest()` can lead to unexpected results.
@@ -143,7 +140,7 @@ using `toClosest()` can lead to unexpected results.
 `num`*{number}*: The base value.<br/>
 
 #### Returns
-*{number}*: The value in an array closest to the base value.<br/>
+*{number}*: The value from an array, closest to the base value.<br/>
 
 #### Example
 
@@ -158,19 +155,18 @@ using `toClosest()` can lead to unexpected results.
 <a name="toLargestProp"></a>
 ### `toLargestProp(path)`
 
-When used as the first parameter of
-`Array.prototype.reduce()`, returns the object in
-which an specific property, passed as parameter,
-is the largest.
+When used with `Array.prototype.reduce()`, returns
+the object in an array that has the largest value
+for a specific property.
 
-This function expects the reduced array to be formed
-by objects with the same set of properties.
+Note that this function expects the reduced array to be
+formed by objects with the same set of properties.
 
 #### Parameters
 `path`*{string}*: The path to the property of an object.<br/>
 
 #### Returns
-*{object}*: The object in which an specific property is the largest.<br/>
+*{object}*: The object in which an specific property has the largest value.<br/>
 
 #### Example
 
@@ -211,19 +207,18 @@ var cities = [{
 <a name="toSmallestProp"></a>
 ### `toSmallestProp(path)`
 
-When used as the first parameter of
-`Array.prototype.reduce()`, returns the object in
-which an specific property, passed as parameter,
-is the smallest.
+When used with `Array.prototype.reduce()`, returns
+the object in an array that has the smallest value
+for a specific property.
 
-This function expects the reduced array to be formed
-by objects with the same set of properties.
+Note that this function expects the reduced array to be
+formed by objects with the same set of properties.
 
 #### Parameters
 `path`*{string}*: The path to the property of an object.<br/>
 
 #### Returns
-*{object}*: The object in which an specific property is the smallest.<br/>
+*{object}*: The object in which an specific property has the smallest value.<br/>
 
 #### Example
 
@@ -264,9 +259,8 @@ var cities = [{
 <a name="toSum"></a>
 ### `toSum()`
 
-When used as the first parameter of
-`Array.prototype.reduce()`, returns the sum
-of the values in an array.
+When used with `Array.prototype.reduce()`, returns
+the sum of the values in an array.
 
 Note that reducing arrays with non-numeric values
 using `toSum()` can lead to unexpected results.
