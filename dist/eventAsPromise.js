@@ -33,6 +33,16 @@ import _isElement from "./internal/node/_isElement";
  *
  * // => true
  * // shown as soon as the checkbox is clicked for the first time
+ *
+ * var image = document.createElement("img");
+ * image.src = "https://www.w3.org/Icons/w3c_home";
+ * document.body.appendChild(image);
+ *
+ * eventAsPromise(image, "load", image => image.complete)
+ * 	.then(domElement => console.log(domElement.src));
+ *
+ * // => "https://www.w3.org/Icons/w3c_home"
+ * // shown as soon as the image is loaded, even if loading happens before the promise is created.
  */
 const eventAsPromise = (domElement, eventName, hasAlreadyHappened = domElement => false) => {
 	if (!_isElement(domElement) || !_isString(eventName)) {

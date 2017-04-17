@@ -23,7 +23,7 @@ import _isNumber from "./internal/number/_isNumber";
  * 	.then(console.log);
  *
  * // => "waiting"
- * // shown after 500ms
+ * // shown after 500ms.
  */
 function waitInPromise(delay) {
 	return arg => {
