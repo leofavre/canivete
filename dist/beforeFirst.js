@@ -18,7 +18,6 @@ import _sliceOnOccurrence from "./internal/string/_sliceOnOccurrence";
  *
  * @example
  * beforeFirst("parallelepiped", "le");
- *
  * // => "paral"
  */
 const beforeFirst = (str, delimiter) => _sliceOnOccurrence("before", "first", str, delimiter);

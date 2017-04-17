@@ -18,7 +18,6 @@ import _sliceOnOccurrence from "./internal/string/_sliceOnOccurrence";
  *
  * @example
  * afterLast("parallelepiped", "le");
- *
  * // => "piped"
  */
 const afterLast = (str, delimiter) => _sliceOnOccurrence("after", "last", str, delimiter);

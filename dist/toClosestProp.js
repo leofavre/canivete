@@ -42,10 +42,10 @@ import at from "../node_modules/lodash-es/at";
  * 	}
  * }];
  *
- * // cities.reduce(toClosestProp("temperature", 75));
+ * cities.reduce(toClosestProp("temperature", 75));
  * // => { city: "Curitiba", [...] }
  *
- * // cities.reduce(toClosestProp("demographics.population", 5));
+ * cities.reduce(toClosestProp("demographics.population", 5));
  * // => { city: "Rio de Janeiro", [...] }
  */
 const toClosestProp = (path, num) => (prevObj, nextObj, index, arr) => {

@@ -40,10 +40,10 @@ import at from "../node_modules/lodash-es/at";
  * 	}
  * }];
  *
- * // cities.reduce(toSmallestProp("temperature"));
+ * cities.reduce(toSmallestProp("temperature"));
  * // => { city: "Curitiba", [...] }
  *
- * // cities.reduce(toSmallestProp("demographics.population"));
+ * cities.reduce(toSmallestProp("demographics.population"));
  * // => { city: "Florianópolis", [...] }
  */
 const toSmallestProp = path => (prevObj, nextObj) => {

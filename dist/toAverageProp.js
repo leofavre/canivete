@@ -41,10 +41,10 @@ import at from "../node_modules/lodash-es/at";
  * 	}
  * }];
  *
- * // cities.reduce(toAverageProp("temperature"));
+ * cities.reduce(toAverageProp("temperature"));
  * // => { city: "São Paulo", [...] }
  *
- * // cities.reduce(toAverageProp("demographics.population"));
+ * cities.reduce(toAverageProp("demographics.population"));
  * // => { city: "Rio de Janeiro", [...] }
  */
 const toAverageProp = path => {
