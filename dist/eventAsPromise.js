@@ -8,7 +8,7 @@
  * as parameter.
  * 
  * @param  {HTMLElement} domElement The DOM Element.
- * @param  {string} eventName The name of the event that will be listened for.
+ * @param  {String} eventName The name of the event that will be listened for.
  * @param  {Function} hasAlreadyHappened The verification function.
  * @return {Promise} When fullfiled, returns the DOM Element.
  */
