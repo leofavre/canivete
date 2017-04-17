@@ -7,8 +7,8 @@ import _sliceOnOccurrence from "./internal/string/_sliceOnOccurrence";
  *
  * Returns an empty string if nothing is found.
  *
- * Returns `undefined` if the parameters passed to
- * the function are not two strings.
+ * Note that non-string parameters will be converted
+ * to string.
  *
  * @category String
  * @param  {string} str Base string

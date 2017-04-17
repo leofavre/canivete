@@ -36,18 +36,4 @@ describe("afterLast", function() {
 			afterLast("Parallelepiped", "x")
 		).toBe("");
 	});
-
-	it(`"Should return undefined if two strings are not passed as parameters.`, function() {
-		expect(
-			afterLast()
-		).toBe(undefined);
-
-		expect(
-			afterLast("Parallelepiped")
-		).toBe(undefined);
-
-		expect(
-			afterLast(6215, 15)
-		).toBe(undefined);
-	});
 });

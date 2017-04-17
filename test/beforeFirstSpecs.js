@@ -36,18 +36,4 @@ describe("beforeFirst", function() {
 			beforeFirst("Parallelepiped", "x")
 		).toBe("");
 	});
-
-	it(`"Should return undefined if two strings are not passed as parameters.`, function() {
-		expect(
-			beforeFirst()
-		).toBe(undefined);
-
-		expect(
-			beforeFirst("Parallelepiped")
-		).toBe(undefined);
-
-		expect(
-			beforeFirst(6215, 15)
-		).toBe(undefined);
-	});
 });

@@ -3,6 +3,7 @@
 
 * **[Reduce](#reduce)**
   * [toAverage](#toAverage)
+  * [toClosest](#toClosest)
   * [toSum](#toSum)
 
 * **[String](#string)**
@@ -68,6 +69,35 @@ using `toAverage()` can lead to unexpected results.
 [3, 5, 7, 9].reduce(toAverage());
 // (3 + 5 + 7 + 9) / 4
 // => 6
+```
+
+<a name="toClosest"></a>
+### `toClosest(num)`
+
+Returns the first item in an array the has the
+closest value to another number, specified as
+parameter.
+
+This function is curried so as to be used as the
+first parameter of `Array.prototype.reduce()`.
+
+Note that reducing arrays with non-numeric values
+using `toClosest()` can lead to unexpected results.
+
+#### Parameters
+`num`*{number}*: The value to be compared with<br/>
+
+#### Returns
+*{number}*: The item in an array that is closest to a number<br/>
+
+#### Example
+
+```javascript
+[3, 5, 7, 9].reduce(toClosest(6));
+// => 5
+
+[3, 5, 7, 9].reduce(toClosest(-2));
+// => 3
 ```
 
 <a name="toSum"></a>

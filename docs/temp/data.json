@@ -1,0 +1,505 @@
+{
+  "docs": [
+    {
+      "comment": "/**\n * Given two strings, returns a new one formed\n * by the characters **after the first\n * occurrence** of the second string in the first.\n *\n * Returns an empty string if nothing is found.\n *\n * Returns `undefined` if the parameters passed to\n * the function are not two strings.\n *\n * @category String\n * @param  {string} str Base string\n * @param  {string} delimiter String to be found\n * @return {string}\n * @public\n *\n * @example\n * afterFirst(\"parallelepiped\", \"le\");\n *\n * // => \"lepiped\"\n */",
+      "meta": {
+        "range": [
+          580,
+          665
+        ],
+        "filename": "afterFirst.js",
+        "lineno": 24,
+        "path": "/Users/leonardofavre/Dropbox (Pessoal)/Websites/websites/canivete/dist",
+        "code": {
+          "id": "astnode100000006",
+          "name": "afterFirst",
+          "type": "ArrowFunctionExpression"
+        }
+      },
+      "description": "Given two strings, returns a new one formed\nby the characters **after the first\noccurrence** of the second string in the first.\n\nReturns an empty string if nothing is found.\n\nReturns `undefined` if the parameters passed to\nthe function are not two strings.",
+      "tags": [
+        {
+          "originalTitle": "category",
+          "title": "category",
+          "text": "String",
+          "value": "String"
+        }
+      ],
+      "params": [
+        {
+          "type": {
+            "names": [
+              "string"
+            ]
+          },
+          "description": "Base string",
+          "name": "str"
+        },
+        {
+          "type": {
+            "names": [
+              "string"
+            ]
+          },
+          "description": "String to be found",
+          "name": "delimiter"
+        }
+      ],
+      "returns": [
+        {
+          "type": {
+            "names": [
+              "string"
+            ]
+          }
+        }
+      ],
+      "access": "public",
+      "examples": [
+        "afterFirst(\"parallelepiped\", \"le\");\n\n// => \"lepiped\""
+      ],
+      "name": "afterFirst",
+      "longname": "afterFirst",
+      "kind": "function",
+      "scope": "global",
+      "___id": "T000002R000002",
+      "___s": true
+    },
+    {
+      "comment": "/**\n * Given two strings, returns a new one formed\n * by the characters **after the last\n * occurrence** of the second string in the first.\n *\n * Returns an empty string if nothing is found.\n *\n * Returns `undefined` if the parameters passed to\n * the function are not two strings.\n *\n * @category String\n * @param  {string} str Base string\n * @param  {string} delimiter String to be found\n * @return {string}\n * @public\n *\n * @example\n * afterLast(\"parallelepiped\", \"le\");\n *\n * // => \"piped\"\n */",
+      "meta": {
+        "range": [
+          576,
+          659
+        ],
+        "filename": "afterLast.js",
+        "lineno": 24,
+        "path": "/Users/leonardofavre/Dropbox (Pessoal)/Websites/websites/canivete/dist",
+        "code": {
+          "id": "astnode100000025",
+          "name": "afterLast",
+          "type": "ArrowFunctionExpression"
+        }
+      },
+      "description": "Given two strings, returns a new one formed\nby the characters **after the last\noccurrence** of the second string in the first.\n\nReturns an empty string if nothing is found.\n\nReturns `undefined` if the parameters passed to\nthe function are not two strings.",
+      "tags": [
+        {
+          "originalTitle": "category",
+          "title": "category",
+          "text": "String",
+          "value": "String"
+        }
+      ],
+      "params": [
+        {
+          "type": {
+            "names": [
+              "string"
+            ]
+          },
+          "description": "Base string",
+          "name": "str"
+        },
+        {
+          "type": {
+            "names": [
+              "string"
+            ]
+          },
+          "description": "String to be found",
+          "name": "delimiter"
+        }
+      ],
+      "returns": [
+        {
+          "type": {
+            "names": [
+              "string"
+            ]
+          }
+        }
+      ],
+      "access": "public",
+      "examples": [
+        "afterLast(\"parallelepiped\", \"le\");\n\n// => \"piped\""
+      ],
+      "name": "afterLast",
+      "longname": "afterLast",
+      "kind": "function",
+      "scope": "global",
+      "___id": "T000002R000004",
+      "___s": true
+    },
+    {
+      "comment": "/**\n * Given two strings, returns a new one formed\n * by the characters **before the first\n * occurrence** of the second string in the first.\n *\n * Returns an empty string if nothing is found.\n *\n * Returns `undefined` if the parameters passed to\n * the function are not two strings.\n *\n * @category String\n * @param  {string} str Base string\n * @param  {string} delimiter String to be found\n * @return {string}\n * @public\n *\n * @example\n * beforeFirst(\"parallelepiped\", \"le\");\n *\n * // => \"paral\"\n */",
+      "meta": {
+        "range": [
+          580,
+          667
+        ],
+        "filename": "beforeFirst.js",
+        "lineno": 24,
+        "path": "/Users/leonardofavre/Dropbox (Pessoal)/Websites/websites/canivete/dist",
+        "code": {
+          "id": "astnode100000044",
+          "name": "beforeFirst",
+          "type": "ArrowFunctionExpression"
+        }
+      },
+      "description": "Given two strings, returns a new one formed\nby the characters **before the first\noccurrence** of the second string in the first.\n\nReturns an empty string if nothing is found.\n\nReturns `undefined` if the parameters passed to\nthe function are not two strings.",
+      "tags": [
+        {
+          "originalTitle": "category",
+          "title": "category",
+          "text": "String",
+          "value": "String"
+        }
+      ],
+      "params": [
+        {
+          "type": {
+            "names": [
+              "string"
+            ]
+          },
+          "description": "Base string",
+          "name": "str"
+        },
+        {
+          "type": {
+            "names": [
+              "string"
+            ]
+          },
+          "description": "String to be found",
+          "name": "delimiter"
+        }
+      ],
+      "returns": [
+        {
+          "type": {
+            "names": [
+              "string"
+            ]
+          }
+        }
+      ],
+      "access": "public",
+      "examples": [
+        "beforeFirst(\"parallelepiped\", \"le\");\n\n// => \"paral\""
+      ],
+      "name": "beforeFirst",
+      "longname": "beforeFirst",
+      "kind": "function",
+      "scope": "global",
+      "___id": "T000002R000006",
+      "___s": true
+    },
+    {
+      "comment": "/**\n * Given two strings, returns a new one formed\n * by the characters **before the last\n * occurrence** of the second string in the first.\n *\n * Returns an empty string if nothing is found.\n *\n * Returns `undefined` if the parameters passed to\n * the function are not two strings.\n *\n * @category String\n * @param  {string} str Base string\n * @param  {string} delimiter String to be found\n * @return {string}\n * @public\n *\n * @example\n * beforeLast(\"parallelepiped\", \"le\");\n *\n * // => \"paralle\"\n */",
+      "meta": {
+        "range": [
+          580,
+          665
+        ],
+        "filename": "beforeLast.js",
+        "lineno": 24,
+        "path": "/Users/leonardofavre/Dropbox (Pessoal)/Websites/websites/canivete/dist",
+        "code": {
+          "id": "astnode100000063",
+          "name": "beforeLast",
+          "type": "ArrowFunctionExpression"
+        }
+      },
+      "description": "Given two strings, returns a new one formed\nby the characters **before the last\noccurrence** of the second string in the first.\n\nReturns an empty string if nothing is found.\n\nReturns `undefined` if the parameters passed to\nthe function are not two strings.",
+      "tags": [
+        {
+          "originalTitle": "category",
+          "title": "category",
+          "text": "String",
+          "value": "String"
+        }
+      ],
+      "params": [
+        {
+          "type": {
+            "names": [
+              "string"
+            ]
+          },
+          "description": "Base string",
+          "name": "str"
+        },
+        {
+          "type": {
+            "names": [
+              "string"
+            ]
+          },
+          "description": "String to be found",
+          "name": "delimiter"
+        }
+      ],
+      "returns": [
+        {
+          "type": {
+            "names": [
+              "string"
+            ]
+          }
+        }
+      ],
+      "access": "public",
+      "examples": [
+        "beforeLast(\"parallelepiped\", \"le\");\n\n// => \"paralle\""
+      ],
+      "name": "beforeLast",
+      "longname": "beforeLast",
+      "kind": "function",
+      "scope": "global",
+      "___id": "T000002R000008",
+      "___s": true
+    },
+    {
+      "comment": "/**\n * Returns the average of the items in an array.\n * \n * This function is curried so as to be used as the\n * first parameter of `Array.prototype.reduce()`.\n *\n * Note that reducing arrays with non-numeric values\n * using `toAverage()` can lead to unexpected results.\n *\n * @category Reduce\n * @return {number} The average of the items in an array\n * @public\n *\n * @example\n * [3, 5, 7, 9].reduce(toAverage());\n * // (3 + 5 + 7 + 9) / 4\n * // => 6\n */",
+      "meta": {
+        "range": [
+          460,
+          677
+        ],
+        "filename": "toAverage.js",
+        "lineno": 19,
+        "path": "/Users/leonardofavre/Dropbox (Pessoal)/Websites/websites/canivete/dist",
+        "code": {
+          "id": "astnode100000078",
+          "name": "toAverage",
+          "type": "ArrowFunctionExpression"
+        },
+        "vars": {
+          "": null
+        }
+      },
+      "description": "Returns the average of the items in an array.\n\nThis function is curried so as to be used as the\nfirst parameter of `Array.prototype.reduce()`.\n\nNote that reducing arrays with non-numeric values\nusing `toAverage()` can lead to unexpected results.",
+      "tags": [
+        {
+          "originalTitle": "category",
+          "title": "category",
+          "text": "Reduce",
+          "value": "Reduce"
+        }
+      ],
+      "returns": [
+        {
+          "type": {
+            "names": [
+              "number"
+            ]
+          },
+          "description": "The average of the items in an array"
+        }
+      ],
+      "access": "public",
+      "examples": [
+        "[3, 5, 7, 9].reduce(toAverage());\n// (3 + 5 + 7 + 9) / 4\n// => 6"
+      ],
+      "name": "toAverage",
+      "longname": "toAverage",
+      "kind": "function",
+      "scope": "global",
+      "___id": "T000002R000010",
+      "___s": true
+    },
+    {
+      "comment": "/**\n * Returns the first item in an array the has the\n * closest value to another number, specified as\n * parameter.\n * \n * This function is curried so as to be used as the\n * first parameter of `Array.prototype.reduce()`.\n *\n * Note that reducing arrays with non-numeric values\n * using `toClosest()` can lead to unexpected results.\n *\n * @category Reduce\n * @param {number} num The value to be compared with\n * @return {number} The item in an array that is closest to a number\n * @public\n *\n * @example\n * [3, 5, 7, 9].reduce(toClosest(6));\n * // => 5\n *\n * [3, 5, 7, 9].reduce(toClosest(-2));\n * // => 3\n */",
+      "meta": {
+        "range": [
+          617,
+          770
+        ],
+        "filename": "toClosest.js",
+        "lineno": 24,
+        "path": "/Users/leonardofavre/Dropbox (Pessoal)/Websites/websites/canivete/dist",
+        "code": {
+          "id": "astnode100000196",
+          "name": "toClosest",
+          "type": "ArrowFunctionExpression"
+        },
+        "vars": {
+          "": null
+        }
+      },
+      "description": "Returns the first item in an array the has the\nclosest value to another number, specified as\nparameter.\n\nThis function is curried so as to be used as the\nfirst parameter of `Array.prototype.reduce()`.\n\nNote that reducing arrays with non-numeric values\nusing `toClosest()` can lead to unexpected results.",
+      "tags": [
+        {
+          "originalTitle": "category",
+          "title": "category",
+          "text": "Reduce",
+          "value": "Reduce"
+        }
+      ],
+      "params": [
+        {
+          "type": {
+            "names": [
+              "number"
+            ]
+          },
+          "description": "The value to be compared with",
+          "name": "num"
+        }
+      ],
+      "returns": [
+        {
+          "type": {
+            "names": [
+              "number"
+            ]
+          },
+          "description": "The item in an array that is closest to a number"
+        }
+      ],
+      "access": "public",
+      "examples": [
+        "[3, 5, 7, 9].reduce(toClosest(6));\n// => 5\n\n[3, 5, 7, 9].reduce(toClosest(-2));\n// => 3"
+      ],
+      "name": "toClosest",
+      "longname": "toClosest",
+      "kind": "function",
+      "scope": "global",
+      "___id": "T000002R000017",
+      "___s": true
+    },
+    {
+      "comment": "/**\n * Returns the sum of the items in an array.\n * \n * This function is curried so as to be used as the\n * first parameter of `Array.prototype.reduce()`.\n *\n * Note that reducing arrays with non-numeric values\n * using `toSum()` can lead to unexpected results.\n *\n * @category Reduce\n * @return {number} The sum of the numbers in an array\n * @public\n *\n * @example\n * [3, 5, 7, 9].reduce(toSum());\n * // => 24\n */",
+      "meta": {
+        "range": [
+          421,
+          474
+        ],
+        "filename": "toSum.js",
+        "lineno": 18,
+        "path": "/Users/leonardofavre/Dropbox (Pessoal)/Websites/websites/canivete/dist",
+        "code": {
+          "id": "astnode100000356",
+          "name": "toSum",
+          "type": "ArrowFunctionExpression"
+        },
+        "vars": {
+          "": null
+        }
+      },
+      "description": "Returns the sum of the items in an array.\n\nThis function is curried so as to be used as the\nfirst parameter of `Array.prototype.reduce()`.\n\nNote that reducing arrays with non-numeric values\nusing `toSum()` can lead to unexpected results.",
+      "tags": [
+        {
+          "originalTitle": "category",
+          "title": "category",
+          "text": "Reduce",
+          "value": "Reduce"
+        }
+      ],
+      "returns": [
+        {
+          "type": {
+            "names": [
+              "number"
+            ]
+          },
+          "description": "The sum of the numbers in an array"
+        }
+      ],
+      "access": "public",
+      "examples": [
+        "[3, 5, 7, 9].reduce(toSum());\n// => 24"
+      ],
+      "name": "toSum",
+      "longname": "toSum",
+      "kind": "function",
+      "scope": "global",
+      "___id": "T000002R000025",
+      "___s": true
+    },
+    {
+      "comment": "/**\n * Delays the chaining of a Promise by a specified\n * time in milliseconds.\n *\n * This function is curried so as to be used inside\n * the `.then()` method, passing along the resolved\n * value of the previous Promise step to the next.\n *\n * If a non-numeric parameter is passed, the Promise\n * resolves without delay, skipping the internal\n * `setTimeout()`.\n * \n * @category Promise\n * @param  {number} delay Delay in milliseconds\n * @return {Promise} Resolved value from the previous step\n * @public\n *\n * @example\n * Promise.resolve(\"waiting\")\n * \t.then(waitInPromise(500))\n * \t.then(console.log);\n *\n * // => \"waiting\"\n * // shown after 500ms\n */",
+      "meta": {
+        "range": [
+          708,
+          921
+        ],
+        "filename": "waitInPromise.js",
+        "lineno": 28,
+        "path": "/Users/leonardofavre/Dropbox (Pessoal)/Websites/websites/canivete/dist",
+        "code": {
+          "id": "astnode100000372",
+          "name": "waitInPromise",
+          "type": "FunctionDeclaration",
+          "paramnames": [
+            "delay"
+          ]
+        },
+        "vars": {
+          "": null
+        }
+      },
+      "description": "Delays the chaining of a Promise by a specified\ntime in milliseconds.\n\nThis function is curried so as to be used inside\nthe `.then()` method, passing along the resolved\nvalue of the previous Promise step to the next.\n\nIf a non-numeric parameter is passed, the Promise\nresolves without delay, skipping the internal\n`setTimeout()`.",
+      "tags": [
+        {
+          "originalTitle": "category",
+          "title": "category",
+          "text": "Promise",
+          "value": "Promise"
+        }
+      ],
+      "params": [
+        {
+          "type": {
+            "names": [
+              "number"
+            ]
+          },
+          "description": "Delay in milliseconds",
+          "name": "delay"
+        }
+      ],
+      "returns": [
+        {
+          "type": {
+            "names": [
+              "Promise"
+            ]
+          },
+          "description": "Resolved value from the previous step"
+        }
+      ],
+      "access": "public",
+      "examples": [
+        "Promise.resolve(\"waiting\")\n\t.then(waitInPromise(500))\n\t.then(console.log);\n\n// => \"waiting\"\n// shown after 500ms"
+      ],
+      "name": "waitInPromise",
+      "longname": "waitInPromise",
+      "kind": "function",
+      "scope": "global",
+      "___id": "T000002R000027",
+      "___s": true
+    },
+    {
+      "kind": "package",
+      "longname": "package:undefined",
+      "files": [
+        "/Users/leonardofavre/Dropbox (Pessoal)/Websites/websites/canivete/dist/afterFirst.js",
+        "/Users/leonardofavre/Dropbox (Pessoal)/Websites/websites/canivete/dist/afterLast.js",
+        "/Users/leonardofavre/Dropbox (Pessoal)/Websites/websites/canivete/dist/beforeFirst.js",
+        "/Users/leonardofavre/Dropbox (Pessoal)/Websites/websites/canivete/dist/beforeLast.js",
+        "/Users/leonardofavre/Dropbox (Pessoal)/Websites/websites/canivete/dist/toAverage.js",
+        "/Users/leonardofavre/Dropbox (Pessoal)/Websites/websites/canivete/dist/toAverageProp.js",
+        "/Users/leonardofavre/Dropbox (Pessoal)/Websites/websites/canivete/dist/toClosest.js",
+        "/Users/leonardofavre/Dropbox (Pessoal)/Websites/websites/canivete/dist/toClosestProp.js",
+        "/Users/leonardofavre/Dropbox (Pessoal)/Websites/websites/canivete/dist/toLargestProp.js",
+        "/Users/leonardofavre/Dropbox (Pessoal)/Websites/websites/canivete/dist/toSmallestProp.js",
+        "/Users/leonardofavre/Dropbox (Pessoal)/Websites/websites/canivete/dist/toSum.js",
+        "/Users/leonardofavre/Dropbox (Pessoal)/Websites/websites/canivete/dist/waitInPromise.js"
+      ],
+      "___id": "T000002R000029",
+      "___s": true
+    }
+  ]
+}

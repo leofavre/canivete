@@ -37,17 +37,9 @@ describe("afterFirst", function() {
 		).toBe("👌");
 	});
 
-	it(`"Should return undefined if two strings are not passed as parameters.`, function() {
+	it(`"Should find "125" after the first 3 in 9873125.`, function() {
 		expect(
-			afterFirst()
-		).toBe(undefined);
-
-		expect(
-			afterFirst("Parallelepiped")
-		).toBe(undefined);
-
-		expect(
-			afterFirst(6215, 15)
-		).toBe(undefined);
+			afterFirst(9873125, 3)
+		).toBe("125");
 	});
 });

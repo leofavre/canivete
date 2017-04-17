@@ -1,7 +1,7 @@
-import set from "../node_modules/lodash-es/set";
+import at from "../node_modules/lodash-es/at";
 
-const toLargestProp = key => (prevObj, nextObj) => {
-	if (prevObj[key] >= nextObj[key]) {
+const toLargestProp = path => (prevObj, nextObj) => {
+	if (at(prevObj, path)[0] >= at(nextObj, path)[0]) {
 		return prevObj;
 	}
 	else {
