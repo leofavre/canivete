@@ -41,7 +41,7 @@ import isElement from "../node_modules/lodash-es/isElement";
  * 	.then(domElement => console.log(domElement.src));
  *
  * // => "https://www.w3.org/Icons/w3c_home"
- * // shown as soon as the image is loaded, even if it has loaded before the promise creation.
+ * // shown when the image is loaded or as soon as eventAsPromise is called, if the image has already been loaded.
  */
 const eventAsPromise = (domElement, eventName, hasAlreadyHappened = domElement => false) => {
 	if (!isElement(domElement) || !isString(eventName)) {
