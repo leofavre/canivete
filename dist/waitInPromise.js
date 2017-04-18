@@ -1,5 +1,3 @@
-import _isNumber from "./internal/number/_isNumber";
-
 /**
  * Delays the chaining of a promise by a specified
  * time in milliseconds.
@@ -27,7 +25,7 @@ import _isNumber from "./internal/number/_isNumber";
  */
 function waitInPromise(delay) {
 	return arg => {
-		if (_isNumber(delay) && delay > 0) {
+		if (Number.isFinite(delay) && delay > 0) {
 			return new Promise(resolve => {
 				setTimeout(() => resolve(arg), delay);
 			});

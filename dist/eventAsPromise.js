@@ -1,8 +1,8 @@
-import _isString from "./internal/string/_isString";
-import _isElement from "./internal/dom/_isElement";
+import isString from "../node_modules/lodash-es/isString";
+import isElement from "../node_modules/lodash-es/isElement";
 
 /**
- * Treats a DOM event as a promise.
+ * Transforms a DOM event in a promise.
  * 
  * This functions takes as parameters: a DOM element,
  * the name of the event that will be listened for
@@ -45,7 +45,7 @@ import _isElement from "./internal/dom/_isElement";
  * // shown as soon as the image is loaded, even if it has loaded before the promise creation.
  */
 const eventAsPromise = (domElement, eventName, hasAlreadyHappened = domElement => false) => {
-	if (!_isElement(domElement) || !_isString(eventName)) {
+	if (!isElement(domElement) || !isString(eventName)) {
 		throw new Error("A DOM element and a string are expected as parameters.");
 	}
 
