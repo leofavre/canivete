@@ -10,7 +10,7 @@ import isElement from "../node_modules/lodash-es/isElement";
  * happened, which receives the DOM element as parameter.
  *
  * Like all promises in Javascript, this function will
- * only fulfill once, either when the verification function
+ * only fulfill once, either if the verification function
  * returns true or when the event occurs for the first time.
  *
  * Note that the function throws an error if the first two
