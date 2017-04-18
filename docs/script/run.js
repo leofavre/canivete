@@ -50,10 +50,10 @@ const readJsonFile = data => () => readJsonAsPromise(data);
 
 const parseJsonFile = json => json.docs ? json.docs.filter(doc => doc.name != undefined) : [];
 
-const exportDocsUsingTemplate = (path, template) => docs => {
+const exportDocsUsingTemplate = (path, docName, template) => docs => {
 	let data = JSON.stringify(processDocs(docs));
-	// console.log(data);
-	return execAsPromise(`ejs-cli ${template} > ${path}/index.md -O '${data}'`);
+	execAsPromise(`ejs-cli ${template} > ${path}/${docName}.md -O '${data}'`);
+	return docs;
 };
 
 const formatDocs = docs => docs.map(formatDoc);
@@ -143,7 +143,8 @@ Promise.resolve()
 	.then(jsdocAsJson("./dist", "./docs/temp/data.json"))
 	.then(readJsonFile("./docs/temp/data.json")) // *
 	.then(parseJsonFile)
-	.then(exportDocsUsingTemplate("./docs", "./docs/templates/index.ejs"))
+	.then(exportDocsUsingTemplate("./docs", "content", "./docs/templates/content.ejs"))
+	.then(exportDocsUsingTemplate("./docs", "menu", "./docs/templates/menu.ejs"))
 	.then(removeDir("./docs/temp")) // *
 	.catch();
 
