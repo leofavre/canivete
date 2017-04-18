@@ -36,6 +36,8 @@ const byAlphabeticalOrder = (strA, strB) => (strA > strB) ? +1 : (strA < strB) ?
 
 const removeNewslines = str => str; // str.replace(/(?:\r\n|\r|\n)/g, " ");
 
+const useJekyll = path => () => execAsPromise(`cd ${path} && jekyll build`);
+
 
 
 
@@ -143,9 +145,10 @@ Promise.resolve()
 	.then(jsdocAsJson("./dist", "./docs/temp/data.json"))
 	.then(readJsonFile("./docs/temp/data.json")) // *
 	.then(parseJsonFile)
-	.then(exportDocsUsingTemplate("./docs", "content", "./docs/templates/content.ejs"))
-	.then(exportDocsUsingTemplate("./docs", "menu", "./docs/templates/menu.ejs"))
+	.then(exportDocsUsingTemplate("./docs", "index", "./docs/_ejs/content.ejs"))
+	.then(exportDocsUsingTemplate("./docs/_includes", "menu", "./docs/_ejs/menu.ejs"))
 	.then(removeDir("./docs/temp")) // *
+	.then(useJekyll("./docs"))
 	.catch();
 
 // If I could stream jsdocAsJson into exportDocsUsingTemplate,

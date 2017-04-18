@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+<body>
+	<div class="menu">
+		{% capture my_include %}{% include menu.md %}{% endcapture %}
+		{{ my_include | markdownify }}
+	</div>
+	<main class="markdown">
+		{{ content }}
+	</main>
+	{% include footer.html %}
+</body>
+
+</html>
