@@ -24,19 +24,18 @@
 <a name="eventAsPromise"></a>
 ### `eventAsPromise(domElement, eventName, [hasAlreadyHappened = domElement => false])`
 
-Transforms a DOM event in a promise.
+Transforms a DOM event into a promise.
 
 This functions takes as parameters: a DOM element,
 the name of the event that will be listened for
 and a function that verifies if the event has already
-happened, which, in turn, receives the DOM element
-as parameter.
+happened, which receives the DOM element as parameter.
 
 Like all promises in Javascript, this function will
-only fulfill once, either when the verification function
+only fulfill once, either if the verification function
 returns true or when the event occurs for the first time.
 
-Note that the function throws an error is the first two
+Note that the function throws an error if the first two
 parameters are not a DOM element and a string.
 
 #### Parameters
@@ -68,7 +67,7 @@ eventAsPromise(image, "load", image => image.complete)
 	.then(domElement => console.log(domElement.src));
 
 // => "https://www.w3.org/Icons/w3c_home"
-// shown as soon as the image is loaded, even if it has loaded before the promise creation.
+// shown when the image is loaded or as soon as eventAsPromise is called, if the image has already been loaded.
 ```
 
 <a name="waitInPromise"></a>
