@@ -2,7 +2,7 @@ import isString from "../node_modules/lodash-es/isString";
 import isElement from "../node_modules/lodash-es/isElement";
 
 /**
- * Transforms a DOM event in a promise.
+ * Transforms a DOM event into a promise.
  * 
  * This functions takes as parameters: a DOM element,
  * the name of the event that will be listened for
