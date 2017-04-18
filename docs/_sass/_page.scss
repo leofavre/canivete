@@ -1,0 +1,14 @@
+.page {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: "Roboto", sans-serif;
+
+	margin: 0;
+	background: #fff;
+
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	min-height: 100%;
+	overflow: auto;
+}
