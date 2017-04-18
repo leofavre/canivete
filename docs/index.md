@@ -24,7 +24,7 @@
 <a name="eventAsPromise"></a>
 ### `eventAsPromise(domElement, eventName, [hasAlreadyHappened = domElement => false])`
 
-Treats a DOM event as a promise.
+Transforms a DOM event in a promise.
 
 This functions takes as parameters: a DOM element,
 the name of the event that will be listened for
