@@ -128,7 +128,8 @@ html {
     position: relative;
     top: 8px;
     width: 100%;
-    border-collapse: collapse; }
+    border-collapse: collapse;
+    margin-top: 24px; }
   .content thead:after {
     content: "";
     position: absolute;
