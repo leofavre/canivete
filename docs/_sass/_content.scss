@@ -1,4 +1,4 @@
-.richtext {
+.content {
 	flex: 14 14 0;
 	overflow-x: hidden;
 	overflow-y: auto;
@@ -6,10 +6,10 @@
 	-webkit-overflow-scrolling: touch;
 	line-height: $grid;
 
-	background-position: 5px 0;
-	background-size: $grid $grid;
-	background-image: linear-gradient(to bottom, lightblue 1px, transparent 1px);
-	background-attachment: scroll;
+	// background-position: 5px 0;
+	// background-size: $grid $grid;
+	// background-image: linear-gradient(to bottom, lightblue 1px, transparent 1px);
+	// background-attachment: scroll;
 
 	h1 {
 
@@ -135,7 +135,7 @@
 	}
 }
 
-.richtext__area {
+.content__area {
 	max-width: 600px;
 	margin-bottom: $grid * 30
 }
