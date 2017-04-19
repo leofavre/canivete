@@ -6,10 +6,10 @@
 	-webkit-overflow-scrolling: touch;
 	line-height: $grid;
 
-	// background-position: 5px 0;
-	// background-size: $grid $grid;
-	// background-image: linear-gradient(to bottom, lightblue 1px, transparent 1px);
-	// background-attachment: scroll;
+	background-position: 5px 0;
+	background-size: $grid $grid;
+	background-image: linear-gradient(to bottom, lightblue 1px, transparent 1px);
+	background-attachment: scroll;
 
 	h1 {
 
@@ -135,24 +135,25 @@
 	}
 
 	td {
+		font-size: 14px;
 		vertical-align: top;
 		padding: 0 12px 0 0;
 	}
 
+	td:nth-last-child(1) {
+		padding-right: 0;
+	}
+
 	td:nth-child(1):nth-last-child(3) {
-		width: 18%;
+		// width: 18%;
 	}
 
 	td:nth-child(2):nth-last-child(2) {
-		width: 12%;
+		// width: 12%;
 	}
 
 	td:nth-child(1):nth-last-child(2) {
-		width: 18%;
-	}
-
-	td:nth-last-child(1) {
-		padding-right: 0;
+		// width: 18%;
 	}
 }
 

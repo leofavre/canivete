@@ -6,7 +6,7 @@ title: Canivete
 ## Promise
 
 <a name="eventAsPromise"></a>
-### `eventAsPromise(domEl, evtName, [happened])`
+### `eventAsPromise(domEl, evtName, [happened = domEl => false])`
 
 Transforms a DOM event into a promise.
 

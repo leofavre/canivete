@@ -97,8 +97,7 @@ const formatSignatureParams = params => {
 const formatParam = param => {
 	let preParam = param.optional ? "[" : "";
 	let postParam = param.optional ? "]" : "";
-	// let defaultValue = param.defaultvalue != null ? ` = ${param.defaultvalue}` : "";
-	let defaultValue = "";
+	let defaultValue = param.defaultvalue != null ? ` = ${param.defaultvalue}` : "";
 	return `${preParam}${param.name}${defaultValue}${postParam}`;
 };
 
