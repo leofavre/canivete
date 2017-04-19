@@ -132,7 +132,7 @@ html {
   .content thead:after {
     content: "";
     position: absolute;
-    top: 15px;
+    top: 14px;
     width: 100%;
     height: 1px;
     background: rgba(129, 126, 121, 0.3);
