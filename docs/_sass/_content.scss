@@ -105,6 +105,7 @@
 
 	pre {
 		white-space: pre-wrap;
+		margin: 0;
 	}
 
 	pre > code {
@@ -112,7 +113,7 @@
 		color: #f8f8f2;
 		margin: $grid ($grid * -1) ($grid * 2) ($grid * -2);
 		padding-top: 55px;
-		padding-bottom: 41px;
+		padding-bottom: 49px;
 		padding-left: ($grid * 2);
 		padding-right: $grid;
 	}
