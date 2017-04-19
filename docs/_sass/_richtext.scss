@@ -3,8 +3,6 @@
 	overflow-x: hidden;
 	overflow-y: auto;
 	padding: 0 $grid ($grid * 2) ($grid * 2);
-	// transform: translateZ(0);
-	// will-change: scroll-position;
 	-webkit-overflow-scrolling: touch;
 	line-height: $grid;
 
