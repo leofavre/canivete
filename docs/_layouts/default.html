@@ -9,10 +9,14 @@
 	</header>
 	<div class="main">
 		<main class="richtext">
-			{{ content }}
+			<div class="richtext__area">
+				{{ content }}
+			</div>
 		</main>
 		<aside class="menu">
-			{% include menu.html %}
+			<div class="menu__area">
+				{% include menu.html %}
+			</div>
 		</aside>
 	</div>
 </body>

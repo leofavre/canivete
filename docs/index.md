@@ -6,7 +6,7 @@ title: Canivete
 ## Promise
 
 <a name="eventAsPromise"></a>
-### `eventAsPromise(domElement, eventName, [hasAlreadyHappened = domElement => false])`
+### `eventAsPromise(domElement, eventName, [happened = domElement => false])`
 
 Transforms a DOM event into a promise.
 
@@ -23,12 +23,12 @@ Note that the function throws an error if the first two
 parameters are not a DOM element and a string.
 
 #### Parameters
-`domElement`*{HTMLElement}*: The DOM element.<br/>
-`eventName`*{String}*: The name of the event that will be listened for.<br/>
-`[hasAlreadyHappened = domElement => false]`*{function}*: The verification function.<br/>
+`domElement`*{HTMLElement}* The DOM element.<br/>
+`eventName`*{String}* The name of the event that will be listened for.<br/>
+`[happened = domElement => false]`*{function}* The verification function.<br/>
 
 #### Returns
-*{Promise}*: When fulfilled, returns the DOM element.<br/>
+*{Promise}* When fulfilled, returns the DOM element.<br/>
 
 #### Example
 
@@ -69,10 +69,10 @@ the promise resolves without delay, skipping the
 internal `setTimeout()`.
 
 #### Parameters
-`delay`*{Number}*: The delay in milliseconds.<br/>
+`delay`*{Number}* The delay in milliseconds.<br/>
 
 #### Returns
-*{Promise}*: When fulfilled, returns the resolved value from the previous step.<br/>
+*{Promise}* When fulfilled, returns the resolved value from the previous step.<br/>
 
 #### Example
 
@@ -97,7 +97,7 @@ Note that reducing arrays with non-numeric values
 using `toAverage()` can lead to unexpected results.
 
 #### Returns
-*{Number}*: The average of the values in an array.<br/>
+*{Number}* The average of the values in an array.<br/>
 
 #### Example
 
@@ -120,10 +120,10 @@ Note that this function expects the reduced array to be
 formed by objects with the same set of properties.
 
 #### Parameters
-`path`*{String}*: The path to the property of an object.<br/>
+`path`*{String}* The path to the property of an object.<br/>
 
 #### Returns
-*{Object}*: The object in which an specific property has the closest value to the average.<br/>
+*{Object}* The object in which an specific property has the closest value to the average.<br/>
 
 #### Example
 
@@ -177,10 +177,10 @@ Note that reducing arrays with non-numeric values
 using `toClosest()` can lead to unexpected results.
 
 #### Parameters
-`num`*{Number}*: The base value.<br/>
+`num`*{Number}* The base value.<br/>
 
 #### Returns
-*{Number}*: The value, from an array, closest to the base value.<br/>
+*{Number}* The value, from an array, closest to the base value.<br/>
 
 #### Example
 
@@ -207,11 +207,11 @@ Note that this function expects the reduced array to be
 formed by objects with the same set of properties.
 
 #### Parameters
-`path`*{String}*: The path to the property of an object.<br/>
-`num`*{String}*: The base value.<br/>
+`path`*{String}* The path to the property of an object.<br/>
+`num`*{String}* The base value.<br/>
 
 #### Returns
-*{Object}*: The object in which an specific property has the closest value to the base value.<br/>
+*{Object}* The object in which an specific property has the closest value to the base value.<br/>
 
 #### Example
 
@@ -263,10 +263,10 @@ Note that this function expects the reduced array to be
 formed by objects with the same set of properties.
 
 #### Parameters
-`path`*{String}*: The path to the property of an object.<br/>
+`path`*{String}* The path to the property of an object.<br/>
 
 #### Returns
-*{Object}*: The object in which a specific property has the largest value.<br/>
+*{Object}* The object in which a specific property has the largest value.<br/>
 
 #### Example
 
@@ -318,10 +318,10 @@ Note that this function expects the reduced array to be
 formed by objects with the same set of properties.
 
 #### Parameters
-`path`*{String}*: The path to the property of an object.<br/>
+`path`*{String}* The path to the property of an object.<br/>
 
 #### Returns
-*{Object}*: The object in which a specific property has the smallest value.<br/>
+*{Object}* The object in which a specific property has the smallest value.<br/>
 
 #### Example
 
@@ -369,7 +369,7 @@ Note that reducing arrays with non-numeric values
 using `toSum()` can lead to unexpected results.
 
 #### Returns
-*{Number}*: The sum of the values in an array.<br/>
+*{Number}* The sum of the values in an array.<br/>
 
 #### Example
 
@@ -393,8 +393,8 @@ Note that non-string parameters will be
 automatically converted to strings.
 
 #### Parameters
-`str`*{String}*: The base string.<br/>
-`delimiter`*{String}*: The delimiter string.<br/>
+`str`*{String}* The base string.<br/>
+`delimiter`*{String}* The delimiter string.<br/>
 
 #### Returns
 *{String}*<br/>
@@ -419,8 +419,8 @@ Note that non-string parameters will be
 automatically converted to strings.
 
 #### Parameters
-`str`*{String}*: The base string.<br/>
-`delimiter`*{String}*: The delimiter string.<br/>
+`str`*{String}* The base string.<br/>
+`delimiter`*{String}* The delimiter string.<br/>
 
 #### Returns
 *{String}*<br/>
@@ -445,8 +445,8 @@ Note that non-string parameters will be
 automatically converted to strings.
 
 #### Parameters
-`str`*{String}*: The base string.<br/>
-`delimiter`*{String}*: The delimiter string.<br/>
+`str`*{String}* The base string.<br/>
+`delimiter`*{String}* The delimiter string.<br/>
 
 #### Returns
 *{String}*<br/>
@@ -471,8 +471,8 @@ Note that non-string parameters will be
 automatically converted to strings.
 
 #### Parameters
-`str`*{String}*: The base string.<br/>
-`delimiter`*{String}*: The delimiter string.<br/>
+`str`*{String}* The base string.<br/>
+`delimiter`*{String}* The delimiter string.<br/>
 
 #### Returns
 *{String}*<br/>

@@ -36,7 +36,7 @@ const byAlphabeticalOrder = (strA, strB) => (strA > strB) ? +1 : (strA < strB) ?
 
 const removeNewslines = str => str; // str.replace(/(?:\r\n|\r|\n)/g, " ");
 
-const useJekyll = path => () => execAsPromise(`cd ${path} && jekyll build`);
+const useJekyll = path => () => execAsPromise(`cd ${path} && bundle exec jekyll build`);
 
 
 
@@ -80,7 +80,7 @@ const formatTable = params => {
 const formatTableLine = param => {
 	let name = param.name ? "`" + formatParam(param) + "`" : "";
 	let type = param.type && param.type.names.length > 0 ? "*" + formatType(param.type.names) + "*" : "";
-	let desc = param.description ? ": " + formatDescription(param.description) : "";
+	let desc = param.description ? " " + formatDescription(param.description) : "";
 	return `${name}${type}${desc}`;
 };
 

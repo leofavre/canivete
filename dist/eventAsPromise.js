@@ -19,7 +19,7 @@ import isElement from "../node_modules/lodash-es/isElement";
  * @category Promise
  * @param  {HTMLElement} domElement The DOM element.
  * @param  {String} eventName The name of the event that will be listened for.
- * @param  {Function} [hasAlreadyHappened = domElement => false] The verification function.
+ * @param  {Function} [happened = domElement => false] The verification function.
  * @return {Promise} When fulfilled, returns the DOM element.
  *
  * @example
@@ -43,7 +43,7 @@ import isElement from "../node_modules/lodash-es/isElement";
  * // => "https://www.w3.org/Icons/w3c_home"
  * // shown when the image is loaded or as soon as eventAsPromise is called, if the image has already been loaded.
  */
-const eventAsPromise = (domElement, eventName, hasAlreadyHappened = domElement => false) => {
+const eventAsPromise = (domElement, eventName, happened = domElement => false) => {
 	if (!isElement(domElement) || !isString(eventName)) {
 		throw new Error("A DOM element and a string are expected as parameters.");
 	}
@@ -54,7 +54,7 @@ const eventAsPromise = (domElement, eventName, hasAlreadyHappened = domElement =
 			resolve(domElement);
 		};
 
-		if (hasAlreadyHappened(domElement)) {
+		if (happened(domElement)) {
 			resolve(domElement);
 		}
 		else {
