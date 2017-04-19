@@ -136,7 +136,7 @@
 	thead:after {
 		content: "";
 		position: absolute;
-		top: 14px;
+		top: 13px;
 		width: 100%;
 		height: 1px;
 		background: rgba($grey, 0.3);
@@ -149,9 +149,10 @@
 
 	th {
 		position: relative;
-		top: -12px;
+		top: -14px;
 		text-align: left;
 		padding: 0 6px 0 0;
+
 		font-size: 9px;
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
@@ -162,6 +163,18 @@
 		font-size: 14px;
 		vertical-align: top;
 		padding: 0 6px 0 0;
+	}
+
+	td > strong {
+		position: relative;
+		top: -2px;
+		font-size: 9px;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		font-weight: 700;
+		padding: 1px 4px 1px 6px;
+		background: #000;
+		color: #fff;
 	}
 
 	td > code {
@@ -190,6 +203,7 @@
 		// width: 18%;
 	}
 
+	[id^="returns"] + table td > code,
 	[id^="parameters"] + table td:nth-child(n + 2) > code {
 		font-weight: 400;
 		padding: 0;
@@ -202,6 +216,6 @@
 }
 
 .content__area {
-	max-width: 600px;
+	max-width: 660px;
 	margin-bottom: $grid * 30
 }

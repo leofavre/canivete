@@ -72,6 +72,8 @@ const formatDoc = doc => {
 
 const formatDescription = description => removeNewslines(description);
 
+const formatTableDescription = (description, isOptional) => removeNewslines(description) + (isOptional ? " **optional**" : "");
+
 const formatHref = name => camelCase(name);
 
 const formatTable = params => {
@@ -80,9 +82,9 @@ const formatTable = params => {
 
 const formatTableLine = param => {
 	let name = param.name ? `\`${param.name}\` | ` : "";
-	let defaultValue = param.defaultvalue != null ? `\`${param.defaultvalue}\` | ` : "`undefined` | ";
+	let defaultValue = param.defaultvalue != null ? `\`${param.defaultvalue}\` | ` : " | ";
 	let type = (param.type && param.type.names.length > 0) ? "`" + formatType(param.type.names) + "` | " : "";
-	let desc = param.description ? " " + formatDescription(param.description) : "";
+	let desc = param.description ? " " + formatTableDescription(param.description, param.optional) : "";
 	return `| ${name}${defaultValue}${type}${desc} |`;
 };
 
