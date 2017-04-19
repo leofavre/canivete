@@ -78,7 +78,8 @@
 		margin: $grid 0 $grid;
 	}
 
-	p > code {
+	p > code,
+	td > code {
 		padding: 1px 4px 1px 6px;
 		background-color: rgba($grey, 0.2);
 	}
@@ -123,7 +124,10 @@
 	}
 
 	table {
-
+		position: relative;
+		top: 8px;
+		width: 100%;
+		border-collapse: collapse;
 	}
 
 	tr {
@@ -131,7 +135,24 @@
 	}
 
 	td {
+		vertical-align: top;
+		padding: 0 12px 0 0;
+	}
 
+	td:nth-child(1):nth-last-child(3) {
+		width: 18%;
+	}
+
+	td:nth-child(2):nth-last-child(2) {
+		width: 12%;
+	}
+
+	td:nth-child(1):nth-last-child(2) {
+		width: 18%;
+	}
+
+	td:nth-last-child(1) {
+		padding-right: 0;
 	}
 }
 

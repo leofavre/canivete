@@ -23,12 +23,14 @@ Note that the function throws an error if the first two
 parameters are not a DOM element and a string.
 
 #### Parameters
-`domEl` *{HTMLElement}*&thinsp;&#8212;&thinsp;The DOM element.<br/>
-`evtName` *{String}*&thinsp;&#8212;&thinsp;The name of the event that will be listened for.<br/>
-`[happened]` *{function}*&thinsp;&#8212;&thinsp;The verification function.<br/>
+
+| `domEl` | *{HTMLElement}* |  The DOM element. |
+| `evtName` | *{String}* |  The event that will be listened for. |
+| `happened` | *{function}* |  The verification function. |
 
 #### Returns
- *{Promise}*&thinsp;&#8212;&thinsp;When fulfilled, returns the DOM element.<br/>
+
+| *{Promise}* |  When fulfilled, returns the DOM element. |
 
 #### Example
 
@@ -69,10 +71,12 @@ the promise resolves without delay, skipping the
 internal `setTimeout()`.
 
 #### Parameters
-`delay` *{Number}*&thinsp;&#8212;&thinsp;The delay in milliseconds.<br/>
+
+| `delay` | *{Number}* |  The delay in milliseconds. |
 
 #### Returns
- *{Promise}*&thinsp;&#8212;&thinsp;When fulfilled, returns the resolved value from the previous step.<br/>
+
+| *{Promise}* |  When fulfilled, returns the resolved value from the previous step. |
 
 #### Example
 
@@ -97,7 +101,8 @@ Note that reducing arrays with non-numeric values
 using `toAverage()` can lead to unexpected results.
 
 #### Returns
- *{Number}*&thinsp;&#8212;&thinsp;The average of the values in an array.<br/>
+
+| *{Number}* |  The average of the values in an array. |
 
 #### Example
 
@@ -120,10 +125,12 @@ Note that this function expects the reduced array to be
 formed by objects with the same set of properties.
 
 #### Parameters
-`path` *{String}*&thinsp;&#8212;&thinsp;The path to the property of an object.<br/>
+
+| `path` | *{String}* |  The path to the property of an object. |
 
 #### Returns
- *{Object}*&thinsp;&#8212;&thinsp;The object in which an specific property has the closest value to the average.<br/>
+
+| *{Object}* |  The object in which an specific property has the closest value to the average. |
 
 #### Example
 
@@ -177,10 +184,12 @@ Note that reducing arrays with non-numeric values
 using `toClosest()` can lead to unexpected results.
 
 #### Parameters
-`num` *{Number}*&thinsp;&#8212;&thinsp;The base value.<br/>
+
+| `num` | *{Number}* |  The base value. |
 
 #### Returns
- *{Number}*&thinsp;&#8212;&thinsp;The value, from an array, closest to the base value.<br/>
+
+| *{Number}* |  The value, from an array, closest to the base value. |
 
 #### Example
 
@@ -207,11 +216,13 @@ Note that this function expects the reduced array to be
 formed by objects with the same set of properties.
 
 #### Parameters
-`path` *{String}*&thinsp;&#8212;&thinsp;The path to the property of an object.<br/>
-`num` *{String}*&thinsp;&#8212;&thinsp;The base value.<br/>
+
+| `path` | *{String}* |  The path to the property of an object. |
+| `num` | *{String}* |  The base value. |
 
 #### Returns
- *{Object}*&thinsp;&#8212;&thinsp;The object in which an specific property has the closest value to the base value.<br/>
+
+| *{Object}* |  The object in which an specific property has the closest value to the base value. |
 
 #### Example
 
@@ -263,10 +274,12 @@ Note that this function expects the reduced array to be
 formed by objects with the same set of properties.
 
 #### Parameters
-`path` *{String}*&thinsp;&#8212;&thinsp;The path to the property of an object.<br/>
+
+| `path` | *{String}* |  The path to the property of an object. |
 
 #### Returns
- *{Object}*&thinsp;&#8212;&thinsp;The object in which a specific property has the largest value.<br/>
+
+| *{Object}* |  The object in which a specific property has the largest value. |
 
 #### Example
 
@@ -318,10 +331,12 @@ Note that this function expects the reduced array to be
 formed by objects with the same set of properties.
 
 #### Parameters
-`path` *{String}*&thinsp;&#8212;&thinsp;The path to the property of an object.<br/>
+
+| `path` | *{String}* |  The path to the property of an object. |
 
 #### Returns
- *{Object}*&thinsp;&#8212;&thinsp;The object in which a specific property has the smallest value.<br/>
+
+| *{Object}* |  The object in which a specific property has the smallest value. |
 
 #### Example
 
@@ -369,7 +384,8 @@ Note that reducing arrays with non-numeric values
 using `toSum()` can lead to unexpected results.
 
 #### Returns
- *{Number}*&thinsp;&#8212;&thinsp;The sum of the values in an array.<br/>
+
+| *{Number}* |  The sum of the values in an array. |
 
 #### Example
 
@@ -393,11 +409,13 @@ Note that non-string parameters will be
 automatically converted to strings.
 
 #### Parameters
-`str` *{String}*&thinsp;&#8212;&thinsp;The base string.<br/>
-`delimiter` *{String}*&thinsp;&#8212;&thinsp;The delimiter string.<br/>
+
+| `str` | *{String}* |  The base string. |
+| `delimiter` | *{String}* |  The delimiter string. |
 
 #### Returns
- *{String}*<br/>
+
+| *{String}* |  |
 
 #### Example
 
@@ -419,11 +437,13 @@ Note that non-string parameters will be
 automatically converted to strings.
 
 #### Parameters
-`str` *{String}*&thinsp;&#8212;&thinsp;The base string.<br/>
-`delimiter` *{String}*&thinsp;&#8212;&thinsp;The delimiter string.<br/>
+
+| `str` | *{String}* |  The base string. |
+| `delimiter` | *{String}* |  The delimiter string. |
 
 #### Returns
- *{String}*<br/>
+
+| *{String}* |  |
 
 #### Example
 
@@ -445,11 +465,13 @@ Note that non-string parameters will be
 automatically converted to strings.
 
 #### Parameters
-`str` *{String}*&thinsp;&#8212;&thinsp;The base string.<br/>
-`delimiter` *{String}*&thinsp;&#8212;&thinsp;The delimiter string.<br/>
+
+| `str` | *{String}* |  The base string. |
+| `delimiter` | *{String}* |  The delimiter string. |
 
 #### Returns
- *{String}*<br/>
+
+| *{String}* |  |
 
 #### Example
 
@@ -471,11 +493,13 @@ Note that non-string parameters will be
 automatically converted to strings.
 
 #### Parameters
-`str` *{String}*&thinsp;&#8212;&thinsp;The base string.<br/>
-`delimiter` *{String}*&thinsp;&#8212;&thinsp;The delimiter string.<br/>
+
+| `str` | *{String}* |  The base string. |
+| `delimiter` | *{String}* |  The delimiter string. |
 
 #### Returns
- *{String}*<br/>
+
+| *{String}* |  |
 
 #### Example
 

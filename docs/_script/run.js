@@ -54,6 +54,7 @@ const parseJsonFile = json => json.docs ? json.docs.filter(doc => doc.name != un
 
 const exportDocsUsingTemplate = (path, docName, template) => docs => {
 	let data = JSON.stringify(processDocs(docs));
+	// console.log(data);
 	execAsPromise(`ejs-cli ${template} > ${path}/${docName}.md -O '${data}'`);
 	return docs;
 };
@@ -78,10 +79,10 @@ const formatTable = params => {
 };
 
 const formatTableLine = param => {
-	let name = param.name ? "`" + formatParam(param) + "`" : "";
-	let type = param.type && param.type.names.length > 0 ? " *" + formatType(param.type.names) + "*" : "";
-	let desc = param.description ? "&thinsp;&#8212;&thinsp;" + formatDescription(param.description) : "";
-	return `${name}${type}${desc}`;
+	let name = param.name ? "`" + param.name + "` | " : "";
+	let type = (param.type && param.type.names.length > 0) ? "*" + formatType(param.type.names) + "* | " : "";
+	let desc = param.description ? " " + formatDescription(param.description) : "";
+	return `| ${name}${type}${desc} |`;
 };
 
 const formatSignature = (name, params) => {

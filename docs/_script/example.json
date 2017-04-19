@@ -3,23 +3,22 @@
 		"name": "Promise",
 		"href": "promise",
 		"items": [{
-			"comment": "/**\n * Atrasa o encadeamento de uma Promise por um tempo\n * determinado.\n * \n * @category Promise\n * @param  {number} [delay = 0] Tempo do atraso em milisegundos\n * @return {Promise}\n * @public\n *\n * @example\n * Promise.resolve(\"aguardando\")\n * \t.then(waitInPromise(500))\n * \t.then(console.log);\n *\n * // => \"aguardando\"\n * // mostrado depois de 500 milisegundos.\n */",
+			"comment": "/**\n * Transforms a DOM event into a promise.\n * \n * This functions takes as parameters: a DOM element,\n * the name of the event that will be listened for\n * and a function that verifies if the event has already\n * happened, which receives the DOM element as parameter.\n *\n * Like all promises in Javascript, this function will\n * only fulfill once, either if the verification function\n * returns true or when the event occurs for the first time.\n *\n * Note that the function throws an error if the first two\n * parameters are not a DOM element and a string.\n *\n * @category Promise\n * @param  {HTMLElement} domEl The DOM element.\n * @param  {String} evtName The name of the event that will be listened for.\n * @param  {Function} [happened = domEl => false] The verification function.\n * @return {Promise} When fulfilled, returns the DOM element.\n *\n * @example\n * var checkbox = document.createElement(\"input\");\n * checkbox.type = \"checkbox\";\n * document.body.appendChild(checkbox);\n *\n * eventAsPromise(checkbox, \"change\")\n * \t.then(checkbox => console.log(checkbox.checked));\n *\n * // => true\n * // shown as soon as the checkbox is clicked for the first time.\n *\n * var image = document.createElement(\"img\");\n * image.src = \"https://www.w3.org/Icons/w3c_home\";\n * document.body.appendChild(image);\n *\n * eventAsPromise(image, \"load\", image => image.complete)\n * \t.then(domEl => console.log(domEl.src));\n *\n * // => \"https://www.w3.org/Icons/w3c_home\"\n * // shown when the image is loaded or as soon as eventAsPromise is called, if the image has already been loaded.\n */",
 			"meta": {
-				"range": [368, 572],
-				"filename": "waitInPromise.js",
-				"lineno": 18,
-				"path": "/Users/leonardofavre/Dropbox (Pessoal)/Websites/websites/canivete/dist",
+				"range": [1700, 2170],
+				"filename": "eventAsPromise.js",
+				"lineno": 46,
+				"path": "/Users/ecom03/Dropbox (Pessoal)/Websites/websites/canivete/dist",
 				"code": {
-					"id": "astnode100000077",
-					"name": "waitInPromise",
-					"type": "FunctionDeclaration",
-					"paramnames": ["delay"]
+					"id": "astnode100000086",
+					"name": "eventAsPromise",
+					"type": "ArrowFunctionExpression"
 				},
 				"vars": {
 					"": null
 				}
 			},
-			"description": "Atrasa o encadeamento de uma Promise por um tempo determinado.",
+			"description": "Transforms a DOM event into a promise.\n\nThis functions takes as parameters: a DOM element,\nthe name of the event that will be listened for\nand a function that verifies if the event has already\nhappened, which receives the DOM element as parameter.\n\nLike all promises in Javascript, this function will\nonly fulfill once, either if the verification function\nreturns true or when the event occurs for the first time.\n\nNote that the function throws an error if the first two\nparameters are not a DOM element and a string.",
 			"tags": [{
 				"originalTitle": "category",
 				"title": "category",
@@ -28,48 +27,440 @@
 			}],
 			"params": [{
 				"type": {
-					"names": ["number"]
+					"names": ["HTMLElement"]
+				},
+				"description": "The DOM element.",
+				"name": "domEl"
+			}, {
+				"type": {
+					"names": ["String"]
+				},
+				"description": "The name of the event that will be listened for.",
+				"name": "evtName"
+			}, {
+				"type": {
+					"names": ["function"]
 				},
 				"optional": true,
-				"defaultvalue": 0,
-				"description": "Tempo do atraso em milisegundos",
+				"defaultvalue": "domEl => false",
+				"description": "The verification function.",
+				"name": "happened"
+			}],
+			"returns": [{
+				"type": {
+					"names": ["Promise"]
+				},
+				"description": "When fulfilled, returns the DOM element."
+			}],
+			"examples": ["var checkbox = document.createElement(\"input\");\ncheckbox.type = \"checkbox\";\ndocument.body.appendChild(checkbox);\n\neventAsPromise(checkbox, \"change\")\n\t.then(checkbox => console.log(checkbox.checked));\n\n// => true\n// shown as soon as the checkbox is clicked for the first time.\n\nvar image = document.createElement(\"img\");\nimage.src = \"https://www.w3.org/Icons/w3c_home\";\ndocument.body.appendChild(image);\n\neventAsPromise(image, \"load\", image => image.complete)\n\t.then(domEl => console.log(domEl.src));\n\n// => \"https://www.w3.org/Icons/w3c_home\"\n// shown when the image is loaded or as soon as eventAsPromise is called, if the image has already been loaded."],
+			"name": "eventAsPromise",
+			"longname": "eventAsPromise",
+			"kind": "function",
+			"scope": "global",
+			"___id": "T000002R000010",
+			"___s": true,
+			"href": "eventAsPromise",
+			"paramsTable": ["| `domEl` | *{HTMLElement}* |  The DOM element. |", "| `evtName` | *{String}* |  The name of the event that will be listened for. |", "| `happened` | *{function}* |  The verification function. |"],
+			"returnsTable": ["| *{Promise}* |  When fulfilled, returns the DOM element. |"],
+			"signature": "eventAsPromise(domEl, evtName, [happened])"
+		}, {
+			"comment": "/**\n * Delays the chaining of a promise by a specified\n * time in milliseconds.\n *\n * This function is curried so as to be used inside\n * the `.then()` method, passing along the resolved\n * value of the previous promise step to the next.\n *\n * Note that if a non-numeric parameter is passed,\n * the promise resolves without delay, skipping the\n * internal `setTimeout()`.\n * \n * @category Promise\n * @param  {Number} delay The delay in milliseconds.\n * @return {Promise} When fulfilled, returns the resolved value from the previous step.\n * @public\n *\n * @example\n * Promise.resolve(\"waiting\")\n * \t.then(waitInPromise(500))\n * \t.then(console.log);\n *\n * // => \"waiting\"\n * // shown after 500ms.\n */",
+			"meta": {
+				"range": [699, 918],
+				"filename": "waitInPromise.js",
+				"lineno": 26,
+				"path": "/Users/ecom03/Dropbox (Pessoal)/Websites/websites/canivete/dist",
+				"code": {
+					"id": "astnode100000450",
+					"name": "waitInPromise",
+					"type": "FunctionDeclaration",
+					"paramnames": ["delay"]
+				},
+				"vars": {
+					"": null
+				}
+			},
+			"description": "Delays the chaining of a promise by a specified\ntime in milliseconds.\n\nThis function is curried so as to be used inside\nthe `.then()` method, passing along the resolved\nvalue of the previous promise step to the next.\n\nNote that if a non-numeric parameter is passed,\nthe promise resolves without delay, skipping the\ninternal `setTimeout()`.",
+			"tags": [{
+				"originalTitle": "category",
+				"title": "category",
+				"text": "Promise",
+				"value": "Promise"
+			}],
+			"params": [{
+				"type": {
+					"names": ["Number"]
+				},
+				"description": "The delay in milliseconds.",
 				"name": "delay"
 			}],
 			"returns": [{
 				"type": {
 					"names": ["Promise"]
-				}
+				},
+				"description": "When fulfilled, returns the resolved value from the previous step."
 			}],
 			"access": "public",
-			"examples": ["Promise.resolve(\"aguardando\")\n\t.then(waitInPromise(500))\n\t.then(console.log);\n\n// => \"aguardando\"\n// mostrado depois de 500 milisegundos."],
+			"examples": ["Promise.resolve(\"waiting\")\n\t.then(waitInPromise(500))\n\t.then(console.log);\n\n// => \"waiting\"\n// shown after 500ms."],
 			"name": "waitInPromise",
 			"longname": "waitInPromise",
 			"kind": "function",
 			"scope": "global",
-			"___id": "T000002R000010",
+			"___id": "T000002R000030",
 			"___s": true,
 			"href": "waitInPromise",
-			"paramsTable": ["`[delay = 0]`*{number}*: Tempo do atraso em milisegundos"],
-			"returnsTable": ["*{Promise}*"],
-			"signature": "waitInPromise([delay = 0])"
+			"paramsTable": ["| `delay` | *{Number}* |  The delay in milliseconds. |"],
+			"returnsTable": ["| *{Promise}* |  When fulfilled, returns the resolved value from the previous step. |"],
+			"signature": "waitInPromise(delay)"
+		}]
+	}, {
+		"name": "Reduce",
+		"href": "reduce",
+		"items": [{
+			"comment": "/**\n * When used with `Array.prototype.reduce()`, returns\n * the average of the values in an array.\n *\n * Note that reducing arrays with non-numeric values\n * using `toAverage()` can lead to unexpected results.\n *\n * @category Reduce\n * @return {Number} The average of the values in an array.\n * @public\n *\n * @example\n * [3, 5, 7, 9].reduce(toAverage());\n * // => 6\n */",
+			"meta": {
+				"range": [377, 594],
+				"filename": "toAverage.js",
+				"lineno": 16,
+				"path": "/Users/ecom03/Dropbox (Pessoal)/Websites/websites/canivete/dist",
+				"code": {
+					"id": "astnode100000158",
+					"name": "toAverage",
+					"type": "ArrowFunctionExpression"
+				},
+				"vars": {
+					"": null
+				}
+			},
+			"description": "When used with `Array.prototype.reduce()`, returns\nthe average of the values in an array.\n\nNote that reducing arrays with non-numeric values\nusing `toAverage()` can lead to unexpected results.",
+			"tags": [{
+				"originalTitle": "category",
+				"title": "category",
+				"text": "Reduce",
+				"value": "Reduce"
+			}],
+			"returns": [{
+				"type": {
+					"names": ["Number"]
+				},
+				"description": "The average of the values in an array."
+			}],
+			"access": "public",
+			"examples": ["[3, 5, 7, 9].reduce(toAverage());\n// => 6"],
+			"name": "toAverage",
+			"longname": "toAverage",
+			"kind": "function",
+			"scope": "global",
+			"___id": "T000002R000013",
+			"___s": true,
+			"href": "toAverage",
+			"returnsTable": ["| *{Number}* |  The average of the values in an array. |"],
+			"signature": "toAverage()"
+		}, {
+			"comment": "/**\n * When used with `Array.prototype.reduce()`, returns\n * the object in an array in which a specific property,\n * passed as parameter, has the closest value to the average.\n *\n * If two or more results are found, the first one\n * is returned.\n *\n * Note that this function expects the reduced array to be\n * formed by objects with the same set of properties.\n *\n * @category Reduce\n * @param {String} path The path to the property of an object.\n * @return {Object} The object in which an specific property has the closest value to the average.\n * @public\n *\n * @example\n * var cities = [{\n * \tcity: \"Rio de Janeiro\",\n * \ttemperature: 96,\n * \tdemographics: {\n * \t\tpopulation: 6.32\n * \t}\n * }, {\n * \tcity: \"São Paulo\",\n * \ttemperature: 82.5,\n * \tdemographics: {\n * \t\tpopulation: 12.04\n * \t}\n * }, {\n * \tcity: \"Curitiba\",\n * \ttemperature: 70,\n * \tdemographics: {\n * \t\tpopulation: 1.752\n * \t}\n * }, {\n * \tcity: \"Florianópolis\",\n * \ttemperature: 86,\n * \tdemographics: {\n * \t\tpopulation: 0.249\n * \t}\n * }];\n *\n * // average temperature: 83.625\n * // average population: 5.09025\n *\n * cities.reduce(toAverageProp(\"temperature\"));\n * // => { city: \"São Paulo\", [...] }\n *\n * cities.reduce(toAverageProp(\"demographics.population\"));\n * // => { city: \"Rio de Janeiro\", [...] }\n */",
+			"meta": {
+				"range": [1365, 1682],
+				"filename": "toAverageProp.js",
+				"lineno": 56,
+				"path": "/Users/ecom03/Dropbox (Pessoal)/Websites/websites/canivete/dist",
+				"code": {
+					"id": "astnode100000206",
+					"name": "toAverageProp",
+					"type": "ArrowFunctionExpression"
+				},
+				"vars": {
+					"average": "toAverageProp~average",
+					"": null
+				}
+			},
+			"description": "When used with `Array.prototype.reduce()`, returns\nthe object in an array in which a specific property,\npassed as parameter, has the closest value to the average.\n\nIf two or more results are found, the first one\nis returned.\n\nNote that this function expects the reduced array to be\nformed by objects with the same set of properties.",
+			"tags": [{
+				"originalTitle": "category",
+				"title": "category",
+				"text": "Reduce",
+				"value": "Reduce"
+			}],
+			"params": [{
+				"type": {
+					"names": ["String"]
+				},
+				"description": "The path to the property of an object.",
+				"name": "path"
+			}],
+			"returns": [{
+				"type": {
+					"names": ["Object"]
+				},
+				"description": "The object in which an specific property has the closest value to the average."
+			}],
+			"access": "public",
+			"examples": ["var cities = [{\n\tcity: \"Rio de Janeiro\",\n\ttemperature: 96,\n\tdemographics: {\n\t\tpopulation: 6.32\n\t}\n}, {\n\tcity: \"São Paulo\",\n\ttemperature: 82.5,\n\tdemographics: {\n\t\tpopulation: 12.04\n\t}\n}, {\n\tcity: \"Curitiba\",\n\ttemperature: 70,\n\tdemographics: {\n\t\tpopulation: 1.752\n\t}\n}, {\n\tcity: \"Florianópolis\",\n\ttemperature: 86,\n\tdemographics: {\n\t\tpopulation: 0.249\n\t}\n}];\n\n// average temperature: 83.625\n// average population: 5.09025\n\ncities.reduce(toAverageProp(\"temperature\"));\n// => { city: \"São Paulo\", [...] }\n\ncities.reduce(toAverageProp(\"demographics.population\"));\n// => { city: \"Rio de Janeiro\", [...] }"],
+			"name": "toAverageProp",
+			"longname": "toAverageProp",
+			"kind": "function",
+			"scope": "global",
+			"___id": "T000002R000016",
+			"___s": true,
+			"href": "toAverageProp",
+			"paramsTable": ["| `path` | *{String}* |  The path to the property of an object. |"],
+			"returnsTable": ["| *{Object}* |  The object in which an specific property has the closest value to the average. |"],
+			"signature": "toAverageProp(path)"
+		}, {
+			"comment": "/**\n * When used with `Array.prototype.reduce()`, returns\n * the closest value to the one passed as parameter.\n *\n * If two or more results are found, the first one\n * is returned.\n *\n * Note that reducing arrays with non-numeric values\n * using `toClosest()` can lead to unexpected results.\n *\n * @category Reduce\n * @param {Number} num The base value.\n * @return {Number} The value, from an array, closest to the base value.\n * @public\n *\n * @example\n * [3, 5, 7, 9].reduce(toClosest(6));\n * // => 5\n *\n * [3, 5, 7, 9].reduce(toClosest(-2));\n * // => 3\n */",
+			"meta": {
+				"range": [565, 718],
+				"filename": "toClosest.js",
+				"lineno": 23,
+				"path": "/Users/ecom03/Dropbox (Pessoal)/Websites/websites/canivete/dist",
+				"code": {
+					"id": "astnode100000279",
+					"name": "toClosest",
+					"type": "ArrowFunctionExpression"
+				},
+				"vars": {
+					"": null
+				}
+			},
+			"description": "When used with `Array.prototype.reduce()`, returns\nthe closest value to the one passed as parameter.\n\nIf two or more results are found, the first one\nis returned.\n\nNote that reducing arrays with non-numeric values\nusing `toClosest()` can lead to unexpected results.",
+			"tags": [{
+				"originalTitle": "category",
+				"title": "category",
+				"text": "Reduce",
+				"value": "Reduce"
+			}],
+			"params": [{
+				"type": {
+					"names": ["Number"]
+				},
+				"description": "The base value.",
+				"name": "num"
+			}],
+			"returns": [{
+				"type": {
+					"names": ["Number"]
+				},
+				"description": "The value, from an array, closest to the base value."
+			}],
+			"access": "public",
+			"examples": ["[3, 5, 7, 9].reduce(toClosest(6));\n// => 5\n\n[3, 5, 7, 9].reduce(toClosest(-2));\n// => 3"],
+			"name": "toClosest",
+			"longname": "toClosest",
+			"kind": "function",
+			"scope": "global",
+			"___id": "T000002R000020",
+			"___s": true,
+			"href": "toClosest",
+			"paramsTable": ["| `num` | *{Number}* |  The base value. |"],
+			"returnsTable": ["| *{Number}* |  The value, from an array, closest to the base value. |"],
+			"signature": "toClosest(num)"
+		}, {
+			"comment": "/**\n * When used with `Array.prototype.reduce()`, returns\n * the object in an array in which a specific property,\n * passed as parameter, has the closest value to another,\n * also passed as parameter.\n *\n * If two or more results are found, the first one\n * is returned.\n *\n * Note that this function expects the reduced array to be\n * formed by objects with the same set of properties.\n *\n * @category Reduce\n * @param {String} path The path to the property of an object.\n * @param {String} num The base value.\n * @return {Object} The object in which an specific property has the closest value to the base value.\n * @public\n *\n * @example\n * var cities = [{\n * \tcity: \"Rio de Janeiro\",\n * \ttemperature: 96,\n * \tdemographics: {\n * \t\tpopulation: 6.32\n * \t}\n * }, {\n * \tcity: \"São Paulo\",\n * \ttemperature: 82.5,\n * \tdemographics: {\n * \t\tpopulation: 12.04\n * \t}\n * }, {\n * \tcity: \"Curitiba\",\n * \ttemperature: 70,\n * \tdemographics: {\n * \t\tpopulation: 1.752\n * \t}\n * }, {\n * \tcity: \"Florianópolis\",\n * \ttemperature: 86,\n * \tdemographics: {\n * \t\tpopulation: 0.249\n * \t}\n * }];\n *\n * cities.reduce(toClosestProp(\"temperature\", 75));\n * // => { city: \"Curitiba\", [...] }\n *\n * cities.reduce(toClosestProp(\"demographics.population\", 5));\n * // => { city: \"Rio de Janeiro\", [...] }\n */",
+			"meta": {
+				"range": [1330, 1533],
+				"filename": "toClosestProp.js",
+				"lineno": 54,
+				"path": "/Users/ecom03/Dropbox (Pessoal)/Websites/websites/canivete/dist",
+				"code": {
+					"id": "astnode100000317",
+					"name": "toClosestProp",
+					"type": "ArrowFunctionExpression"
+				},
+				"vars": {
+					"": null
+				}
+			},
+			"description": "When used with `Array.prototype.reduce()`, returns\nthe object in an array in which a specific property,\npassed as parameter, has the closest value to another,\nalso passed as parameter.\n\nIf two or more results are found, the first one\nis returned.\n\nNote that this function expects the reduced array to be\nformed by objects with the same set of properties.",
+			"tags": [{
+				"originalTitle": "category",
+				"title": "category",
+				"text": "Reduce",
+				"value": "Reduce"
+			}],
+			"params": [{
+				"type": {
+					"names": ["String"]
+				},
+				"description": "The path to the property of an object.",
+				"name": "path"
+			}, {
+				"type": {
+					"names": ["String"]
+				},
+				"description": "The base value.",
+				"name": "num"
+			}],
+			"returns": [{
+				"type": {
+					"names": ["Object"]
+				},
+				"description": "The object in which an specific property has the closest value to the base value."
+			}],
+			"access": "public",
+			"examples": ["var cities = [{\n\tcity: \"Rio de Janeiro\",\n\ttemperature: 96,\n\tdemographics: {\n\t\tpopulation: 6.32\n\t}\n}, {\n\tcity: \"São Paulo\",\n\ttemperature: 82.5,\n\tdemographics: {\n\t\tpopulation: 12.04\n\t}\n}, {\n\tcity: \"Curitiba\",\n\ttemperature: 70,\n\tdemographics: {\n\t\tpopulation: 1.752\n\t}\n}, {\n\tcity: \"Florianópolis\",\n\ttemperature: 86,\n\tdemographics: {\n\t\tpopulation: 0.249\n\t}\n}];\n\ncities.reduce(toClosestProp(\"temperature\", 75));\n// => { city: \"Curitiba\", [...] }\n\ncities.reduce(toClosestProp(\"demographics.population\", 5));\n// => { city: \"Rio de Janeiro\", [...] }"],
+			"name": "toClosestProp",
+			"longname": "toClosestProp",
+			"kind": "function",
+			"scope": "global",
+			"___id": "T000002R000022",
+			"___s": true,
+			"href": "toClosestProp",
+			"paramsTable": ["| `path` | *{String}* |  The path to the property of an object. |", "| `num` | *{String}* |  The base value. |"],
+			"returnsTable": ["| *{Object}* |  The object in which an specific property has the closest value to the base value. |"],
+			"signature": "toClosestProp(path, num)"
+		}, {
+			"comment": "/**\n * When used with `Array.prototype.reduce()`, returns\n * the object in an array in which a specific property\n * has the largest property.\n *\n * If two or more results are found, the first one\n * is returned.\n *\n * Note that this function expects the reduced array to be\n * formed by objects with the same set of properties.\n *\n * @category Reduce\n * @param {String} path The path to the property of an object.\n * @return {Object} The object in which a specific property has the largest value.\n * @public\n *\n * @example\n * var cities = [{\n * \tcity: \"Rio de Janeiro\",\n * \ttemperature: 96,\n * \tdemographics: {\n * \t\tpopulation: 6.32\n * \t}\n * }, {\n * \tcity: \"São Paulo\",\n * \ttemperature: 82.5,\n * \tdemographics: {\n * \t\tpopulation: 12.04\n * \t}\n * }, {\n * \tcity: \"Curitiba\",\n * \ttemperature: 70,\n * \tdemographics: {\n * \t\tpopulation: 1.752\n * \t}\n * }, {\n * \tcity: \"Florianópolis\",\n * \ttemperature: 86,\n * \tdemographics: {\n * \t\tpopulation: 0.249\n * \t}\n * }];\n *\n * cities.reduce(toLargestProp(\"temperature\"));\n * // => { city: \"Rio de Janeiro\", [...] }\n *\n * cities.reduce(toLargestProp(\"demographics.population\"));\n * // => { city: \"São Paulo\", [...] }\n */",
+			"meta": {
+				"range": [1207, 1360],
+				"filename": "toLargestProp.js",
+				"lineno": 52,
+				"path": "/Users/ecom03/Dropbox (Pessoal)/Websites/websites/canivete/dist",
+				"code": {
+					"id": "astnode100000368",
+					"name": "toLargestProp",
+					"type": "ArrowFunctionExpression"
+				},
+				"vars": {
+					"": null
+				}
+			},
+			"description": "When used with `Array.prototype.reduce()`, returns\nthe object in an array in which a specific property\nhas the largest property.\n\nIf two or more results are found, the first one\nis returned.\n\nNote that this function expects the reduced array to be\nformed by objects with the same set of properties.",
+			"tags": [{
+				"originalTitle": "category",
+				"title": "category",
+				"text": "Reduce",
+				"value": "Reduce"
+			}],
+			"params": [{
+				"type": {
+					"names": ["String"]
+				},
+				"description": "The path to the property of an object.",
+				"name": "path"
+			}],
+			"returns": [{
+				"type": {
+					"names": ["Object"]
+				},
+				"description": "The object in which a specific property has the largest value."
+			}],
+			"access": "public",
+			"examples": ["var cities = [{\n\tcity: \"Rio de Janeiro\",\n\ttemperature: 96,\n\tdemographics: {\n\t\tpopulation: 6.32\n\t}\n}, {\n\tcity: \"São Paulo\",\n\ttemperature: 82.5,\n\tdemographics: {\n\t\tpopulation: 12.04\n\t}\n}, {\n\tcity: \"Curitiba\",\n\ttemperature: 70,\n\tdemographics: {\n\t\tpopulation: 1.752\n\t}\n}, {\n\tcity: \"Florianópolis\",\n\ttemperature: 86,\n\tdemographics: {\n\t\tpopulation: 0.249\n\t}\n}];\n\ncities.reduce(toLargestProp(\"temperature\"));\n// => { city: \"Rio de Janeiro\", [...] }\n\ncities.reduce(toLargestProp(\"demographics.population\"));\n// => { city: \"São Paulo\", [...] }"],
+			"name": "toLargestProp",
+			"longname": "toLargestProp",
+			"kind": "function",
+			"scope": "global",
+			"___id": "T000002R000024",
+			"___s": true,
+			"href": "toLargestProp",
+			"paramsTable": ["| `path` | *{String}* |  The path to the property of an object. |"],
+			"returnsTable": ["| *{Object}* |  The object in which a specific property has the largest value. |"],
+			"signature": "toLargestProp(path)"
+		}, {
+			"comment": "/**\n * When used with `Array.prototype.reduce()`, returns\n * the object in an array in which a specific property\n * has the smallest property.\n *\n * If two or more results are found, the first one\n * is returned.\n *\n * Note that this function expects the reduced array to be\n * formed by objects with the same set of properties.\n *\n * @category Reduce\n * @param {String} path The path to the property of an object.\n * @return {Object} The object in which a specific property has the smallest value.\n * @public\n *\n * @example\n * var cities = [{\n * \tcity: \"Rio de Janeiro\",\n * \ttemperature: 96,\n * \tdemographics: {\n * \t\tpopulation: 6.32\n * \t}\n * }, {\n * \tcity: \"São Paulo\",\n * \ttemperature: 82.5,\n * \tdemographics: {\n * \t\tpopulation: 12.04\n * \t}\n * }, {\n * \tcity: \"Curitiba\",\n * \ttemperature: 70,\n * \tdemographics: {\n * \t\tpopulation: 1.752\n * \t}\n * }, {\n * \tcity: \"Florianópolis\",\n * \ttemperature: 86,\n * \tdemographics: {\n * \t\tpopulation: 0.249\n * \t}\n * }];\n *\n * cities.reduce(toSmallestProp(\"temperature\"));\n * // => { city: \"Curitiba\", [...] }\n *\n * cities.reduce(toSmallestProp(\"demographics.population\"));\n * // => { city: \"Florianópolis\", [...] }\n */",
+			"meta": {
+				"range": [1209, 1363],
+				"filename": "toSmallestProp.js",
+				"lineno": 52,
+				"path": "/Users/ecom03/Dropbox (Pessoal)/Websites/websites/canivete/dist",
+				"code": {
+					"id": "astnode100000405",
+					"name": "toSmallestProp",
+					"type": "ArrowFunctionExpression"
+				},
+				"vars": {
+					"": null
+				}
+			},
+			"description": "When used with `Array.prototype.reduce()`, returns\nthe object in an array in which a specific property\nhas the smallest property.\n\nIf two or more results are found, the first one\nis returned.\n\nNote that this function expects the reduced array to be\nformed by objects with the same set of properties.",
+			"tags": [{
+				"originalTitle": "category",
+				"title": "category",
+				"text": "Reduce",
+				"value": "Reduce"
+			}],
+			"params": [{
+				"type": {
+					"names": ["String"]
+				},
+				"description": "The path to the property of an object.",
+				"name": "path"
+			}],
+			"returns": [{
+				"type": {
+					"names": ["Object"]
+				},
+				"description": "The object in which a specific property has the smallest value."
+			}],
+			"access": "public",
+			"examples": ["var cities = [{\n\tcity: \"Rio de Janeiro\",\n\ttemperature: 96,\n\tdemographics: {\n\t\tpopulation: 6.32\n\t}\n}, {\n\tcity: \"São Paulo\",\n\ttemperature: 82.5,\n\tdemographics: {\n\t\tpopulation: 12.04\n\t}\n}, {\n\tcity: \"Curitiba\",\n\ttemperature: 70,\n\tdemographics: {\n\t\tpopulation: 1.752\n\t}\n}, {\n\tcity: \"Florianópolis\",\n\ttemperature: 86,\n\tdemographics: {\n\t\tpopulation: 0.249\n\t}\n}];\n\ncities.reduce(toSmallestProp(\"temperature\"));\n// => { city: \"Curitiba\", [...] }\n\ncities.reduce(toSmallestProp(\"demographics.population\"));\n// => { city: \"Florianópolis\", [...] }"],
+			"name": "toSmallestProp",
+			"longname": "toSmallestProp",
+			"kind": "function",
+			"scope": "global",
+			"___id": "T000002R000026",
+			"___s": true,
+			"href": "toSmallestProp",
+			"paramsTable": ["| `path` | *{String}* |  The path to the property of an object. |"],
+			"returnsTable": ["| *{Object}* |  The object in which a specific property has the smallest value. |"],
+			"signature": "toSmallestProp(path)"
+		}, {
+			"comment": "/**\n * When used with `Array.prototype.reduce()`, returns\n * the sum of the values in an array.\n *\n * Note that reducing arrays with non-numeric values\n * using `toSum()` can lead to unexpected results.\n *\n * @category Reduce\n * @return {Number} The sum of the values in an array.\n * @public\n *\n * @example\n * [3, 5, 7, 9].reduce(toSum());\n * // => 24\n */",
+			"meta": {
+				"range": [362, 415],
+				"filename": "toSum.js",
+				"lineno": 16,
+				"path": "/Users/ecom03/Dropbox (Pessoal)/Websites/websites/canivete/dist",
+				"code": {
+					"id": "astnode100000438",
+					"name": "toSum",
+					"type": "ArrowFunctionExpression"
+				},
+				"vars": {
+					"": null
+				}
+			},
+			"description": "When used with `Array.prototype.reduce()`, returns\nthe sum of the values in an array.\n\nNote that reducing arrays with non-numeric values\nusing `toSum()` can lead to unexpected results.",
+			"tags": [{
+				"originalTitle": "category",
+				"title": "category",
+				"text": "Reduce",
+				"value": "Reduce"
+			}],
+			"returns": [{
+				"type": {
+					"names": ["Number"]
+				},
+				"description": "The sum of the values in an array."
+			}],
+			"access": "public",
+			"examples": ["[3, 5, 7, 9].reduce(toSum());\n// => 24"],
+			"name": "toSum",
+			"longname": "toSum",
+			"kind": "function",
+			"scope": "global",
+			"___id": "T000002R000028",
+			"___s": true,
+			"href": "toSum",
+			"returnsTable": ["| *{Number}* |  The sum of the values in an array. |"],
+			"signature": "toSum()"
 		}]
 	}, {
 		"name": "String",
 		"href": "string",
 		"items": [{
-			"comment": "/**\n * Dadas duas strings – sentença e delimitador –,\n * retorna uma string com os caracteres **posteriores\n * à primeira ocorrência** do delimitador na sentença.\n * Caso o delimitador não seja encontrado, retorna\n * uma string vazia.\n *\n * @category String\n * @param  {string} str Senteça\n * @param  {string} delimiter Delimitador\n * @return {string}\n * @public\n *\n * @example\n * afterFirst(\"paralelepípedo\", \"le\");\n *\n * // => \"lepípedo\"\n */",
+			"comment": "/**\n * Given two strings, returns a new one formed\n * by the characters **after the first\n * occurrence** of the second string in the first.\n *\n * Returns an empty string if nothing is found.\n *\n * Note that non-string parameters will be\n * automatically converted to strings.\n *\n * @category String\n * @param  {String} str The base string.\n * @param  {String} delimiter The delimiter string.\n * @return {String}\n * @public\n *\n * @example\n * afterFirst(\"parallelepiped\", \"le\");\n * // => \"lepiped\"\n */",
 			"meta": {
-				"range": [522, 607],
+				"range": [579, 664],
 				"filename": "afterFirst.js",
-				"lineno": 21,
-				"path": "/Users/leonardofavre/Dropbox (Pessoal)/Websites/websites/canivete/dist",
+				"lineno": 23,
+				"path": "/Users/ecom03/Dropbox (Pessoal)/Websites/websites/canivete/dist",
 				"code": {
 					"id": "astnode100000006",
 					"name": "afterFirst",
 					"type": "ArrowFunctionExpression"
 				}
 			},
-			"description": "Dadas duas strings – sentença e delimitador –, retorna uma string com os caracteres **posteriores à primeira ocorrência** do delimitador na sentença. Caso o delimitador não seja encontrado, retorna uma string vazia.",
+			"description": "Given two strings, returns a new one formed\nby the characters **after the first\noccurrence** of the second string in the first.\n\nReturns an empty string if nothing is found.\n\nNote that non-string parameters will be\nautomatically converted to strings.",
 			"tags": [{
 				"originalTitle": "category",
 				"title": "category",
@@ -78,24 +469,24 @@
 			}],
 			"params": [{
 				"type": {
-					"names": ["string"]
+					"names": ["String"]
 				},
-				"description": "Senteça",
+				"description": "The base string.",
 				"name": "str"
 			}, {
 				"type": {
-					"names": ["string"]
+					"names": ["String"]
 				},
-				"description": "Delimitador",
+				"description": "The delimiter string.",
 				"name": "delimiter"
 			}],
 			"returns": [{
 				"type": {
-					"names": ["string"]
+					"names": ["String"]
 				}
 			}],
 			"access": "public",
-			"examples": ["afterFirst(\"paralelepípedo\", \"le\");\n\n// => \"lepípedo\""],
+			"examples": ["afterFirst(\"parallelepiped\", \"le\");\n// => \"lepiped\""],
 			"name": "afterFirst",
 			"longname": "afterFirst",
 			"kind": "function",
@@ -103,23 +494,23 @@
 			"___id": "T000002R000002",
 			"___s": true,
 			"href": "afterFirst",
-			"paramsTable": ["`str`*{string}*: Senteça", "`delimiter`*{string}*: Delimitador"],
-			"returnsTable": ["*{string}*"],
+			"paramsTable": ["| `str` | *{String}* |  The base string. |", "| `delimiter` | *{String}* |  The delimiter string. |"],
+			"returnsTable": ["| *{String}* |  |"],
 			"signature": "afterFirst(str, delimiter)"
 		}, {
-			"comment": "/**\n * Dadas duas strings – sentença e delimitador –,\n * retorna uma string com os caracteres **posteriores\n * à última ocorrência** do delimitador na sentença.\n * Caso o delimitador não seja encontrado, retorna\n * uma string vazia.\n *\n * @category String\n * @param  {string} str Senteça\n * @param  {string} delimiter Delimitador\n * @return {string}\n * @public\n *\n * @example\n * afterLast(\"paralelepípedo\", \"le\");\n *\n * // => \"pípedo\"\n */",
+			"comment": "/**\n * Given two strings, returns a new one formed\n * by the characters **after the last\n * occurrence** of the second string in the first.\n *\n * Returns an empty string if nothing is found.\n *\n * Note that non-string parameters will be\n * automatically converted to strings.\n *\n * @category String\n * @param  {String} str The base string.\n * @param  {String} delimiter The delimiter string.\n * @return {String}\n * @public\n *\n * @example\n * afterLast(\"parallelepiped\", \"le\");\n * // => \"piped\"\n */",
 			"meta": {
-				"range": [517, 600],
+				"range": [575, 658],
 				"filename": "afterLast.js",
-				"lineno": 21,
-				"path": "/Users/leonardofavre/Dropbox (Pessoal)/Websites/websites/canivete/dist",
+				"lineno": 23,
+				"path": "/Users/ecom03/Dropbox (Pessoal)/Websites/websites/canivete/dist",
 				"code": {
 					"id": "astnode100000025",
 					"name": "afterLast",
 					"type": "ArrowFunctionExpression"
 				}
 			},
-			"description": "Dadas duas strings – sentença e delimitador –, retorna uma string com os caracteres **posteriores à última ocorrência** do delimitador na sentença. Caso o delimitador não seja encontrado, retorna uma string vazia.",
+			"description": "Given two strings, returns a new one formed\nby the characters **after the last\noccurrence** of the second string in the first.\n\nReturns an empty string if nothing is found.\n\nNote that non-string parameters will be\nautomatically converted to strings.",
 			"tags": [{
 				"originalTitle": "category",
 				"title": "category",
@@ -128,24 +519,24 @@
 			}],
 			"params": [{
 				"type": {
-					"names": ["string"]
+					"names": ["String"]
 				},
-				"description": "Senteça",
+				"description": "The base string.",
 				"name": "str"
 			}, {
 				"type": {
-					"names": ["string"]
+					"names": ["String"]
 				},
-				"description": "Delimitador",
+				"description": "The delimiter string.",
 				"name": "delimiter"
 			}],
 			"returns": [{
 				"type": {
-					"names": ["string"]
+					"names": ["String"]
 				}
 			}],
 			"access": "public",
-			"examples": ["afterLast(\"paralelepípedo\", \"le\");\n\n// => \"pípedo\""],
+			"examples": ["afterLast(\"parallelepiped\", \"le\");\n// => \"piped\""],
 			"name": "afterLast",
 			"longname": "afterLast",
 			"kind": "function",
@@ -153,23 +544,23 @@
 			"___id": "T000002R000004",
 			"___s": true,
 			"href": "afterLast",
-			"paramsTable": ["`str`*{string}*: Senteça", "`delimiter`*{string}*: Delimitador"],
-			"returnsTable": ["*{string}*"],
+			"paramsTable": ["| `str` | *{String}* |  The base string. |", "| `delimiter` | *{String}* |  The delimiter string. |"],
+			"returnsTable": ["| *{String}* |  |"],
 			"signature": "afterLast(str, delimiter)"
 		}, {
-			"comment": "/**\n * Dadas duas strings – sentença e delimitador –,\n * retorna uma string com os caracteres **anteriores\n * à primeira ocorrência** do delimitador na sentença.\n * Caso o delimitador não seja encontrado, retorna\n * uma string vazia.\n *\n * @category String\n * @param  {string} str Senteça\n * @param  {string} delimiter Delimitador\n * @return {string}\n * @public\n *\n * @example\n * beforeFirst(\"paralelepípedo\", \"le\");\n *\n * // => \"para\"\n */",
+			"comment": "/**\n * Given two strings, returns a new one formed\n * by the characters **before the first\n * occurrence** of the second string in the first.\n *\n * Returns an empty string if nothing is found.\n *\n * Note that non-string parameters will be\n * automatically converted to strings.\n *\n * @category String\n * @param  {String} str The base string.\n * @param  {String} delimiter The delimiter string.\n * @return {String}\n * @public\n *\n * @example\n * beforeFirst(\"parallelepiped\", \"le\");\n * // => \"paral\"\n */",
 			"meta": {
-				"range": [518, 605],
+				"range": [579, 666],
 				"filename": "beforeFirst.js",
-				"lineno": 21,
-				"path": "/Users/leonardofavre/Dropbox (Pessoal)/Websites/websites/canivete/dist",
+				"lineno": 23,
+				"path": "/Users/ecom03/Dropbox (Pessoal)/Websites/websites/canivete/dist",
 				"code": {
 					"id": "astnode100000044",
 					"name": "beforeFirst",
 					"type": "ArrowFunctionExpression"
 				}
 			},
-			"description": "Dadas duas strings – sentença e delimitador –, retorna uma string com os caracteres **anteriores à primeira ocorrência** do delimitador na sentença. Caso o delimitador não seja encontrado, retorna uma string vazia.",
+			"description": "Given two strings, returns a new one formed\nby the characters **before the first\noccurrence** of the second string in the first.\n\nReturns an empty string if nothing is found.\n\nNote that non-string parameters will be\nautomatically converted to strings.",
 			"tags": [{
 				"originalTitle": "category",
 				"title": "category",
@@ -178,24 +569,24 @@
 			}],
 			"params": [{
 				"type": {
-					"names": ["string"]
+					"names": ["String"]
 				},
-				"description": "Senteça",
+				"description": "The base string.",
 				"name": "str"
 			}, {
 				"type": {
-					"names": ["string"]
+					"names": ["String"]
 				},
-				"description": "Delimitador",
+				"description": "The delimiter string.",
 				"name": "delimiter"
 			}],
 			"returns": [{
 				"type": {
-					"names": ["string"]
+					"names": ["String"]
 				}
 			}],
 			"access": "public",
-			"examples": ["beforeFirst(\"paralelepípedo\", \"le\");\n\n// => \"para\""],
+			"examples": ["beforeFirst(\"parallelepiped\", \"le\");\n// => \"paral\""],
 			"name": "beforeFirst",
 			"longname": "beforeFirst",
 			"kind": "function",
@@ -203,23 +594,23 @@
 			"___id": "T000002R000006",
 			"___s": true,
 			"href": "beforeFirst",
-			"paramsTable": ["`str`*{string}*: Senteça", "`delimiter`*{string}*: Delimitador"],
-			"returnsTable": ["*{string}*"],
+			"paramsTable": ["| `str` | *{String}* |  The base string. |", "| `delimiter` | *{String}* |  The delimiter string. |"],
+			"returnsTable": ["| *{String}* |  |"],
 			"signature": "beforeFirst(str, delimiter)"
 		}, {
-			"comment": "/**\n * Dadas duas strings – sentença e delimitador –,\n * retorna uma string com os caracteres **anteriores\n * à última ocorrência** do delimitador na sentença.\n * Caso o delimitador não seja encontrado, retorna\n * uma string vazia.\n *\n * @category String\n * @param  {string} str Senteça\n * @param  {string} delimiter Delimitador\n * @return {string}\n * @public\n *\n * @example\n * beforeLast(\"paralelepípedo\", \"le\");\n *\n * // => \"parale\"\n */",
+			"comment": "/**\n * Given two strings, returns a new one formed\n * by the characters **before the last\n * occurrence** of the second string in the first.\n *\n * Returns an empty string if nothing is found.\n *\n * Note that non-string parameters will be\n * automatically converted to strings.\n *\n * @category String\n * @param  {String} str The base string.\n * @param  {String} delimiter The delimiter string.\n * @return {String}\n * @public\n *\n * @example\n * beforeLast(\"parallelepiped\", \"le\");\n * // => \"paralle\"\n */",
 			"meta": {
-				"range": [517, 602],
+				"range": [579, 664],
 				"filename": "beforeLast.js",
-				"lineno": 21,
-				"path": "/Users/leonardofavre/Dropbox (Pessoal)/Websites/websites/canivete/dist",
+				"lineno": 23,
+				"path": "/Users/ecom03/Dropbox (Pessoal)/Websites/websites/canivete/dist",
 				"code": {
 					"id": "astnode100000063",
 					"name": "beforeLast",
 					"type": "ArrowFunctionExpression"
 				}
 			},
-			"description": "Dadas duas strings – sentença e delimitador –, retorna uma string com os caracteres **anteriores à última ocorrência** do delimitador na sentença. Caso o delimitador não seja encontrado, retorna uma string vazia.",
+			"description": "Given two strings, returns a new one formed\nby the characters **before the last\noccurrence** of the second string in the first.\n\nReturns an empty string if nothing is found.\n\nNote that non-string parameters will be\nautomatically converted to strings.",
 			"tags": [{
 				"originalTitle": "category",
 				"title": "category",
@@ -228,24 +619,24 @@
 			}],
 			"params": [{
 				"type": {
-					"names": ["string"]
+					"names": ["String"]
 				},
-				"description": "Senteça",
+				"description": "The base string.",
 				"name": "str"
 			}, {
 				"type": {
-					"names": ["string"]
+					"names": ["String"]
 				},
-				"description": "Delimitador",
+				"description": "The delimiter string.",
 				"name": "delimiter"
 			}],
 			"returns": [{
 				"type": {
-					"names": ["string"]
+					"names": ["String"]
 				}
 			}],
 			"access": "public",
-			"examples": ["beforeLast(\"paralelepípedo\", \"le\");\n\n// => \"parale\""],
+			"examples": ["beforeLast(\"parallelepiped\", \"le\");\n// => \"paralle\""],
 			"name": "beforeLast",
 			"longname": "beforeLast",
 			"kind": "function",
@@ -253,8 +644,8 @@
 			"___id": "T000002R000008",
 			"___s": true,
 			"href": "beforeLast",
-			"paramsTable": ["`str`*{string}*: Senteça", "`delimiter`*{string}*: Delimitador"],
-			"returnsTable": ["*{string}*"],
+			"paramsTable": ["| `str` | *{String}* |  The base string. |", "| `delimiter` | *{String}* |  The delimiter string. |"],
+			"returnsTable": ["| *{String}* |  |"],
 			"signature": "beforeLast(str, delimiter)"
 		}]
 	}]
