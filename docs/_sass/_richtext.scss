@@ -60,16 +60,6 @@
 		margin: ($grid * 2) 0 $grid;
 	}
 
-	h4 + p > code {
-		margin-right: 4px;
-	}
-
-	h4 + p > em:after {
-		content: "—";
-		position: relative;
-		left: 0.2em;
-	}
-
 	h5 {
 
 	}
