@@ -23,12 +23,12 @@ Note that the function throws an error if the first two
 parameters are not a DOM element and a string.
 
 #### Parameters
-`domElement` *{HTMLElement}*&#8202;&#8212;&#8202;The DOM element.<br/>
-`eventName` *{String}*&#8202;&#8212;&#8202;The name of the event that will be listened for.<br/>
-`[happened]` *{function}*&#8202;&#8212;&#8202;The verification function.<br/>
+`domElement` *{HTMLElement}*&thinsp;&#8212;&thinsp;The DOM element.<br/>
+`eventName` *{String}*&thinsp;&#8212;&thinsp;The name of the event that will be listened for.<br/>
+`[happened]` *{function}*&thinsp;&#8212;&thinsp;The verification function.<br/>
 
 #### Returns
- *{Promise}*&#8202;&#8212;&#8202;When fulfilled, returns the DOM element.<br/>
+ *{Promise}*&thinsp;&#8212;&thinsp;When fulfilled, returns the DOM element.<br/>
 
 #### Example
 
@@ -69,10 +69,10 @@ the promise resolves without delay, skipping the
 internal `setTimeout()`.
 
 #### Parameters
-`delay` *{Number}*&#8202;&#8212;&#8202;The delay in milliseconds.<br/>
+`delay` *{Number}*&thinsp;&#8212;&thinsp;The delay in milliseconds.<br/>
 
 #### Returns
- *{Promise}*&#8202;&#8212;&#8202;When fulfilled, returns the resolved value from the previous step.<br/>
+ *{Promise}*&thinsp;&#8212;&thinsp;When fulfilled, returns the resolved value from the previous step.<br/>
 
 #### Example
 
@@ -97,7 +97,7 @@ Note that reducing arrays with non-numeric values
 using `toAverage()` can lead to unexpected results.
 
 #### Returns
- *{Number}*&#8202;&#8212;&#8202;The average of the values in an array.<br/>
+ *{Number}*&thinsp;&#8212;&thinsp;The average of the values in an array.<br/>
 
 #### Example
 
@@ -120,10 +120,10 @@ Note that this function expects the reduced array to be
 formed by objects with the same set of properties.
 
 #### Parameters
-`path` *{String}*&#8202;&#8212;&#8202;The path to the property of an object.<br/>
+`path` *{String}*&thinsp;&#8212;&thinsp;The path to the property of an object.<br/>
 
 #### Returns
- *{Object}*&#8202;&#8212;&#8202;The object in which an specific property has the closest value to the average.<br/>
+ *{Object}*&thinsp;&#8212;&thinsp;The object in which an specific property has the closest value to the average.<br/>
 
 #### Example
 
@@ -177,10 +177,10 @@ Note that reducing arrays with non-numeric values
 using `toClosest()` can lead to unexpected results.
 
 #### Parameters
-`num` *{Number}*&#8202;&#8212;&#8202;The base value.<br/>
+`num` *{Number}*&thinsp;&#8212;&thinsp;The base value.<br/>
 
 #### Returns
- *{Number}*&#8202;&#8212;&#8202;The value, from an array, closest to the base value.<br/>
+ *{Number}*&thinsp;&#8212;&thinsp;The value, from an array, closest to the base value.<br/>
 
 #### Example
 
@@ -207,11 +207,11 @@ Note that this function expects the reduced array to be
 formed by objects with the same set of properties.
 
 #### Parameters
-`path` *{String}*&#8202;&#8212;&#8202;The path to the property of an object.<br/>
-`num` *{String}*&#8202;&#8212;&#8202;The base value.<br/>
+`path` *{String}*&thinsp;&#8212;&thinsp;The path to the property of an object.<br/>
+`num` *{String}*&thinsp;&#8212;&thinsp;The base value.<br/>
 
 #### Returns
- *{Object}*&#8202;&#8212;&#8202;The object in which an specific property has the closest value to the base value.<br/>
+ *{Object}*&thinsp;&#8212;&thinsp;The object in which an specific property has the closest value to the base value.<br/>
 
 #### Example
 
@@ -263,10 +263,10 @@ Note that this function expects the reduced array to be
 formed by objects with the same set of properties.
 
 #### Parameters
-`path` *{String}*&#8202;&#8212;&#8202;The path to the property of an object.<br/>
+`path` *{String}*&thinsp;&#8212;&thinsp;The path to the property of an object.<br/>
 
 #### Returns
- *{Object}*&#8202;&#8212;&#8202;The object in which a specific property has the largest value.<br/>
+ *{Object}*&thinsp;&#8212;&thinsp;The object in which a specific property has the largest value.<br/>
 
 #### Example
 
@@ -318,10 +318,10 @@ Note that this function expects the reduced array to be
 formed by objects with the same set of properties.
 
 #### Parameters
-`path` *{String}*&#8202;&#8212;&#8202;The path to the property of an object.<br/>
+`path` *{String}*&thinsp;&#8212;&thinsp;The path to the property of an object.<br/>
 
 #### Returns
- *{Object}*&#8202;&#8212;&#8202;The object in which a specific property has the smallest value.<br/>
+ *{Object}*&thinsp;&#8212;&thinsp;The object in which a specific property has the smallest value.<br/>
 
 #### Example
 
@@ -369,7 +369,7 @@ Note that reducing arrays with non-numeric values
 using `toSum()` can lead to unexpected results.
 
 #### Returns
- *{Number}*&#8202;&#8212;&#8202;The sum of the values in an array.<br/>
+ *{Number}*&thinsp;&#8212;&thinsp;The sum of the values in an array.<br/>
 
 #### Example
 
@@ -393,8 +393,8 @@ Note that non-string parameters will be
 automatically converted to strings.
 
 #### Parameters
-`str` *{String}*&#8202;&#8212;&#8202;The base string.<br/>
-`delimiter` *{String}*&#8202;&#8212;&#8202;The delimiter string.<br/>
+`str` *{String}*&thinsp;&#8212;&thinsp;The base string.<br/>
+`delimiter` *{String}*&thinsp;&#8212;&thinsp;The delimiter string.<br/>
 
 #### Returns
  *{String}*<br/>
@@ -419,8 +419,8 @@ Note that non-string parameters will be
 automatically converted to strings.
 
 #### Parameters
-`str` *{String}*&#8202;&#8212;&#8202;The base string.<br/>
-`delimiter` *{String}*&#8202;&#8212;&#8202;The delimiter string.<br/>
+`str` *{String}*&thinsp;&#8212;&thinsp;The base string.<br/>
+`delimiter` *{String}*&thinsp;&#8212;&thinsp;The delimiter string.<br/>
 
 #### Returns
  *{String}*<br/>
@@ -445,8 +445,8 @@ Note that non-string parameters will be
 automatically converted to strings.
 
 #### Parameters
-`str` *{String}*&#8202;&#8212;&#8202;The base string.<br/>
-`delimiter` *{String}*&#8202;&#8212;&#8202;The delimiter string.<br/>
+`str` *{String}*&thinsp;&#8212;&thinsp;The base string.<br/>
+`delimiter` *{String}*&thinsp;&#8212;&thinsp;The delimiter string.<br/>
 
 #### Returns
  *{String}*<br/>
@@ -471,8 +471,8 @@ Note that non-string parameters will be
 automatically converted to strings.
 
 #### Parameters
-`str` *{String}*&#8202;&#8212;&#8202;The base string.<br/>
-`delimiter` *{String}*&#8202;&#8212;&#8202;The delimiter string.<br/>
+`str` *{String}*&thinsp;&#8212;&thinsp;The base string.<br/>
+`delimiter` *{String}*&thinsp;&#8212;&thinsp;The delimiter string.<br/>
 
 #### Returns
  *{String}*<br/>

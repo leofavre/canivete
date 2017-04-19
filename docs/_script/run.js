@@ -80,7 +80,7 @@ const formatTable = params => {
 const formatTableLine = param => {
 	let name = param.name ? "`" + formatParam(param) + "`" : "";
 	let type = param.type && param.type.names.length > 0 ? " *" + formatType(param.type.names) + "*" : "";
-	let desc = param.description ? "&#8202;&#8212;&#8202;" + formatDescription(param.description) : "";
+	let desc = param.description ? "&thinsp;&#8212;&thinsp;" + formatDescription(param.description) : "";
 	return `${name}${type}${desc}`;
 };
 
