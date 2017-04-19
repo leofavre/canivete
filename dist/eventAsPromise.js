@@ -23,7 +23,7 @@ import isElement from "../node_modules/lodash-es/isElement";
  * @return {Promise} When fulfilled, returns the DOM element.
  *
  * @example
- * var checkbox = document.createElement("input");
+ * let checkbox = document.createElement("input");
  * checkbox.type = "checkbox";
  * document.body.appendChild(checkbox);
  *
@@ -33,7 +33,7 @@ import isElement from "../node_modules/lodash-es/isElement";
  * // => true
  * // shown as soon as the checkbox is clicked for the first time.
  *
- * var image = document.createElement("img");
+ * let image = document.createElement("img");
  * image.src = "https://www.w3.org/Icons/w3c_home";
  * document.body.appendChild(image);
  *

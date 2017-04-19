@@ -18,7 +18,7 @@ import at from "../node_modules/lodash-es/at";
  * @public
  *
  * @example
- * var cities = [{
+ * let cities = [{
  * 	city: "Rio de Janeiro",
  * 	temperature: 96,
  * 	demographics: {

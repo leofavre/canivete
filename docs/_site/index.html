@@ -84,7 +84,7 @@ parameters are not a DOM element and a string.</p>
 
 <h4 id="example">Example</h4>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">checkbox</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"input"</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">checkbox</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"input"</span><span class="p">);</span>
 <span class="nx">checkbox</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s2">"checkbox"</span><span class="p">;</span>
 <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">checkbox</span><span class="p">);</span>
 
@@ -94,7 +94,7 @@ parameters are not a DOM element and a string.</p>
 <span class="c1">// =&gt; true</span>
 <span class="c1">// shown as soon as the checkbox is clicked for the first time.</span>
 
-<span class="kd">var</span> <span class="nx">image</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"img"</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">image</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"img"</span><span class="p">);</span>
 <span class="nx">image</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="s2">"https://www.w3.org/Icons/w3c_home"</span><span class="p">;</span>
 <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">image</span><span class="p">);</span>
 
@@ -253,7 +253,7 @@ formed by objects with the same set of properties.</p>
 
 <h4 id="example-3">Example</h4>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
 	<span class="na">city</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
 	<span class="na">temperature</span><span class="p">:</span> <span class="mi">96</span><span class="p">,</span>
 	<span class="na">demographics</span><span class="p">:</span> <span class="p">{</span>
@@ -405,7 +405,7 @@ formed by objects with the same set of properties.</p>
 
 <h4 id="example-5">Example</h4>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
 	<span class="na">city</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
 	<span class="na">temperature</span><span class="p">:</span> <span class="mi">96</span><span class="p">,</span>
 	<span class="na">demographics</span><span class="p">:</span> <span class="p">{</span>
@@ -490,7 +490,7 @@ formed by objects with the same set of properties.</p>
 
 <h4 id="example-6">Example</h4>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
 	<span class="na">city</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
 	<span class="na">temperature</span><span class="p">:</span> <span class="mi">96</span><span class="p">,</span>
 	<span class="na">demographics</span><span class="p">:</span> <span class="p">{</span>
@@ -575,7 +575,7 @@ formed by objects with the same set of properties.</p>
 
 <h4 id="example-7">Example</h4>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
 	<span class="na">city</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
 	<span class="na">temperature</span><span class="p">:</span> <span class="mi">96</span><span class="p">,</span>
 	<span class="na">demographics</span><span class="p">:</span> <span class="p">{</span>
@@ -915,6 +915,9 @@ automatically converted to strings.</p>
 			</div>
 		</aside>
 	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js" integrity="sha256-+bhVTaRmJ/c07eV80nU8gD2cBBF0rYkf1txqXlrbvb0=" crossorigin="anonymous"></script>
+<script src="js/scripts.js"></script>
+
 </body>
 
 </html>

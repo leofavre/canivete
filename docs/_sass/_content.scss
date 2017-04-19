@@ -104,9 +104,12 @@
 	}
 
 	pre {
-		background-color: rgba(#23241f, 0.8);
-		color: #f8f8f2;
 		white-space: pre-wrap;
+	}
+
+	pre > code {
+		background-color: rgba(#272822, 1);
+		color: #f8f8f2;
 		margin: $grid ($grid * -1) ($grid * 2) ($grid * -2);
 		padding-top: 55px;
 		padding-bottom: 41px;
@@ -136,7 +139,7 @@
 	thead:after {
 		content: "";
 		position: absolute;
-		top: 13px;
+		top: 15px;
 		width: 100%;
 		height: 1px;
 		background: rgba($grey, 0.3);
@@ -149,7 +152,7 @@
 
 	th {
 		position: relative;
-		top: -14px;
+		top: -13px;
 		text-align: left;
 		padding: 0 6px 0 0;
 
@@ -172,7 +175,7 @@
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
 		font-weight: 700;
-		padding: 1px 4px 1px 6px;
+		padding: 1px 3px 1px 4px;
 		background: #000;
 		color: #fff;
 	}

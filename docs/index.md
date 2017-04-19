@@ -39,7 +39,7 @@ parameters are not a DOM element and a string.
 #### Example
 
 ```javascript
-var checkbox = document.createElement("input");
+let checkbox = document.createElement("input");
 checkbox.type = "checkbox";
 document.body.appendChild(checkbox);
 
@@ -49,7 +49,7 @@ eventAsPromise(checkbox, "change")
 // => true
 // shown as soon as the checkbox is clicked for the first time.
 
-var image = document.createElement("img");
+let image = document.createElement("img");
 image.src = "https://www.w3.org/Icons/w3c_home";
 document.body.appendChild(image);
 
@@ -149,7 +149,7 @@ formed by objects with the same set of properties.
 #### Example
 
 ```javascript
-var cities = [{
+let cities = [{
 	city: "Rio de Janeiro",
 	temperature: 96,
 	demographics: {
@@ -249,7 +249,7 @@ formed by objects with the same set of properties.
 #### Example
 
 ```javascript
-var cities = [{
+let cities = [{
 	city: "Rio de Janeiro",
 	temperature: 96,
 	demographics: {
@@ -310,7 +310,7 @@ formed by objects with the same set of properties.
 #### Example
 
 ```javascript
-var cities = [{
+let cities = [{
 	city: "Rio de Janeiro",
 	temperature: 96,
 	demographics: {
@@ -371,7 +371,7 @@ formed by objects with the same set of properties.
 #### Example
 
 ```javascript
-var cities = [{
+let cities = [{
 	city: "Rio de Janeiro",
 	temperature: 96,
 	demographics: {
