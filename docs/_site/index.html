@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Canivete</title>
+	<link href="https://cloud.typography.com/7861976/6348172/css/fonts.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
+</head>
+
+
+<body class="page">
+	<div class="main">
+		<main class="content">
+			<div class="content__area">
+				<h2 id="promise">Promise</h2>
+
+<p><a name="eventAsPromise"></a></p>
+<h3 id="eventaspromisedomel-evtname-happened--domel--false"><code class="highlighter-rouge">eventAsPromise(domEl, evtName, [happened = domEl =&gt; false])</code></h3>
+
+<p>Transforms a DOM event into a promise.</p>
+
+<p>This functions takes as parameters: a DOM element,
+the name of the event that will be listened for
+and a function that verifies if the event has already
+happened, which receives the DOM element as parameter.</p>
+
+<p>Like all promises in Javascript, this function will
+only fulfill once, either if the verification function
+returns true or when the event occurs for the first time.</p>
+
+<p>Note that the function throws an error if the first two
+parameters are not a DOM element and a string.</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>default</th>
+      <th>type</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">domEl</code></td>
+      <td> </td>
+      <td><code class="highlighter-rouge"><span class="p">{</span><span class="err">HTMLElement</span><span class="p">}</span></code></td>
+      <td>The DOM element.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">evtName</code></td>
+      <td> </td>
+      <td><code class="highlighter-rouge"><span class="p">{</span><span class="err">string</span><span class="p">}</span></code></td>
+      <td>The event that will be listened for.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">happened</code></td>
+      <td><code class="highlighter-rouge">domEl =&gt; false</code></td>
+      <td><code class="highlighter-rouge"><span class="p">{</span><span class="err">function</span><span class="p">}</span></code></td>
+      <td>The verification function. <strong>optional</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns">Returns</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>type</th>
+      <th>description</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td><code class="highlighter-rouge"><span class="p">{</span><span class="err">Promise</span><span class="p">}</span></code></td>
+      <td>When fulfilled, returns the DOM element.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="example">Example</h4>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">checkbox</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"input"</span><span class="p">);</span>
+<span class="nx">checkbox</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s2">"checkbox"</span><span class="p">;</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">checkbox</span><span class="p">);</span>
+
+<span class="nx">eventAsPromise</span><span class="p">(</span><span class="nx">checkbox</span><span class="p">,</span> <span class="s2">"change"</span><span class="p">)</span>
+	<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">checkbox</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">checkbox</span><span class="p">.</span><span class="nx">checked</span><span class="p">));</span>
+
+<span class="c1">// =&gt; true</span>
+<span class="c1">// shown as soon as the checkbox is clicked for the first time.</span>
+
+<span class="kd">var</span> <span class="nx">image</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"img"</span><span class="p">);</span>
+<span class="nx">image</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="s2">"https://www.w3.org/Icons/w3c_home"</span><span class="p">;</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">image</span><span class="p">);</span>
+
+<span class="nx">eventAsPromise</span><span class="p">(</span><span class="nx">image</span><span class="p">,</span> <span class="s2">"load"</span><span class="p">,</span> <span class="nx">image</span> <span class="o">=&gt;</span> <span class="nx">image</span><span class="p">.</span><span class="nx">complete</span><span class="p">)</span>
+	<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">domEl</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">domEl</span><span class="p">.</span><span class="nx">src</span><span class="p">));</span>
+
+<span class="c1">// =&gt; "https://www.w3.org/Icons/w3c_home"</span>
+<span class="c1">// shown when the image is loaded or as soon as eventAsPromise is called, if the image has already been loaded.</span>
+</code></pre>
+</div>
+
+<p><a name="waitInPromise"></a></p>
+<h3 id="waitinpromisedelay"><code class="highlighter-rouge">waitInPromise(delay)</code></h3>
+
+<p>Delays the chaining of a promise by a specified
+time in milliseconds.</p>
+
+<p>This function is curried so as to be used inside
+the <code class="highlighter-rouge">.then()</code> method, passing along the resolved
+value of the previous promise step to the next.</p>
+
+<p>Note that if a non-numeric parameter is passed,
+the promise resolves without delay, skipping the
+internal <code class="highlighter-rouge">setTimeout()</code>.</p>
+
+<h4 id="parameters-1">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>default</th>
+      <th>type</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">delay</code></td>
+      <td> </td>
+      <td><code class="highlighter-rouge"><span class="p">{</span><span class="err">number</span><span class="p">}</span></code></td>
+      <td>The delay in milliseconds.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns-1">Returns</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>type</th>
+      <th>description</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td><code class="highlighter-rouge"><span class="p">{</span><span class="err">Promise</span><span class="p">}</span></code></td>
+      <td>When fulfilled, returns the resolved value from the previous step.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="example-1">Example</h4>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="s2">"waiting"</span><span class="p">)</span>
+	<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">waitInPromise</span><span class="p">(</span><span class="mi">500</span><span class="p">))</span>
+	<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">);</span>
+
+<span class="c1">// =&gt; "waiting"</span>
+<span class="c1">// shown after 500ms.</span>
+</code></pre>
+</div>
+
+<h2 id="reduce">Reduce</h2>
+
+<p><a name="toAverage"></a></p>
+<h3 id="toaverage"><code class="highlighter-rouge">toAverage()</code></h3>
+
+<p>When used with <code class="highlighter-rouge">Array.prototype.reduce()</code>, returns
+the average of the values in an array.</p>
+
+<p>Note that reducing arrays with non-numeric values
+using <code class="highlighter-rouge">toAverage()</code> can lead to unexpected results.</p>
+
+<h4 id="returns-2">Returns</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>type</th>
+      <th>description</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td><code class="highlighter-rouge"><span class="p">{</span><span class="err">number</span><span class="p">}</span></code></td>
+      <td>The average of the values in an array.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="example-2">Example</h4>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">].</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toAverage</span><span class="p">());</span>
+<span class="c1">// =&gt; 6</span>
+</code></pre>
+</div>
+
+<p><a name="toAverageProp"></a></p>
+<h3 id="toaverageproppath"><code class="highlighter-rouge">toAverageProp(path)</code></h3>
+
+<p>When used with <code class="highlighter-rouge">Array.prototype.reduce()</code>, returns
+the object in an array in which a specific property,
+passed as parameter, has the closest value to the average.</p>
+
+<p>If two or more results are found, the first one
+is returned.</p>
+
+<p>Note that this function expects the reduced array to be
+formed by objects with the same set of properties.</p>
+
+<h4 id="parameters-2">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>default</th>
+      <th>type</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">path</code></td>
+      <td> </td>
+      <td><code class="highlighter-rouge"><span class="p">{</span><span class="err">string</span><span class="p">}</span></code></td>
+      <td>The path to the property of an object.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns-3">Returns</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>type</th>
+      <th>description</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td><code class="highlighter-rouge"><span class="p">{</span><span class="err">Object</span><span class="p">}</span></code></td>
+      <td>The object in which an specific property has the closest value to the average.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="example-3">Example</h4>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
+	<span class="na">city</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
+	<span class="na">temperature</span><span class="p">:</span> <span class="mi">96</span><span class="p">,</span>
+	<span class="na">demographics</span><span class="p">:</span> <span class="p">{</span>
+		<span class="na">population</span><span class="p">:</span> <span class="mf">6.32</span>
+	<span class="p">}</span>
+<span class="p">},</span> <span class="p">{</span>
+	<span class="na">city</span><span class="p">:</span> <span class="s2">"São Paulo"</span><span class="p">,</span>
+	<span class="na">temperature</span><span class="p">:</span> <span class="mf">82.5</span><span class="p">,</span>
+	<span class="na">demographics</span><span class="p">:</span> <span class="p">{</span>
+		<span class="na">population</span><span class="p">:</span> <span class="mf">12.04</span>
+	<span class="p">}</span>
+<span class="p">},</span> <span class="p">{</span>
+	<span class="na">city</span><span class="p">:</span> <span class="s2">"Curitiba"</span><span class="p">,</span>
+	<span class="na">temperature</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span>
+	<span class="na">demographics</span><span class="p">:</span> <span class="p">{</span>
+		<span class="na">population</span><span class="p">:</span> <span class="mf">1.752</span>
+	<span class="p">}</span>
+<span class="p">},</span> <span class="p">{</span>
+	<span class="na">city</span><span class="p">:</span> <span class="s2">"Florianópolis"</span><span class="p">,</span>
+	<span class="na">temperature</span><span class="p">:</span> <span class="mi">86</span><span class="p">,</span>
+	<span class="na">demographics</span><span class="p">:</span> <span class="p">{</span>
+		<span class="na">population</span><span class="p">:</span> <span class="mf">0.249</span>
+	<span class="p">}</span>
+<span class="p">}];</span>
+
+<span class="c1">// average temperature: 83.625</span>
+<span class="c1">// average population: 5.09025</span>
+
+<span class="nx">cities</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toAverageProp</span><span class="p">(</span><span class="s2">"temperature"</span><span class="p">));</span>
+<span class="c1">// =&gt; { city: "São Paulo", [...] }</span>
+
+<span class="nx">cities</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toAverageProp</span><span class="p">(</span><span class="s2">"demographics.population"</span><span class="p">));</span>
+<span class="c1">// =&gt; { city: "Rio de Janeiro", [...] }</span>
+</code></pre>
+</div>
+
+<p><a name="toClosest"></a></p>
+<h3 id="toclosestnum"><code class="highlighter-rouge">toClosest(num)</code></h3>
+
+<p>When used with <code class="highlighter-rouge">Array.prototype.reduce()</code>, returns
+the closest value to the one passed as parameter.</p>
+
+<p>If two or more results are found, the first one
+is returned.</p>
+
+<p>Note that reducing arrays with non-numeric values
+using <code class="highlighter-rouge">toClosest()</code> can lead to unexpected results.</p>
+
+<h4 id="parameters-3">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>default</th>
+      <th>type</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">num</code></td>
+      <td> </td>
+      <td><code class="highlighter-rouge"><span class="p">{</span><span class="err">number</span><span class="p">}</span></code></td>
+      <td>The base value.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns-4">Returns</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>type</th>
+      <th>description</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td><code class="highlighter-rouge"><span class="p">{</span><span class="err">number</span><span class="p">}</span></code></td>
+      <td>The value, from an array, closest to the base value.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="example-4">Example</h4>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">].</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toClosest</span><span class="p">(</span><span class="mi">6</span><span class="p">));</span>
+<span class="c1">// =&gt; 5</span>
+
+<span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">].</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toClosest</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">));</span>
+<span class="c1">// =&gt; 3</span>
+</code></pre>
+</div>
+
+<p><a name="toClosestProp"></a></p>
+<h3 id="toclosestproppath-num"><code class="highlighter-rouge">toClosestProp(path, num)</code></h3>
+
+<p>When used with <code class="highlighter-rouge">Array.prototype.reduce()</code>, returns
+the object in an array in which a specific property,
+passed as parameter, has the closest value to another,
+also passed as parameter.</p>
+
+<p>If two or more results are found, the first one
+is returned.</p>
+
+<p>Note that this function expects the reduced array to be
+formed by objects with the same set of properties.</p>
+
+<h4 id="parameters-4">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>default</th>
+      <th>type</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">path</code></td>
+      <td> </td>
+      <td><code class="highlighter-rouge"><span class="p">{</span><span class="err">string</span><span class="p">}</span></code></td>
+      <td>The path to the property of an object.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">num</code></td>
+      <td> </td>
+      <td><code class="highlighter-rouge"><span class="p">{</span><span class="err">string</span><span class="p">}</span></code></td>
+      <td>The base value.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns-5">Returns</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>type</th>
+      <th>description</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td><code class="highlighter-rouge"><span class="p">{</span><span class="err">Object</span><span class="p">}</span></code></td>
+      <td>The object in which an specific property has the closest value to the base value.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="example-5">Example</h4>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
+	<span class="na">city</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
+	<span class="na">temperature</span><span class="p">:</span> <span class="mi">96</span><span class="p">,</span>
+	<span class="na">demographics</span><span class="p">:</span> <span class="p">{</span>
+		<span class="na">population</span><span class="p">:</span> <span class="mf">6.32</span>
+	<span class="p">}</span>
+<span class="p">},</span> <span class="p">{</span>
+	<span class="na">city</span><span class="p">:</span> <span class="s2">"São Paulo"</span><span class="p">,</span>
+	<span class="na">temperature</span><span class="p">:</span> <span class="mf">82.5</span><span class="p">,</span>
+	<span class="na">demographics</span><span class="p">:</span> <span class="p">{</span>
+		<span class="na">population</span><span class="p">:</span> <span class="mf">12.04</span>
+	<span class="p">}</span>
+<span class="p">},</span> <span class="p">{</span>
+	<span class="na">city</span><span class="p">:</span> <span class="s2">"Curitiba"</span><span class="p">,</span>
+	<span class="na">temperature</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span>
+	<span class="na">demographics</span><span class="p">:</span> <span class="p">{</span>
+		<span class="na">population</span><span class="p">:</span> <span class="mf">1.752</span>
+	<span class="p">}</span>
+<span class="p">},</span> <span class="p">{</span>
+	<span class="na">city</span><span class="p">:</span> <span class="s2">"Florianópolis"</span><span class="p">,</span>
+	<span class="na">temperature</span><span class="p">:</span> <span class="mi">86</span><span class="p">,</span>
+	<span class="na">demographics</span><span class="p">:</span> <span class="p">{</span>
+		<span class="na">population</span><span class="p">:</span> <span class="mf">0.249</span>
+	<span class="p">}</span>
+<span class="p">}];</span>
+
+<span class="nx">cities</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toClosestProp</span><span class="p">(</span><span class="s2">"temperature"</span><span class="p">,</span> <span class="mi">75</span><span class="p">));</span>
+<span class="c1">// =&gt; { city: "Curitiba", [...] }</span>
+
+<span class="nx">cities</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toClosestProp</span><span class="p">(</span><span class="s2">"demographics.population"</span><span class="p">,</span> <span class="mi">5</span><span class="p">));</span>
+<span class="c1">// =&gt; { city: "Rio de Janeiro", [...] }</span>
+</code></pre>
+</div>
+
+<p><a name="toLargestProp"></a></p>
+<h3 id="tolargestproppath"><code class="highlighter-rouge">toLargestProp(path)</code></h3>
+
+<p>When used with <code class="highlighter-rouge">Array.prototype.reduce()</code>, returns
+the object in an array in which a specific property
+has the largest property.</p>
+
+<p>If two or more results are found, the first one
+is returned.</p>
+
+<p>Note that this function expects the reduced array to be
+formed by objects with the same set of properties.</p>
+
+<h4 id="parameters-5">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>default</th>
+      <th>type</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">path</code></td>
+      <td> </td>
+      <td><code class="highlighter-rouge"><span class="p">{</span><span class="err">string</span><span class="p">}</span></code></td>
+      <td>The path to the property of an object.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns-6">Returns</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>type</th>
+      <th>description</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td><code class="highlighter-rouge"><span class="p">{</span><span class="err">Object</span><span class="p">}</span></code></td>
+      <td>The object in which a specific property has the largest value.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="example-6">Example</h4>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
+	<span class="na">city</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
+	<span class="na">temperature</span><span class="p">:</span> <span class="mi">96</span><span class="p">,</span>
+	<span class="na">demographics</span><span class="p">:</span> <span class="p">{</span>
+		<span class="na">population</span><span class="p">:</span> <span class="mf">6.32</span>
+	<span class="p">}</span>
+<span class="p">},</span> <span class="p">{</span>
+	<span class="na">city</span><span class="p">:</span> <span class="s2">"São Paulo"</span><span class="p">,</span>
+	<span class="na">temperature</span><span class="p">:</span> <span class="mf">82.5</span><span class="p">,</span>
+	<span class="na">demographics</span><span class="p">:</span> <span class="p">{</span>
+		<span class="na">population</span><span class="p">:</span> <span class="mf">12.04</span>
+	<span class="p">}</span>
+<span class="p">},</span> <span class="p">{</span>
+	<span class="na">city</span><span class="p">:</span> <span class="s2">"Curitiba"</span><span class="p">,</span>
+	<span class="na">temperature</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span>
+	<span class="na">demographics</span><span class="p">:</span> <span class="p">{</span>
+		<span class="na">population</span><span class="p">:</span> <span class="mf">1.752</span>
+	<span class="p">}</span>
+<span class="p">},</span> <span class="p">{</span>
+	<span class="na">city</span><span class="p">:</span> <span class="s2">"Florianópolis"</span><span class="p">,</span>
+	<span class="na">temperature</span><span class="p">:</span> <span class="mi">86</span><span class="p">,</span>
+	<span class="na">demographics</span><span class="p">:</span> <span class="p">{</span>
+		<span class="na">population</span><span class="p">:</span> <span class="mf">0.249</span>
+	<span class="p">}</span>
+<span class="p">}];</span>
+
+<span class="nx">cities</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toLargestProp</span><span class="p">(</span><span class="s2">"temperature"</span><span class="p">));</span>
+<span class="c1">// =&gt; { city: "Rio de Janeiro", [...] }</span>
+
+<span class="nx">cities</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toLargestProp</span><span class="p">(</span><span class="s2">"demographics.population"</span><span class="p">));</span>
+<span class="c1">// =&gt; { city: "São Paulo", [...] }</span>
+</code></pre>
+</div>
+
+<p><a name="toSmallestProp"></a></p>
+<h3 id="tosmallestproppath"><code class="highlighter-rouge">toSmallestProp(path)</code></h3>
+
+<p>When used with <code class="highlighter-rouge">Array.prototype.reduce()</code>, returns
+the object in an array in which a specific property
+has the smallest property.</p>
+
+<p>If two or more results are found, the first one
+is returned.</p>
+
+<p>Note that this function expects the reduced array to be
+formed by objects with the same set of properties.</p>
+
+<h4 id="parameters-6">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>default</th>
+      <th>type</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">path</code></td>
+      <td> </td>
+      <td><code class="highlighter-rouge"><span class="p">{</span><span class="err">string</span><span class="p">}</span></code></td>
+      <td>The path to the property of an object.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns-7">Returns</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>type</th>
+      <th>description</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td><code class="highlighter-rouge"><span class="p">{</span><span class="err">Object</span><span class="p">}</span></code></td>
+      <td>The object in which a specific property has the smallest value.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="example-7">Example</h4>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
+	<span class="na">city</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
+	<span class="na">temperature</span><span class="p">:</span> <span class="mi">96</span><span class="p">,</span>
+	<span class="na">demographics</span><span class="p">:</span> <span class="p">{</span>
+		<span class="na">population</span><span class="p">:</span> <span class="mf">6.32</span>
+	<span class="p">}</span>
+<span class="p">},</span> <span class="p">{</span>
+	<span class="na">city</span><span class="p">:</span> <span class="s2">"São Paulo"</span><span class="p">,</span>
+	<span class="na">temperature</span><span class="p">:</span> <span class="mf">82.5</span><span class="p">,</span>
+	<span class="na">demographics</span><span class="p">:</span> <span class="p">{</span>
+		<span class="na">population</span><span class="p">:</span> <span class="mf">12.04</span>
+	<span class="p">}</span>
+<span class="p">},</span> <span class="p">{</span>
+	<span class="na">city</span><span class="p">:</span> <span class="s2">"Curitiba"</span><span class="p">,</span>
+	<span class="na">temperature</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span>
+	<span class="na">demographics</span><span class="p">:</span> <span class="p">{</span>
+		<span class="na">population</span><span class="p">:</span> <span class="mf">1.752</span>
+	<span class="p">}</span>
+<span class="p">},</span> <span class="p">{</span>
+	<span class="na">city</span><span class="p">:</span> <span class="s2">"Florianópolis"</span><span class="p">,</span>
+	<span class="na">temperature</span><span class="p">:</span> <span class="mi">86</span><span class="p">,</span>
+	<span class="na">demographics</span><span class="p">:</span> <span class="p">{</span>
+		<span class="na">population</span><span class="p">:</span> <span class="mf">0.249</span>
+	<span class="p">}</span>
+<span class="p">}];</span>
+
+<span class="nx">cities</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toSmallestProp</span><span class="p">(</span><span class="s2">"temperature"</span><span class="p">));</span>
+<span class="c1">// =&gt; { city: "Curitiba", [...] }</span>
+
+<span class="nx">cities</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toSmallestProp</span><span class="p">(</span><span class="s2">"demographics.population"</span><span class="p">));</span>
+<span class="c1">// =&gt; { city: "Florianópolis", [...] }</span>
+</code></pre>
+</div>
+
+<p><a name="toSum"></a></p>
+<h3 id="tosum"><code class="highlighter-rouge">toSum()</code></h3>
+
+<p>When used with <code class="highlighter-rouge">Array.prototype.reduce()</code>, returns
+the sum of the values in an array.</p>
+
+<p>Note that reducing arrays with non-numeric values
+using <code class="highlighter-rouge">toSum()</code> can lead to unexpected results.</p>
+
+<h4 id="returns-8">Returns</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>type</th>
+      <th>description</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td><code class="highlighter-rouge"><span class="p">{</span><span class="err">number</span><span class="p">}</span></code></td>
+      <td>The sum of the values in an array.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="example-8">Example</h4>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">].</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toSum</span><span class="p">());</span>
+<span class="c1">// =&gt; 24</span>
+</code></pre>
+</div>
+
+<h2 id="string">String</h2>
+
+<p><a name="afterFirst"></a></p>
+<h3 id="afterfirststr-delimiter"><code class="highlighter-rouge">afterFirst(str, delimiter)</code></h3>
+
+<p>Given two strings, returns a new one formed
+by the characters <strong>after the first
+occurrence</strong> of the second string in the first.</p>
+
+<p>Returns an empty string if nothing is found.</p>
+
+<p>Note that non-string parameters will be
+automatically converted to strings.</p>
+
+<h4 id="parameters-7">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>default</th>
+      <th>type</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">str</code></td>
+      <td> </td>
+      <td><code class="highlighter-rouge"><span class="p">{</span><span class="err">string</span><span class="p">}</span></code></td>
+      <td>The base string.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">delimiter</code></td>
+      <td> </td>
+      <td><code class="highlighter-rouge"><span class="p">{</span><span class="err">string</span><span class="p">}</span></code></td>
+      <td>The delimiter string.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns-9">Returns</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>type</th>
+      <th>description</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td><code class="highlighter-rouge"><span class="p">{</span><span class="err">string</span><span class="p">}</span></code></td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="example-9">Example</h4>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">afterFirst</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
+<span class="c1">// =&gt; "lepiped"</span>
+</code></pre>
+</div>
+
+<p><a name="afterLast"></a></p>
+<h3 id="afterlaststr-delimiter"><code class="highlighter-rouge">afterLast(str, delimiter)</code></h3>
+
+<p>Given two strings, returns a new one formed
+by the characters <strong>after the last
+occurrence</strong> of the second string in the first.</p>
+
+<p>Returns an empty string if nothing is found.</p>
+
+<p>Note that non-string parameters will be
+automatically converted to strings.</p>
+
+<h4 id="parameters-8">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>default</th>
+      <th>type</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">str</code></td>
+      <td> </td>
+      <td><code class="highlighter-rouge"><span class="p">{</span><span class="err">string</span><span class="p">}</span></code></td>
+      <td>The base string.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">delimiter</code></td>
+      <td> </td>
+      <td><code class="highlighter-rouge"><span class="p">{</span><span class="err">string</span><span class="p">}</span></code></td>
+      <td>The delimiter string.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns-10">Returns</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>type</th>
+      <th>description</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td><code class="highlighter-rouge"><span class="p">{</span><span class="err">string</span><span class="p">}</span></code></td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="example-10">Example</h4>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">afterLast</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
+<span class="c1">// =&gt; "piped"</span>
+</code></pre>
+</div>
+
+<p><a name="beforeFirst"></a></p>
+<h3 id="beforefirststr-delimiter"><code class="highlighter-rouge">beforeFirst(str, delimiter)</code></h3>
+
+<p>Given two strings, returns a new one formed
+by the characters <strong>before the first
+occurrence</strong> of the second string in the first.</p>
+
+<p>Returns an empty string if nothing is found.</p>
+
+<p>Note that non-string parameters will be
+automatically converted to strings.</p>
+
+<h4 id="parameters-9">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>default</th>
+      <th>type</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">str</code></td>
+      <td> </td>
+      <td><code class="highlighter-rouge"><span class="p">{</span><span class="err">string</span><span class="p">}</span></code></td>
+      <td>The base string.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">delimiter</code></td>
+      <td> </td>
+      <td><code class="highlighter-rouge"><span class="p">{</span><span class="err">string</span><span class="p">}</span></code></td>
+      <td>The delimiter string.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns-11">Returns</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>type</th>
+      <th>description</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td><code class="highlighter-rouge"><span class="p">{</span><span class="err">string</span><span class="p">}</span></code></td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="example-11">Example</h4>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">beforeFirst</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
+<span class="c1">// =&gt; "paral"</span>
+</code></pre>
+</div>
+
+<p><a name="beforeLast"></a></p>
+<h3 id="beforelaststr-delimiter"><code class="highlighter-rouge">beforeLast(str, delimiter)</code></h3>
+
+<p>Given two strings, returns a new one formed
+by the characters <strong>before the last
+occurrence</strong> of the second string in the first.</p>
+
+<p>Returns an empty string if nothing is found.</p>
+
+<p>Note that non-string parameters will be
+automatically converted to strings.</p>
+
+<h4 id="parameters-10">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>default</th>
+      <th>type</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">str</code></td>
+      <td> </td>
+      <td><code class="highlighter-rouge"><span class="p">{</span><span class="err">string</span><span class="p">}</span></code></td>
+      <td>The base string.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">delimiter</code></td>
+      <td> </td>
+      <td><code class="highlighter-rouge"><span class="p">{</span><span class="err">string</span><span class="p">}</span></code></td>
+      <td>The delimiter string.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns-12">Returns</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>type</th>
+      <th>description</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td><code class="highlighter-rouge"><span class="p">{</span><span class="err">string</span><span class="p">}</span></code></td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="example-12">Example</h4>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">beforeLast</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
+<span class="c1">// =&gt; "paralle"</span>
+</code></pre>
+</div>
+
+
+			</div>
+		</main>
+		<aside class="menu">
+			<div class="menu__area">
+				
+<ul>
+  <li><strong><a href="#promise">Promise</a></strong>
+    <ul>
+      <li><a href="#eventAsPromise">eventAsPromise</a></li>
+      <li><a href="#waitInPromise">waitInPromise</a></li>
+    </ul>
+  </li>
+  <li><strong><a href="#reduce">Reduce</a></strong>
+    <ul>
+      <li><a href="#toAverage">toAverage</a></li>
+      <li><a href="#toAverageProp">toAverageProp</a></li>
+      <li><a href="#toClosest">toClosest</a></li>
+      <li><a href="#toClosestProp">toClosestProp</a></li>
+      <li><a href="#toLargestProp">toLargestProp</a></li>
+      <li><a href="#toSmallestProp">toSmallestProp</a></li>
+      <li><a href="#toSum">toSum</a></li>
+    </ul>
+  </li>
+  <li><strong><a href="#string">String</a></strong>
+    <ul>
+      <li><a href="#afterFirst">afterFirst</a></li>
+      <li><a href="#afterLast">afterLast</a></li>
+      <li><a href="#beforeFirst">beforeFirst</a></li>
+      <li><a href="#beforeLast">beforeLast</a></li>
+    </ul>
+  </li>
+</ul>
+
+
+
+			</div>
+		</aside>
+	</div>
+</body>
+
+</html>
