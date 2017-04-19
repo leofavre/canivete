@@ -13,7 +13,7 @@ import at from "../node_modules/lodash-es/at";
  * formed by objects with the same set of properties.
  *
  * @category Reduce
- * @param {String} path The path to the property of an object.
+ * @param {string} path The path to the property of an object.
  * @return {Object} The object in which an specific property has the closest value to the average.
  * @public
  *

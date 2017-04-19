@@ -24,13 +24,17 @@ parameters are not a DOM element and a string.
 
 #### Parameters
 
-| `domEl` | *{HTMLElement}* |  The DOM element. |
-| `evtName` | *{String}* |  The event that will be listened for. |
-| `happened` | *{function}* |  The verification function. |
+| name | default | type | description |
+|------|---------|------|-------------|
+| `domEl` | `undefined` | `{HTMLElement}` |  The DOM element. |
+| `evtName` | `undefined` | `{string}` |  The event that will be listened for. |
+| `happened` | `domEl => false` | `{function}` |  The verification function. |
 
 #### Returns
 
-| *{Promise}* |  When fulfilled, returns the DOM element. |
+| type | description |
+|------|-------------|
+| `undefined` | `{Promise}` |  When fulfilled, returns the DOM element. |
 
 #### Example
 
@@ -72,11 +76,15 @@ internal `setTimeout()`.
 
 #### Parameters
 
-| `delay` | *{Number}* |  The delay in milliseconds. |
+| name | default | type | description |
+|------|---------|------|-------------|
+| `delay` | `undefined` | `{number}` |  The delay in milliseconds. |
 
 #### Returns
 
-| *{Promise}* |  When fulfilled, returns the resolved value from the previous step. |
+| type | description |
+|------|-------------|
+| `undefined` | `{Promise}` |  When fulfilled, returns the resolved value from the previous step. |
 
 #### Example
 
@@ -102,7 +110,9 @@ using `toAverage()` can lead to unexpected results.
 
 #### Returns
 
-| *{Number}* |  The average of the values in an array. |
+| type | description |
+|------|-------------|
+| `undefined` | `{number}` |  The average of the values in an array. |
 
 #### Example
 
@@ -126,11 +136,15 @@ formed by objects with the same set of properties.
 
 #### Parameters
 
-| `path` | *{String}* |  The path to the property of an object. |
+| name | default | type | description |
+|------|---------|------|-------------|
+| `path` | `undefined` | `{string}` |  The path to the property of an object. |
 
 #### Returns
 
-| *{Object}* |  The object in which an specific property has the closest value to the average. |
+| type | description |
+|------|-------------|
+| `undefined` | `{Object}` |  The object in which an specific property has the closest value to the average. |
 
 #### Example
 
@@ -185,11 +199,15 @@ using `toClosest()` can lead to unexpected results.
 
 #### Parameters
 
-| `num` | *{Number}* |  The base value. |
+| name | default | type | description |
+|------|---------|------|-------------|
+| `num` | `undefined` | `{number}` |  The base value. |
 
 #### Returns
 
-| *{Number}* |  The value, from an array, closest to the base value. |
+| type | description |
+|------|-------------|
+| `undefined` | `{number}` |  The value, from an array, closest to the base value. |
 
 #### Example
 
@@ -217,12 +235,16 @@ formed by objects with the same set of properties.
 
 #### Parameters
 
-| `path` | *{String}* |  The path to the property of an object. |
-| `num` | *{String}* |  The base value. |
+| name | default | type | description |
+|------|---------|------|-------------|
+| `path` | `undefined` | `{string}` |  The path to the property of an object. |
+| `num` | `undefined` | `{string}` |  The base value. |
 
 #### Returns
 
-| *{Object}* |  The object in which an specific property has the closest value to the base value. |
+| type | description |
+|------|-------------|
+| `undefined` | `{Object}` |  The object in which an specific property has the closest value to the base value. |
 
 #### Example
 
@@ -275,11 +297,15 @@ formed by objects with the same set of properties.
 
 #### Parameters
 
-| `path` | *{String}* |  The path to the property of an object. |
+| name | default | type | description |
+|------|---------|------|-------------|
+| `path` | `undefined` | `{string}` |  The path to the property of an object. |
 
 #### Returns
 
-| *{Object}* |  The object in which a specific property has the largest value. |
+| type | description |
+|------|-------------|
+| `undefined` | `{Object}` |  The object in which a specific property has the largest value. |
 
 #### Example
 
@@ -332,11 +358,15 @@ formed by objects with the same set of properties.
 
 #### Parameters
 
-| `path` | *{String}* |  The path to the property of an object. |
+| name | default | type | description |
+|------|---------|------|-------------|
+| `path` | `undefined` | `{string}` |  The path to the property of an object. |
 
 #### Returns
 
-| *{Object}* |  The object in which a specific property has the smallest value. |
+| type | description |
+|------|-------------|
+| `undefined` | `{Object}` |  The object in which a specific property has the smallest value. |
 
 #### Example
 
@@ -385,7 +415,9 @@ using `toSum()` can lead to unexpected results.
 
 #### Returns
 
-| *{Number}* |  The sum of the values in an array. |
+| type | description |
+|------|-------------|
+| `undefined` | `{number}` |  The sum of the values in an array. |
 
 #### Example
 
@@ -410,12 +442,16 @@ automatically converted to strings.
 
 #### Parameters
 
-| `str` | *{String}* |  The base string. |
-| `delimiter` | *{String}* |  The delimiter string. |
+| name | default | type | description |
+|------|---------|------|-------------|
+| `str` | `undefined` | `{string}` |  The base string. |
+| `delimiter` | `undefined` | `{string}` |  The delimiter string. |
 
 #### Returns
 
-| *{String}* |  |
+| type | description |
+|------|-------------|
+| `undefined` | `{string}` |  |
 
 #### Example
 
@@ -438,12 +474,16 @@ automatically converted to strings.
 
 #### Parameters
 
-| `str` | *{String}* |  The base string. |
-| `delimiter` | *{String}* |  The delimiter string. |
+| name | default | type | description |
+|------|---------|------|-------------|
+| `str` | `undefined` | `{string}` |  The base string. |
+| `delimiter` | `undefined` | `{string}` |  The delimiter string. |
 
 #### Returns
 
-| *{String}* |  |
+| type | description |
+|------|-------------|
+| `undefined` | `{string}` |  |
 
 #### Example
 
@@ -466,12 +506,16 @@ automatically converted to strings.
 
 #### Parameters
 
-| `str` | *{String}* |  The base string. |
-| `delimiter` | *{String}* |  The delimiter string. |
+| name | default | type | description |
+|------|---------|------|-------------|
+| `str` | `undefined` | `{string}` |  The base string. |
+| `delimiter` | `undefined` | `{string}` |  The delimiter string. |
 
 #### Returns
 
-| *{String}* |  |
+| type | description |
+|------|-------------|
+| `undefined` | `{string}` |  |
 
 #### Example
 
@@ -494,12 +538,16 @@ automatically converted to strings.
 
 #### Parameters
 
-| `str` | *{String}* |  The base string. |
-| `delimiter` | *{String}* |  The delimiter string. |
+| name | default | type | description |
+|------|---------|------|-------------|
+| `str` | `undefined` | `{string}` |  The base string. |
+| `delimiter` | `undefined` | `{string}` |  The delimiter string. |
 
 #### Returns
 
-| *{String}* |  |
+| type | description |
+|------|-------------|
+| `undefined` | `{string}` |  |
 
 #### Example
 

@@ -11,7 +11,7 @@
  * internal `setTimeout()`.
  * 
  * @category Promise
- * @param  {Number} delay The delay in milliseconds.
+ * @param  {number} delay The delay in milliseconds.
  * @return {Promise} When fulfilled, returns the resolved value from the previous step.
  * @public
  *

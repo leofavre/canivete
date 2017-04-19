@@ -6,10 +6,10 @@
 	-webkit-overflow-scrolling: touch;
 	line-height: $grid;
 
-	background-position: 5px 0;
-	background-size: $grid $grid;
-	background-image: linear-gradient(to bottom, lightblue 1px, transparent 1px);
-	background-attachment: scroll;
+	// background-position: 5px 0;
+	// background-size: $grid $grid;
+	// background-image: linear-gradient(to bottom, lightblue 1px, transparent 1px);
+	// background-attachment: scroll;
 
 	h1 {
 
@@ -62,6 +62,10 @@
 		margin: ($grid * 2) 0 $grid;
 	}
 
+	h4 + table {
+		// margin-top: ($grid * -1);
+	}
+
 	h5 {
 
 	}
@@ -78,8 +82,7 @@
 		margin: $grid 0 $grid;
 	}
 
-	p > code,
-	td > code {
+	p > code {
 		padding: 1px 4px 1px 6px;
 		background-color: rgba($grey, 0.2);
 	}
@@ -130,14 +133,45 @@
 		border-collapse: collapse;
 	}
 
+	thead:after {
+		content: "";
+		position: absolute;
+		top: 14px;
+		width: 100%;
+		height: 1px;
+		background: rgba($grey, 0.3);
+		display: block;
+	}
+
 	tr {
 
+	}
+
+	th {
+		position: relative;
+		top: -12px;
+		text-align: left;
+		padding: 0 6px 0 0;
+		font-size: 9px;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		font-weight: 500;
 	}
 
 	td {
 		font-size: 14px;
 		vertical-align: top;
-		padding: 0 12px 0 0;
+		padding: 0 6px 0 0;
+	}
+
+	td > code {
+		font-weight: 500;
+		padding: 1px 4px 1px 6px;
+		background-color: rgba($grey, 0.2);
+	}
+
+	td > em {
+		font-style: normal;
 	}
 
 	td:nth-last-child(1) {
@@ -154,6 +188,16 @@
 
 	td:nth-child(1):nth-last-child(2) {
 		// width: 18%;
+	}
+
+	[id^="parameters"] + table td:nth-child(n + 2) > code {
+		font-weight: 400;
+		padding: 0;
+		background-color: transparent;
+	}
+
+	[id^="returns"] + table td:nth-child(1) {
+		display: none;
 	}
 }
 

@@ -11,9 +11,9 @@ import _sliceOnOccurrence from "./internal/string/_sliceOnOccurrence";
  * automatically converted to strings.
  *
  * @category String
- * @param  {String} str The base string.
- * @param  {String} delimiter The delimiter string.
- * @return {String}
+ * @param  {string} str The base string.
+ * @param  {string} delimiter The delimiter string.
+ * @return {string}
  * @public
  *
  * @example

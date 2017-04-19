@@ -79,10 +79,11 @@ const formatTable = params => {
 };
 
 const formatTableLine = param => {
-	let name = param.name ? "`" + param.name + "` | " : "";
-	let type = (param.type && param.type.names.length > 0) ? "*" + formatType(param.type.names) + "* | " : "";
+	let name = param.name ? `\`${param.name}\` | ` : "";
+	let defaultValue = param.defaultvalue != null ? `\`${param.defaultvalue}\` | ` : "`undefined` | ";
+	let type = (param.type && param.type.names.length > 0) ? "`" + formatType(param.type.names) + "` | " : "";
 	let desc = param.description ? " " + formatDescription(param.description) : "";
-	return `| ${name}${type}${desc} |`;
+	return `| ${name}${defaultValue}${type}${desc} |`;
 };
 
 const formatSignature = (name, params) => {
