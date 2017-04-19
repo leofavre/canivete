@@ -6,7 +6,7 @@ title: Canivete
 ## Promise
 
 <a name="eventAsPromise"></a>
-### `eventAsPromise(domElement, eventName, [happened = domElement => false])`
+### `eventAsPromise(domElement, eventName, [happened])`
 
 Transforms a DOM event into a promise.
 
@@ -25,7 +25,7 @@ parameters are not a DOM element and a string.
 #### Parameters
 `domElement`*{HTMLElement}* The DOM element.<br/>
 `eventName`*{String}* The name of the event that will be listened for.<br/>
-`[happened = domElement => false]`*{function}* The verification function.<br/>
+`[happened]`*{function}* The verification function.<br/>
 
 #### Returns
 *{Promise}* When fulfilled, returns the DOM element.<br/>

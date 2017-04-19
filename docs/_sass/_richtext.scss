@@ -8,10 +8,10 @@
 	-webkit-overflow-scrolling: touch;
 	line-height: $grid;
 
-	// background-position: 5px 0;
-	// background-size: $grid $grid;
-	// background-image: linear-gradient(to bottom, lightblue 1px, transparent 1px);
-	// background-attachment: scroll;
+	background-position: 5px 0;
+	background-size: $grid $grid;
+	background-image: linear-gradient(to bottom, lightblue 1px, transparent 1px);
+	background-attachment: scroll;
 
 	h1 {
 
@@ -19,30 +19,35 @@
 
 	h2 {
 		position: relative;
-		top: 12px;
-		margin: ($grid * 2) 0 $grid;
-		font-size: 36px;
-		line-height: ($grid * 2);
+		top: 0;
+		left: -8px;
+		padding: 47px 0 0;
+		margin: 0 0 49px;
+
+		font-size: 100px;
+		line-height: ($grid * 3);
+		font-family: "Whitney Narrow A", "Whitney Narrow B", sans-serif;
+		font-weight: 300;
+	}
+
+	h2 + h3,
+	h2 + p + h3 {
+		margin-top: ($grid * 2);
 	}
 
 	h3 {
 		position: relative;
 		top: 0;
-		font-size: 30px;
+		font-size: 32px;
 		line-height: ($grid * 2);
 		background: rgba(#dedede, 0.8);
-		margin: ($grid * 4) ($grid * -1) ($grid * 2) ($grid * -2);
+		margin: ($grid * 4) ($grid * -1) $grid ($grid * -2);
 		padding: 14px $grid 10px ($grid * 2);
 	}
 
 	h3 > code {
 		font-weight: 500;
 		// letter-spacing: -0.01em;
-	}
-
-	h2 + h3,
-	h2 + p + h3 {
-		margin-top: ($grid * 2);
 	}
 
 	h4 {
@@ -139,5 +144,5 @@
 }
 
 .richtext__area {
-	max-width: 680px;
+	max-width: 660px;
 }
