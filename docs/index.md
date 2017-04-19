@@ -6,7 +6,7 @@ title: Canivete
 ## Promise
 
 <a name="eventAsPromise"></a>
-### `eventAsPromise(domElement, eventName, [happened])`
+### `eventAsPromise(domEl, evtName, [happened])`
 
 Transforms a DOM event into a promise.
 
@@ -23,8 +23,8 @@ Note that the function throws an error if the first two
 parameters are not a DOM element and a string.
 
 #### Parameters
-`domElement` *{HTMLElement}*&thinsp;&#8212;&thinsp;The DOM element.<br/>
-`eventName` *{String}*&thinsp;&#8212;&thinsp;The name of the event that will be listened for.<br/>
+`domEl` *{HTMLElement}*&thinsp;&#8212;&thinsp;The DOM element.<br/>
+`evtName` *{String}*&thinsp;&#8212;&thinsp;The name of the event that will be listened for.<br/>
 `[happened]` *{function}*&thinsp;&#8212;&thinsp;The verification function.<br/>
 
 #### Returns
@@ -48,7 +48,7 @@ image.src = "https://www.w3.org/Icons/w3c_home";
 document.body.appendChild(image);
 
 eventAsPromise(image, "load", image => image.complete)
-	.then(domElement => console.log(domElement.src));
+	.then(domEl => console.log(domEl.src));
 
 // => "https://www.w3.org/Icons/w3c_home"
 // shown when the image is loaded or as soon as eventAsPromise is called, if the image has already been loaded.

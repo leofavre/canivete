@@ -17,9 +17,9 @@ import isElement from "../node_modules/lodash-es/isElement";
  * parameters are not a DOM element and a string.
  *
  * @category Promise
- * @param  {HTMLElement} domElement The DOM element.
- * @param  {String} eventName The name of the event that will be listened for.
- * @param  {Function} [happened = domElement => false] The verification function.
+ * @param  {HTMLElement} domEl The DOM element.
+ * @param  {String} evtName The name of the event that will be listened for.
+ * @param  {Function} [happened = domEl => false] The verification function.
  * @return {Promise} When fulfilled, returns the DOM element.
  *
  * @example
@@ -38,27 +38,27 @@ import isElement from "../node_modules/lodash-es/isElement";
  * document.body.appendChild(image);
  *
  * eventAsPromise(image, "load", image => image.complete)
- * 	.then(domElement => console.log(domElement.src));
+ * 	.then(domEl => console.log(domEl.src));
  *
  * // => "https://www.w3.org/Icons/w3c_home"
  * // shown when the image is loaded or as soon as eventAsPromise is called, if the image has already been loaded.
  */
-const eventAsPromise = (domElement, eventName, happened = domElement => false) => {
-	if (!isElement(domElement) || !isString(eventName)) {
+const eventAsPromise = (domEl, evtName, happened = domEl => false) => {
+	if (!isElement(domEl) || !isString(evtName)) {
 		throw new Error("A DOM element and a string are expected as parameters.");
 	}
 
 	return new Promise(resolve => {
 		const dealWithEvent = evt => {
-			domElement.removeEventListener(eventName, dealWithEvent, true);
-			resolve(domElement);
+			domEl.removeEventListener(evtName, dealWithEvent, true);
+			resolve(domEl);
 		};
 
-		if (happened(domElement)) {
-			resolve(domElement);
+		if (happened(domEl)) {
+			resolve(domEl);
 		}
 		else {
-			domElement.addEventListener(eventName, dealWithEvent, true);
+			domEl.addEventListener(evtName, dealWithEvent, true);
 		}
 	});
 };
