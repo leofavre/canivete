@@ -1,6 +1,4 @@
 .richtext {
-	$grid: 24px;
-
 	flex: 14 14 0;
 	overflow-x: hidden;
 	overflow-y: auto;
@@ -8,7 +6,6 @@
 	// transform: translateZ(0);
 	// will-change: scroll-position;
 	-webkit-overflow-scrolling: touch;
-
 	line-height: $grid;
 
 	// background-position: 5px 0;
@@ -31,7 +28,7 @@
 	h3 {
 		position: relative;
 		top: 0;
-		font-size: 28px;
+		font-size: 30px;
 		line-height: ($grid * 2);
 		background: rgba(#dedede, 0.8);
 		margin: ($grid * 4) ($grid * -1) ($grid * 2) ($grid * -2);
@@ -50,7 +47,7 @@
 
 	h4 {
 		position: relative;
-		top: 6px;
+		top: 7px;
 		font-size: 17px;
 		font-weight: 800;
 		line-height: $grid;
@@ -63,7 +60,9 @@
 	}
 
 	h4 + p > em:after {
-		content: " —";
+		content: "—";
+		position: relative;
+		left: 0.2em;
 	}
 
 	h5 {
@@ -76,14 +75,14 @@
 
 	p {
 		position: relative;
-		top: 7px;
+		top: 8px;
 		font-size: 16px;
 		line-height: $grid;
 		margin: $grid 0 $grid;
 	}
 
 	p > code {
-		padding: 1px 6px 1px;
+		padding: 1px 4px 1px 6px;
 		background-color: rgba(#dedede, 0.8);
 	}
 
@@ -140,5 +139,5 @@
 }
 
 .richtext__area {
-	max-width: 660px;
+	max-width: 680px;
 }
