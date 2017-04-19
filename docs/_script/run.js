@@ -70,12 +70,6 @@ const formatDoc = doc => {
 	return doc;
 };
 
-const formatDescription = description => removeNewslines(description);
-
-const formatTableDescription = (description, isOptional) => removeNewslines(description) + (isOptional ? " **optional**" : "");
-
-const formatHref = name => camelCase(name);
-
 const formatTable = params => {
 	return (params != null) ? params.map(formatTableLine) : undefined;
 };
@@ -87,6 +81,12 @@ const formatTableLine = param => {
 	let desc = param.description ? " " + formatTableDescription(param.description, param.optional) : "";
 	return `| ${name}${defaultValue}${type}${desc} |`;
 };
+
+const formatTableDescription = (description, isOptional) => removeNewslines(description) + (isOptional ? " **optional**" : "");
+
+const formatDescription = description => removeNewslines(description);
+
+const formatHref = name => camelCase(name);
 
 const formatSignature = (name, params) => {
 	params = formatSignatureParams(params);

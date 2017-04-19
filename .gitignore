@@ -2,8 +2,8 @@ dist/scrapeNirvanaProduct.js
 dist/internal/nirvana
 node_modules
 test/temp
-doc/temp
-doc/script/example.json
+docs/temp
+docs/script/example.json
 .eslint
 .jsbeautifyrc
 .DS_Store
