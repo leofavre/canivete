@@ -24,17 +24,17 @@ parameters are not a DOM element and a string.
 
 #### Parameters
 
-| name | default | type | description |
-|------|---------|------|-------------|
-| `domEl` |  | `{HTMLElement}` |  The DOM element. |
-| `evtName` |  | `{string}` |  The event that will be listened for. |
-| `happened` | `domEl => false` | `{function}` |  The verification function. **optional** |
+| Name | Default | Type | Description |
+| --- | --- | --- | --- |
+| `domEl` |  | `{HTMLElement}` | The DOM element. |
+| `evtName` |  | `{string}` | The event that will be listened for. |
+| `happened` | `domEl => false` | `{function}` | The verification function. **optional** |
 
 #### Returns
 
-| type | description |
-|------|-------------|
-|  | `{Promise}` |  When fulfilled, returns the DOM element. |
+| Type | Description |
+| --- | --- |
+| `{Promise}` | When fulfilled, returns the DOM element. |
 
 #### Example
 
@@ -76,15 +76,15 @@ internal `setTimeout()`.
 
 #### Parameters
 
-| name | default | type | description |
-|------|---------|------|-------------|
-| `delay` |  | `{number}` |  The delay in milliseconds. |
+| Name | Type | Description |
+| --- | --- | --- |
+| `delay` | `{number}` | The delay in milliseconds. |
 
 #### Returns
 
-| type | description |
-|------|-------------|
-|  | `{Promise}` |  When fulfilled, returns the resolved value from the previous step. |
+| Type | Description |
+| --- | --- |
+| `{Promise}` | When fulfilled, returns the resolved value from the previous step. |
 
 #### Example
 
@@ -110,9 +110,9 @@ using `toAverage()` can lead to unexpected results.
 
 #### Returns
 
-| type | description |
-|------|-------------|
-|  | `{number}` |  The average of the values in an array. |
+| Type | Description |
+| --- | --- |
+| `{number}` | The average of the values in an array. |
 
 #### Example
 
@@ -136,15 +136,15 @@ formed by objects with the same set of properties.
 
 #### Parameters
 
-| name | default | type | description |
-|------|---------|------|-------------|
-| `path` |  | `{string}` |  The path to the property of an object. |
+| Name | Type | Description |
+| --- | --- | --- |
+| `path` | `{string}` | The path to the property of an object. |
 
 #### Returns
 
-| type | description |
-|------|-------------|
-|  | `{Object}` |  The object in which an specific property has the closest value to the average. |
+| Type | Description |
+| --- | --- |
+| `{Object}` | The object in which an specific property has the closest value to the average. |
 
 #### Example
 
@@ -199,15 +199,15 @@ using `toClosest()` can lead to unexpected results.
 
 #### Parameters
 
-| name | default | type | description |
-|------|---------|------|-------------|
-| `num` |  | `{number}` |  The base value. |
+| Name | Type | Description |
+| --- | --- | --- |
+| `num` | `{number}` | The base value. |
 
 #### Returns
 
-| type | description |
-|------|-------------|
-|  | `{number}` |  The value, from an array, closest to the base value. |
+| Type | Description |
+| --- | --- |
+| `{number}` | The value, from an array, closest to the base value. |
 
 #### Example
 
@@ -235,16 +235,16 @@ formed by objects with the same set of properties.
 
 #### Parameters
 
-| name | default | type | description |
-|------|---------|------|-------------|
-| `path` |  | `{string}` |  The path to the property of an object. |
-| `num` |  | `{string}` |  The base value. |
+| Name | Type | Description |
+| --- | --- | --- |
+| `path` | `{string}` | The path to the property of an object. |
+| `num` | `{string}` | The base value. |
 
 #### Returns
 
-| type | description |
-|------|-------------|
-|  | `{Object}` |  The object in which an specific property has the closest value to the base value. |
+| Type | Description |
+| --- | --- |
+| `{Object}` | The object in which an specific property has the closest value to the base value. |
 
 #### Example
 
@@ -297,15 +297,15 @@ formed by objects with the same set of properties.
 
 #### Parameters
 
-| name | default | type | description |
-|------|---------|------|-------------|
-| `path` |  | `{string}` |  The path to the property of an object. |
+| Name | Type | Description |
+| --- | --- | --- |
+| `path` | `{string}` | The path to the property of an object. |
 
 #### Returns
 
-| type | description |
-|------|-------------|
-|  | `{Object}` |  The object in which a specific property has the largest value. |
+| Type | Description |
+| --- | --- |
+| `{Object}` | The object in which a specific property has the largest value. |
 
 #### Example
 
@@ -358,15 +358,15 @@ formed by objects with the same set of properties.
 
 #### Parameters
 
-| name | default | type | description |
-|------|---------|------|-------------|
-| `path` |  | `{string}` |  The path to the property of an object. |
+| Name | Type | Description |
+| --- | --- | --- |
+| `path` | `{string}` | The path to the property of an object. |
 
 #### Returns
 
-| type | description |
-|------|-------------|
-|  | `{Object}` |  The object in which a specific property has the smallest value. |
+| Type | Description |
+| --- | --- |
+| `{Object}` | The object in which a specific property has the smallest value. |
 
 #### Example
 
@@ -415,9 +415,9 @@ using `toSum()` can lead to unexpected results.
 
 #### Returns
 
-| type | description |
-|------|-------------|
-|  | `{number}` |  The sum of the values in an array. |
+| Type | Description |
+| --- | --- |
+| `{number}` | The sum of the values in an array. |
 
 #### Example
 
@@ -442,16 +442,16 @@ automatically converted to strings.
 
 #### Parameters
 
-| name | default | type | description |
-|------|---------|------|-------------|
-| `str` |  | `{string}` |  The base string. |
-| `delimiter` |  | `{string}` |  The delimiter string. |
+| Name | Type | Description |
+| --- | --- | --- |
+| `str` | `{string}` | The base string. |
+| `delimiter` | `{string}` | The delimiter string. |
 
 #### Returns
 
-| type | description |
-|------|-------------|
-|  | `{string}` |  |
+| Type |
+| --- |
+| `{string}` |
 
 #### Example
 
@@ -474,16 +474,16 @@ automatically converted to strings.
 
 #### Parameters
 
-| name | default | type | description |
-|------|---------|------|-------------|
-| `str` |  | `{string}` |  The base string. |
-| `delimiter` |  | `{string}` |  The delimiter string. |
+| Name | Type | Description |
+| --- | --- | --- |
+| `str` | `{string}` | The base string. |
+| `delimiter` | `{string}` | The delimiter string. |
 
 #### Returns
 
-| type | description |
-|------|-------------|
-|  | `{string}` |  |
+| Type |
+| --- |
+| `{string}` |
 
 #### Example
 
@@ -506,16 +506,16 @@ automatically converted to strings.
 
 #### Parameters
 
-| name | default | type | description |
-|------|---------|------|-------------|
-| `str` |  | `{string}` |  The base string. |
-| `delimiter` |  | `{string}` |  The delimiter string. |
+| Name | Type | Description |
+| --- | --- | --- |
+| `str` | `{string}` | The base string. |
+| `delimiter` | `{string}` | The delimiter string. |
 
 #### Returns
 
-| type | description |
-|------|-------------|
-|  | `{string}` |  |
+| Type |
+| --- |
+| `{string}` |
 
 #### Example
 
@@ -538,16 +538,16 @@ automatically converted to strings.
 
 #### Parameters
 
-| name | default | type | description |
-|------|---------|------|-------------|
-| `str` |  | `{string}` |  The base string. |
-| `delimiter` |  | `{string}` |  The delimiter string. |
+| Name | Type | Description |
+| --- | --- | --- |
+| `str` | `{string}` | The base string. |
+| `delimiter` | `{string}` | The delimiter string. |
 
 #### Returns
 
-| type | description |
-|------|-------------|
-|  | `{string}` |  |
+| Type |
+| --- |
+| `{string}` |
 
 #### Example
 

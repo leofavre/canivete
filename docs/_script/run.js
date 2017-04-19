@@ -71,18 +71,43 @@ const formatDoc = doc => {
 };
 
 const formatTable = params => {
-	return (params != null) ? params.map(formatTableLine) : undefined;
+	let tableConfig = parseTableConfig(params);
+
+	if (params != null) {
+		return [formatTableLineMarkdown(["Name", "Default", "Type", "Description"], tableConfig)]
+			.concat([formatTableLineMarkdown(["---", "---", "---", "---"], tableConfig)])
+			.concat(params.map(formatTableLine(tableConfig)));
+	}
 };
 
-const formatTableLine = param => {
-	let name = param.name ? `\`${param.name}\` | ` : "";
-	let defaultValue = param.defaultvalue != null ? `\`${param.defaultvalue}\` | ` : " | ";
-	let type = (param.type && param.type.names.length > 0) ? "`" + formatType(param.type.names) + "` | " : "";
-	let desc = param.description ? " " + formatTableDescription(param.description, param.optional) : "";
-	return `| ${name}${defaultValue}${type}${desc} |`;
+const formatTableLine = tableConfig => param => {
+	let lines = [
+		formatCode(param.name),
+		formatCode(param.defaultvalue),
+		formatType(param.type.names),
+		formatParamDesc(param.description, param.optional)
+	];
+
+	return formatTableLineMarkdown(lines, tableConfig);
 };
 
-const formatTableDescription = (description, isOptional) => removeNewslines(description) + (isOptional ? " **optional**" : "");
+const formatTableLineMarkdown = (arr, tableConfig) => "| " + arr.filter(shouldLineExist(tableConfig)).join(" | ") + " |";
+
+const shouldLineExist = tableConfig => (str, i) => tableConfig[i];
+
+const formatCode = str => (str != null) ? "`" + str + "`" : undefined;
+
+const formatType = typeNames => {
+	if (typeNames != null && typeNames.length > 0) {
+		return "`{" + typeNames.join("|") + "}`";
+	}
+};
+
+const formatParamDesc = (description, isOptional) => {
+	if (description != null) {
+		return removeNewslines(description) + (isOptional ? " **optional**" : "");
+	}
+};
 
 const formatDescription = description => removeNewslines(description);
 
@@ -104,11 +129,28 @@ const formatParam = param => {
 	return `${preParam}${param.name}${defaultValue}${postParam}`;
 };
 
-const formatType = typeNames => {
-	if (typeNames != null && typeNames.length > 0) {
-		return "{" + typeNames.join("|") + "}";
+const parseTableConfig = params => {
+	if (params) {
+		return [
+			params.some(hasParamName),
+			params.some(hasParamDefault),
+			params.some(hasParamType),
+			params.some(hasParamDesc)
+		];
 	}
+
+	return [false, false, false, false];
 };
+
+const hasParamName = param => param.name != null;
+
+const hasParamDesc = param => param.description != null;
+
+const hasParamDefault = param => param.defaultvalue != null;
+
+const hasParamType = param => param.type != null && param.type.names != null && param.type.names.length > 0;
+
+const isParamOptions = param => param.optional;
 
 const groupDocsByCategoryName = docs => groupBy(docs, byCategoryName);
 

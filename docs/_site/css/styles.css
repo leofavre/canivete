@@ -171,8 +171,6 @@ html {
     font-weight: 400;
     padding: 0;
     background-color: transparent; }
-  .content [id^="returns"] + table td:nth-child(1) {
-    display: none; }
 
 .content__area {
   max-width: 660px;
