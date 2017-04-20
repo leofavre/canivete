@@ -26,15 +26,15 @@ parameters are not a DOM element and a string.
 
 | Name | Default | Type | Description |
 | --- | --- | --- | --- |
-| `domEl` |  | `{HTMLElement}` | The DOM element. |
-| `evtName` |  | `{string}` | The event that will be listened for. |
-| `happened` | `domEl => false` | `{function}` | The verification function. **optional** |
+| `domEl` |  | HTMLElement | The DOM element. |
+| `evtName` |  | string | The event that will be listened for. |
+| `happened` | `domEl => false` | function | The verification function. **optional** |
 
 #### Returns
 
 | Type | Description |
 | --- | --- |
-| `{Promise}` | When fulfilled, returns the DOM element. |
+| Promise | When fulfilled, returns the DOM element. |
 
 #### Example
 
@@ -80,13 +80,13 @@ internal `setTimeout()`.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `delay` | `{number}` | The delay in milliseconds. |
+| `delay` | number | The delay in milliseconds. |
 
 #### Returns
 
 | Type | Description |
 | --- | --- |
-| `{Promise}` | When fulfilled, returns the resolved value from the previous step. |
+| Promise | When fulfilled, returns the resolved value from the previous step. |
 
 #### Example
 
@@ -114,7 +114,7 @@ using `toAverage()` can lead to unexpected results.
 
 | Type | Description |
 | --- | --- |
-| `{number}` | The average of the values in an array. |
+| number | The average of the values in an array. |
 
 #### Example
 
@@ -140,13 +140,13 @@ formed by objects with the same set of properties.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `path` | `{string}` | The path to the property of an object. |
+| `path` | string | The path to the property of an object. |
 
 #### Returns
 
 | Type | Description |
 | --- | --- |
-| `{Object}` | The object in which an specific property has the closest value to the average. |
+| Object | The object in which an specific property has the closest value to the average. |
 
 #### Example
 
@@ -203,13 +203,13 @@ using `toClosest()` can lead to unexpected results.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `num` | `{number}` | The base value. |
+| `num` | number | The base value. |
 
 #### Returns
 
 | Type | Description |
 | --- | --- |
-| `{number}` | The value, from an array, closest to the base value. |
+| number | The value, from an array, closest to the base value. |
 
 #### Example
 
@@ -239,14 +239,14 @@ formed by objects with the same set of properties.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `path` | `{string}` | The path to the property of an object. |
-| `num` | `{string}` | The base value. |
+| `path` | string | The path to the property of an object. |
+| `num` | string | The base value. |
 
 #### Returns
 
 | Type | Description |
 | --- | --- |
-| `{Object}` | The object in which an specific property has the closest value to the base value. |
+| Object | The object in which an specific property has the closest value to the base value. |
 
 #### Example
 
@@ -301,13 +301,13 @@ formed by objects with the same set of properties.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `path` | `{string}` | The path to the property of an object. |
+| `path` | string | The path to the property of an object. |
 
 #### Returns
 
 | Type | Description |
 | --- | --- |
-| `{Object}` | The object in which a specific property has the largest value. |
+| Object | The object in which a specific property has the largest value. |
 
 #### Example
 
@@ -362,13 +362,13 @@ formed by objects with the same set of properties.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `path` | `{string}` | The path to the property of an object. |
+| `path` | string | The path to the property of an object. |
 
 #### Returns
 
 | Type | Description |
 | --- | --- |
-| `{Object}` | The object in which a specific property has the smallest value. |
+| Object | The object in which a specific property has the smallest value. |
 
 #### Example
 
@@ -419,7 +419,7 @@ using `toSum()` can lead to unexpected results.
 
 | Type | Description |
 | --- | --- |
-| `{number}` | The sum of the values in an array. |
+| number | The sum of the values in an array. |
 
 #### Example
 
@@ -446,14 +446,14 @@ automatically converted to strings.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `str` | `{string}` | The base string. |
-| `delimiter` | `{string}` | The delimiter string. |
+| `str` | string | The base string. |
+| `delimiter` | string | The delimiter string. |
 
 #### Returns
 
 | Type |
 | --- |
-| `{string}` |
+| string |
 
 #### Example
 
@@ -478,14 +478,14 @@ automatically converted to strings.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `str` | `{string}` | The base string. |
-| `delimiter` | `{string}` | The delimiter string. |
+| `str` | string | The base string. |
+| `delimiter` | string | The delimiter string. |
 
 #### Returns
 
 | Type |
 | --- |
-| `{string}` |
+| string |
 
 #### Example
 
@@ -510,14 +510,14 @@ automatically converted to strings.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `str` | `{string}` | The base string. |
-| `delimiter` | `{string}` | The delimiter string. |
+| `str` | string | The base string. |
+| `delimiter` | string | The delimiter string. |
 
 #### Returns
 
 | Type |
 | --- |
-| `{string}` |
+| string |
 
 #### Example
 
@@ -542,14 +542,14 @@ automatically converted to strings.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `str` | `{string}` | The base string. |
-| `delimiter` | `{string}` | The delimiter string. |
+| `str` | string | The base string. |
+| `delimiter` | string | The delimiter string. |
 
 #### Returns
 
 | Type |
 | --- |
-| `{string}` |
+| string |
 
 #### Example
 

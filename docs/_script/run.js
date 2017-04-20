@@ -99,7 +99,7 @@ const formatCode = str => (str != null) ? "`" + str + "`" : undefined;
 
 const formatType = typeNames => {
 	if (typeNames != null && typeNames.length > 0) {
-		return "`{" + typeNames.join("|") + "}`";
+		return typeNames.join(", ");
 	}
 };
 
