@@ -10,7 +10,28 @@ title: Canivete
 
 Given two DOM Elements, a child and a mask, returns an
 object with position and clipping information of the
-child in relation to the mask.
+child in relation to the mask. If the second parameter
+is ommited, `document.body` will be used.
+
+The returned object has the following properties:
+
+| Property | Type | Child relation with the mask |
+|---|---|---|
+| `isOffTop` | Boolean | Above and off the mask. |
+| `isOffBottom` | Boolean | Below and off the mask. |
+| `isOffLeft` | Boolean | On the left and off the mask. |
+| `isOffRight` | Boolean | On the right and off the mask. |
+| `isOff` | Boolean | Off the mask. |
+| `isClippedTop` | Boolean | Above and intersecting with the mask. |
+| `isClippedBottom` | Boolean | Below and intersecting with the mask. |
+| `isClippedLeft` | Boolean | On the left and intersecting with the mask. |
+| `isClippedRight` | Boolean | On the right and intersecting with the mask. |
+| `isClipped` | Boolean | Child intersects with the mask. |
+| `isFullyVisible` | Boolean | Fully visible inside the mask. |
+| `isPartiallyVisible` | Boolean | Alias for `isClipped`. |
+| `isInvisible` | Boolean | Alias for `isOff`. |
+| `isAsVisibleAsPossible` | Boolean | As visible as possible (child bigger than the mask). |
+| `isNotAsVisibleAsPossible` | Boolean | Not as visible as possible (child bigger than the mask). |
 
 #### Parameters
 

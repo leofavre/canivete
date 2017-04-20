@@ -161,7 +161,7 @@
 		position: relative;
 		top: -13px;
 		text-align: left;
-		padding: 0 6px 0 0;
+		padding: 0 24px 0 0;
 
 		font-size: 9px;
 		text-transform: uppercase;
@@ -172,7 +172,7 @@
 	td {
 		font-size: 14px;
 		vertical-align: top;
-		padding: 0 6px 0 0;
+		padding: 0 24px 0 0;
 	}
 
 	td > strong {
@@ -202,23 +202,26 @@
 		padding-right: 0;
 	}
 
-	[id^="returns"] + table td > code,
-	[id^="parameters"] + table td:nth-child(n + 2) > code {
-		font-weight: 400;
-		padding: 0;
-		background-color: transparent;
-	}
+	[id^="returns"] + table,
+	[id^="parameters"] + table {
+		td > code,
+		td:nth-child(n + 2) > code {
+			font-weight: 400;
+			padding: 0;
+			background-color: transparent;
+		}
 
-	td:nth-child(1):nth-last-child(4),
-	td:nth-child(2):nth-last-child(3),
-	td:nth-child(3):nth-last-child(2) {
-		min-width: 20%;
-	}
+		td:nth-child(1):nth-last-child(4),
+		td:nth-child(2):nth-last-child(3),
+		td:nth-child(3):nth-last-child(2) {
+			min-width: 20%;
+		}
 
-	td:nth-child(1):nth-last-child(3),
-	td:nth-child(2):nth-last-child(2),
-	td:nth-child(1):nth-last-child(2) {
-		width: 20%;
+		td:nth-child(1):nth-last-child(3),
+		td:nth-child(2):nth-last-child(2),
+		td:nth-child(1):nth-last-child(2) {
+			width: 20%;
+		}
 	}
 }
 

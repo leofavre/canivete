@@ -20,7 +20,97 @@
 
 <p>Given two DOM Elements, a child and a mask, returns an
 object with position and clipping information of the
-child in relation to the mask.</p>
+child in relation to the mask. If the second parameter
+is ommited, <code class="highlighter-rouge">document.body</code> will be used.</p>
+
+<p>The returned object has the following properties:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Type</th>
+      <th>Child relation with the mask</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">isOffTop</code></td>
+      <td>Boolean</td>
+      <td>Above and off the mask.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">isOffBottom</code></td>
+      <td>Boolean</td>
+      <td>Below and off the mask.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">isOffLeft</code></td>
+      <td>Boolean</td>
+      <td>On the left and off the mask.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">isOffRight</code></td>
+      <td>Boolean</td>
+      <td>On the right and off the mask.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">isOff</code></td>
+      <td>Boolean</td>
+      <td>Off the mask.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">isClippedTop</code></td>
+      <td>Boolean</td>
+      <td>Above and intersecting with the mask.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">isClippedBottom</code></td>
+      <td>Boolean</td>
+      <td>Below and intersecting with the mask.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">isClippedLeft</code></td>
+      <td>Boolean</td>
+      <td>On the left and intersecting with the mask.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">isClippedRight</code></td>
+      <td>Boolean</td>
+      <td>On the right and intersecting with the mask.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">isClipped</code></td>
+      <td>Boolean</td>
+      <td>Child intersects with the mask.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">isFullyVisible</code></td>
+      <td>Boolean</td>
+      <td>Fully visible inside the mask.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">isPartiallyVisible</code></td>
+      <td>Boolean</td>
+      <td>Alias for <code class="highlighter-rouge">isClipped</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">isInvisible</code></td>
+      <td>Boolean</td>
+      <td>Alias for <code class="highlighter-rouge">isOff</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">isAsVisibleAsPossible</code></td>
+      <td>Boolean</td>
+      <td>As visible as possible (child bigger than the mask).</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">isNotAsVisibleAsPossible</code></td>
+      <td>Boolean</td>
+      <td>Not as visible as possible (child bigger than the mask).</td>
+    </tr>
+  </tbody>
+</table>
 
 <h4 id="parameters">Parameters</h4>
 
