@@ -203,16 +203,16 @@
 		background-color: transparent;
 	}
 
-	td:nth-child(1):nth-last-child(3) {
-		// width: 18%;
+	td:nth-child(1):nth-last-child(4),
+	td:nth-child(2):nth-last-child(3),
+	td:nth-child(3):nth-last-child(2) {
+		min-width: 20%;
 	}
 
-	td:nth-child(2):nth-last-child(2) {
-		// width: 12%;
-	}
-
+	td:nth-child(1):nth-last-child(3),
+	td:nth-child(2):nth-last-child(2),
 	td:nth-child(1):nth-last-child(2) {
-		// width: 18%;
+		width: 20%;
 	}
 }
 
