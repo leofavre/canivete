@@ -75,14 +75,59 @@ describe("clippingInfo", function() {
 
 
 	// Contained
+	
 
-	it("Should behave like the child is fully contained by the mask and is centered.", function() {
-		let currentInfo = changeClippingInfo(domEl, maskEl, 30, 30);
-		testClippingInfo(["isFullyVisible", "isAsVisibleAsPossible"], availableKeys, currentInfo);
+	it("Should change the size of the child.", function() {
+		changeSize(domEl, 40, 40);
+	});
+
+	it("Should behave like the child is fully contained by the mask.", function() {
+		testMultipleCoordinates(
+			["isFullyVisible", "isAsVisibleAsPossible"], [0, 30, 60], [0, 30, 60],
+			domEl, maskEl, availableKeys
+		);
+	});
+
+	it("Should change the size of the child.", function() {
+		changeSize(domEl, 100, 40);
+	});
+
+	it("Should behave like the child (long) is fully contained by the mask.", function() {
+		testMultipleCoordinates(
+			["isFullyVisible", "isAsVisibleAsPossible"], [0, 30, 60], 0,
+			domEl, maskEl, availableKeys
+		);
+	});
+
+	it("Should change the size of the child.", function() {
+		changeSize(domEl, 40, 100);
+	});
+
+	it("Should behave like the child (wide) is fully contained by the mask.", function() {
+		testMultipleCoordinates(
+			["isFullyVisible", "isAsVisibleAsPossible"], 0, [0, 30, 60],
+			domEl, maskEl, availableKeys
+		);
+	});
+
+	it("Should change the size of the child.", function() {
+		changeSize(domEl, 100, 100);
+	});
+
+	it("Should behave like the child (full) is fully contained by the mask.", function() {
+		testMultipleCoordinates(
+			["isFullyVisible", "isAsVisibleAsPossible"], 0, 0,
+			domEl, maskEl, availableKeys
+		);
 	});
 
 
 	// Outside
+
+
+	it("Should change the size of the child.", function() {
+		changeSize(domEl, 40, 40);
+	});
 
 	it("Should behave like the child is outside, above and on the left.", function() {
 		testMultipleCoordinates(
@@ -296,6 +341,34 @@ describe("clippingInfo", function() {
 	it("Should behave like the child contains the mask and is centered.", function() {
 		testMultipleCoordinates(
 			["isClippedTop", "isClippedBottom", "isClippedLeft", "isClippedRight", "isClipped", "isPartiallyVisible", "isAsVisibleAsPossible"], -10, -10,
+			domEl, maskEl, availableKeys
+		);
+	});
+
+	it("Should behave like the child contains the mask and is positioned to the top and to the left.", function() {
+		testMultipleCoordinates(
+			["isClippedBottom", "isClippedRight", "isClipped", "isPartiallyVisible", "isAsVisibleAsPossible"], 0, 0,
+			domEl, maskEl, availableKeys
+		);
+	});
+
+	it("Should behave like the child contains the mask and is positioned to the top and to the right.", function() {
+		testMultipleCoordinates(
+			["isClippedBottom", "isClippedLeft", "isClipped", "isPartiallyVisible", "isAsVisibleAsPossible"], 0, -20,
+			domEl, maskEl, availableKeys
+		);
+	});
+
+	it("Should behave like the child contains the mask and is positioned to the bottom and to the left.", function() {
+		testMultipleCoordinates(
+			["isClippedTop", "isClippedRight", "isClipped", "isPartiallyVisible", "isAsVisibleAsPossible"], -20, 0,
+			domEl, maskEl, availableKeys
+		);
+	});
+
+	it("Should behave like the child contains the mask and is positioned to the bottom and to the right.", function() {
+		testMultipleCoordinates(
+			["isClippedTop", "isClippedLeft", "isClipped", "isPartiallyVisible", "isAsVisibleAsPossible"], -20, -20,
 			domEl, maskEl, availableKeys
 		);
 	});
