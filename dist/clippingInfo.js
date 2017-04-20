@@ -38,7 +38,7 @@ import _getHorizontalAxisInfo from "./internal/clipping/_getHorizontalAxisInfo";
  * @category DOM
  * @param  {HTMLElement} domEl The DOM element.
  * @param  {HTMLElement|Object} [maskDef] The mask definition.
- * @return {Object} Position and clipping information relative to the mask.
+ * @return {Object} Position and clipping information (see table above).
  */
 function clippingInfo(domEl, maskDef) {
 	let domCoords  = _getCoords(domEl, true);
