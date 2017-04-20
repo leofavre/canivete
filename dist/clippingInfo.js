@@ -1,57 +1,46 @@
-function clippingInfo(domEl, wrapEl = document.body) {
+import _getVerticalAxisInfo from "./internal/string/_getVerticalAxisInfo";
+import _getHorizontalAxisInfo from "./internal/string/_getHorizontalAxisInfo";
 
-}
+function clippingInfo(domEl, maskEl = document.body) {
+	let domCoords  = domEl.getBoundingClientRect(),
+		maskCoords = maskEl.getBoundingClientRect();
 
-function getVerticalInfo(domEl, wrapEl) {
-	return getInfo(domEl, wrapEl, false);
-}
+	let vertAxis   = _getVerticalAxisInfo(domCoords, maskCoords),
+		horzAxis   = _getHorizontalAxisInfo(domCoords, maskCoords);
 
-function getHorizontalInfo(domEl, wrapEl) {
-	return getInfo(domEl, wrapEl, true);
-}
-
-function getInfo(domEl, wrapEl, isHorizontal) {
-	let domCoords = domEl.getBoundingClientRect(),
-		wrapCoords = wrapEl.getBoundingClientRect(),
-		startProp = getInfoStartProp(isHorizontal),
-		endProp = getInfoEndProp(isHorizontal);
-
-	let domStart = domCoords[startProp],
-		domEnd = domCoords[endProp],
-		wrapStart = wrapCoords[startProp],
-		wrapEnd = wrapCoords[endProp];
-
-	let startBeforeStart = domStart < wrapStart,
-		startAfterStart = !startBeforeStart,
-		startBeforeEnd = domStart < wrapEnd,
-		startAfterEnd = !startBeforeEnd;
-
-	let endBeforeStart = domEnd < wrapStart,
-		endAfterStart = !endBeforeStart,
-		endBeforeEnd = domEnd < wrapEnd,
-		endAfterEnd = !endBeforeEnd;
-
-	let outsideStart = startBeforeStart && endBeforeStart,
-		outsideEnd = startAfterEnd && endAfterEnd,
-		intra = startAfterStart && endBeforeEnd,
-		extra = startBeforeStart && endAfterEnd,
-		clipStart = startBeforeStart && endBeforeEnd && endAfterStart,
-		clipEnd = startAfterStart && startBeforeEnd && endAfterEnd;
+	let isOffTop                 = vertAxis.isOffBefore,
+		isOffBottom              = vertAxis.isOffAfter,
+		isOffLeft                = horzAxis.isOffBefore,
+		isOffRight               = horzAxis.isOffAfter,
+		isOff                    = isOffTop || isOffBottom || isOffLeft || isOffRight,
+		isClippedTop             = vertAxis.isClippedBefore,
+		isClippedBottom          = vertAxis.isClippedAfter,
+		isClippedLeft            = horzAxis.isClippedBefore,
+		isClippedRight           = horzAxis.isClippedAfter,
+		isClipped                = isClippedTop || isClippedBottom || isClippedLeft || isClippedRight,
+		isFullyVisible           = vertAxis.isContained && horzAxis.isContained,
+		isInvisible              = isOff,
+		isAsVisibleAsPossible    = (vertAxis.isContained && horzAxis.isContainer) || (vertAxis.isContainer && horzAxis.isContained),
+		isNotAsVisibleAsPossible = !isAsVisibleAsPossible,
+		isPartiallyVisible       = !isInvisible && !isFullyVisible;
 
 	return {
-		outsideStart,
-		outsideEnd,
-		intra,
-		extra,
-		clipStart,
-		clipEnd
+		isOffTop,
+		isOffBottom,
+		isOffLeft,
+		isOffRight,
+		isOff,
+		isClippedTop,
+		isClippedBottom,
+		isClippedLeft,
+		isClippedRight,
+		isClipped,
+		isFullyVisible,
+		isPartiallyVisible,
+		isInvisible,
+		isAsVisibleAsPossible,
+		isNotAsVisibleAsPossible
 	};
 }
 
-function getInfoStartProp(isHorizontal) {
-	return isHorizontal ? "left" : "top";
-}
-
-function getInfoEndProp(isHorizontal) {
-	return isHorizontal ? "right" : "bottom";
-}
+export default clippingInfo;
