@@ -165,12 +165,12 @@ html {
     letter-spacing: 0.1em;
     font-weight: 700;
     line-height: 14px;
-    padding: 1px 3px 1px 4px;
+    padding: 1px 3px;
     background: #000;
     color: #fff; }
   .content td > code {
     font-weight: 500;
-    padding: 1px 4px 1px 6px;
+    padding: 1px 4px;
     background-color: rgba(129, 126, 121, 0.2); }
   .content td > em {
     font-style: normal; }
