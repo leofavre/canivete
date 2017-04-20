@@ -44,7 +44,7 @@ The returned object has the following properties:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `domEl` | HTMLElement | The child DOM element. |
+| `domEl` | HTMLElement | The DOM element. |
 | `maskDef` | HTMLElement, Object | The mask definition. **optional** |
 
 #### Returns
