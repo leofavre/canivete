@@ -200,7 +200,6 @@ html {
   flex-grow: 0;
   flex-shrink: 1;
   min-width: 230px;
-  min-width: moz-min-content;
   min-width: min-content;
   display: flex;
   flex-flow: row wrap;
