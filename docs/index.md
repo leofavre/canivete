@@ -10,8 +10,7 @@ title: Canivete
 
 Given two DOM Elements, a child and a mask, returns an
 object with position and clipping information of the
-child in relation to the mask. If the second parameter
-is ommited, `document.body` will be used.
+child in relation to the mask.
 
 The returned object has the following properties:
 
