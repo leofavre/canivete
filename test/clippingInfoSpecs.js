@@ -80,4 +80,14 @@ describe("clippingInfo", function() {
 		let currentInfo = changeClippingInfo(domEl, maskEl, 120, 30);
 		expectTruthOnlyFrom(["isOffBottom","isOff", "isInvisible", "isNotAsVisibleAsPossible"], availableKeys, currentInfo);
 	});
+
+	it("Should behave like child is outside, below and on the left.", function() {
+		let currentInfo = changeClippingInfo(domEl, maskEl, 120, -60);
+		expectTruthOnlyFrom(["isOffBottom", "isOffLeft", "isOff", "isInvisible", "isNotAsVisibleAsPossible"], availableKeys, currentInfo);
+	});
+
+	it("Should behave like child is outside and on the left.", function() {
+		let currentInfo = changeClippingInfo(domEl, maskEl, 30, -60);
+		expectTruthOnlyFrom(["isOffLeft", "isOff", "isInvisible", "isNotAsVisibleAsPossible"], availableKeys, currentInfo);
+	});
 });
