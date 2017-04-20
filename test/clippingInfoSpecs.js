@@ -139,4 +139,9 @@ describe("clippingInfo", function() {
 		let currentInfo = changeClippingInfo(domEl, maskEl, 80, -20);
 		expectTruthOnlyFrom(["isClippedLeft", "isClippedBottom", "isClipped", "isPartiallyVisible", "isNotAsVisibleAsPossible"], availableKeys, currentInfo);
 	});
+
+	it("Should behave like child is clipped and positioned on the left.", function() {
+		let currentInfo = changeClippingInfo(domEl, maskEl, 30, -20);
+		expectTruthOnlyFrom(["isClippedLeft", "isClipped", "isPartiallyVisible", "isNotAsVisibleAsPossible"], availableKeys, currentInfo);
+	});
 });
