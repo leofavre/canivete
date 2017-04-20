@@ -24,8 +24,8 @@ function _getAxisInfo(domCoords, maskCoords, isHorizontal) {
 		isOffAfter       = startAfterEnd && endAfterEnd,
 		isContained      = startAfterStart && endBeforeEnd,
 		isContainer      = startBeforeStart && endAfterEnd,
-		isClippedBefore  = !isOffBefore && !isContained && (startBeforeStart && endBeforeEnd && endAfterStart),
-		isClippedAfter   = !isOffAfter && !isContained && (startAfterStart && startBeforeEnd && endAfterEnd);
+		isClippedBefore  = startBeforeStart && endAfterStart,
+		isClippedAfter   = startBeforeEnd && endAfterEnd;
 
 	return {
 		isOffBefore,

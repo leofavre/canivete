@@ -4,11 +4,26 @@ describe("clippingInfo", function() {
 	let domEl = document.createElement("div");
 	let maskEl = document.createElement("div");
 
-	domEl.style.cssText = "position: absolute; width: 40px; height: 40px; display: block;";
-	maskEl.style.cssText = "position: relative; width: 100px; height: 100px; display: block;";
+	domEl.style.cssText = "position: absolute; width: 40px; height: 40px; display: block; background: rgba(153, 0, 153, 0.3);";
+	maskEl.style.cssText = "position: relative; width: 100px; height: 100px; display: block; background: rgba(153, 0, 153, 0.3);";
 
 	maskEl.appendChild(domEl);
 	document.body.appendChild(maskEl);
+
+	function changeSize(domEl, newWidth, newHeight) {
+		domEl.style.width = newWidth + "px";
+		domEl.style.height = newHeight + "px";
+	}
+
+	function changePosition(domEl, newTop, newLeft) {
+		domEl.style.top = newTop + "px";
+		domEl.style.left = newLeft + "px";
+	}
+
+	function changeClippingInfo(domEl, maskEl, newTop, newLeft) {
+		changePosition(domEl, newTop, newLeft);
+		return clippingInfo(domEl, maskEl);
+	}
 
 	const availableKeys = [
 		"isOffTop",
@@ -41,15 +56,8 @@ describe("clippingInfo", function() {
 		}
 	}
 
-	function changePosition(domEl, newTop, newLeft) {
-		domEl.style.top = newTop + "px";
-		domEl.style.left = newLeft + "px";
-	}
 
-	function changeClippingInfo(domEl, maskEl, newTop, newLeft) {
-		changePosition(domEl, newTop, newLeft);
-		return clippingInfo(domEl, maskEl);
-	}
+	// Child.width < Mask.width && Child.height < Mask.height
 
 
 	// Contained
@@ -89,7 +97,7 @@ describe("clippingInfo", function() {
 
 	it("Should behave like child is outside and below.", function() {
 		let currentInfo = changeClippingInfo(domEl, maskEl, 120, 30);
-		expectTruthOnlyFrom(["isOffBottom","isOff", "isInvisible", "isNotAsVisibleAsPossible"], availableKeys, currentInfo);
+		expectTruthOnlyFrom(["isOffBottom", "isOff", "isInvisible", "isNotAsVisibleAsPossible"], availableKeys, currentInfo);
 	});
 
 	it("Should behave like child is outside, below and on the left.", function() {
@@ -143,5 +151,41 @@ describe("clippingInfo", function() {
 	it("Should behave like child is clipped and positioned on the left.", function() {
 		let currentInfo = changeClippingInfo(domEl, maskEl, 30, -20);
 		expectTruthOnlyFrom(["isClippedLeft", "isClipped", "isPartiallyVisible", "isNotAsVisibleAsPossible"], availableKeys, currentInfo);
+	});
+
+
+	// Child.width < Mask.width && Child.height > Mask.height
+
+
+	// Outside
+
+
+	it("Should change the size of the child.", function() {
+		changeSize(domEl, 120, 40);
+	});
+
+	it("Should behave like child is outside and above.", function() {
+		let currentInfo = changeClippingInfo(domEl, maskEl, -60, -10);
+		expectTruthOnlyFrom(["isOffTop", "isOff", "isInvisible", "isNotAsVisibleAsPossible"], availableKeys, currentInfo);
+	});
+
+	it("Should behave like child is clipped and positioned above.", function() {
+		let currentInfo = changeClippingInfo(domEl, maskEl, -10, -10);
+		expectTruthOnlyFrom(["isClippedLeft", "isClippedRight", "isClippedTop", "isClipped", "isPartiallyVisible", "isNotAsVisibleAsPossible"], availableKeys, currentInfo);
+	});
+
+	it("Should behave like child is as inside as possible.", function() {
+		let currentInfo = changeClippingInfo(domEl, maskEl, 30, -10);
+		expectTruthOnlyFrom(["isClippedLeft", "isClippedRight", "isClipped", "isPartiallyVisible", "isAsVisibleAsPossible"], availableKeys, currentInfo);
+	});
+
+	it("Should behave like child is clipped and positioned above.", function() {
+		let currentInfo = changeClippingInfo(domEl, maskEl, 70, -10);
+		expectTruthOnlyFrom(["isClippedLeft", "isClippedRight", "isClippedBottom", "isClipped", "isPartiallyVisible", "isNotAsVisibleAsPossible"], availableKeys, currentInfo);
+	});
+
+	it("Should behave like child is outside and below.", function() {
+		let currentInfo = changeClippingInfo(domEl, maskEl, 120, -10);
+		expectTruthOnlyFrom(["isOffBottom", "isOff", "isInvisible", "isNotAsVisibleAsPossible"], availableKeys, currentInfo);
 	});
 });
