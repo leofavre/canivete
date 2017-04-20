@@ -10,15 +10,13 @@ title: Canivete
 
 Given a DOM element, returns an object with position
 and clipping information relative to a mask, defined
-by the second parameter.
+by the second parameter, or to the viewport, if it is
+omitted.
 
-The mask can be either a DOM element or an object
-containing numeric values for &#34;top&#34;, &#34;bottom&#34;, &#34;left&#34;
-and &#34;right&#34; properties, like a
+The second parameter can be either a DOM element or an
+object containing numeric values for &#34;top&#34;, &#34;bottom&#34;,
+&#34;left&#34; and &#34;right&#34; properties, like a
 [DOMRect](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect).
-
-If the second parameter is not passed, the mask will
-be the viewport itself.
 
 The returned object has the following properties:
 
@@ -51,7 +49,7 @@ The returned object has the following properties:
 
 | Type | Description |
 | --- | --- |
-| Object | Position and clipping information relative to the mask. |
+| Object | Position and clipping information (see table above). |
 
 ## Promise
 
