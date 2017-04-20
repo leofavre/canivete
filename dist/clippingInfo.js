@@ -1,5 +1,5 @@
-import _getVerticalAxisInfo from "./internal/string/_getVerticalAxisInfo";
-import _getHorizontalAxisInfo from "./internal/string/_getHorizontalAxisInfo";
+import _getVerticalAxisInfo from "./internal/clipping/_getVerticalAxisInfo";
+import _getHorizontalAxisInfo from "./internal/clipping/_getHorizontalAxisInfo";
 
 function clippingInfo(domEl, maskEl = document.body) {
 	let domCoords  = domEl.getBoundingClientRect(),
