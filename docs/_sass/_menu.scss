@@ -21,10 +21,10 @@
 	-webkit-overflow-scrolling: touch;
 	z-index: 1;
 
-	// background-position: 5px 0;
-	// background-size: $grid $grid;
-	// background-image: linear-gradient(to bottom, lightblue 1px, transparent 1px);
-	// background-attachment: scroll;
+	background-position: 5px 0;
+	background-size: $grid $grid;
+	background-image: linear-gradient(to bottom, lightblue 1px, transparent 1px);
+	background-attachment: scroll;
 
 	ul {
 		position: relative;
@@ -52,8 +52,9 @@
 	}
 
 	li li {
-		top: 1px;
+		top: 2px;
 		font-family: "Fira Code", monospace;
+		font-size: 14px;
 	}
 
 	a {

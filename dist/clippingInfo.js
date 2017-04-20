@@ -1,6 +1,16 @@
 import _getVerticalAxisInfo from "./internal/clipping/_getVerticalAxisInfo";
 import _getHorizontalAxisInfo from "./internal/clipping/_getHorizontalAxisInfo";
 
+/**
+ * Given two DOM Elements, a child and a mask, returns an
+ * object with position and clipping information of the
+ * child in relation to the mask.
+ *
+ * @category DOM
+ * @param  {HTMLElement} domEl The child DOM Element.
+ * @param  {HTMLElement} [maskEl = document.body] The mask DOM Element.
+ * @return {Object}
+ */
 function clippingInfo(domEl, maskEl = document.body) {
 	let domCoords  = domEl.getBoundingClientRect(),
 		maskCoords = maskEl.getBoundingClientRect();

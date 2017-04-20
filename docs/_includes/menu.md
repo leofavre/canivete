@@ -1,3 +1,6 @@
+* **[DOM](#dom)**
+  * [clippingInfo](#clippingInfo)
+
 * **[Promise](#promise)**
   * [eventAsPromise](#eventAsPromise)
   * [waitInPromise](#waitInPromise)

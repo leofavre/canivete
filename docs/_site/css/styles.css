@@ -209,7 +209,11 @@ html {
   overflow-y: auto;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
-  z-index: 1; }
+  z-index: 1;
+  background-position: 5px 0;
+  background-size: 24px 24px;
+  background-image: linear-gradient(to bottom, lightblue 1px, transparent 1px);
+  background-attachment: scroll; }
   .menu ul {
     position: relative;
     top: 8px;
@@ -228,8 +232,9 @@ html {
     line-height: 24px;
     letter-spacing: 0.045em; }
   .menu li li {
-    top: 1px;
-    font-family: "Fira Code", monospace; }
+    top: 2px;
+    font-family: "Fira Code", monospace;
+    font-size: 14px; }
   .menu a {
     display: block;
     color: #000;

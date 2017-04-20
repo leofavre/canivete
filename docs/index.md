@@ -3,6 +3,28 @@ layout: default
 title: Canivete
 ---
 
+## DOM
+
+<a name="clippingInfo"></a>
+### `clippingInfo(domEl, [maskEl])`
+
+Given two DOM Elements, a child and a mask, returns an
+object with position and clipping information of the
+child in relation to the mask.
+
+#### Parameters
+
+| Name | Default | Type | Description |
+| --- | --- | --- | --- |
+| `domEl` |  | HTMLElement | The child DOM Element. |
+| `maskEl` | `document.body` | HTMLElement | The mask DOM Element. **optional** |
+
+#### Returns
+
+| Type |
+| --- |
+| Object |
+
 ## Promise
 
 <a name="eventAsPromise"></a>
