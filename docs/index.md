@@ -48,7 +48,9 @@ eventAsPromise(checkbox, "change")
 
 // => true
 // shown as soon as the checkbox is clicked for the first time.
+```
 
+```javascript
 let image = document.createElement("img");
 image.src = "https://www.w3.org/Icons/w3c_home";
 document.body.appendChild(image);

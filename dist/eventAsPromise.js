@@ -33,6 +33,7 @@ import isElement from "../node_modules/lodash-es/isElement";
  * // => true
  * // shown as soon as the checkbox is clicked for the first time.
  *
+ * @example
  * let image = document.createElement("img");
  * image.src = "https://www.w3.org/Icons/w3c_home";
  * document.body.appendChild(image);

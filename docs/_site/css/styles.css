@@ -118,10 +118,11 @@ html {
     background-color: #272822;
     color: #f8f8f2;
     margin: 24px -24px 48px -48px;
-    padding-top: 55px;
-    padding-bottom: 49px;
+    padding-top: 56px;
+    padding-bottom: 40px;
     padding-left: 48px;
-    padding-right: 24px; }
+    padding-right: 24px;
+    line-height: 24px; }
   .content code {
     font-family: "Fira Code", monospace;
     tab-size: 4;
@@ -161,6 +162,7 @@ html {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-weight: 700;
+    line-height: 14px;
     padding: 1px 3px 1px 4px;
     background: #000;
     color: #fff; }
