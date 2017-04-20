@@ -4,8 +4,7 @@ import _getHorizontalAxisInfo from "./internal/clipping/_getHorizontalAxisInfo";
 /**
  * Given two DOM Elements, a child and a mask, returns an
  * object with position and clipping information of the
- * child in relation to the mask. If the second parameter
- * is ommited, `document.body` will be used.
+ * child in relation to the mask.
  *
  * The returned object has the following properties:
  *
@@ -32,28 +31,40 @@ import _getHorizontalAxisInfo from "./internal/clipping/_getHorizontalAxisInfo";
  * @param  {HTMLElement} [maskEl = document.body] The mask DOM Element.
  * @return {Object}
  */
-function clippingInfo(domEl, maskEl = document.body) {
-	let domCoords  = domEl.getBoundingClientRect(),
+function clippingInfo(domEl, maskEl) {
+	let domCoords = domEl.getBoundingClientRect();
+	let maskCoords;
+
+	if (maskEl) {
 		maskCoords = maskEl.getBoundingClientRect();
+	}
+	else {
+		maskCoords = {
+			top: 0,
+			bottom: window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight,
+			left: 0,
+			right: window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+		};
+	}
 
-	let vertAxis   = _getVerticalAxisInfo(domCoords, maskCoords),
-		horzAxis   = _getHorizontalAxisInfo(domCoords, maskCoords);
+	let vertAxis = _getVerticalAxisInfo(domCoords, maskCoords),
+		horzAxis = _getHorizontalAxisInfo(domCoords, maskCoords);
 
-	let isOffTop                 = vertAxis.isOffBefore,
-		isOffBottom              = vertAxis.isOffAfter,
-		isOffLeft                = horzAxis.isOffBefore,
-		isOffRight               = horzAxis.isOffAfter,
-		isOff                    = isOffTop || isOffBottom || isOffLeft || isOffRight,
-		isClippedTop             = !isOff && (vertAxis.isClippedBefore),
-		isClippedBottom          = !isOff && (vertAxis.isClippedAfter),
-		isClippedLeft            = !isOff && (horzAxis.isClippedBefore),
-		isClippedRight           = !isOff && (horzAxis.isClippedAfter),
-		isClipped                = isClippedTop || isClippedBottom || isClippedLeft || isClippedRight,
-		isFullyVisible           = vertAxis.isContained && horzAxis.isContained,
-		isInvisible              = isOff,
-		isAsVisibleAsPossible    = isFullyVisible || (vertAxis.isWrapper && horzAxis.isWrapper) || (vertAxis.isContained && horzAxis.isWrapper) || (vertAxis.isWrapper && horzAxis.isContained),
+	let isOffTop = vertAxis.isOffBefore,
+		isOffBottom = vertAxis.isOffAfter,
+		isOffLeft = horzAxis.isOffBefore,
+		isOffRight = horzAxis.isOffAfter,
+		isOff = isOffTop || isOffBottom || isOffLeft || isOffRight,
+		isClippedTop = !isOff && (vertAxis.isClippedBefore),
+		isClippedBottom = !isOff && (vertAxis.isClippedAfter),
+		isClippedLeft = !isOff && (horzAxis.isClippedBefore),
+		isClippedRight = !isOff && (horzAxis.isClippedAfter),
+		isClipped = isClippedTop || isClippedBottom || isClippedLeft || isClippedRight,
+		isFullyVisible = vertAxis.isContained && horzAxis.isContained,
+		isInvisible = isOff,
+		isAsVisibleAsPossible = isFullyVisible || (vertAxis.isWrapper && horzAxis.isWrapper) || (vertAxis.isContained && horzAxis.isWrapper) || (vertAxis.isWrapper && horzAxis.isContained),
 		isNotAsVisibleAsPossible = isInvisible || !isAsVisibleAsPossible,
-		isPartiallyVisible       = isClipped;
+		isPartiallyVisible = isClipped;
 
 	return {
 		isOffTop,
