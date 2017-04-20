@@ -36,7 +36,7 @@ import _getHorizontalAxisInfo from "./internal/clipping/_getHorizontalAxisInfo";
  * | `isNotAsVisibleAsPossible` | Boolean | Not as visible as possible (child bigger than the mask). |
  *
  * @category DOM
- * @param  {HTMLElement} domEl The child DOM element.
+ * @param  {HTMLElement} domEl The DOM element.
  * @param  {HTMLElement|Object} [maskDef] The mask definition.
  * @return {Object} Position and clipping information relative to the mask.
  */
