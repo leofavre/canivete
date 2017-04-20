@@ -87,12 +87,16 @@
 	}
 
 	p > code {
-		padding: 1px 4px 1px 6px;
+		padding: 1px 4px 1px 4px;
 		background-color: rgba($grey, 0.2);
 	}
 
 	p > strong {
 		font-weight: 600;
+	}
+
+	a {
+		color: #000;
 	}
 
 	ul {
@@ -204,13 +208,6 @@
 
 	[id^="returns"] + table,
 	[id^="parameters"] + table {
-		td > code,
-		td:nth-child(n + 2) > code {
-			font-weight: 400;
-			padding: 0;
-			background-color: transparent;
-		}
-
 		td:nth-child(1):nth-last-child(4),
 		td:nth-child(2):nth-last-child(3),
 		td:nth-child(3):nth-last-child(2) {

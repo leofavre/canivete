@@ -6,11 +6,19 @@ title: Canivete
 ## DOM
 
 <a name="clippingInfo"></a>
-### `clippingInfo(domEl, [maskEl])`
+### `clippingInfo(domEl, [maskDef])`
 
-Given two DOM Elements, a child and a mask, returns an
-object with position and clipping information of the
-child in relation to the mask.
+Given a DOM element, returns an object with position
+and clipping information relative to a mask, defined
+by the second parameter.
+
+The mask can be either a DOM element or an object
+containing numeric values for &#34;top&#34;, &#34;bottom&#34;, &#34;left&#34;
+and &#34;right&#34; properties, like a
+[DOMRect](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect).
+
+If the second parameter is not passed, the mask will
+be the viewport itself.
 
 The returned object has the following properties:
 
@@ -34,16 +42,16 @@ The returned object has the following properties:
 
 #### Parameters
 
-| Name | Default | Type | Description |
-| --- | --- | --- | --- |
-| `domEl` |  | HTMLElement | The child DOM Element. |
-| `maskEl` | `document.body` | HTMLElement | The mask DOM Element. **optional** |
+| Name | Type | Description |
+| --- | --- | --- |
+| `domEl` | HTMLElement | The child DOM element. |
+| `maskDef` | HTMLElement, Object | The mask definition. **optional** |
 
 #### Returns
 
-| Type |
-| --- |
-| Object |
+| Type | Description |
+| --- | --- |
+| Object | Position and clipping information relative to the mask. |
 
 ## Promise
 

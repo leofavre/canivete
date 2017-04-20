@@ -1,10 +1,19 @@
+import _getCoords from "./internal/clipping/_getCoords";
 import _getVerticalAxisInfo from "./internal/clipping/_getVerticalAxisInfo";
 import _getHorizontalAxisInfo from "./internal/clipping/_getHorizontalAxisInfo";
 
 /**
- * Given two DOM Elements, a child and a mask, returns an
- * object with position and clipping information of the
- * child in relation to the mask.
+ * Given a DOM element, returns an object with position
+ * and clipping information relative to a mask, defined
+ * by the second parameter.
+ *
+ * The mask can be either a DOM element or an object
+ * containing numeric values for "top", "bottom", "left"
+ * and "right" properties, like a
+ * [DOMRect](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect).
+ *
+ * If the second parameter is not passed, the mask will
+ * be the viewport itself.
  *
  * The returned object has the following properties:
  *
@@ -27,44 +36,31 @@ import _getHorizontalAxisInfo from "./internal/clipping/_getHorizontalAxisInfo";
  * | `isNotAsVisibleAsPossible` | Boolean | Not as visible as possible (child bigger than the mask). |
  *
  * @category DOM
- * @param  {HTMLElement} domEl The child DOM Element.
- * @param  {HTMLElement} [maskEl = document.body] The mask DOM Element.
- * @return {Object}
+ * @param  {HTMLElement} domEl The child DOM element.
+ * @param  {HTMLElement|Object} [maskDef] The mask definition.
+ * @return {Object} Position and clipping information relative to the mask.
  */
-function clippingInfo(domEl, maskEl) {
-	let domCoords = domEl.getBoundingClientRect();
-	let maskCoords;
+function clippingInfo(domEl, maskDef) {
+	let domCoords  = _getCoords(domEl, true);
+	let maskCoords = _getCoords(maskDef, false),
+		vertAxis   = _getVerticalAxisInfo(domCoords, maskCoords),
+		horzAxis   = _getHorizontalAxisInfo(domCoords, maskCoords);
 
-	if (maskEl) {
-		maskCoords = maskEl.getBoundingClientRect();
-	}
-	else {
-		maskCoords = {
-			top: 0,
-			bottom: window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight,
-			left: 0,
-			right: window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
-		};
-	}
-
-	let vertAxis = _getVerticalAxisInfo(domCoords, maskCoords),
-		horzAxis = _getHorizontalAxisInfo(domCoords, maskCoords);
-
-	let isOffTop = vertAxis.isOffBefore,
-		isOffBottom = vertAxis.isOffAfter,
-		isOffLeft = horzAxis.isOffBefore,
-		isOffRight = horzAxis.isOffAfter,
-		isOff = isOffTop || isOffBottom || isOffLeft || isOffRight,
-		isClippedTop = !isOff && (vertAxis.isClippedBefore),
-		isClippedBottom = !isOff && (vertAxis.isClippedAfter),
-		isClippedLeft = !isOff && (horzAxis.isClippedBefore),
-		isClippedRight = !isOff && (horzAxis.isClippedAfter),
-		isClipped = isClippedTop || isClippedBottom || isClippedLeft || isClippedRight,
-		isFullyVisible = vertAxis.isContained && horzAxis.isContained,
-		isInvisible = isOff,
-		isAsVisibleAsPossible = isFullyVisible || (vertAxis.isWrapper && horzAxis.isWrapper) || (vertAxis.isContained && horzAxis.isWrapper) || (vertAxis.isWrapper && horzAxis.isContained),
+	let isOffTop                 = vertAxis.isOffBefore,
+		isOffBottom              = vertAxis.isOffAfter,
+		isOffLeft                = horzAxis.isOffBefore,
+		isOffRight               = horzAxis.isOffAfter,
+		isOff                    = isOffTop || isOffBottom || isOffLeft || isOffRight,
+		isClippedTop             = !isOff && (vertAxis.isClippedBefore),
+		isClippedBottom          = !isOff && (vertAxis.isClippedAfter),
+		isClippedLeft            = !isOff && (horzAxis.isClippedBefore),
+		isClippedRight           = !isOff && (horzAxis.isClippedAfter),
+		isClipped                = isClippedTop || isClippedBottom || isClippedLeft || isClippedRight,
+		isFullyVisible           = vertAxis.isContained && horzAxis.isContained,
+		isInvisible              = isOff,
+		isAsVisibleAsPossible    = isFullyVisible || (vertAxis.isWrapper && horzAxis.isWrapper) || (vertAxis.isContained && horzAxis.isWrapper) || (vertAxis.isWrapper && horzAxis.isContained),
 		isNotAsVisibleAsPossible = isInvisible || !isAsVisibleAsPossible,
-		isPartiallyVisible = isClipped;
+		isPartiallyVisible       = isClipped;
 
 	return {
 		isOffTop,

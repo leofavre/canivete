@@ -16,11 +16,19 @@
 				<h2 id="dom">DOM</h2>
 
 <p><a name="clippingInfo"></a></p>
-<h3 id="clippinginfodomel-maskel"><code class="highlighter-rouge">clippingInfo(domEl, [maskEl])</code></h3>
+<h3 id="clippinginfodomel-maskdef"><code class="highlighter-rouge">clippingInfo(domEl, [maskDef])</code></h3>
 
-<p>Given two DOM Elements, a child and a mask, returns an
-object with position and clipping information of the
-child in relation to the mask.</p>
+<p>Given a DOM element, returns an object with position
+and clipping information relative to a mask, defined
+by the second parameter.</p>
+
+<p>The mask can be either a DOM element or an object
+containing numeric values for "top", "bottom", "left"
+and "right" properties, like a
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMRect">DOMRect</a>.</p>
+
+<p>If the second parameter is not passed, the mask will
+be the viewport itself.</p>
 
 <p>The returned object has the following properties:</p>
 
@@ -117,7 +125,6 @@ child in relation to the mask.</p>
   <thead>
     <tr>
       <th>Name</th>
-      <th>Default</th>
       <th>Type</th>
       <th>Description</th>
     </tr>
@@ -125,15 +132,13 @@ child in relation to the mask.</p>
   <tbody>
     <tr>
       <td><code class="highlighter-rouge">domEl</code></td>
-      <td> </td>
       <td>HTMLElement</td>
-      <td>The child DOM Element.</td>
+      <td>The child DOM element.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">maskEl</code></td>
-      <td><code class="highlighter-rouge">document.body</code></td>
-      <td>HTMLElement</td>
-      <td>The mask DOM Element. <strong>optional</strong></td>
+      <td><code class="highlighter-rouge">maskDef</code></td>
+      <td>HTMLElement, Object</td>
+      <td>The mask definition. <strong>optional</strong></td>
     </tr>
   </tbody>
 </table>
@@ -144,11 +149,13 @@ child in relation to the mask.</p>
   <thead>
     <tr>
       <th>Type</th>
+      <th>Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>Object</td>
+      <td>Position and clipping information relative to the mask.</td>
     </tr>
   </tbody>
 </table>

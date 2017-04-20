@@ -107,10 +107,12 @@ html {
     line-height: 24px;
     margin: 24px 0 24px; }
   .content p > code {
-    padding: 1px 4px 1px 6px;
+    padding: 1px 4px 1px 4px;
     background-color: rgba(129, 126, 121, 0.2); }
   .content p > strong {
     font-weight: 600; }
+  .content a {
+    color: #000; }
   .content pre {
     white-space: pre-wrap;
     margin: 0; }
@@ -174,13 +176,6 @@ html {
     font-style: normal; }
   .content td:nth-last-child(1) {
     padding-right: 0; }
-  .content [id^="returns"] + table td > code,
-  .content [id^="returns"] + table td:nth-child(n + 2) > code,
-  .content [id^="parameters"] + table td > code,
-  .content [id^="parameters"] + table td:nth-child(n + 2) > code {
-    font-weight: 400;
-    padding: 0;
-    background-color: transparent; }
   .content [id^="returns"] + table td:nth-child(1):nth-last-child(4),
   .content [id^="returns"] + table td:nth-child(2):nth-last-child(3),
   .content [id^="returns"] + table td:nth-child(3):nth-last-child(2),
