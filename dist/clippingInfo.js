@@ -20,7 +20,7 @@ function clippingInfo(domEl, maskEl = document.body) {
 		isClipped                = isClippedTop || isClippedBottom || isClippedLeft || isClippedRight,
 		isFullyVisible           = vertAxis.isContained && horzAxis.isContained,
 		isInvisible              = isOff,
-		isAsVisibleAsPossible    = (vertAxis.isContained && horzAxis.isContainer) || (vertAxis.isContainer && horzAxis.isContained),
+		isAsVisibleAsPossible    = isFullyVisible || (vertAxis.isContained && horzAxis.isContainer) || (vertAxis.isContainer && horzAxis.isContained),
 		isNotAsVisibleAsPossible = isInvisible || !isAsVisibleAsPossible,
 		isPartiallyVisible       = !isInvisible && !isFullyVisible;
 

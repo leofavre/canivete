@@ -51,6 +51,17 @@ describe("clippingInfo", function() {
 		return clippingInfo(domEl, maskEl);
 	}
 
+
+	// Contained
+
+	it("Should behave like child is fully inside, contained by the mask.", function() {
+		let currentInfo = changeClippingInfo(domEl, maskEl, 30, 30);
+		expectTruthOnlyFrom(["isFullyVisible", "isAsVisibleAsPossible"], availableKeys, currentInfo);
+	});
+
+
+	// Outside
+
 	it("Should behave like child is outside, above and on the left.", function() {
 		let currentInfo = changeClippingInfo(domEl, maskEl, -60, -60);
 		expectTruthOnlyFrom(["isOffTop", "isOffLeft", "isOff", "isInvisible", "isNotAsVisibleAsPossible"], availableKeys, currentInfo);
@@ -89,5 +100,43 @@ describe("clippingInfo", function() {
 	it("Should behave like child is outside and on the left.", function() {
 		let currentInfo = changeClippingInfo(domEl, maskEl, 30, -60);
 		expectTruthOnlyFrom(["isOffLeft", "isOff", "isInvisible", "isNotAsVisibleAsPossible"], availableKeys, currentInfo);
+	});
+
+
+	// Clipped
+
+	it("Should behave like child is clipped and positioned above and on the left.", function() {
+		let currentInfo = changeClippingInfo(domEl, maskEl, -20, -20);
+		expectTruthOnlyFrom(["isClippedTop", "isClippedLeft", "isClipped", "isPartiallyVisible", "isNotAsVisibleAsPossible"], availableKeys, currentInfo);
+	});
+
+	it("Should behave like child is clipped and positioned above.", function() {
+		let currentInfo = changeClippingInfo(domEl, maskEl, -20, 30);
+		expectTruthOnlyFrom(["isClippedTop", "isClipped", "isPartiallyVisible", "isNotAsVisibleAsPossible"], availableKeys, currentInfo);
+	});
+
+	it("Should behave like child is clipped and positioned above and on the right.", function() {
+		let currentInfo = changeClippingInfo(domEl, maskEl, -20, 80);
+		expectTruthOnlyFrom(["isClippedTop", "isClippedRight", "isClipped", "isPartiallyVisible", "isNotAsVisibleAsPossible"], availableKeys, currentInfo);
+	});
+
+	it("Should behave like child is clipped and positioned on the right.", function() {
+		let currentInfo = changeClippingInfo(domEl, maskEl, 30, 80);
+		expectTruthOnlyFrom(["isClippedRight", "isClipped", "isPartiallyVisible", "isNotAsVisibleAsPossible"], availableKeys, currentInfo);
+	});
+
+	it("Should behave like child is clipped and positioned below and on the right.", function() {
+		let currentInfo = changeClippingInfo(domEl, maskEl, 80, 80);
+		expectTruthOnlyFrom(["isClippedBottom", "isClippedRight", "isClipped", "isPartiallyVisible", "isNotAsVisibleAsPossible"], availableKeys, currentInfo);
+	});
+
+	it("Should behave like child is clipped and positioned below.", function() {
+		let currentInfo = changeClippingInfo(domEl, maskEl, 80, 30);
+		expectTruthOnlyFrom(["isClippedBottom", "isClipped", "isPartiallyVisible", "isNotAsVisibleAsPossible"], availableKeys, currentInfo);
+	});
+
+	it("Should behave like child is clipped and positioned below and on the left.", function() {
+		let currentInfo = changeClippingInfo(domEl, maskEl, 80, -20);
+		expectTruthOnlyFrom(["isClippedLeft", "isClippedBottom", "isClipped", "isPartiallyVisible", "isNotAsVisibleAsPossible"], availableKeys, currentInfo);
 	});
 });
