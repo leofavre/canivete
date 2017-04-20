@@ -38,6 +38,8 @@ const removeNewslines = str => str; // str.replace(/(?:\r\n|\r|\n)/g, " ");
 
 const useJekyll = path => () => execAsPromise(`cd ${path} && bundle exec jekyll build`);
 
+const capitalizeFirstLetter = str => str.charAt(0).toUpperCase() + str.slice(1);
+
 
 
 
@@ -99,7 +101,7 @@ const formatCode = str => (str != null) ? "`" + str + "`" : undefined;
 
 const formatType = typeNames => {
 	if (typeNames != null && typeNames.length > 0) {
-		return typeNames.join(", ");
+		return typeNames.map(capitalizeFirstLetter).join(", ");
 	}
 };
 

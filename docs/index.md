@@ -27,8 +27,8 @@ parameters are not a DOM element and a string.
 | Name | Default | Type | Description |
 | --- | --- | --- | --- |
 | `domEl` |  | HTMLElement | The DOM element. |
-| `evtName` |  | string | The event that will be listened for. |
-| `happened` | `domEl => false` | function | The verification function. **optional** |
+| `evtName` |  | String | The event that will be listened for. |
+| `happened` | `domEl => false` | Function | The verification function. **optional** |
 
 #### Returns
 
@@ -80,7 +80,7 @@ internal `setTimeout()`.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `delay` | number | The delay in milliseconds. |
+| `delay` | Number | The delay in milliseconds. |
 
 #### Returns
 
@@ -114,7 +114,7 @@ using `toAverage()` can lead to unexpected results.
 
 | Type | Description |
 | --- | --- |
-| number | The average of the values in an array. |
+| Number | The average of the values in an array. |
 
 #### Example
 
@@ -140,7 +140,7 @@ formed by objects with the same set of properties.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `path` | string | The path to the property of an object. |
+| `path` | String | The path to the property of an object. |
 
 #### Returns
 
@@ -203,13 +203,13 @@ using `toClosest()` can lead to unexpected results.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `num` | number | The base value. |
+| `num` | Number | The base value. |
 
 #### Returns
 
 | Type | Description |
 | --- | --- |
-| number | The value, from an array, closest to the base value. |
+| Number | The value, from an array, closest to the base value. |
 
 #### Example
 
@@ -239,8 +239,8 @@ formed by objects with the same set of properties.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `path` | string | The path to the property of an object. |
-| `num` | string | The base value. |
+| `path` | String | The path to the property of an object. |
+| `num` | String | The base value. |
 
 #### Returns
 
@@ -301,7 +301,7 @@ formed by objects with the same set of properties.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `path` | string | The path to the property of an object. |
+| `path` | String | The path to the property of an object. |
 
 #### Returns
 
@@ -362,7 +362,7 @@ formed by objects with the same set of properties.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `path` | string | The path to the property of an object. |
+| `path` | String | The path to the property of an object. |
 
 #### Returns
 
@@ -419,7 +419,7 @@ using `toSum()` can lead to unexpected results.
 
 | Type | Description |
 | --- | --- |
-| number | The sum of the values in an array. |
+| Number | The sum of the values in an array. |
 
 #### Example
 
@@ -446,14 +446,14 @@ automatically converted to strings.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `str` | string | The base string. |
-| `delimiter` | string | The delimiter string. |
+| `str` | String | The base string. |
+| `delimiter` | String | The delimiter string. |
 
 #### Returns
 
 | Type |
 | --- |
-| string |
+| String |
 
 #### Example
 
@@ -478,14 +478,14 @@ automatically converted to strings.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `str` | string | The base string. |
-| `delimiter` | string | The delimiter string. |
+| `str` | String | The base string. |
+| `delimiter` | String | The delimiter string. |
 
 #### Returns
 
 | Type |
 | --- |
-| string |
+| String |
 
 #### Example
 
@@ -510,14 +510,14 @@ automatically converted to strings.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `str` | string | The base string. |
-| `delimiter` | string | The delimiter string. |
+| `str` | String | The base string. |
+| `delimiter` | String | The delimiter string. |
 
 #### Returns
 
 | Type |
 | --- |
-| string |
+| String |
 
 #### Example
 
@@ -542,14 +542,14 @@ automatically converted to strings.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `str` | string | The base string. |
-| `delimiter` | string | The delimiter string. |
+| `str` | String | The base string. |
+| `delimiter` | String | The delimiter string. |
 
 #### Returns
 
 | Type |
 | --- |
-| string |
+| String |
 
 #### Example
 

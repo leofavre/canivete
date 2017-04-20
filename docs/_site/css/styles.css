@@ -64,7 +64,7 @@ html {
   line-height: 24px;
   -webkit-overflow-scrolling: touch;
   box-sizing: border-box;
-  flex-basis: calc(732px + ((100% - 732px) / 2));
+  flex-basis: calc(692px + ((100% - 692px) / 2));
   flex-grow: 0;
   flex-shrink: 1; }
   .content h2 {
@@ -189,7 +189,7 @@ html {
     width: 20%; }
 
 .content__area {
-  max-width: 660px;
+  max-width: 692px;
   margin-bottom: 720px; }
 
 .menu {
@@ -198,7 +198,7 @@ html {
   height: auto;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
   box-sizing: border-box;
-  flex-basis: calc((100% - 732px) / 2);
+  flex-basis: calc((100% - 692px) / 2);
   flex-grow: 0;
   flex-shrink: 1;
   min-width: 230px;
