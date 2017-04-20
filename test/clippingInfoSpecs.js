@@ -76,7 +76,16 @@ describe("clippingInfo", function() {
 	});
 
 	it("Should behave like child is outside and above.", function() {
-		let currentInfo = changeClippingInfo(domEl, maskEl, -60, 30);
+
+		// AUTOMATIZAR A AMBIGUIDADE
+
+		let currentInfo = changeClippingInfo(domEl, maskEl, -60, -20);
+		expectTruthOnlyFrom(["isOffTop", "isOff", "isInvisible", "isNotAsVisibleAsPossible"], availableKeys, currentInfo);
+		
+		currentInfo = changeClippingInfo(domEl, maskEl, -60, 30);
+		expectTruthOnlyFrom(["isOffTop", "isOff", "isInvisible", "isNotAsVisibleAsPossible"], availableKeys, currentInfo);
+		
+		currentInfo = changeClippingInfo(domEl, maskEl, -60, 80);
 		expectTruthOnlyFrom(["isOffTop", "isOff", "isInvisible", "isNotAsVisibleAsPossible"], availableKeys, currentInfo);
 	});
 
@@ -188,4 +197,6 @@ describe("clippingInfo", function() {
 		let currentInfo = changeClippingInfo(domEl, maskEl, 120, -10);
 		expectTruthOnlyFrom(["isOffBottom", "isOff", "isInvisible", "isNotAsVisibleAsPossible"], availableKeys, currentInfo);
 	});
+
+	// FALTAM 7 TESTES E MAIS OS DE AMBIGUIDADE
 });

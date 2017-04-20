@@ -1,10 +1,12 @@
 .main {
-	background-color: #fff;
-	display: flex;
-	flex: 1 1 auto;
-	flex-flow: row-reverse nowrap;
-	overflow: hidden;
 	position: relative;
-	width: 100%;
 	margin: 0 auto;
+	width: 100%;
+	overflow: hidden;
+	background-color: #fff;
+
+	display: flex;
+	flex-flow: row-reverse nowrap;
+
+	flex: 1 1 auto;
 }

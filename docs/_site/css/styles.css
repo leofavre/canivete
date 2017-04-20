@@ -48,22 +48,25 @@ html {
   z-index: 2; }
 
 .main {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  overflow: hidden;
   background-color: #fff;
   display: flex;
-  flex: 1 1 auto;
   flex-flow: row-reverse nowrap;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  margin: 0 auto; }
+  flex: 1 1 auto; }
 
 .content {
-  flex: 14 14 0;
+  padding: 0 24px 48px 48px;
   overflow-x: hidden;
   overflow-y: auto;
-  padding: 0 24px 48px 48px;
+  line-height: 24px;
   -webkit-overflow-scrolling: touch;
-  line-height: 24px; }
+  box-sizing: border-box;
+  flex-basis: calc(732px + ((100% - 732px) / 2));
+  flex-grow: 0;
+  flex-shrink: 1; }
   .content h2 {
     position: relative;
     top: 0;
@@ -189,13 +192,20 @@ html {
 
 .menu {
   position: relative;
-  display: flex;
-  flex-flow: row wrap;
-  overflow-y: auto;
-  flex: 6 3 0;
-  padding: 24px 48px 24px 24px;
+  padding: 24px 48px;
   height: auto;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  flex-basis: calc((100% - 732px) / 2);
+  flex-grow: 0;
+  flex-shrink: 1;
+  min-width: 230px;
+  min-width: moz-min-content;
+  min-width: min-content;
+  display: flex;
+  flex-flow: row wrap;
+  overflow-x: hidden;
+  overflow-y: auto;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
   z-index: 1; }
