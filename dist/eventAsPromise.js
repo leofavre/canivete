@@ -46,7 +46,7 @@ import isElement from "../node_modules/lodash-es/isElement";
  */
 const eventAsPromise = (domEl, evtName, happened = domEl => false) => {
 	if (!isElement(domEl) || !isString(evtName)) {
-		throw new Error("A DOM element and a string are expected as parameters.");
+		throw new Error("An HTMLElement and a string are expected as parameters.");
 	}
 
 	return new Promise(resolve => {

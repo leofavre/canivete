@@ -20,10 +20,10 @@ function _getCoords(maskDef, allowElementOnly) {
 
 	if (!Number.isFinite(maskCoords.top) || !Number.isFinite(maskCoords.bottom) || !Number.isFinite(maskCoords.left) || !Number.isFinite(maskCoords.right)) {
 		if (allowElementOnly) {
-			throw new Error(`A DOM element is expected as parameter.`);
+			throw new Error(`An HTMLElement is expected as parameter.`);
 		}
 		else {
-			throw new Error(`If passed, the optional parameter can be either a DOM element or an object containing numeric values for "top", "bottom", "left" and "right" properties.`);
+			throw new Error(`If passed, the optional parameter can be either an HTMLElement or an Object containing numeric values for "top", "bottom", "left" and "right" properties.`);
 		}
 	}
 
