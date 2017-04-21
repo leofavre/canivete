@@ -15,6 +15,52 @@
 			<div class="content__area">
 				<h2 id="dom">DOM</h2>
 
+<p><a name="addClass"></a></p>
+<h3 id="addclassdomels-str"><code class="highlighter-rouge">addClass(domEls, str)</code></h3>
+
+<p>Adds a CSS class to one or many DOM elements.</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">domEls</code></td>
+      <td>HTMLElement<br />HTMLCollection<br />NodeList<br />Array.&lt;HTMLElement&gt;</td>
+      <td>The DOM elements.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">str</code></td>
+      <td>String</td>
+      <td>The CSS class name.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns">Returns</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Array.&lt;HTMLElement&gt;</td>
+      <td>An array of DOM elements.</td>
+    </tr>
+  </tbody>
+</table>
+
 <p><a name="clippingInfo"></a></p>
 <h3 id="clippinginfodomel-maskdef"><code class="highlighter-rouge">clippingInfo(domEl, [maskDef])</code></h3>
 
@@ -35,7 +81,7 @@ containing numeric values for “top”, “bottom”,
     <tr>
       <th>Property</th>
       <th>Type</th>
-      <th>Child relation with the mask</th>
+      <th>Element relation to the mask</th>
     </tr>
   </thead>
   <tbody>
@@ -117,7 +163,7 @@ containing numeric values for “top”, “bottom”,
   </tbody>
 </table>
 
-<h4 id="parameters">Parameters</h4>
+<h4 id="parameters-1">Parameters</h4>
 
 <table>
   <thead>
@@ -135,13 +181,13 @@ containing numeric values for “top”, “bottom”,
     </tr>
     <tr>
       <td><code class="highlighter-rouge">maskDef</code></td>
-      <td>HTMLElement, Object</td>
+      <td>HTMLElement<br />Object</td>
       <td>The mask definition. <strong>optional</strong></td>
     </tr>
   </tbody>
 </table>
 
-<h4 id="returns">Returns</h4>
+<h4 id="returns-1">Returns</h4>
 
 <table>
   <thead>
@@ -208,7 +254,7 @@ returns true or when the event occurs for the first time.</p>
 <p>Note that the function throws an error if the first two
 parameters are not a DOM element and a string.</p>
 
-<h4 id="parameters-1">Parameters</h4>
+<h4 id="parameters-2">Parameters</h4>
 
 <table>
   <thead>
@@ -241,7 +287,7 @@ parameters are not a DOM element and a string.</p>
   </tbody>
 </table>
 
-<h4 id="returns-1">Returns</h4>
+<h4 id="returns-2">Returns</h4>
 
 <table>
   <thead>
@@ -298,7 +344,7 @@ value of the previous promise step to the next.</p>
 the promise resolves without delay, skipping the
 internal <code class="highlighter-rouge">setTimeout()</code>.</p>
 
-<h4 id="parameters-2">Parameters</h4>
+<h4 id="parameters-3">Parameters</h4>
 
 <table>
   <thead>
@@ -317,7 +363,7 @@ internal <code class="highlighter-rouge">setTimeout()</code>.</p>
   </tbody>
 </table>
 
-<h4 id="returns-2">Returns</h4>
+<h4 id="returns-3">Returns</h4>
 
 <table>
   <thead>
@@ -356,7 +402,7 @@ the average of the values in an array.</p>
 <p>Note that reducing arrays with non-numeric values
 using <code class="highlighter-rouge">toAverage()</code> can lead to unexpected results.</p>
 
-<h4 id="returns-3">Returns</h4>
+<h4 id="returns-4">Returns</h4>
 
 <table>
   <thead>
@@ -393,7 +439,7 @@ is returned.</p>
 <p>Note that this function expects the reduced array to be
 formed by objects with the same set of properties.</p>
 
-<h4 id="parameters-3">Parameters</h4>
+<h4 id="parameters-4">Parameters</h4>
 
 <table>
   <thead>
@@ -412,7 +458,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="returns-4">Returns</h4>
+<h4 id="returns-5">Returns</h4>
 
 <table>
   <thead>
@@ -480,7 +526,7 @@ is returned.</p>
 <p>Note that reducing arrays with non-numeric values
 using <code class="highlighter-rouge">toClosest()</code> can lead to unexpected results.</p>
 
-<h4 id="parameters-4">Parameters</h4>
+<h4 id="parameters-5">Parameters</h4>
 
 <table>
   <thead>
@@ -499,7 +545,7 @@ using <code class="highlighter-rouge">toClosest()</code> can lead to unexpected 
   </tbody>
 </table>
 
-<h4 id="returns-5">Returns</h4>
+<h4 id="returns-6">Returns</h4>
 
 <table>
   <thead>
@@ -540,7 +586,7 @@ is returned.</p>
 <p>Note that this function expects the reduced array to be
 formed by objects with the same set of properties.</p>
 
-<h4 id="parameters-5">Parameters</h4>
+<h4 id="parameters-6">Parameters</h4>
 
 <table>
   <thead>
@@ -564,7 +610,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="returns-6">Returns</h4>
+<h4 id="returns-7">Returns</h4>
 
 <table>
   <thead>
@@ -630,7 +676,7 @@ is returned.</p>
 <p>Note that this function expects the reduced array to be
 formed by objects with the same set of properties.</p>
 
-<h4 id="parameters-6">Parameters</h4>
+<h4 id="parameters-7">Parameters</h4>
 
 <table>
   <thead>
@@ -649,7 +695,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="returns-7">Returns</h4>
+<h4 id="returns-8">Returns</h4>
 
 <table>
   <thead>
@@ -715,7 +761,7 @@ is returned.</p>
 <p>Note that this function expects the reduced array to be
 formed by objects with the same set of properties.</p>
 
-<h4 id="parameters-7">Parameters</h4>
+<h4 id="parameters-8">Parameters</h4>
 
 <table>
   <thead>
@@ -734,7 +780,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="returns-8">Returns</h4>
+<h4 id="returns-9">Returns</h4>
 
 <table>
   <thead>
@@ -796,7 +842,7 @@ the sum of the values in an array.</p>
 <p>Note that reducing arrays with non-numeric values
 using <code class="highlighter-rouge">toSum()</code> can lead to unexpected results.</p>
 
-<h4 id="returns-9">Returns</h4>
+<h4 id="returns-10">Returns</h4>
 
 <table>
   <thead>
@@ -827,64 +873,6 @@ using <code class="highlighter-rouge">toSum()</code> can lead to unexpected resu
 
 <p>Given two strings, returns a new one formed
 by the characters <strong>after the first
-occurrence</strong> of the second string in the first.</p>
-
-<p>Returns an empty string if nothing is found.</p>
-
-<p>Note that non-string parameters will be
-automatically converted to strings.</p>
-
-<h4 id="parameters-8">Parameters</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">str</code></td>
-      <td>String</td>
-      <td>The base string.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">delimiter</code></td>
-      <td>String</td>
-      <td>The delimiter string.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="returns-10">Returns</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>String</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="example-10">Example</h4>
-
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">afterFirst</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
-<span class="c1">// =&gt; "lepiped"</span>
-</code></pre>
-</div>
-
-<p><a name="afterLast"></a></p>
-<h3 id="afterlaststr-delimiter"><code class="highlighter-rouge">afterLast(str, delimiter)</code></h3>
-
-<p>Given two strings, returns a new one formed
-by the characters <strong>after the last
 occurrence</strong> of the second string in the first.</p>
 
 <p>Returns an empty string if nothing is found.</p>
@@ -931,18 +919,18 @@ automatically converted to strings.</p>
   </tbody>
 </table>
 
-<h4 id="example-11">Example</h4>
+<h4 id="example-10">Example</h4>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">afterLast</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
-<span class="c1">// =&gt; "piped"</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">afterFirst</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
+<span class="c1">// =&gt; "lepiped"</span>
 </code></pre>
 </div>
 
-<p><a name="beforeFirst"></a></p>
-<h3 id="beforefirststr-delimiter"><code class="highlighter-rouge">beforeFirst(str, delimiter)</code></h3>
+<p><a name="afterLast"></a></p>
+<h3 id="afterlaststr-delimiter"><code class="highlighter-rouge">afterLast(str, delimiter)</code></h3>
 
 <p>Given two strings, returns a new one formed
-by the characters <strong>before the first
+by the characters <strong>after the last
 occurrence</strong> of the second string in the first.</p>
 
 <p>Returns an empty string if nothing is found.</p>
@@ -989,18 +977,18 @@ automatically converted to strings.</p>
   </tbody>
 </table>
 
-<h4 id="example-12">Example</h4>
+<h4 id="example-11">Example</h4>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">beforeFirst</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
-<span class="c1">// =&gt; "paral"</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">afterLast</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
+<span class="c1">// =&gt; "piped"</span>
 </code></pre>
 </div>
 
-<p><a name="beforeLast"></a></p>
-<h3 id="beforelaststr-delimiter"><code class="highlighter-rouge">beforeLast(str, delimiter)</code></h3>
+<p><a name="beforeFirst"></a></p>
+<h3 id="beforefirststr-delimiter"><code class="highlighter-rouge">beforeFirst(str, delimiter)</code></h3>
 
 <p>Given two strings, returns a new one formed
-by the characters <strong>before the last
+by the characters <strong>before the first
 occurrence</strong> of the second string in the first.</p>
 
 <p>Returns an empty string if nothing is found.</p>
@@ -1047,6 +1035,64 @@ automatically converted to strings.</p>
   </tbody>
 </table>
 
+<h4 id="example-12">Example</h4>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">beforeFirst</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
+<span class="c1">// =&gt; "paral"</span>
+</code></pre>
+</div>
+
+<p><a name="beforeLast"></a></p>
+<h3 id="beforelaststr-delimiter"><code class="highlighter-rouge">beforeLast(str, delimiter)</code></h3>
+
+<p>Given two strings, returns a new one formed
+by the characters <strong>before the last
+occurrence</strong> of the second string in the first.</p>
+
+<p>Returns an empty string if nothing is found.</p>
+
+<p>Note that non-string parameters will be
+automatically converted to strings.</p>
+
+<h4 id="parameters-12">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">str</code></td>
+      <td>String</td>
+      <td>The base string.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">delimiter</code></td>
+      <td>String</td>
+      <td>The delimiter string.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns-14">Returns</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>String</td>
+    </tr>
+  </tbody>
+</table>
+
 <h4 id="example-13">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">beforeLast</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
@@ -1063,6 +1109,7 @@ automatically converted to strings.</p>
 <ul>
   <li><strong><a href="#dom">DOM</a></strong>
     <ul>
+      <li><a href="#addClass">addClass</a></li>
       <li><a href="#clippingInfo">clippingInfo</a></li>
     </ul>
   </li>

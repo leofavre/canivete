@@ -1,4 +1,5 @@
 * **[DOM](#dom)**
+  * [addClass](#addClass)
   * [clippingInfo](#clippingInfo)
 
 * **[Promise](#promise)**

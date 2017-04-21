@@ -46,6 +46,8 @@ const useJekyll = path => () => execAsPromise(`cd ${path} && bundle exec jekyll 
 
 const capitalizeFirstLetter = str => str.charAt(0).toUpperCase() + str.slice(1);
 
+const escapeHtmlTag = str => str.replace(/\</g, "&lt;").replace(/\>/g, "&gt;");
+
 
 
 
@@ -108,7 +110,7 @@ const formatCode = str => (str != null) ? "`" + str + "`" : undefined;
 
 const formatType = typeNames => {
 	if (typeNames != null && typeNames.length > 0) {
-		return typeNames.map(capitalizeFirstLetter).join(", ");
+		return typeNames.map(processType).join("<br>");
 	}
 };
 
@@ -197,6 +199,11 @@ const processDocs = flow([
 	groupDocsByCategoryName,
 	prepareDocs,
 	wrapDocs
+]);
+
+const processType = flow([
+	capitalizeFirstLetter,
+	escapeHtmlTag
 ]);
 
 Promise.resolve()

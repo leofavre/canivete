@@ -19,7 +19,7 @@ import isElement from "../node_modules/lodash-es/isElement";
  * @category Promise
  * @param  {HTMLElement} domEl The DOM element.
  * @param  {string} evtName The event that will be listened for.
- * @param  {Function} [happened = domEl => false] The verification function.
+ * @param  {function} [happened = domEl => false] The verification function.
  * @return {Promise} When fulfilled, returns the DOM element.
  *
  * @example

@@ -206,6 +206,10 @@
 		padding-right: 0;
 	}
 
+	td:nth-last-child(n + 1) {
+		white-space: nowrap;
+	}
+
 	[id^="returns"] + table,
 	[id^="parameters"] + table {
 		td:nth-child(1):nth-last-child(4),

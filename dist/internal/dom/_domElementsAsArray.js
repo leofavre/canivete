@@ -3,6 +3,10 @@ import isElement from "../../../node_modules/lodash-es/isElement";
 const _domElementsAsArray = arg => {
 	let result = arg;
 
+	if (arg == null) {
+		return [];
+	}
+
 	if (isElement(arg)) {
 		result = [arg];
 	}
@@ -11,7 +15,7 @@ const _domElementsAsArray = arg => {
 	}
 
 	if (!Array.isArray(result) || result.some(item => !isElement(item))) {
-		throw new Error(`A single HTMLElement, or a group of HTMLElements, are expected as parameter.`);
+		throw new Error(`One or many HTMLElements are expected as parameter.`);
 	}
 
 	return result;

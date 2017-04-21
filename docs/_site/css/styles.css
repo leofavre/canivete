@@ -176,6 +176,8 @@ html {
     font-style: normal; }
   .content td:nth-last-child(1) {
     padding-right: 0; }
+  .content td:nth-last-child(n + 1) {
+    white-space: nowrap; }
   .content [id^="returns"] + table td:nth-child(1):nth-last-child(4),
   .content [id^="returns"] + table td:nth-child(2):nth-last-child(3),
   .content [id^="returns"] + table td:nth-child(3):nth-last-child(2),

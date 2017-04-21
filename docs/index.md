@@ -5,6 +5,24 @@ title: Canivete
 
 ## DOM
 
+<a name="addClass"></a>
+### `addClass(domEls, str)`
+
+Adds a CSS class to one or many DOM elements.
+
+#### Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `domEls` | HTMLElement<br>HTMLCollection<br>NodeList<br>Array.&lt;HTMLElement&gt; | The DOM elements. |
+| `str` | String | The CSS class name. |
+
+#### Returns
+
+| Type | Description |
+| --- | --- |
+| Array.&lt;HTMLElement&gt; | An array of DOM elements. |
+
 <a name="clippingInfo"></a>
 ### `clippingInfo(domEl, [maskDef])`
 
@@ -20,7 +38,7 @@ containing numeric values for "top", "bottom",
 
 The returned object has the following properties:
 
-| Property | Type | Child relation with the mask |
+| Property | Type | Element relation to the mask |
 |---|---|---|
 | `isOffTop` | Boolean | Above and off the mask. |
 | `isOffBottom` | Boolean | Below and off the mask. |
@@ -43,7 +61,7 @@ The returned object has the following properties:
 | Name | Type | Description |
 | --- | --- | --- |
 | `domEl` | HTMLElement | The DOM element. |
-| `maskDef` | HTMLElement, Object | The mask definition. **optional** |
+| `maskDef` | HTMLElement<br>Object | The mask definition. **optional** |
 
 #### Returns
 

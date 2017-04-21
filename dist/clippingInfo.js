@@ -35,7 +35,7 @@ import _getHorizontalAxisInfo from "./internal/clipping/_getHorizontalAxisInfo";
  *
  * @category DOM
  * @param  {HTMLElement} domEl The DOM element.
- * @param  {HTMLElement|Object} [maskDef] The mask definition.
+ * @param  {(HTMLElement|Object)} [maskDef] The mask definition.
  * @return {Object} Position and clipping information (see table above).
  *
  * @example
