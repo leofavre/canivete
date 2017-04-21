@@ -3,13 +3,18 @@ import _getVerticalAxisInfo from "./internal/clipping/_getVerticalAxisInfo";
 import _getHorizontalAxisInfo from "./internal/clipping/_getHorizontalAxisInfo";
 
 /**
+ * A number, or a string containing a number.
+ * @typedef {(number|string)} NumberLike
+ */
+
+/**
  * Given a DOM element, returns an object with position
  * and clipping information relative to a mask, defined
- * by the second parameter, or to the viewport, if it is
- * omitted.
+ * by the second parameter, or to the viewport, if the
+ * parameter is omitted.
  *
- * The second parameter can be either a DOM element or an
- * object containing numeric values for "top", "bottom",
+ * The mask can be either a DOM element or an object
+ * containing numeric values for "top", "bottom",
  * "left" and "right" properties, like a
  * [DOMRect](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect).
  *

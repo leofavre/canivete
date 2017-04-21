@@ -2,7 +2,7 @@ const camelCase = require("lodash/camelCase");
 const exec = require("child_process").exec;
 const flow = require("lodash/flow");
 const groupBy = require("lodash/groupBy");
-const read = require("fs").readFile;
+const fs = require("fs");
 
 
 
@@ -10,9 +10,9 @@ const read = require("fs").readFile;
 
 // Basic functions, like creating or removing folders or loading JSON files.
 
-function asPromise(func, target, options, errMsg = "", processOut = arg => arg, processErr = processOut) {
+function asPromise(func, path, data, options, errMsg = "", processOut = arg => arg, processErr = processOut) {
 	return new Promise((resolve, reject) => {
-		func(target, options, (err, stdout, stderr) => {
+		let callback = (err, stdout, stderr) => {
 			if (err != null) {
 				console.log(errMsg);
 				reject(processErr(stderr));
@@ -20,13 +20,19 @@ function asPromise(func, target, options, errMsg = "", processOut = arg => arg, 
 			else {
 				resolve(processOut(stdout));
 			}
-		});
+		};
+
+		let args = (data == null) ? [path, options, callback] : [path, data, options, callback];
+
+		func(...args);
 	});
 }
 
-const readJsonAsPromise = (target, options) => asPromise(read, target, options, "Falha ao carregar o JSON.", JSON.parse);
+const writeFileAsPromise = (path, data, options) => asPromise(fs.writeFile, path, data, options, "Failed to save file.");
 
-const execAsPromise = (target, options) => asPromise(exec, target, options, "Falha ao executar comando no terminal.");
+const readJsonAsPromise = (path, options) => asPromise(fs.readFile, path, null, options, "Failed to read JSON.", JSON.parse);
+
+const execAsPromise = (path, options) => asPromise(exec, path, null, options, "Failed to execute shell command.");
 
 const createDir = path => () => execAsPromise(`mkdir -p ${path}`);
 
@@ -50,16 +56,17 @@ const jsdocAsJson = (path, data, template = "./node_modules/jsdoc-json") => () =
 	return execAsPromise(`jsdoc ${path} -d ${data} -t ${template}`);
 };
 
-const readJsonFile = data => () => readJsonAsPromise(data);
+const readJsonFile = path => () => readJsonAsPromise(path);
 
-const parseJsonFile = json => json.docs ? json.docs.filter(doc => doc.name != undefined) : [];
+const processJsonFile = json => processDocs(json.docs) || [];
 
-const exportDocsUsingTemplate = (path, docName, template) => docs => {
-	let data = JSON.stringify(processDocs(docs));
-	// console.log(data);
-	execAsPromise(`ejs-cli ${template} > ${path}/${docName}.md -O '${data}'`);
-	return docs;
+const writeFile = path => data => writeFileAsPromise(path, JSON.stringify(data));
+
+const exportDocsUsingTemplate = (pathIn, pathOut, docName, template) => () => {
+	execAsPromise(`ejs-cli ${template} > ${pathOut}/${docName}.md -O '${pathIn}'`);
 };
+
+const filterFunctions = docs => docs.filter(isFunction);
 
 const formatDocs = docs => docs.map(formatDoc);
 
@@ -153,8 +160,6 @@ const hasParamDefault = param => param.defaultvalue != null;
 
 const hasParamType = param => param.type != null && param.type.names != null && param.type.names.length > 0;
 
-const isParamOptions = param => param.optional;
-
 const groupDocsByCategoryName = docs => groupBy(docs, byCategoryName);
 
 const byCategoryName = doc => doc.tags.filter(tag => tag.title === "category")[0].value;
@@ -176,13 +181,18 @@ const prepareDoc = groupedDocs => categoryName => {
 	};
 };
 
-const wrapDocs = preparedDocs => {
+const wrapDocs = processedDocs => {
 	return {
-		docs: preparedDocs
+		docs: processedDocs
 	};
 };
 
+const isParamOptions = param => param.optional;
+
+const isFunction = docs => docs.kind === "function";
+
 const processDocs = flow([
+	filterFunctions,
 	formatDocs,
 	groupDocsByCategoryName,
 	prepareDocs,
@@ -191,12 +201,13 @@ const processDocs = flow([
 
 Promise.resolve()
 	.then(createDir("./docs/temp")) // *
-	.then(jsdocAsJson("./dist", "./docs/temp/data.json"))
-	.then(readJsonFile("./docs/temp/data.json")) // *
-	.then(parseJsonFile)
-	.then(exportDocsUsingTemplate("./docs", "index", "./docs/_ejs/content.ejs"))
-	.then(exportDocsUsingTemplate("./docs/_includes", "menu", "./docs/_ejs/menu.ejs"))
-	.then(removeDir("./docs/temp")) // *
+	.then(jsdocAsJson("./dist", "./docs/temp/raw.json"))
+	.then(readJsonFile("./docs/temp/raw.json")) // *
+	.then(processJsonFile)
+	.then(writeFile("./docs/temp/processed.json"))
+	.then(exportDocsUsingTemplate("./docs/temp/processed.json", "./docs", "index", "./docs/_ejs/content.ejs"))
+	.then(exportDocsUsingTemplate("./docs/temp/processed.json", "./docs/_includes", "menu", "./docs/_ejs/menu.ejs"))
+	// .then(removeDir("./docs/temp")) // *
 	.then(useJekyll("./docs"))
 	.catch();
 
