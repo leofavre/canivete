@@ -3,11 +3,6 @@ import _getVerticalAxisInfo from "./internal/clipping/_getVerticalAxisInfo";
 import _getHorizontalAxisInfo from "./internal/clipping/_getHorizontalAxisInfo";
 
 /**
- * A number, or a string containing a number.
- * @typedef {(number|string)} NumberLike
- */
-
-/**
  * Given a DOM element, returns an object with position
  * and clipping information relative to a mask, defined
  * by the second parameter, or to the viewport, if the
@@ -42,6 +37,27 @@ import _getHorizontalAxisInfo from "./internal/clipping/_getHorizontalAxisInfo";
  * @param  {HTMLElement} domEl The DOM element.
  * @param  {HTMLElement|Object} [maskDef] The mask definition.
  * @return {Object} Position and clipping information (see table above).
+ *
+ * @example
+ * let domEl = document.createElement("div");
+ * domEl.style.cssText = "position: fixed; top: -50px; left: -50px; width: 200px; height: 200px;";
+ *
+ * let info = clippingInfo(domEl);
+ *
+ * console.log(info.isClippedTop);
+ * // => true
+ *
+ * console.log(info.isClippedLeft);
+ * // => true
+ *
+ * console.log(info.isOff);
+ * // => false
+ *
+ * console.log(info.isFullyVisible);
+ * // => false
+ *
+ * console.log(info.isPartiallyVisible);
+ * // => true
  */
 function clippingInfo(domEl, maskDef) {
 	let domCoords  = _getCoords(domEl, true);
