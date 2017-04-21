@@ -33,8 +33,8 @@
   <tbody>
     <tr>
       <td><code class="highlighter-rouge">domEls</code></td>
-      <td>HTMLElement<br />HTMLCollection<br />NodeList<br />Array.&lt;HTMLElement&gt;</td>
-      <td>The DOM elements.</td>
+      <td>HTMLElement<br />HTMLCollection<br />NodeList<br />Array.&lt;HTMLElement&gt;<br />Set.&lt;HTMLElement&gt;</td>
+      <td>One or many DOM elements.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">str</code></td>
@@ -44,22 +44,23 @@
   </tbody>
 </table>
 
-<h4 id="returns">Returns</h4>
+<h4 id="example">Example</h4>
 
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Array.&lt;HTMLElement&gt;</td>
-      <td>An array of DOM elements.</td>
-    </tr>
-  </tbody>
-</table>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">singleLinkElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"a"</span><span class="p">);</span>
+<span class="nx">addClass</span><span class="p">(</span><span class="nx">singleLinkElement</span><span class="p">,</span> <span class="s2">"link"</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">singleLinkElement</span><span class="p">.</span><span class="nx">className</span><span class="p">);</span>
+<span class="c1">// =&gt; "link"</span>
+</code></pre>
+</div>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">linkElements</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">"a"</span><span class="p">);</span>
+<span class="nx">addClass</span><span class="p">(</span><span class="nx">linkElements</span><span class="p">,</span> <span class="s2">"link"</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">linkElements</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">className</span><span class="p">);</span>
+<span class="c1">// =&gt; "link"</span>
+</code></pre>
+</div>
 
 <p><a name="clippingInfo"></a></p>
 <h3 id="clippinginfodomel-maskdef"><code class="highlighter-rouge">clippingInfo(domEl, [maskDef])</code></h3>
@@ -187,7 +188,7 @@ containing numeric values for “top”, “bottom”,
   </tbody>
 </table>
 
-<h4 id="returns-1">Returns</h4>
+<h4 id="returns">Returns</h4>
 
 <table>
   <thead>
@@ -204,7 +205,7 @@ containing numeric values for “top”, “bottom”,
   </tbody>
 </table>
 
-<h4 id="example">Example</h4>
+<h4 id="example-1">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">domEl</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">);</span>
 
@@ -287,7 +288,7 @@ parameters are not a DOM element and a string.</p>
   </tbody>
 </table>
 
-<h4 id="returns-2">Returns</h4>
+<h4 id="returns-1">Returns</h4>
 
 <table>
   <thead>
@@ -304,7 +305,7 @@ parameters are not a DOM element and a string.</p>
   </tbody>
 </table>
 
-<h4 id="example-1">Example</h4>
+<h4 id="example-2">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">checkbox</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"input"</span><span class="p">);</span>
 <span class="nx">checkbox</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s2">"checkbox"</span><span class="p">;</span>
@@ -363,7 +364,7 @@ internal <code class="highlighter-rouge">setTimeout()</code>.</p>
   </tbody>
 </table>
 
-<h4 id="returns-3">Returns</h4>
+<h4 id="returns-2">Returns</h4>
 
 <table>
   <thead>
@@ -380,7 +381,7 @@ internal <code class="highlighter-rouge">setTimeout()</code>.</p>
   </tbody>
 </table>
 
-<h4 id="example-2">Example</h4>
+<h4 id="example-3">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="s2">"waiting"</span><span class="p">)</span>
 	<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">waitInPromise</span><span class="p">(</span><span class="mi">500</span><span class="p">))</span>
@@ -402,7 +403,7 @@ the average of the values in an array.</p>
 <p>Note that reducing arrays with non-numeric values
 using <code class="highlighter-rouge">toAverage()</code> can lead to unexpected results.</p>
 
-<h4 id="returns-4">Returns</h4>
+<h4 id="returns-3">Returns</h4>
 
 <table>
   <thead>
@@ -419,7 +420,7 @@ using <code class="highlighter-rouge">toAverage()</code> can lead to unexpected 
   </tbody>
 </table>
 
-<h4 id="example-3">Example</h4>
+<h4 id="example-4">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">].</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toAverage</span><span class="p">());</span>
 <span class="c1">// =&gt; 6</span>
@@ -458,7 +459,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="returns-5">Returns</h4>
+<h4 id="returns-4">Returns</h4>
 
 <table>
   <thead>
@@ -475,7 +476,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="example-4">Example</h4>
+<h4 id="example-5">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
 	<span class="na">city</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
@@ -545,7 +546,7 @@ using <code class="highlighter-rouge">toClosest()</code> can lead to unexpected 
   </tbody>
 </table>
 
-<h4 id="returns-6">Returns</h4>
+<h4 id="returns-5">Returns</h4>
 
 <table>
   <thead>
@@ -562,7 +563,7 @@ using <code class="highlighter-rouge">toClosest()</code> can lead to unexpected 
   </tbody>
 </table>
 
-<h4 id="example-5">Example</h4>
+<h4 id="example-6">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">].</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toClosest</span><span class="p">(</span><span class="mi">6</span><span class="p">));</span>
 <span class="c1">// =&gt; 5</span>
@@ -610,7 +611,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="returns-7">Returns</h4>
+<h4 id="returns-6">Returns</h4>
 
 <table>
   <thead>
@@ -627,7 +628,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="example-6">Example</h4>
+<h4 id="example-7">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
 	<span class="na">city</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
@@ -695,7 +696,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="returns-8">Returns</h4>
+<h4 id="returns-7">Returns</h4>
 
 <table>
   <thead>
@@ -712,7 +713,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="example-7">Example</h4>
+<h4 id="example-8">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
 	<span class="na">city</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
@@ -780,7 +781,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="returns-9">Returns</h4>
+<h4 id="returns-8">Returns</h4>
 
 <table>
   <thead>
@@ -797,7 +798,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="example-8">Example</h4>
+<h4 id="example-9">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
 	<span class="na">city</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
@@ -842,7 +843,7 @@ the sum of the values in an array.</p>
 <p>Note that reducing arrays with non-numeric values
 using <code class="highlighter-rouge">toSum()</code> can lead to unexpected results.</p>
 
-<h4 id="returns-10">Returns</h4>
+<h4 id="returns-9">Returns</h4>
 
 <table>
   <thead>
@@ -859,7 +860,7 @@ using <code class="highlighter-rouge">toSum()</code> can lead to unexpected resu
   </tbody>
 </table>
 
-<h4 id="example-9">Example</h4>
+<h4 id="example-10">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">].</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toSum</span><span class="p">());</span>
 <span class="c1">// =&gt; 24</span>
@@ -904,7 +905,7 @@ automatically converted to strings.</p>
   </tbody>
 </table>
 
-<h4 id="returns-11">Returns</h4>
+<h4 id="returns-10">Returns</h4>
 
 <table>
   <thead>
@@ -919,7 +920,7 @@ automatically converted to strings.</p>
   </tbody>
 </table>
 
-<h4 id="example-10">Example</h4>
+<h4 id="example-11">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">afterFirst</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
 <span class="c1">// =&gt; "lepiped"</span>
@@ -962,7 +963,7 @@ automatically converted to strings.</p>
   </tbody>
 </table>
 
-<h4 id="returns-12">Returns</h4>
+<h4 id="returns-11">Returns</h4>
 
 <table>
   <thead>
@@ -977,7 +978,7 @@ automatically converted to strings.</p>
   </tbody>
 </table>
 
-<h4 id="example-11">Example</h4>
+<h4 id="example-12">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">afterLast</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
 <span class="c1">// =&gt; "piped"</span>
@@ -1020,7 +1021,7 @@ automatically converted to strings.</p>
   </tbody>
 </table>
 
-<h4 id="returns-13">Returns</h4>
+<h4 id="returns-12">Returns</h4>
 
 <table>
   <thead>
@@ -1035,7 +1036,7 @@ automatically converted to strings.</p>
   </tbody>
 </table>
 
-<h4 id="example-12">Example</h4>
+<h4 id="example-13">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">beforeFirst</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
 <span class="c1">// =&gt; "paral"</span>
@@ -1078,7 +1079,7 @@ automatically converted to strings.</p>
   </tbody>
 </table>
 
-<h4 id="returns-14">Returns</h4>
+<h4 id="returns-13">Returns</h4>
 
 <table>
   <thead>
@@ -1093,7 +1094,7 @@ automatically converted to strings.</p>
   </tbody>
 </table>
 
-<h4 id="example-13">Example</h4>
+<h4 id="example-14">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">beforeLast</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
 <span class="c1">// =&gt; "paralle"</span>

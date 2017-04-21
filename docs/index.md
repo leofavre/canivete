@@ -14,14 +14,26 @@ Adds a CSS class to one or many DOM elements.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `domEls` | HTMLElement<br>HTMLCollection<br>NodeList<br>Array.&lt;HTMLElement&gt; | The DOM elements. |
+| `domEls` | HTMLElement<br>HTMLCollection<br>NodeList<br>Array.&lt;HTMLElement&gt;<br>Set.&lt;HTMLElement&gt; | One or many DOM elements. |
 | `str` | String | The CSS class name. |
 
-#### Returns
+#### Example
 
-| Type | Description |
-| --- | --- |
-| Array.&lt;HTMLElement&gt; | An array of DOM elements. |
+```javascript
+let singleLinkElement = document.querySelector("a");
+addClass(singleLinkElement, "link");
+
+console.log(singleLinkElement.className);
+// => "link"
+```
+
+```javascript
+let linkElements = document.querySelectorAll("a");
+addClass(linkElements, "link");
+
+console.log(linkElements[0].className);
+// => "link"
+```
 
 <a name="clippingInfo"></a>
 ### `clippingInfo(domEl, [maskDef])`
