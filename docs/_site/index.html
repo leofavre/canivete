@@ -161,7 +161,14 @@ containing numeric values for “top”, “bottom”,
 <h4 id="example">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">domEl</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">);</span>
-<span class="nx">domEl</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">cssText</span> <span class="o">=</span> <span class="s2">"position: fixed; top: -50px; left: -50px; width: 200px; height: 200px;"</span><span class="p">;</span>
+
+<span class="nx">domEl</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">position</span> <span class="o">=</span> <span class="s2">"fixed"</span><span class="p">;</span>
+<span class="nx">domEl</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">top</span> <span class="o">=</span> <span class="s2">"-50px"</span><span class="p">;</span>
+<span class="nx">domEl</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">left</span> <span class="o">=</span> <span class="s2">"-50px"</span><span class="p">;</span>
+<span class="nx">domEl</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="s2">"200px"</span><span class="p">;</span>
+<span class="nx">domEl</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="s2">"200px"</span><span class="p">;</span>
+
+<span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">domEl</span><span class="p">);</span>
 
 <span class="kd">let</span> <span class="nx">info</span> <span class="o">=</span> <span class="nx">clippingInfo</span><span class="p">(</span><span class="nx">domEl</span><span class="p">);</span>
 
@@ -171,14 +178,14 @@ containing numeric values for “top”, “bottom”,
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">info</span><span class="p">.</span><span class="nx">isClippedLeft</span><span class="p">);</span>
 <span class="c1">// =&gt; true</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">info</span><span class="p">.</span><span class="nx">isOff</span><span class="p">);</span>
-<span class="c1">// =&gt; false</span>
-
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">info</span><span class="p">.</span><span class="nx">isFullyVisible</span><span class="p">);</span>
 <span class="c1">// =&gt; false</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">info</span><span class="p">.</span><span class="nx">isPartiallyVisible</span><span class="p">);</span>
 <span class="c1">// =&gt; true</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">info</span><span class="p">.</span><span class="nx">isInvisible</span><span class="p">);</span>
+<span class="c1">// =&gt; false</span>
 </code></pre>
 </div>
 

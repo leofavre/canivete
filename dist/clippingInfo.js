@@ -40,7 +40,14 @@ import _getHorizontalAxisInfo from "./internal/clipping/_getHorizontalAxisInfo";
  *
  * @example
  * let domEl = document.createElement("div");
- * domEl.style.cssText = "position: fixed; top: -50px; left: -50px; width: 200px; height: 200px;";
+ *
+ * domEl.style.position = "fixed";
+ * domEl.style.top = "-50px";
+ * domEl.style.left = "-50px";
+ * domEl.style.width = "200px";
+ * domEl.style.height = "200px";
+ *
+ * document.body.appendChild(domEl);
  *
  * let info = clippingInfo(domEl);
  *
@@ -50,14 +57,14 @@ import _getHorizontalAxisInfo from "./internal/clipping/_getHorizontalAxisInfo";
  * console.log(info.isClippedLeft);
  * // => true
  *
- * console.log(info.isOff);
- * // => false
- *
  * console.log(info.isFullyVisible);
  * // => false
  *
  * console.log(info.isPartiallyVisible);
  * // => true
+ *
+ * console.log(info.isInvisible);
+ * // => false
  */
 function clippingInfo(domEl, maskDef) {
 	let domCoords  = _getCoords(domEl, true);
