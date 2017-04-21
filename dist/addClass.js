@@ -9,19 +9,21 @@ import _domElementsAsArray from "./internal/dom/_domElementsAsArray";
  * @param  {string} str The CSS class name.
  *
  * @example
- * let singleLinkElement = document.querySelector("a");
- * addClass(singleLinkElement, "link");
+ * let oneElement = document.querySelector("a");
+ * addClass(oneElement, "link");
  * 
- * console.log(singleLinkElement.className);
+ * console.log(oneElement.className);
  * // => "link"
  * 
  * @example
- * let linkElements = document.querySelectorAll("a");
- * addClass(linkElements, "link");
+ * let manyElements = document.querySelectorAll("a");
+ * addClass(manyElements, "link");
  *
- * console.log(linkElements[0].className);
+ * console.log(manyElements[0].className);
  * // => "link"
  */
-const addClass = (domEls, str) => _domElementsAsArray(domEls).forEach(domEl => _addClassBase(domEl, str));
+const addClass = (domEls, str) => {
+	_domElementsAsArray(domEls).forEach(domEl => _addClassBase(domEl, str));
+};
 
 export default addClass;

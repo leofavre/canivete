@@ -66,7 +66,7 @@ import _getHorizontalAxisInfo from "./internal/clipping/_getHorizontalAxisInfo";
  * console.log(info.isInvisible);
  * // => false
  */
-function clippingInfo(domEl, maskDef) {
+const clippingInfo = (domEl, maskDef) => {
 	let domCoords  = _getCoords(domEl, true);
 	let maskCoords = _getCoords(maskDef, false),
 		vertAxis   = _getVerticalAxisInfo(domCoords, maskCoords),
@@ -105,6 +105,6 @@ function clippingInfo(domEl, maskDef) {
 		isAsVisibleAsPossible,
 		isNotAsVisibleAsPossible
 	};
-}
+};
 
 export default clippingInfo;

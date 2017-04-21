@@ -205,8 +205,8 @@
 		white-space: nowrap;
 	}
 
-	[id^="returns"] + table,
-	[id^="parameters"] + table {
+	[id^="return"] + table,
+	[id^="parameter"] + table {
 		td:nth-child(1):nth-last-child(4),
 		td:nth-child(2):nth-last-child(3),
 		td:nth-child(3):nth-last-child(2) {

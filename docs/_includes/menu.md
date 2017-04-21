@@ -1,6 +1,7 @@
 * **[DOM](#dom)**
   * [addClass](#addClass)
   * [clippingInfo](#clippingInfo)
+  * [hasClass](#hasClass)
 
 * **[Promise](#promise)**
   * [eventAsPromise](#eventAsPromise)

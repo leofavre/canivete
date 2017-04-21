@@ -20,18 +20,18 @@ Adds a CSS class to one or many DOM elements.
 #### Examples
 
 ```javascript
-let singleLinkElement = document.querySelector("a");
-addClass(singleLinkElement, "link");
+let oneElement = document.querySelector("a");
+addClass(oneElement, "link");
 
-console.log(singleLinkElement.className);
+console.log(oneElement.className);
 // => "link"
 ```
 
 ```javascript
-let linkElements = document.querySelectorAll("a");
-addClass(linkElements, "link");
+let manyElements = document.querySelectorAll("a");
+addClass(manyElements, "link");
 
-console.log(linkElements[0].className);
+console.log(manyElements[0].className);
 // => "link"
 ```
 
@@ -109,6 +109,37 @@ console.log(info.isPartiallyVisible);
 // => true
 
 console.log(info.isInvisible);
+// => false
+```
+
+<a name="hasClass"></a>
+### `hasClass(domEl, str)`
+
+Verifies if a DOM element has a CSS class.
+
+#### Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `domEl` | HTMLElement | The DOM element. |
+| `str` | String | The CSS class name. |
+
+#### Return
+
+| Type | Description |
+| --- | --- |
+| Boolean | Whether the element has the CSS class or not. |
+
+#### Example
+
+```javascript
+let oneElement = document.querySelector("a");
+oneElement.className = "link reference";
+
+console.log(hasClass(oneElement, "link"));
+// => true
+
+console.log(hasClass(oneElement, "button"));
 // => false
 ```
 

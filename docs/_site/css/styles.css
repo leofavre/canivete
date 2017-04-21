@@ -171,19 +171,19 @@ html {
     padding-right: 0; }
   .content td:nth-last-child(n + 1) {
     white-space: nowrap; }
-  .content [id^="returns"] + table td:nth-child(1):nth-last-child(4),
-  .content [id^="returns"] + table td:nth-child(2):nth-last-child(3),
-  .content [id^="returns"] + table td:nth-child(3):nth-last-child(2),
-  .content [id^="parameters"] + table td:nth-child(1):nth-last-child(4),
-  .content [id^="parameters"] + table td:nth-child(2):nth-last-child(3),
-  .content [id^="parameters"] + table td:nth-child(3):nth-last-child(2) {
+  .content [id^="return"] + table td:nth-child(1):nth-last-child(4),
+  .content [id^="return"] + table td:nth-child(2):nth-last-child(3),
+  .content [id^="return"] + table td:nth-child(3):nth-last-child(2),
+  .content [id^="parameter"] + table td:nth-child(1):nth-last-child(4),
+  .content [id^="parameter"] + table td:nth-child(2):nth-last-child(3),
+  .content [id^="parameter"] + table td:nth-child(3):nth-last-child(2) {
     min-width: 20%; }
-  .content [id^="returns"] + table td:nth-child(1):nth-last-child(3),
-  .content [id^="returns"] + table td:nth-child(2):nth-last-child(2),
-  .content [id^="returns"] + table td:nth-child(1):nth-last-child(2),
-  .content [id^="parameters"] + table td:nth-child(1):nth-last-child(3),
-  .content [id^="parameters"] + table td:nth-child(2):nth-last-child(2),
-  .content [id^="parameters"] + table td:nth-child(1):nth-last-child(2) {
+  .content [id^="return"] + table td:nth-child(1):nth-last-child(3),
+  .content [id^="return"] + table td:nth-child(2):nth-last-child(2),
+  .content [id^="return"] + table td:nth-child(1):nth-last-child(2),
+  .content [id^="parameter"] + table td:nth-child(1):nth-last-child(3),
+  .content [id^="parameter"] + table td:nth-child(2):nth-last-child(2),
+  .content [id^="parameter"] + table td:nth-child(1):nth-last-child(2) {
     width: 20%; }
 
 .content__area {

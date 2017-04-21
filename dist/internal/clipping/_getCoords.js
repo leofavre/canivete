@@ -1,6 +1,6 @@
 import isElement from "../../../node_modules/lodash-es/isElement";
 
-function _getCoords(maskDef, allowElementOnly) {
+const _getCoords = (maskDef, allowElementOnly) => {
 	let maskCoords;
 
 	if (isElement(maskDef)) {
@@ -28,6 +28,6 @@ function _getCoords(maskDef, allowElementOnly) {
 	}
 
 	return maskCoords;
-}
+};
 
 export default _getCoords;

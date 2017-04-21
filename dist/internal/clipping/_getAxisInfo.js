@@ -1,7 +1,7 @@
 import _getAxisStartProp from "./_getAxisStartProp";
 import _getAxisEndProp from "./_getAxisEndProp";
 
-function _getAxisInfo(domCoords, maskCoords, isHorizontal) {
+const _getAxisInfo = (domCoords, maskCoords, isHorizontal) => {
 	let startProp           = _getAxisStartProp(isHorizontal),
 		endProp             = _getAxisEndProp(isHorizontal);
 
@@ -37,6 +37,6 @@ function _getAxisInfo(domCoords, maskCoords, isHorizontal) {
 		isClippedBefore,
 		isClippedAfter
 	};
-}
+};
 
 export default _getAxisInfo;
