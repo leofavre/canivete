@@ -17,7 +17,7 @@ Adds a CSS class to one or many DOM elements.
 | `domEls` | HTMLElement<br>HTMLCollection<br>NodeList<br>Array.&lt;HTMLElement&gt;<br>Set.&lt;HTMLElement&gt; | One or many DOM elements. |
 | `str` | String | The CSS class name. |
 
-#### Example
+#### Examples
 
 ```javascript
 let singleLinkElement = document.querySelector("a");
@@ -75,7 +75,7 @@ The returned object has the following properties:
 | `domEl` | HTMLElement | The DOM element. |
 | `maskDef` | HTMLElement<br>Object | The mask definition. **optional** |
 
-#### Returns
+#### Return
 
 | Type | Description |
 | --- | --- |
@@ -139,13 +139,13 @@ parameters are not a DOM element and a string.
 | `evtName` |  | String | The event that will be listened for. |
 | `happened` | `domEl => false` | Function | The verification function. **optional** |
 
-#### Returns
+#### Return
 
 | Type | Description |
 | --- | --- |
 | Promise | When fulfilled, returns the DOM element. |
 
-#### Example
+#### Examples
 
 ```javascript
 let checkbox = document.createElement("input");
@@ -185,13 +185,13 @@ Note that if a non-numeric parameter is passed,
 the promise resolves without delay, skipping the
 internal `setTimeout()`.
 
-#### Parameters
+#### Parameter
 
 | Name | Type | Description |
 | --- | --- | --- |
 | `delay` | Number | The delay in milliseconds. |
 
-#### Returns
+#### Return
 
 | Type | Description |
 | --- | --- |
@@ -219,7 +219,7 @@ the average of the values in an array.
 Note that reducing arrays with non-numeric values
 using `toAverage()` can lead to unexpected results.
 
-#### Returns
+#### Return
 
 | Type | Description |
 | --- | --- |
@@ -245,13 +245,13 @@ is returned.
 Note that this function expects the reduced array to be
 formed by objects with the same set of properties.
 
-#### Parameters
+#### Parameter
 
 | Name | Type | Description |
 | --- | --- | --- |
 | `path` | String | The path to the property of an object. |
 
-#### Returns
+#### Return
 
 | Type | Description |
 | --- | --- |
@@ -308,13 +308,13 @@ is returned.
 Note that reducing arrays with non-numeric values
 using `toClosest()` can lead to unexpected results.
 
-#### Parameters
+#### Parameter
 
 | Name | Type | Description |
 | --- | --- | --- |
 | `num` | Number | The base value. |
 
-#### Returns
+#### Return
 
 | Type | Description |
 | --- | --- |
@@ -351,7 +351,7 @@ formed by objects with the same set of properties.
 | `path` | String | The path to the property of an object. |
 | `num` | String | The base value. |
 
-#### Returns
+#### Return
 
 | Type | Description |
 | --- | --- |
@@ -406,13 +406,13 @@ is returned.
 Note that this function expects the reduced array to be
 formed by objects with the same set of properties.
 
-#### Parameters
+#### Parameter
 
 | Name | Type | Description |
 | --- | --- | --- |
 | `path` | String | The path to the property of an object. |
 
-#### Returns
+#### Return
 
 | Type | Description |
 | --- | --- |
@@ -467,13 +467,13 @@ is returned.
 Note that this function expects the reduced array to be
 formed by objects with the same set of properties.
 
-#### Parameters
+#### Parameter
 
 | Name | Type | Description |
 | --- | --- | --- |
 | `path` | String | The path to the property of an object. |
 
-#### Returns
+#### Return
 
 | Type | Description |
 | --- | --- |
@@ -524,7 +524,7 @@ the sum of the values in an array.
 Note that reducing arrays with non-numeric values
 using `toSum()` can lead to unexpected results.
 
-#### Returns
+#### Return
 
 | Type | Description |
 | --- | --- |
@@ -558,7 +558,7 @@ automatically converted to strings.
 | `str` | String | The base string. |
 | `delimiter` | String | The delimiter string. |
 
-#### Returns
+#### Return
 
 | Type |
 | --- |
@@ -590,7 +590,7 @@ automatically converted to strings.
 | `str` | String | The base string. |
 | `delimiter` | String | The delimiter string. |
 
-#### Returns
+#### Return
 
 | Type |
 | --- |
@@ -622,7 +622,7 @@ automatically converted to strings.
 | `str` | String | The base string. |
 | `delimiter` | String | The delimiter string. |
 
-#### Returns
+#### Return
 
 | Type |
 | --- |
@@ -654,7 +654,7 @@ automatically converted to strings.
 | `str` | String | The base string. |
 | `delimiter` | String | The delimiter string. |
 
-#### Returns
+#### Return
 
 | Type |
 | --- |

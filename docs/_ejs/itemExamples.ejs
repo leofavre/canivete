@@ -1,6 +1,6 @@
 <%if(item.examples && item.examples.length > 0){-%>
 
-#### Example
+#### Example<%if(item.examples.length > 1){%>s<%}%>
 <%item.examples.forEach(example => {-%>
 
 ```javascript
