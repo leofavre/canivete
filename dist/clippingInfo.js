@@ -15,7 +15,7 @@ import _getHorizontalAxisInfo from "./internal/clipping/_getHorizontalAxisInfo";
  *
  * The returned object has the following properties:
  *
- * | Property | Type | Child relation with the mask |
+ * | Property | Type | Element relation to the mask |
  * |---|---|---|
  * | `isOffTop` | Boolean | Above and off the mask. |
  * | `isOffBottom` | Boolean | Below and off the mask. |
