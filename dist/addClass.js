@@ -6,7 +6,7 @@ import _domElementsAsArray from "./internal/dom/_domElementsAsArray";
  *
  * @category DOM
  * @param  {(HTMLElement|HTMLCollection|NodeList|Array.<HTMLElement>|Set.<HTMLElement>)} domEls One or many DOM elements.
- * @param  {string} str The CSS class name.
+ * @param  {string} str The CSS class.
  *
  * @example
  * let oneElement = document.querySelector("a");
