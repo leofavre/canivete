@@ -10,10 +10,10 @@
 	flex-grow: 0;
 	flex-shrink: 1;
 
-	background-position: 5px 0;
-	background-size: $grid $grid;
-	background-image: linear-gradient(to bottom, lightblue 1px, transparent 1px);
-	background-attachment: scroll;
+	// background-position: 5px 0;
+	// background-size: $grid $grid;
+	// background-image: linear-gradient(to bottom, lightblue 1px, transparent 1px);
+	// background-attachment: scroll;
 
 	h1 {
 
@@ -148,18 +148,12 @@
 		margin-bottom: 52px;
 	}
 
-	thead:after {
-		content: "";
-		position: absolute;
-		// top: 14px;
-		width: 100%;
-		height: 1px;
-		background: rgba($grey, 0.3);
-		display: block;
+	tbody tr {
+		border-top: 1px solid rgba($grey, 0.1);
 	}
 
 	tr:nth-child(even) {
-		background: rgba($grey, 0.1);
+		// background: rgba($grey, 0.1);
 	}
 
 	th {
@@ -177,7 +171,7 @@
 	td {
 		font-size: 14px;
 		vertical-align: top;
-		padding: ($grid / 2) $grid ($grid / 2) 0;
+		padding: (($grid / 2) - 1) $grid ($grid / 2) 0;
 	}
 
 	td > strong {
