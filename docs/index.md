@@ -51,6 +51,30 @@ The returned object has the following properties:
 | --- | --- |
 | Object | Position and clipping information (see table above). |
 
+#### Example
+
+```javascript
+let domEl = document.createElement("div");
+domEl.style.cssText = "position: fixed; top: -50px; left: -50px; width: 200px; height: 200px;";
+
+let info = clippingInfo(domEl);
+
+console.log(info.isClippedTop);
+// => true
+
+console.log(info.isClippedLeft);
+// => true
+
+console.log(info.isOff);
+// => false
+
+console.log(info.isFullyVisible);
+// => false
+
+console.log(info.isPartiallyVisible);
+// => true
+```
+
 ## Promise
 
 <a name="eventAsPromise"></a>
