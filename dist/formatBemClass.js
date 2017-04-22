@@ -16,7 +16,7 @@ import _formatBemModifier from "./internal/bem/_formatBemModifier";
  * @param  {string} [element] The BEM element.
  * @param  {string} [modifier] The BEM modifier.
  * @param  {(string|boolean)} [value] The BEM modifier value.
- * @param  {Array.<string>} connectors The BEM connectors.
+ * @param  {Array.<string>} connectors The BEM connectors, e.g. “__”, “--” and “-”.
  * @return {string} The BEM CSS class.
  *
  * @example
