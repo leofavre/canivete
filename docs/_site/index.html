@@ -181,8 +181,8 @@ string, it will not be added to the class.</p>
 <p><a name="clippingInfo"></a></p>
 <h3 id="clippinginfodomel-maskdef"><code class="highlighter-rouge">clippingInfo(domEl, [maskDef])</code></h3>
 
-<p>Given a DOM element, returns an object with position
-and clipping information relative to a mask, defined
+<p>Given a DOM element, returns an object with clipping
+and position information relative to a mask, defined
 by the second parameter, or to the viewport, if the
 second parameter is omitted.</p>
 
@@ -250,7 +250,7 @@ containing numeric values for “top”, “bottom”,
     <tr>
       <td><code class="highlighter-rouge">isClipped</code></td>
       <td>boolean</td>
-      <td>Child intersects with the mask.</td>
+      <td>Element intersects with the mask.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">isFullyVisible</code></td>
@@ -270,12 +270,12 @@ containing numeric values for “top”, “bottom”,
     <tr>
       <td><code class="highlighter-rouge">isAsVisibleAsPossible</code></td>
       <td>boolean</td>
-      <td>As visible as possible (child bigger than the mask).</td>
+      <td>As visible as possible (element &gt; mask).</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">isNotAsVisibleAsPossible</code></td>
       <td>boolean</td>
-      <td>Not as visible as possible (child bigger than the mask).</td>
+      <td>Not as visible as possible (element &gt; mask).</td>
     </tr>
   </tbody>
 </table>
@@ -315,7 +315,7 @@ containing numeric values for “top”, “bottom”,
   </thead>
   <tbody>
     <tr>
-      <td>Object</td>
+      <td>ClippingObject</td>
       <td>Position and clipping information (see table above).</td>
     </tr>
   </tbody>

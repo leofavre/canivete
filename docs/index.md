@@ -114,8 +114,8 @@ console.log(manyElements[0].className);
 <a name="clippingInfo"></a>
 ### `clippingInfo(domEl, [maskDef])`
 
-Given a DOM element, returns an object with position
-and clipping information relative to a mask, defined
+Given a DOM element, returns an object with clipping
+and position information relative to a mask, defined
 by the second parameter, or to the viewport, if the
 second parameter is omitted.
 
@@ -137,12 +137,12 @@ The returned object has the following properties:
 | `isClippedBottom` | boolean | Below and intersecting with the mask. |
 | `isClippedLeft` | boolean | On the left and intersecting with the mask. |
 | `isClippedRight` | boolean | On the right and intersecting with the mask. |
-| `isClipped` | boolean | Child intersects with the mask. |
+| `isClipped` | boolean | Element intersects with the mask. |
 | `isFullyVisible` | boolean | Fully visible inside the mask. |
 | `isPartiallyVisible` | boolean | Alias for `isClipped`. |
 | `isInvisible` | boolean | Alias for `isOff`. |
-| `isAsVisibleAsPossible` | boolean | As visible as possible (child bigger than the mask). |
-| `isNotAsVisibleAsPossible` | boolean | Not as visible as possible (child bigger than the mask). |
+| `isAsVisibleAsPossible` | boolean | As visible as possible (element > mask). |
+| `isNotAsVisibleAsPossible` | boolean | Not as visible as possible (element > mask). |
 
 #### Parameters
 
@@ -155,7 +155,7 @@ The returned object has the following properties:
 
 | Type | Description |
 | --- | --- |
-| Object | Position and clipping information (see table above). |
+| ClippingObject | Position and clipping information (see table above). |
 
 #### Example
 
