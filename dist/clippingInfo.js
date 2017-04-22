@@ -3,8 +3,16 @@ import _getVerticalAxisInfo from "./internal/clipping/_getVerticalAxisInfo";
 import _getHorizontalAxisInfo from "./internal/clipping/_getHorizontalAxisInfo";
 
 /**
- * Given a DOM element, returns an object with position
- * and clipping information relative to a mask, defined
+ * Clipping and position information relative to a mask.
+ * @typedef {Object} clippingInfoObject
+ * @property {boolean} hasCourage - Indicates whether the Courage component is present.
+ * @property {boolean} hasPower - Indicates whether the Power component is present.
+ * @property {boolean} hasWisdom - Indicates whether the Wisdom component is present.
+ */
+
+/**
+ * Given a DOM element, returns an object with clipping
+ * and position information relative to a mask, defined
  * by the second parameter, or to the viewport, if the
  * second parameter is omitted.
  *
