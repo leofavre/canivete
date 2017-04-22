@@ -7,15 +7,12 @@ import _formatBemModifier from "./internal/bem/_formatBemModifier";
  * function receives a block, an element, a modifier, a value
  * for the modifier and an array of BEM delimiters, e.g. “__”,
  * “--” and “-”.
- *
- * Note that if the modifier value is neither `true` or a
- * string, it will not be added to the class.
  * 
  * @category BEM
  * @param  {string} block The BEM block.
  * @param  {string} [element] The BEM element.
- * @param  {string} [modifier] The BEM modifier.
- * @param  {(string|boolean)} [value] The BEM modifier value.
+ * @param  {string} [modifier = true] The BEM modifier.
+ * @param  {(string|number|boolean)} [value] The BEM modifier value.
  * @param  {Array.<string>} delimiters The BEM delimiters, e.g. “__”, “--” and “-”.
  * @return {string} The BEM CSS class.
  *
@@ -29,7 +26,7 @@ import _formatBemModifier from "./internal/bem/_formatBemModifier";
  * // => "menu__item"
  * 
  * formatBemClass("menu", "item", "active", delimiters);
- * // => "menu__item"
+ * // => "menu__item--active"
  * 
  * formatBemClass("menu", "item", "active", false, delimiters);
  * // => "menu__item"
@@ -47,7 +44,7 @@ import _formatBemModifier from "./internal/bem/_formatBemModifier";
  * let delimiters = ["__", "--", "-"];
  * 
  * formatBemClass("button", null, "active", delimiters);
- * // => "button"
+ * // => "button--active"
  * 
  * formatBemClass("button", null, "active", false, delimiters);
  * // => "button"
@@ -64,7 +61,14 @@ import _formatBemModifier from "./internal/bem/_formatBemModifier";
 function formatBemClass(...args) {
 	let block = args[0];
 	let delimiters = args[args.length - 1];
-	let element, modifier, value;
+
+	if (args.length < 2) {
+		throw new Error("At least a string representing a BEM block and an array representing BEM delimiters should be passed as parameters.");
+	}
+
+	let element,
+		modifier = true,
+		value;
 
 	if (args.length > 2) {
 		element = args[1];

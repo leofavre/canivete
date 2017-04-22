@@ -24,7 +24,7 @@ string, it will not be added to the class.
 | `block` | String | The BEM block. |
 | `element` | String | The BEM element. **optional** |
 | `modifier` | String | The BEM modifier. **optional** |
-| `value` | String<br>Boolean | The BEM modifier value. **optional** |
+| `value` | String<br>Number<br>Boolean | The BEM modifier value. **optional** |
 | `delimiters` | Array.&lt;string&gt; | The BEM delimiters, e.g. “__”, “--” and “-”. |
 
 #### Return
