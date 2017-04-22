@@ -342,55 +342,6 @@ containing numeric values for “top”, “bottom”,
 </code></pre>
 </div>
 
-<p><a name="removeClassesBeginningWithButNot"></a></p>
-<h3 id="removeclassesbeginningwithbutnotdomels-str"><code class="highlighter-rouge">removeClassesBeginningWithButNot(domEls, str)</code></h3>
-
-<p>Removes one or many CSS classes that begin with a string,
-but don’t match the string completely, from one or many
-DOM elements. Useful for dealing with BEM CSS classes.</p>
-
-<h4 id="parameters-4">Parameters</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">domEls</code></td>
-      <td>HTMLElement<br />HTMLCollection<br />NodeList<br />Array.&lt;HTMLElement&gt;<br />Set.&lt;HTMLElement&gt;</td>
-      <td>One or many DOM elements.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">str</code></td>
-      <td>String</td>
-      <td>The CSS class begin.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="examples-2">Examples</h4>
-
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">oneElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">".button.button__active.button__level--1"</span><span class="p">);</span>
-<span class="nx">removeClassesBeginningWithButNot</span><span class="p">(</span><span class="nx">oneElement</span><span class="p">,</span> <span class="s2">"button"</span><span class="p">);</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">oneElement</span><span class="p">.</span><span class="nx">className</span><span class="p">);</span>
-<span class="c1">// =&gt; "button"</span>
-</code></pre>
-</div>
-
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">manyElements</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">".button.button__active.button__level--1"</span><span class="p">);</span>
-<span class="nx">removeClassesBeginningWithButNot</span><span class="p">(</span><span class="nx">manyElements</span><span class="p">,</span> <span class="s2">"button"</span><span class="p">);</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">manyElements</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">className</span><span class="p">);</span>
-<span class="c1">// =&gt; "button"</span>
-</code></pre>
-</div>
-
 <h2 id="promise">Promise</h2>
 
 <p><a name="eventAsPromise"></a></p>
@@ -410,7 +361,7 @@ returns true or when the event occurs for the first time.</p>
 <p>Note that the function throws an error if the first two
 parameters are not a DOM element and a string.</p>
 
-<h4 id="parameters-5">Parameters</h4>
+<h4 id="parameters-4">Parameters</h4>
 
 <table>
   <thead>
@@ -460,7 +411,7 @@ parameters are not a DOM element and a string.</p>
   </tbody>
 </table>
 
-<h4 id="examples-3">Examples</h4>
+<h4 id="examples-2">Examples</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">checkbox</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"input"</span><span class="p">);</span>
 <span class="nx">checkbox</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s2">"checkbox"</span><span class="p">;</span>
@@ -742,7 +693,7 @@ is returned.</p>
 <p>Note that this function expects the reduced array to be
 formed by objects with the same set of properties.</p>
 
-<h4 id="parameters-6">Parameters</h4>
+<h4 id="parameters-5">Parameters</h4>
 
 <table>
   <thead>
@@ -1036,7 +987,7 @@ occurrence</strong> of the second string in the first.</p>
 <p>Note that non-string parameters will be
 automatically converted to strings.</p>
 
-<h4 id="parameters-7">Parameters</h4>
+<h4 id="parameters-6">Parameters</h4>
 
 <table>
   <thead>
@@ -1094,7 +1045,7 @@ occurrence</strong> of the second string in the first.</p>
 <p>Note that non-string parameters will be
 automatically converted to strings.</p>
 
-<h4 id="parameters-8">Parameters</h4>
+<h4 id="parameters-7">Parameters</h4>
 
 <table>
   <thead>
@@ -1152,7 +1103,7 @@ occurrence</strong> of the second string in the first.</p>
 <p>Note that non-string parameters will be
 automatically converted to strings.</p>
 
-<h4 id="parameters-9">Parameters</h4>
+<h4 id="parameters-8">Parameters</h4>
 
 <table>
   <thead>
@@ -1210,7 +1161,7 @@ occurrence</strong> of the second string in the first.</p>
 <p>Note that non-string parameters will be
 automatically converted to strings.</p>
 
-<h4 id="parameters-10">Parameters</h4>
+<h4 id="parameters-9">Parameters</h4>
 
 <table>
   <thead>
@@ -1269,7 +1220,6 @@ automatically converted to strings.</p>
       <li><a href="#clippingInfo">clippingInfo</a></li>
       <li><a href="#hasClass">hasClass</a></li>
       <li><a href="#removeClass">removeClass</a></li>
-      <li><a href="#removeClassesBeginningWithButNot">removeClassesBeginningWithButNot</a></li>
     </ul>
   </li>
   <li><strong><a href="#promise">Promise</a></strong>

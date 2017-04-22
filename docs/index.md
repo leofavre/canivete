@@ -173,38 +173,6 @@ console.log(manyElements[0].className);
 // => "base"
 ```
 
-<a name="removeClassesBeginningWithButNot"></a>
-### `removeClassesBeginningWithButNot(domEls, str)`
-
-Removes one or many CSS classes that begin with a string,
-but don't match the string completely, from one or many
-DOM elements. Useful for dealing with BEM CSS classes.
-
-#### Parameters
-
-| Name | Type | Description |
-| --- | --- | --- |
-| `domEls` | HTMLElement<br>HTMLCollection<br>NodeList<br>Array.&lt;HTMLElement&gt;<br>Set.&lt;HTMLElement&gt; | One or many DOM elements. |
-| `str` | String | The CSS class begin. |
-
-#### Examples
-
-```javascript
-let oneElement = document.querySelector(".button.button__active.button__level--1");
-removeClassesBeginningWithButNot(oneElement, "button");
-
-console.log(oneElement.className);
-// => "button"
-```
-
-```javascript
-let manyElements = document.querySelectorAll(".button.button__active.button__level--1");
-removeClassesBeginningWithButNot(manyElements, "button");
-
-console.log(manyElements[0].className);
-// => "button"
-```
-
 ## Promise
 
 <a name="eventAsPromise"></a>

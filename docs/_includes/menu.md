@@ -3,7 +3,6 @@
   * [clippingInfo](#clippingInfo)
   * [hasClass](#hasClass)
   * [removeClass](#removeClass)
-  * [removeClassesBeginningWithButNot](#removeClassesBeginningWithButNot)
 
 * **[Promise](#promise)**
   * [eventAsPromise](#eventAsPromise)
