@@ -6,7 +6,7 @@ import _getHorizontalAxisInfo from "./internal/clipping/_getHorizontalAxisInfo";
  * Given a DOM element, returns an object with position
  * and clipping information relative to a mask, defined
  * by the second parameter, or to the viewport, if the
- * parameter is omitted.
+ * second parameter is omitted.
  *
  * The mask can be either a DOM element or an object
  * containing numeric values for "top", "bottom",
