@@ -4,7 +4,7 @@ import _hasNoModifiers from "./_hasNoModifiers";
 import _hasAllModifiersSetToFalse from "./_hasAllModifiersSetToFalse";
 import _parseModifier from "./_parseModifier";
 
-function _parseBemProp(bemObj, domNode, delimiterArr, shouldRepeatBemRadical) {
+function _parseBemProp(bemObj, domNode, connectors, shouldRepeatBemRadical) {
 	return function(radical) {
 		let modifierObj = bemObj[radical];
 
@@ -15,7 +15,7 @@ function _parseBemProp(bemObj, domNode, delimiterArr, shouldRepeatBemRadical) {
 			removeClass(domNode, radical);
 		}
 
-		_parseModifier(modifierObj, domNode, radical, delimiterArr);
+		_parseModifier(modifierObj, domNode, radical, connectors);
 	};
 }
 

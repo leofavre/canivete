@@ -1,3 +1,6 @@
+* **[BEM](#bem)**
+  * [formatBemClass](#formatBemClass)
+
 * **[DOM](#dom)**
   * [addClass](#addClass)
   * [clippingInfo](#clippingInfo)

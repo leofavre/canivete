@@ -1,5 +1,5 @@
 import _parseBem from "./internal/bem/_parseBem";
 
-const modifyBemClass = (domNode, bemObj, delimiterArr) => _parseBem(bemObj, domNode, delimiterArr, true);
+const modifyBemClass = (domNode, bemObj, connectors) => _parseBem(bemObj, domNode, connectors, true);
 
 export default modifyBemClass;

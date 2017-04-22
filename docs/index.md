@@ -3,6 +3,78 @@ layout: default
 title: Canivete
 ---
 
+## BEM
+
+<a name="formatBemClass"></a>
+### `formatBemClass(block, element, modifier, value, connectors)`
+
+Formats a CSS class according to the
+[BEM methodology](https://en.bem.info/methodology/). The
+function receives a block, an element, a modifier, a value
+for the modifier and an array of BEM connectors, e.g. “__”,
+“--” and “-”.
+
+Note that if a value is not passed to the modifier, either
+`true` or a string, it will not be added to the class.
+
+#### Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `block` | String | The BEM block. |
+| `element` | String | The BEM element. |
+| `modifier` | String | The BEM modifier. |
+| `value` | String<br>Boolean | The BEM modifier value. |
+| `connectors` | Array.&lt;string&gt; | The BEM connectors. |
+
+#### Return
+
+| Type | Description |
+| --- | --- |
+| String | The BEM CSS class. |
+
+#### Example
+
+```javascript
+let connectors = ["__", "--", "-"];
+
+formatBemClass("menu", null, null, null, connectors);
+// => "menu"
+
+formatBemClass("menu", "item", null, null, connectors);
+// => "menu__item"
+
+formatBemClass("menu", "item", "active", null, connectors);
+// => "menu__item"
+
+formatBemClass("menu", "item", "active", false, connectors);
+// => "menu__item"
+
+formatBemClass("menu", "item", "active", true, connectors);
+// => "menu__item--active"
+
+formatBemClass("menu", "item", "level", 42, connectors);
+// => "menu__item--level-42"
+
+formatBemClass("menu", "item", "level", "42", connectors);
+// => "menu__item--level-42"
+
+formatBemClass("menu", null, "active", null, connectors);
+// => "menu"
+
+formatBemClass("menu", null, "active", false, connectors);
+// => "menu"
+
+formatBemClass("menu", null, "active", true, connectors);
+// => "menu--active"
+
+formatBemClass("menu", null, "level", 42, connectors);
+// => "menu--level-42"
+
+formatBemClass("menu", null, "level", "42", connectors);
+// => "menu--level-42"
+```
+
 ## DOM
 
 <a name="addClass"></a>
