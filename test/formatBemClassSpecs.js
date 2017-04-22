@@ -33,6 +33,12 @@ describe("formatBemClass", function() {
 		expect(formatBemClass("menu", null,   "level",  "42",  delimiters)).toBe("menu--level-42");
 	});
 
+	it("Should ignore empty BEM entities", function(){
+		expect(formatBemClass("menu", "",        "active", delimiters)).toBe("menu--active");
+		expect(formatBemClass("menu", undefined, "active", delimiters)).toBe("menu--active");
+		expect(formatBemClass("menu", null,      "active", delimiters)).toBe("menu--active");
+	});
+
 	it("Should not accept less than two parameters", function(){
 		expect(() => formatBemClass()).toThrow();
 		expect(() => formatBemClass("menu")).toThrow();
