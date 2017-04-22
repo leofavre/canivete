@@ -6,12 +6,12 @@ describe("formatBemClass", function() {
 	it("Should format a CSS classe according to the BEM methodology.", function() {
 		expect(formatBemClass("menu", null,   null,     null,  delimiters)).toBe("menu");
 		expect(formatBemClass("menu", "item", null,     null,  delimiters)).toBe("menu__item");
-		expect(formatBemClass("menu", "item", "active", null,  delimiters)).toBe("menu__item--active");
+		expect(formatBemClass("menu", "item", "active", null,  delimiters)).toBe("menu__item");
 		expect(formatBemClass("menu", "item", "active", false, delimiters)).toBe("menu__item");
 		expect(formatBemClass("menu", "item", "active", true,  delimiters)).toBe("menu__item--active");
 		expect(formatBemClass("menu", "item", "level",  42,    delimiters)).toBe("menu__item--level-42");
 		expect(formatBemClass("menu", "item", "level",  "42",  delimiters)).toBe("menu__item--level-42");
-		expect(formatBemClass("menu", null,   "active", null,  delimiters)).toBe("menu--active");
+		expect(formatBemClass("menu", null,   "active", null,  delimiters)).toBe("menu");
 		expect(formatBemClass("menu", null,   "active", false, delimiters)).toBe("menu");
 		expect(formatBemClass("menu", null,   "active", true,  delimiters)).toBe("menu--active");
 		expect(formatBemClass("menu", null,   "level",  42,    delimiters)).toBe("menu--level-42");

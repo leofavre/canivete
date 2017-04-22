@@ -20,8 +20,8 @@ for the modifier and an array of BEM delimiters, e.g. “__”,
 | --- | --- | --- | --- |
 | `block` |  | String | The BEM block. |
 | `element` |  | String | The BEM element. **optional** |
-| `modifier` | `true` | String | The BEM modifier. **optional** |
-| `value` |  | String<br>Number<br>Boolean | The BEM modifier value. **optional** |
+| `modifier` |  | String | The BEM modifier. **optional** |
+| `value` | `true` | String<br>Number<br>Boolean | The BEM modifier value. **optional** |
 | `delimiters` |  | Array.&lt;string&gt; | The BEM delimiters, e.g. “__”, “--” and “-”. |
 
 #### Return

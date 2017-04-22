@@ -11,8 +11,8 @@ import _formatBemModifier from "./internal/bem/_formatBemModifier";
  * @category BEM
  * @param  {string} block The BEM block.
  * @param  {string} [element] The BEM element.
- * @param  {string} [modifier = true] The BEM modifier.
- * @param  {(string|number|boolean)} [value] The BEM modifier value.
+ * @param  {string} [modifier] The BEM modifier.
+ * @param  {(string|number|boolean)} [value = true] The BEM modifier value.
  * @param  {Array.<string>} delimiters The BEM delimiters, e.g. “__”, “--” and “-”.
  * @return {string} The BEM CSS class.
  *
@@ -67,8 +67,8 @@ function formatBemClass(...args) {
 	}
 
 	let element,
-		modifier = true,
-		value;
+		modifier,
+		value = true;
 
 	if (args.length > 2) {
 		element = args[1];
