@@ -6,12 +6,12 @@ title: Canivete
 ## BEM
 
 <a name="formatBemClass"></a>
-### `formatBemClass(block, [element], [modifier], [value], connectors)`
+### `formatBemClass(block, [element], [modifier], [value], delimiters)`
 
 Formats a CSS class according to the
 [BEM methodology](https://en.bem.info/methodology/). The
 function receives a block, an element, a modifier, a value
-for the modifier and an array of BEM connectors, e.g. “__”,
+for the modifier and an array of BEM delimiters, e.g. “__”,
 “--” and “-”.
 
 Note that if the modifier value is neither `true` or a
@@ -25,7 +25,7 @@ string, it will not be added to the class.
 | `element` | String | The BEM element. **optional** |
 | `modifier` | String | The BEM modifier. **optional** |
 | `value` | String<br>Boolean | The BEM modifier value. **optional** |
-| `connectors` | Array.&lt;string&gt; | The BEM connectors. |
+| `delimiters` | Array.&lt;string&gt; | The BEM delimiters, e.g. “__”, “--” and “-”. |
 
 #### Return
 
@@ -36,46 +36,46 @@ string, it will not be added to the class.
 #### Examples
 
 ```javascript
-let connectors = ["__", "--", "-"];
+let delimiters = ["__", "--", "-"];
 
-formatBemClass("menu", connectors);
+formatBemClass("menu", delimiters);
 // => "menu"
 
-formatBemClass("menu", "item", connectors);
+formatBemClass("menu", "item", delimiters);
 // => "menu__item"
 
-formatBemClass("menu", "item", "active", connectors);
+formatBemClass("menu", "item", "active", delimiters);
 // => "menu__item"
 
-formatBemClass("menu", "item", "active", false, connectors);
+formatBemClass("menu", "item", "active", false, delimiters);
 // => "menu__item"
 
-formatBemClass("menu", "item", "active", true, connectors);
+formatBemClass("menu", "item", "active", true, delimiters);
 // => "menu__item--active"
 
-formatBemClass("menu", "item", "level", 42, connectors);
+formatBemClass("menu", "item", "level", 42, delimiters);
 // => "menu__item--level-42"
 
-formatBemClass("menu", "item", "level", "42", connectors);
+formatBemClass("menu", "item", "level", "42", delimiters);
 // => "menu__item--level-42"
 ```
 
 ```javascript
-let connectors = ["__", "--", "-"];
+let delimiters = ["__", "--", "-"];
 
-formatBemClass("button", null, "active", connectors);
+formatBemClass("button", null, "active", delimiters);
 // => "button"
 
-formatBemClass("button", null, "active", false, connectors);
+formatBemClass("button", null, "active", false, delimiters);
 // => "button"
 
-formatBemClass("button", null, "active", true, connectors);
+formatBemClass("button", null, "active", true, delimiters);
 // => "button--active"
 
-formatBemClass("button", null, "level", 42, connectors);
+formatBemClass("button", null, "level", 42, delimiters);
 // => "button--level-42"
 
-formatBemClass("button", null, "level", "42", connectors);
+formatBemClass("button", null, "level", "42", delimiters);
 // => "button--level-42"
 ```
 

@@ -5,7 +5,7 @@ import _formatBemModifier from "./internal/bem/_formatBemModifier";
  * Formats a CSS class according to the
  * [BEM methodology](https://en.bem.info/methodology/). The
  * function receives a block, an element, a modifier, a value
- * for the modifier and an array of BEM connectors, e.g. “__”,
+ * for the modifier and an array of BEM delimiters, e.g. “__”,
  * “--” and “-”.
  *
  * Note that if the modifier value is neither `true` or a
@@ -16,54 +16,54 @@ import _formatBemModifier from "./internal/bem/_formatBemModifier";
  * @param  {string} [element] The BEM element.
  * @param  {string} [modifier] The BEM modifier.
  * @param  {(string|boolean)} [value] The BEM modifier value.
- * @param  {Array.<string>} connectors The BEM connectors, e.g. “__”, “--” and “-”.
+ * @param  {Array.<string>} delimiters The BEM delimiters, e.g. “__”, “--” and “-”.
  * @return {string} The BEM CSS class.
  *
  * @example
- * let connectors = ["__", "--", "-"];
+ * let delimiters = ["__", "--", "-"];
  * 
- * formatBemClass("menu", connectors);
+ * formatBemClass("menu", delimiters);
  * // => "menu"
  * 
- * formatBemClass("menu", "item", connectors);
+ * formatBemClass("menu", "item", delimiters);
  * // => "menu__item"
  * 
- * formatBemClass("menu", "item", "active", connectors);
+ * formatBemClass("menu", "item", "active", delimiters);
  * // => "menu__item"
  * 
- * formatBemClass("menu", "item", "active", false, connectors);
+ * formatBemClass("menu", "item", "active", false, delimiters);
  * // => "menu__item"
  * 
- * formatBemClass("menu", "item", "active", true, connectors);
+ * formatBemClass("menu", "item", "active", true, delimiters);
  * // => "menu__item--active"
  * 
- * formatBemClass("menu", "item", "level", 42, connectors);
+ * formatBemClass("menu", "item", "level", 42, delimiters);
  * // => "menu__item--level-42"
  * 
- * formatBemClass("menu", "item", "level", "42", connectors);
+ * formatBemClass("menu", "item", "level", "42", delimiters);
  * // => "menu__item--level-42"
  *
  * @example
- * let connectors = ["__", "--", "-"];
+ * let delimiters = ["__", "--", "-"];
  * 
- * formatBemClass("button", null, "active", connectors);
+ * formatBemClass("button", null, "active", delimiters);
  * // => "button"
  * 
- * formatBemClass("button", null, "active", false, connectors);
+ * formatBemClass("button", null, "active", false, delimiters);
  * // => "button"
  * 
- * formatBemClass("button", null, "active", true, connectors);
+ * formatBemClass("button", null, "active", true, delimiters);
  * // => "button--active"
  * 
- * formatBemClass("button", null, "level", 42, connectors);
+ * formatBemClass("button", null, "level", 42, delimiters);
  * // => "button--level-42"
  * 
- * formatBemClass("button", null, "level", "42", connectors);
+ * formatBemClass("button", null, "level", "42", delimiters);
  * // => "button--level-42"
  */
 function formatBemClass(...args) {
 	let block = args[0];
-	let connectors = args[args.length - 1];
+	let delimiters = args[args.length - 1];
 	let element, modifier, value;
 
 	if (args.length > 2) {
@@ -78,8 +78,8 @@ function formatBemClass(...args) {
 		value = args[3];
 	}
 
-	let radical = _formatBemRadical(block, element, connectors);
-	let classModifier = _formatBemModifier(modifier, value, connectors);
+	let radical = _formatBemRadical(block, element, delimiters);
+	let classModifier = _formatBemModifier(modifier, value, delimiters);
 	return `${radical}${classModifier}`;
 }
 

@@ -1,7 +1,7 @@
 import _joinBemEntityWithDelimiter from "./_joinBemEntityWithDelimiter";
 
-function _formatBemRadical(block, element, connectors) {
-	let elementDelimiter = connectors[0],
+function _formatBemRadical(block, element, delimiters) {
+	let elementDelimiter = delimiters[0],
 		elementBase = _joinBemEntityWithDelimiter(element, elementDelimiter);
 
 	return `${block}${elementBase}`;
