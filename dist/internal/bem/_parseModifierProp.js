@@ -1,6 +1,6 @@
 import addClass from "../../addClass";
 import removeClass from "../../removeClass";
-import _removeClassesBeginningWithButNot from "./_removeClassesBeginningWithButNot";
+import _removeClassesBeginningWithButNot from "../dom/_removeClassesBeginningWithButNot";
 import formatBemClass from "../../formatBemClass";
 
 function _parseModifierProp(modifierObj, domNode, radical, delimiters) {

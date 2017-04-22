@@ -62,7 +62,7 @@ import _formatBemModifier from "./internal/bem/_formatBemModifier";
  * // => "button--level-42"
  */
 const formatBemClass = (...args) => {
-	let block = args[0];
+	let block = args[0] || "";
 	let delimiters = args[args.length - 1];
 
 	if (args.length < 2) {

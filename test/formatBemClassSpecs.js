@@ -16,6 +16,14 @@ describe("formatBemClass", function() {
 		expect(formatBemClass("menu", null,   "active", true,  delimiters)).toBe("menu--active");
 		expect(formatBemClass("menu", null,   "level",  42,    delimiters)).toBe("menu--level-42");
 		expect(formatBemClass("menu", null,   "level",  "42",  delimiters)).toBe("menu--level-42");
+		expect(formatBemClass("",     null,   "active", null,  delimiters)).toBe("");
+		expect(formatBemClass("",     null,   "active", false, delimiters)).toBe("");
+		expect(formatBemClass("",     null,   "active", true,  delimiters)).toBe("--active");
+		expect(formatBemClass("",     null,   "level",  "42",  delimiters)).toBe("--level-42");
+		expect(formatBemClass(null,   null,   "active", null,  delimiters)).toBe("");
+		expect(formatBemClass(null,   null,   "active", false, delimiters)).toBe("");
+		expect(formatBemClass(null,   null,   "active", true,  delimiters)).toBe("--active");
+		expect(formatBemClass(null,   null,   "level",  "42",  delimiters)).toBe("--level-42");
 	});
 
 	it("Should format a CSS classe according to the BEM methodology even when BEM entity parameters are ommited.", function() {
@@ -31,6 +39,14 @@ describe("formatBemClass", function() {
 		expect(formatBemClass("menu", null,   "active", true,  delimiters)).toBe("menu--active");
 		expect(formatBemClass("menu", null,   "level",  42,    delimiters)).toBe("menu--level-42");
 		expect(formatBemClass("menu", null,   "level",  "42",  delimiters)).toBe("menu--level-42");
+		expect(formatBemClass("",     null,   "active",        delimiters)).toBe("--active");
+		expect(formatBemClass("",     null,   "active", false, delimiters)).toBe("");
+		expect(formatBemClass("",     null,   "active", true,  delimiters)).toBe("--active");
+		expect(formatBemClass("",     null,   "level",  "42",  delimiters)).toBe("--level-42");
+		expect(formatBemClass(null,   null,   "active",        delimiters)).toBe("--active");
+		expect(formatBemClass(null,   null,   "active", false, delimiters)).toBe("");
+		expect(formatBemClass(null,   null,   "active", true,  delimiters)).toBe("--active");
+		expect(formatBemClass(null,   null,   "level",  "42",  delimiters)).toBe("--level-42");
 	});
 
 	it("Should ignore empty BEM entities", function(){
