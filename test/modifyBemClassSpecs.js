@@ -1,4 +1,5 @@
 import modifyBemClass from "../dist/modifyBemClass";
+import modifyBemClassCompact from "../dist/modifyBemClassCompact";
 
 const delimiterData = {
 	"bemDelimitersA": ["__", "--", "-"],
@@ -375,9 +376,9 @@ function makeBemDescription(data, delimiterArr) {
 	let sortedOriginal = data.original.split(" ").sort().join(" "),
 		sortedExpectation = data.expectation.split(" ").sort().join(" "),
 		bemObjJson = JSON.stringify(data.changes),
-		delimiterStr = `“` + delimiterArr.slice(0, 2).join(`”, “`) + `” e “` + delimiterArr.slice(2) + `”`;
+		delimiterStr = `"` + delimiterArr.slice(0, 2).join(`", "`) + `" e "` + delimiterArr.slice(2) + `"`;
 
-	return `A classe “${sortedOriginal}” vira “${sortedExpectation}” modificada com um objeto ${bemObjJson} e delimitadores ${delimiterStr}.`;
+	return `A classe "${sortedOriginal}" vira "${sortedExpectation}" modificada com um objeto ${bemObjJson} e delimitadores ${delimiterStr}.`;
 }
 
 function makeBemDivWithClassName(className) {
@@ -390,8 +391,6 @@ describe(".modifyBemClass", function() {
 	makeBemTestsFromData(modifyBemClass, delimiterData, modifyBemClassData);
 });
 
-/*
 describe(".modifyBemClassCompact", function() {
-	makeBemTestsFromData("modifyBemClassCompact", delimiterData, modifyBemClassDataCompact);
+	makeBemTestsFromData(modifyBemClassCompact, delimiterData, modifyBemClassDataCompact);
 });
-*/
