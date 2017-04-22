@@ -34,12 +34,24 @@ describe("beforeLast", function() {
 	it(`"Should not find anything before the last "x" in "Parallelepiped".`, function() {
 		expect(
 			beforeLast("Parallelepiped", "x")
-		).toBe("");
+		).toBe(undefined);
 	});
 
-	it(`"Should find "987" before the last 3 in 9873125.`, function() {
+	it(`"Should not find anything if the delimiter is ommited.`, function() {
 		expect(
-			beforeLast(9873125, 3)
-		).toBe("987");
+			beforeLast("Parallelepiped")
+		).toBe(undefined);
+	});
+
+	it(`Should find "Parallelepiped" before the last "" in "Parallelepiped".`, function() {
+		expect(
+			beforeLast("Parallelepiped", "")
+		).toBe("Parallelepiped");
+	});
+
+	it(`Should throw an error if the first parameter is not a string.`, function() {
+		expect(
+			() => beforeLast(undefined, "")
+		).toThrow();
 	});
 });

@@ -1,7 +1,7 @@
 import _formatBemModifier from "./internal/bem/_formatBemModifier";
 
-function _formatBemClassFromRadical(radical, modifier, value, connectors) {
-	let classModifier = _formatBemModifier(modifier, value, connectors);
+function _formatBemClassFromRadical(radical, modifier, value, delimiters) {
+	let classModifier = _formatBemModifier(modifier, value, delimiters);
 	return `${radical}${classModifier}`;
 }
 

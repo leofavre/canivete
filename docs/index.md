@@ -6,26 +6,23 @@ title: Canivete
 ## BEM
 
 <a name="formatBemClass"></a>
-### `formatBemClass(block, [element], [modifier], [value], connectors)`
+### `formatBemClass(block, [element], [modifier], [value], delimiters)`
 
 Formats a CSS class according to the
 [BEM methodology](https://en.bem.info/methodology/). The
 function receives a block, an element, a modifier, a value
-for the modifier and an array of BEM connectors, e.g. “__”,
+for the modifier and an array of BEM delimiters, e.g. “__”,
 “--” and “-”.
-
-Note that if the modifier value is neither `true` or a
-string, it will not be added to the class.
 
 #### Parameters
 
-| Name | Type | Description |
-| --- | --- | --- |
-| `block` | String | The BEM block. |
-| `element` | String | The BEM element. **optional** |
-| `modifier` | String | The BEM modifier. **optional** |
-| `value` | String<br>Boolean | The BEM modifier value. **optional** |
-| `connectors` | Array.&lt;string&gt; | The BEM connectors. |
+| Name | Default | Type | Description |
+| --- | --- | --- | --- |
+| `block` |  | String | The BEM block. |
+| `element` |  | String | The BEM element. **optional** |
+| `modifier` |  | String | The BEM modifier. **optional** |
+| `value` | `true` | String<br>Number<br>Boolean | The BEM modifier value. **optional** |
+| `delimiters` |  | Array.&lt;string&gt; | The BEM delimiters, e.g. “__”, “--” and “-”. |
 
 #### Return
 
@@ -36,46 +33,46 @@ string, it will not be added to the class.
 #### Examples
 
 ```javascript
-let connectors = ["__", "--", "-"];
+let delimiters = ["__", "--", "-"];
 
-formatBemClass("menu", connectors);
+formatBemClass("menu", delimiters);
 // => "menu"
 
-formatBemClass("menu", "item", connectors);
+formatBemClass("menu", "item", delimiters);
 // => "menu__item"
 
-formatBemClass("menu", "item", "active", connectors);
-// => "menu__item"
-
-formatBemClass("menu", "item", "active", false, connectors);
-// => "menu__item"
-
-formatBemClass("menu", "item", "active", true, connectors);
+formatBemClass("menu", "item", "active", delimiters);
 // => "menu__item--active"
 
-formatBemClass("menu", "item", "level", 42, connectors);
+formatBemClass("menu", "item", "active", false, delimiters);
+// => "menu__item"
+
+formatBemClass("menu", "item", "active", true, delimiters);
+// => "menu__item--active"
+
+formatBemClass("menu", "item", "level", 42, delimiters);
 // => "menu__item--level-42"
 
-formatBemClass("menu", "item", "level", "42", connectors);
+formatBemClass("menu", "item", "level", "42", delimiters);
 // => "menu__item--level-42"
 ```
 
 ```javascript
-let connectors = ["__", "--", "-"];
+let delimiters = ["__", "--", "-"];
 
-formatBemClass("button", null, "active", connectors);
-// => "button"
-
-formatBemClass("button", null, "active", false, connectors);
-// => "button"
-
-formatBemClass("button", null, "active", true, connectors);
+formatBemClass("button", null, "active", delimiters);
 // => "button--active"
 
-formatBemClass("button", null, "level", 42, connectors);
+formatBemClass("button", null, "active", false, delimiters);
+// => "button"
+
+formatBemClass("button", null, "active", true, delimiters);
+// => "button--active"
+
+formatBemClass("button", null, "level", 42, delimiters);
 // => "button--level-42"
 
-formatBemClass("button", null, "level", "42", connectors);
+formatBemClass("button", null, "level", "42", delimiters);
 // => "button--level-42"
 ```
 
@@ -679,14 +676,9 @@ using `toSum()` can lead to unexpected results.
 <a name="afterFirst"></a>
 ### `afterFirst(str, delimiter)`
 
-Given two strings, returns a new one formed
-by the characters **after the first
-occurrence** of the second string in the first.
-
-Returns an empty string if nothing is found.
-
-Note that non-string parameters will be
-automatically converted to strings.
+Returns the string formed by the characters **after
+the first occurrence** of the delimiter in a base string.
+If the delimiter is not found, the function returns `undefined`.
 
 #### Parameters
 
@@ -711,14 +703,9 @@ afterFirst("parallelepiped", "le");
 <a name="afterLast"></a>
 ### `afterLast(str, delimiter)`
 
-Given two strings, returns a new one formed
-by the characters **after the last
-occurrence** of the second string in the first.
-
-Returns an empty string if nothing is found.
-
-Note that non-string parameters will be
-automatically converted to strings.
+Returns the string formed by the characters **after
+the last occurrence** of the delimiter in a base string.
+If the delimiter is not found, the function returns `undefined`.
 
 #### Parameters
 
@@ -743,14 +730,9 @@ afterLast("parallelepiped", "le");
 <a name="beforeFirst"></a>
 ### `beforeFirst(str, delimiter)`
 
-Given two strings, returns a new one formed
-by the characters **before the first
-occurrence** of the second string in the first.
-
-Returns an empty string if nothing is found.
-
-Note that non-string parameters will be
-automatically converted to strings.
+Returns the string formed by the characters **before
+the first occurrence** of the delimiter in a base string.
+If the delimiter is not found, the function returns `undefined`.
 
 #### Parameters
 
@@ -775,14 +757,9 @@ beforeFirst("parallelepiped", "le");
 <a name="beforeLast"></a>
 ### `beforeLast(str, delimiter)`
 
-Given two strings, returns a new one formed
-by the characters **before the last
-occurrence** of the second string in the first.
-
-Returns an empty string if nothing is found.
-
-Note that non-string parameters will be
-automatically converted to strings.
+Returns the string formed by the characters **before
+the last occurrence** of the delimiter in a base string.
+If the delimiter is not found, the function returns `undefined`.
 
 #### Parameters
 

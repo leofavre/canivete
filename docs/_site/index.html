@@ -16,16 +16,13 @@
 				<h2 id="bem">BEM</h2>
 
 <p><a name="formatBemClass"></a></p>
-<h3 id="formatbemclassblock-element-modifier-value-connectors"><code class="highlighter-rouge">formatBemClass(block, [element], [modifier], [value], connectors)</code></h3>
+<h3 id="formatbemclassblock-element-modifier-value-delimiters"><code class="highlighter-rouge">formatBemClass(block, [element], [modifier], [value], delimiters)</code></h3>
 
 <p>Formats a CSS class according to the
 <a href="https://en.bem.info/methodology/">BEM methodology</a>. The
 function receives a block, an element, a modifier, a value
-for the modifier and an array of BEM connectors, e.g. “__”,
+for the modifier and an array of BEM delimiters, e.g. “__”,
 “–” and “-”.</p>
-
-<p>Note that if the modifier value is neither <code class="highlighter-rouge">true</code> or a
-string, it will not be added to the class.</p>
 
 <h4 id="parameters">Parameters</h4>
 
@@ -33,6 +30,7 @@ string, it will not be added to the class.</p>
   <thead>
     <tr>
       <th>Name</th>
+      <th>Default</th>
       <th>Type</th>
       <th>Description</th>
     </tr>
@@ -40,28 +38,33 @@ string, it will not be added to the class.</p>
   <tbody>
     <tr>
       <td><code class="highlighter-rouge">block</code></td>
+      <td> </td>
       <td>String</td>
       <td>The BEM block.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">element</code></td>
+      <td> </td>
       <td>String</td>
       <td>The BEM element. <strong>optional</strong></td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">modifier</code></td>
+      <td> </td>
       <td>String</td>
       <td>The BEM modifier. <strong>optional</strong></td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">value</code></td>
-      <td>String<br />Boolean</td>
+      <td><code class="highlighter-rouge">true</code></td>
+      <td>String<br />Number<br />Boolean</td>
       <td>The BEM modifier value. <strong>optional</strong></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">connectors</code></td>
+      <td><code class="highlighter-rouge">delimiters</code></td>
+      <td> </td>
       <td>Array.&lt;string&gt;</td>
-      <td>The BEM connectors.</td>
+      <td>The BEM delimiters, e.g. “__”, “–” and “-”.</td>
     </tr>
   </tbody>
 </table>
@@ -85,46 +88,46 @@ string, it will not be added to the class.</p>
 
 <h4 id="examples">Examples</h4>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">connectors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"__"</span><span class="p">,</span> <span class="s2">"--"</span><span class="p">,</span> <span class="s2">"-"</span><span class="p">];</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">delimiters</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"__"</span><span class="p">,</span> <span class="s2">"--"</span><span class="p">,</span> <span class="s2">"-"</span><span class="p">];</span>
 
-<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"menu"</span><span class="p">,</span> <span class="nx">connectors</span><span class="p">);</span>
+<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"menu"</span><span class="p">,</span> <span class="nx">delimiters</span><span class="p">);</span>
 <span class="c1">// =&gt; "menu"</span>
 
-<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"menu"</span><span class="p">,</span> <span class="s2">"item"</span><span class="p">,</span> <span class="nx">connectors</span><span class="p">);</span>
+<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"menu"</span><span class="p">,</span> <span class="s2">"item"</span><span class="p">,</span> <span class="nx">delimiters</span><span class="p">);</span>
 <span class="c1">// =&gt; "menu__item"</span>
 
-<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"menu"</span><span class="p">,</span> <span class="s2">"item"</span><span class="p">,</span> <span class="s2">"active"</span><span class="p">,</span> <span class="nx">connectors</span><span class="p">);</span>
-<span class="c1">// =&gt; "menu__item"</span>
-
-<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"menu"</span><span class="p">,</span> <span class="s2">"item"</span><span class="p">,</span> <span class="s2">"active"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">connectors</span><span class="p">);</span>
-<span class="c1">// =&gt; "menu__item"</span>
-
-<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"menu"</span><span class="p">,</span> <span class="s2">"item"</span><span class="p">,</span> <span class="s2">"active"</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">connectors</span><span class="p">);</span>
+<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"menu"</span><span class="p">,</span> <span class="s2">"item"</span><span class="p">,</span> <span class="s2">"active"</span><span class="p">,</span> <span class="nx">delimiters</span><span class="p">);</span>
 <span class="c1">// =&gt; "menu__item--active"</span>
 
-<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"menu"</span><span class="p">,</span> <span class="s2">"item"</span><span class="p">,</span> <span class="s2">"level"</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="nx">connectors</span><span class="p">);</span>
+<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"menu"</span><span class="p">,</span> <span class="s2">"item"</span><span class="p">,</span> <span class="s2">"active"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">delimiters</span><span class="p">);</span>
+<span class="c1">// =&gt; "menu__item"</span>
+
+<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"menu"</span><span class="p">,</span> <span class="s2">"item"</span><span class="p">,</span> <span class="s2">"active"</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">delimiters</span><span class="p">);</span>
+<span class="c1">// =&gt; "menu__item--active"</span>
+
+<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"menu"</span><span class="p">,</span> <span class="s2">"item"</span><span class="p">,</span> <span class="s2">"level"</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="nx">delimiters</span><span class="p">);</span>
 <span class="c1">// =&gt; "menu__item--level-42"</span>
 
-<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"menu"</span><span class="p">,</span> <span class="s2">"item"</span><span class="p">,</span> <span class="s2">"level"</span><span class="p">,</span> <span class="s2">"42"</span><span class="p">,</span> <span class="nx">connectors</span><span class="p">);</span>
+<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"menu"</span><span class="p">,</span> <span class="s2">"item"</span><span class="p">,</span> <span class="s2">"level"</span><span class="p">,</span> <span class="s2">"42"</span><span class="p">,</span> <span class="nx">delimiters</span><span class="p">);</span>
 <span class="c1">// =&gt; "menu__item--level-42"</span>
 </code></pre>
 </div>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">connectors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"__"</span><span class="p">,</span> <span class="s2">"--"</span><span class="p">,</span> <span class="s2">"-"</span><span class="p">];</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">delimiters</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"__"</span><span class="p">,</span> <span class="s2">"--"</span><span class="p">,</span> <span class="s2">"-"</span><span class="p">];</span>
 
-<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"button"</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s2">"active"</span><span class="p">,</span> <span class="nx">connectors</span><span class="p">);</span>
-<span class="c1">// =&gt; "button"</span>
-
-<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"button"</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s2">"active"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">connectors</span><span class="p">);</span>
-<span class="c1">// =&gt; "button"</span>
-
-<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"button"</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s2">"active"</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">connectors</span><span class="p">);</span>
+<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"button"</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s2">"active"</span><span class="p">,</span> <span class="nx">delimiters</span><span class="p">);</span>
 <span class="c1">// =&gt; "button--active"</span>
 
-<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"button"</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s2">"level"</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="nx">connectors</span><span class="p">);</span>
+<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"button"</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s2">"active"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">delimiters</span><span class="p">);</span>
+<span class="c1">// =&gt; "button"</span>
+
+<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"button"</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s2">"active"</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">delimiters</span><span class="p">);</span>
+<span class="c1">// =&gt; "button--active"</span>
+
+<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"button"</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s2">"level"</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="nx">delimiters</span><span class="p">);</span>
 <span class="c1">// =&gt; "button--level-42"</span>
 
-<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"button"</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s2">"level"</span><span class="p">,</span> <span class="s2">"42"</span><span class="p">,</span> <span class="nx">connectors</span><span class="p">);</span>
+<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"button"</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s2">"level"</span><span class="p">,</span> <span class="s2">"42"</span><span class="p">,</span> <span class="nx">delimiters</span><span class="p">);</span>
 <span class="c1">// =&gt; "button--level-42"</span>
 </code></pre>
 </div>
@@ -1094,14 +1097,9 @@ using <code class="highlighter-rouge">toSum()</code> can lead to unexpected resu
 <p><a name="afterFirst"></a></p>
 <h3 id="afterfirststr-delimiter"><code class="highlighter-rouge">afterFirst(str, delimiter)</code></h3>
 
-<p>Given two strings, returns a new one formed
-by the characters <strong>after the first
-occurrence</strong> of the second string in the first.</p>
-
-<p>Returns an empty string if nothing is found.</p>
-
-<p>Note that non-string parameters will be
-automatically converted to strings.</p>
+<p>Returns the string formed by the characters <strong>after
+the first occurrence</strong> of the delimiter in a base string.
+If the delimiter is not found, the function returns <code class="highlighter-rouge">undefined</code>.</p>
 
 <h4 id="parameters-7">Parameters</h4>
 
@@ -1152,14 +1150,9 @@ automatically converted to strings.</p>
 <p><a name="afterLast"></a></p>
 <h3 id="afterlaststr-delimiter"><code class="highlighter-rouge">afterLast(str, delimiter)</code></h3>
 
-<p>Given two strings, returns a new one formed
-by the characters <strong>after the last
-occurrence</strong> of the second string in the first.</p>
-
-<p>Returns an empty string if nothing is found.</p>
-
-<p>Note that non-string parameters will be
-automatically converted to strings.</p>
+<p>Returns the string formed by the characters <strong>after
+the last occurrence</strong> of the delimiter in a base string.
+If the delimiter is not found, the function returns <code class="highlighter-rouge">undefined</code>.</p>
 
 <h4 id="parameters-8">Parameters</h4>
 
@@ -1210,14 +1203,9 @@ automatically converted to strings.</p>
 <p><a name="beforeFirst"></a></p>
 <h3 id="beforefirststr-delimiter"><code class="highlighter-rouge">beforeFirst(str, delimiter)</code></h3>
 
-<p>Given two strings, returns a new one formed
-by the characters <strong>before the first
-occurrence</strong> of the second string in the first.</p>
-
-<p>Returns an empty string if nothing is found.</p>
-
-<p>Note that non-string parameters will be
-automatically converted to strings.</p>
+<p>Returns the string formed by the characters <strong>before
+the first occurrence</strong> of the delimiter in a base string.
+If the delimiter is not found, the function returns <code class="highlighter-rouge">undefined</code>.</p>
 
 <h4 id="parameters-9">Parameters</h4>
 
@@ -1268,14 +1256,9 @@ automatically converted to strings.</p>
 <p><a name="beforeLast"></a></p>
 <h3 id="beforelaststr-delimiter"><code class="highlighter-rouge">beforeLast(str, delimiter)</code></h3>
 
-<p>Given two strings, returns a new one formed
-by the characters <strong>before the last
-occurrence</strong> of the second string in the first.</p>
-
-<p>Returns an empty string if nothing is found.</p>
-
-<p>Note that non-string parameters will be
-automatically converted to strings.</p>
+<p>Returns the string formed by the characters <strong>before
+the last occurrence</strong> of the delimiter in a base string.
+If the delimiter is not found, the function returns <code class="highlighter-rouge">undefined</code>.</p>
 
 <h4 id="parameters-10">Parameters</h4>
 

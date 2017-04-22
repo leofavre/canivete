@@ -25,21 +25,33 @@ describe("afterFirst", function() {
 		).toBe("arallelepiped");
 	});
 
-	it(`"Should not find anything after the first "x" in "Parallelepiped".`, function() {
-		expect(
-			afterFirst("Parallelepiped", "x")
-		).toBe("");
-	});
-
 	it(`"Should find "👌" after the first "📋" in "😋📋👌".`, function() {
 		expect(
 			afterFirst("😋📋👌", "📋")
 		).toBe("👌");
 	});
 
-	it(`"Should find "125" after the first 3 in 9873125.`, function() {
+	it(`"Should not find anything after the first "x" in "Parallelepiped".`, function() {
 		expect(
-			afterFirst(9873125, 3)
-		).toBe("125");
+			afterFirst("Parallelepiped", "x")
+		).toBe(undefined);
+	});
+
+	it(`"Should not find anything if the delimiter is ommited.`, function() {
+		expect(
+			afterFirst("Parallelepiped")
+		).toBe(undefined);
+	});
+
+	it(`Should find "Parallelepiped" after the first "" in "Parallelepiped".`, function() {
+		expect(
+			afterFirst("Parallelepiped", "")
+		).toBe("Parallelepiped");
+	});
+
+	it(`Should throw an error if the first parameter is not a string.`, function() {
+		expect(
+			() => afterFirst(undefined, "")
+		).toThrow();
 	});
 });

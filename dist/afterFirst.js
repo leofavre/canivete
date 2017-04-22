@@ -1,14 +1,9 @@
 import _sliceOnOccurrence from "./internal/string/_sliceOnOccurrence";
 
 /**
- * Given two strings, returns a new one formed
- * by the characters **after the first
- * occurrence** of the second string in the first.
- *
- * Returns an empty string if nothing is found.
- *
- * Note that non-string parameters will be
- * automatically converted to strings.
+ * Returns the string formed by the characters **after
+ * the first occurrence** of the delimiter in a base string.
+ * If the delimiter is not found, the function returns `undefined`.
  *
  * @category String
  * @param  {string} str The base string.
