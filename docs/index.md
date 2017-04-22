@@ -676,14 +676,9 @@ using `toSum()` can lead to unexpected results.
 <a name="afterFirst"></a>
 ### `afterFirst(str, delimiter)`
 
-Given two strings, returns a new one formed
-by the characters **after the first
-occurrence** of the second string in the first.
-
-Returns an empty string if nothing is found.
-
-Note that non-string parameters will be
-automatically converted to strings.
+Returns the string formed by the characters **after
+the first occurrence** of the delimiter in a base string.
+If the delimiter is not found, the function returns `undefined`.
 
 #### Parameters
 
@@ -708,14 +703,9 @@ afterFirst("parallelepiped", "le");
 <a name="afterLast"></a>
 ### `afterLast(str, delimiter)`
 
-Given two strings, returns a new one formed
-by the characters **after the last
-occurrence** of the second string in the first.
-
-Returns an empty string if nothing is found.
-
-Note that non-string parameters will be
-automatically converted to strings.
+Returns the string formed by the characters **after
+the last occurrence** of the delimiter in a base string.
+If the delimiter is not found, the function returns `undefined`.
 
 #### Parameters
 
@@ -740,14 +730,9 @@ afterLast("parallelepiped", "le");
 <a name="beforeFirst"></a>
 ### `beforeFirst(str, delimiter)`
 
-Given two strings, returns a new one formed
-by the characters **before the first
-occurrence** of the second string in the first.
-
-Returns an empty string if nothing is found.
-
-Note that non-string parameters will be
-automatically converted to strings.
+Returns the string formed by the characters **before
+the first occurrence** of the delimiter in a base string.
+If the delimiter is not found, the function returns `undefined`.
 
 #### Parameters
 
@@ -772,14 +757,9 @@ beforeFirst("parallelepiped", "le");
 <a name="beforeLast"></a>
 ### `beforeLast(str, delimiter)`
 
-Given two strings, returns a new one formed
-by the characters **before the last
-occurrence** of the second string in the first.
-
-Returns an empty string if nothing is found.
-
-Note that non-string parameters will be
-automatically converted to strings.
+Returns the string formed by the characters **before
+the last occurrence** of the delimiter in a base string.
+If the delimiter is not found, the function returns `undefined`.
 
 #### Parameters
 
