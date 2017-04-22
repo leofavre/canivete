@@ -6,7 +6,7 @@ title: Canivete
 ## BEM
 
 <a name="formatBemClass"></a>
-### `formatBemClass(block, element, modifier, value, connectors)`
+### `formatBemClass(block, [element], [modifier], [value], connectors)`
 
 Formats a CSS class according to the
 [BEM methodology](https://en.bem.info/methodology/). The
@@ -14,17 +14,17 @@ function receives a block, an element, a modifier, a value
 for the modifier and an array of BEM connectors, e.g. “__”,
 “--” and “-”.
 
-Note that if a value is not passed to the modifier, either
-`true` or a string, it will not be added to the class.
+Note that if the modifier value is neither `true` or a
+string, it will not be added to the class.
 
 #### Parameters
 
 | Name | Type | Description |
 | --- | --- | --- |
 | `block` | String | The BEM block. |
-| `element` | String | The BEM element. |
-| `modifier` | String | The BEM modifier. |
-| `value` | String<br>Boolean | The BEM modifier value. |
+| `element` | String | The BEM element. **optional** |
+| `modifier` | String | The BEM modifier. **optional** |
+| `value` | String<br>Boolean | The BEM modifier value. **optional** |
 | `connectors` | Array.&lt;string&gt; | The BEM connectors. |
 
 #### Return
@@ -38,13 +38,13 @@ Note that if a value is not passed to the modifier, either
 ```javascript
 let connectors = ["__", "--", "-"];
 
-formatBemClass("menu", null, null, null, connectors);
+formatBemClass("menu", connectors);
 // => "menu"
 
-formatBemClass("menu", "item", null, null, connectors);
+formatBemClass("menu", "item", connectors);
 // => "menu__item"
 
-formatBemClass("menu", "item", "active", null, connectors);
+formatBemClass("menu", "item", "active", connectors);
 // => "menu__item"
 
 formatBemClass("menu", "item", "active", false, connectors);
@@ -63,7 +63,7 @@ formatBemClass("menu", "item", "level", "42", connectors);
 ```javascript
 let connectors = ["__", "--", "-"];
 
-formatBemClass("button", null, "active", null, connectors);
+formatBemClass("button", null, "active", connectors);
 // => "button"
 
 formatBemClass("button", null, "active", false, connectors);

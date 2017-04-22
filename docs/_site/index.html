@@ -16,7 +16,7 @@
 				<h2 id="bem">BEM</h2>
 
 <p><a name="formatBemClass"></a></p>
-<h3 id="formatbemclassblock-element-modifier-value-connectors"><code class="highlighter-rouge">formatBemClass(block, element, modifier, value, connectors)</code></h3>
+<h3 id="formatbemclassblock-element-modifier-value-connectors"><code class="highlighter-rouge">formatBemClass(block, [element], [modifier], [value], connectors)</code></h3>
 
 <p>Formats a CSS class according to the
 <a href="https://en.bem.info/methodology/">BEM methodology</a>. The
@@ -24,8 +24,8 @@ function receives a block, an element, a modifier, a value
 for the modifier and an array of BEM connectors, e.g. “__”,
 “–” and “-”.</p>
 
-<p>Note that if a value is not passed to the modifier, either
-<code class="highlighter-rouge">true</code> or a string, it will not be added to the class.</p>
+<p>Note that if the modifier value is neither <code class="highlighter-rouge">true</code> or a
+string, it will not be added to the class.</p>
 
 <h4 id="parameters">Parameters</h4>
 
@@ -46,17 +46,17 @@ for the modifier and an array of BEM connectors, e.g. “__”,
     <tr>
       <td><code class="highlighter-rouge">element</code></td>
       <td>String</td>
-      <td>The BEM element.</td>
+      <td>The BEM element. <strong>optional</strong></td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">modifier</code></td>
       <td>String</td>
-      <td>The BEM modifier.</td>
+      <td>The BEM modifier. <strong>optional</strong></td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">value</code></td>
       <td>String<br />Boolean</td>
-      <td>The BEM modifier value.</td>
+      <td>The BEM modifier value. <strong>optional</strong></td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">connectors</code></td>
@@ -87,13 +87,13 @@ for the modifier and an array of BEM connectors, e.g. “__”,
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">connectors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"__"</span><span class="p">,</span> <span class="s2">"--"</span><span class="p">,</span> <span class="s2">"-"</span><span class="p">];</span>
 
-<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"menu"</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">connectors</span><span class="p">);</span>
+<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"menu"</span><span class="p">,</span> <span class="nx">connectors</span><span class="p">);</span>
 <span class="c1">// =&gt; "menu"</span>
 
-<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"menu"</span><span class="p">,</span> <span class="s2">"item"</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">connectors</span><span class="p">);</span>
+<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"menu"</span><span class="p">,</span> <span class="s2">"item"</span><span class="p">,</span> <span class="nx">connectors</span><span class="p">);</span>
 <span class="c1">// =&gt; "menu__item"</span>
 
-<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"menu"</span><span class="p">,</span> <span class="s2">"item"</span><span class="p">,</span> <span class="s2">"active"</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">connectors</span><span class="p">);</span>
+<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"menu"</span><span class="p">,</span> <span class="s2">"item"</span><span class="p">,</span> <span class="s2">"active"</span><span class="p">,</span> <span class="nx">connectors</span><span class="p">);</span>
 <span class="c1">// =&gt; "menu__item"</span>
 
 <span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"menu"</span><span class="p">,</span> <span class="s2">"item"</span><span class="p">,</span> <span class="s2">"active"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">connectors</span><span class="p">);</span>
@@ -112,7 +112,7 @@ for the modifier and an array of BEM connectors, e.g. “__”,
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">connectors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"__"</span><span class="p">,</span> <span class="s2">"--"</span><span class="p">,</span> <span class="s2">"-"</span><span class="p">];</span>
 
-<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"button"</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s2">"active"</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">connectors</span><span class="p">);</span>
+<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"button"</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s2">"active"</span><span class="p">,</span> <span class="nx">connectors</span><span class="p">);</span>
 <span class="c1">// =&gt; "button"</span>
 
 <span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"button"</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s2">"active"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">connectors</span><span class="p">);</span>
