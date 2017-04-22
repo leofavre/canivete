@@ -15,7 +15,7 @@ Adds a CSS class to one or many DOM elements.
 | Name | Type | Description |
 | --- | --- | --- |
 | `domEls` | HTMLElement<br>HTMLCollection<br>NodeList<br>Array.&lt;HTMLElement&gt;<br>Set.&lt;HTMLElement&gt; | One or many DOM elements. |
-| `str` | String | The CSS class name. |
+| `str` | String | The CSS class. |
 
 #### Examples
 
@@ -122,7 +122,7 @@ Verifies if a DOM element has a CSS class.
 | Name | Type | Description |
 | --- | --- | --- |
 | `domEl` | HTMLElement | The DOM element. |
-| `str` | String | The CSS class name. |
+| `str` | String | The CSS class. |
 
 #### Return
 
@@ -141,6 +141,36 @@ console.log(hasClass(oneElement, "link"));
 
 console.log(hasClass(oneElement, "button"));
 // => false
+```
+
+<a name="removeClass"></a>
+### `removeClass(domEls, str)`
+
+Removes a CSS class from one or many DOM elements.
+
+#### Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `domEls` | HTMLElement<br>HTMLCollection<br>NodeList<br>Array.&lt;HTMLElement&gt;<br>Set.&lt;HTMLElement&gt; | One or many DOM elements. |
+| `str` | String | The CSS class. |
+
+#### Examples
+
+```javascript
+let oneElement = document.querySelector(".link.base");
+removeClass(oneElement, "link");
+
+console.log(oneElement.className);
+// => "base"
+```
+
+```javascript
+let manyElements = document.querySelectorAll(".link.base");
+removeClass(manyElements, "link");
+
+console.log(manyElements[0].className);
+// => "base"
 ```
 
 ## Promise

@@ -2,6 +2,7 @@
   * [addClass](#addClass)
   * [clippingInfo](#clippingInfo)
   * [hasClass](#hasClass)
+  * [removeClass](#removeClass)
 
 * **[Promise](#promise)**
   * [eventAsPromise](#eventAsPromise)
