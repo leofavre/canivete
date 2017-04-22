@@ -24,15 +24,13 @@ function receives a block, an element, a modifier, a value
 for the modifier and an array of BEM delimiters, e.g. “__”,
 “–” and “-”.</p>
 
-<p>Note that if the modifier value is neither <code class="highlighter-rouge">true</code> or a
-string, it will not be added to the class.</p>
-
 <h4 id="parameters">Parameters</h4>
 
 <table>
   <thead>
     <tr>
       <th>Name</th>
+      <th>Default</th>
       <th>Type</th>
       <th>Description</th>
     </tr>
@@ -40,26 +38,31 @@ string, it will not be added to the class.</p>
   <tbody>
     <tr>
       <td><code class="highlighter-rouge">block</code></td>
+      <td> </td>
       <td>String</td>
       <td>The BEM block.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">element</code></td>
+      <td> </td>
       <td>String</td>
       <td>The BEM element. <strong>optional</strong></td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">modifier</code></td>
+      <td><code class="highlighter-rouge">true</code></td>
       <td>String</td>
       <td>The BEM modifier. <strong>optional</strong></td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">value</code></td>
+      <td> </td>
       <td>String<br />Number<br />Boolean</td>
       <td>The BEM modifier value. <strong>optional</strong></td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">delimiters</code></td>
+      <td> </td>
       <td>Array.&lt;string&gt;</td>
       <td>The BEM delimiters, e.g. “__”, “–” and “-”.</td>
     </tr>
@@ -94,7 +97,7 @@ string, it will not be added to the class.</p>
 <span class="c1">// =&gt; "menu__item"</span>
 
 <span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"menu"</span><span class="p">,</span> <span class="s2">"item"</span><span class="p">,</span> <span class="s2">"active"</span><span class="p">,</span> <span class="nx">delimiters</span><span class="p">);</span>
-<span class="c1">// =&gt; "menu__item"</span>
+<span class="c1">// =&gt; "menu__item--active"</span>
 
 <span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"menu"</span><span class="p">,</span> <span class="s2">"item"</span><span class="p">,</span> <span class="s2">"active"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">delimiters</span><span class="p">);</span>
 <span class="c1">// =&gt; "menu__item"</span>
@@ -113,7 +116,7 @@ string, it will not be added to the class.</p>
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">delimiters</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"__"</span><span class="p">,</span> <span class="s2">"--"</span><span class="p">,</span> <span class="s2">"-"</span><span class="p">];</span>
 
 <span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"button"</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s2">"active"</span><span class="p">,</span> <span class="nx">delimiters</span><span class="p">);</span>
-<span class="c1">// =&gt; "button"</span>
+<span class="c1">// =&gt; "button--active"</span>
 
 <span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"button"</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s2">"active"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">delimiters</span><span class="p">);</span>
 <span class="c1">// =&gt; "button"</span>

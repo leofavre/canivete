@@ -14,18 +14,15 @@ function receives a block, an element, a modifier, a value
 for the modifier and an array of BEM delimiters, e.g. “__”,
 “--” and “-”.
 
-Note that if the modifier value is neither `true` or a
-string, it will not be added to the class.
-
 #### Parameters
 
-| Name | Type | Description |
-| --- | --- | --- |
-| `block` | String | The BEM block. |
-| `element` | String | The BEM element. **optional** |
-| `modifier` | String | The BEM modifier. **optional** |
-| `value` | String<br>Number<br>Boolean | The BEM modifier value. **optional** |
-| `delimiters` | Array.&lt;string&gt; | The BEM delimiters, e.g. “__”, “--” and “-”. |
+| Name | Default | Type | Description |
+| --- | --- | --- | --- |
+| `block` |  | String | The BEM block. |
+| `element` |  | String | The BEM element. **optional** |
+| `modifier` | `true` | String | The BEM modifier. **optional** |
+| `value` |  | String<br>Number<br>Boolean | The BEM modifier value. **optional** |
+| `delimiters` |  | Array.&lt;string&gt; | The BEM delimiters, e.g. “__”, “--” and “-”. |
 
 #### Return
 
@@ -45,7 +42,7 @@ formatBemClass("menu", "item", delimiters);
 // => "menu__item"
 
 formatBemClass("menu", "item", "active", delimiters);
-// => "menu__item"
+// => "menu__item--active"
 
 formatBemClass("menu", "item", "active", false, delimiters);
 // => "menu__item"
@@ -64,7 +61,7 @@ formatBemClass("menu", "item", "level", "42", delimiters);
 let delimiters = ["__", "--", "-"];
 
 formatBemClass("button", null, "active", delimiters);
-// => "button"
+// => "button--active"
 
 formatBemClass("button", null, "active", false, delimiters);
 // => "button"
