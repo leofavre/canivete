@@ -1,4 +1,4 @@
-import _addClassBase from "./internal/dom/_addClassBase";
+import _changeClassWithMethod from "./internal/dom/_changeClassWithMethod";
 import _domElementsAsArray from "./internal/dom/_domElementsAsArray";
 
 /**
@@ -23,7 +23,7 @@ import _domElementsAsArray from "./internal/dom/_domElementsAsArray";
  * // => "link"
  */
 const addClass = (domEls, str) => {
-	_domElementsAsArray(domEls).forEach(domEl => _addClassBase(domEl, str));
+	_domElementsAsArray(domEls).forEach(domEl => _changeClassWithMethod(domEl, str, "add"));
 };
 
 export default addClass;
