@@ -13,22 +13,22 @@ import _formatBemModifier from "./internal/bem/_formatBemModifier";
  * 
  * @category BEM
  * @param  {string} block The BEM block.
- * @param  {string} element The BEM element.
- * @param  {string} modifier The BEM modifier.
- * @param  {(string|boolean)} value The BEM modifier value.
+ * @param  {string} [element] The BEM element.
+ * @param  {string} [modifier] The BEM modifier.
+ * @param  {(string|boolean)} [value] The BEM modifier value.
  * @param  {Array.<string>} connectors The BEM connectors.
  * @return {string} The BEM CSS class.
  *
  * @example
  * let connectors = ["__", "--", "-"];
  * 
- * formatBemClass("menu", null, null, null, connectors);
+ * formatBemClass("menu", connectors);
  * // => "menu"
  * 
- * formatBemClass("menu", "item", null, null, connectors);
+ * formatBemClass("menu", "item", connectors);
  * // => "menu__item"
  * 
- * formatBemClass("menu", "item", "active", null, connectors);
+ * formatBemClass("menu", "item", "active", connectors);
  * // => "menu__item"
  * 
  * formatBemClass("menu", "item", "active", false, connectors);
@@ -46,7 +46,7 @@ import _formatBemModifier from "./internal/bem/_formatBemModifier";
  * @example
  * let connectors = ["__", "--", "-"];
  * 
- * formatBemClass("button", null, "active", null, connectors);
+ * formatBemClass("button", null, "active", connectors);
  * // => "button"
  * 
  * formatBemClass("button", null, "active", false, connectors);
@@ -61,7 +61,23 @@ import _formatBemModifier from "./internal/bem/_formatBemModifier";
  * formatBemClass("button", null, "level", "42", connectors);
  * // => "button--level-42"
  */
-function formatBemClass(block, element, modifier, value, connectors) {
+function formatBemClass(...args) {
+	let block = args[0];
+	let connectors = args[args.length - 1];
+	let element, modifier, value;
+
+	if (args.length > 2) {
+		element = args[1];
+	}
+
+	if (args.length > 3) {
+		modifier = args[2];
+	}
+
+	if (args.length > 4) {
+		value = args[3];
+	}
+
 	let radical = _formatBemRadical(block, element, connectors);
 	let classModifier = _formatBemModifier(modifier, value, connectors);
 	return `${radical}${classModifier}`;
