@@ -8,8 +8,8 @@ import _formatBemModifier from "./internal/bem/_formatBemModifier";
  * for the modifier and an array of BEM connectors, e.g. “__”,
  * “--” and “-”.
  *
- * Note that if a value is not passed to the modifier, either
- * `true` or a string, it will not be added to the class.
+ * Note that if the modifier value is neither `true` or a
+ * string, it will not be added to the class.
  * 
  * @category BEM
  * @param  {string} block The BEM block.
@@ -42,21 +42,24 @@ import _formatBemModifier from "./internal/bem/_formatBemModifier";
  * 
  * formatBemClass("menu", "item", "level", "42", connectors);
  * // => "menu__item--level-42"
+ *
+ * @example
+ * let connectors = ["__", "--", "-"];
  * 
- * formatBemClass("menu", null, "active", null, connectors);
- * // => "menu"
+ * formatBemClass("button", null, "active", null, connectors);
+ * // => "button"
  * 
- * formatBemClass("menu", null, "active", false, connectors);
- * // => "menu"
+ * formatBemClass("button", null, "active", false, connectors);
+ * // => "button"
  * 
- * formatBemClass("menu", null, "active", true, connectors);
- * // => "menu--active"
+ * formatBemClass("button", null, "active", true, connectors);
+ * // => "button--active"
  * 
- * formatBemClass("menu", null, "level", 42, connectors);
- * // => "menu--level-42"
+ * formatBemClass("button", null, "level", 42, connectors);
+ * // => "button--level-42"
  * 
- * formatBemClass("menu", null, "level", "42", connectors);
- * // => "menu--level-42"
+ * formatBemClass("button", null, "level", "42", connectors);
+ * // => "button--level-42"
  */
 function formatBemClass(block, element, modifier, value, connectors) {
 	let radical = _formatBemRadical(block, element, connectors);

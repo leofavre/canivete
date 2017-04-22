@@ -83,7 +83,7 @@ for the modifier and an array of BEM connectors, e.g. “__”,
   </tbody>
 </table>
 
-<h4 id="example">Example</h4>
+<h4 id="examples">Examples</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">connectors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"__"</span><span class="p">,</span> <span class="s2">"--"</span><span class="p">,</span> <span class="s2">"-"</span><span class="p">];</span>
 
@@ -107,21 +107,25 @@ for the modifier and an array of BEM connectors, e.g. “__”,
 
 <span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"menu"</span><span class="p">,</span> <span class="s2">"item"</span><span class="p">,</span> <span class="s2">"level"</span><span class="p">,</span> <span class="s2">"42"</span><span class="p">,</span> <span class="nx">connectors</span><span class="p">);</span>
 <span class="c1">// =&gt; "menu__item--level-42"</span>
+</code></pre>
+</div>
 
-<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"menu"</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s2">"active"</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">connectors</span><span class="p">);</span>
-<span class="c1">// =&gt; "menu"</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">connectors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"__"</span><span class="p">,</span> <span class="s2">"--"</span><span class="p">,</span> <span class="s2">"-"</span><span class="p">];</span>
 
-<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"menu"</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s2">"active"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">connectors</span><span class="p">);</span>
-<span class="c1">// =&gt; "menu"</span>
+<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"button"</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s2">"active"</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">connectors</span><span class="p">);</span>
+<span class="c1">// =&gt; "button"</span>
 
-<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"menu"</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s2">"active"</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">connectors</span><span class="p">);</span>
-<span class="c1">// =&gt; "menu--active"</span>
+<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"button"</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s2">"active"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">connectors</span><span class="p">);</span>
+<span class="c1">// =&gt; "button"</span>
 
-<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"menu"</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s2">"level"</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="nx">connectors</span><span class="p">);</span>
-<span class="c1">// =&gt; "menu--level-42"</span>
+<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"button"</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s2">"active"</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">connectors</span><span class="p">);</span>
+<span class="c1">// =&gt; "button--active"</span>
 
-<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"menu"</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s2">"level"</span><span class="p">,</span> <span class="s2">"42"</span><span class="p">,</span> <span class="nx">connectors</span><span class="p">);</span>
-<span class="c1">// =&gt; "menu--level-42"</span>
+<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"button"</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s2">"level"</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="nx">connectors</span><span class="p">);</span>
+<span class="c1">// =&gt; "button--level-42"</span>
+
+<span class="nx">formatBemClass</span><span class="p">(</span><span class="s2">"button"</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s2">"level"</span><span class="p">,</span> <span class="s2">"42"</span><span class="p">,</span> <span class="nx">connectors</span><span class="p">);</span>
+<span class="c1">// =&gt; "button--level-42"</span>
 </code></pre>
 </div>
 
@@ -156,7 +160,7 @@ for the modifier and an array of BEM connectors, e.g. “__”,
   </tbody>
 </table>
 
-<h4 id="examples">Examples</h4>
+<h4 id="examples-1">Examples</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">oneElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"a"</span><span class="p">);</span>
 <span class="nx">addClass</span><span class="p">(</span><span class="nx">oneElement</span><span class="p">,</span> <span class="s2">"link"</span><span class="p">);</span>
@@ -317,7 +321,7 @@ containing numeric values for “top”, “bottom”,
   </tbody>
 </table>
 
-<h4 id="example-1">Example</h4>
+<h4 id="example">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">domEl</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">);</span>
 
@@ -394,7 +398,7 @@ containing numeric values for “top”, “bottom”,
   </tbody>
 </table>
 
-<h4 id="example-2">Example</h4>
+<h4 id="example-1">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">oneElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"a"</span><span class="p">);</span>
 <span class="nx">oneElement</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s2">"link reference"</span><span class="p">;</span>
@@ -436,7 +440,7 @@ containing numeric values for “top”, “bottom”,
   </tbody>
 </table>
 
-<h4 id="examples-1">Examples</h4>
+<h4 id="examples-2">Examples</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">oneElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">".link.base"</span><span class="p">);</span>
 <span class="nx">removeClass</span><span class="p">(</span><span class="nx">oneElement</span><span class="p">,</span> <span class="s2">"link"</span><span class="p">);</span>
@@ -523,7 +527,7 @@ parameters are not a DOM element and a string.</p>
   </tbody>
 </table>
 
-<h4 id="examples-2">Examples</h4>
+<h4 id="examples-3">Examples</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">checkbox</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"input"</span><span class="p">);</span>
 <span class="nx">checkbox</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s2">"checkbox"</span><span class="p">;</span>
@@ -599,7 +603,7 @@ internal <code class="highlighter-rouge">setTimeout()</code>.</p>
   </tbody>
 </table>
 
-<h4 id="example-3">Example</h4>
+<h4 id="example-2">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="s2">"waiting"</span><span class="p">)</span>
 	<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">waitInPromise</span><span class="p">(</span><span class="mi">500</span><span class="p">))</span>
@@ -638,7 +642,7 @@ using <code class="highlighter-rouge">toAverage()</code> can lead to unexpected 
   </tbody>
 </table>
 
-<h4 id="example-4">Example</h4>
+<h4 id="example-3">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">].</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toAverage</span><span class="p">());</span>
 <span class="c1">// =&gt; 6</span>
@@ -694,7 +698,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="example-5">Example</h4>
+<h4 id="example-4">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
 	<span class="na">city</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
@@ -781,7 +785,7 @@ using <code class="highlighter-rouge">toClosest()</code> can lead to unexpected 
   </tbody>
 </table>
 
-<h4 id="example-6">Example</h4>
+<h4 id="example-5">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">].</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toClosest</span><span class="p">(</span><span class="mi">6</span><span class="p">));</span>
 <span class="c1">// =&gt; 5</span>
@@ -846,7 +850,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="example-7">Example</h4>
+<h4 id="example-6">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
 	<span class="na">city</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
@@ -931,7 +935,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="example-8">Example</h4>
+<h4 id="example-7">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
 	<span class="na">city</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
@@ -1016,7 +1020,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="example-9">Example</h4>
+<h4 id="example-8">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
 	<span class="na">city</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
@@ -1078,7 +1082,7 @@ using <code class="highlighter-rouge">toSum()</code> can lead to unexpected resu
   </tbody>
 </table>
 
-<h4 id="example-10">Example</h4>
+<h4 id="example-9">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">].</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toSum</span><span class="p">());</span>
 <span class="c1">// =&gt; 24</span>
@@ -1138,7 +1142,7 @@ automatically converted to strings.</p>
   </tbody>
 </table>
 
-<h4 id="example-11">Example</h4>
+<h4 id="example-10">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">afterFirst</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
 <span class="c1">// =&gt; "lepiped"</span>
@@ -1196,7 +1200,7 @@ automatically converted to strings.</p>
   </tbody>
 </table>
 
-<h4 id="example-12">Example</h4>
+<h4 id="example-11">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">afterLast</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
 <span class="c1">// =&gt; "piped"</span>
@@ -1254,7 +1258,7 @@ automatically converted to strings.</p>
   </tbody>
 </table>
 
-<h4 id="example-13">Example</h4>
+<h4 id="example-12">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">beforeFirst</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
 <span class="c1">// =&gt; "paral"</span>
@@ -1312,7 +1316,7 @@ automatically converted to strings.</p>
   </tbody>
 </table>
 
-<h4 id="example-14">Example</h4>
+<h4 id="example-13">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">beforeLast</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
 <span class="c1">// =&gt; "paralle"</span>

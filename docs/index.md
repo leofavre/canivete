@@ -33,7 +33,7 @@ Note that if a value is not passed to the modifier, either
 | --- | --- |
 | String | The BEM CSS class. |
 
-#### Example
+#### Examples
 
 ```javascript
 let connectors = ["__", "--", "-"];
@@ -58,21 +58,25 @@ formatBemClass("menu", "item", "level", 42, connectors);
 
 formatBemClass("menu", "item", "level", "42", connectors);
 // => "menu__item--level-42"
+```
 
-formatBemClass("menu", null, "active", null, connectors);
-// => "menu"
+```javascript
+let connectors = ["__", "--", "-"];
 
-formatBemClass("menu", null, "active", false, connectors);
-// => "menu"
+formatBemClass("button", null, "active", null, connectors);
+// => "button"
 
-formatBemClass("menu", null, "active", true, connectors);
-// => "menu--active"
+formatBemClass("button", null, "active", false, connectors);
+// => "button"
 
-formatBemClass("menu", null, "level", 42, connectors);
-// => "menu--level-42"
+formatBemClass("button", null, "active", true, connectors);
+// => "button--active"
 
-formatBemClass("menu", null, "level", "42", connectors);
-// => "menu--level-42"
+formatBemClass("button", null, "level", 42, connectors);
+// => "button--level-42"
+
+formatBemClass("button", null, "level", "42", connectors);
+// => "button--level-42"
 ```
 
 ## DOM
