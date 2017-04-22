@@ -8,27 +8,27 @@ import _formatBemModifier from "./internal/bem/_formatBemModifier";
  * for the modifier and an array of BEM connectors, e.g. “__”,
  * “--” and “-”.
  *
- * Note that if a value is not passed to the modifier, either
- * `true` or a string, it will not be added to the class.
+ * Note that if the modifier value is neither `true` or a
+ * string, it will not be added to the class.
  * 
  * @category BEM
  * @param  {string} block The BEM block.
- * @param  {string} element The BEM element.
- * @param  {string} modifier The BEM modifier.
- * @param  {(string|boolean)} value The BEM modifier value.
- * @param  {Array.<string>} connectors The BEM connectors.
+ * @param  {string} [element] The BEM element.
+ * @param  {string} [modifier] The BEM modifier.
+ * @param  {(string|boolean)} [value] The BEM modifier value.
+ * @param  {Array.<string>} connectors The BEM connectors, e.g. “__”, “--” and “-”.
  * @return {string} The BEM CSS class.
  *
  * @example
  * let connectors = ["__", "--", "-"];
  * 
- * formatBemClass("menu", null, null, null, connectors);
+ * formatBemClass("menu", connectors);
  * // => "menu"
  * 
- * formatBemClass("menu", "item", null, null, connectors);
+ * formatBemClass("menu", "item", connectors);
  * // => "menu__item"
  * 
- * formatBemClass("menu", "item", "active", null, connectors);
+ * formatBemClass("menu", "item", "active", connectors);
  * // => "menu__item"
  * 
  * formatBemClass("menu", "item", "active", false, connectors);
@@ -42,23 +42,42 @@ import _formatBemModifier from "./internal/bem/_formatBemModifier";
  * 
  * formatBemClass("menu", "item", "level", "42", connectors);
  * // => "menu__item--level-42"
+ *
+ * @example
+ * let connectors = ["__", "--", "-"];
  * 
- * formatBemClass("menu", null, "active", null, connectors);
- * // => "menu"
+ * formatBemClass("button", null, "active", connectors);
+ * // => "button"
  * 
- * formatBemClass("menu", null, "active", false, connectors);
- * // => "menu"
+ * formatBemClass("button", null, "active", false, connectors);
+ * // => "button"
  * 
- * formatBemClass("menu", null, "active", true, connectors);
- * // => "menu--active"
+ * formatBemClass("button", null, "active", true, connectors);
+ * // => "button--active"
  * 
- * formatBemClass("menu", null, "level", 42, connectors);
- * // => "menu--level-42"
+ * formatBemClass("button", null, "level", 42, connectors);
+ * // => "button--level-42"
  * 
- * formatBemClass("menu", null, "level", "42", connectors);
- * // => "menu--level-42"
+ * formatBemClass("button", null, "level", "42", connectors);
+ * // => "button--level-42"
  */
-function formatBemClass(block, element, modifier, value, connectors) {
+function formatBemClass(...args) {
+	let block = args[0];
+	let connectors = args[args.length - 1];
+	let element, modifier, value;
+
+	if (args.length > 2) {
+		element = args[1];
+	}
+
+	if (args.length > 3) {
+		modifier = args[2];
+	}
+
+	if (args.length > 4) {
+		value = args[3];
+	}
+
 	let radical = _formatBemRadical(block, element, connectors);
 	let classModifier = _formatBemModifier(modifier, value, connectors);
 	return `${radical}${classModifier}`;
