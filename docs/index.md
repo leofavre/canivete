@@ -229,7 +229,7 @@ eventAsPromise(image, "load", image => image.complete)
 	.then(domEl => console.log(domEl.src));
 
 // => "https://www.w3.org/Icons/w3c_home"
-// shown when the image is loaded or as soon as eventAsPromise is called, if the image has already been loaded.
+// shown when the image loads or as soon as eventAsPromise is called, if the image has already been loaded.
 ```
 
 <a name="waitInPromise"></a>
