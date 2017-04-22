@@ -1,19 +1,19 @@
 import addClass from "../../addClass";
 import removeClass from "../../removeClass";
-import removeClassesStartingWithButNot from "../../removeClassesStartingWithButNot";
-import formatBemClassFromRadical from "../../formatBemClassFromRadical";
+import _removeClassesBeginningWithButNot from "./_removeClassesBeginningWithButNot";
+import _formatBemClassFromRadical from "./_formatBemClassFromRadical";
 
 function _parseModifierProp(modifierObj, domNode, radical, delimiterArr) {
 	return function(modifier) {
 		let value = modifierObj[modifier],
-			removedBemClass = formatBemClassFromRadical(radical, modifier, true, delimiterArr),
-			addedBemClass = formatBemClassFromRadical(radical, modifier, value, delimiterArr);
+			removedBemClass = _formatBemClassFromRadical(radical, modifier, true, delimiterArr),
+			addedBemClass = _formatBemClassFromRadical(radical, modifier, value, delimiterArr);
 
 		if (value === false) {
 			removeClass(domNode, removedBemClass);
 		}
 		else if (value !== true) {
-			removeClassesStartingWithButNot(domNode, removedBemClass);
+			_removeClassesBeginningWithButNot(domNode, removedBemClass);
 		}
 
 		if (value !== false) {
