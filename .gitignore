@@ -10,3 +10,5 @@ docs/.gitignore
 .eslint
 .jsbeautifyrc
 .DS_Store
+*.sublime-project
+*.sublime-workspace
