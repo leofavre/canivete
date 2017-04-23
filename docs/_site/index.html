@@ -1222,6 +1222,39 @@ using <code class="highlighter-rouge">toSum()</code> can lead to unexpected resu
 </code></pre>
 </div>
 
+<h2 id="sort">Sort</h2>
+
+<p><a name="byAlphabeticalOrder"></a></p>
+<h3 id="byalphabeticalorder"><code class="highlighter-rouge">byAlphabeticalOrder()</code></h3>
+
+<p>When used inside <code class="highlighter-rouge">Array.prototype.sort()</code>, sorts
+the array in ascending alphabetical order.</p>
+
+<h4 id="return-13">Return</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Array</td>
+      <td>The array in ascending alphabetical order.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="example-11">Example</h4>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Athos"</span><span class="p">,</span> <span class="s2">"Porthos"</span><span class="p">,</span> <span class="s2">"Aramis"</span><span class="p">];</span>
+<span class="nx">names</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="nx">byAlphabeticalOrder</span><span class="p">());</span>
+<span class="c1">// =&gt; ["Aramis", "Athos", "Porthos"]</span>
+</code></pre>
+</div>
+
 <h2 id="string">String</h2>
 
 <p><a name="afterFirst"></a></p>
@@ -1232,59 +1265,6 @@ the first occurrence</strong> of the delimiter in a base string.
 If the delimiter is not found, the function returns <code class="highlighter-rouge">undefined</code>.</p>
 
 <h4 id="parameters-9">Parameters</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">str</code></td>
-      <td>String</td>
-      <td>The base string.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">delimiter</code></td>
-      <td>String</td>
-      <td>The delimiter string.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="return-13">Return</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>String</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="example-11">Example</h4>
-
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">afterFirst</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
-<span class="c1">// =&gt; "lepiped"</span>
-</code></pre>
-</div>
-
-<p><a name="afterLast"></a></p>
-<h3 id="afterlaststr-delimiter"><code class="highlighter-rouge">afterLast(str, delimiter)</code></h3>
-
-<p>Returns the string formed by the characters <strong>after
-the last occurrence</strong> of the delimiter in a base string.
-If the delimiter is not found, the function returns <code class="highlighter-rouge">undefined</code>.</p>
-
-<h4 id="parameters-10">Parameters</h4>
 
 <table>
   <thead>
@@ -1325,19 +1305,19 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
 
 <h4 id="example-12">Example</h4>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">afterLast</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
-<span class="c1">// =&gt; "piped"</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">afterFirst</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
+<span class="c1">// =&gt; "lepiped"</span>
 </code></pre>
 </div>
 
-<p><a name="beforeFirst"></a></p>
-<h3 id="beforefirststr-delimiter"><code class="highlighter-rouge">beforeFirst(str, delimiter)</code></h3>
+<p><a name="afterLast"></a></p>
+<h3 id="afterlaststr-delimiter"><code class="highlighter-rouge">afterLast(str, delimiter)</code></h3>
 
-<p>Returns the string formed by the characters <strong>before
-the first occurrence</strong> of the delimiter in a base string.
+<p>Returns the string formed by the characters <strong>after
+the last occurrence</strong> of the delimiter in a base string.
 If the delimiter is not found, the function returns <code class="highlighter-rouge">undefined</code>.</p>
 
-<h4 id="parameters-11">Parameters</h4>
+<h4 id="parameters-10">Parameters</h4>
 
 <table>
   <thead>
@@ -1378,19 +1358,19 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
 
 <h4 id="example-13">Example</h4>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">beforeFirst</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
-<span class="c1">// =&gt; "paral"</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">afterLast</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
+<span class="c1">// =&gt; "piped"</span>
 </code></pre>
 </div>
 
-<p><a name="beforeLast"></a></p>
-<h3 id="beforelaststr-delimiter"><code class="highlighter-rouge">beforeLast(str, delimiter)</code></h3>
+<p><a name="beforeFirst"></a></p>
+<h3 id="beforefirststr-delimiter"><code class="highlighter-rouge">beforeFirst(str, delimiter)</code></h3>
 
 <p>Returns the string formed by the characters <strong>before
-the last occurrence</strong> of the delimiter in a base string.
+the first occurrence</strong> of the delimiter in a base string.
 If the delimiter is not found, the function returns <code class="highlighter-rouge">undefined</code>.</p>
 
-<h4 id="parameters-12">Parameters</h4>
+<h4 id="parameters-11">Parameters</h4>
 
 <table>
   <thead>
@@ -1430,6 +1410,59 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
 </table>
 
 <h4 id="example-14">Example</h4>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">beforeFirst</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
+<span class="c1">// =&gt; "paral"</span>
+</code></pre>
+</div>
+
+<p><a name="beforeLast"></a></p>
+<h3 id="beforelaststr-delimiter"><code class="highlighter-rouge">beforeLast(str, delimiter)</code></h3>
+
+<p>Returns the string formed by the characters <strong>before
+the last occurrence</strong> of the delimiter in a base string.
+If the delimiter is not found, the function returns <code class="highlighter-rouge">undefined</code>.</p>
+
+<h4 id="parameters-12">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">str</code></td>
+      <td>String</td>
+      <td>The base string.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">delimiter</code></td>
+      <td>String</td>
+      <td>The delimiter string.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="return-17">Return</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>String</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="example-15">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">beforeLast</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
 <span class="c1">// =&gt; "paralle"</span>
@@ -1478,6 +1511,11 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
       <li><a href="#toLargestProp">toLargestProp</a></li>
       <li><a href="#toSmallestProp">toSmallestProp</a></li>
       <li><a href="#toSum">toSum</a></li>
+    </ul>
+  </li>
+  <li><strong><a href="#sort">Sort</a></strong>
+    <ul>
+      <li><a href="#byAlphabeticalOrder">byAlphabeticalOrder</a></li>
     </ul>
   </li>
   <li><strong><a href="#string">String</a></strong>

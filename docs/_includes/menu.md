@@ -25,6 +25,9 @@
   * [toSmallestProp](#toSmallestProp)
   * [toSum](#toSum)
 
+* **[Sort](#sort)**
+  * [byAlphabeticalOrder](#byAlphabeticalOrder)
+
 * **[String](#string)**
   * [afterFirst](#afterFirst)
   * [afterLast](#afterLast)

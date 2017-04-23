@@ -735,6 +735,28 @@ using `toSum()` can lead to unexpected results.
 // => 24
 ```
 
+## Sort
+
+<a name="byAlphabeticalOrder"></a>
+### `byAlphabeticalOrder()`
+
+When used inside `Array.prototype.sort()`, sorts
+the array in ascending alphabetical order.
+
+#### Return
+
+| Type | Description |
+| --- | --- |
+| Array | The array in ascending alphabetical order. |
+
+#### Example
+
+```javascript
+let names = ["Athos", "Porthos", "Aramis"];
+names.sort(byAlphabeticalOrder());
+// => ["Aramis", "Athos", "Porthos"]
+```
+
 ## String
 
 <a name="afterFirst"></a>
