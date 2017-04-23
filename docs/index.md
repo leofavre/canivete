@@ -416,7 +416,7 @@ the average of the values in an array.
 
 Note that reducing arrays with non-numeric values
 using `toAverage()` can lead to unexpected results.
-Also, note that parentheses can be ommited.
+Also, note that the parentheses can be ommited.
 
 #### Return
 
@@ -725,6 +725,7 @@ the sum of the values in an array.
 
 Note that reducing arrays with non-numeric values
 using `toSum()` can lead to unexpected results.
+Also, note that the parentheses can be ommited.
 
 #### Return
 
@@ -736,6 +737,9 @@ using `toSum()` can lead to unexpected results.
 
 ```javascript
 [3, 5, 7, 9].reduce(toSum());
+// => 24
+
+[3, 5, 7, 9].reduce(toSum);
 // => 24
 ```
 

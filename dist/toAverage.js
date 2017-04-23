@@ -4,7 +4,7 @@
  *
  * Note that reducing arrays with non-numeric values
  * using `toAverage()` can lead to unexpected results.
- * Also, note that parentheses can be ommited.
+ * Also, note that the parentheses can be ommited.
  *
  * @category Reduce
  *

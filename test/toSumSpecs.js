@@ -10,4 +10,14 @@ describe("toSum", function() {
 			[-10, 10].reduce(toSum())
 		).toBe(0);
 	});
+
+	it("Should work without parentheses", function() {
+		expect(
+			[3, 5, 7, 9].reduce(toSum)
+		).toBe(24);
+
+		expect(
+			[-10, 10].reduce(toSum)
+		).toBe(0);
+	});
 });

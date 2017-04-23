@@ -757,7 +757,7 @@ the average of the values in an array.</p>
 
 <p>Note that reducing arrays with non-numeric values
 using <code class="highlighter-rouge">toAverage()</code> can lead to unexpected results.
-Also, note that parentheses can be ommited.</p>
+Also, note that the parentheses can be ommited.</p>
 
 <h4 id="return-6">Return</h4>
 
@@ -1200,7 +1200,8 @@ formed by objects with the same set of properties.</p>
 the sum of the values in an array.</p>
 
 <p>Note that reducing arrays with non-numeric values
-using <code class="highlighter-rouge">toSum()</code> can lead to unexpected results.</p>
+using <code class="highlighter-rouge">toSum()</code> can lead to unexpected results.
+Also, note that the parentheses can be ommited.</p>
 
 <h4 id="return-12">Return</h4>
 
@@ -1222,6 +1223,9 @@ using <code class="highlighter-rouge">toSum()</code> can lead to unexpected resu
 <h4 id="example-10">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">].</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toSum</span><span class="p">());</span>
+<span class="c1">// =&gt; 24</span>
+
+<span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">].</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toSum</span><span class="p">);</span>
 <span class="c1">// =&gt; 24</span>
 </code></pre>
 </div>
