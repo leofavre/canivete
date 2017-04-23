@@ -752,8 +752,8 @@ the array in ascending alphabetical order.
 #### Example
 
 ```javascript
-let names = ["Athos", "Porthos", "Aramis"];
-names.sort(byAlphabeticalOrder());
+let musqueteers = ["Athos", "Porthos", "Aramis"];
+musqueteers.sort(byAlphabeticalOrder());
 // => ["Aramis", "Athos", "Porthos"]
 ```
 
