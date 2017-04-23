@@ -26,7 +26,8 @@ html {
   font-weight: 700;
   font-style: normal; }
 html {
-  height: 100%; }
+  height: 100%;
+  font-size: 16px; }
 
 .page {
   -webkit-font-smoothing: antialiased;
@@ -58,56 +59,56 @@ html {
   flex: 1 1 auto; }
 
 .content {
-  padding: 0 24px 48px 48px;
+  padding: 0 1.5rem 3rem 3rem;
   overflow-x: hidden;
   overflow-y: auto;
-  line-height: 24px;
+  line-height: 1.5rem;
   -webkit-overflow-scrolling: touch;
   box-sizing: border-box;
-  flex-basis: calc(692px + ((100% - 692px) / 2));
+  flex-basis: calc(43.25rem + ((100% - 43.25rem) / 2));
   flex-grow: 0;
   flex-shrink: 1; }
   .content h2 {
     position: relative;
     top: 0;
-    left: -8px;
-    padding: 45px 0 0;
-    margin: 144px 0 51px;
-    font-size: 106px;
-    line-height: 72px;
+    left: -0.5rem;
+    padding: 2.8125rem 0 0;
+    margin: 9rem 0 3.1875rem;
+    font-size: 6.625rem;
+    line-height: 4.5rem;
     font-family: "Whitney Narrow A", "Whitney Narrow B", sans-serif;
     font-weight: 300; }
   .content h2:nth-child(1) {
     margin-top: 0; }
   .content h2 + h3,
   .content h2 + p + h3 {
-    margin-top: 48px; }
+    margin-top: 3rem; }
   .content h3 {
     position: relative;
     top: 0;
-    font-size: 32px;
-    line-height: 48px;
+    font-size: 2rem;
+    line-height: 3rem;
     background: rgba(129, 126, 121, 0.2);
-    margin: 192px -24px 48px -48px;
-    padding: 38px 24px 34px 48px; }
+    margin: 12rem -1.5rem 3rem -3rem;
+    padding: 2.375rem 1.5rem 2.125rem 3rem; }
   .content h3 > code {
     font-weight: 500; }
   .content h4 {
     position: relative;
-    top: 7px;
-    font-size: 17px;
+    top: 0.4375rem;
+    font-size: 1.0625rem;
     font-weight: 800;
-    line-height: 24px;
+    line-height: 1.5rem;
     letter-spacing: 0.045em;
-    margin: 48px 0 24px; }
+    margin: 3rem 0 1.5rem; }
   .content p {
     position: relative;
-    top: 8px;
-    font-size: 16px;
-    line-height: 24px;
-    margin: 24px 0 24px; }
+    top: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin: 1.5rem 0 1.5rem; }
   .content p > code {
-    padding: 1px 4px 1px 4px;
+    padding: 1px 0.25rem;
     background-color: rgba(129, 126, 121, 0.2); }
   .content p > strong {
     font-weight: 600; }
@@ -115,55 +116,61 @@ html {
     color: #000; }
   .content pre {
     white-space: pre-wrap;
-    margin: 0 0 -16px; }
+    margin: 0 0 -0.75rem; }
   .content pre > code {
     background-color: #272822;
     color: #f8f8f2;
-    margin: 24px -24px 48px -48px;
-    padding-top: 56px;
-    padding-bottom: 56px;
-    padding-left: 48px;
-    padding-right: 24px;
-    line-height: 24px; }
+    margin: 1.5rem -1.5rem 3rem -3rem;
+    padding-top: 3.5rem;
+    padding-bottom: 3.25rem;
+    padding-left: 3rem;
+    padding-right: 1.5rem;
+    line-height: 1.5rem; }
   .content code {
     font-family: "Fira Code", monospace;
     tab-size: 4;
-    line-height: 20px;
+    line-height: 1.25rem;
     font-weight: 500; }
   .content table {
     position: relative;
     width: 100%;
     border-collapse: collapse;
-    margin-top: -4px;
-    margin-bottom: 52px; }
-  .content tbody tr {
-    border-top: 1px solid rgba(129, 126, 121, 0.1); }
+    margin-top: -0.25rem;
+    margin-bottom: 3.25rem; }
+  .content tr {
+    position: relative; }
+  .content tbody tr:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: rgba(129, 126, 121, 0.1); }
   .content th {
     position: relative;
     text-align: left;
-    padding: 0 24px 0 0;
-    font-size: 9px;
+    padding: 0 1.5rem 0 0;
+    font-size: 0.5625rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-weight: 500; }
   .content td {
-    font-size: 14px;
+    font-size: 0.875rem;
     vertical-align: top;
-    padding: 11px 24px 12px 0; }
+    padding: 0.75rem 1.5rem 0.75rem 0; }
   .content td > strong {
     position: relative;
-    top: -2px;
-    font-size: 9px;
+    top: -0.125rem;
+    font-size: 0.5625rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-weight: 700;
-    line-height: 14px;
-    padding: 1px 3px;
+    line-height: 0.875rem;
+    padding: 1px 0.25rem;
     background: #000;
     color: #fff; }
   .content td > code {
     font-weight: 500;
-    padding: 1px 4px;
+    padding: 1px 0.25rem;
     background-color: rgba(129, 126, 121, 0.2); }
   .content td > em {
     font-style: normal; }
@@ -187,19 +194,19 @@ html {
     width: 20%; }
 
 .content__area {
-  max-width: 692px;
-  margin-bottom: 720px; }
+  max-width: 43.25rem;
+  margin-bottom: 45rem; }
 
 .menu {
   position: relative;
-  padding: 24px 48px;
+  padding: 1.5rem 3rem;
   height: auto;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
   box-sizing: border-box;
-  flex-basis: calc((100% - 692px) / 2);
+  flex-basis: calc((100% - 43.25rem) / 2);
   flex-grow: 0;
   flex-shrink: 1;
-  min-width: 230px;
+  min-width: 14.375rem;
   min-width: min-content;
   display: flex;
   flex-flow: row wrap;
@@ -210,25 +217,25 @@ html {
   z-index: 1; }
   .menu ul {
     position: relative;
-    top: 8px;
-    margin: 24px 0;
+    top: 0.5rem;
+    margin: 1.5rem 0;
     padding: 0; }
   .menu ul ul {
-    top: 0px; }
+    top: 0; }
   .menu li {
     position: relative;
-    top: -1px;
+    top: -0.0625rem;
     list-style: none;
-    line-height: 24px; }
+    line-height: 1.5rem; }
   .menu li strong {
-    font-size: 17px;
+    font-size: 1.0625rem;
     font-weight: 800;
-    line-height: 24px;
+    line-height: 1.5rem;
     letter-spacing: 0.045em; }
   .menu li li {
-    top: 2px;
+    top: 0.125rem;
     font-family: "Fira Code", monospace;
-    font-size: 14px; }
+    font-size: 0.875rem; }
   .menu a {
     display: block;
     color: #000;
