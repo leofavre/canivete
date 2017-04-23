@@ -49,11 +49,15 @@
 		background: rgba($grey, 0.2);
 		margin: ($grid * 8) ($grid * -1) ($grid * 2) ($grid * -2);
 		padding: (0.875rem + $grid) $grid (0.625rem + $grid) ($grid * 2);
+
+		@media only screen and (min-width: 1400px) {
+			padding-top: 42px;
+			padding-bottom: 39px;
+		}
 	}
 
 	h3 > code {
 		font-weight: 500;
-		// letter-spacing: -0.01em;
 	}
 
 	h4 {
@@ -64,10 +68,6 @@
 		line-height: $grid;
 		letter-spacing: 0.045em;
 		margin: ($grid * 2) 0 $grid;
-	}
-
-	h4 + table {
-		// margin-top: ($grid * -1);
 	}
 
 	h5 {
@@ -84,6 +84,10 @@
 		font-size: 1rem;
 		line-height: $grid;
 		margin: $grid 0 $grid;
+
+		@media only screen and (min-width: 1400px) {
+			top: calc(0.5rem - 1px);
+		}
 	}
 
 	p > code {
@@ -129,7 +133,6 @@
 
 	code {
 		font-family: "Fira Code", monospace;
-		// font-family: "Whitney SSm A", "Whitney SSm B", sans-serif;
 		tab-size: 4;
 		line-height: 1.25rem;
 		font-weight: 500;
@@ -141,11 +144,14 @@
 
 	table {
 		position: relative;
-		// top: 0.5rem;
 		width: 100%;
 		border-collapse: collapse;
 		margin-top: -0.25rem;
 		margin-bottom: 3.25rem;
+
+		@media only screen and (min-width: 1400px) {
+			top: -1px;
+		}
 	}
 
 	tr {
@@ -154,10 +160,6 @@
 
 	tbody tr {
 		border-top: 1px solid rgba($grey, 0.1);
-	}
-
-	tr:nth-child(even) {
-		// background: rgba($grey, 0.1);
 	}
 
 	th {
@@ -175,6 +177,11 @@
 		font-size: 0.875rem;
 		vertical-align: top;
 		padding: calc(#{$grid / 2} - 1px) $grid ($grid / 2) 0;
+
+		@media only screen and (min-width: 1400px) {
+			padding-top: 13px;
+			padding-bottom: 13px;
+		}
 	}
 
 	td > strong {
