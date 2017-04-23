@@ -17,8 +17,8 @@ import _getHorizontalAxisInfo from "./internal/clipping/_getHorizontalAxisInfo";
  * @property {boolean} isFullyVisible Fully visible inside the mask.
  * @property {boolean} isPartiallyVisible Alias for `isClipped`.
  * @property {boolean} isInvisible Alias for `isOff`.
- * @property {boolean} isAsVisibleAsPossible As visible as possible (child bigger than the mask).
- * @property {boolean} isNotAsVisibleAsPossible Not as visible as possible (child bigger than the mask).
+ * @property {boolean} isAsVisibleAsPossible As visible as possible (element bigger than mask).
+ * @property {boolean} isNotAsVisibleAsPossible Not as visible as possible (element bigger than mask).
  */
 
 /**

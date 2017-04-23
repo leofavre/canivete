@@ -179,8 +179,8 @@ containing numeric values for "top", "bottom",
 | `isFullyVisible` | Boolean | Fully visible inside the mask. |
 | `isPartiallyVisible` | Boolean | Alias for `isClipped`. |
 | `isInvisible` | Boolean | Alias for `isOff`. |
-| `isAsVisibleAsPossible` | Boolean | As visible as possible (child bigger than the mask). |
-| `isNotAsVisibleAsPossible` | Boolean | Not as visible as possible (child bigger than the mask). |
+| `isAsVisibleAsPossible` | Boolean | As visible as possible (element bigger than mask). |
+| `isNotAsVisibleAsPossible` | Boolean | Not as visible as possible (element bigger than mask). |
 
 #### Example
 
@@ -368,6 +368,42 @@ Promise.resolve("waiting")
 
 // => "waiting"
 // shown after 500ms.
+```
+
+## Random
+
+<a name="oneOutOf"></a>
+### `oneOutOf(num)`
+
+Returns `true` approximately one out of `num` times,
+randomly.
+
+#### Parameter
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `num` | Number | A number greater than zero. |
+
+#### Return
+
+| Type | Description |
+| --- | --- |
+| Boolean | Return `true` approximately one out of `num` times. |
+
+#### Example
+
+```javascript
+oneOutOf(2);
+// => true
+
+oneOutOf(2);
+// => false
+
+oneOutOf(2);
+// => false
+
+oneOutOf(2);
+// => true
 ```
 
 ## Reduce

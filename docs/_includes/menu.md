@@ -13,6 +13,9 @@
   * [eventAsPromise](#eventAsPromise)
   * [waitInPromise](#waitInPromise)
 
+* **[Random](#random)**
+  * [oneOutOf](#oneOutOf)
+
 * **[Reduce](#reduce)**
   * [toAverage](#toAverage)
   * [toAverageProp](#toAverageProp)
