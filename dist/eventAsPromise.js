@@ -17,6 +17,8 @@ import isElement from "../node_modules/lodash-es/isElement";
  * parameters are not a DOM element and a string.
  *
  * @category Promise
+ * @module  Promise
+ *
  * @param  {HTMLElement} domEl The DOM element.
  * @param  {string} evtName The event that will be listened for.
  * @param  {function} [happened = domEl => false] The verification function.

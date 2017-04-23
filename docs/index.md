@@ -22,7 +22,7 @@ for the modifier and an array of BEM delimiters, e.g. “__”,
 | `element` |  | String | The BEM element. **optional** |
 | `modifier` |  | String | The BEM modifier. **optional** |
 | `value` | `true` | String<br>Number<br>Boolean | The BEM modifier value. **optional** |
-| `delimiters` |  | Array.&lt;string&gt; | The BEM delimiters, e.g. ["__", "--", "-"]. |
+| `delimiters` |  | Array.&lt;string&gt; | The BEM delimiters. |
 
 #### Return
 
@@ -88,7 +88,7 @@ to the [BEM methodology](https://en.bem.info/methodology/).
 | --- | --- | --- |
 | `domEl` | HTMLElement | The modified DOM element. |
 | `bemObj` | Object | The object describing BEM class changes. |
-| `delimiters` | Array | The BEM delimiters, e.g. ["__", "--", "-"] |
+| `delimiters` | Array | The BEM delimiters. |
 
 <a name="modifyBemClassCompact"></a>
 ### `modifyBemClassCompact(domEl, bemObj, delimiters)`
@@ -102,7 +102,7 @@ to the [BEM methodology](https://en.bem.info/methodology/).
 | --- | --- | --- |
 | `domEl` | HTMLElement | The modified DOM element. |
 | `bemObj` | Object | The object describing BEM class changes. |
-| `delimiters` | Array | The BEM delimiters, e.g. ["__", "--", "-"] |
+| `delimiters` | Array | The BEM delimiters. |
 
 ## DOM
 

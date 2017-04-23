@@ -9,6 +9,8 @@
  * using `toClosest()` can lead to unexpected results.
  *
  * @category Reduce
+ * @module  Reduce
+ *
  * @param {number} num The base value.
  * @return {number} The value, from an array, closest to the base value.
  * @public

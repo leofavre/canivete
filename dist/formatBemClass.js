@@ -9,11 +9,13 @@ import _formatBemModifier from "./internal/bem/_formatBemModifier";
  * “--” and “-”.
  * 
  * @category BEM
+ * @module  BEM
+ *
  * @param  {string} block The BEM block.
  * @param  {string} [element] The BEM element.
  * @param  {string} [modifier] The BEM modifier.
  * @param  {(string|number|boolean)} [value = true] The BEM modifier value.
- * @param  {Array.<string>} delimiters The BEM delimiters, e.g. ["__", "--", "-"].
+ * @param  {Array.<string>} delimiters The BEM delimiters.
  * @return {string} The BEM CSS class.
  *
  * @example
