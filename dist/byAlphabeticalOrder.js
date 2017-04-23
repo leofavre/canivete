@@ -7,8 +7,8 @@
  * @return {Array} The array in ascending alphabetical order.
  *
  * @example
- * let names = ["Athos", "Porthos", "Aramis"];
- * names.sort(byAlphabeticalOrder());
+ * let musqueteers = ["Athos", "Porthos", "Aramis"];
+ * musqueteers.sort(byAlphabeticalOrder());
  * // => ["Aramis", "Athos", "Porthos"]
  */
 const byAlphabeticalOrder = () => (strA, strB) => (strA > strB) ? +1 : (strA < strB) ? -1 : 0;
