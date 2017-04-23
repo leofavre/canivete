@@ -42,7 +42,7 @@ const byAlphabeticalOrder = (strA, strB) => (strA > strB) ? +1 : (strA < strB) ?
 
 const removeNewslines = str => str; // str.replace(/(?:\r\n|\r|\n)/g, " ");
 
-const useJekyll = path => () => execAsPromise(`cd ${path} && bundle exec jekyll build`);
+const exportSiteUsingJekyll = path => () => execAsPromise(`cd ${path} && bundle exec jekyll build`);
 
 const capitalizeFirstLetter = str => str.charAt(0).toUpperCase() + str.slice(1);
 
@@ -54,13 +54,21 @@ const escapeHtmlTag = str => str.replace(/\</g, "&lt;").replace(/\>/g, "&gt;");
 
 // Functions for generating, parsing and exporting jsdoc to a single markdown file.
 
-const jsdocAsJson = (path, data, template = "./node_modules/jsdoc-json") => () => {
+const exportJsDocsAsJson = (path, data, template = "./node_modules/jsdoc-json") => () => {
 	return execAsPromise(`jsdoc ${path} -d ${data} -t ${template}`);
 };
 
 const readJsonFile = path => () => readJsonAsPromise(path);
 
-const processJsonFile = json => processDocs(json.docs) || [];
+const processJsonFile = json => {
+	let docs = processDocs(json.docs);
+	let typedefs = processTypeDefs(json.docs);
+
+	return {
+		docs,
+		typedefs
+	};
+};
 
 const writeFile = path => data => writeFileAsPromise(path, JSON.stringify(data));
 
@@ -70,15 +78,24 @@ const exportDocsUsingTemplate = (pathIn, pathOut, docName, template) => () => {
 
 const filterFunctions = docs => docs.filter(isFunction);
 
-const formatDocs = docs => docs.map(formatDoc);
+const formatFunctions = funcs => funcs.map(formatFunction);
 
-const formatDoc = doc => {
-	doc.description = formatDescription(doc.description);
-	doc.href = formatHref(doc.name);
-	doc.paramsTable = formatTable(doc.params);
-	doc.returnsTable = formatTable(doc.returns);
-	doc.signature = formatSignature(doc.name, doc.params);
-	return doc;
+const formatFunction = func => {
+	func.description = formatDescription(func.description);
+	func.href = formatHref(func.name);
+	func.paramsTable = formatTable(func.params);
+	func.returnsTable = formatTable(func.returns);
+	func.signature = formatSignature(func.name, func.params);
+	return func;
+};
+
+const filterTypeDefs = docs => docs.filter(isTypeDef);
+
+const formatTypeDefs = typedefs => typedefs.map(formatTypeDef);
+
+const formatTypeDef = typedef => {
+	typedef.propertiesTable = formatTable(typedef.properties);
+	return typedef;
 };
 
 const formatTable = params => {
@@ -136,7 +153,6 @@ const formatSignatureParams = params => {
 const formatParam = param => {
 	let preParam = param.optional ? "[" : "";
 	let postParam = param.optional ? "]" : "";
-	// let defaultValue = param.defaultvalue != null ? ` = ${param.defaultvalue}` : "";
 	let defaultValue = "";
 	return `${preParam}${param.name}${defaultValue}${postParam}`;
 };
@@ -162,30 +178,25 @@ const hasParamDefault = param => param.defaultvalue != null;
 
 const hasParamType = param => param.type != null && param.type.names != null && param.type.names.length > 0;
 
-const groupDocsByCategoryName = docs => groupBy(docs, byCategoryName);
+const groupFunctionsByCategory = funcs => groupBy(funcs, byCategory);
 
-const byCategoryName = doc => doc.tags.filter(tag => tag.title === "category")[0].value;
+const byCategory = funcs => funcs.tags.filter(tag => tag.title === "category")[0].value;
 
-const prepareDocs = groupedDocs => {
-	let categoryNames = Object.keys(groupedDocs);
+const sortCategories = funcs => {
+	let categories = Object.keys(funcs);
 
-	return categoryNames
+	return categories
 		.sort(byAlphabeticalOrder)
-		.map(prepareDoc(groupedDocs));
+		.map(includeFunctionsInCategories(funcs));
 };
 
-const prepareDoc = groupedDocs => categoryName => {
-	let categoryDoc = groupedDocs[categoryName];
-	return {
-		name: categoryName,
-		href: formatHref(categoryName),
-		items: categoryDoc
-	};
-};
+const includeFunctionsInCategories = funcs => category => {
+	let categoryFunctions = funcs[category];
 
-const wrapDocs = processedDocs => {
 	return {
-		docs: processedDocs
+		name: category,
+		href: formatHref(category),
+		items: categoryFunctions
 	};
 };
 
@@ -193,12 +204,18 @@ const isParamOptions = param => param.optional;
 
 const isFunction = docs => docs.kind === "function";
 
+const isTypeDef = docs => docs.kind === "typedef";
+
 const processDocs = flow([
 	filterFunctions,
-	formatDocs,
-	groupDocsByCategoryName,
-	prepareDocs,
-	wrapDocs
+	formatFunctions,
+	groupFunctionsByCategory,
+	sortCategories
+]);
+
+const processTypeDefs = flow([
+	filterTypeDefs,
+	formatTypeDefs
 ]);
 
 const processType = flow([
@@ -208,15 +225,15 @@ const processType = flow([
 
 Promise.resolve()
 	.then(createDir("./docs/temp")) // *
-	.then(jsdocAsJson("./dist", "./docs/temp/raw.json"))
+	.then(exportJsDocsAsJson("./dist", "./docs/temp/raw.json"))
 	.then(readJsonFile("./docs/temp/raw.json")) // *
 	.then(processJsonFile)
 	.then(writeFile("./docs/temp/processed.json"))
 	.then(exportDocsUsingTemplate("./docs/temp/processed.json", "./docs", "index", "./docs/_ejs/content.ejs"))
 	.then(exportDocsUsingTemplate("./docs/temp/processed.json", "./docs/_includes", "menu", "./docs/_ejs/menu.ejs"))
 	// .then(removeDir("./docs/temp")) // *
-	.then(useJekyll("./docs"))
+	.then(exportSiteUsingJekyll("./docs"))
 	.catch();
 
-// If I could stream jsdocAsJson into exportDocsUsingTemplate,
+// If I could stream exportJsDocsAsJson into exportDocsUsingTemplate,
 // steps marked with an '*' would be unnecessary.
