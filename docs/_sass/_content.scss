@@ -152,12 +152,8 @@
 		position: relative;
 	}
 
-	tbody tr:before {
-		content: "";
-		position: absolute;
-		width: 100%;
-		height: 1px;
-		background: rgba($grey, 0.1);
+	tbody tr {
+		border-top: 1px solid rgba($grey, 0.1);
 	}
 
 	tr:nth-child(even) {
@@ -178,7 +174,7 @@
 	td {
 		font-size: 0.875rem;
 		vertical-align: top;
-		padding: ($grid / 2) $grid ($grid / 2) 0;
+		padding: calc(#{$grid / 2} - 1px) $grid ($grid / 2) 0;
 	}
 
 	td > strong {

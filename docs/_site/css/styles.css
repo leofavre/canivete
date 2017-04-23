@@ -139,12 +139,8 @@ html {
     margin-bottom: 3.25rem; }
   .content tr {
     position: relative; }
-  .content tbody tr:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 1px;
-    background: rgba(129, 126, 121, 0.1); }
+  .content tbody tr {
+    border-top: 1px solid rgba(129, 126, 121, 0.1); }
   .content th {
     position: relative;
     text-align: left;
@@ -156,7 +152,7 @@ html {
   .content td {
     font-size: 0.875rem;
     vertical-align: top;
-    padding: 0.75rem 1.5rem 0.75rem 0; }
+    padding: calc(0.75rem - 1px) 1.5rem 0.75rem 0; }
   .content td > strong {
     position: relative;
     top: -0.125rem;
