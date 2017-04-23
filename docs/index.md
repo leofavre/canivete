@@ -139,8 +139,8 @@ console.log(manyElements[0].className);
 <a name="clippingInfo"></a>
 ### `clippingInfo(domEl, [maskDef])`
 
-Given a DOM element, returns an object with clipping
-and position information relative to a mask, defined
+Given a DOM element, returns an object with position
+and clipping information relative to a mask, defined
 by the second parameter, or to the viewport, if the
 second parameter is omitted.
 
@@ -148,26 +148,6 @@ The mask can be either a DOM element or an object
 containing numeric values for "top", "bottom",
 "left" and "right" properties, like a
 [DOMRect](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect).
-
-The returned object has the following properties:
-
-| Property | Type | Element relation to the mask |
-|---|---|---|
-| `isOffTop` | boolean | Above and off the mask. |
-| `isOffBottom` | boolean | Below and off the mask. |
-| `isOffLeft` | boolean | On the left and off the mask. |
-| `isOffRight` | boolean | On the right and off the mask. |
-| `isOff` | boolean | Off the mask. |
-| `isClippedTop` | boolean | Above and intersecting with the mask. |
-| `isClippedBottom` | boolean | Below and intersecting with the mask. |
-| `isClippedLeft` | boolean | On the left and intersecting with the mask. |
-| `isClippedRight` | boolean | On the right and intersecting with the mask. |
-| `isClipped` | boolean | Element intersects with the mask. |
-| `isFullyVisible` | boolean | Fully visible inside the mask. |
-| `isPartiallyVisible` | boolean | Alias for `isClipped`. |
-| `isInvisible` | boolean | Alias for `isOff`. |
-| `isAsVisibleAsPossible` | boolean | As visible as possible (element > mask). |
-| `isNotAsVisibleAsPossible` | boolean | Not as visible as possible (element > mask). |
 
 #### Parameters
 
@@ -180,7 +160,27 @@ The returned object has the following properties:
 
 | Type | Description |
 | --- | --- |
-| ClippingObject | Position and clipping information (see table above). |
+| ClippingObject | Position and clipping information relative to a mask (see table below). |
+
+##### ClippingObject
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `isOffTop` | Boolean | Above and off the mask. |
+| `isOffBottom` | Boolean | Below and off the mask. |
+| `isOffLeft` | Boolean | On the left and off the mask. |
+| `isOffRight` | Boolean | On the right and off the mask. |
+| `isOff` | Boolean | Off the mask. |
+| `isClippedTop` | Boolean | Above and intersecting with the mask. |
+| `isClippedBottom` | Boolean | Below and intersecting with the mask. |
+| `isClippedLeft` | Boolean | On the left and intersecting with the mask. |
+| `isClippedRight` | Boolean | On the right and intersecting with the mask. |
+| `isClipped` | Boolean | Element intersects with the mask. |
+| `isFullyVisible` | Boolean | Fully visible inside the mask. |
+| `isPartiallyVisible` | Boolean | Alias for `isClipped`. |
+| `isInvisible` | Boolean | Alias for `isOff`. |
+| `isAsVisibleAsPossible` | Boolean | As visible as possible (child bigger than the mask). |
+| `isNotAsVisibleAsPossible` | Boolean | Not as visible as possible (child bigger than the mask). |
 
 #### Example
 

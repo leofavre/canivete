@@ -254,8 +254,8 @@ to the <a href="https://en.bem.info/methodology/">BEM methodology</a>.</p>
 <p><a name="clippingInfo"></a></p>
 <h3 id="clippinginfodomel-maskdef"><code class="highlighter-rouge">clippingInfo(domEl, [maskDef])</code></h3>
 
-<p>Given a DOM element, returns an object with clipping
-and position information relative to a mask, defined
+<p>Given a DOM element, returns an object with position
+and clipping information relative to a mask, defined
 by the second parameter, or to the viewport, if the
 second parameter is omitted.</p>
 
@@ -263,95 +263,6 @@ second parameter is omitted.</p>
 containing numeric values for “top”, “bottom”,
 “left” and “right” properties, like a
 <a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMRect">DOMRect</a>.</p>
-
-<p>The returned object has the following properties:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Property</th>
-      <th>Type</th>
-      <th>Element relation to the mask</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">isOffTop</code></td>
-      <td>boolean</td>
-      <td>Above and off the mask.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">isOffBottom</code></td>
-      <td>boolean</td>
-      <td>Below and off the mask.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">isOffLeft</code></td>
-      <td>boolean</td>
-      <td>On the left and off the mask.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">isOffRight</code></td>
-      <td>boolean</td>
-      <td>On the right and off the mask.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">isOff</code></td>
-      <td>boolean</td>
-      <td>Off the mask.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">isClippedTop</code></td>
-      <td>boolean</td>
-      <td>Above and intersecting with the mask.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">isClippedBottom</code></td>
-      <td>boolean</td>
-      <td>Below and intersecting with the mask.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">isClippedLeft</code></td>
-      <td>boolean</td>
-      <td>On the left and intersecting with the mask.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">isClippedRight</code></td>
-      <td>boolean</td>
-      <td>On the right and intersecting with the mask.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">isClipped</code></td>
-      <td>boolean</td>
-      <td>Element intersects with the mask.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">isFullyVisible</code></td>
-      <td>boolean</td>
-      <td>Fully visible inside the mask.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">isPartiallyVisible</code></td>
-      <td>boolean</td>
-      <td>Alias for <code class="highlighter-rouge">isClipped</code>.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">isInvisible</code></td>
-      <td>boolean</td>
-      <td>Alias for <code class="highlighter-rouge">isOff</code>.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">isAsVisibleAsPossible</code></td>
-      <td>boolean</td>
-      <td>As visible as possible (element &gt; mask).</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">isNotAsVisibleAsPossible</code></td>
-      <td>boolean</td>
-      <td>Not as visible as possible (element &gt; mask).</td>
-    </tr>
-  </tbody>
-</table>
 
 <h4 id="parameters-4">Parameters</h4>
 
@@ -389,7 +300,96 @@ containing numeric values for “top”, “bottom”,
   <tbody>
     <tr>
       <td>ClippingObject</td>
-      <td>Position and clipping information (see table above).</td>
+      <td>Position and clipping information relative to a mask (see table below).</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="clippingobject">ClippingObject</h5>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">isOffTop</code></td>
+      <td>Boolean</td>
+      <td>Above and off the mask.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">isOffBottom</code></td>
+      <td>Boolean</td>
+      <td>Below and off the mask.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">isOffLeft</code></td>
+      <td>Boolean</td>
+      <td>On the left and off the mask.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">isOffRight</code></td>
+      <td>Boolean</td>
+      <td>On the right and off the mask.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">isOff</code></td>
+      <td>Boolean</td>
+      <td>Off the mask.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">isClippedTop</code></td>
+      <td>Boolean</td>
+      <td>Above and intersecting with the mask.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">isClippedBottom</code></td>
+      <td>Boolean</td>
+      <td>Below and intersecting with the mask.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">isClippedLeft</code></td>
+      <td>Boolean</td>
+      <td>On the left and intersecting with the mask.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">isClippedRight</code></td>
+      <td>Boolean</td>
+      <td>On the right and intersecting with the mask.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">isClipped</code></td>
+      <td>Boolean</td>
+      <td>Element intersects with the mask.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">isFullyVisible</code></td>
+      <td>Boolean</td>
+      <td>Fully visible inside the mask.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">isPartiallyVisible</code></td>
+      <td>Boolean</td>
+      <td>Alias for <code class="highlighter-rouge">isClipped</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">isInvisible</code></td>
+      <td>Boolean</td>
+      <td>Alias for <code class="highlighter-rouge">isOff</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">isAsVisibleAsPossible</code></td>
+      <td>Boolean</td>
+      <td>As visible as possible (child bigger than the mask).</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">isNotAsVisibleAsPossible</code></td>
+      <td>Boolean</td>
+      <td>Not as visible as possible (child bigger than the mask).</td>
     </tr>
   </tbody>
 </table>

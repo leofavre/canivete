@@ -3,8 +3,6 @@ import _getVerticalAxisInfo from "./internal/clipping/_getVerticalAxisInfo";
 import _getHorizontalAxisInfo from "./internal/clipping/_getHorizontalAxisInfo";
 
 /**
- * Clipping and position information relative to a mask.
- * 
  * @typedef {Object} clippingObject
  * @property {boolean} isOffTop Above and off the mask.
  * @property {boolean} isOffBottom Below and off the mask.
@@ -24,8 +22,8 @@ import _getHorizontalAxisInfo from "./internal/clipping/_getHorizontalAxisInfo";
  */
 
 /**
- * Given a DOM element, returns an object with clipping
- * and position information relative to a mask, defined
+ * Given a DOM element, returns an object with position
+ * and clipping information relative to a mask, defined
  * by the second parameter, or to the viewport, if the
  * second parameter is omitted.
  *
@@ -34,30 +32,10 @@ import _getHorizontalAxisInfo from "./internal/clipping/_getHorizontalAxisInfo";
  * "left" and "right" properties, like a
  * [DOMRect](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect).
  *
- * The returned object has the following properties:
- *
- * | Property | Type | Element relation to the mask |
- * |---|---|---|
- * | `isOffTop` | boolean | Above and off the mask. |
- * | `isOffBottom` | boolean | Below and off the mask. |
- * | `isOffLeft` | boolean | On the left and off the mask. |
- * | `isOffRight` | boolean | On the right and off the mask. |
- * | `isOff` | boolean | Off the mask. |
- * | `isClippedTop` | boolean | Above and intersecting with the mask. |
- * | `isClippedBottom` | boolean | Below and intersecting with the mask. |
- * | `isClippedLeft` | boolean | On the left and intersecting with the mask. |
- * | `isClippedRight` | boolean | On the right and intersecting with the mask. |
- * | `isClipped` | boolean | Element intersects with the mask. |
- * | `isFullyVisible` | boolean | Fully visible inside the mask. |
- * | `isPartiallyVisible` | boolean | Alias for `isClipped`. |
- * | `isInvisible` | boolean | Alias for `isOff`. |
- * | `isAsVisibleAsPossible` | boolean | As visible as possible (element > mask). |
- * | `isNotAsVisibleAsPossible` | boolean | Not as visible as possible (element > mask). |
- *
  * @category DOM
  * @param  {HTMLElement} domEl The DOM element.
  * @param  {(HTMLElement|Object)} [maskDef] The mask definition.
- * @return {clippingObject} Position and clipping information (see table above).
+ * @return {clippingObject} Position and clipping information relative to a mask (see table below).
  *
  * @example
  * let domEl = document.createElement("div");

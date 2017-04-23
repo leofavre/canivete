@@ -1,0 +1,10 @@
+<%if(item.typedefParams && item.typedefParams.length > 0){-%>
+<%typedefs.filter(typedef => item.typedefParams.includes(typedef.name)).forEach(typedef => {-%>
+
+##### <%-typedef.nameCapitalized%>
+
+<%typedef.propertiesTable.forEach(property => {-%>
+<%-property%>
+<%})-%>
+<%})-%>
+<%}-%>

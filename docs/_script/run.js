@@ -61,13 +61,48 @@ const exportJsDocsAsJson = (path, data, template = "./node_modules/jsdoc-json") 
 const readJsonFile = path => () => readJsonAsPromise(path);
 
 const processJsonFile = json => {
-	let docs = processDocs(json.docs);
+	let funcs = processFunctions(json.docs);
 	let typedefs = processTypeDefs(json.docs);
 
+	associateFunctionsWithTypeDefs(funcs, typedefs);
+
 	return {
-		docs,
+		docs: funcs,
 		typedefs
 	};
+};
+
+const associateFunctionsWithTypeDefs = (funcs, typedefs) => {
+	let typedefNames = typedefs.map(typedef => typedef.name);
+
+	funcs.forEach(category => {
+		if (category.items && category.items.length > 0) {
+			category.items.forEach(item => {
+				doFunctionTypeDefAssociations("params", item, typedefNames);
+				doFunctionTypeDefAssociations("returns", item, typedefNames);
+			});
+		}
+	});
+};
+
+const doFunctionTypeDefAssociations = (propName, item, typedefNames) => {
+	if (item[propName] && item[propName].length > 0) {
+		item[propName].forEach(prop => {
+			typedefNames.forEach(typedefName => {
+				doFunctionTypeDefAssociation(propName, item, prop, typedefName);
+			});
+		});
+	}
+};
+
+const doFunctionTypeDefAssociation = (propName, item, prop, typedefName) => {
+	let hasAssociation = prop.type.names.some(name => name.includes(typedefName));
+
+	if (hasAssociation) {
+		let typeProp = "typedef" + capitalizeFirstLetter(propName);
+		item[typeProp] = item[typeProp] || [];
+		item[typeProp].push(typedefName);
+	}
 };
 
 const writeFile = path => data => writeFileAsPromise(path, JSON.stringify(data));
@@ -94,6 +129,7 @@ const filterTypeDefs = docs => docs.filter(isTypeDef);
 const formatTypeDefs = typedefs => typedefs.map(formatTypeDef);
 
 const formatTypeDef = typedef => {
+	typedef.nameCapitalized = capitalizeFirstLetter(typedef.name);
 	typedef.propertiesTable = formatTable(typedef.properties);
 	return typedef;
 };
@@ -206,7 +242,7 @@ const isFunction = docs => docs.kind === "function";
 
 const isTypeDef = docs => docs.kind === "typedef";
 
-const processDocs = flow([
+const processFunctions = flow([
 	filterFunctions,
 	formatFunctions,
 	groupFunctionsByCategory,
