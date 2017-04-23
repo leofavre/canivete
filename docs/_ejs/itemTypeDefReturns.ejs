@@ -1,7 +1,7 @@
 <%if(item.typedefReturns && item.typedefReturns.length > 0){-%>
 <%typedefs.filter(typedef => item.typedefReturns.includes(typedef.name)).forEach(typedef => {-%>
 
-##### <%-typedef.nameCapitalized%>
+#### <%-typedef.nameCapitalized%>
 
 <%typedef.propertiesTable.forEach(property => {-%>
 <%-property%>
