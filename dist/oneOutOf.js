@@ -7,7 +7,7 @@ import random from "../node_modules/lodash-es/random";
  * @category Random
  * 
  * @param  {number} num A number greater than zero.
- * @return {boolean} Return `true` approximately one out of `num` times.
+ * @return {boolean} Returns `true` approximately one out of `num` times.
  *
  * @example
  * oneOutOf(2);
