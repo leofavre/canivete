@@ -12,6 +12,12 @@ module.exports = function(config) {
 		autoWatch: false,
 		browsers: ["Firefox", "Chrome"],
 		singleRun: true,
-		concurrency: Infinity
+		concurrency: Infinity,
+		customLaunchers: {
+			Chrome_travis_ci: {
+				base: 'Chrome',
+				flags: ['--no-sandbox']
+			}
+		}
 	});
 };
