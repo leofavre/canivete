@@ -115,13 +115,13 @@ html {
     color: #000; }
   .content pre {
     white-space: pre-wrap;
-    margin: 0; }
+    margin: 0 0 -16px; }
   .content pre > code {
     background-color: #272822;
     color: #f8f8f2;
     margin: 24px -24px 48px -48px;
     padding-top: 56px;
-    padding-bottom: 40px;
+    padding-bottom: 56px;
     padding-left: 48px;
     padding-right: 24px;
     line-height: 24px; }
