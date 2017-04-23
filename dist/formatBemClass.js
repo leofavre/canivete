@@ -3,13 +3,10 @@ import _formatBemModifier from "./internal/bem/_formatBemModifier";
 
 /**
  * Formats a CSS class according to the
- * [BEM methodology](https://en.bem.info/methodology/). The
- * function receives a block, an element, a modifier, a value
+ * [BEM methodology](https://en.bem.info/methodology/).
+ * The function receives a block, an element, a modifier, a value
  * for the modifier and an array of BEM delimiters, e.g. “__”,
  * “--” and “-”.
- *
- * Note that invalid CSS selectors characters will be stripped
- * out of the result.
  * 
  * @category BEM
  * @param  {string} block The BEM block.

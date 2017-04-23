@@ -19,8 +19,8 @@
 <h3 id="formatbemclassblock-element-modifier-value-delimiters"><code class="highlighter-rouge">formatBemClass(block, [element], [modifier], [value], delimiters)</code></h3>
 
 <p>Formats a CSS class according to the
-<a href="https://en.bem.info/methodology/">BEM methodology</a>. The
-function receives a block, an element, a modifier, a value
+<a href="https://en.bem.info/methodology/">BEM methodology</a>.
+The function receives a block, an element, a modifier, a value
 for the modifier and an array of BEM delimiters, e.g. “__”,
 “–” and “-”.</p>
 
@@ -64,7 +64,7 @@ for the modifier and an array of BEM delimiters, e.g. “__”,
       <td><code class="highlighter-rouge">delimiters</code></td>
       <td> </td>
       <td>Array.&lt;string&gt;</td>
-      <td>The BEM delimiters, e.g. “__”, “–” and “-”.</td>
+      <td>The BEM delimiters, e.g. [“__”, “–”, “-“].</td>
     </tr>
   </tbody>
 </table>
@@ -132,6 +132,76 @@ for the modifier and an array of BEM delimiters, e.g. “__”,
 </code></pre>
 </div>
 
+<p><a name="modifyBemClass"></a></p>
+<h3 id="modifybemclassdomel-bemobj-delimiters"><code class="highlighter-rouge">modifyBemClass(domEl, bemObj, delimiters)</code></h3>
+
+<p>Modifies the CSS classes from a DOM element according
+to the <a href="https://en.bem.info/methodology/">BEM methodology</a>.</p>
+
+<h4 id="parameters-1">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">domEl</code></td>
+      <td>HTMLElement</td>
+      <td>The modified DOM element.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">bemObj</code></td>
+      <td>Object</td>
+      <td>The object describing BEM class changes.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">delimiters</code></td>
+      <td>Array</td>
+      <td>The BEM delimiters, e.g. [“__”, “–”, “-“]</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="modifyBemClassCompact"></a></p>
+<h3 id="modifybemclasscompactdomel-bemobj-delimiters"><code class="highlighter-rouge">modifyBemClassCompact(domEl, bemObj, delimiters)</code></h3>
+
+<p>Modifies the CSS classes from a DOM element according
+to the <a href="https://en.bem.info/methodology/">BEM methodology</a>.</p>
+
+<h4 id="parameters-2">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">domEl</code></td>
+      <td>HTMLElement</td>
+      <td>The modified DOM element.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">bemObj</code></td>
+      <td>Object</td>
+      <td>The object describing BEM class changes.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">delimiters</code></td>
+      <td>Array</td>
+      <td>The BEM delimiters, e.g. [“__”, “–”, “-“]</td>
+    </tr>
+  </tbody>
+</table>
+
 <h2 id="dom">DOM</h2>
 
 <p><a name="addClass"></a></p>
@@ -139,7 +209,7 @@ for the modifier and an array of BEM delimiters, e.g. “__”,
 
 <p>Adds a CSS class to one or many DOM elements.</p>
 
-<h4 id="parameters-1">Parameters</h4>
+<h4 id="parameters-3">Parameters</h4>
 
 <table>
   <thead>
@@ -283,7 +353,7 @@ containing numeric values for “top”, “bottom”,
   </tbody>
 </table>
 
-<h4 id="parameters-2">Parameters</h4>
+<h4 id="parameters-4">Parameters</h4>
 
 <table>
   <thead>
@@ -360,7 +430,7 @@ containing numeric values for “top”, “bottom”,
 
 <p>Verifies if a DOM element has a CSS class.</p>
 
-<h4 id="parameters-3">Parameters</h4>
+<h4 id="parameters-5">Parameters</h4>
 
 <table>
   <thead>
@@ -419,7 +489,7 @@ containing numeric values for “top”, “bottom”,
 
 <p>Removes a CSS class from one or many DOM elements.</p>
 
-<h4 id="parameters-4">Parameters</h4>
+<h4 id="parameters-6">Parameters</h4>
 
 <table>
   <thead>
@@ -480,7 +550,7 @@ returns true or when the event occurs for the first time.</p>
 <p>Note that the function throws an error if the first two
 parameters are not a DOM element and a string.</p>
 
-<h4 id="parameters-5">Parameters</h4>
+<h4 id="parameters-7">Parameters</h4>
 
 <table>
   <thead>
@@ -812,7 +882,7 @@ is returned.</p>
 <p>Note that this function expects the reduced array to be
 formed by objects with the same set of properties.</p>
 
-<h4 id="parameters-6">Parameters</h4>
+<h4 id="parameters-8">Parameters</h4>
 
 <table>
   <thead>
@@ -1101,7 +1171,7 @@ using <code class="highlighter-rouge">toSum()</code> can lead to unexpected resu
 the first occurrence</strong> of the delimiter in a base string.
 If the delimiter is not found, the function returns <code class="highlighter-rouge">undefined</code>.</p>
 
-<h4 id="parameters-7">Parameters</h4>
+<h4 id="parameters-9">Parameters</h4>
 
 <table>
   <thead>
@@ -1154,7 +1224,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
 the last occurrence</strong> of the delimiter in a base string.
 If the delimiter is not found, the function returns <code class="highlighter-rouge">undefined</code>.</p>
 
-<h4 id="parameters-8">Parameters</h4>
+<h4 id="parameters-10">Parameters</h4>
 
 <table>
   <thead>
@@ -1207,7 +1277,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
 the first occurrence</strong> of the delimiter in a base string.
 If the delimiter is not found, the function returns <code class="highlighter-rouge">undefined</code>.</p>
 
-<h4 id="parameters-9">Parameters</h4>
+<h4 id="parameters-11">Parameters</h4>
 
 <table>
   <thead>
@@ -1260,7 +1330,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
 the last occurrence</strong> of the delimiter in a base string.
 If the delimiter is not found, the function returns <code class="highlighter-rouge">undefined</code>.</p>
 
-<h4 id="parameters-10">Parameters</h4>
+<h4 id="parameters-12">Parameters</h4>
 
 <table>
   <thead>
@@ -1316,6 +1386,8 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
   <li><strong><a href="#bem">BEM</a></strong>
     <ul>
       <li><a href="#formatBemClass">formatBemClass</a></li>
+      <li><a href="#modifyBemClass">modifyBemClass</a></li>
+      <li><a href="#modifyBemClassCompact">modifyBemClassCompact</a></li>
     </ul>
   </li>
   <li><strong><a href="#dom">DOM</a></strong>

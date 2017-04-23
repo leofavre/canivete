@@ -1,5 +1,7 @@
 * **[BEM](#bem)**
   * [formatBemClass](#formatBemClass)
+  * [modifyBemClass](#modifyBemClass)
+  * [modifyBemClassCompact](#modifyBemClassCompact)
 
 * **[DOM](#dom)**
   * [addClass](#addClass)

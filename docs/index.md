@@ -9,8 +9,8 @@ title: Canivete
 ### `formatBemClass(block, [element], [modifier], [value], delimiters)`
 
 Formats a CSS class according to the
-[BEM methodology](https://en.bem.info/methodology/). The
-function receives a block, an element, a modifier, a value
+[BEM methodology](https://en.bem.info/methodology/).
+The function receives a block, an element, a modifier, a value
 for the modifier and an array of BEM delimiters, e.g. “__”,
 “--” and “-”.
 
@@ -22,7 +22,7 @@ for the modifier and an array of BEM delimiters, e.g. “__”,
 | `element` |  | String | The BEM element. **optional** |
 | `modifier` |  | String | The BEM modifier. **optional** |
 | `value` | `true` | String<br>Number<br>Boolean | The BEM modifier value. **optional** |
-| `delimiters` |  | Array.&lt;string&gt; | The BEM delimiters, e.g. “__”, “--” and “-”. |
+| `delimiters` |  | Array.&lt;string&gt; | The BEM delimiters, e.g. ["__", "--", "-"]. |
 
 #### Return
 
@@ -75,6 +75,34 @@ formatBemClass("button", null, "level", 42, delimiters);
 formatBemClass("button", null, "level", "42", delimiters);
 // => "button--level-42"
 ```
+
+<a name="modifyBemClass"></a>
+### `modifyBemClass(domEl, bemObj, delimiters)`
+
+Modifies the CSS classes from a DOM element according
+to the [BEM methodology](https://en.bem.info/methodology/).
+
+#### Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `domEl` | HTMLElement | The modified DOM element. |
+| `bemObj` | Object | The object describing BEM class changes. |
+| `delimiters` | Array | The BEM delimiters, e.g. ["__", "--", "-"] |
+
+<a name="modifyBemClassCompact"></a>
+### `modifyBemClassCompact(domEl, bemObj, delimiters)`
+
+Modifies the CSS classes from a DOM element according
+to the [BEM methodology](https://en.bem.info/methodology/).
+
+#### Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `domEl` | HTMLElement | The modified DOM element. |
+| `bemObj` | Object | The object describing BEM class changes. |
+| `delimiters` | Array | The BEM delimiters, e.g. ["__", "--", "-"] |
 
 ## DOM
 
