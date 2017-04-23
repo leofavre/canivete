@@ -10,4 +10,14 @@ describe("toAverage", function() {
 			[-10, 10].reduce(toAverage())
 		).toBe(0);
 	});
+
+	it("Should function without parentheses.", function() {
+		expect(
+			[3, 5, 7, 9].reduce(toAverage)
+		).toBe(6);
+
+		expect(
+			[-10, 10].reduce(toAverage)
+		).toBe(0);
+	});
 });

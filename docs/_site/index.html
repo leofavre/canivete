@@ -756,7 +756,8 @@ randomly.</p>
 the average of the values in an array.</p>
 
 <p>Note that reducing arrays with non-numeric values
-using <code class="highlighter-rouge">toAverage()</code> can lead to unexpected results.</p>
+using <code class="highlighter-rouge">toAverage()</code> can lead to unexpected results.
+Also, note that parentheses can be ommited.</p>
 
 <h4 id="return-6">Return</h4>
 
@@ -778,6 +779,9 @@ using <code class="highlighter-rouge">toAverage()</code> can lead to unexpected 
 <h4 id="example-4">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">].</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toAverage</span><span class="p">());</span>
+<span class="c1">// =&gt; 6</span>
+
+<span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">].</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toAverage</span><span class="p">);</span>
 <span class="c1">// =&gt; 6</span>
 </code></pre>
 </div>
@@ -1230,6 +1234,8 @@ using <code class="highlighter-rouge">toSum()</code> can lead to unexpected resu
 <p>When used inside <code class="highlighter-rouge">Array.prototype.sort()</code>, sorts
 the array in ascending alphabetical order.</p>
 
+<p>Note that the parentheses can be ommited.</p>
+
 <h4 id="return-13">Return</h4>
 
 <table>
@@ -1250,7 +1256,11 @@ the array in ascending alphabetical order.</p>
 <h4 id="example-11">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">musqueteers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Athos"</span><span class="p">,</span> <span class="s2">"Porthos"</span><span class="p">,</span> <span class="s2">"Aramis"</span><span class="p">];</span>
+
 <span class="nx">musqueteers</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="nx">byAlphabeticalOrder</span><span class="p">());</span>
+<span class="c1">// =&gt; ["Aramis", "Athos", "Porthos"]</span>
+
+<span class="nx">musqueteers</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="nx">byAlphabeticalOrder</span><span class="p">);</span>
 <span class="c1">// =&gt; ["Aramis", "Athos", "Porthos"]</span>
 </code></pre>
 </div>

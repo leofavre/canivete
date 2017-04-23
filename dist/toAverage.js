@@ -4,6 +4,7 @@
  *
  * Note that reducing arrays with non-numeric values
  * using `toAverage()` can lead to unexpected results.
+ * Also, note that parentheses can be ommited.
  *
  * @category Reduce
  *
@@ -13,16 +14,17 @@
  * @example
  * [3, 5, 7, 9].reduce(toAverage());
  * // => 6
+ *
+ * [3, 5, 7, 9].reduce(toAverage);
+ * // => 6
  */
-const toAverage = () => (prevNum, nextNum, index, arr) => {
-	let isLastIteration = (index === arr.length - 1);
+const toAverage = (...args) => {
+	let func = (prevNum, nextNum, index, arr) => {
+		let isLastIteration = (index === arr.length - 1);
+		return (!isLastIteration) ? (prevNum + nextNum) : (prevNum + nextNum) / arr.length;
+	};
 
-	if (!isLastIteration) {
-		return prevNum + nextNum;
-	}
-	else {
-		return (prevNum + nextNum) / arr.length;
-	}
+	return (args.length === 0) ? func : func(...args);
 };
 
 export default toAverage;

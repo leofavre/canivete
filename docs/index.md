@@ -416,6 +416,7 @@ the average of the values in an array.
 
 Note that reducing arrays with non-numeric values
 using `toAverage()` can lead to unexpected results.
+Also, note that parentheses can be ommited.
 
 #### Return
 
@@ -427,6 +428,9 @@ using `toAverage()` can lead to unexpected results.
 
 ```javascript
 [3, 5, 7, 9].reduce(toAverage());
+// => 6
+
+[3, 5, 7, 9].reduce(toAverage);
 // => 6
 ```
 
@@ -743,6 +747,8 @@ using `toSum()` can lead to unexpected results.
 When used inside `Array.prototype.sort()`, sorts
 the array in ascending alphabetical order.
 
+Note that the parentheses can be ommited.
+
 #### Return
 
 | Type | Description |
@@ -753,7 +759,11 @@ the array in ascending alphabetical order.
 
 ```javascript
 let musqueteers = ["Athos", "Porthos", "Aramis"];
+
 musqueteers.sort(byAlphabeticalOrder());
+// => ["Aramis", "Athos", "Porthos"]
+
+musqueteers.sort(byAlphabeticalOrder);
 // => ["Aramis", "Athos", "Porthos"]
 ```
 
