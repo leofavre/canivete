@@ -4,6 +4,7 @@ import isElement from "../node_modules/lodash-es/isElement";
  * Verifies if a DOM element has a CSS class.
  *
  * @category DOM
+ *
  * @param  {HTMLElement} domEl The DOM element.
  * @param  {string} str The CSS class.
  * @return {boolean} Whether the element has the CSS class or not.

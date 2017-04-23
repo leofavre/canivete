@@ -6,6 +6,7 @@
  * using `toSum()` can lead to unexpected results.
  *
  * @category Reduce
+ *
  * @return {number} The sum of the values in an array.
  * @public
  *

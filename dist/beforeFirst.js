@@ -6,6 +6,7 @@ import _sliceOnOccurrence from "./internal/string/_sliceOnOccurrence";
  * If the delimiter is not found, the function returns `undefined`.
  *
  * @category String
+ *
  * @param  {string} str The base string.
  * @param  {string} delimiter The delimiter string.
  * @return {string}
