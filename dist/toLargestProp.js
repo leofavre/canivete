@@ -1,7 +1,7 @@
 import at from "../node_modules/lodash-es/at";
 
 /**
- * When used with `Array.prototype.reduce()`, returns
+ * When used with `[].reduce()`, returns
  * the object in an array in which a specific property
  * has the largest property.
  *

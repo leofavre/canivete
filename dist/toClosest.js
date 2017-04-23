@@ -1,5 +1,5 @@
 /**
- * When used with `Array.prototype.reduce()`, returns
+ * When used with `[].reduce()`, returns
  * the closest value to the one passed as parameter.
  *
  * If two or more results are found, the first one

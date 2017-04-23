@@ -15,12 +15,6 @@ import random from "../node_modules/lodash-es/random";
  *
  * oneOutOf(2);
  * // => false
- *
- * oneOutOf(2);
- * // => false
- *
- * oneOutOf(2);
- * // => true
  */
 const oneOutOf = num => {
 	if (!Number.isFinite(num) || num < 1) {

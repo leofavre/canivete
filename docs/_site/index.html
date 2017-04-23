@@ -622,7 +622,8 @@ parameters are not a DOM element and a string.</p>
 	<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">domEl</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">domEl</span><span class="p">.</span><span class="nx">src</span><span class="p">));</span>
 
 <span class="c1">// =&gt; "https://www.w3.org/Icons/w3c_home"</span>
-<span class="c1">// shown when the image loads or as soon as eventAsPromise is called, if the image has already been loaded.</span>
+<span class="c1">// shown when the image loads or as soon as eventAsPromise</span>
+<span class="c1">//  is called, if the image has already been loaded.</span>
 </code></pre>
 </div>
 
@@ -738,12 +739,6 @@ randomly.</p>
 
 <span class="nx">oneOutOf</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
 <span class="c1">// =&gt; false</span>
-
-<span class="nx">oneOutOf</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-<span class="c1">// =&gt; false</span>
-
-<span class="nx">oneOutOf</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-<span class="c1">// =&gt; true</span>
 </code></pre>
 </div>
 
@@ -752,7 +747,7 @@ randomly.</p>
 <p><a name="toAverage"></a></p>
 <h3 id="toaverage"><code class="highlighter-rouge">toAverage()</code></h3>
 
-<p>When used with <code class="highlighter-rouge">Array.prototype.reduce()</code>, returns
+<p>When used with <code class="highlighter-rouge">[].reduce()</code>, returns
 the average of the values in an array.</p>
 
 <p>Note that reducing arrays with non-numeric values
@@ -789,7 +784,7 @@ Also, note that the parentheses can be ommited.</p>
 <p><a name="toAverageProp"></a></p>
 <h3 id="toaverageproppath"><code class="highlighter-rouge">toAverageProp(path)</code></h3>
 
-<p>When used with <code class="highlighter-rouge">Array.prototype.reduce()</code>, returns
+<p>When used with <code class="highlighter-rouge">[].reduce()</code>, returns
 the object in an array in which a specific property,
 passed as parameter, has the closest value to the average.</p>
 
@@ -877,7 +872,7 @@ formed by objects with the same set of properties.</p>
 <p><a name="toClosest"></a></p>
 <h3 id="toclosestnum"><code class="highlighter-rouge">toClosest(num)</code></h3>
 
-<p>When used with <code class="highlighter-rouge">Array.prototype.reduce()</code>, returns
+<p>When used with <code class="highlighter-rouge">[].reduce()</code>, returns
 the closest value to the one passed as parameter.</p>
 
 <p>If two or more results are found, the first one
@@ -935,7 +930,7 @@ using <code class="highlighter-rouge">toClosest()</code> can lead to unexpected 
 <p><a name="toClosestProp"></a></p>
 <h3 id="toclosestproppath-num"><code class="highlighter-rouge">toClosestProp(path, num)</code></h3>
 
-<p>When used with <code class="highlighter-rouge">Array.prototype.reduce()</code>, returns
+<p>When used with <code class="highlighter-rouge">[].reduce()</code>, returns
 the object in an array in which a specific property,
 passed as parameter, has the closest value to another,
 also passed as parameter.</p>
@@ -1026,7 +1021,7 @@ formed by objects with the same set of properties.</p>
 <p><a name="toLargestProp"></a></p>
 <h3 id="tolargestproppath"><code class="highlighter-rouge">toLargestProp(path)</code></h3>
 
-<p>When used with <code class="highlighter-rouge">Array.prototype.reduce()</code>, returns
+<p>When used with <code class="highlighter-rouge">[].reduce()</code>, returns
 the object in an array in which a specific property
 has the largest property.</p>
 
@@ -1111,7 +1106,7 @@ formed by objects with the same set of properties.</p>
 <p><a name="toSmallestProp"></a></p>
 <h3 id="tosmallestproppath"><code class="highlighter-rouge">toSmallestProp(path)</code></h3>
 
-<p>When used with <code class="highlighter-rouge">Array.prototype.reduce()</code>, returns
+<p>When used with <code class="highlighter-rouge">[].reduce()</code>, returns
 the object in an array in which a specific property
 has the smallest property.</p>
 
@@ -1196,7 +1191,7 @@ formed by objects with the same set of properties.</p>
 <p><a name="toSum"></a></p>
 <h3 id="tosum"><code class="highlighter-rouge">toSum()</code></h3>
 
-<p>When used with <code class="highlighter-rouge">Array.prototype.reduce()</code>, returns
+<p>When used with <code class="highlighter-rouge">[].reduce()</code>, returns
 the sum of the values in an array.</p>
 
 <p>Note that reducing arrays with non-numeric values
@@ -1235,7 +1230,7 @@ Also, note that the parentheses can be ommited.</p>
 <p><a name="byAlphabeticalOrder"></a></p>
 <h3 id="byalphabeticalorder"><code class="highlighter-rouge">byAlphabeticalOrder()</code></h3>
 
-<p>When used inside <code class="highlighter-rouge">Array.prototype.sort()</code>, sorts
+<p>When used inside <code class="highlighter-rouge">[].sort()</code>, sorts
 the array in ascending alphabetical order.</p>
 
 <p>Note that the parentheses can be ommited.</p>

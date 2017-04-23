@@ -70,7 +70,11 @@ html {
   box-sizing: border-box;
   flex-basis: calc(43.25rem + ((100% - 43.25rem) / 2));
   flex-grow: 0;
-  flex-shrink: 1; }
+  flex-shrink: 1;
+  background-position: 0.3125rem 0;
+  background-size: 1.5rem 1.5rem;
+  background-image: linear-gradient(to bottom, lightblue 1px, transparent 1px);
+  background-attachment: scroll; }
   .content h2 {
     position: relative;
     top: 0;
@@ -227,14 +231,19 @@ html {
   overflow-y: auto;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
-  z-index: 1; }
+  z-index: 1;
+  background-position: 0.3125rem 0;
+  background-size: 1.5rem 1.5rem;
+  background-image: linear-gradient(to bottom, lightblue 1px, transparent 1px);
+  background-attachment: scroll; }
   .menu ul {
     position: relative;
     top: 0.5rem;
     margin: 1.5rem 0;
     padding: 0; }
   .menu ul ul {
-    top: 0; }
+    top: 0;
+    margin-top: 0; }
   .menu li {
     position: relative;
     top: -0.0625rem;
@@ -248,10 +257,7 @@ html {
   .menu li li {
     top: 0.125rem;
     font-family: "Fira Code", monospace;
-    font-size: 0.875rem; }
-    @media only screen and (min-width: 1400px) {
-      .menu li li {
-        top: 1px; } }
+    font-size: 14px; }
   .menu a {
     display: block;
     color: #000;

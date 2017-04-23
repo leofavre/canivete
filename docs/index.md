@@ -330,7 +330,8 @@ eventAsPromise(image, "load", image => image.complete)
 	.then(domEl => console.log(domEl.src));
 
 // => "https://www.w3.org/Icons/w3c_home"
-// shown when the image loads or as soon as eventAsPromise is called, if the image has already been loaded.
+// shown when the image loads or as soon as eventAsPromise
+//  is called, if the image has already been loaded.
 ```
 
 <a name="waitInPromise"></a>
@@ -398,12 +399,6 @@ oneOutOf(2);
 
 oneOutOf(2);
 // => false
-
-oneOutOf(2);
-// => false
-
-oneOutOf(2);
-// => true
 ```
 
 ## Reduce
@@ -411,7 +406,7 @@ oneOutOf(2);
 <a name="toAverage"></a>
 ### `toAverage()`
 
-When used with `Array.prototype.reduce()`, returns
+When used with `[].reduce()`, returns
 the average of the values in an array.
 
 Note that reducing arrays with non-numeric values
@@ -437,7 +432,7 @@ Also, note that the parentheses can be ommited.
 <a name="toAverageProp"></a>
 ### `toAverageProp(path)`
 
-When used with `Array.prototype.reduce()`, returns
+When used with `[].reduce()`, returns
 the object in an array in which a specific property,
 passed as parameter, has the closest value to the average.
 
@@ -501,7 +496,7 @@ cities.reduce(toAverageProp("demographics.population"));
 <a name="toClosest"></a>
 ### `toClosest(num)`
 
-When used with `Array.prototype.reduce()`, returns
+When used with `[].reduce()`, returns
 the closest value to the one passed as parameter.
 
 If two or more results are found, the first one
@@ -535,7 +530,7 @@ using `toClosest()` can lead to unexpected results.
 <a name="toClosestProp"></a>
 ### `toClosestProp(path, num)`
 
-When used with `Array.prototype.reduce()`, returns
+When used with `[].reduce()`, returns
 the object in an array in which a specific property,
 passed as parameter, has the closest value to another,
 also passed as parameter.
@@ -598,7 +593,7 @@ cities.reduce(toClosestProp("demographics.population", 5));
 <a name="toLargestProp"></a>
 ### `toLargestProp(path)`
 
-When used with `Array.prototype.reduce()`, returns
+When used with `[].reduce()`, returns
 the object in an array in which a specific property
 has the largest property.
 
@@ -659,7 +654,7 @@ cities.reduce(toLargestProp("demographics.population"));
 <a name="toSmallestProp"></a>
 ### `toSmallestProp(path)`
 
-When used with `Array.prototype.reduce()`, returns
+When used with `[].reduce()`, returns
 the object in an array in which a specific property
 has the smallest property.
 
@@ -720,7 +715,7 @@ cities.reduce(toSmallestProp("demographics.population"));
 <a name="toSum"></a>
 ### `toSum()`
 
-When used with `Array.prototype.reduce()`, returns
+When used with `[].reduce()`, returns
 the sum of the values in an array.
 
 Note that reducing arrays with non-numeric values
@@ -748,7 +743,7 @@ Also, note that the parentheses can be ommited.
 <a name="byAlphabeticalOrder"></a>
 ### `byAlphabeticalOrder()`
 
-When used inside `Array.prototype.sort()`, sorts
+When used inside `[].sort()`, sorts
 the array in ascending alphabetical order.
 
 Note that the parentheses can be ommited.

@@ -1,5 +1,5 @@
 /**
- * When used with `Array.prototype.reduce()`, returns
+ * When used with `[].reduce()`, returns
  * the sum of the values in an array.
  *
  * Note that reducing arrays with non-numeric values
