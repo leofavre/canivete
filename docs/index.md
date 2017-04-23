@@ -388,7 +388,7 @@ randomly.
 
 | Type | Description |
 | --- | --- |
-| Boolean | Return `true` approximately one out of `num` times. |
+| Boolean | Returns `true` approximately one out of `num` times. |
 
 #### Example
 

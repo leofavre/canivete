@@ -216,7 +216,21 @@ const hasParamType = param => param.type != null && param.type.names != null && 
 
 const groupFunctionsByCategory = funcs => groupBy(funcs, byCategory);
 
-const byCategory = funcs => funcs.tags.filter(tag => tag.title === "category")[0].value;
+const byCategory = func => {
+	let errorMsg = `@category missing on ${func.name} documentation`;
+
+	if (!func.tags) {
+		throw new Error(errorMsg);
+	}
+
+	let categories = func.tags.filter(tag => tag.title === "category");
+
+	if (categories.length === 0) {
+		throw new Error(errorMsg);
+	}
+
+	return categories[0].value;
+};
 
 const sortCategories = funcs => {
 	let categories = Object.keys(funcs);
