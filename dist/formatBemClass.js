@@ -5,8 +5,8 @@ import _formatBemModifier from "./internal/bem/_formatBemModifier";
  * Formats a CSS class according to the
  * [BEM methodology](https://en.bem.info/methodology/).
  * The function receives a block, an element, a modifier, a value
- * for the modifier and an array of BEM delimiters, e.g. “__”,
- * “--” and “-”.
+ * for the modifier and an array of BEM delimiters, e.g. `__`,
+ * `--` and `-`.
  * 
  * @category BEM
  *
