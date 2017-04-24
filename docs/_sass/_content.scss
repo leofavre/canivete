@@ -10,6 +10,10 @@
 	flex-grow: 4;
 	flex-shrink: 4;
 
+	> *:nth-child(1) {
+		margin-top: 0;
+	}
+
 	// background-position: 0.3125rem 0;
 	// background-size: $grid $grid;
 	// background-image: linear-gradient(to bottom, lightblue 1px, transparent 1px);
@@ -30,10 +34,6 @@
 		line-height: ($grid * 3);
 		font-family: "Whitney Narrow A", "Whitney Narrow B", sans-serif;
 		font-weight: 300;
-	}
-
-	h2:nth-child(1) {
-		margin-top: 0;
 	}
 
 	h2 + h3,

@@ -71,6 +71,8 @@ html {
   flex-basis: calc(43.25rem + ((100% - 43.25rem) / 2));
   flex-grow: 4;
   flex-shrink: 4; }
+  .content > *:nth-child(1) {
+    margin-top: 0; }
   .content h2 {
     position: relative;
     top: 0;
@@ -81,8 +83,6 @@ html {
     line-height: 4.5rem;
     font-family: "Whitney Narrow A", "Whitney Narrow B", sans-serif;
     font-weight: 300; }
-  .content h2:nth-child(1) {
-    margin-top: 0; }
   .content h2 + h3,
   .content h2 + p + h3 {
     margin-top: 3rem; }
