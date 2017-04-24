@@ -71,8 +71,6 @@ html {
   flex-basis: calc(43.25rem + ((100% - 43.25rem) / 2));
   flex-grow: 4;
   flex-shrink: 4; }
-  .content > *:nth-child(1) {
-    margin-top: 0; }
   .content h2 {
     position: relative;
     top: 0;
@@ -114,9 +112,10 @@ html {
   .content p {
     position: relative;
     top: 0.5rem;
+    margin: 1.5rem 0 1.5rem;
     font-size: 1rem;
-    line-height: 1.5rem;
-    margin: 1.5rem 0 1.5rem; }
+    letter-spacing: -0.0125em;
+    line-height: 1.5rem; }
     @media only screen and (min-width: 1400px) {
       .content p {
         top: calc(0.5rem - 1px); } }
@@ -212,6 +211,8 @@ html {
 .content__area {
   max-width: 43.25rem;
   margin-bottom: 45rem; }
+  .content__area > *:nth-child(1) {
+    margin-top: 0; }
 
 .menu {
   position: relative;

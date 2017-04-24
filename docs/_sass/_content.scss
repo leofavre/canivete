@@ -81,9 +81,10 @@
 	p {
 		position: relative;
 		top: 0.5rem;
-		font-size: 1rem;
-		line-height: $grid;
 		margin: $grid 0 $grid;
+		font-size: 1rem;
+		letter-spacing: -0.0125em;
+		line-height: $grid;
 
 		@media only screen and (min-width: 1400px) {
 			top: calc(0.5rem - 1px);
