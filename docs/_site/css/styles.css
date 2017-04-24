@@ -69,8 +69,8 @@ html {
   -webkit-overflow-scrolling: touch;
   box-sizing: border-box;
   flex-basis: calc(43.25rem + ((100% - 43.25rem) / 2));
-  flex-grow: 0;
-  flex-shrink: 1; }
+  flex-grow: 4;
+  flex-shrink: 4; }
   .content h2 {
     position: relative;
     top: 0;
@@ -217,7 +217,7 @@ html {
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
   box-sizing: border-box;
   flex-basis: calc((100% - 43.25rem) / 2);
-  flex-grow: 0;
+  flex-grow: 1;
   flex-shrink: 1;
   min-width: 14.375rem;
   min-width: min-content;

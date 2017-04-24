@@ -6,7 +6,7 @@
 	box-sizing: border-box;
 
 	flex-basis: calc((100% - #{$full-content-width}) / 2);
-	flex-grow: 0;
+	flex-grow: 1;
 	flex-shrink: 1;
 	min-width: 14.375rem;
 	min-width: min-content;

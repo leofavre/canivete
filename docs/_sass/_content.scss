@@ -7,8 +7,8 @@
 	box-sizing: border-box;
 
 	flex-basis: calc(#{$full-content-width} + ((100% - #{$full-content-width}) / 2));
-	flex-grow: 0;
-	flex-shrink: 1;
+	flex-grow: 4;
+	flex-shrink: 4;
 
 	// background-position: 0.3125rem 0;
 	// background-size: $grid $grid;
