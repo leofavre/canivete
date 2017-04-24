@@ -10,10 +10,6 @@
 	flex-grow: 4;
 	flex-shrink: 4;
 
-	> *:nth-child(1) {
-		margin-top: 0;
-	}
-
 	// background-position: 0.3125rem 0;
 	// background-size: $grid $grid;
 	// background-image: linear-gradient(to bottom, lightblue 1px, transparent 1px);
@@ -237,5 +233,9 @@
 
 .content__area {
 	max-width: $full-content-width;
-	margin-bottom: $grid * 30
+	margin-bottom: $grid * 30;
+
+	> *:nth-child(1) {
+		margin-top: 0;
+	}
 }
