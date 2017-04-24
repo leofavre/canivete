@@ -1,5 +1,5 @@
-import isString from "../node_modules/lodash-es/isString";
-import isElement from "../node_modules/lodash-es/isElement";
+import isString from "lodash-es/isString";
+import isElement from "lodash-es/isElement";
 
 /**
  * Transforms a DOM event into a promise.

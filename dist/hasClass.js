@@ -1,4 +1,4 @@
-import isElement from "../node_modules/lodash-es/isElement";
+import isElement from "lodash-es/isElement";
 
 /**
  * Verifies if a DOM element has a CSS class.

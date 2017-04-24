@@ -1,4 +1,4 @@
-import isElement from "../../../node_modules/lodash-es/isElement";
+import isElement from "lodash-es/isElement";
 
 const _getCoords = (maskDef, allowElementOnly) => {
 	let maskCoords;

@@ -1,5 +1,5 @@
 import toAverage from "./toAverage";
-import at from "../node_modules/lodash-es/at";
+import at from "lodash-es/at";
 
 /**
  * When used with `[].reduce()`, returns

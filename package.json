@@ -27,7 +27,8 @@
     "karma-jasmine": "~0.3.6",
     "lodash": "^4.17.4",
     "rollup": "^0.41.6",
-    "rollup-plugin-multi-entry": "^2.0.1"
+    "rollup-plugin-multi-entry": "^2.0.1",
+    "rollup-plugin-node-resolve": "^3.0.0"
   },
   "dependencies": {
     "lodash-es": "^4.17.4"

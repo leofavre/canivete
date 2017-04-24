@@ -1,4 +1,4 @@
-import random from "../node_modules/lodash-es/random";
+import random from "lodash-es/random";
 
 /**
  * Returns `true` approximately one out of `num` times,

@@ -1,4 +1,4 @@
-import isString from "../../../node_modules/lodash-es/isString";
+import isString from "lodash-es/isString";
 
 const _sliceOnOccurrence = (type, position, str, delimiter) => {
 	if (!isString(str)) {
