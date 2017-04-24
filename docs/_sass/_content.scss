@@ -68,6 +68,10 @@
 		line-height: $grid;
 		letter-spacing: 0.045em;
 		margin: ($grid * 2) 0 $grid;
+
+		@media only screen and (min-width: 1400px) {
+			top: 8px;
+		}
 	}
 
 	h5 {
@@ -144,13 +148,13 @@
 
 	table {
 		position: relative;
+		top: -0.25rem;
 		width: 100%;
 		border-collapse: collapse;
-		margin-top: -0.25rem;
-		margin-bottom: 3.25rem;
+		margin-bottom: 3rem;
 
 		@media only screen and (min-width: 1400px) {
-			top: -1px;
+			top: -5px;
 		}
 	}
 
@@ -159,7 +163,7 @@
 	}
 
 	tbody tr {
-		border-top: 1px solid rgba($grey, 0.1);
+		border-top: 1px solid rgba($grey, 0.2);
 	}
 
 	th {

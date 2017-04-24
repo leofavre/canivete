@@ -108,6 +108,9 @@ html {
     line-height: 1.5rem;
     letter-spacing: 0.045em;
     margin: 3rem 0 1.5rem; }
+    @media only screen and (min-width: 1400px) {
+      .content h4 {
+        top: 8px; } }
   .content p {
     position: relative;
     top: 0.5rem;
@@ -143,17 +146,17 @@ html {
     font-weight: 500; }
   .content table {
     position: relative;
+    top: -0.25rem;
     width: 100%;
     border-collapse: collapse;
-    margin-top: -0.25rem;
-    margin-bottom: 3.25rem; }
+    margin-bottom: 3rem; }
     @media only screen and (min-width: 1400px) {
       .content table {
-        top: -1px; } }
+        top: -5px; } }
   .content tr {
     position: relative; }
   .content tbody tr {
-    border-top: 1px solid rgba(129, 126, 121, 0.1); }
+    border-top: 1px solid rgba(129, 126, 121, 0.2); }
   .content th {
     position: relative;
     text-align: left;
