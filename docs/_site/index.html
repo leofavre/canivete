@@ -573,14 +573,16 @@ from the closest to the most distant, recursively.</p>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">domChild</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">),</span>
 	<span class="nx">domParent</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">),</span>
-	<span class="nx">domGrandparent</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">domParent</span><span class="p">);</span>
+	<span class="nx">domGrandparent</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">domParent</span><span class="p">),</span>
+	<span class="nx">body</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">,</span>
+	<span class="nx">html</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"html"</span><span class="p">);</span>
 
 <span class="nx">domParent</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">domChild</span><span class="p">);</span>
 <span class="nx">domGrandparent</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">domParent</span><span class="p">);</span>
 <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">domGrandparent</span><span class="p">);</span>
 
 <span class="nx">parents</span><span class="p">(</span><span class="nx">domChild</span><span class="p">);</span>
-<span class="c1">// =&gt; [domParent, domGrandparent, document.body, document.querySelector("html"), document]</span>
+<span class="c1">// =&gt; [domParent, domGrandparent, body, html, document]</span>
 </code></pre>
 </div>
 
@@ -677,14 +679,16 @@ the DOM element as the first item of the result.</p>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">domChild</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">),</span>
 	<span class="nx">domParent</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">),</span>
-	<span class="nx">domGrandparent</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">domParent</span><span class="p">);</span>
+	<span class="nx">domGrandparent</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">domParent</span><span class="p">),</span>
+	<span class="nx">body</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">,</span>
+	<span class="nx">html</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"html"</span><span class="p">);</span>
 
 <span class="nx">domParent</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">domChild</span><span class="p">);</span>
 <span class="nx">domGrandparent</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">domParent</span><span class="p">);</span>
 <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">domGrandparent</span><span class="p">);</span>
 
 <span class="nx">selfAndParents</span><span class="p">(</span><span class="nx">domChild</span><span class="p">);</span>
-<span class="c1">// =&gt; [domChild, domParent, domGrandparent, document.body, document.querySelector("html"), document]</span>
+<span class="c1">// =&gt; [domChild, domParent, domGrandparent, body, html, document]</span>
 </code></pre>
 </div>
 

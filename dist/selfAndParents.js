@@ -12,14 +12,16 @@ import parents from "./parents";
  * @example
  * let domChild = document.createElement("div"),
  * 	domParent = document.createElement("div"),
- * 	domGrandparent.appendChild(domParent);
+ * 	domGrandparent.appendChild(domParent),
+ * 	body = document.body,
+ * 	html = document.querySelector("html");
  * 
  * domParent.appendChild(domChild);
  * domGrandparent.appendChild(domParent);
  * document.body.appendChild(domGrandparent);
  * 
  * selfAndParents(domChild);
- * // => [domChild, domParent, domGrandparent, document.body, document.querySelector("html"), document]
+ * // => [domChild, domParent, domGrandparent, body, html, document]
  */
 const selfAndParents = domEl => {
 	if (!isElement(domEl)) {

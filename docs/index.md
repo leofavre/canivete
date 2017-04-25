@@ -286,14 +286,16 @@ from the closest to the most distant, recursively.
 ```javascript
 let domChild = document.createElement("div"),
 	domParent = document.createElement("div"),
-	domGrandparent.appendChild(domParent);
+	domGrandparent.appendChild(domParent),
+	body = document.body,
+	html = document.querySelector("html");
 
 domParent.appendChild(domChild);
 domGrandparent.appendChild(domParent);
 document.body.appendChild(domGrandparent);
 
 parents(domChild);
-// => [domParent, domGrandparent, document.body, document.querySelector("html"), document]
+// => [domParent, domGrandparent, body, html, document]
 ```
 
 <a name="removeClass"></a>
@@ -349,14 +351,16 @@ the DOM element as the first item of the result.
 ```javascript
 let domChild = document.createElement("div"),
 	domParent = document.createElement("div"),
-	domGrandparent.appendChild(domParent);
+	domGrandparent.appendChild(domParent),
+	body = document.body,
+	html = document.querySelector("html");
 
 domParent.appendChild(domChild);
 domGrandparent.appendChild(domParent);
 document.body.appendChild(domGrandparent);
 
 selfAndParents(domChild);
-// => [domChild, domParent, domGrandparent, document.body, document.querySelector("html"), document]
+// => [domChild, domParent, domGrandparent, body, html, document]
 ```
 
 ## Promise

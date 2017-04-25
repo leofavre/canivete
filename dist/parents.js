@@ -11,14 +11,16 @@ import isElement from "lodash-es/isElement";
  * @example
  * let domChild = document.createElement("div"),
  * 	domParent = document.createElement("div"),
- * 	domGrandparent.appendChild(domParent);
+ * 	domGrandparent.appendChild(domParent),
+ * 	body = document.body,
+ * 	html = document.querySelector("html");
  * 
  * domParent.appendChild(domChild);
  * domGrandparent.appendChild(domParent);
  * document.body.appendChild(domGrandparent);
  * 
  * parents(domChild);
- * // => [domParent, domGrandparent, document.body, document.querySelector("html"), document]
+ * // => [domParent, domGrandparent, body, html, document]
  */
 function parents(domEl, memo = []) {
 	if (!isElement(domEl) && memo.length === 0) {
