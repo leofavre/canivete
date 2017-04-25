@@ -6,8 +6,11 @@
 * **[DOM](#dom)**
   * [addClass](#addClass)
   * [clippingInfo](#clippingInfo)
+  * [eventPath](#eventPath)
   * [hasClass](#hasClass)
+  * [parents](#parents)
   * [removeClass](#removeClass)
+  * [selfAndParents](#selfAndParents)
 
 * **[Promise](#promise)**
   * [eventAsPromise](#eventAsPromise)

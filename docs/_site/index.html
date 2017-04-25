@@ -425,6 +425,49 @@ containing numeric values for “top”, “bottom”,
 </code></pre>
 </div>
 
+<p><a name="eventPath"></a></p>
+<h3 id="eventpathevt"><code class="highlighter-rouge">eventPath(evt)</code></h3>
+
+<p>Returns the path through which an event has bubbled.
+This function serves as a polyfill for
+<a href="https://dom.spec.whatwg.org/#dom-event-composedpath"><code class="highlighter-rouge">Event.composedPath()</code></a>.</p>
+
+<h4 id="parameter">Parameter</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">evt</code></td>
+      <td>Event</td>
+      <td>The triggered event.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="return-2">Return</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Array.&lt;HTMLElement&gt;</td>
+      <td>The path through which the event has bubbled.</td>
+    </tr>
+  </tbody>
+</table>
+
 <p><a name="hasClass"></a></p>
 <h3 id="hasclassdomel-str"><code class="highlighter-rouge">hasClass(domEl, str)</code></h3>
 
@@ -454,7 +497,7 @@ containing numeric values for “top”, “bottom”,
   </tbody>
 </table>
 
-<h4 id="return-2">Return</h4>
+<h4 id="return-3">Return</h4>
 
 <table>
   <thead>
@@ -483,6 +526,48 @@ containing numeric values for “top”, “bottom”,
 <span class="c1">// =&gt; false</span>
 </code></pre>
 </div>
+
+<p><a name="parents"></a></p>
+<h3 id="parentsdomel"><code class="highlighter-rouge">parents(domEl)</code></h3>
+
+<p>Returns all parents of a DOM element,
+from the closest to the most distant, recursively.</p>
+
+<h4 id="parameter-1">Parameter</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">domEl</code></td>
+      <td>HTMLElement</td>
+      <td>The DOM element.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="return-4">Return</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Array.&lt;HTMLElement&gt;</td>
+      <td>The DOM element parents.</td>
+    </tr>
+  </tbody>
+</table>
 
 <p><a name="removeClass"></a></p>
 <h3 id="removeclassdomels-str"><code class="highlighter-rouge">removeClass(domEls, str)</code></h3>
@@ -530,6 +615,48 @@ containing numeric values for “top”, “bottom”,
 <span class="c1">// =&gt; "base"</span>
 </code></pre>
 </div>
+
+<p><a name="selfAndParents"></a></p>
+<h3 id="selfandparentsdomel"><code class="highlighter-rouge">selfAndParents(domEl)</code></h3>
+
+<p>The same as <code class="highlighter-rouge">parents()</code>, except it includes
+the DOM element as the first item of the result.</p>
+
+<h4 id="parameter-2">Parameter</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">domEl</code></td>
+      <td>HTMLElement</td>
+      <td>The DOM element.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="return-5">Return</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Array.&lt;HTMLElement&gt;</td>
+      <td>The DOM element and its parents.</td>
+    </tr>
+  </tbody>
+</table>
 
 <h2 id="promise">Promise</h2>
 
@@ -583,7 +710,7 @@ parameters are not a DOM element and a string.</p>
   </tbody>
 </table>
 
-<h4 id="return-3">Return</h4>
+<h4 id="return-6">Return</h4>
 
 <table>
   <thead>
@@ -641,7 +768,7 @@ value of the previous promise step to the next.</p>
 the promise resolves without delay, skipping the
 internal <code class="highlighter-rouge">setTimeout()</code>.</p>
 
-<h4 id="parameter">Parameter</h4>
+<h4 id="parameter-3">Parameter</h4>
 
 <table>
   <thead>
@@ -660,7 +787,7 @@ internal <code class="highlighter-rouge">setTimeout()</code>.</p>
   </tbody>
 </table>
 
-<h4 id="return-4">Return</h4>
+<h4 id="return-7">Return</h4>
 
 <table>
   <thead>
@@ -696,7 +823,7 @@ internal <code class="highlighter-rouge">setTimeout()</code>.</p>
 <p>Returns <code class="highlighter-rouge">true</code> approximately one out of <code class="highlighter-rouge">num</code> times,
 randomly.</p>
 
-<h4 id="parameter-1">Parameter</h4>
+<h4 id="parameter-4">Parameter</h4>
 
 <table>
   <thead>
@@ -715,7 +842,7 @@ randomly.</p>
   </tbody>
 </table>
 
-<h4 id="return-5">Return</h4>
+<h4 id="return-8">Return</h4>
 
 <table>
   <thead>
@@ -754,7 +881,7 @@ the average of the values in an array.</p>
 using <code class="highlighter-rouge">toAverage()</code> can lead to unexpected results.
 Also, note that the parentheses can be ommited.</p>
 
-<h4 id="return-6">Return</h4>
+<h4 id="return-9">Return</h4>
 
 <table>
   <thead>
@@ -794,7 +921,7 @@ is returned.</p>
 <p>Note that this function expects the reduced array to be
 formed by objects with the same set of properties.</p>
 
-<h4 id="parameter-2">Parameter</h4>
+<h4 id="parameter-5">Parameter</h4>
 
 <table>
   <thead>
@@ -813,7 +940,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="return-7">Return</h4>
+<h4 id="return-10">Return</h4>
 
 <table>
   <thead>
@@ -881,7 +1008,7 @@ is returned.</p>
 <p>Note that reducing arrays with non-numeric values
 using <code class="highlighter-rouge">toClosest()</code> can lead to unexpected results.</p>
 
-<h4 id="parameter-3">Parameter</h4>
+<h4 id="parameter-6">Parameter</h4>
 
 <table>
   <thead>
@@ -900,7 +1027,7 @@ using <code class="highlighter-rouge">toClosest()</code> can lead to unexpected 
   </tbody>
 </table>
 
-<h4 id="return-8">Return</h4>
+<h4 id="return-11">Return</h4>
 
 <table>
   <thead>
@@ -965,7 +1092,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="return-9">Return</h4>
+<h4 id="return-12">Return</h4>
 
 <table>
   <thead>
@@ -1031,7 +1158,7 @@ is returned.</p>
 <p>Note that this function expects the reduced array to be
 formed by objects with the same set of properties.</p>
 
-<h4 id="parameter-4">Parameter</h4>
+<h4 id="parameter-7">Parameter</h4>
 
 <table>
   <thead>
@@ -1050,7 +1177,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="return-10">Return</h4>
+<h4 id="return-13">Return</h4>
 
 <table>
   <thead>
@@ -1116,7 +1243,7 @@ is returned.</p>
 <p>Note that this function expects the reduced array to be
 formed by objects with the same set of properties.</p>
 
-<h4 id="parameter-5">Parameter</h4>
+<h4 id="parameter-8">Parameter</h4>
 
 <table>
   <thead>
@@ -1135,7 +1262,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="return-11">Return</h4>
+<h4 id="return-14">Return</h4>
 
 <table>
   <thead>
@@ -1198,7 +1325,7 @@ the sum of the values in an array.</p>
 using <code class="highlighter-rouge">toSum()</code> can lead to unexpected results.
 Also, note that the parentheses can be ommited.</p>
 
-<h4 id="return-12">Return</h4>
+<h4 id="return-15">Return</h4>
 
 <table>
   <thead>
@@ -1235,7 +1362,7 @@ the array in ascending alphabetical order.</p>
 
 <p>Note that the parentheses can be ommited.</p>
 
-<h4 id="return-13">Return</h4>
+<h4 id="return-16">Return</h4>
 
 <table>
   <thead>
@@ -1297,7 +1424,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
   </tbody>
 </table>
 
-<h4 id="return-14">Return</h4>
+<h4 id="return-17">Return</h4>
 
 <table>
   <thead>
@@ -1350,7 +1477,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
   </tbody>
 </table>
 
-<h4 id="return-15">Return</h4>
+<h4 id="return-18">Return</h4>
 
 <table>
   <thead>
@@ -1403,7 +1530,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
   </tbody>
 </table>
 
-<h4 id="return-16">Return</h4>
+<h4 id="return-19">Return</h4>
 
 <table>
   <thead>
@@ -1456,7 +1583,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
   </tbody>
 </table>
 
-<h4 id="return-17">Return</h4>
+<h4 id="return-20">Return</h4>
 
 <table>
   <thead>
@@ -1496,8 +1623,11 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
     <ul>
       <li><a href="#addClass">addClass</a></li>
       <li><a href="#clippingInfo">clippingInfo</a></li>
+      <li><a href="#eventPath">eventPath</a></li>
       <li><a href="#hasClass">hasClass</a></li>
+      <li><a href="#parents">parents</a></li>
       <li><a href="#removeClass">removeClass</a></li>
+      <li><a href="#selfAndParents">selfAndParents</a></li>
     </ul>
   </li>
   <li><strong><a href="#promise">Promise</a></strong>

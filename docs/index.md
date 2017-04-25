@@ -213,6 +213,25 @@ console.log(info.isInvisible);
 // => false
 ```
 
+<a name="eventPath"></a>
+### `eventPath(evt)`
+
+Returns the path through which an event has bubbled.
+This function serves as a polyfill for
+[`Event.composedPath()`](https://dom.spec.whatwg.org/#dom-event-composedpath).
+
+#### Parameter
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `evt` | Event | The triggered event. |
+
+#### Return
+
+| Type | Description |
+| --- | --- |
+| Array.&lt;HTMLElement&gt; | The path through which the event has bubbled. |
+
 <a name="hasClass"></a>
 ### `hasClass(domEl, str)`
 
@@ -244,6 +263,24 @@ console.log(hasClass(oneElement, "button"));
 // => false
 ```
 
+<a name="parents"></a>
+### `parents(domEl)`
+
+Returns all parents of a DOM element,
+from the closest to the most distant, recursively.
+
+#### Parameter
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `domEl` | HTMLElement | The DOM element. |
+
+#### Return
+
+| Type | Description |
+| --- | --- |
+| Array.&lt;HTMLElement&gt; | The DOM element parents. |
+
 <a name="removeClass"></a>
 ### `removeClass(domEls, str)`
 
@@ -273,6 +310,24 @@ removeClass(manyElements, "link");
 console.log(manyElements[0].className);
 // => "base"
 ```
+
+<a name="selfAndParents"></a>
+### `selfAndParents(domEl)`
+
+The same as `parents()`, except it includes
+the DOM element as the first item of the result.
+
+#### Parameter
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `domEl` | HTMLElement | The DOM element. |
+
+#### Return
+
+| Type | Description |
+| --- | --- |
+| Array.&lt;HTMLElement&gt; | The DOM element and its parents. |
 
 ## Promise
 

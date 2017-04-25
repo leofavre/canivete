@@ -119,10 +119,10 @@ html {
     @media only screen and (min-width: 1400px) {
       .content p {
         top: calc(0.5rem - 1px); } }
-  .content p > code {
+  .content p code {
     padding: 1px 0.25rem;
     background-color: rgba(129, 126, 121, 0.2); }
-  .content p > strong {
+  .content p strong {
     font-weight: 600; }
   .content a {
     color: #000; }
