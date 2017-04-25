@@ -8,6 +8,25 @@ import parents from "./parents";
  * @category DOM
  * @param  {HTMLElement} domEl The DOM element.
  * @return {Array.<HTMLElement>} The DOM element and its parents.
+ * 
+ * @example
+ * let domChild = document.createElement("div"),
+ * 	domParent = document.createElement("div"),
+ * 	domGrandparent.appendChild(domParent);
+ * 
+ * domParent.appendChild(domChild);
+ * domGrandparent.appendChild(domParent);
+ * document.body.appendChild(domGrandparent);
+ * 
+ * selfAndParents(domChild);
+ * // => [
+ * 	domChild,
+ * 	domParent,
+ * 	domGrandparent,
+ * 	document.body,
+ * 	document.querySelector("html"),
+ * 	document
+ * ]
  */
 const selfAndParents = domEl => {
 	if (!isElement(domEl)) {

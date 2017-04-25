@@ -7,6 +7,24 @@ import isElement from "lodash-es/isElement";
  * @category DOM
  * @param  {HTMLElement} domEl The DOM element.
  * @return {Array.<HTMLElement>} The DOM element parents.
+ *
+ * @example
+ * let domChild = document.createElement("div"),
+ * 	domParent = document.createElement("div"),
+ * 	domGrandparent.appendChild(domParent);
+ * 
+ * domParent.appendChild(domChild);
+ * domGrandparent.appendChild(domParent);
+ * document.body.appendChild(domGrandparent);
+ * 
+ * parents(domChild);
+ * // => [
+ * 	domParent,
+ * 	domGrandparent,
+ * 	document.body,
+ * 	document.querySelector("html"),
+ * 	document
+ * ]
  */
 function parents(domEl, memo = []) {
 	if (!isElement(domEl) && memo.length === 0) {
