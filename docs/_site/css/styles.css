@@ -135,8 +135,8 @@ html {
     overflow: auto; }
     @media only screen and (min-width: 1400px) {
       .content pre {
-        padding-top: 61px;
-        padding-bottom: 47px; } }
+        padding-top: 62px;
+        padding-bottom: 46px; } }
   .content pre code {
     line-height: 1.5rem; }
     @media only screen and (min-width: 1400px) {
