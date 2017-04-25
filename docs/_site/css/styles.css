@@ -283,16 +283,13 @@ html {
   margin: 0; }
 
 .highlight .c, .highlight .cd {
-  color: #75715e;
-  font-style: italic; }
+  color: #75715e; }
 
 .highlight .cm {
-  color: #75715e;
-  font-style: italic; }
+  color: #75715e; }
 
 .highlight .c1 {
-  color: #75715e;
-  font-style: italic; }
+  color: #75715e; }
 
 .highlight .cp {
   color: #75715e;
@@ -300,8 +297,7 @@ html {
 
 .highlight .cs {
   color: #75715e;
-  font-weight: bold;
-  font-style: italic; }
+  font-weight: bold; }
 
 .highlight .err {
   color: #960050;
@@ -316,8 +312,7 @@ html {
   background-color: #493131; }
 
 .highlight .ge {
-  color: #000000;
-  font-style: italic; }
+  color: #000000; }
 
 .highlight .gr {
   color: #aa0000; }
