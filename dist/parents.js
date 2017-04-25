@@ -1,4 +1,4 @@
-import isElement from "lodash/isElement";
+import isElement from "lodash-es/isElement";
 
 /**
  * Returns all parents of a DOM element,
@@ -9,7 +9,7 @@ import isElement from "lodash/isElement";
  * @return {Array.<HTMLElement>} The DOM element parents.
  */
 function parents(domEl, memo = []) {
-	if (!isElement(domEl)) {
+	if (!isElement(domEl) && memo.length === 0) {
 		throw new Error("An HTMLElement is expected as parameter.");
 	}
 
