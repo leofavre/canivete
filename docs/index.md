@@ -281,6 +281,27 @@ from the closest to the most distant, recursively.
 | --- | --- |
 | Array.&lt;HTMLElement&gt; | The DOM element parents. |
 
+#### Example
+
+```javascript
+let domChild = document.createElement("div"),
+	domParent = document.createElement("div"),
+	domGrandparent.appendChild(domParent);
+
+domParent.appendChild(domChild);
+domGrandparent.appendChild(domParent);
+document.body.appendChild(domGrandparent);
+
+parents(domChild);
+// => [
+	domParent,
+	domGrandparent,
+	document.body,
+	document.querySelector("html"),
+	document
+]
+```
+
 <a name="removeClass"></a>
 ### `removeClass(domEls, str)`
 
@@ -328,6 +349,28 @@ the DOM element as the first item of the result.
 | Type | Description |
 | --- | --- |
 | Array.&lt;HTMLElement&gt; | The DOM element and its parents. |
+
+#### Example
+
+```javascript
+let domChild = document.createElement("div"),
+	domParent = document.createElement("div"),
+	domGrandparent.appendChild(domParent);
+
+domParent.appendChild(domChild);
+domGrandparent.appendChild(domParent);
+document.body.appendChild(domGrandparent);
+
+selfAndParents(domChild);
+// => [
+	domChild,
+	domParent,
+	domGrandparent,
+	document.body,
+	document.querySelector("html"),
+	document
+]
+```
 
 ## Promise
 
