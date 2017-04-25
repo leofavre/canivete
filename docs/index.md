@@ -293,13 +293,7 @@ domGrandparent.appendChild(domParent);
 document.body.appendChild(domGrandparent);
 
 parents(domChild);
-// => [
-	domParent,
-	domGrandparent,
-	document.body,
-	document.querySelector("html"),
-	document
-]
+// => [domParent, domGrandparent, document.body, document.querySelector("html"), document]
 ```
 
 <a name="removeClass"></a>
@@ -362,14 +356,7 @@ domGrandparent.appendChild(domParent);
 document.body.appendChild(domGrandparent);
 
 selfAndParents(domChild);
-// => [
-	domChild,
-	domParent,
-	domGrandparent,
-	document.body,
-	document.querySelector("html"),
-	document
-]
+// => [domChild, domParent, domGrandparent, document.body, document.querySelector("html"), document]
 ```
 
 ## Promise
