@@ -19,14 +19,7 @@ import parents from "./parents";
  * document.body.appendChild(domGrandparent);
  * 
  * selfAndParents(domChild);
- * // => [
- * 	domChild,
- * 	domParent,
- * 	domGrandparent,
- * 	document.body,
- * 	document.querySelector("html"),
- * 	document
- * ]
+ * // => [domChild, domParent, domGrandparent, document.body, document.querySelector("html"), document]
  */
 const selfAndParents = domEl => {
 	if (!isElement(domEl)) {

@@ -18,13 +18,7 @@ import isElement from "lodash-es/isElement";
  * document.body.appendChild(domGrandparent);
  * 
  * parents(domChild);
- * // => [
- * 	domParent,
- * 	domGrandparent,
- * 	document.body,
- * 	document.querySelector("html"),
- * 	document
- * ]
+ * // => [domParent, domGrandparent, document.body, document.querySelector("html"), document]
  */
 function parents(domEl, memo = []) {
 	if (!isElement(domEl) && memo.length === 0) {
