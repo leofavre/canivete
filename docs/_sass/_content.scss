@@ -104,12 +104,16 @@
 		color: #000;
 	}
 
-	ul {
-
-	}
-
+	ul,
 	ol {
+		position: relative;
+		top: 0.5rem;
+		margin: $grid 0;
+		line-height: $grid;
 
+		@media only screen and (min-width: 1400px) {
+			top: calc(0.5rem - 1px);
+		}
 	}
 
 	li {
