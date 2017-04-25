@@ -1,6 +1,6 @@
 .menu {
 	position: relative;
-	padding: $grid ($grid * 2);
+	padding: $grid ($grid * 1.5) $grid ($grid * 2);
 	height: auto;
 	box-shadow: 0 0 0.5rem rgba(#000, 0.3);
 	box-sizing: border-box;
