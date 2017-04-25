@@ -6,11 +6,14 @@
 * **[DOM](#dom)**
   * [addClass](#addClass)
   * [clippingInfo](#clippingInfo)
-  * [eventPath](#eventPath)
   * [hasClass](#hasClass)
   * [parents](#parents)
   * [removeClass](#removeClass)
   * [selfAndParents](#selfAndParents)
+
+* **[Event](#event)**
+  * [eventPath](#eventPath)
+  * [trigger](#trigger)
 
 * **[Promise](#promise)**
   * [eventAsPromise](#eventAsPromise)
@@ -36,5 +39,8 @@
   * [afterLast](#afterLast)
   * [beforeFirst](#beforeFirst)
   * [beforeLast](#beforeLast)
+
+* **[Time](#time)**
+  * [timeSince](#timeSince)
 
 

@@ -425,49 +425,6 @@ containing numeric values for “top”, “bottom”,
 </code></pre>
 </div>
 
-<p><a name="eventPath"></a></p>
-<h3 id="eventpathevt"><code class="highlighter-rouge">eventPath(evt)</code></h3>
-
-<p>Returns an array with all DOM elements affected by an event.
-This function serves as a polyfill for
-<a href="https://dom.spec.whatwg.org/#dom-event-composedpath"><code class="highlighter-rouge">Event.composedPath()</code></a>.</p>
-
-<h4 id="parameter">Parameter</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">evt</code></td>
-      <td>Event</td>
-      <td>The triggered event.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="return-2">Return</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Array.&lt;HTMLElement&gt;</td>
-      <td>The DOM elements affected by the event.</td>
-    </tr>
-  </tbody>
-</table>
-
 <p><a name="hasClass"></a></p>
 <h3 id="hasclassdomel-str"><code class="highlighter-rouge">hasClass(domEl, str)</code></h3>
 
@@ -497,7 +454,7 @@ This function serves as a polyfill for
   </tbody>
 </table>
 
-<h4 id="return-3">Return</h4>
+<h4 id="return-2">Return</h4>
 
 <table>
   <thead>
@@ -533,7 +490,7 @@ This function serves as a polyfill for
 <p>Returns all parents of a DOM element,
 from the closest to the most distant, recursively.</p>
 
-<h4 id="parameter-1">Parameter</h4>
+<h4 id="parameter">Parameter</h4>
 
 <table>
   <thead>
@@ -552,7 +509,7 @@ from the closest to the most distant, recursively.</p>
   </tbody>
 </table>
 
-<h4 id="return-4">Return</h4>
+<h4 id="return-3">Return</h4>
 
 <table>
   <thead>
@@ -639,7 +596,7 @@ from the closest to the most distant, recursively.</p>
 <p>The same as <code class="highlighter-rouge">parents()</code>, except it includes
 the DOM element as the first item of the result.</p>
 
-<h4 id="parameter-2">Parameter</h4>
+<h4 id="parameter-1">Parameter</h4>
 
 <table>
   <thead>
@@ -658,7 +615,7 @@ the DOM element as the first item of the result.</p>
   </tbody>
 </table>
 
-<h4 id="return-5">Return</h4>
+<h4 id="return-4">Return</h4>
 
 <table>
   <thead>
@@ -692,6 +649,102 @@ the DOM element as the first item of the result.</p>
 </code></pre>
 </div>
 
+<h2 id="event">Event</h2>
+
+<p><a name="eventPath"></a></p>
+<h3 id="eventpathevt"><code class="highlighter-rouge">eventPath(evt)</code></h3>
+
+<p>Returns an array with all DOM elements affected by an event.
+This function serves as a polyfill for
+<a href="https://dom.spec.whatwg.org/#dom-event-composedpath"><code class="highlighter-rouge">Event.composedPath()</code></a>.</p>
+
+<h4 id="parameter-2">Parameter</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">evt</code></td>
+      <td>Event</td>
+      <td>The triggered event.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="return-5">Return</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Array.&lt;HTMLElement&gt;</td>
+      <td>The DOM elements affected by the event.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="trigger"></a></p>
+<h3 id="triggerevtname-bubbles-target"><code class="highlighter-rouge">trigger(evtName, bubbles, target)</code></h3>
+
+<p>Triggers a custom DOM event.</p>
+
+<h4 id="parameters-7">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">evtName</code></td>
+      <td>String</td>
+      <td>The event name.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">bubbles</code></td>
+      <td>Boolean</td>
+      <td>Whether the event should bubble or not.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">target</code></td>
+      <td>HTMLElement</td>
+      <td>The DOM element that triggers the event.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="return-6">Return</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CustomEvent</td>
+      <td>The custom event.</td>
+    </tr>
+  </tbody>
+</table>
+
 <h2 id="promise">Promise</h2>
 
 <p><a name="eventAsPromise"></a></p>
@@ -711,7 +764,7 @@ returns true or when the event occurs for the first time.</p>
 <p>Note that the function throws an error if the first two
 parameters are not a DOM element and a string.</p>
 
-<h4 id="parameters-7">Parameters</h4>
+<h4 id="parameters-8">Parameters</h4>
 
 <table>
   <thead>
@@ -744,7 +797,7 @@ parameters are not a DOM element and a string.</p>
   </tbody>
 </table>
 
-<h4 id="return-6">Return</h4>
+<h4 id="return-7">Return</h4>
 
 <table>
   <thead>
@@ -821,7 +874,7 @@ internal <code class="highlighter-rouge">setTimeout()</code>.</p>
   </tbody>
 </table>
 
-<h4 id="return-7">Return</h4>
+<h4 id="return-8">Return</h4>
 
 <table>
   <thead>
@@ -876,7 +929,7 @@ randomly.</p>
   </tbody>
 </table>
 
-<h4 id="return-8">Return</h4>
+<h4 id="return-9">Return</h4>
 
 <table>
   <thead>
@@ -915,7 +968,7 @@ the average of the values in an array.</p>
 using <code class="highlighter-rouge">toAverage()</code> can lead to unexpected results.
 Also, note that the parentheses can be ommited.</p>
 
-<h4 id="return-9">Return</h4>
+<h4 id="return-10">Return</h4>
 
 <table>
   <thead>
@@ -974,7 +1027,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="return-10">Return</h4>
+<h4 id="return-11">Return</h4>
 
 <table>
   <thead>
@@ -1061,7 +1114,7 @@ using <code class="highlighter-rouge">toClosest()</code> can lead to unexpected 
   </tbody>
 </table>
 
-<h4 id="return-11">Return</h4>
+<h4 id="return-12">Return</h4>
 
 <table>
   <thead>
@@ -1102,7 +1155,7 @@ is returned.</p>
 <p>Note that this function expects the reduced array to be
 formed by objects with the same set of properties.</p>
 
-<h4 id="parameters-8">Parameters</h4>
+<h4 id="parameters-9">Parameters</h4>
 
 <table>
   <thead>
@@ -1126,7 +1179,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="return-12">Return</h4>
+<h4 id="return-13">Return</h4>
 
 <table>
   <thead>
@@ -1211,7 +1264,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="return-13">Return</h4>
+<h4 id="return-14">Return</h4>
 
 <table>
   <thead>
@@ -1296,7 +1349,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="return-14">Return</h4>
+<h4 id="return-15">Return</h4>
 
 <table>
   <thead>
@@ -1359,7 +1412,7 @@ the sum of the values in an array.</p>
 using <code class="highlighter-rouge">toSum()</code> can lead to unexpected results.
 Also, note that the parentheses can be ommited.</p>
 
-<h4 id="return-15">Return</h4>
+<h4 id="return-16">Return</h4>
 
 <table>
   <thead>
@@ -1396,7 +1449,7 @@ the array in ascending alphabetical order.</p>
 
 <p>Note that the parentheses can be ommited.</p>
 
-<h4 id="return-16">Return</h4>
+<h4 id="return-17">Return</h4>
 
 <table>
   <thead>
@@ -1432,59 +1485,6 @@ the array in ascending alphabetical order.</p>
 
 <p>Returns the string formed by the characters <strong>after
 the first occurrence</strong> of the delimiter in a base string.
-If the delimiter is not found, the function returns <code class="highlighter-rouge">undefined</code>.</p>
-
-<h4 id="parameters-9">Parameters</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">str</code></td>
-      <td>String</td>
-      <td>The base string.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">delimiter</code></td>
-      <td>String</td>
-      <td>The delimiter string.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="return-17">Return</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>String</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="example-14">Example</h4>
-
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">afterFirst</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
-<span class="c1">// =&gt; "lepiped"</span>
-</code></pre>
-</div>
-
-<p><a name="afterLast"></a></p>
-<h3 id="afterlaststr-delimiter"><code class="highlighter-rouge">afterLast(str, delimiter)</code></h3>
-
-<p>Returns the string formed by the characters <strong>after
-the last occurrence</strong> of the delimiter in a base string.
 If the delimiter is not found, the function returns <code class="highlighter-rouge">undefined</code>.</p>
 
 <h4 id="parameters-10">Parameters</h4>
@@ -1526,18 +1526,18 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
   </tbody>
 </table>
 
-<h4 id="example-15">Example</h4>
+<h4 id="example-14">Example</h4>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">afterLast</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
-<span class="c1">// =&gt; "piped"</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">afterFirst</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
+<span class="c1">// =&gt; "lepiped"</span>
 </code></pre>
 </div>
 
-<p><a name="beforeFirst"></a></p>
-<h3 id="beforefirststr-delimiter"><code class="highlighter-rouge">beforeFirst(str, delimiter)</code></h3>
+<p><a name="afterLast"></a></p>
+<h3 id="afterlaststr-delimiter"><code class="highlighter-rouge">afterLast(str, delimiter)</code></h3>
 
-<p>Returns the string formed by the characters <strong>before
-the first occurrence</strong> of the delimiter in a base string.
+<p>Returns the string formed by the characters <strong>after
+the last occurrence</strong> of the delimiter in a base string.
 If the delimiter is not found, the function returns <code class="highlighter-rouge">undefined</code>.</p>
 
 <h4 id="parameters-11">Parameters</h4>
@@ -1579,18 +1579,18 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
   </tbody>
 </table>
 
-<h4 id="example-16">Example</h4>
+<h4 id="example-15">Example</h4>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">beforeFirst</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
-<span class="c1">// =&gt; "paral"</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">afterLast</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
+<span class="c1">// =&gt; "piped"</span>
 </code></pre>
 </div>
 
-<p><a name="beforeLast"></a></p>
-<h3 id="beforelaststr-delimiter"><code class="highlighter-rouge">beforeLast(str, delimiter)</code></h3>
+<p><a name="beforeFirst"></a></p>
+<h3 id="beforefirststr-delimiter"><code class="highlighter-rouge">beforeFirst(str, delimiter)</code></h3>
 
 <p>Returns the string formed by the characters <strong>before
-the last occurrence</strong> of the delimiter in a base string.
+the first occurrence</strong> of the delimiter in a base string.
 If the delimiter is not found, the function returns <code class="highlighter-rouge">undefined</code>.</p>
 
 <h4 id="parameters-12">Parameters</h4>
@@ -1632,12 +1632,108 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
   </tbody>
 </table>
 
+<h4 id="example-16">Example</h4>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">beforeFirst</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
+<span class="c1">// =&gt; "paral"</span>
+</code></pre>
+</div>
+
+<p><a name="beforeLast"></a></p>
+<h3 id="beforelaststr-delimiter"><code class="highlighter-rouge">beforeLast(str, delimiter)</code></h3>
+
+<p>Returns the string formed by the characters <strong>before
+the last occurrence</strong> of the delimiter in a base string.
+If the delimiter is not found, the function returns <code class="highlighter-rouge">undefined</code>.</p>
+
+<h4 id="parameters-13">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">str</code></td>
+      <td>String</td>
+      <td>The base string.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">delimiter</code></td>
+      <td>String</td>
+      <td>The delimiter string.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="return-21">Return</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>String</td>
+    </tr>
+  </tbody>
+</table>
+
 <h4 id="example-17">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">beforeLast</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
 <span class="c1">// =&gt; "paralle"</span>
 </code></pre>
 </div>
+
+<h2 id="time">Time</h2>
+
+<p><a name="timeSince"></a></p>
+<h3 id="timesincetimestamp"><code class="highlighter-rouge">timeSince(timestamp)</code></h3>
+
+<p>Returns the time passed since a timestamp, in milliseconds;</p>
+
+<h4 id="parameter-9">Parameter</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">timestamp</code></td>
+      <td>Number</td>
+      <td>The time stamp.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="return-22">Return</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Number</td>
+      <td>Time passed since the timestamp, in milliseconds.</td>
+    </tr>
+  </tbody>
+</table>
 
 
 			</div>
@@ -1657,11 +1753,16 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
     <ul>
       <li><a href="#addClass">addClass</a></li>
       <li><a href="#clippingInfo">clippingInfo</a></li>
-      <li><a href="#eventPath">eventPath</a></li>
       <li><a href="#hasClass">hasClass</a></li>
       <li><a href="#parents">parents</a></li>
       <li><a href="#removeClass">removeClass</a></li>
       <li><a href="#selfAndParents">selfAndParents</a></li>
+    </ul>
+  </li>
+  <li><strong><a href="#event">Event</a></strong>
+    <ul>
+      <li><a href="#eventPath">eventPath</a></li>
+      <li><a href="#trigger">trigger</a></li>
     </ul>
   </li>
   <li><strong><a href="#promise">Promise</a></strong>
@@ -1697,6 +1798,11 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
       <li><a href="#afterLast">afterLast</a></li>
       <li><a href="#beforeFirst">beforeFirst</a></li>
       <li><a href="#beforeLast">beforeLast</a></li>
+    </ul>
+  </li>
+  <li><strong><a href="#time">Time</a></strong>
+    <ul>
+      <li><a href="#timeSince">timeSince</a></li>
     </ul>
   </li>
 </ul>

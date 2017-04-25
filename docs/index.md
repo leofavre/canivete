@@ -213,25 +213,6 @@ console.log(info.isInvisible);
 // => false
 ```
 
-<a name="eventPath"></a>
-### `eventPath(evt)`
-
-Returns an array with all DOM elements affected by an event.
-This function serves as a polyfill for
-[`Event.composedPath()`](https://dom.spec.whatwg.org/#dom-event-composedpath).
-
-#### Parameter
-
-| Name | Type | Description |
-| --- | --- | --- |
-| `evt` | Event | The triggered event. |
-
-#### Return
-
-| Type | Description |
-| --- | --- |
-| Array.&lt;HTMLElement&gt; | The DOM elements affected by the event. |
-
 <a name="hasClass"></a>
 ### `hasClass(domEl, str)`
 
@@ -362,6 +343,46 @@ document.body.appendChild(domGrandparent);
 selfAndParents(domChild);
 // => [domChild, domParent, domGrandparent, body, html, document]
 ```
+
+## Event
+
+<a name="eventPath"></a>
+### `eventPath(evt)`
+
+Returns an array with all DOM elements affected by an event.
+This function serves as a polyfill for
+[`Event.composedPath()`](https://dom.spec.whatwg.org/#dom-event-composedpath).
+
+#### Parameter
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `evt` | Event | The triggered event. |
+
+#### Return
+
+| Type | Description |
+| --- | --- |
+| Array.&lt;HTMLElement&gt; | The DOM elements affected by the event. |
+
+<a name="trigger"></a>
+### `trigger(evtName, bubbles, target)`
+
+Triggers a custom DOM event.
+
+#### Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `evtName` | String | The event name. |
+| `bubbles` | Boolean | Whether the event should bubble or not. |
+| `target` | HTMLElement | The DOM element that triggers the event. |
+
+#### Return
+
+| Type | Description |
+| --- | --- |
+| CustomEvent | The custom event. |
 
 ## Promise
 
@@ -964,5 +985,24 @@ If the delimiter is not found, the function returns `undefined`.
 beforeLast("parallelepiped", "le");
 // => "paralle"
 ```
+
+## Time
+
+<a name="timeSince"></a>
+### `timeSince(timestamp)`
+
+Returns the time passed since a timestamp, in milliseconds;
+
+#### Parameter
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `timestamp` | Number | The time stamp. |
+
+#### Return
+
+| Type | Description |
+| --- | --- |
+| Number | Time passed since the timestamp, in milliseconds. |
 
 

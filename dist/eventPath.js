@@ -5,7 +5,7 @@ import selfAndParents from "./selfAndParents";
  * This function serves as a polyfill for
  * [`Event.composedPath()`](https://dom.spec.whatwg.org/#dom-event-composedpath).
  *
- * @category DOM
+ * @category Event
  * @param {Event} evt The triggered event.
  * @return {Array.<HTMLElement>} The DOM elements affected by the event.
  */
