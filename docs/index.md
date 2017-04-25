@@ -216,7 +216,7 @@ console.log(info.isInvisible);
 <a name="eventPath"></a>
 ### `eventPath(evt)`
 
-Returns the path through which an event has bubbled.
+Returns an array with all DOM elements affected by an event.
 This function serves as a polyfill for
 [`Event.composedPath()`](https://dom.spec.whatwg.org/#dom-event-composedpath).
 
@@ -230,7 +230,7 @@ This function serves as a polyfill for
 
 | Type | Description |
 | --- | --- |
-| Array.&lt;HTMLElement&gt; | The path through which the event has bubbled. |
+| Array.&lt;HTMLElement&gt; | The DOM elements affected by the event. |
 
 <a name="hasClass"></a>
 ### `hasClass(domEl, str)`
