@@ -120,13 +120,22 @@
 		background-color: rgba(#272822, 1);
 		color: #f8f8f2;
 		margin: $grid ($grid * -1) ($grid * 2) ($grid * -2);
-		padding: ($grid * 2) $grid ($grid * 2) ($grid * 2);
+		padding: 3.5rem $grid 2.5rem ($grid * 2);
 		line-height: $grid;
 		overflow: auto;
+
+		@media only screen and (min-width: 1400px) {
+			padding-top: 61px;
+			padding-bottom: 47px;
+		}
 	}
 
 	pre code {
 		line-height: $grid;
+
+		@media only screen and (min-width: 1400px) {
+			line-height: 1.25rem;
+		}
 	}
 
 	code {
