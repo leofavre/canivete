@@ -126,6 +126,16 @@ html {
     font-weight: 600; }
   .content a {
     color: #000; }
+  .content ul,
+  .content ol {
+    position: relative;
+    top: 0.5rem;
+    margin: 1.5rem 0;
+    line-height: 1.5rem; }
+    @media only screen and (min-width: 1400px) {
+      .content ul,
+      .content ol {
+        top: calc(0.5rem - 1px); } }
   .content pre {
     background-color: #272822;
     color: #f8f8f2;
