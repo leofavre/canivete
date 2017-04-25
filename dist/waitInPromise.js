@@ -24,7 +24,7 @@
  * // => "waiting"
  * // shown after 500ms.
  */
-function waitInPromise(delay) {
+const waitInPromise = delay => {
 	return arg => {
 		if (Number.isFinite(delay) && delay > 0) {
 			return new Promise(resolve => {
@@ -33,6 +33,6 @@ function waitInPromise(delay) {
 		}
 		return Promise.resolve(arg);
 	};
-}
+};
 
 export default waitInPromise;

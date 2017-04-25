@@ -24,11 +24,11 @@ import parents from "./parents";
  * // => [domChild, domParent, domGrandparent, body, html, document]
  */
 const selfAndParents = domEl => {
-	if (!isElement(domEl)) {
+	if (!isElement(domEl) && memo.length === 0) {
 		throw new Error("An HTMLElement is expected as parameter.");
 	}
 
-	return (domEl != null) ? [domEl].concat(parents(domEl)) : [];
+	return [domEl].concat(parents(domEl));
 };
 
 export default selfAndParents;
