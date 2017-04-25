@@ -127,16 +127,13 @@ html {
   .content a {
     color: #000; }
   .content pre {
-    white-space: pre-wrap;
-    margin: 0 0 -0.75rem; }
-  .content pre > code {
     background-color: #272822;
     color: #f8f8f2;
     margin: 1.5rem -1.5rem 3rem -3rem;
-    padding-top: 3.5rem;
-    padding-bottom: 3.25rem;
-    padding-left: 3rem;
-    padding-right: 1.5rem;
+    padding: 3rem 1.5rem 3rem 3rem;
+    line-height: 1.5rem;
+    overflow: auto; }
+  .content pre code {
     line-height: 1.5rem; }
   .content code {
     font-family: "Fira Code", monospace;
