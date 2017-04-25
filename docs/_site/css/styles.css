@@ -220,7 +220,7 @@ html {
 
 .menu {
   position: relative;
-  padding: 1.5rem 3rem;
+  padding: 1.5rem 2.25rem 1.5rem 3rem;
   height: auto;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
   box-sizing: border-box;
