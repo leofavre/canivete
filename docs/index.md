@@ -87,22 +87,94 @@ to the [BEM methodology](https://en.bem.info/methodology/).
 | Name | Type | Description |
 | --- | --- | --- |
 | `domEl` | HTMLElement | The modified DOM element. |
-| `bemObj` | Object | The object describing BEM class changes. |
+| `bemObj` | BemObject | The object describing BEM class changes (see table below). |
 | `delimiters` | Array | The BEM delimiters. |
+
+#### BemObject
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `name` | Object | An object which key is a BEM block or element, e.g. `menu` ou `landing__area`. |
+| `name.modifier` | Object | An object representing a modifier and it's value, e.g. `{active: false}` or `{level: 42}`. |
+
+#### Example
+
+```javascript
+let domEl = document.createElement("div"),
+	modifiers = ["__", "--", "-"];
+
+modifyBemClass(domEl, {
+	swiper: {
+		slides: 5,
+		current: 2,
+		playing: true
+	}
+}, modifiers);
+
+console.log(domEl.className);
+// => "swiper swiper--slides-5 swiper--current-2 swiper--playing"
+
+modifyBemClass(domEl, {
+	swiper: {
+		current: 3,
+		playing: false
+	}
+}, modifiers);
+
+console.log(domEl.className);
+// => "swiper swiper--slides-5 swiper--current-3"
+```
 
 <a name="modifyBemClassCompact"></a>
 ### `modifyBemClassCompact(domEl, bemObj, delimiters)`
 
-Modifies the CSS classes from a DOM element according
-to the [BEM methodology](https://en.bem.info/methodology/).
+Like `modifyBemClass()`, modifies the CSS classes from
+a DOM element according to the [BEM methodology](https://en.bem.info/methodology/).
+The difference is that it only prints modified elements,
+instead of original and modified objects.
 
 #### Parameters
 
 | Name | Type | Description |
 | --- | --- | --- |
 | `domEl` | HTMLElement | The modified DOM element. |
-| `bemObj` | Object | The object describing BEM class changes. |
+| `bemObj` | BemObject | The object describing BEM class changes (see table below). |
 | `delimiters` | Array | The BEM delimiters. |
+
+#### BemObject
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `name` | Object | An object which key is a BEM block or element, e.g. `menu` ou `landing__area`. |
+| `name.modifier` | Object | An object representing a modifier and it's value, e.g. `{active: false}` or `{level: 42}`. |
+
+#### Example
+
+```javascript
+let domEl = document.createElement("div"),
+	modifiers = ["__", "--", "-"];
+
+modifyBemClassCompact(domEl, {
+	swiper: {
+		slides: 5,
+		current: 2,
+		playing: true
+	}
+}, modifiers);
+
+console.log(domEl.className);
+// => "swiper--slides-5 swiper--current-2 swiper--playing"
+
+modifyBemClassCompact(domEl, {
+	swiper: {
+		current: 3,
+		playing: false
+	}
+}, modifiers);
+
+console.log(domEl.className);
+// => "swiper--slides-5 swiper--current-3"
+```
 
 ## Class Name
 

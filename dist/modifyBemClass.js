@@ -1,14 +1,45 @@
 import _parseBem from "./internal/bem/_parseBem";
 
 /**
+ * @typedef {Object} bemObject
+ * @property {Object} name An object which key is a BEM block or element, e.g. `menu` ou `landing__area`.
+ * @property {Object} name.modifier An object representing a modifier and it's value, e.g. `{active: false}` or `{level: 42}`.
+ */
+
+/**
  * Modifies the CSS classes from a DOM element according
  * to the [BEM methodology](https://en.bem.info/methodology/).
  *
  * @category BEM
  *
  * @param  {HTMLElement} domEl The modified DOM element.
- * @param  {Object} bemObj The object describing BEM class changes.
+ * @param  {bemObject} bemObj The object describing BEM class changes (see table below).
  * @param  {Array} delimiters The BEM delimiters.
+ *
+ * @example
+ * let domEl = document.createElement("div"),
+ * 	modifiers = ["__", "--", "-"];
+ *
+ * modifyBemClass(domEl, {
+ * 	swiper: {
+ * 		slides: 5,
+ * 		current: 2,
+ * 		playing: true
+ * 	}
+ * }, modifiers);
+ *
+ * console.log(domEl.className);
+ * // => "swiper swiper--slides-5 swiper--current-2 swiper--playing"
+ *
+ * modifyBemClass(domEl, {
+ * 	swiper: {
+ * 		current: 3,
+ * 		playing: false
+ * 	}
+ * }, modifiers);
+ *
+ * console.log(domEl.className);
+ * // => "swiper swiper--slides-5 swiper--current-3"
  */
 const modifyBemClass = (domEl, bemObj, delimiters) => _parseBem(bemObj, domEl, delimiters, true);
 

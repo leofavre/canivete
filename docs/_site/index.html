@@ -156,8 +156,8 @@ to the <a href="https://en.bem.info/methodology/">BEM methodology</a>.</p>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">bemObj</code></td>
-      <td>Object</td>
-      <td>The object describing BEM class changes.</td>
+      <td>BemObject</td>
+      <td>The object describing BEM class changes (see table below).</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">delimiters</code></td>
@@ -167,11 +167,65 @@ to the <a href="https://en.bem.info/methodology/">BEM methodology</a>.</p>
   </tbody>
 </table>
 
+<h4 id="bemobject">BemObject</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">name</code></td>
+      <td>Object</td>
+      <td>An object which key is a BEM block or element, e.g. <code class="highlighter-rouge">menu</code> ou <code class="highlighter-rouge">landing__area</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">name.modifier</code></td>
+      <td>Object</td>
+      <td>An object representing a modifier and it’s value, e.g. <code class="highlighter-rouge"><span class="p">{</span><span class="err">active:</span><span class="w"> </span><span class="err">false</span><span class="p">}</span></code> or <code class="highlighter-rouge"><span class="p">{</span><span class="err">level:</span><span class="w"> </span><span class="err">42</span><span class="p">}</span></code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="example">Example</h4>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">domEl</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">),</span>
+	<span class="nx">modifiers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"__"</span><span class="p">,</span> <span class="s2">"--"</span><span class="p">,</span> <span class="s2">"-"</span><span class="p">];</span>
+
+<span class="nx">modifyBemClass</span><span class="p">(</span><span class="nx">domEl</span><span class="p">,</span> <span class="p">{</span>
+	<span class="na">swiper</span><span class="p">:</span> <span class="p">{</span>
+		<span class="na">slides</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+		<span class="na">current</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+		<span class="na">playing</span><span class="p">:</span> <span class="kc">true</span>
+	<span class="p">}</span>
+<span class="p">},</span> <span class="nx">modifiers</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">domEl</span><span class="p">.</span><span class="nx">className</span><span class="p">);</span>
+<span class="c1">// =&gt; "swiper swiper--slides-5 swiper--current-2 swiper--playing"</span>
+
+<span class="nx">modifyBemClass</span><span class="p">(</span><span class="nx">domEl</span><span class="p">,</span> <span class="p">{</span>
+	<span class="na">swiper</span><span class="p">:</span> <span class="p">{</span>
+		<span class="na">current</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+		<span class="na">playing</span><span class="p">:</span> <span class="kc">false</span>
+	<span class="p">}</span>
+<span class="p">},</span> <span class="nx">modifiers</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">domEl</span><span class="p">.</span><span class="nx">className</span><span class="p">);</span>
+<span class="c1">// =&gt; "swiper swiper--slides-5 swiper--current-3"</span>
+</code></pre>
+</div>
+
 <p><a name="modifyBemClassCompact"></a></p>
 <h3 id="modifybemclasscompactdomel-bemobj-delimiters"><code class="highlighter-rouge">modifyBemClassCompact(domEl, bemObj, delimiters)</code></h3>
 
-<p>Modifies the CSS classes from a DOM element according
-to the <a href="https://en.bem.info/methodology/">BEM methodology</a>.</p>
+<p>Like <code class="highlighter-rouge">modifyBemClass()</code>, modifies the CSS classes from
+a DOM element according to the <a href="https://en.bem.info/methodology/">BEM methodology</a>.
+The difference is that it only prints modified elements,
+instead of original and modified objects.</p>
 
 <h4 id="parameters-2">Parameters</h4>
 
@@ -191,8 +245,8 @@ to the <a href="https://en.bem.info/methodology/">BEM methodology</a>.</p>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">bemObj</code></td>
-      <td>Object</td>
-      <td>The object describing BEM class changes.</td>
+      <td>BemObject</td>
+      <td>The object describing BEM class changes (see table below).</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">delimiters</code></td>
@@ -201,6 +255,58 @@ to the <a href="https://en.bem.info/methodology/">BEM methodology</a>.</p>
     </tr>
   </tbody>
 </table>
+
+<h4 id="bemobject-1">BemObject</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">name</code></td>
+      <td>Object</td>
+      <td>An object which key is a BEM block or element, e.g. <code class="highlighter-rouge">menu</code> ou <code class="highlighter-rouge">landing__area</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">name.modifier</code></td>
+      <td>Object</td>
+      <td>An object representing a modifier and it’s value, e.g. <code class="highlighter-rouge"><span class="p">{</span><span class="err">active:</span><span class="w"> </span><span class="err">false</span><span class="p">}</span></code> or <code class="highlighter-rouge"><span class="p">{</span><span class="err">level:</span><span class="w"> </span><span class="err">42</span><span class="p">}</span></code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="example-1">Example</h4>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">domEl</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">),</span>
+	<span class="nx">modifiers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"__"</span><span class="p">,</span> <span class="s2">"--"</span><span class="p">,</span> <span class="s2">"-"</span><span class="p">];</span>
+
+<span class="nx">modifyBemClassCompact</span><span class="p">(</span><span class="nx">domEl</span><span class="p">,</span> <span class="p">{</span>
+	<span class="na">swiper</span><span class="p">:</span> <span class="p">{</span>
+		<span class="na">slides</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+		<span class="na">current</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+		<span class="na">playing</span><span class="p">:</span> <span class="kc">true</span>
+	<span class="p">}</span>
+<span class="p">},</span> <span class="nx">modifiers</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">domEl</span><span class="p">.</span><span class="nx">className</span><span class="p">);</span>
+<span class="c1">// =&gt; "swiper--slides-5 swiper--current-2 swiper--playing"</span>
+
+<span class="nx">modifyBemClassCompact</span><span class="p">(</span><span class="nx">domEl</span><span class="p">,</span> <span class="p">{</span>
+	<span class="na">swiper</span><span class="p">:</span> <span class="p">{</span>
+		<span class="na">current</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+		<span class="na">playing</span><span class="p">:</span> <span class="kc">false</span>
+	<span class="p">}</span>
+<span class="p">},</span> <span class="nx">modifiers</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">domEl</span><span class="p">.</span><span class="nx">className</span><span class="p">);</span>
+<span class="c1">// =&gt; "swiper--slides-5 swiper--current-3"</span>
+</code></pre>
+</div>
 
 <h2 id="class-name">Class Name</h2>
 
@@ -297,7 +403,7 @@ to the <a href="https://en.bem.info/methodology/">BEM methodology</a>.</p>
   </tbody>
 </table>
 
-<h4 id="example">Example</h4>
+<h4 id="example-2">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">oneElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"a"</span><span class="p">);</span>
 <span class="nx">oneElement</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s2">"link reference"</span><span class="p">;</span>
@@ -502,7 +608,7 @@ containing numeric values for “top”, “bottom”,
   </tbody>
 </table>
 
-<h4 id="example-1">Example</h4>
+<h4 id="example-3">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">domEl</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">);</span>
 
@@ -575,7 +681,7 @@ from the closest to the most distant, recursively.</p>
   </tbody>
 </table>
 
-<h4 id="example-2">Example</h4>
+<h4 id="example-4">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">domChild</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">),</span>
 	<span class="nx">domParent</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">),</span>
@@ -634,7 +740,7 @@ the DOM element as the first item of the result.</p>
   </tbody>
 </table>
 
-<h4 id="example-3">Example</h4>
+<h4 id="example-5">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">domChild</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">),</span>
 	<span class="nx">domParent</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">),</span>
@@ -893,7 +999,7 @@ internal <code class="highlighter-rouge">setTimeout()</code>.</p>
   </tbody>
 </table>
 
-<h4 id="example-4">Example</h4>
+<h4 id="example-6">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="s2">"waiting"</span><span class="p">)</span>
 	<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">waitInPromise</span><span class="p">(</span><span class="mi">500</span><span class="p">))</span>
@@ -948,7 +1054,7 @@ randomly.</p>
   </tbody>
 </table>
 
-<h4 id="example-5">Example</h4>
+<h4 id="example-7">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">oneOutOf</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
 <span class="c1">// =&gt; true</span>
@@ -987,7 +1093,7 @@ Also, note that the parentheses can be ommited.</p>
   </tbody>
 </table>
 
-<h4 id="example-6">Example</h4>
+<h4 id="example-8">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">].</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toAverage</span><span class="p">());</span>
 <span class="c1">// =&gt; 6</span>
@@ -1046,7 +1152,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="example-7">Example</h4>
+<h4 id="example-9">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
 	<span class="na">city</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
@@ -1133,7 +1239,7 @@ using <code class="highlighter-rouge">toClosest()</code> can lead to unexpected 
   </tbody>
 </table>
 
-<h4 id="example-8">Example</h4>
+<h4 id="example-10">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">].</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toClosest</span><span class="p">(</span><span class="mi">6</span><span class="p">));</span>
 <span class="c1">// =&gt; 5</span>
@@ -1198,7 +1304,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="example-9">Example</h4>
+<h4 id="example-11">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
 	<span class="na">city</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
@@ -1283,7 +1389,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="example-10">Example</h4>
+<h4 id="example-12">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
 	<span class="na">city</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
@@ -1368,7 +1474,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="example-11">Example</h4>
+<h4 id="example-13">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
 	<span class="na">city</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
@@ -1431,7 +1537,7 @@ Also, note that the parentheses can be ommited.</p>
   </tbody>
 </table>
 
-<h4 id="example-12">Example</h4>
+<h4 id="example-14">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">].</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toSum</span><span class="p">());</span>
 <span class="c1">// =&gt; 24</span>
@@ -1468,7 +1574,7 @@ the array in ascending alphabetical order.</p>
   </tbody>
 </table>
 
-<h4 id="example-13">Example</h4>
+<h4 id="example-15">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">musqueteers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Athos"</span><span class="p">,</span> <span class="s2">"Porthos"</span><span class="p">,</span> <span class="s2">"Aramis"</span><span class="p">];</span>
 
@@ -1528,7 +1634,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
   </tbody>
 </table>
 
-<h4 id="example-14">Example</h4>
+<h4 id="example-16">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">afterFirst</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
 <span class="c1">// =&gt; "lepiped"</span>
@@ -1581,7 +1687,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
   </tbody>
 </table>
 
-<h4 id="example-15">Example</h4>
+<h4 id="example-17">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">afterLast</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
 <span class="c1">// =&gt; "piped"</span>
@@ -1634,7 +1740,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
   </tbody>
 </table>
 
-<h4 id="example-16">Example</h4>
+<h4 id="example-18">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">beforeFirst</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
 <span class="c1">// =&gt; "paral"</span>
@@ -1687,7 +1793,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
   </tbody>
 </table>
 
-<h4 id="example-17">Example</h4>
+<h4 id="example-19">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">beforeLast</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
 <span class="c1">// =&gt; "paralle"</span>
