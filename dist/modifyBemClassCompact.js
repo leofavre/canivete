@@ -14,7 +14,7 @@ import _parseBem from "./internal/bem/_parseBem";
  *
  * @example
  * let domEl = document.createElement("div"),
- * 	modifiers = ["__", "--", "-"];
+ * 	delimiters = ["__", "--", "-"];
  *
  * modifyBemClassCompact(domEl, {
  * 	swiper: {
@@ -22,7 +22,7 @@ import _parseBem from "./internal/bem/_parseBem";
  * 		current: 2,
  * 		playing: true
  * 	}
- * }, modifiers);
+ * }, delimiters);
  *
  * console.log(domEl.className);
  * // => "swiper--slides-5 swiper--current-2 swiper--playing"
@@ -32,7 +32,7 @@ import _parseBem from "./internal/bem/_parseBem";
  * 		current: 3,
  * 		playing: false
  * 	}
- * }, modifiers);
+ * }, delimiters);
  *
  * console.log(domEl.className);
  * // => "swiper--slides-5 swiper--current-3"

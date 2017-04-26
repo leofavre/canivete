@@ -1,6 +1,6 @@
-const _changeClassWithMethod = (domNode, str, methodName) => {
+const _changeClassWithMethod = (domEl, str, methodName) => {
 	if (str) {
-		domNode.classList[methodName](str);
+		domEl.classList[methodName](str);
 	}
 };
 
