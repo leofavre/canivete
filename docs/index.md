@@ -5,6 +5,8 @@ title: Canivete
 
 ## BEM
 
+> Functions for dealing with BEM CSS classes.
+
 <a name="formatbemclass"></a>
 ### `formatBemClass(block, [element], [modifier], [value], delimiters)`
 
@@ -178,6 +180,8 @@ console.log(domEl.className);
 
 ## Class Name
 
+> Functions for adding, removing and checking the presence of CSS classes in DOM elements.
+
 <a name="addclass"></a>
 ### `addClass(domEls, str)`
 
@@ -270,6 +274,8 @@ console.log(manyElements[0].className);
 ```
 
 ## DOM
+
+> Functions for manipulating, traversing and gathering information about the DOM.
 
 <a name="clippinginfo"></a>
 ### `clippingInfo(domEl, [maskDef])`
@@ -420,6 +426,8 @@ selfAndParents(domChild);
 
 ## Event
 
+> Functions for dealing with DOM and custom events.
+
 <a name="eventpath"></a>
 ### `eventPath(evt)`
 
@@ -459,6 +467,8 @@ Triggers a custom DOM event.
 | CustomEvent | The custom event. |
 
 ## Promise
+
+> Functions to use with Promises.
 
 <a name="eventaspromise"></a>
 ### `eventAsPromise(domEl, evtName, [happened])`
@@ -557,6 +567,8 @@ Promise.resolve("waiting")
 
 ## Random
 
+> Functions for dealing with random numbers.
+
 <a name="oneoutof"></a>
 ### `oneOutOf(num)`
 
@@ -586,6 +598,8 @@ oneOutOf(2);
 ```
 
 ## Reduce
+
+> Functions to use with Array reduce.
 
 <a name="toaverage"></a>
 ### `toAverage()`
@@ -924,6 +938,8 @@ Also, note that the parentheses can be ommited.
 
 ## Sort
 
+> Functions to use with Array sort.
+
 <a name="byalphabeticalorder"></a>
 ### `byAlphabeticalOrder()`
 
@@ -951,6 +967,8 @@ musqueteers.sort(byAlphabeticalOrder);
 ```
 
 ## String
+
+> Functions for manipulating strings.
 
 <a name="afterfirst"></a>
 ### `afterFirst(str, delimiter)`
@@ -1061,6 +1079,8 @@ beforeLast("parallelepiped", "le");
 ```
 
 ## Time
+
+> Functions for dealing with timestamps.
 
 <a name="timesince"></a>
 ### `timeSince(timestamp)`

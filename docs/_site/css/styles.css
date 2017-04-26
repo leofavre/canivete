@@ -81,9 +81,6 @@ html {
     line-height: 4.5rem;
     font-family: "Whitney Narrow A", "Whitney Narrow B", sans-serif;
     font-weight: 300; }
-  .content h2 + h3,
-  .content h2 + p + h3 {
-    margin-top: 3rem; }
   .content h3 {
     position: relative;
     top: 0;
@@ -124,6 +121,10 @@ html {
     background-color: rgba(129, 126, 121, 0.2); }
   .content p strong {
     font-weight: 600; }
+  .content blockquote {
+    margin: 0; }
+  .content blockquote p {
+    margin: 1.5rem 0; }
   .content a {
     color: #000; }
   .content ul,

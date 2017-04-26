@@ -33,8 +33,9 @@
 	}
 
 	h2 + h3,
-	h2 + p + h3 {
-		margin-top: ($grid * 2);
+	h2 + p + h3,
+	h2 + blockquote + p + h3 {
+		// margin-top: ($grid * 2);
 	}
 
 	h3 {
@@ -98,6 +99,14 @@
 
 	p strong {
 		font-weight: 600;
+	}
+
+	blockquote {
+		margin: 0;
+	}
+
+	blockquote p {
+		margin: $grid 0;
 	}
 
 	a {
