@@ -15,7 +15,7 @@
 			<div class="content__area">
 				<h2 id="bem">BEM</h2>
 
-<p><a name="formatBemClass"></a></p>
+<p><a name="formatbemclass"></a></p>
 <h3 id="formatbemclassblock-element-modifier-value-delimiters"><code class="highlighter-rouge">formatBemClass(block, [element], [modifier], [value], delimiters)</code></h3>
 
 <p>Formats a CSS class according to the
@@ -132,7 +132,7 @@ for the modifier and an array of BEM delimiters, e.g. <code class="highlighter-r
 </code></pre>
 </div>
 
-<p><a name="modifyBemClass"></a></p>
+<p><a name="modifybemclass"></a></p>
 <h3 id="modifybemclassdomel-bemobj-delimiters"><code class="highlighter-rouge">modifyBemClass(domEl, bemObj, delimiters)</code></h3>
 
 <p>Modifies the CSS classes from a DOM element according
@@ -194,7 +194,7 @@ to the <a href="https://en.bem.info/methodology/">BEM methodology</a>.</p>
 <h4 id="example">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">domEl</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">),</span>
-	<span class="nx">modifiers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"__"</span><span class="p">,</span> <span class="s2">"--"</span><span class="p">,</span> <span class="s2">"-"</span><span class="p">];</span>
+	<span class="nx">delimiters</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"__"</span><span class="p">,</span> <span class="s2">"--"</span><span class="p">,</span> <span class="s2">"-"</span><span class="p">];</span>
 
 <span class="nx">modifyBemClass</span><span class="p">(</span><span class="nx">domEl</span><span class="p">,</span> <span class="p">{</span>
 	<span class="na">swiper</span><span class="p">:</span> <span class="p">{</span>
@@ -202,7 +202,7 @@ to the <a href="https://en.bem.info/methodology/">BEM methodology</a>.</p>
 		<span class="na">current</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
 		<span class="na">playing</span><span class="p">:</span> <span class="kc">true</span>
 	<span class="p">}</span>
-<span class="p">},</span> <span class="nx">modifiers</span><span class="p">);</span>
+<span class="p">},</span> <span class="nx">delimiters</span><span class="p">);</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">domEl</span><span class="p">.</span><span class="nx">className</span><span class="p">);</span>
 <span class="c1">// =&gt; "swiper swiper--slides-5 swiper--current-2 swiper--playing"</span>
@@ -212,14 +212,14 @@ to the <a href="https://en.bem.info/methodology/">BEM methodology</a>.</p>
 		<span class="na">current</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
 		<span class="na">playing</span><span class="p">:</span> <span class="kc">false</span>
 	<span class="p">}</span>
-<span class="p">},</span> <span class="nx">modifiers</span><span class="p">);</span>
+<span class="p">},</span> <span class="nx">delimiters</span><span class="p">);</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">domEl</span><span class="p">.</span><span class="nx">className</span><span class="p">);</span>
 <span class="c1">// =&gt; "swiper swiper--slides-5 swiper--current-3"</span>
 </code></pre>
 </div>
 
-<p><a name="modifyBemClassCompact"></a></p>
+<p><a name="modifybemclasscompact"></a></p>
 <h3 id="modifybemclasscompactdomel-bemobj-delimiters"><code class="highlighter-rouge">modifyBemClassCompact(domEl, bemObj, delimiters)</code></h3>
 
 <p>Like <code class="highlighter-rouge">modifyBemClass()</code>, modifies the CSS classes from
@@ -283,7 +283,7 @@ instead of original and modified objects.</p>
 <h4 id="example-1">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">domEl</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">),</span>
-	<span class="nx">modifiers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"__"</span><span class="p">,</span> <span class="s2">"--"</span><span class="p">,</span> <span class="s2">"-"</span><span class="p">];</span>
+	<span class="nx">delimiters</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"__"</span><span class="p">,</span> <span class="s2">"--"</span><span class="p">,</span> <span class="s2">"-"</span><span class="p">];</span>
 
 <span class="nx">modifyBemClassCompact</span><span class="p">(</span><span class="nx">domEl</span><span class="p">,</span> <span class="p">{</span>
 	<span class="na">swiper</span><span class="p">:</span> <span class="p">{</span>
@@ -291,7 +291,7 @@ instead of original and modified objects.</p>
 		<span class="na">current</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
 		<span class="na">playing</span><span class="p">:</span> <span class="kc">true</span>
 	<span class="p">}</span>
-<span class="p">},</span> <span class="nx">modifiers</span><span class="p">);</span>
+<span class="p">},</span> <span class="nx">delimiters</span><span class="p">);</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">domEl</span><span class="p">.</span><span class="nx">className</span><span class="p">);</span>
 <span class="c1">// =&gt; "swiper--slides-5 swiper--current-2 swiper--playing"</span>
@@ -301,7 +301,7 @@ instead of original and modified objects.</p>
 		<span class="na">current</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
 		<span class="na">playing</span><span class="p">:</span> <span class="kc">false</span>
 	<span class="p">}</span>
-<span class="p">},</span> <span class="nx">modifiers</span><span class="p">);</span>
+<span class="p">},</span> <span class="nx">delimiters</span><span class="p">);</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">domEl</span><span class="p">.</span><span class="nx">className</span><span class="p">);</span>
 <span class="c1">// =&gt; "swiper--slides-5 swiper--current-3"</span>
@@ -310,7 +310,7 @@ instead of original and modified objects.</p>
 
 <h2 id="class-name">Class Name</h2>
 
-<p><a name="addClass"></a></p>
+<p><a name="addclass"></a></p>
 <h3 id="addclassdomels-str"><code class="highlighter-rouge">addClass(domEls, str)</code></h3>
 
 <p>Adds a CSS class to one or many DOM elements.</p>
@@ -357,7 +357,7 @@ instead of original and modified objects.</p>
 </code></pre>
 </div>
 
-<p><a name="hasClass"></a></p>
+<p><a name="hasclass"></a></p>
 <h3 id="hasclassdomel-str"><code class="highlighter-rouge">hasClass(domEl, str)</code></h3>
 
 <p>Verifies if a DOM element has a CSS class.</p>
@@ -416,7 +416,7 @@ instead of original and modified objects.</p>
 </code></pre>
 </div>
 
-<p><a name="removeClass"></a></p>
+<p><a name="removeclass"></a></p>
 <h3 id="removeclassdomels-str"><code class="highlighter-rouge">removeClass(domEls, str)</code></h3>
 
 <p>Removes a CSS class from one or many DOM elements.</p>
@@ -465,7 +465,7 @@ instead of original and modified objects.</p>
 
 <h2 id="dom">DOM</h2>
 
-<p><a name="clippingInfo"></a></p>
+<p><a name="clippinginfo"></a></p>
 <h3 id="clippinginfodomel-maskdef"><code class="highlighter-rouge">clippingInfo(domEl, [maskDef])</code></h3>
 
 <p>Given a DOM element, returns an object with position
@@ -691,14 +691,14 @@ from the closest to the most distant, recursively.</p>
 
 <span class="nx">domParent</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">domChild</span><span class="p">);</span>
 <span class="nx">domGrandparent</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">domParent</span><span class="p">);</span>
-<span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">domGrandparent</span><span class="p">);</span>
+<span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">domGrandparent</span><span class="p">);</span>
 
 <span class="nx">parents</span><span class="p">(</span><span class="nx">domChild</span><span class="p">);</span>
 <span class="c1">// =&gt; [domParent, domGrandparent, body, html, document]</span>
 </code></pre>
 </div>
 
-<p><a name="selfAndParents"></a></p>
+<p><a name="selfandparents"></a></p>
 <h3 id="selfandparentsdomel"><code class="highlighter-rouge">selfAndParents(domEl)</code></h3>
 
 <p>The same as <code class="highlighter-rouge">parents()</code>, except it includes
@@ -750,7 +750,7 @@ the DOM element as the first item of the result.</p>
 
 <span class="nx">domParent</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">domChild</span><span class="p">);</span>
 <span class="nx">domGrandparent</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">domParent</span><span class="p">);</span>
-<span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">domGrandparent</span><span class="p">);</span>
+<span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">domGrandparent</span><span class="p">);</span>
 
 <span class="nx">selfAndParents</span><span class="p">(</span><span class="nx">domChild</span><span class="p">);</span>
 <span class="c1">// =&gt; [domChild, domParent, domGrandparent, body, html, document]</span>
@@ -759,7 +759,7 @@ the DOM element as the first item of the result.</p>
 
 <h2 id="event">Event</h2>
 
-<p><a name="eventPath"></a></p>
+<p><a name="eventpath"></a></p>
 <h3 id="eventpathevt"><code class="highlighter-rouge">eventPath(evt)</code></h3>
 
 <p>Returns an array with all DOM elements affected by an event.
@@ -855,7 +855,7 @@ This function serves as a polyfill for
 
 <h2 id="promise">Promise</h2>
 
-<p><a name="eventAsPromise"></a></p>
+<p><a name="eventaspromise"></a></p>
 <h3 id="eventaspromisedomel-evtname-happened"><code class="highlighter-rouge">eventAsPromise(domEl, evtName, [happened])</code></h3>
 
 <p>Transforms a DOM event into a promise.</p>
@@ -949,7 +949,7 @@ parameters are not a DOM element and a string.</p>
 </code></pre>
 </div>
 
-<p><a name="waitInPromise"></a></p>
+<p><a name="waitinpromise"></a></p>
 <h3 id="waitinpromisedelay"><code class="highlighter-rouge">waitInPromise(delay)</code></h3>
 
 <p>Delays the chaining of a promise by a specified
@@ -1012,7 +1012,7 @@ internal <code class="highlighter-rouge">setTimeout()</code>.</p>
 
 <h2 id="random">Random</h2>
 
-<p><a name="oneOutOf"></a></p>
+<p><a name="oneoutof"></a></p>
 <h3 id="oneoutofnum"><code class="highlighter-rouge">oneOutOf(num)</code></h3>
 
 <p>Returns <code class="highlighter-rouge">true</code> approximately one out of <code class="highlighter-rouge">num</code> times,
@@ -1066,7 +1066,7 @@ randomly.</p>
 
 <h2 id="reduce">Reduce</h2>
 
-<p><a name="toAverage"></a></p>
+<p><a name="toaverage"></a></p>
 <h3 id="toaverage"><code class="highlighter-rouge">toAverage()</code></h3>
 
 <p>When used with <code class="highlighter-rouge">[].reduce()</code>, returns
@@ -1103,7 +1103,7 @@ Also, note that the parentheses can be ommited.</p>
 </code></pre>
 </div>
 
-<p><a name="toAverageProp"></a></p>
+<p><a name="toaverageprop"></a></p>
 <h3 id="toaverageproppath"><code class="highlighter-rouge">toAverageProp(path)</code></h3>
 
 <p>When used with <code class="highlighter-rouge">[].reduce()</code>, returns
@@ -1191,7 +1191,7 @@ formed by objects with the same set of properties.</p>
 </code></pre>
 </div>
 
-<p><a name="toClosest"></a></p>
+<p><a name="toclosest"></a></p>
 <h3 id="toclosestnum"><code class="highlighter-rouge">toClosest(num)</code></h3>
 
 <p>When used with <code class="highlighter-rouge">[].reduce()</code>, returns
@@ -1249,7 +1249,7 @@ using <code class="highlighter-rouge">toClosest()</code> can lead to unexpected 
 </code></pre>
 </div>
 
-<p><a name="toClosestProp"></a></p>
+<p><a name="toclosestprop"></a></p>
 <h3 id="toclosestproppath-num"><code class="highlighter-rouge">toClosestProp(path, num)</code></h3>
 
 <p>When used with <code class="highlighter-rouge">[].reduce()</code>, returns
@@ -1340,7 +1340,7 @@ formed by objects with the same set of properties.</p>
 </code></pre>
 </div>
 
-<p><a name="toLargestProp"></a></p>
+<p><a name="tolargestprop"></a></p>
 <h3 id="tolargestproppath"><code class="highlighter-rouge">toLargestProp(path)</code></h3>
 
 <p>When used with <code class="highlighter-rouge">[].reduce()</code>, returns
@@ -1425,7 +1425,7 @@ formed by objects with the same set of properties.</p>
 </code></pre>
 </div>
 
-<p><a name="toSmallestProp"></a></p>
+<p><a name="tosmallestprop"></a></p>
 <h3 id="tosmallestproppath"><code class="highlighter-rouge">toSmallestProp(path)</code></h3>
 
 <p>When used with <code class="highlighter-rouge">[].reduce()</code>, returns
@@ -1510,7 +1510,7 @@ formed by objects with the same set of properties.</p>
 </code></pre>
 </div>
 
-<p><a name="toSum"></a></p>
+<p><a name="tosum"></a></p>
 <h3 id="tosum"><code class="highlighter-rouge">toSum()</code></h3>
 
 <p>When used with <code class="highlighter-rouge">[].reduce()</code>, returns
@@ -1549,7 +1549,7 @@ Also, note that the parentheses can be ommited.</p>
 
 <h2 id="sort">Sort</h2>
 
-<p><a name="byAlphabeticalOrder"></a></p>
+<p><a name="byalphabeticalorder"></a></p>
 <h3 id="byalphabeticalorder"><code class="highlighter-rouge">byAlphabeticalOrder()</code></h3>
 
 <p>When used inside <code class="highlighter-rouge">[].sort()</code>, sorts
@@ -1588,7 +1588,7 @@ the array in ascending alphabetical order.</p>
 
 <h2 id="string">String</h2>
 
-<p><a name="afterFirst"></a></p>
+<p><a name="afterfirst"></a></p>
 <h3 id="afterfirststr-delimiter"><code class="highlighter-rouge">afterFirst(str, delimiter)</code></h3>
 
 <p>Returns the string formed by the characters <strong>after
@@ -1641,7 +1641,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
 </code></pre>
 </div>
 
-<p><a name="afterLast"></a></p>
+<p><a name="afterlast"></a></p>
 <h3 id="afterlaststr-delimiter"><code class="highlighter-rouge">afterLast(str, delimiter)</code></h3>
 
 <p>Returns the string formed by the characters <strong>after
@@ -1694,7 +1694,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
 </code></pre>
 </div>
 
-<p><a name="beforeFirst"></a></p>
+<p><a name="beforefirst"></a></p>
 <h3 id="beforefirststr-delimiter"><code class="highlighter-rouge">beforeFirst(str, delimiter)</code></h3>
 
 <p>Returns the string formed by the characters <strong>before
@@ -1747,7 +1747,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
 </code></pre>
 </div>
 
-<p><a name="beforeLast"></a></p>
+<p><a name="beforelast"></a></p>
 <h3 id="beforelaststr-delimiter"><code class="highlighter-rouge">beforeLast(str, delimiter)</code></h3>
 
 <p>Returns the string formed by the characters <strong>before
@@ -1802,7 +1802,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
 
 <h2 id="time">Time</h2>
 
-<p><a name="timeSince"></a></p>
+<p><a name="timesince"></a></p>
 <h3 id="timesincetimestamp"><code class="highlighter-rouge">timeSince(timestamp)</code></h3>
 
 <p>Returns the time passed since a timestamp, in milliseconds;</p>
@@ -1852,69 +1852,69 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
 <ul>
   <li><strong><a href="#bem">BEM</a></strong>
     <ul>
-      <li><a href="#formatBemClass">formatBemClass</a></li>
-      <li><a href="#modifyBemClass">modifyBemClass</a></li>
-      <li><a href="#modifyBemClassCompact">modifyBemClassCompact</a></li>
+      <li><a href="#formatbemclass">formatBemClass</a></li>
+      <li><a href="#modifybemclass">modifyBemClass</a></li>
+      <li><a href="#modifybemclasscompact">modifyBemClassCompact</a></li>
     </ul>
   </li>
-  <li><strong><a href="#className">Class Name</a></strong>
+  <li><strong><a href="#class-name">Class Name</a></strong>
     <ul>
-      <li><a href="#addClass">addClass</a></li>
-      <li><a href="#hasClass">hasClass</a></li>
-      <li><a href="#removeClass">removeClass</a></li>
+      <li><a href="#addclass">addClass</a></li>
+      <li><a href="#hasclass">hasClass</a></li>
+      <li><a href="#removeclass">removeClass</a></li>
     </ul>
   </li>
   <li><strong><a href="#dom">DOM</a></strong>
     <ul>
-      <li><a href="#clippingInfo">clippingInfo</a></li>
+      <li><a href="#clippinginfo">clippingInfo</a></li>
       <li><a href="#parents">parents</a></li>
-      <li><a href="#selfAndParents">selfAndParents</a></li>
+      <li><a href="#selfandparents">selfAndParents</a></li>
     </ul>
   </li>
   <li><strong><a href="#event">Event</a></strong>
     <ul>
-      <li><a href="#eventPath">eventPath</a></li>
+      <li><a href="#eventpath">eventPath</a></li>
       <li><a href="#trigger">trigger</a></li>
     </ul>
   </li>
   <li><strong><a href="#promise">Promise</a></strong>
     <ul>
-      <li><a href="#eventAsPromise">eventAsPromise</a></li>
-      <li><a href="#waitInPromise">waitInPromise</a></li>
+      <li><a href="#eventaspromise">eventAsPromise</a></li>
+      <li><a href="#waitinpromise">waitInPromise</a></li>
     </ul>
   </li>
   <li><strong><a href="#random">Random</a></strong>
     <ul>
-      <li><a href="#oneOutOf">oneOutOf</a></li>
+      <li><a href="#oneoutof">oneOutOf</a></li>
     </ul>
   </li>
   <li><strong><a href="#reduce">Reduce</a></strong>
     <ul>
-      <li><a href="#toAverage">toAverage</a></li>
-      <li><a href="#toAverageProp">toAverageProp</a></li>
-      <li><a href="#toClosest">toClosest</a></li>
-      <li><a href="#toClosestProp">toClosestProp</a></li>
-      <li><a href="#toLargestProp">toLargestProp</a></li>
-      <li><a href="#toSmallestProp">toSmallestProp</a></li>
-      <li><a href="#toSum">toSum</a></li>
+      <li><a href="#toaverage">toAverage</a></li>
+      <li><a href="#toaverageprop">toAverageProp</a></li>
+      <li><a href="#toclosest">toClosest</a></li>
+      <li><a href="#toclosestprop">toClosestProp</a></li>
+      <li><a href="#tolargestprop">toLargestProp</a></li>
+      <li><a href="#tosmallestprop">toSmallestProp</a></li>
+      <li><a href="#tosum">toSum</a></li>
     </ul>
   </li>
   <li><strong><a href="#sort">Sort</a></strong>
     <ul>
-      <li><a href="#byAlphabeticalOrder">byAlphabeticalOrder</a></li>
+      <li><a href="#byalphabeticalorder">byAlphabeticalOrder</a></li>
     </ul>
   </li>
   <li><strong><a href="#string">String</a></strong>
     <ul>
-      <li><a href="#afterFirst">afterFirst</a></li>
-      <li><a href="#afterLast">afterLast</a></li>
-      <li><a href="#beforeFirst">beforeFirst</a></li>
-      <li><a href="#beforeLast">beforeLast</a></li>
+      <li><a href="#afterfirst">afterFirst</a></li>
+      <li><a href="#afterlast">afterLast</a></li>
+      <li><a href="#beforefirst">beforeFirst</a></li>
+      <li><a href="#beforelast">beforeLast</a></li>
     </ul>
   </li>
   <li><strong><a href="#time">Time</a></strong>
     <ul>
-      <li><a href="#timeSince">timeSince</a></li>
+      <li><a href="#timesince">timeSince</a></li>
     </ul>
   </li>
 </ul>

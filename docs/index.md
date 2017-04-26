@@ -5,7 +5,7 @@ title: Canivete
 
 ## BEM
 
-<a name="formatBemClass"></a>
+<a name="formatbemclass"></a>
 ### `formatBemClass(block, [element], [modifier], [value], delimiters)`
 
 Formats a CSS class according to the
@@ -76,7 +76,7 @@ formatBemClass("button", null, "level", "42", delimiters);
 // => "button--level-42"
 ```
 
-<a name="modifyBemClass"></a>
+<a name="modifybemclass"></a>
 ### `modifyBemClass(domEl, bemObj, delimiters)`
 
 Modifies the CSS classes from a DOM element according
@@ -101,7 +101,7 @@ to the [BEM methodology](https://en.bem.info/methodology/).
 
 ```javascript
 let domEl = document.createElement("div"),
-	modifiers = ["__", "--", "-"];
+	delimiters = ["__", "--", "-"];
 
 modifyBemClass(domEl, {
 	swiper: {
@@ -109,7 +109,7 @@ modifyBemClass(domEl, {
 		current: 2,
 		playing: true
 	}
-}, modifiers);
+}, delimiters);
 
 console.log(domEl.className);
 // => "swiper swiper--slides-5 swiper--current-2 swiper--playing"
@@ -119,13 +119,13 @@ modifyBemClass(domEl, {
 		current: 3,
 		playing: false
 	}
-}, modifiers);
+}, delimiters);
 
 console.log(domEl.className);
 // => "swiper swiper--slides-5 swiper--current-3"
 ```
 
-<a name="modifyBemClassCompact"></a>
+<a name="modifybemclasscompact"></a>
 ### `modifyBemClassCompact(domEl, bemObj, delimiters)`
 
 Like `modifyBemClass()`, modifies the CSS classes from
@@ -152,7 +152,7 @@ instead of original and modified objects.
 
 ```javascript
 let domEl = document.createElement("div"),
-	modifiers = ["__", "--", "-"];
+	delimiters = ["__", "--", "-"];
 
 modifyBemClassCompact(domEl, {
 	swiper: {
@@ -160,7 +160,7 @@ modifyBemClassCompact(domEl, {
 		current: 2,
 		playing: true
 	}
-}, modifiers);
+}, delimiters);
 
 console.log(domEl.className);
 // => "swiper--slides-5 swiper--current-2 swiper--playing"
@@ -170,7 +170,7 @@ modifyBemClassCompact(domEl, {
 		current: 3,
 		playing: false
 	}
-}, modifiers);
+}, delimiters);
 
 console.log(domEl.className);
 // => "swiper--slides-5 swiper--current-3"
@@ -178,7 +178,7 @@ console.log(domEl.className);
 
 ## Class Name
 
-<a name="addClass"></a>
+<a name="addclass"></a>
 ### `addClass(domEls, str)`
 
 Adds a CSS class to one or many DOM elements.
@@ -208,7 +208,7 @@ console.log(manyElements[0].className);
 // => "link"
 ```
 
-<a name="hasClass"></a>
+<a name="hasclass"></a>
 ### `hasClass(domEl, str)`
 
 Verifies if a DOM element has a CSS class.
@@ -239,7 +239,7 @@ console.log(hasClass(oneElement, "button"));
 // => false
 ```
 
-<a name="removeClass"></a>
+<a name="removeclass"></a>
 ### `removeClass(domEls, str)`
 
 Removes a CSS class from one or many DOM elements.
@@ -271,7 +271,7 @@ console.log(manyElements[0].className);
 
 ## DOM
 
-<a name="clippingInfo"></a>
+<a name="clippinginfo"></a>
 ### `clippingInfo(domEl, [maskDef])`
 
 Given a DOM element, returns an object with position
@@ -377,13 +377,13 @@ let domChild = document.createElement("div"),
 
 domParent.appendChild(domChild);
 domGrandparent.appendChild(domParent);
-document.body.appendChild(domGrandparent);
+body.appendChild(domGrandparent);
 
 parents(domChild);
 // => [domParent, domGrandparent, body, html, document]
 ```
 
-<a name="selfAndParents"></a>
+<a name="selfandparents"></a>
 ### `selfAndParents(domEl)`
 
 The same as `parents()`, except it includes
@@ -412,7 +412,7 @@ let domChild = document.createElement("div"),
 
 domParent.appendChild(domChild);
 domGrandparent.appendChild(domParent);
-document.body.appendChild(domGrandparent);
+body.appendChild(domGrandparent);
 
 selfAndParents(domChild);
 // => [domChild, domParent, domGrandparent, body, html, document]
@@ -420,7 +420,7 @@ selfAndParents(domChild);
 
 ## Event
 
-<a name="eventPath"></a>
+<a name="eventpath"></a>
 ### `eventPath(evt)`
 
 Returns an array with all DOM elements affected by an event.
@@ -460,7 +460,7 @@ Triggers a custom DOM event.
 
 ## Promise
 
-<a name="eventAsPromise"></a>
+<a name="eventaspromise"></a>
 ### `eventAsPromise(domEl, evtName, [happened])`
 
 Transforms a DOM event into a promise.
@@ -518,7 +518,7 @@ eventAsPromise(image, "load", image => image.complete)
 //  is called, if the image has already been loaded.
 ```
 
-<a name="waitInPromise"></a>
+<a name="waitinpromise"></a>
 ### `waitInPromise(delay)`
 
 Delays the chaining of a promise by a specified
@@ -557,7 +557,7 @@ Promise.resolve("waiting")
 
 ## Random
 
-<a name="oneOutOf"></a>
+<a name="oneoutof"></a>
 ### `oneOutOf(num)`
 
 Returns `true` approximately one out of `num` times,
@@ -587,7 +587,7 @@ oneOutOf(2);
 
 ## Reduce
 
-<a name="toAverage"></a>
+<a name="toaverage"></a>
 ### `toAverage()`
 
 When used with `[].reduce()`, returns
@@ -613,7 +613,7 @@ Also, note that the parentheses can be ommited.
 // => 6
 ```
 
-<a name="toAverageProp"></a>
+<a name="toaverageprop"></a>
 ### `toAverageProp(path)`
 
 When used with `[].reduce()`, returns
@@ -677,7 +677,7 @@ cities.reduce(toAverageProp("demographics.population"));
 // => { city: "Rio de Janeiro", [...] }
 ```
 
-<a name="toClosest"></a>
+<a name="toclosest"></a>
 ### `toClosest(num)`
 
 When used with `[].reduce()`, returns
@@ -711,7 +711,7 @@ using `toClosest()` can lead to unexpected results.
 // => 3
 ```
 
-<a name="toClosestProp"></a>
+<a name="toclosestprop"></a>
 ### `toClosestProp(path, num)`
 
 When used with `[].reduce()`, returns
@@ -774,7 +774,7 @@ cities.reduce(toClosestProp("demographics.population", 5));
 // => { city: "Rio de Janeiro", [...] }
 ```
 
-<a name="toLargestProp"></a>
+<a name="tolargestprop"></a>
 ### `toLargestProp(path)`
 
 When used with `[].reduce()`, returns
@@ -835,7 +835,7 @@ cities.reduce(toLargestProp("demographics.population"));
 // => { city: "São Paulo", [...] }
 ```
 
-<a name="toSmallestProp"></a>
+<a name="tosmallestprop"></a>
 ### `toSmallestProp(path)`
 
 When used with `[].reduce()`, returns
@@ -896,7 +896,7 @@ cities.reduce(toSmallestProp("demographics.population"));
 // => { city: "Florianópolis", [...] }
 ```
 
-<a name="toSum"></a>
+<a name="tosum"></a>
 ### `toSum()`
 
 When used with `[].reduce()`, returns
@@ -924,7 +924,7 @@ Also, note that the parentheses can be ommited.
 
 ## Sort
 
-<a name="byAlphabeticalOrder"></a>
+<a name="byalphabeticalorder"></a>
 ### `byAlphabeticalOrder()`
 
 When used inside `[].sort()`, sorts
@@ -952,7 +952,7 @@ musqueteers.sort(byAlphabeticalOrder);
 
 ## String
 
-<a name="afterFirst"></a>
+<a name="afterfirst"></a>
 ### `afterFirst(str, delimiter)`
 
 Returns the string formed by the characters **after
@@ -979,7 +979,7 @@ afterFirst("parallelepiped", "le");
 // => "lepiped"
 ```
 
-<a name="afterLast"></a>
+<a name="afterlast"></a>
 ### `afterLast(str, delimiter)`
 
 Returns the string formed by the characters **after
@@ -1006,7 +1006,7 @@ afterLast("parallelepiped", "le");
 // => "piped"
 ```
 
-<a name="beforeFirst"></a>
+<a name="beforefirst"></a>
 ### `beforeFirst(str, delimiter)`
 
 Returns the string formed by the characters **before
@@ -1033,7 +1033,7 @@ beforeFirst("parallelepiped", "le");
 // => "paral"
 ```
 
-<a name="beforeLast"></a>
+<a name="beforelast"></a>
 ### `beforeLast(str, delimiter)`
 
 Returns the string formed by the characters **before
@@ -1062,7 +1062,7 @@ beforeLast("parallelepiped", "le");
 
 ## Time
 
-<a name="timeSince"></a>
+<a name="timesince"></a>
 ### `timeSince(timestamp)`
 
 Returns the time passed since a timestamp, in milliseconds;

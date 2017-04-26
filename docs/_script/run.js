@@ -175,7 +175,7 @@ const formatParamDesc = (description, isOptional) => {
 
 const formatDescription = description => removeNewslines(description);
 
-const formatHref = name => camelCase(name);
+const formatHref = name => name.toLowerCase().replace(/ /g, "-");
 
 const formatSignature = (name, params) => {
 	params = formatSignatureParams(params);

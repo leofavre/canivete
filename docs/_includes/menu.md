@@ -1,48 +1,48 @@
 * **[BEM](#bem)**
-  * [formatBemClass](#formatBemClass)
-  * [modifyBemClass](#modifyBemClass)
-  * [modifyBemClassCompact](#modifyBemClassCompact)
+  * [formatBemClass](#formatbemclass)
+  * [modifyBemClass](#modifybemclass)
+  * [modifyBemClassCompact](#modifybemclasscompact)
 
-* **[Class Name](#className)**
-  * [addClass](#addClass)
-  * [hasClass](#hasClass)
-  * [removeClass](#removeClass)
+* **[Class Name](#class-name)**
+  * [addClass](#addclass)
+  * [hasClass](#hasclass)
+  * [removeClass](#removeclass)
 
 * **[DOM](#dom)**
-  * [clippingInfo](#clippingInfo)
+  * [clippingInfo](#clippinginfo)
   * [parents](#parents)
-  * [selfAndParents](#selfAndParents)
+  * [selfAndParents](#selfandparents)
 
 * **[Event](#event)**
-  * [eventPath](#eventPath)
+  * [eventPath](#eventpath)
   * [trigger](#trigger)
 
 * **[Promise](#promise)**
-  * [eventAsPromise](#eventAsPromise)
-  * [waitInPromise](#waitInPromise)
+  * [eventAsPromise](#eventaspromise)
+  * [waitInPromise](#waitinpromise)
 
 * **[Random](#random)**
-  * [oneOutOf](#oneOutOf)
+  * [oneOutOf](#oneoutof)
 
 * **[Reduce](#reduce)**
-  * [toAverage](#toAverage)
-  * [toAverageProp](#toAverageProp)
-  * [toClosest](#toClosest)
-  * [toClosestProp](#toClosestProp)
-  * [toLargestProp](#toLargestProp)
-  * [toSmallestProp](#toSmallestProp)
-  * [toSum](#toSum)
+  * [toAverage](#toaverage)
+  * [toAverageProp](#toaverageprop)
+  * [toClosest](#toclosest)
+  * [toClosestProp](#toclosestprop)
+  * [toLargestProp](#tolargestprop)
+  * [toSmallestProp](#tosmallestprop)
+  * [toSum](#tosum)
 
 * **[Sort](#sort)**
-  * [byAlphabeticalOrder](#byAlphabeticalOrder)
+  * [byAlphabeticalOrder](#byalphabeticalorder)
 
 * **[String](#string)**
-  * [afterFirst](#afterFirst)
-  * [afterLast](#afterLast)
-  * [beforeFirst](#beforeFirst)
-  * [beforeLast](#beforeLast)
+  * [afterFirst](#afterfirst)
+  * [afterLast](#afterlast)
+  * [beforeFirst](#beforefirst)
+  * [beforeLast](#beforelast)
 
 * **[Time](#time)**
-  * [timeSince](#timeSince)
+  * [timeSince](#timesince)
 
 
