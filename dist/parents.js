@@ -17,7 +17,7 @@ import isElement from "lodash-es/isElement";
  * 
  * domParent.appendChild(domChild);
  * domGrandparent.appendChild(domParent);
- * document.body.appendChild(domGrandparent);
+ * body.appendChild(domGrandparent);
  * 
  * parents(domChild);
  * // => [domParent, domGrandparent, body, html, document]

@@ -96,7 +96,7 @@ html {
       .content h3 {
         padding-top: 42px;
         padding-bottom: 39px; } }
-  .content h3 > code {
+  .content h3 code {
     font-weight: 500; }
   .content h4 {
     position: relative;
@@ -156,7 +156,7 @@ html {
     font-family: "Fira Code", monospace;
     tab-size: 4;
     line-height: 1.25rem;
-    font-weight: 500; }
+    font-weight: 400; }
   .content table {
     position: relative;
     top: -0.25rem;
@@ -177,7 +177,7 @@ html {
     font-size: 0.5625rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    font-weight: 500; }
+    font-weight: 400; }
   .content td {
     font-size: 0.875rem;
     vertical-align: top;
@@ -186,22 +186,23 @@ html {
       .content td {
         padding-top: 13px;
         padding-bottom: 13px; } }
-  .content td > strong {
+  .content td strong {
     position: relative;
     top: -0.125rem;
+    font-family: "Whitney Narrow SSm A", "Whitney Narrow SSm B", sans-serif;
     font-size: 0.5625rem;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.115em;
     font-weight: 700;
     line-height: 0.875rem;
-    padding: 1px 0.25rem;
+    padding: 1px 0.25rem 2px;
     background: #000;
     color: #fff; }
-  .content td > code {
-    font-weight: 500;
+  .content td code {
+    font-weight: 400;
     padding: 1px 0.25rem;
     background-color: rgba(129, 126, 121, 0.2); }
-  .content td > em {
+  .content td em {
     font-style: normal; }
   .content td:nth-last-child(1) {
     padding-right: 0; }
@@ -292,12 +293,10 @@ html {
   color: #75715e; }
 
 .highlight .cp {
-  color: #75715e;
-  font-weight: bold; }
+  color: #75715e; }
 
 .highlight .cs {
-  color: #75715e;
-  font-weight: bold; }
+  color: #75715e; }
 
 .highlight .err {
   color: #960050;
@@ -329,47 +328,35 @@ html {
 .highlight .gp {
   color: #555555; }
 
-.highlight .gs {
-  font-weight: bold; }
-
 .highlight .gu {
   color: #aaaaaa; }
 
 .highlight .k, .highlight .kv {
-  color: #66d9ef;
-  font-weight: bold; }
+  color: #66d9ef; }
 
 .highlight .kc {
-  color: #66d9ef;
-  font-weight: bold; }
+  color: #66d9ef; }
 
 .highlight .kd {
-  color: #66d9ef;
-  font-weight: bold; }
+  color: #66d9ef; }
 
 .highlight .kp {
-  color: #66d9ef;
-  font-weight: bold; }
+  color: #66d9ef; }
 
 .highlight .kr {
-  color: #66d9ef;
-  font-weight: bold; }
+  color: #66d9ef; }
 
 .highlight .kt {
-  color: #66d9ef;
-  font-weight: bold; }
+  color: #66d9ef; }
 
 .highlight .kn {
-  color: #f92672;
-  font-weight: bold; }
+  color: #f92672; }
 
 .highlight .ow {
-  color: #f92672;
-  font-weight: bold; }
+  color: #f92672; }
 
 .highlight .o {
-  color: #f92672;
-  font-weight: bold; }
+  color: #f92672; }
 
 .highlight .mf {
   color: #ae81ff; }
@@ -429,20 +416,16 @@ html {
   color: #a6e22e; }
 
 .highlight .nc {
-  color: #a6e22e;
-  font-weight: bold; }
+  color: #a6e22e; }
 
 .highlight .nd {
-  color: #a6e22e;
-  font-weight: bold; }
+  color: #a6e22e; }
 
 .highlight .ne {
-  color: #a6e22e;
-  font-weight: bold; }
+  color: #a6e22e; }
 
 .highlight .nf {
-  color: #a6e22e;
-  font-weight: bold; }
+  color: #a6e22e; }
 
 .highlight .no {
   color: #66d9ef; }
@@ -475,8 +458,7 @@ html {
   color: #f8f8f2; }
 
 .highlight .nl {
-  color: #f8f8f2;
-  font-weight: bold; }
+  color: #f8f8f2; }
 
 .highlight .nt {
   color: #f92672; }

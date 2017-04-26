@@ -18,7 +18,7 @@ import parents from "./parents";
  * 
  * domParent.appendChild(domChild);
  * domGrandparent.appendChild(domParent);
- * document.body.appendChild(domGrandparent);
+ * body.appendChild(domGrandparent);
  * 
  * selfAndParents(domChild);
  * // => [domChild, domParent, domGrandparent, body, html, document]
