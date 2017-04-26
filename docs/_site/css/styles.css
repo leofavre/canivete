@@ -201,7 +201,8 @@ html {
   .content td code {
     font-weight: 400;
     padding: 1px 0.25rem;
-    background-color: rgba(129, 126, 121, 0.2); }
+    background-color: rgba(129, 126, 121, 0.2);
+    white-space: nowrap; }
   .content td em {
     font-style: normal; }
   .content td:nth-last-child(1) {

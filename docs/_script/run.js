@@ -231,15 +231,15 @@ const byCategory = func => {
 	return categories[0].value;
 };
 
-const sortCategories = funcs => {
+const formatCategories = funcs => {
 	let categories = Object.keys(funcs);
 
 	return categories
 		.sort(byAlphabeticalOrder)
-		.map(includeFunctionsInCategories(funcs));
+		.map(formatCategory(funcs));
 };
 
-const includeFunctionsInCategories = funcs => category => {
+const formatCategory = funcs => category => {
 	let categoryFunctions = funcs[category];
 
 	return {
@@ -259,7 +259,7 @@ const processFunctions = flow([
 	filterFunctions,
 	formatFunctions,
 	groupFunctionsByCategory,
-	sortCategories
+	formatCategories
 ]);
 
 const processTypeDefs = flow([

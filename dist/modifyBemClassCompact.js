@@ -9,7 +9,7 @@ import _parseBem from "./internal/bem/_parseBem";
  * @category BEM
  *
  * @param  {HTMLElement} domEl The modified DOM element.
- * @param  {bemObject} bemObj The object describing BEM class changes (see table below).
+ * @param  {BemObject} bemObj The object describing BEM class changes (see table below).
  * @param  {Array} delimiters The BEM delimiters.
  *
  * @example

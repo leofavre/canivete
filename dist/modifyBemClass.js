@@ -1,9 +1,9 @@
 import _parseBem from "./internal/bem/_parseBem";
 
 /**
- * @typedef {Object} bemObject
+ * @typedef {Object} BemObject
  * @property {Object} name An object which key is a BEM block or element, e.g. `menu` ou `landing__area`.
- * @property {Object} name.modifier An object representing a modifier and it's value, e.g. `{active: false}` or `{level: 42}`.
+ * @property {Object} name.modifier An object representing a modifiers and their values, e.g.&nbsp;`{active: false}` or `{level: 42}`.
  */
 
 /**
@@ -13,7 +13,7 @@ import _parseBem from "./internal/bem/_parseBem";
  * @category BEM
  *
  * @param  {HTMLElement} domEl The modified DOM element.
- * @param  {bemObject} bemObj The object describing BEM class changes (see table below).
+ * @param  {BemObject} bemObj The object describing BEM class changes (see table below).
  * @param  {Array} delimiters The BEM delimiters.
  *
  * @example

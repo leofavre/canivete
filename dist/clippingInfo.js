@@ -3,7 +3,7 @@ import _getVerticalAxisInfo from "./internal/clipping/_getVerticalAxisInfo";
 import _getHorizontalAxisInfo from "./internal/clipping/_getHorizontalAxisInfo";
 
 /**
- * @typedef {Object} clippingObject
+ * @typedef {Object} ClippingObject
  * @property {boolean} isOffTop Above and off the mask.
  * @property {boolean} isOffBottom Below and off the mask.
  * @property {boolean} isOffLeft On the left and off the mask.
@@ -36,7 +36,7 @@ import _getHorizontalAxisInfo from "./internal/clipping/_getHorizontalAxisInfo";
  *
  * @param  {HTMLElement} domEl The DOM element.
  * @param  {(HTMLElement|Object)} [maskDef] The mask definition.
- * @return {clippingObject} Position and clipping information relative to a mask (see table below).
+ * @return {ClippingObject} Position and clipping information relative to a mask (see table below).
  *
  * @example
  * let domEl = document.createElement("div");

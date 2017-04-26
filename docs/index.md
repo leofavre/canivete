@@ -95,7 +95,7 @@ to the [BEM methodology](https://en.bem.info/methodology/).
 | Name | Type | Description |
 | --- | --- | --- |
 | `name` | Object | An object which key is a BEM block or element, e.g. `menu` ou `landing__area`. |
-| `name.modifier` | Object | An object representing a modifier and it's value, e.g. `{active: false}` or `{level: 42}`. |
+| `name.modifier` | Object | An object representing a modifiers and their values, e.g.&nbsp;`{active: false}` or `{level: 42}`. |
 
 #### Example
 
@@ -146,7 +146,7 @@ instead of original and modified objects.
 | Name | Type | Description |
 | --- | --- | --- |
 | `name` | Object | An object which key is a BEM block or element, e.g. `menu` ou `landing__area`. |
-| `name.modifier` | Object | An object representing a modifier and it's value, e.g. `{active: false}` or `{level: 42}`. |
+| `name.modifier` | Object | An object representing a modifiers and their values, e.g.&nbsp;`{active: false}` or `{level: 42}`. |
 
 #### Example
 
