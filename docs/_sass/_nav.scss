@@ -1,4 +1,4 @@
-.menu {
+.nav {
 	position: relative;
 	padding: $grid ($grid * 1.5) $grid ($grid * 2);
 	height: auto;
@@ -65,6 +65,6 @@
 	}
 }
 
-.menu__area {
+.nav__inner {
 	margin-left: auto;
 }

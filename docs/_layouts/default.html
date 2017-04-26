@@ -4,17 +4,19 @@
 {% include head.html %}
 
 <body class="page">
-	<div class="main">
+	<div class="page__inner">
+		<nav class="nav">
+			<div class="nav__inner">
+				<h1><a href="#">Canivete</a></h1>
+				{% include pagenav.html %}
+				{% include menu.html %}
+			</div>
+		</nav>
 		<main class="content">
-			<div class="content__area">
+			<div class="content__inner">
 				{{ content }}
 			</div>
 		</main>
-		<aside class="menu">
-			<div class="menu__area">
-				{% include menu.html %}
-			</div>
-		</aside>
 	</div>
 	{% include footer.html %}
 </body>
