@@ -3,12 +3,14 @@
   * [modifyBemClass](#modifyBemClass)
   * [modifyBemClassCompact](#modifyBemClassCompact)
 
-* **[DOM](#dom)**
+* **[Class Name](#className)**
   * [addClass](#addClass)
-  * [clippingInfo](#clippingInfo)
   * [hasClass](#hasClass)
-  * [parents](#parents)
   * [removeClass](#removeClass)
+
+* **[DOM](#dom)**
+  * [clippingInfo](#clippingInfo)
+  * [parents](#parents)
   * [selfAndParents](#selfAndParents)
 
 * **[Event](#event)**

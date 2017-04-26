@@ -104,7 +104,7 @@ to the [BEM methodology](https://en.bem.info/methodology/).
 | `bemObj` | Object | The object describing BEM class changes. |
 | `delimiters` | Array | The BEM delimiters. |
 
-## DOM
+## Class Name
 
 <a name="addClass"></a>
 ### `addClass(domEls, str)`
@@ -135,6 +135,69 @@ addClass(manyElements, "link");
 console.log(manyElements[0].className);
 // => "link"
 ```
+
+<a name="hasClass"></a>
+### `hasClass(domEl, str)`
+
+Verifies if a DOM element has a CSS class.
+
+#### Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `domEl` | HTMLElement | The DOM element. |
+| `str` | String | The CSS class. |
+
+#### Return
+
+| Type | Description |
+| --- | --- |
+| Boolean | Whether the element has the CSS class or not. |
+
+#### Example
+
+```javascript
+let oneElement = document.querySelector("a");
+oneElement.className = "link reference";
+
+console.log(hasClass(oneElement, "link"));
+// => true
+
+console.log(hasClass(oneElement, "button"));
+// => false
+```
+
+<a name="removeClass"></a>
+### `removeClass(domEls, str)`
+
+Removes a CSS class from one or many DOM elements.
+
+#### Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `domEls` | HTMLElement<br>HTMLCollection<br>NodeList<br>Array.&lt;HTMLElement&gt;<br>Set.&lt;HTMLElement&gt; | One or many DOM elements. |
+| `str` | String | The CSS class. |
+
+#### Examples
+
+```javascript
+let oneElement = document.querySelector(".link.base");
+removeClass(oneElement, "link");
+
+console.log(oneElement.className);
+// => "base"
+```
+
+```javascript
+let manyElements = document.querySelectorAll(".link.base");
+removeClass(manyElements, "link");
+
+console.log(manyElements[0].className);
+// => "base"
+```
+
+## DOM
 
 <a name="clippingInfo"></a>
 ### `clippingInfo(domEl, [maskDef])`
@@ -213,37 +276,6 @@ console.log(info.isInvisible);
 // => false
 ```
 
-<a name="hasClass"></a>
-### `hasClass(domEl, str)`
-
-Verifies if a DOM element has a CSS class.
-
-#### Parameters
-
-| Name | Type | Description |
-| --- | --- | --- |
-| `domEl` | HTMLElement | The DOM element. |
-| `str` | String | The CSS class. |
-
-#### Return
-
-| Type | Description |
-| --- | --- |
-| Boolean | Whether the element has the CSS class or not. |
-
-#### Example
-
-```javascript
-let oneElement = document.querySelector("a");
-oneElement.className = "link reference";
-
-console.log(hasClass(oneElement, "link"));
-// => true
-
-console.log(hasClass(oneElement, "button"));
-// => false
-```
-
 <a name="parents"></a>
 ### `parents(domEl)`
 
@@ -277,36 +309,6 @@ document.body.appendChild(domGrandparent);
 
 parents(domChild);
 // => [domParent, domGrandparent, body, html, document]
-```
-
-<a name="removeClass"></a>
-### `removeClass(domEls, str)`
-
-Removes a CSS class from one or many DOM elements.
-
-#### Parameters
-
-| Name | Type | Description |
-| --- | --- | --- |
-| `domEls` | HTMLElement<br>HTMLCollection<br>NodeList<br>Array.&lt;HTMLElement&gt;<br>Set.&lt;HTMLElement&gt; | One or many DOM elements. |
-| `str` | String | The CSS class. |
-
-#### Examples
-
-```javascript
-let oneElement = document.querySelector(".link.base");
-removeClass(oneElement, "link");
-
-console.log(oneElement.className);
-// => "base"
-```
-
-```javascript
-let manyElements = document.querySelectorAll(".link.base");
-removeClass(manyElements, "link");
-
-console.log(manyElements[0].className);
-// => "base"
 ```
 
 <a name="selfAndParents"></a>

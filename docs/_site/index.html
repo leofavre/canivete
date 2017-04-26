@@ -202,7 +202,7 @@ to the <a href="https://en.bem.info/methodology/">BEM methodology</a>.</p>
   </tbody>
 </table>
 
-<h2 id="dom">DOM</h2>
+<h2 id="class-name">Class Name</h2>
 
 <p><a name="addClass"></a></p>
 <h3 id="addclassdomels-str"><code class="highlighter-rouge">addClass(domEls, str)</code></h3>
@@ -251,6 +251,114 @@ to the <a href="https://en.bem.info/methodology/">BEM methodology</a>.</p>
 </code></pre>
 </div>
 
+<p><a name="hasClass"></a></p>
+<h3 id="hasclassdomel-str"><code class="highlighter-rouge">hasClass(domEl, str)</code></h3>
+
+<p>Verifies if a DOM element has a CSS class.</p>
+
+<h4 id="parameters-4">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">domEl</code></td>
+      <td>HTMLElement</td>
+      <td>The DOM element.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">str</code></td>
+      <td>String</td>
+      <td>The CSS class.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="return-1">Return</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Boolean</td>
+      <td>Whether the element has the CSS class or not.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="example">Example</h4>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">oneElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"a"</span><span class="p">);</span>
+<span class="nx">oneElement</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s2">"link reference"</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hasClass</span><span class="p">(</span><span class="nx">oneElement</span><span class="p">,</span> <span class="s2">"link"</span><span class="p">));</span>
+<span class="c1">// =&gt; true</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hasClass</span><span class="p">(</span><span class="nx">oneElement</span><span class="p">,</span> <span class="s2">"button"</span><span class="p">));</span>
+<span class="c1">// =&gt; false</span>
+</code></pre>
+</div>
+
+<p><a name="removeClass"></a></p>
+<h3 id="removeclassdomels-str"><code class="highlighter-rouge">removeClass(domEls, str)</code></h3>
+
+<p>Removes a CSS class from one or many DOM elements.</p>
+
+<h4 id="parameters-5">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">domEls</code></td>
+      <td>HTMLElement<br />HTMLCollection<br />NodeList<br />Array.&lt;HTMLElement&gt;<br />Set.&lt;HTMLElement&gt;</td>
+      <td>One or many DOM elements.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">str</code></td>
+      <td>String</td>
+      <td>The CSS class.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="examples-2">Examples</h4>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">oneElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">".link.base"</span><span class="p">);</span>
+<span class="nx">removeClass</span><span class="p">(</span><span class="nx">oneElement</span><span class="p">,</span> <span class="s2">"link"</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">oneElement</span><span class="p">.</span><span class="nx">className</span><span class="p">);</span>
+<span class="c1">// =&gt; "base"</span>
+</code></pre>
+</div>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">manyElements</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">".link.base"</span><span class="p">);</span>
+<span class="nx">removeClass</span><span class="p">(</span><span class="nx">manyElements</span><span class="p">,</span> <span class="s2">"link"</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">manyElements</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">className</span><span class="p">);</span>
+<span class="c1">// =&gt; "base"</span>
+</code></pre>
+</div>
+
+<h2 id="dom">DOM</h2>
+
 <p><a name="clippingInfo"></a></p>
 <h3 id="clippinginfodomel-maskdef"><code class="highlighter-rouge">clippingInfo(domEl, [maskDef])</code></h3>
 
@@ -264,7 +372,7 @@ containing numeric values for “top”, “bottom”,
 “left” and “right” properties, like a
 <a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMRect">DOMRect</a>.</p>
 
-<h4 id="parameters-4">Parameters</h4>
+<h4 id="parameters-6">Parameters</h4>
 
 <table>
   <thead>
@@ -288,7 +396,7 @@ containing numeric values for “top”, “bottom”,
   </tbody>
 </table>
 
-<h4 id="return-1">Return</h4>
+<h4 id="return-2">Return</h4>
 
 <table>
   <thead>
@@ -394,7 +502,7 @@ containing numeric values for “top”, “bottom”,
   </tbody>
 </table>
 
-<h4 id="example">Example</h4>
+<h4 id="example-1">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">domEl</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">);</span>
 
@@ -421,65 +529,6 @@ containing numeric values for “top”, “bottom”,
 <span class="c1">// =&gt; true</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">info</span><span class="p">.</span><span class="nx">isInvisible</span><span class="p">);</span>
-<span class="c1">// =&gt; false</span>
-</code></pre>
-</div>
-
-<p><a name="hasClass"></a></p>
-<h3 id="hasclassdomel-str"><code class="highlighter-rouge">hasClass(domEl, str)</code></h3>
-
-<p>Verifies if a DOM element has a CSS class.</p>
-
-<h4 id="parameters-5">Parameters</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">domEl</code></td>
-      <td>HTMLElement</td>
-      <td>The DOM element.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">str</code></td>
-      <td>String</td>
-      <td>The CSS class.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="return-2">Return</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Boolean</td>
-      <td>Whether the element has the CSS class or not.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="example-1">Example</h4>
-
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">oneElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"a"</span><span class="p">);</span>
-<span class="nx">oneElement</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s2">"link reference"</span><span class="p">;</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hasClass</span><span class="p">(</span><span class="nx">oneElement</span><span class="p">,</span> <span class="s2">"link"</span><span class="p">));</span>
-<span class="c1">// =&gt; true</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hasClass</span><span class="p">(</span><span class="nx">oneElement</span><span class="p">,</span> <span class="s2">"button"</span><span class="p">));</span>
 <span class="c1">// =&gt; false</span>
 </code></pre>
 </div>
@@ -540,53 +589,6 @@ from the closest to the most distant, recursively.</p>
 
 <span class="nx">parents</span><span class="p">(</span><span class="nx">domChild</span><span class="p">);</span>
 <span class="c1">// =&gt; [domParent, domGrandparent, body, html, document]</span>
-</code></pre>
-</div>
-
-<p><a name="removeClass"></a></p>
-<h3 id="removeclassdomels-str"><code class="highlighter-rouge">removeClass(domEls, str)</code></h3>
-
-<p>Removes a CSS class from one or many DOM elements.</p>
-
-<h4 id="parameters-6">Parameters</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">domEls</code></td>
-      <td>HTMLElement<br />HTMLCollection<br />NodeList<br />Array.&lt;HTMLElement&gt;<br />Set.&lt;HTMLElement&gt;</td>
-      <td>One or many DOM elements.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">str</code></td>
-      <td>String</td>
-      <td>The CSS class.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="examples-2">Examples</h4>
-
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">oneElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">".link.base"</span><span class="p">);</span>
-<span class="nx">removeClass</span><span class="p">(</span><span class="nx">oneElement</span><span class="p">,</span> <span class="s2">"link"</span><span class="p">);</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">oneElement</span><span class="p">.</span><span class="nx">className</span><span class="p">);</span>
-<span class="c1">// =&gt; "base"</span>
-</code></pre>
-</div>
-
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">manyElements</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">".link.base"</span><span class="p">);</span>
-<span class="nx">removeClass</span><span class="p">(</span><span class="nx">manyElements</span><span class="p">,</span> <span class="s2">"link"</span><span class="p">);</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">manyElements</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">className</span><span class="p">);</span>
-<span class="c1">// =&gt; "base"</span>
 </code></pre>
 </div>
 
@@ -1749,13 +1751,17 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
       <li><a href="#modifyBemClassCompact">modifyBemClassCompact</a></li>
     </ul>
   </li>
-  <li><strong><a href="#dom">DOM</a></strong>
+  <li><strong><a href="#className">Class Name</a></strong>
     <ul>
       <li><a href="#addClass">addClass</a></li>
-      <li><a href="#clippingInfo">clippingInfo</a></li>
       <li><a href="#hasClass">hasClass</a></li>
-      <li><a href="#parents">parents</a></li>
       <li><a href="#removeClass">removeClass</a></li>
+    </ul>
+  </li>
+  <li><strong><a href="#dom">DOM</a></strong>
+    <ul>
+      <li><a href="#clippingInfo">clippingInfo</a></li>
+      <li><a href="#parents">parents</a></li>
       <li><a href="#selfAndParents">selfAndParents</a></li>
     </ul>
   </li>

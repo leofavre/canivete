@@ -3,7 +3,7 @@ import isElement from "lodash-es/isElement";
 /**
  * Verifies if a DOM element has a CSS class.
  *
- * @category DOM
+ * @category Class Name
  *
  * @param  {HTMLElement} domEl The DOM element.
  * @param  {string} str The CSS class.
