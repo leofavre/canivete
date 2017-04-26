@@ -1,4 +1,3 @@
-const camelCase = require("lodash/camelCase");
 const exec = require("child_process").exec;
 const flow = require("lodash/flow");
 const groupBy = require("lodash/groupBy");
