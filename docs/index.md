@@ -7,8 +7,7 @@ title: Canivete
 
 >[formatBemClass](#formatbemclass), [modifyBemClass](#modifybemclass) &amp;&nbsp;[modifyBemClassCompact](#modifybemclasscompact)
 
-<a name="formatbemclass"></a>
-### `formatBemClass(block, [element], [modifier], [value], delimiters)`
+### <a name="formatbemclass">`formatBemClass(block, [element], [modifier], [value], delimiters)`</a>
 
 Formats a CSS class according to the
 [BEM methodology](https://en.bem.info/methodology/).
@@ -78,8 +77,7 @@ formatBemClass("button", null, "level", "42", delimiters);
 // => "button--level-42"
 ```
 
-<a name="modifybemclass"></a>
-### `modifyBemClass(domEl, bemObj, delimiters)`
+### <a name="modifybemclass">`modifyBemClass(domEl, bemObj, delimiters)`</a>
 
 Modifies the CSS classes from a DOM element according
 to the [BEM methodology](https://en.bem.info/methodology/).
@@ -127,8 +125,7 @@ console.log(domEl.className);
 // => "swiper swiper--slides-5 swiper--current-3"
 ```
 
-<a name="modifybemclasscompact"></a>
-### `modifyBemClassCompact(domEl, bemObj, delimiters)`
+### <a name="modifybemclasscompact">`modifyBemClassCompact(domEl, bemObj, delimiters)`</a>
 
 Modifies the CSS classes from a DOM element according
 to the [BEM methodology](https://en.bem.info/methodology/).
@@ -182,8 +179,7 @@ console.log(domEl.className);
 
 >[addClass](#addclass), [hasClass](#hasclass) &amp;&nbsp;[removeClass](#removeclass)
 
-<a name="addclass"></a>
-### `addClass(domEls, str)`
+### <a name="addclass">`addClass(domEls, str)`</a>
 
 Adds a CSS class to one or many DOM elements.
 
@@ -212,8 +208,7 @@ console.log(manyElements[0].className);
 // => "link"
 ```
 
-<a name="hasclass"></a>
-### `hasClass(domEl, str)`
+### <a name="hasclass">`hasClass(domEl, str)`</a>
 
 Verifies if a DOM element has a CSS class.
 
@@ -243,8 +238,7 @@ console.log(hasClass(oneElement, "button"));
 // => false
 ```
 
-<a name="removeclass"></a>
-### `removeClass(domEls, str)`
+### <a name="removeclass">`removeClass(domEls, str)`</a>
 
 Removes a CSS class from one or many DOM elements.
 
@@ -277,8 +271,7 @@ console.log(manyElements[0].className);
 
 >[clippingInfo](#clippinginfo), [parents](#parents) &amp;&nbsp;[selfAndParents](#selfandparents)
 
-<a name="clippinginfo"></a>
-### `clippingInfo(domEl, [maskDef])`
+### <a name="clippinginfo">`clippingInfo(domEl, [maskDef])`</a>
 
 Given a DOM element, returns an object with position
 and clipping information relative to a mask, defined
@@ -354,8 +347,7 @@ console.log(info.isInvisible);
 // => false
 ```
 
-<a name="parents"></a>
-### `parents(domEl)`
+### <a name="parents">`parents(domEl)`</a>
 
 Returns all parents of a DOM element,
 from the closest to the most distant, recursively.
@@ -389,8 +381,7 @@ parents(domChild);
 // => [domParent, domGrandparent, body, html, document]
 ```
 
-<a name="selfandparents"></a>
-### `selfAndParents(domEl)`
+### <a name="selfandparents">`selfAndParents(domEl)`</a>
 
 The same as `parents()`, except it includes
 the DOM element as the first item of the result.
@@ -428,8 +419,7 @@ selfAndParents(domChild);
 
 >[eventPath](#eventpath) &amp;&nbsp;[trigger](#trigger)
 
-<a name="eventpath"></a>
-### `eventPath(evt)`
+### <a name="eventpath">`eventPath(evt)`</a>
 
 Returns an array with all DOM elements affected by an event.
 This function serves as a polyfill for
@@ -447,8 +437,7 @@ This function serves as a polyfill for
 | --- | --- |
 | Array.&lt;HTMLElement&gt; | The DOM elements affected by the event. |
 
-<a name="trigger"></a>
-### `trigger(evtName, bubbles, target)`
+### <a name="trigger">`trigger(evtName, bubbles, target)`</a>
 
 Triggers a custom DOM event.
 
@@ -470,8 +459,7 @@ Triggers a custom DOM event.
 
 >[eventAsPromise](#eventaspromise) &amp;&nbsp;[waitInPromise](#waitinpromise)
 
-<a name="eventaspromise"></a>
-### `eventAsPromise(domEl, evtName, [happened])`
+### <a name="eventaspromise">`eventAsPromise(domEl, evtName, [happened])`</a>
 
 Transforms a DOM event into a promise.
 
@@ -528,8 +516,7 @@ eventAsPromise(image, "load", image => image.complete)
 //  is called, if the image has already been loaded.
 ```
 
-<a name="waitinpromise"></a>
-### `waitInPromise(delay)`
+### <a name="waitinpromise">`waitInPromise(delay)`</a>
 
 Delays the chaining of a promise by a specified
 time in milliseconds.
@@ -569,8 +556,7 @@ Promise.resolve("waiting")
 
 >[oneOutOf](#oneoutof)
 
-<a name="oneoutof"></a>
-### `oneOutOf(num)`
+### <a name="oneoutof">`oneOutOf(num)`</a>
 
 Returns `true` approximately one out of `num` times,
 randomly.
@@ -601,8 +587,7 @@ oneOutOf(2);
 
 >[toAverage](#toaverage), [toAverageProp](#toaverageprop), [toClosest](#toclosest), [toClosestProp](#toclosestprop), [toLargestProp](#tolargestprop), [toSmallestProp](#tosmallestprop) &amp;&nbsp;[toSum](#tosum)
 
-<a name="toaverage"></a>
-### `toAverage()`
+### <a name="toaverage">`toAverage()`</a>
 
 When used with `[].reduce()`, returns
 the average of the values in an array.
@@ -627,8 +612,7 @@ Also, note that the parentheses can be ommited.
 // => 6
 ```
 
-<a name="toaverageprop"></a>
-### `toAverageProp(path)`
+### <a name="toaverageprop">`toAverageProp(path)`</a>
 
 When used with `[].reduce()`, returns
 the object in an array in which a specific property,
@@ -691,8 +675,7 @@ cities.reduce(toAverageProp("demographics.population"));
 // => { city: "Rio de Janeiro", [...] }
 ```
 
-<a name="toclosest"></a>
-### `toClosest(num)`
+### <a name="toclosest">`toClosest(num)`</a>
 
 When used with `[].reduce()`, returns
 the closest value to the one passed as parameter.
@@ -725,8 +708,7 @@ using `toClosest()` can lead to unexpected results.
 // => 3
 ```
 
-<a name="toclosestprop"></a>
-### `toClosestProp(path, num)`
+### <a name="toclosestprop">`toClosestProp(path, num)`</a>
 
 When used with `[].reduce()`, returns
 the object in an array in which a specific property,
@@ -788,8 +770,7 @@ cities.reduce(toClosestProp("demographics.population", 5));
 // => { city: "Rio de Janeiro", [...] }
 ```
 
-<a name="tolargestprop"></a>
-### `toLargestProp(path)`
+### <a name="tolargestprop">`toLargestProp(path)`</a>
 
 When used with `[].reduce()`, returns
 the object in an array in which a specific property
@@ -849,8 +830,7 @@ cities.reduce(toLargestProp("demographics.population"));
 // => { city: "São Paulo", [...] }
 ```
 
-<a name="tosmallestprop"></a>
-### `toSmallestProp(path)`
+### <a name="tosmallestprop">`toSmallestProp(path)`</a>
 
 When used with `[].reduce()`, returns
 the object in an array in which a specific property
@@ -910,8 +890,7 @@ cities.reduce(toSmallestProp("demographics.population"));
 // => { city: "Florianópolis", [...] }
 ```
 
-<a name="tosum"></a>
-### `toSum()`
+### <a name="tosum">`toSum()`</a>
 
 When used with `[].reduce()`, returns
 the sum of the values in an array.
@@ -940,8 +919,7 @@ Also, note that the parentheses can be ommited.
 
 >[byAlphabeticalOrder](#byalphabeticalorder)
 
-<a name="byalphabeticalorder"></a>
-### `byAlphabeticalOrder()`
+### <a name="byalphabeticalorder">`byAlphabeticalOrder()`</a>
 
 When used inside `[].sort()`, sorts
 the array in ascending alphabetical order.
@@ -970,8 +948,7 @@ musqueteers.sort(byAlphabeticalOrder);
 
 >[afterFirst](#afterfirst), [afterLast](#afterlast), [beforeFirst](#beforefirst) &amp;&nbsp;[beforeLast](#beforelast)
 
-<a name="afterfirst"></a>
-### `afterFirst(str, delimiter)`
+### <a name="afterfirst">`afterFirst(str, delimiter)`</a>
 
 Returns the string formed by the characters **after
 the first occurrence** of the delimiter in a base string.
@@ -997,8 +974,7 @@ afterFirst("parallelepiped", "le");
 // => "lepiped"
 ```
 
-<a name="afterlast"></a>
-### `afterLast(str, delimiter)`
+### <a name="afterlast">`afterLast(str, delimiter)`</a>
 
 Returns the string formed by the characters **after
 the last occurrence** of the delimiter in a base string.
@@ -1024,8 +1000,7 @@ afterLast("parallelepiped", "le");
 // => "piped"
 ```
 
-<a name="beforefirst"></a>
-### `beforeFirst(str, delimiter)`
+### <a name="beforefirst">`beforeFirst(str, delimiter)`</a>
 
 Returns the string formed by the characters **before
 the first occurrence** of the delimiter in a base string.
@@ -1051,8 +1026,7 @@ beforeFirst("parallelepiped", "le");
 // => "paral"
 ```
 
-<a name="beforelast"></a>
-### `beforeLast(str, delimiter)`
+### <a name="beforelast">`beforeLast(str, delimiter)`</a>
 
 Returns the string formed by the characters **before
 the last occurrence** of the delimiter in a base string.
@@ -1082,8 +1056,7 @@ beforeLast("parallelepiped", "le");
 
 >[timeSince](#timesince)
 
-<a name="timesince"></a>
-### `timeSince(timestamp)`
+### <a name="timesince">`timeSince(timestamp)`</a>
 
 Returns the time passed since a timestamp, in milliseconds;
 

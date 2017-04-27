@@ -3,11 +3,11 @@
 	margin: 0;
 	padding: $grid ($grid * 1.75) $grid ($grid * 2);
 	height: auto;
-	box-shadow: 0 0 0.5rem rgba(#000, 0.3);
+	// box-shadow: 0 0 0.5rem rgba(#000, 0.3);
 	box-sizing: border-box;
 
-	flex-basis: calc((100% - #{$full-content-width}) / 2);
-	flex-grow: 1;
+	flex-basis: auto;
+	flex-grow: 0;
 	flex-shrink: 1;
 	min-width: 14.375rem;
 	min-width: min-content;
@@ -59,32 +59,45 @@
 		margin-top: 0;
 	}
 
+	ul + ul:before {
+		content: "";
+		position: relative;
+		display: block;
+		margin: calc(#{$grid} - 1px) auto $grid 0;
+		width: 50%;
+		height: 1px;
+		background: $hairline-grey;
+	}
+
 	li {
 		position: relative;
 		list-style: none;
 		line-height: $grid;
+		font-size: 14px;
+
+		@media only screen and (min-width: 1400px) {
+			top: 2px;
+		}
 	}
 
 	li strong {
 		position: relative;
-		top: -0.0625rem;
+		top: -0.125rem;
 		font-size: 1.0625rem;
 		font-weight: 800;
 		line-height: $grid;
 		letter-spacing: 0.045em;
 
 		@media only screen and (min-width: 1400px) {
-			top: 0;
+			top: -3px;
 		}
 	}
 
 	li li {
-		// top: 0.0625rem;
-		// font-family: "Fira Code", monospace;
-		font-size: 14px;
+		top: -0.0625rem;
 
 		@media only screen and (min-width: 1400px) {
-			top: 2px;
+			top: -1px;
 		}
 	}
 
@@ -96,5 +109,5 @@
 }
 
 .nav__inner {
-	margin-left: auto;
+	margin-right: auto;
 }

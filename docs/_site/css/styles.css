@@ -52,6 +52,7 @@ html {
   background-color: #fff;
   display: flex;
   flex-flow: row nowrap;
+  justify-content: space-between;
   flex: 1 1 auto; }
 
 .nav {
@@ -59,10 +60,9 @@ html {
   margin: 0;
   padding: 1.5rem 2.625rem 1.5rem 3rem;
   height: auto;
-  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
   box-sizing: border-box;
-  flex-basis: calc((100% - 43.25rem) / 2);
-  flex-grow: 1;
+  flex-basis: auto;
+  flex-grow: 0;
   flex-shrink: 1;
   min-width: 14.375rem;
   min-width: min-content;
@@ -97,32 +97,44 @@ html {
   .nav ul ul {
     top: 0;
     margin-top: 0; }
+  .nav ul + ul:before {
+    content: "";
+    position: relative;
+    display: block;
+    margin: calc(1.5rem - 1px) auto 1.5rem 0;
+    width: 50%;
+    height: 1px;
+    background: #d2d0c6; }
   .nav li {
     position: relative;
     list-style: none;
-    line-height: 1.5rem; }
+    line-height: 1.5rem;
+    font-size: 14px; }
+    @media only screen and (min-width: 1400px) {
+      .nav li {
+        top: 2px; } }
   .nav li strong {
     position: relative;
-    top: -0.0625rem;
+    top: -0.125rem;
     font-size: 1.0625rem;
     font-weight: 800;
     line-height: 1.5rem;
     letter-spacing: 0.045em; }
     @media only screen and (min-width: 1400px) {
       .nav li strong {
-        top: 0; } }
+        top: -3px; } }
   .nav li li {
-    font-size: 14px; }
+    top: -0.0625rem; }
     @media only screen and (min-width: 1400px) {
       .nav li li {
-        top: 2px; } }
+        top: -1px; } }
   .nav a {
     display: block;
     color: #000;
     text-decoration: none; }
 
 .nav__inner {
-  margin-left: auto; }
+  margin-right: auto; }
 
 .content {
   padding: 0 1.5rem 3rem 3rem;
@@ -131,9 +143,14 @@ html {
   line-height: 1.5rem;
   -webkit-overflow-scrolling: touch;
   box-sizing: border-box;
-  flex-basis: calc(43.25rem + ((100% - 43.25rem) / 2));
-  flex-grow: 4;
-  flex-shrink: 4; }
+  width: calc(43.25rem + ((100% - 43.25rem) / 2));
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 1;
+  background-position: 0.3125rem 0;
+  background-size: 1.5rem 1.5rem;
+  background-image: linear-gradient(to bottom, lightblue 1px, transparent 1px);
+  background-attachment: scroll; }
   .content h2 {
     position: relative;
     top: 0;
@@ -160,10 +177,12 @@ html {
     font-size: 2rem;
     line-height: 3rem;
     background: #c2c0b3;
-    margin: 12rem -1.5rem 3rem -3rem;
+    margin: 12rem -1.5rem 3rem -3rem; }
+  .content h3 a {
+    display: block;
     padding: 2.375rem 1.5rem 2.125rem 3rem; }
     @media only screen and (min-width: 1400px) {
-      .content h3 {
+      .content h3 a {
         padding-top: 42px;
         padding-bottom: 39px; } }
   .content h3 code {
@@ -224,7 +243,8 @@ html {
     background: #d2d0c6;
     z-index: 1; }
   .content a[name]:after {
-    content: normal; }
+    content: normal;
+    display: none; }
   .content ul,
   .content ol {
     position: relative;
