@@ -1,9 +1,9 @@
 import _parseBem from "./internal/bem/_parseBem";
 
 /**
- * Like `modifyBemClass()`, modifies the CSS classes from
- * a DOM element according to the [BEM methodology](https://en.bem.info/methodology/).
- * The difference is that it only prints modified elements,
+ * Modifies the CSS classes from a DOM element according
+ * to the [BEM methodology](https://en.bem.info/methodology/).
+ * Unlike `modifyBemClass()`, it only prints modified elements,
  * instead of original and modified objects.
  *
  * @category BEM

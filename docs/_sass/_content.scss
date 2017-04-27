@@ -29,7 +29,7 @@
 		font-family: "Acropolis A", "Acropolis B";
 		font-style: italic;
 		font-weight: 800;
-		color: #e6e5e4;
+		color: $light-grey;
 		text-transform: lowercase;
 		line-height: ($grid * 6);
 	}
@@ -107,7 +107,7 @@
 	p code {
 		margin-right: 0.125rem;
 		padding: 1px 0.125rem;
-		background-color: $light-grey;
+		background-color: $code-grey;
 	}
 
 	p strong {
@@ -129,25 +129,27 @@
 	}
 
 	blockquote a:after {
-		bottom: -4px;
-		background: $hairline-grey;
-		height: 2px;
+		bottom: -3px;
+		background: $light-grey;
+		height: 4px;
 	}
 
 	a {
 		position: relative;
 		color: #000;
 		text-decoration: none;
+		z-index: 2;
 	}
 
 	a:after {
 		content: "";
 		position: absolute;
 		left: 0;
-		bottom: -1px;
+		bottom: -2px;
 		width: 100%;
 		height: 1px;
 		background: $hairline-grey;
+		z-index: 1;
 	}
 
 	a[name]:after {
@@ -262,7 +264,7 @@
 	td code {
 		font-weight: 400;
 		padding: 1px 0.25rem;
-		background-color: $light-grey;
+		background-color: $code-grey;
 		white-space: nowrap;
 	}
 

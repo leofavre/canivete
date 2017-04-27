@@ -2,7 +2,7 @@ import _parseBem from "./internal/bem/_parseBem";
 
 /**
  * @typedef {Object} BemObject
- * @property {Object} name An object which key is a BEM block or element, e.g. `menu` ou `landing__area`.
+ * @property {Object} name An object which key is a BEM block or element, e.g. `menu` or `landing__area`.
  * @property {Object} name.modifier An object representing a modifiers and their values, e.g.&nbsp;`{active: false}` or `{level: 42}`.
  */
 
