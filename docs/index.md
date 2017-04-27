@@ -129,8 +129,8 @@ console.log(domEl.className);
 
 Modifies the CSS classes from a DOM element according
 to the [BEM methodology](https://en.bem.info/methodology/).
-Unlike `modifyBemClass()`, it only prints modified elements,
-instead of original and modified objects.
+Unlike `modifyBemClass()`, it ommits the original block
+or element CSS class if a modified version is output.
 
 #### Parameters
 
