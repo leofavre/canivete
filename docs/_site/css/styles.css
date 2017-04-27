@@ -242,7 +242,7 @@ html {
     position: absolute;
     left: 0;
     bottom: -2px;
-    width: 100%;
+    width: calc(100% - 0.125rem);
     height: 2px;
     background: #c2c0b3;
     z-index: 1; }
