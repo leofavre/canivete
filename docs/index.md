@@ -96,7 +96,7 @@ to the [BEM methodology](https://en.bem.info/methodology/).
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `name` | Object | An object which key is a BEM block or element, e.g. `menu` ou `landing__area`. |
+| `name` | Object | An object which key is a BEM block or element, e.g. `menu` or `landing__area`. |
 | `name.modifier` | Object | An object representing a modifiers and their values, e.g.&nbsp;`{active: false}` or `{level: 42}`. |
 
 #### Example
@@ -130,9 +130,9 @@ console.log(domEl.className);
 <a name="modifybemclasscompact"></a>
 ### `modifyBemClassCompact(domEl, bemObj, delimiters)`
 
-Like `modifyBemClass()`, modifies the CSS classes from
-a DOM element according to the [BEM methodology](https://en.bem.info/methodology/).
-The difference is that it only prints modified elements,
+Modifies the CSS classes from a DOM element according
+to the [BEM methodology](https://en.bem.info/methodology/).
+Unlike `modifyBemClass()`, it only prints modified elements,
 instead of original and modified objects.
 
 #### Parameters
@@ -147,7 +147,7 @@ instead of original and modified objects.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `name` | Object | An object which key is a BEM block or element, e.g. `menu` ou `landing__area`. |
+| `name` | Object | An object which key is a BEM block or element, e.g. `menu` or `landing__area`. |
 | `name.modifier` | Object | An object representing a modifiers and their values, e.g.&nbsp;`{active: false}` or `{level: 42}`. |
 
 #### Example
