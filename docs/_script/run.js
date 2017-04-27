@@ -9,7 +9,7 @@ const fs = require("fs");
 
 const categoriesDescriptions = {
 	"bem": "Functions for dealing with BEM CSS classes.",
-	"class-name": "Functions for adding, removing and checking the presence of CSS classes in DOM elements.",
+	"class-name": "Functions for adding, removing and checking the&nbsp;presence of CSS classes in DOM elements.",
 	"dom": "Functions for manipulating, traversing and gathering information about the DOM.",
 	"event": "Functions for dealing with DOM and custom events.",
 	"promise": "Functions to use with Promises.",
@@ -264,7 +264,7 @@ const formatCategory = funcs => category => {
 	return {
 		name: category,
 		href: formatHref(category),
-		description: getCategoryDescription(formatHref(category)),
+		// description: getCategoryDescription(formatHref(category)),
 		items: categoryFunctions
 	};
 };

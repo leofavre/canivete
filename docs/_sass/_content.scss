@@ -22,14 +22,16 @@
 	h2 {
 		position: relative;
 		top: 0;
-		left: -0.5rem;
-		padding: 2.8125rem 0 0;
-		margin: ($grid * 6) 0 3.1875rem;
-
-		font-size: 6.625rem;
-		line-height: ($grid * 3);
-		font-family: "Whitney Narrow A", "Whitney Narrow B", sans-serif;
-		font-weight: 300;
+		left: -0.75rem;
+		margin: 70vh 0 0;
+		padding: ($grid + 1.875rem) 0 1.125rem;
+		font-size: ($grid * 8);
+		font-family: "Acropolis A", "Acropolis B";
+		font-style: italic;
+		font-weight: 800;
+		color: #e6e5e4;
+		text-transform: lowercase;
+		line-height: ($grid * 6);
 	}
 
 	h2 + h3,
@@ -38,12 +40,22 @@
 		// margin-top: ($grid * 2);
 	}
 
+	h2 + blockquote {
+		position: relative;
+		top: 0.125rem;
+		margin-bottom: 70vh;
+
+		@media only screen and (min-width: 1400px) {
+			top: 3px;
+		}
+	}
+
 	h3 {
 		position: relative;
 		top: 0;
 		font-size: 2rem;
 		line-height: ($grid * 2);
-		background: rgba($grey, 0.2);
+		background: $light-grey;
 		margin: ($grid * 8) ($grid * -1) ($grid * 2) ($grid * -2);
 		padding: (0.875rem + $grid) $grid (0.625rem + $grid) ($grid * 2);
 
@@ -93,8 +105,9 @@
 	}
 
 	p code {
-		padding: 1px 0.25rem;
-		background-color: rgba($grey, 0.2);
+		margin-right: 0.125rem;
+		padding: 1px 0.125rem;
+		background-color: $light-grey;
 	}
 
 	p strong {
@@ -107,10 +120,38 @@
 
 	blockquote p {
 		margin: $grid 0;
+		font-family: "Whitney Narrow A", "Whitney Narrow B";
+		font-style: normal;
+		font-weight: 300;
+		font-size: 2.5rem;
+		line-height: 3rem;
+		word-spacing: 0.15em;
+	}
+
+	blockquote a:after {
+		bottom: -4px;
+		background: $hairline-grey;
+		height: 2px;
 	}
 
 	a {
+		position: relative;
 		color: #000;
+		text-decoration: none;
+	}
+
+	a:after {
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: -1px;
+		width: 100%;
+		height: 1px;
+		background: $hairline-grey;
+	}
+
+	a[name]:after {
+		content: normal;
 	}
 
 	ul,
@@ -179,7 +220,7 @@
 	}
 
 	tbody tr {
-		border-top: 1px solid rgba($grey, 0.2);
+		border-top: 1px solid $hairline-grey;
 	}
 
 	th {
@@ -221,7 +262,7 @@
 	td code {
 		font-weight: 400;
 		padding: 1px 0.25rem;
-		background-color: rgba($grey, 0.2);
+		background-color: $light-grey;
 		white-space: nowrap;
 	}
 

@@ -56,7 +56,8 @@ html {
 
 .nav {
   position: relative;
-  padding: 1.5rem 2.25rem 1.5rem 3rem;
+  margin: 0;
+  padding: 1.5rem 2.625rem 1.5rem 3rem;
   height: auto;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
   box-sizing: border-box;
@@ -72,28 +73,50 @@ html {
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
   z-index: 1; }
+  .nav h1 {
+    position: relative;
+    left: -0.125rem;
+    margin: 1.5rem 0;
+    font-size: 2.25rem;
+    line-height: 1.5rem;
+    font-family: "Acropolis A", "Acropolis B";
+    font-style: italic;
+    font-weight: 800;
+    text-transform: lowercase; }
+    @media only screen and (min-width: 1400px) {
+      .nav h1 {
+        top: 1px; } }
   .nav ul {
     position: relative;
     top: 0.5rem;
     margin: 1.5rem 0;
     padding: 0; }
+    @media only screen and (min-width: 1400px) {
+      .nav ul {
+        top: 8px; } }
   .nav ul ul {
     top: 0;
     margin-top: 0; }
   .nav li {
     position: relative;
-    top: -0.0625rem;
     list-style: none;
     line-height: 1.5rem; }
   .nav li strong {
+    position: relative;
+    top: -0.0625rem;
     font-size: 1.0625rem;
     font-weight: 800;
     line-height: 1.5rem;
     letter-spacing: 0.045em; }
+    @media only screen and (min-width: 1400px) {
+      .nav li strong {
+        top: 0; } }
   .nav li li {
-    top: 0.125rem;
-    font-family: "Fira Code", monospace;
+    top: 0.0625rem;
     font-size: 14px; }
+    @media only screen and (min-width: 1400px) {
+      .nav li li {
+        top: 2px; } }
   .nav a {
     display: block;
     color: #000;
@@ -115,19 +138,29 @@ html {
   .content h2 {
     position: relative;
     top: 0;
-    left: -0.5rem;
-    padding: 2.8125rem 0 0;
-    margin: 9rem 0 3.1875rem;
-    font-size: 6.625rem;
-    line-height: 4.5rem;
-    font-family: "Whitney Narrow A", "Whitney Narrow B", sans-serif;
-    font-weight: 300; }
+    left: -0.75rem;
+    margin: 70vh 0 0;
+    padding: 3.375rem 0 1.125rem;
+    font-size: 12rem;
+    font-family: "Acropolis A", "Acropolis B";
+    font-style: italic;
+    font-weight: 800;
+    color: #e6e5e4;
+    text-transform: lowercase;
+    line-height: 9rem; }
+  .content h2 + blockquote {
+    position: relative;
+    top: 0.125rem;
+    margin-bottom: 70vh; }
+    @media only screen and (min-width: 1400px) {
+      .content h2 + blockquote {
+        top: 3px; } }
   .content h3 {
     position: relative;
     top: 0;
     font-size: 2rem;
     line-height: 3rem;
-    background: rgba(129, 126, 121, 0.2);
+    background: #e6e5e4;
     margin: 12rem -1.5rem 3rem -3rem;
     padding: 2.375rem 1.5rem 2.125rem 3rem; }
     @media only screen and (min-width: 1400px) {
@@ -158,16 +191,39 @@ html {
       .content p {
         top: calc(0.5rem - 1px); } }
   .content p code {
-    padding: 1px 0.25rem;
-    background-color: rgba(129, 126, 121, 0.2); }
+    margin-right: 0.125rem;
+    padding: 1px 0.125rem;
+    background-color: #e6e5e4; }
   .content p strong {
     font-weight: 600; }
   .content blockquote {
     margin: 0; }
   .content blockquote p {
-    margin: 1.5rem 0; }
+    margin: 1.5rem 0;
+    font-family: "Whitney Narrow A", "Whitney Narrow B";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 2.5rem;
+    line-height: 3rem;
+    word-spacing: 0.15em; }
+  .content blockquote a:after {
+    bottom: -4px;
+    background: #dcdbd9;
+    height: 2px; }
   .content a {
-    color: #000; }
+    position: relative;
+    color: #000;
+    text-decoration: none; }
+  .content a:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 1px;
+    background: #dcdbd9; }
+  .content a[name]:after {
+    content: normal; }
   .content ul,
   .content ol {
     position: relative;
@@ -211,7 +267,7 @@ html {
   .content tr {
     position: relative; }
   .content tbody tr {
-    border-top: 1px solid rgba(129, 126, 121, 0.2); }
+    border-top: 1px solid #dcdbd9; }
   .content th {
     position: relative;
     text-align: left;
@@ -243,7 +299,7 @@ html {
   .content td code {
     font-weight: 400;
     padding: 1px 0.25rem;
-    background-color: rgba(129, 126, 121, 0.2);
+    background-color: #e6e5e4;
     white-space: nowrap; }
   .content td em {
     font-style: normal; }

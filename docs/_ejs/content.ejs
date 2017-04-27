@@ -6,7 +6,9 @@ title: Canivete
 <%docs.forEach(category => {-%>
 ## <%-category.name%>
 
-> <%-category.description%>
+><%category.items.forEach((item, index, arr) => {-%>
+[<%-item.name%>](#<%-item.href%>)<%if(index < arr.length - 2){-%>, <%}-%><%if(index === arr.length - 2){-%> &amp;&nbsp;<%}-%>
+<%})%>
 
 <%-include contentLoop.ejs-%>
 <%})-%>

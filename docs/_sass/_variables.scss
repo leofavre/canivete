@@ -3,3 +3,5 @@ $content-width: 38.75rem;
 $full-content-width: $content-width + ($grid * 3);
 
 $grey: #817e79;
+$light-grey: #e6e5e4;
+$hairline-grey: mix($grey, $light-grey, 10%);

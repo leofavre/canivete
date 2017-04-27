@@ -5,7 +5,7 @@ title: Canivete
 
 ## BEM
 
-> Functions for dealing with BEM CSS classes.
+>[formatBemClass](#formatbemclass), [modifyBemClass](#modifybemclass) &amp;&nbsp;[modifyBemClassCompact](#modifybemclasscompact)
 
 <a name="formatbemclass"></a>
 ### `formatBemClass(block, [element], [modifier], [value], delimiters)`
@@ -180,7 +180,7 @@ console.log(domEl.className);
 
 ## Class Name
 
-> Functions for adding, removing and checking the presence of CSS classes in DOM elements.
+>[addClass](#addclass), [hasClass](#hasclass) &amp;&nbsp;[removeClass](#removeclass)
 
 <a name="addclass"></a>
 ### `addClass(domEls, str)`
@@ -275,7 +275,7 @@ console.log(manyElements[0].className);
 
 ## DOM
 
-> Functions for manipulating, traversing and gathering information about the DOM.
+>[clippingInfo](#clippinginfo), [parents](#parents) &amp;&nbsp;[selfAndParents](#selfandparents)
 
 <a name="clippinginfo"></a>
 ### `clippingInfo(domEl, [maskDef])`
@@ -426,7 +426,7 @@ selfAndParents(domChild);
 
 ## Event
 
-> Functions for dealing with DOM and custom events.
+>[eventPath](#eventpath) &amp;&nbsp;[trigger](#trigger)
 
 <a name="eventpath"></a>
 ### `eventPath(evt)`
@@ -468,7 +468,7 @@ Triggers a custom DOM event.
 
 ## Promise
 
-> Functions to use with Promises.
+>[eventAsPromise](#eventaspromise) &amp;&nbsp;[waitInPromise](#waitinpromise)
 
 <a name="eventaspromise"></a>
 ### `eventAsPromise(domEl, evtName, [happened])`
@@ -567,7 +567,7 @@ Promise.resolve("waiting")
 
 ## Random
 
-> Functions for dealing with random numbers.
+>[oneOutOf](#oneoutof)
 
 <a name="oneoutof"></a>
 ### `oneOutOf(num)`
@@ -599,7 +599,7 @@ oneOutOf(2);
 
 ## Reduce
 
-> Functions to use with Array reduce.
+>[toAverage](#toaverage), [toAverageProp](#toaverageprop), [toClosest](#toclosest), [toClosestProp](#toclosestprop), [toLargestProp](#tolargestprop), [toSmallestProp](#tosmallestprop) &amp;&nbsp;[toSum](#tosum)
 
 <a name="toaverage"></a>
 ### `toAverage()`
@@ -938,7 +938,7 @@ Also, note that the parentheses can be ommited.
 
 ## Sort
 
-> Functions to use with Array sort.
+>[byAlphabeticalOrder](#byalphabeticalorder)
 
 <a name="byalphabeticalorder"></a>
 ### `byAlphabeticalOrder()`
@@ -968,7 +968,7 @@ musqueteers.sort(byAlphabeticalOrder);
 
 ## String
 
-> Functions for manipulating strings.
+>[afterFirst](#afterfirst), [afterLast](#afterlast), [beforeFirst](#beforefirst) &amp;&nbsp;[beforeLast](#beforelast)
 
 <a name="afterfirst"></a>
 ### `afterFirst(str, delimiter)`
@@ -1080,7 +1080,7 @@ beforeLast("parallelepiped", "le");
 
 ## Time
 
-> Functions for dealing with timestamps.
+>[timeSince](#timesince)
 
 <a name="timesince"></a>
 ### `timeSince(timestamp)`

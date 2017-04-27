@@ -1,6 +1,7 @@
 .nav {
 	position: relative;
-	padding: $grid ($grid * 1.5) $grid ($grid * 2);
+	margin: 0;
+	padding: $grid ($grid * 1.75) $grid ($grid * 2);
 	height: auto;
 	box-shadow: 0 0 0.5rem rgba(#000, 0.3);
 	box-sizing: border-box;
@@ -26,11 +27,31 @@
 	// background-image: linear-gradient(to bottom, lightblue 1px, transparent 1px);
 	// background-attachment: scroll;
 
+	h1 {
+		position: relative;
+		left: -0.125rem;
+		margin: $grid 0;
+		font-size: $grid * 1.5;
+		line-height: $grid;
+		font-family: "Acropolis A", "Acropolis B";
+		font-style: italic;
+		font-weight: 800;
+		text-transform: lowercase;
+
+		@media only screen and (min-width: 1400px) {
+			top: 1px;
+		}
+	}
+
 	ul {
 		position: relative;
 		top: 0.5rem;
 		margin: $grid 0;
 		padding: 0;
+
+		@media only screen and (min-width: 1400px) {
+			top: 8px;
+		}
 	}
 
 	ul ul {
@@ -40,22 +61,31 @@
 
 	li {
 		position: relative;
-		top: -0.0625rem;
 		list-style: none;
 		line-height: $grid;
 	}
 
 	li strong {
+		position: relative;
+		top: -0.0625rem;
 		font-size: 1.0625rem;
 		font-weight: 800;
 		line-height: $grid;
 		letter-spacing: 0.045em;
+
+		@media only screen and (min-width: 1400px) {
+			top: 0;
+		}
 	}
 
 	li li {
-		top: 0.125rem;
-		font-family: "Fira Code", monospace;
+		top: 0.0625rem;
+		// font-family: "Fira Code", monospace;
 		font-size: 14px;
+
+		@media only screen and (min-width: 1400px) {
+			top: 2px;
+		}
 	}
 
 	a {
