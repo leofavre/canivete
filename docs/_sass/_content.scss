@@ -1,15 +1,17 @@
 .content {
-	padding: 0 $grid ($grid * 2) ($grid * 2);
+	padding: 0 ($grid * 2) ($grid * 2) (6rem + $grid * 2);
 	overflow-x: hidden;
 	overflow-y: auto;
 	line-height: $grid;
 	-webkit-overflow-scrolling: touch;
 	box-sizing: border-box;
 
-	width: calc(#{$full-content-width} + ((100% - #{$full-content-width}) / 2));
+	width: calc(#{6rem + $full-content-width} + ((100% - #{$full-content-width}) / 2));
 	flex-basis: auto;
 	flex-grow: 0;
 	flex-shrink: 1;
+
+	margin-left: 14.375rem - 3rem;
 
 	// background-position: 0.3125rem 0;
 	// background-size: $grid $grid;
@@ -23,21 +25,7 @@
 	h2 {
 		position: relative;
 		top: 0;
-		left: -0.75rem;
-		margin: 70vh 0 0;
-		padding: ($grid + 1.875rem) 0 1.125rem;
-		font-size: ($grid * 8);
-		font-family: "Acropolis A", "Acropolis B";
-		font-style: italic;
-		font-weight: 800;
-		color: $light-grey;
-		text-transform: lowercase;
-		line-height: ($grid * 6);
-
-
-		position: relative;
-		top: 0;
-		left: -0.75rem;
+		left: ($grid * -3);
 		margin: 70vh 0 0;
 		padding: 3.375rem 0 1.125rem;
 		font-size: 24rem;
@@ -85,12 +73,12 @@
 		font-size: 2rem;
 		line-height: ($grid * 2);
 		background: $light-grey;
-		margin: ($grid * 8) ($grid * -1) ($grid * 2) ($grid * -2);
+		margin: ($grid * 8) ($grid * -2) ($grid * 2) ($grid * -2);
 	}
 
 	h3 a {
 		display: block;
-		padding: (0.875rem + $grid) $grid (0.625rem + $grid) ($grid * 2);
+		padding: (0.875rem + $grid) ($grid * 2) (0.625rem + $grid) ($grid * 2);
 
 		@media only screen and (min-width: 1400px) {
 			padding-top: 42px;
@@ -209,7 +197,7 @@
 	pre {
 		background-color: rgba(#272822, 1);
 		color: #f8f8f2;
-		margin: $grid ($grid * -1) ($grid * 2) ($grid * -2);
+		margin: $grid ($grid * -2) ($grid * 2) ($grid * -2);
 		padding: 3.5rem $grid 2.5rem ($grid * 2);
 		line-height: $grid;
 		overflow: auto;

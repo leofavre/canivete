@@ -52,20 +52,18 @@ html {
   background-color: #fff;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
+  justify-content: flex-end;
   flex: 1 1 auto; }
 
 .nav {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
   margin: 0;
-  padding: 1.5rem 3rem 1.5rem 3rem;
-  height: auto;
+  padding: 1.5rem 2.25rem 1.5rem 2.25rem;
+  height: 100%;
   box-sizing: border-box;
-  flex-basis: auto;
-  flex-grow: 0;
-  flex-shrink: 1;
   min-width: 14.375rem;
-  min-width: min-content;
   display: flex;
   flex-flow: row wrap;
   overflow-x: hidden;
@@ -137,32 +135,21 @@ html {
   margin-right: auto; }
 
 .content {
-  padding: 0 1.5rem 3rem 3rem;
+  padding: 0 3rem 3rem 9rem;
   overflow-x: hidden;
   overflow-y: auto;
   line-height: 1.5rem;
   -webkit-overflow-scrolling: touch;
   box-sizing: border-box;
-  width: calc(43.25rem + ((100% - 43.25rem) / 2));
+  width: calc(49.25rem + ((100% - 43.25rem) / 2));
   flex-basis: auto;
   flex-grow: 0;
-  flex-shrink: 1; }
+  flex-shrink: 1;
+  margin-left: 11.375rem; }
   .content h2 {
     position: relative;
     top: 0;
-    left: -0.75rem;
-    margin: 70vh 0 0;
-    padding: 3.375rem 0 1.125rem;
-    font-size: 12rem;
-    font-family: "Acropolis A", "Acropolis B";
-    font-style: italic;
-    font-weight: 800;
-    color: #c2c0b3;
-    text-transform: lowercase;
-    line-height: 9rem;
-    position: relative;
-    top: 0;
-    left: -0.75rem;
+    left: -4.5rem;
     margin: 70vh 0 0;
     padding: 3.375rem 0 1.125rem;
     font-size: 24rem;
@@ -193,10 +180,10 @@ html {
     font-size: 2rem;
     line-height: 3rem;
     background: #c2c0b3;
-    margin: 12rem -1.5rem 3rem -3rem; }
+    margin: 12rem -3rem 3rem -3rem; }
   .content h3 a {
     display: block;
-    padding: 2.375rem 1.5rem 2.125rem 3rem; }
+    padding: 2.375rem 3rem 2.125rem 3rem; }
     @media only screen and (min-width: 1400px) {
       .content h3 a {
         padding-top: 42px;
@@ -274,7 +261,7 @@ html {
   .content pre {
     background-color: #272822;
     color: #f8f8f2;
-    margin: 1.5rem -1.5rem 3rem -3rem;
+    margin: 1.5rem -3rem 3rem -3rem;
     padding: 3.5rem 1.5rem 2.5rem 3rem;
     line-height: 1.5rem;
     overflow: auto; }

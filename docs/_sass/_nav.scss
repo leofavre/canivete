@@ -1,16 +1,13 @@
 .nav {
-	position: relative;
+	position: fixed;
+	top: 0;
+	left: 0;
 	margin: 0;
-	padding: $grid ($grid * 2) $grid ($grid * 2);
-	height: auto;
-	// box-shadow: 0 0 0.5rem rgba(#000, 0.3);
+	padding: $grid ($grid * 1.5) $grid ($grid * 1.5);
+	height: 100%;
 	box-sizing: border-box;
 
-	flex-basis: auto;
-	flex-grow: 0;
-	flex-shrink: 1;
 	min-width: 14.375rem;
-	min-width: min-content;
 
 	display: flex;
 	flex-flow: row wrap;
