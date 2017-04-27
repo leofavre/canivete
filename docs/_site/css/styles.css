@@ -235,8 +235,8 @@ html {
     left: 0;
     bottom: -2px;
     width: 100%;
-    height: 1px;
-    background: #d2d0c6;
+    height: 2px;
+    background: #c2c0b3;
     z-index: 1; }
   .content a[name]:after {
     content: normal;
