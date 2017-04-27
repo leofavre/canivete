@@ -58,7 +58,7 @@ html {
 .nav {
   position: relative;
   margin: 0;
-  padding: 1.5rem 2.625rem 1.5rem 3rem;
+  padding: 1.5rem 3rem 1.5rem 3rem;
   height: auto;
   box-sizing: border-box;
   flex-basis: auto;
@@ -159,7 +159,27 @@ html {
     font-weight: 800;
     color: #c2c0b3;
     text-transform: lowercase;
-    line-height: 9rem; }
+    line-height: 9rem;
+    position: relative;
+    top: 0;
+    left: -0.75rem;
+    margin: 70vh 0 0;
+    padding: 3.375rem 0 1.125rem;
+    font-size: 24rem;
+    font-family: "Acropolis A", "Acropolis B";
+    font-style: italic;
+    font-weight: 800;
+    color: #c2c0b3;
+    text-transform: lowercase;
+    line-height: 15rem;
+    word-wrap: break-word;
+    width: 61rem; }
+  .content #class-name {
+    width: 50rem; }
+  .content #promise {
+    width: 50rem; }
+  .content #time {
+    width: 45rem; }
   .content h2 + blockquote {
     position: relative;
     top: 0.125rem;

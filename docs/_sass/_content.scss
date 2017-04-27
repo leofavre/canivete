@@ -33,6 +33,34 @@
 		color: $light-grey;
 		text-transform: lowercase;
 		line-height: ($grid * 6);
+
+
+		position: relative;
+		top: 0;
+		left: -0.75rem;
+		margin: 70vh 0 0;
+		padding: 3.375rem 0 1.125rem;
+		font-size: 24rem;
+		font-family: "Acropolis A", "Acropolis B";
+		font-style: italic;
+		font-weight: 800;
+		color: #c2c0b3;
+		text-transform: lowercase;
+		line-height: 15rem;
+		word-wrap: break-word;
+		width: 61rem;
+	}
+
+	#class-name {
+		width: 50rem;
+	}
+
+	#promise {
+		width: 50rem;
+	}
+
+	#time {
+		width: 45rem;
 	}
 
 	h2 + h3,
