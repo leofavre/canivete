@@ -160,7 +160,8 @@ html {
     text-transform: lowercase;
     line-height: 15rem;
     word-wrap: break-word;
-    width: 61rem; }
+    width: 61rem;
+    overflow: visible; }
   .content #class-name {
     width: 50rem; }
   .content #promise {
