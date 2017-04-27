@@ -146,11 +146,7 @@ html {
   width: calc(43.25rem + ((100% - 43.25rem) / 2));
   flex-basis: auto;
   flex-grow: 0;
-  flex-shrink: 1;
-  background-position: 0.3125rem 0;
-  background-size: 1.5rem 1.5rem;
-  background-image: linear-gradient(to bottom, lightblue 1px, transparent 1px);
-  background-attachment: scroll; }
+  flex-shrink: 1; }
   .content h2 {
     position: relative;
     top: 0;
