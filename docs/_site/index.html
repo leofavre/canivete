@@ -892,7 +892,7 @@ This function serves as a polyfill for
   </tbody>
 </table>
 
-<h3 id="triggerevtname-bubbles-target"><a name="trigger"><code class="highlighter-rouge">trigger(evtName, bubbles, target)</code></a></h3>
+<h3 id="triggerdomel-evtname-bubbles"><a name="trigger"><code class="highlighter-rouge">trigger(domEl, evtName, [bubbles])</code></a></h3>
 
 <p>Triggers a custom DOM event.</p>
 
@@ -902,45 +902,43 @@ This function serves as a polyfill for
   <thead>
     <tr>
       <th>Name</th>
+      <th>Default</th>
       <th>Type</th>
       <th>Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
+      <td><code class="highlighter-rouge">domEl</code></td>
+      <td> </td>
+      <td>HTMLElement</td>
+      <td>The DOM element that triggers the event.</td>
+    </tr>
+    <tr>
       <td><code class="highlighter-rouge">evtName</code></td>
+      <td> </td>
       <td>String</td>
       <td>The event name.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">bubbles</code></td>
+      <td><code class="highlighter-rouge">true</code></td>
       <td>Boolean</td>
-      <td>Whether the event should bubble or not.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">target</code></td>
-      <td>HTMLElement</td>
-      <td>The DOM element that triggers the event.</td>
+      <td>Whether the event bubbles or not. <strong>optional</strong></td>
     </tr>
   </tbody>
 </table>
 
-<h4 id="return-6">Return</h4>
+<h4 id="example-6">Example</h4>
 
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>CustomEvent</td>
-      <td>The custom event.</td>
-    </tr>
-  </tbody>
-</table>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">popupButton</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">".popup-button"</span><span class="p">),</span>
+	<span class="nx">popupLayer</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">".popup-layer"</span><span class="p">);</span>
+
+<span class="nx">popupButton</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"click"</span><span class="p">,</span> <span class="nx">evt</span> <span class="o">=&gt;</span> <span class="p">{</span>
+	<span class="nx">trigger</span><span class="p">(</span><span class="nx">popupLayer</span><span class="p">,</span> <span class="s2">"open"</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+</div>
 
 <h2 id="promise">Promise</h2>
 
@@ -997,7 +995,7 @@ parameters are not a DOM element and a string.</p>
   </tbody>
 </table>
 
-<h4 id="return-7">Return</h4>
+<h4 id="return-6">Return</h4>
 
 <table>
   <thead>
@@ -1073,7 +1071,7 @@ internal <code class="highlighter-rouge">setTimeout()</code>.</p>
   </tbody>
 </table>
 
-<h4 id="return-8">Return</h4>
+<h4 id="return-7">Return</h4>
 
 <table>
   <thead>
@@ -1090,7 +1088,7 @@ internal <code class="highlighter-rouge">setTimeout()</code>.</p>
   </tbody>
 </table>
 
-<h4 id="example-6">Example</h4>
+<h4 id="example-7">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="s2">"waiting"</span><span class="p">)</span>
 	<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">waitInPromise</span><span class="p">(</span><span class="mi">500</span><span class="p">))</span>
@@ -1131,7 +1129,7 @@ randomly.</p>
   </tbody>
 </table>
 
-<h4 id="return-9">Return</h4>
+<h4 id="return-8">Return</h4>
 
 <table>
   <thead>
@@ -1148,7 +1146,7 @@ randomly.</p>
   </tbody>
 </table>
 
-<h4 id="example-7">Example</h4>
+<h4 id="example-8">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">oneOutOf</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
 <span class="c1">// =&gt; true</span>
@@ -1173,7 +1171,7 @@ the average of the values in an array.</p>
 using <code class="highlighter-rouge">toAverage()</code> can lead to unexpected results.
 Also, note that the parentheses can be ommited.</p>
 
-<h4 id="return-10">Return</h4>
+<h4 id="return-9">Return</h4>
 
 <table>
   <thead>
@@ -1190,7 +1188,7 @@ Also, note that the parentheses can be ommited.</p>
   </tbody>
 </table>
 
-<h4 id="example-8">Example</h4>
+<h4 id="example-9">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">].</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toAverage</span><span class="p">());</span>
 <span class="c1">// =&gt; 6</span>
@@ -1231,7 +1229,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="return-11">Return</h4>
+<h4 id="return-10">Return</h4>
 
 <table>
   <thead>
@@ -1248,7 +1246,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="example-9">Example</h4>
+<h4 id="example-10">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
 	<span class="na">city</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
@@ -1317,7 +1315,7 @@ using <code class="highlighter-rouge">toClosest()</code> can lead to unexpected 
   </tbody>
 </table>
 
-<h4 id="return-12">Return</h4>
+<h4 id="return-11">Return</h4>
 
 <table>
   <thead>
@@ -1334,7 +1332,7 @@ using <code class="highlighter-rouge">toClosest()</code> can lead to unexpected 
   </tbody>
 </table>
 
-<h4 id="example-10">Example</h4>
+<h4 id="example-11">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">].</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toClosest</span><span class="p">(</span><span class="mi">6</span><span class="p">));</span>
 <span class="c1">// =&gt; 5</span>
@@ -1381,7 +1379,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="return-13">Return</h4>
+<h4 id="return-12">Return</h4>
 
 <table>
   <thead>
@@ -1398,7 +1396,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="example-11">Example</h4>
+<h4 id="example-12">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
 	<span class="na">city</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
@@ -1465,7 +1463,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="return-14">Return</h4>
+<h4 id="return-13">Return</h4>
 
 <table>
   <thead>
@@ -1482,7 +1480,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="example-12">Example</h4>
+<h4 id="example-13">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
 	<span class="na">city</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
@@ -1549,7 +1547,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="return-15">Return</h4>
+<h4 id="return-14">Return</h4>
 
 <table>
   <thead>
@@ -1566,7 +1564,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="example-13">Example</h4>
+<h4 id="example-14">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
 	<span class="na">city</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
@@ -1611,7 +1609,7 @@ the sum of the values in an array.</p>
 using <code class="highlighter-rouge">toSum()</code> can lead to unexpected results.
 Also, note that the parentheses can be ommited.</p>
 
-<h4 id="return-16">Return</h4>
+<h4 id="return-15">Return</h4>
 
 <table>
   <thead>
@@ -1628,7 +1626,7 @@ Also, note that the parentheses can be ommited.</p>
   </tbody>
 </table>
 
-<h4 id="example-14">Example</h4>
+<h4 id="example-15">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">].</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toSum</span><span class="p">());</span>
 <span class="c1">// =&gt; 24</span>
@@ -1651,7 +1649,7 @@ the array in ascending alphabetical order.</p>
 
 <p>Note that the parentheses can be ommited.</p>
 
-<h4 id="return-17">Return</h4>
+<h4 id="return-16">Return</h4>
 
 <table>
   <thead>
@@ -1668,7 +1666,7 @@ the array in ascending alphabetical order.</p>
   </tbody>
 </table>
 
-<h4 id="example-15">Example</h4>
+<h4 id="example-16">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">musqueteers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Athos"</span><span class="p">,</span> <span class="s2">"Porthos"</span><span class="p">,</span> <span class="s2">"Aramis"</span><span class="p">];</span>
 
@@ -1716,6 +1714,58 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
   </tbody>
 </table>
 
+<h4 id="return-17">Return</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>String</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="example-17">Example</h4>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">afterFirst</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
+<span class="c1">// =&gt; "lepiped"</span>
+</code></pre>
+</div>
+
+<h3 id="afterlaststr-delimiter"><a name="afterlast"><code class="highlighter-rouge">afterLast(str, delimiter)</code></a></h3>
+
+<p>Returns the string formed by the characters <strong>after
+the last occurrence</strong> of the delimiter in a base string.
+If the delimiter is not found, the function returns <code class="highlighter-rouge">undefined</code>.</p>
+
+<h4 id="parameters-11">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">str</code></td>
+      <td>String</td>
+      <td>The base string.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">delimiter</code></td>
+      <td>String</td>
+      <td>The delimiter string.</td>
+    </tr>
+  </tbody>
+</table>
+
 <h4 id="return-18">Return</h4>
 
 <table>
@@ -1731,20 +1781,20 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
   </tbody>
 </table>
 
-<h4 id="example-16">Example</h4>
+<h4 id="example-18">Example</h4>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">afterFirst</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
-<span class="c1">// =&gt; "lepiped"</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">afterLast</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
+<span class="c1">// =&gt; "piped"</span>
 </code></pre>
 </div>
 
-<h3 id="afterlaststr-delimiter"><a name="afterlast"><code class="highlighter-rouge">afterLast(str, delimiter)</code></a></h3>
+<h3 id="beforefirststr-delimiter"><a name="beforefirst"><code class="highlighter-rouge">beforeFirst(str, delimiter)</code></a></h3>
 
-<p>Returns the string formed by the characters <strong>after
-the last occurrence</strong> of the delimiter in a base string.
+<p>Returns the string formed by the characters <strong>before
+the first occurrence</strong> of the delimiter in a base string.
 If the delimiter is not found, the function returns <code class="highlighter-rouge">undefined</code>.</p>
 
-<h4 id="parameters-11">Parameters</h4>
+<h4 id="parameters-12">Parameters</h4>
 
 <table>
   <thead>
@@ -1783,20 +1833,20 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
   </tbody>
 </table>
 
-<h4 id="example-17">Example</h4>
+<h4 id="example-19">Example</h4>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">afterLast</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
-<span class="c1">// =&gt; "piped"</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">beforeFirst</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
+<span class="c1">// =&gt; "paral"</span>
 </code></pre>
 </div>
 
-<h3 id="beforefirststr-delimiter"><a name="beforefirst"><code class="highlighter-rouge">beforeFirst(str, delimiter)</code></a></h3>
+<h3 id="beforelaststr-delimiter"><a name="beforelast"><code class="highlighter-rouge">beforeLast(str, delimiter)</code></a></h3>
 
 <p>Returns the string formed by the characters <strong>before
-the first occurrence</strong> of the delimiter in a base string.
+the last occurrence</strong> of the delimiter in a base string.
 If the delimiter is not found, the function returns <code class="highlighter-rouge">undefined</code>.</p>
 
-<h4 id="parameters-12">Parameters</h4>
+<h4 id="parameters-13">Parameters</h4>
 
 <table>
   <thead>
@@ -1835,59 +1885,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
   </tbody>
 </table>
 
-<h4 id="example-18">Example</h4>
-
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">beforeFirst</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
-<span class="c1">// =&gt; "paral"</span>
-</code></pre>
-</div>
-
-<h3 id="beforelaststr-delimiter"><a name="beforelast"><code class="highlighter-rouge">beforeLast(str, delimiter)</code></a></h3>
-
-<p>Returns the string formed by the characters <strong>before
-the last occurrence</strong> of the delimiter in a base string.
-If the delimiter is not found, the function returns <code class="highlighter-rouge">undefined</code>.</p>
-
-<h4 id="parameters-13">Parameters</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">str</code></td>
-      <td>String</td>
-      <td>The base string.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">delimiter</code></td>
-      <td>String</td>
-      <td>The delimiter string.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="return-21">Return</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>String</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="example-19">Example</h4>
+<h4 id="example-20">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">beforeLast</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
 <span class="c1">// =&gt; "paralle"</span>
@@ -1923,7 +1921,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
   </tbody>
 </table>
 
-<h4 id="return-22">Return</h4>
+<h4 id="return-21">Return</h4>
 
 <table>
   <thead>

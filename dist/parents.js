@@ -1,4 +1,4 @@
-import isElement from "lodash-es/isElement";
+import _isElementOrDocumentOrWindow from "./internal/dom/_isElementOrDocumentOrWindow";
 
 /**
  * Returns all parents of a DOM element,
@@ -23,7 +23,7 @@ import isElement from "lodash-es/isElement";
  * // => [domParent, domGrandparent, body, html, document]
  */
 function parents(domEl, memo = []) {
-	if (!isElement(domEl) && memo.length === 0) {
+	if (!_isElementOrDocumentOrWindow(domEl) && memo.length === 0) {
 		throw new Error("An HTMLElement is expected as parameter.");
 	}
 

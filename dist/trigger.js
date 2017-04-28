@@ -1,13 +1,27 @@
+import isString from "lodash-es/isString";
+import isElement from "lodash-es/isElement";
+
 /**
  * Triggers a custom DOM event.
  *
  * @category Event
+ * @param  {HTMLElement} domEl The DOM element that triggers the event.
  * @param  {string} evtName The event name.
- * @param  {boolean} bubbles Whether the event should bubble or not.
- * @param  {HTMLElement} target The DOM element that triggers the event.
- * @return {CustomEvent} The custom event.
+ * @param  {boolean} [bubbles = true] Whether the event bubbles or not.
+ *
+ * @example
+ * let popupButton = document.querySelector(".popup-button"),
+ * 	popupLayer = document.querySelector(".popup-layer");
+ * 
+ * popupButton.addEventListener("click", evt => {
+ * 	trigger(popupLayer, "open", false);
+ * });
  */
-function trigger(evtName, bubbles, target) {
+const trigger = (domEl, evtName, bubbles = true) => {
+	if (!isElement(domEl) || !isString(evtName)) {
+		throw new Error("An HTMLElement and a string are expected as parameters.");
+	}
+
 	let evt;
 
 	if (window.CustomEvent != null) {
@@ -20,7 +34,7 @@ function trigger(evtName, bubbles, target) {
 		});
 	}
 
-	target.dispatchEvent(evt);
-}
+	domEl.dispatchEvent(evt);
+};
 
 export default trigger;

@@ -1,5 +1,5 @@
-import isElement from "lodash-es/isElement";
 import parents from "./parents";
+import _isElementOrDocumentOrWindow from "./internal/dom/_isElementOrDocumentOrWindow";
 
 /**
  * The same as `parents()`, except it includes
@@ -24,7 +24,7 @@ import parents from "./parents";
  * // => [domChild, domParent, domGrandparent, body, html, document]
  */
 const selfAndParents = domEl => {
-	if (!isElement(domEl) && memo.length === 0) {
+	if (!_isElementOrDocumentOrWindow(domEl) && memo.length === 0) {
 		throw new Error("An HTMLElement is expected as parameter.");
 	}
 

@@ -1,5 +1,5 @@
 import isString from "lodash-es/isString";
-import isElement from "lodash-es/isElement";
+import _isElementOrDocumentOrWindow from "./internal/dom/_isElementOrDocumentOrWindow";
 
 /**
  * Transforms a DOM event into a promise.
@@ -47,8 +47,8 @@ import isElement from "lodash-es/isElement";
  * //  is called, if the image has already been loaded.
  */
 const eventAsPromise = (domEl, evtName, happened = domEl => false) => {
-	if (!isElement(domEl) || !isString(evtName)) {
-		throw new Error("An HTMLElement and a string are expected as parameters.");
+	if (!_isElementOrDocumentOrWindow(domEl) || !isString(evtName)) {
+		throw new Error("An HTMLElement, document or window are expected as first parameter; and a string is expected as second parameter.");
 	}
 
 	return new Promise(resolve => {

@@ -5,5 +5,5 @@ $full-content-width: $content-width + ($grid * 3);
 $grey: #94917b;
 $light-grey: lighten($grey, 20%);
 $code-grey: mix(white, $light-grey, 50%);
-$hairline-grey: mix($light-grey, $code-grey, 50%);
+$hairline-grey: mix(black, white, 15%);
 $link-color: #b4e7f8;

@@ -102,7 +102,7 @@ html {
     margin: calc(1.5rem - 1px) auto 1.5rem 0;
     width: 50%;
     height: 1px;
-    background: #d2d0c6; }
+    background: #d9d9d9; }
   .nav li {
     position: relative;
     list-style: none;
@@ -292,7 +292,7 @@ html {
   .content tr {
     position: relative; }
   .content tbody tr {
-    border-top: 1px solid #d2d0c6; }
+    border-top: 1px solid #d9d9d9; }
   .content th {
     position: relative;
     text-align: left;
