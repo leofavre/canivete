@@ -1,5 +1,6 @@
 import _formatBemRadical from "./internal/bem/_formatBemRadical";
 import _formatBemModifier from "./internal/bem/_formatBemModifier";
+import _throwErrorIf from "./internal/common/_throwErrorIf";
 
 /**
  * Formats a CSS class according to the
@@ -63,9 +64,7 @@ const formatBemClass = (...args) => {
 	let block = args[0] || "";
 	let delimiters = args[args.length - 1];
 
-	if (args.length < 2) {
-		throw new Error("At least a string representing a BEM block and an array representing BEM delimiters should be passed as parameters.");
-	}
+	_throwErrorIf((args.length < 2), "At least a string representing a BEM block and an array representing BEM delimiters should be passed as parameters.");
 
 	let element,
 		modifier,

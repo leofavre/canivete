@@ -1,5 +1,6 @@
 import parents from "./parents";
 import _isElementOrDocumentOrWindow from "./internal/dom/_isElementOrDocumentOrWindow";
+import _throwErrorIf from "./internal/common/_throwErrorIf";
 
 /**
  * The same as `parents()`, except it includes
@@ -24,10 +25,7 @@ import _isElementOrDocumentOrWindow from "./internal/dom/_isElementOrDocumentOrW
  * // => [domChild, domParent, domGrandparent, body, html, document]
  */
 const selfAndParents = domEl => {
-	if (!_isElementOrDocumentOrWindow(domEl) && memo.length === 0) {
-		throw new Error("An HTMLElement is expected as parameter.");
-	}
-
+	_throwErrorIf(!_isElementOrDocumentOrWindow(domEl), "An HTMLElement is expected as parameter.");
 	return [domEl].concat(parents(domEl));
 };
 

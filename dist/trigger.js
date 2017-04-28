@@ -1,5 +1,6 @@
 import isString from "lodash-es/isString";
 import _isElementOrDocumentOrWindow from "./internal/dom/_isElementOrDocumentOrWindow";
+import _throwErrorIf from "./internal/common/_throwErrorIf";
 
 /**
  * Triggers a custom DOM event.
@@ -20,9 +21,8 @@ import _isElementOrDocumentOrWindow from "./internal/dom/_isElementOrDocumentOrW
  * });
  */
 const trigger = (domEl, evtName, bubbles = false, cancelable = false, detail = undefined) => {
-	if (!_isElementOrDocumentOrWindow(domEl) || !isString(evtName)) {
-		throw new Error("An HTMLElement, document or window are expected as first parameter; and a string is expected as second parameter.");
-	}
+	_throwErrorIf(!_isElementOrDocumentOrWindow(domEl), "An HTMLElement, document or window are expected as first parameter.");
+	_throwErrorIf(!isString(evtName), "A string is expected as second parameter.");
 
 	let evt;
 

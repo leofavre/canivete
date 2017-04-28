@@ -1,4 +1,5 @@
 import isElement from "lodash-es/isElement";
+import _throwErrorIf from "../common/_throwErrorIf";
 
 const _getCoords = (maskDef, allowElementOnly) => {
 	let maskCoords;
@@ -19,12 +20,8 @@ const _getCoords = (maskDef, allowElementOnly) => {
 	}
 
 	if (!Number.isFinite(maskCoords.top) || !Number.isFinite(maskCoords.bottom) || !Number.isFinite(maskCoords.left) || !Number.isFinite(maskCoords.right)) {
-		if (allowElementOnly) {
-			throw new Error(`An HTMLElement is expected as parameter.`);
-		}
-		else {
-			throw new Error(`If passed, the optional parameter can be either an HTMLElement or an Object containing numeric values for "top", "bottom", "left" and "right" properties.`);
-		}
+		_throwErrorIf(allowElementOnly, `An HTMLElement is expected as parameter.`);
+		_throwErrorIf(!allowElementOnly, `If passed, the optional parameter can be either an HTMLElement or an Object containing numeric values for "top", "bottom", "left" and "right" properties.`);
 	}
 
 	return maskCoords;

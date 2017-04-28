@@ -1,4 +1,5 @@
 import _isElementOrDocumentOrWindow from "./internal/dom/_isElementOrDocumentOrWindow";
+import _throwErrorIf from "./internal/common/_throwErrorIf";
 
 /**
  * Returns all parents of a DOM element,
@@ -23,8 +24,8 @@ import _isElementOrDocumentOrWindow from "./internal/dom/_isElementOrDocumentOrW
  * // => [domParent, domGrandparent, body, html, document]
  */
 function parents(domEl, memo = []) {
-	if (!_isElementOrDocumentOrWindow(domEl) && memo.length === 0) {
-		throw new Error("An HTMLElement is expected as parameter.");
+	if (memo.length === 0) {
+		_throwErrorIf(!_isElementOrDocumentOrWindow(domEl), "An HTMLElement is expected as parameter.");
 	}
 
 	let parentNode = domEl.parentNode;

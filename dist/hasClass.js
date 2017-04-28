@@ -1,4 +1,5 @@
 import isElement from "lodash-es/isElement";
+import _throwErrorIf from "./internal/common/_throwErrorIf";
 
 /**
  * Verifies if a DOM element has a CSS class.
@@ -20,10 +21,7 @@ import isElement from "lodash-es/isElement";
  * // => false
  */
 const hasClass = (domEl, str) => {
-	if (!isElement(domEl)) {
-		throw new Error("An HTMLElement is expected as parameter.");
-	}
-
+	_throwErrorIf(!isElement(domEl), "An HTMLElement is expected as parameter.");
 	return domEl.classList.contains(str);
 };
 

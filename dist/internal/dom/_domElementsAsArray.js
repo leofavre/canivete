@@ -1,4 +1,5 @@
 import isElement from "lodash-es/isElement";
+import _throwErrorIf from "../common/_throwErrorIf";
 
 const _domElementsAsArray = arg => {
 	let result = arg;
@@ -14,9 +15,7 @@ const _domElementsAsArray = arg => {
 		result = Array.from(arg);
 	}
 
-	if (!Array.isArray(result) || result.some(item => !isElement(item))) {
-		throw new Error(`One or many HTMLElements are expected as parameter.`);
-	}
+	_throwErrorIf(!Array.isArray(result) || result.some(item => !isElement(item)), `One or many HTMLElements are expected as parameter.`);
 
 	return result;
 };

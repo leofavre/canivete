@@ -1,9 +1,8 @@
 import isString from "lodash-es/isString";
+import _throwErrorIf from "../common/_throwErrorIf";
 
 const _sliceOnOccurrence = (type, position, str, delimiter) => {
-	if (!isString(str)) {
-		throw new Error("A string is expected as the first parameter.");
-	}
+	_throwErrorIf(!isString(str), "A string is expected as the first parameter.");
 
 	let index = (position === "first") ? str.indexOf(delimiter) : str.lastIndexOf(delimiter);
 

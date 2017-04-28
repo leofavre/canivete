@@ -1,4 +1,5 @@
 import random from "lodash-es/random";
+import _throwErrorIf from "./internal/common/_throwErrorIf";
 
 /**
  * Returns `true` approximately one out of `num` times,
@@ -17,15 +18,8 @@ import random from "lodash-es/random";
  * // => false
  */
 const oneOutOf = num => {
-	if (!Number.isFinite(num) || num < 1) {
-		throw new Error("A number greater than 1 is expected as parameter.");
-	}
-
-	if (num === 1) {
-		return true;
-	}
-
-	return random(1, num) === num;
+	_throwErrorIf((!Number.isFinite(num) || num < 1), "A number greater than 1 is expected as parameter.");
+	return (num === 1) ? true : random(1, num) === num;
 };
 
 export default oneOutOf;
