@@ -892,7 +892,7 @@ This function serves as a polyfill for
   </tbody>
 </table>
 
-<h3 id="triggerdomel-evtname-bubbles"><a name="trigger"><code class="highlighter-rouge">trigger(domEl, evtName, [bubbles])</code></a></h3>
+<h3 id="triggerdomel-evtname-bubbles-cancelable-detail"><a name="trigger"><code class="highlighter-rouge">trigger(domEl, evtName, [bubbles], [cancelable], [detail])</code></a></h3>
 
 <p>Triggers a custom DOM event.</p>
 
@@ -922,20 +922,32 @@ This function serves as a polyfill for
     </tr>
     <tr>
       <td><code class="highlighter-rouge">bubbles</code></td>
-      <td><code class="highlighter-rouge">true</code></td>
+      <td><code class="highlighter-rouge">false</code></td>
       <td>Boolean</td>
-      <td>Whether the event bubbles or not. <strong>optional</strong></td>
+      <td>Whether the event bubbles. <strong>optional</strong></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">cancelable</code></td>
+      <td><code class="highlighter-rouge">false</code></td>
+      <td>Boolean</td>
+      <td>Whether the event can be canceled. <strong>optional</strong></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">detail</code></td>
+      <td> </td>
+      <td>*</td>
+      <td>Any information passed along. <strong>optional</strong></td>
     </tr>
   </tbody>
 </table>
 
 <h4 id="example-6">Example</h4>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">popupButton</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">".popup-button"</span><span class="p">),</span>
-	<span class="nx">popupLayer</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">".popup-layer"</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">popupButton</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">".popup__button"</span><span class="p">),</span>
+	<span class="nx">popupLayer</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">".popup__layer"</span><span class="p">);</span>
 
 <span class="nx">popupButton</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"click"</span><span class="p">,</span> <span class="nx">evt</span> <span class="o">=&gt;</span> <span class="p">{</span>
-	<span class="nx">trigger</span><span class="p">(</span><span class="nx">popupLayer</span><span class="p">,</span> <span class="s2">"open"</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+	<span class="nx">trigger</span><span class="p">(</span><span class="nx">popupLayer</span><span class="p">,</span> <span class="s2">"open"</span><span class="p">);</span>
 <span class="p">});</span>
 </code></pre>
 </div>

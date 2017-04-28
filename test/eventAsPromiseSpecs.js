@@ -41,4 +41,19 @@ describe("eventAsPromise", function() {
 				.then(done);
 		}, 500);
 	});
+
+	it(`Should throw an error when the first parameter is not a DOM element, document or window.`, function() {
+		expect(() => eventAsPromise("laser", "myEvent")).toThrow();
+		expect(() => eventAsPromise(0, "myEvent")).toThrow();
+		expect(() => eventAsPromise(document.createTextNode("laser"), "myEvent")).toThrow();
+		expect(() => eventAsPromise(document.querySelectorAll("div"), "myEvent")).toThrow();
+	});
+
+	it(`Should not throw an error when the first parameter is a DOM element, document or window.`, function() {
+		let checkbox = document.createElement("input");
+
+		expect(() => eventAsPromise(window, "myEvent")).not.toThrow();
+		expect(() => eventAsPromise(document, "myEvent")).not.toThrow();
+		expect(() => eventAsPromise(checkbox, "myEvent")).not.toThrow();
+	});
 });

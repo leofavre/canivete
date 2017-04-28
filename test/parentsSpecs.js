@@ -29,11 +29,14 @@ describe("parents", function() {
 	});
 
 	it(`Should throw an error when trying to find parents of something other than a DOM element.`, function() {
-		expect(() => parents(window)).toThrow();
-		expect(() => parents(document)).toThrow();
 		expect(() => parents("laser")).toThrow();
 		expect(() => parents(0)).toThrow();
 		expect(() => parents(document.createTextNode("laser"))).toThrow();
-		expect(() => selfAndParents(document.querySelectorAll("div"))).toThrow();
+		expect(() => parents(document.querySelectorAll("div"))).toThrow();
+	});
+
+	it(`Should return empty arrays for document and window.`, function() {
+		expect(parents(window)).toEqual([]);
+		expect(parents(document)).toEqual([]);
 	});
 });

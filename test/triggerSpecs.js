@@ -1,44 +1,64 @@
 import trigger from "../dist/trigger";
 
 describe("trigger", function() {
-	let imageSrc = "https://www.w3.org/Icons/w3c_home";
+	it(`Should trigger a custom event, captured by the emmiter itself.`, function(done) {
+		let eventCallback = jasmine.createSpy("eventCallback"),
+			popupLayer = document.createElement("div");
 
-	it(`Should fulfill when the event is triggered for the first time.`, function(done) {
-		let timerCallback = jasmine.createSpy("timerCallback");
+		document.body.appendChild(popupLayer);
 
-		let checkbox = document.createElement("input");
-		checkbox.type = "checkbox";
+		popupLayer.addEventListener("open", evt => {
+			eventCallback();
+			expect(eventCallback).toHaveBeenCalled();
+			done();
+		});
 
-		trigger(checkbox, "change")
-			.then(timerCallback)
-			.then(() => expect(timerCallback).toHaveBeenCalled())
-			.then(done);
-
-		expect(timerCallback).not.toHaveBeenCalled();
-
-		let event = document.createEvent("HTMLEvents");
-		event.initEvent("change", false, true);
-		checkbox.dispatchEvent(event);
+		trigger(popupLayer, "open", false);
 	});
 
-	it(`Should fulfill when the event is triggered for the first time.`, function(done) {
-		let image = document.createElement("img");
+	it(`Should trigger a custom event, captured by window because the event bubbles.`, function(done) {
+		let eventCallback = jasmine.createSpy("eventCallback"),
+			popupLayer = document.createElement("div");
 
-		trigger(image, "load", image => image.complete)
-			.then(image => expect(image.src).toBe(imageSrc))
-			.then(done);
+		document.body.appendChild(popupLayer);
 
-		image.src = imageSrc;
+		window.addEventListener("open", evt => {
+			eventCallback();
+			expect(eventCallback).toHaveBeenCalled();
+			done();
+		});
+
+		trigger(popupLayer, "open", true); // bubbles
 	});
 
-	it(`Should fulfill when the verification function returns true.`, function(done) {
-		let image = document.createElement("img");
-		image.src = imageSrc;
+	it(`Should trigger a custom event, not captured by window because the event does not bubble.`, function(done) {
+		let eventCallback = jasmine.createSpy("eventCallback"),
+			popupLayer = document.createElement("div");
 
-		setTimeout(function() {
-			trigger(image, "load", image => image.complete)
-				.then(image => expect(image.src).toBe(imageSrc))
-				.then(done);
-		}, 500);
+		document.body.appendChild(popupLayer);
+
+		window.addEventListener("open", evt => {
+			eventCallback();
+		});
+
+		trigger(popupLayer, "open", false); // does not bubble
+
+		setTimeout(() => {
+			expect(eventCallback).not.toHaveBeenCalled();
+			done();
+		}, 100);
+	});
+
+	it(`Should be able to access event details.`, function(done) {
+		let popupLayer = document.createElement("div");
+
+		document.body.appendChild(popupLayer);
+
+		popupLayer.addEventListener("open", evt => {
+			expect(evt.detail).toBe("customDetail");
+			done();
+		});
+
+		trigger(popupLayer, "open", false, false, "customDetail");
 	});
 });

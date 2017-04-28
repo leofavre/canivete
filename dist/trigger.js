@@ -7,17 +7,19 @@ import _isElementOrDocumentOrWindow from "./internal/dom/_isElementOrDocumentOrW
  * @category Event
  * @param  {(HTMLElement|HTMLDocument|Window)} domEl The DOM element that triggers the event.
  * @param  {string} evtName The event name.
- * @param  {boolean} [bubbles = true] Whether the event bubbles or not.
+ * @param  {boolean} [bubbles = false] Whether the event bubbles.
+ * @param  {boolean} [cancelable = false] Whether the event can be canceled.
+ * @param  {*} [detail] Any information passed along.
  *
  * @example
  * let popupButton = document.querySelector(".popup__button"),
  * 	popupLayer = document.querySelector(".popup__layer");
  * 
  * popupButton.addEventListener("click", evt => {
- * 	trigger(popupLayer, "open", false);
+ * 	trigger(popupLayer, "open");
  * });
  */
-const trigger = (domEl, evtName, bubbles = true) => {
+const trigger = (domEl, evtName, bubbles = false, cancelable = false, detail = undefined) => {
 	if (!_isElementOrDocumentOrWindow(domEl) || !isString(evtName)) {
 		throw new Error("An HTMLElement, document or window are expected as first parameter; and a string is expected as second parameter.");
 	}
@@ -25,12 +27,14 @@ const trigger = (domEl, evtName, bubbles = true) => {
 	let evt;
 
 	if (window.CustomEvent != null) {
-		evt = document.createEvent('Event');
-		evt.initEvent(evtName, bubbles, true);
+		evt = document.createEvent("CustomEvent");
+		evt.initCustomEvent(evtName, bubbles, cancelable, detail);
 	}
 	else {
 		evt = new CustomEvent(evtName, {
-			bubbles
+			bubbles,
+			cancelable,
+			detail
 		});
 	}
 

@@ -437,7 +437,7 @@ This function serves as a polyfill for
 | --- | --- |
 | Array.&lt;HTMLElement&gt; | The DOM elements affected by the event. |
 
-### <a name="trigger">`trigger(domEl, evtName, [bubbles])`</a>
+### <a name="trigger">`trigger(domEl, evtName, [bubbles], [cancelable], [detail])`</a>
 
 Triggers a custom DOM event.
 
@@ -447,16 +447,18 @@ Triggers a custom DOM event.
 | --- | --- | --- | --- |
 | `domEl` |  | HTMLElement<br>HTMLDocument<br>Window | The DOM element that triggers the event. |
 | `evtName` |  | String | The event name. |
-| `bubbles` | `true` | Boolean | Whether the event bubbles or not. **optional** |
+| `bubbles` | `false` | Boolean | Whether the event bubbles. **optional** |
+| `cancelable` | `false` | Boolean | Whether the event can be canceled. **optional** |
+| `detail` |  | * | Any information passed along. **optional** |
 
 #### Example
 
 ```javascript
-let popupButton = document.querySelector(".popup-button"),
-	popupLayer = document.querySelector(".popup-layer");
+let popupButton = document.querySelector(".popup__button"),
+	popupLayer = document.querySelector(".popup__layer");
 
 popupButton.addEventListener("click", evt => {
-	trigger(popupLayer, "open", false);
+	trigger(popupLayer, "open");
 });
 ```
 
