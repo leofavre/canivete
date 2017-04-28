@@ -7,7 +7,7 @@ import isElement from "lodash-es/isElement";
  *
  * @param  {HTMLElement} domEl The DOM element.
  * @param  {string} str The CSS class.
- * @return {boolean} Whether the element has the CSS class or not.
+ * @return {boolean} Whether the element has the CSS class.
  *
  * @example
  * let oneElement = document.querySelector("a");

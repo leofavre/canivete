@@ -223,7 +223,7 @@ Verifies if a DOM element has a CSS class.
 
 | Type | Description |
 | --- | --- |
-| Boolean | Whether the element has the CSS class or not. |
+| Boolean | Whether the element has the CSS class. |
 
 #### Example
 
