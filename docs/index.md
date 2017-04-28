@@ -445,7 +445,7 @@ Triggers a custom DOM event.
 
 | Name | Default | Type | Description |
 | --- | --- | --- | --- |
-| `domEl` |  | HTMLElement | The DOM element that triggers the event. |
+| `domEl` |  | HTMLElement<br>HTMLDocument<br>Window | The DOM element that triggers the event. |
 | `evtName` |  | String | The event name. |
 | `bubbles` | `true` | Boolean | Whether the event bubbles or not. **optional** |
 
@@ -484,7 +484,7 @@ parameters are not a DOM element and a string.
 
 | Name | Default | Type | Description |
 | --- | --- | --- | --- |
-| `domEl` |  | HTMLElement | The DOM element. |
+| `domEl` |  | HTMLElement<br>HTMLDocument<br>Window | The DOM element. |
 | `evtName` |  | String | The event that will be listened for. |
 | `happened` | `domEl => false` | Function | The verification function. **optional** |
 

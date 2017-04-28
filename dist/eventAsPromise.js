@@ -18,7 +18,7 @@ import _isElementOrDocumentOrWindow from "./internal/dom/_isElementOrDocumentOrW
  *
  * @category Promise
  *
- * @param  {HTMLElement} domEl The DOM element.
+ * @param  {(HTMLElement|HTMLDocument|Window)} domEl The DOM element.
  * @param  {string} evtName The event that will be listened for.
  * @param  {function} [happened = domEl => false] The verification function.
  * @return {Promise} When fulfilled, returns the DOM element.
