@@ -4,7 +4,7 @@ import _domElementsAsArray from "./internal/dom/_domElementsAsArray";
 /**
  * Removes a CSS class from one or many DOM elements.
  *
- * @category Class Name
+ * @category ClassName
  *
  * @param  {(HTMLElement|HTMLCollection|NodeList|Array.<HTMLElement>|Set.<HTMLElement>)} domEls One or many DOM elements.
  * @param  {string} str The CSS class.

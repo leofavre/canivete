@@ -4,7 +4,7 @@ import _throwErrorIf from "./internal/common/_throwErrorIf";
 /**
  * Verifies if a DOM element has a CSS class.
  *
- * @category Class Name
+ * @category ClassName
  *
  * @param  {HTMLElement} domEl The DOM element.
  * @param  {string} str The CSS class.

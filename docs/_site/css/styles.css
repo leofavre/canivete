@@ -150,7 +150,7 @@ html {
     position: relative;
     top: 0;
     left: -4.5rem;
-    margin: 70vh 0 0;
+    margin: 40vh 0 0;
     padding: 3.375rem 0 1.125rem;
     font-size: 24rem;
     font-family: "Acropolis A", "Acropolis B";
@@ -163,7 +163,7 @@ html {
     width: 61rem;
     overflow: visible; }
   .content #class-name {
-    width: 50rem; }
+    width: 65rem; }
   .content #promise {
     width: 50rem; }
   .content #time {
@@ -171,7 +171,7 @@ html {
   .content h2 + blockquote {
     position: relative;
     top: 0.125rem;
-    margin-bottom: 70vh; }
+    margin-bottom: 40vh; }
     @media only screen and (min-width: 1400px) {
       .content h2 + blockquote {
         top: 3px; } }

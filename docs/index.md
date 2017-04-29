@@ -175,7 +175,7 @@ console.log(domEl.className);
 // => "swiper--slides-5 swiper--current-3"
 ```
 
-## Class Name
+## ClassName
 
 >[addClass](#addclass), [hasClass](#hasclass) &amp;&nbsp;[removeClass](#removeclass)
 

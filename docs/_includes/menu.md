@@ -3,7 +3,7 @@
   * [modifyBemClass](#modifybemclass)
   * [modifyBemClassCompact](#modifybemclasscompact)
 
-* **[Class Name](#class-name)**
+* **[ClassName](#classname)**
   * [addClass](#addclass)
   * [hasClass](#hasclass)
   * [removeClass](#removeclass)
