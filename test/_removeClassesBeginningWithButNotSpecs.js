@@ -8,17 +8,17 @@ describe("_removeClassesBeginningWithButNot", function() {
 	}
 
 	it("Should remove one or many CSS classes from a single HTMLElement.", function() {
-		let elementHTMLElement = document.querySelector(".button__level--1");
-		_removeClassesBeginningWithButNot(elementHTMLElement, "button");
+		let singleHTMLElement = document.querySelector(".button__level--1");
+		_removeClassesBeginningWithButNot(singleHTMLElement, "button");
 
-		expect(elementHTMLElement.className).toBe("menu__item button");
+		expect(singleHTMLElement.className).toBe("menu__item button");
 	});
 
 	it("Should not change a CSS class when trying to remove an inexistent class.", function() {
-		let elementHTMLElement = document.querySelector(".button__level--2");
-		_removeClassesBeginningWithButNot(elementHTMLElement, "bogus");
+		let singleHTMLElement = document.querySelector(".button__level--2");
+		_removeClassesBeginningWithButNot(singleHTMLElement, "bogus");
 
-		expect(elementHTMLElement.className).toBe("menu__item button button__active button__level--2");
+		expect(singleHTMLElement.className).toBe("menu__item button button__active button__level--2");
 	});
 
 	it("Should remove one or many CSS classes from many HTMLElements.", function() {

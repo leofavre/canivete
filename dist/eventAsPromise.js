@@ -30,10 +30,7 @@ import _throwErrorIf from "./internal/common/_throwErrorIf";
  * document.body.appendChild(checkbox);
  *
  * eventAsPromise(checkbox, "change")
- * 	.then(checkbox => console.log(checkbox.checked));
- *
- * // => true
- * // shown as soon as the checkbox is clicked for the first time.
+ * 	.then(doSomethingAfterChange);
  *
  * @example
  * let image = document.createElement("img");
@@ -41,11 +38,7 @@ import _throwErrorIf from "./internal/common/_throwErrorIf";
  * document.body.appendChild(image);
  *
  * eventAsPromise(image, "load", image => image.complete)
- * 	.then(domEl => console.log(domEl.src));
- *
- * // => "https://www.w3.org/Icons/w3c_home"
- * // shown when the image loads or as soon as eventAsPromise
- * //  is called, if the image has already been loaded.
+ * 	.then(doSomethingAfterImageLoaded);
  */
 const eventAsPromise = (domEl, evtName, happened = domEl => false) => {
 	_throwErrorIf(!_isElementOrDocumentOrWindow(domEl), "An HTMLElement, document or window are expected as first parameter.");

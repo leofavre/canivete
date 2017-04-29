@@ -111,7 +111,7 @@ modifyBemClass(domEl, {
 	}
 }, delimiters);
 
-console.log(domEl.className);
+domEl.className;
 // => "swiper swiper--slides-5 swiper--current-2 swiper--playing"
 
 modifyBemClass(domEl, {
@@ -121,7 +121,7 @@ modifyBemClass(domEl, {
 	}
 }, delimiters);
 
-console.log(domEl.className);
+domEl.className;
 // => "swiper swiper--slides-5 swiper--current-3"
 ```
 
@@ -161,7 +161,7 @@ modifyBemClassCompact(domEl, {
 	}
 }, delimiters);
 
-console.log(domEl.className);
+domEl.className;
 // => "swiper--slides-5 swiper--current-2 swiper--playing"
 
 modifyBemClassCompact(domEl, {
@@ -171,7 +171,7 @@ modifyBemClassCompact(domEl, {
 	}
 }, delimiters);
 
-console.log(domEl.className);
+domEl.className;
 // => "swiper--slides-5 swiper--current-3"
 ```
 
@@ -179,7 +179,7 @@ console.log(domEl.className);
 
 >[addClass](#addclass), [hasClass](#hasclass) &amp;&nbsp;[removeClass](#removeclass)
 
-### <a name="addclass">`addClass(domEls, str)`</a>
+### <a name="addclass">`addClass(domEls, className)`</a>
 
 Adds a CSS class to one or many DOM elements.
 
@@ -188,7 +188,7 @@ Adds a CSS class to one or many DOM elements.
 | Name | Type | Description |
 | --- | --- | --- |
 | `domEls` | HTMLElement<br>HTMLCollection<br>NodeList<br>Array.&lt;HTMLElement&gt;<br>Set.&lt;HTMLElement&gt; | One or many DOM elements. |
-| `str` | String | The CSS class. |
+| `className` | String | The CSS class name. |
 
 #### Examples
 
@@ -196,7 +196,7 @@ Adds a CSS class to one or many DOM elements.
 let oneElement = document.querySelector("a");
 addClass(oneElement, "link");
 
-console.log(oneElement.className);
+oneElement.className;
 // => "link"
 ```
 
@@ -204,11 +204,11 @@ console.log(oneElement.className);
 let manyElements = document.querySelectorAll("a");
 addClass(manyElements, "link");
 
-console.log(manyElements[0].className);
+manyElements[0].className;
 // => "link"
 ```
 
-### <a name="hasclass">`hasClass(domEl, str)`</a>
+### <a name="hasclass">`hasClass(domEl, className)`</a>
 
 Verifies if a DOM element has a CSS class.
 
@@ -217,13 +217,13 @@ Verifies if a DOM element has a CSS class.
 | Name | Type | Description |
 | --- | --- | --- |
 | `domEl` | HTMLElement | The DOM element. |
-| `str` | String | The CSS class. |
+| `className` | String | The CSS class name. |
 
 #### Return
 
 | Type | Description |
 | --- | --- |
-| Boolean | Whether the element has the CSS class. |
+| Boolean | Whether the element has the CSS class name. |
 
 #### Example
 
@@ -231,14 +231,14 @@ Verifies if a DOM element has a CSS class.
 let oneElement = document.querySelector("a");
 oneElement.className = "link reference";
 
-console.log(hasClass(oneElement, "link"));
+hasClass(oneElement, "link");
 // => true
 
-console.log(hasClass(oneElement, "button"));
+hasClass(oneElement, "button");
 // => false
 ```
 
-### <a name="removeclass">`removeClass(domEls, str)`</a>
+### <a name="removeclass">`removeClass(domEls, className)`</a>
 
 Removes a CSS class from one or many DOM elements.
 
@@ -247,7 +247,7 @@ Removes a CSS class from one or many DOM elements.
 | Name | Type | Description |
 | --- | --- | --- |
 | `domEls` | HTMLElement<br>HTMLCollection<br>NodeList<br>Array.&lt;HTMLElement&gt;<br>Set.&lt;HTMLElement&gt; | One or many DOM elements. |
-| `str` | String | The CSS class. |
+| `className` | String | The CSS class name. |
 
 #### Examples
 
@@ -255,7 +255,7 @@ Removes a CSS class from one or many DOM elements.
 let oneElement = document.querySelector(".link.base");
 removeClass(oneElement, "link");
 
-console.log(oneElement.className);
+oneElement.className;
 // => "base"
 ```
 
@@ -263,13 +263,13 @@ console.log(oneElement.className);
 let manyElements = document.querySelectorAll(".link.base");
 removeClass(manyElements, "link");
 
-console.log(manyElements[0].className);
+manyElements[0].className;
 // => "base"
 ```
 
 ## DOM
 
->[clippingInfo](#clippinginfo), [parents](#parents) &amp;&nbsp;[selfAndParents](#selfandparents)
+>[clippingInfo](#clippinginfo), [parents](#parents), [selfAndParents](#selfandparents) &amp;&nbsp;[setAttr](#setattr)
 
 ### <a name="clippinginfo">`clippingInfo(domEl, [maskDef])`</a>
 
@@ -331,19 +331,19 @@ document.body.appendChild(domEl);
 
 let info = clippingInfo(domEl);
 
-console.log(info.isClippedTop);
+info.isClippedTop;
 // => true
 
-console.log(info.isClippedLeft);
+info.isClippedLeft;
 // => true
 
-console.log(info.isFullyVisible);
+info.isFullyVisible;
 // => false
 
-console.log(info.isPartiallyVisible);
+info.isPartiallyVisible;
 // => true
 
-console.log(info.isInvisible);
+info.isInvisible;
 // => false
 ```
 
@@ -413,6 +413,46 @@ body.appendChild(domGrandparent);
 
 selfAndParents(domChild);
 // => [domChild, domParent, domGrandparent, body, html, document]
+```
+
+### <a name="setattr">`setAttr(domEls, attrName, value)`</a>
+
+Sets an attribute for one or more DOM elements.
+
+#### Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `domEls` | HTMLElement<br>HTMLCollection<br>NodeList<br>Array.&lt;HTMLElement&gt;<br>Set.&lt;HTMLElement&gt; | One or many DOM elements. |
+| `attrName` | String | The attribute name. |
+| `value` | String<br>Number<br>Boolean | The attribute value. |
+
+#### Examples
+
+```javascript
+let oneElement = document.querySelector("a");
+
+setAttr(oneElement, "data-level", 42);
+setAttr(oneElement, "class", "button");
+
+oneElement.dataset.level;
+// => "42"
+
+oneElement.className;
+// => "button"
+```
+
+```javascript
+let manyElements = document.querySelectorAll("a");
+
+setAttr(manyElements, "data-level", 42);
+setAttr(manyElements, "class", "button");
+
+manyElements[0].dataset.level;
+// => "42"
+
+manyElements[0].className;
+// => "button"
 ```
 
 ## Event
@@ -524,10 +564,7 @@ checkbox.type = "checkbox";
 document.body.appendChild(checkbox);
 
 eventAsPromise(checkbox, "change")
-	.then(checkbox => console.log(checkbox.checked));
-
-// => true
-// shown as soon as the checkbox is clicked for the first time.
+	.then(doSomethingAfterChange);
 ```
 
 ```javascript
@@ -536,11 +573,7 @@ image.src = "https://www.w3.org/Icons/w3c_home";
 document.body.appendChild(image);
 
 eventAsPromise(image, "load", image => image.complete)
-	.then(domEl => console.log(domEl.src));
-
-// => "https://www.w3.org/Icons/w3c_home"
-// shown when the image loads or as soon as eventAsPromise
-//  is called, if the image has already been loaded.
+	.then(doSomethingAfterImageLoaded);
 ```
 
 ### <a name="waitinpromise">`waitInPromise(delay)`</a>
@@ -572,11 +605,8 @@ internal `setTimeout()`.
 
 ```javascript
 Promise.resolve("waiting")
-	.then(waitInPromise(500))
-	.then(console.log);
-
-// => "waiting"
-// shown after 500ms.
+	.then(waitInPromise(1000))
+	.then(doSomethingAfterOneSecond);
 ```
 
 ## Random

@@ -7,22 +7,22 @@ import _throwErrorIf from "./internal/common/_throwErrorIf";
  * @category ClassName
  *
  * @param  {HTMLElement} domEl The DOM element.
- * @param  {string} str The CSS class.
- * @return {boolean} Whether the element has the CSS class.
+ * @param  {string} className The CSS class name.
+ * @return {boolean} Whether the element has the CSS class name.
  *
  * @example
  * let oneElement = document.querySelector("a");
  * oneElement.className = "link reference";
  * 
- * console.log(hasClass(oneElement, "link"));
+ * hasClass(oneElement, "link");
  * // => true
  * 
- * console.log(hasClass(oneElement, "button"));
+ * hasClass(oneElement, "button");
  * // => false
  */
-const hasClass = (domEl, str) => {
+const hasClass = (domEl, className) => {
 	_throwErrorIf(!isElement(domEl), "An HTMLElement is expected as parameter.");
-	return domEl.classList.contains(str);
+	return domEl.classList.contains(className);
 };
 
 export default hasClass;

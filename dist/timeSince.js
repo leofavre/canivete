@@ -13,9 +13,9 @@
  * 	result = timeSince(timestamp);
  * }, 150);
  *
- * console.log(result);
+ * result;
  * // => 150
- * // approximately.
+ * // This value is approximate and may vary.
  */
 const timeSince = timestamp => {
 	return Number.isFinite(timestamp) ? ((+new Date()) - timestamp) : undefined;

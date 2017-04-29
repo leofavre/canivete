@@ -7,24 +7,24 @@ import _domElementsAsArray from "./internal/dom/_domElementsAsArray";
  * @category ClassName
  * 
  * @param  {(HTMLElement|HTMLCollection|NodeList|Array.<HTMLElement>|Set.<HTMLElement>)} domEls One or many DOM elements.
- * @param  {string} str The CSS class.
+ * @param  {string} className The CSS class name.
  *
  * @example
  * let oneElement = document.querySelector("a");
  * addClass(oneElement, "link");
  * 
- * console.log(oneElement.className);
+ * oneElement.className;
  * // => "link"
  * 
  * @example
  * let manyElements = document.querySelectorAll("a");
  * addClass(manyElements, "link");
  *
- * console.log(manyElements[0].className);
+ * manyElements[0].className;
  * // => "link"
  */
-const addClass = (domEls, str) => {
-	_domElementsAsArray(domEls).forEach(domEl => _changeClassWithMethod(domEl, str, "add"));
+const addClass = (domEls, className) => {
+	_domElementsAsArray(domEls).forEach(domEl => _changeClassWithMethod(domEl, className, "add"));
 };
 
 export default addClass;

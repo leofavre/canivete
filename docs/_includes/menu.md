@@ -12,6 +12,7 @@
   * [clippingInfo](#clippinginfo)
   * [parents](#parents)
   * [selfAndParents](#selfandparents)
+  * [setAttr](#setattr)
 
 * **[Event](#event)**
   * [eventPath](#eventpath)

@@ -8,17 +8,17 @@ describe("addClass", function() {
 	}
 
 	it("Should add a CSS class to a single HTMLElement.", function() {
-		let elementHTMLElement = document.querySelector(".addClass-1");
-		addClass(elementHTMLElement, "oneMore");
+		let singleHTMLElement = document.querySelector(".addClass-1");
+		addClass(singleHTMLElement, "oneMore");
 
-		expect(elementHTMLElement.className).toBe("addClass addClass-1 oneMore");
+		expect(singleHTMLElement.className).toBe("addClass addClass-1 oneMore");
 	});
 
 	it("Should not repeat the addition of the same CSS class.", function() {
-		let elementHTMLElement = document.querySelector(".addClass-1");
-		addClass(elementHTMLElement, "oneMore");
+		let singleHTMLElement = document.querySelector(".addClass-1");
+		addClass(singleHTMLElement, "oneMore");
 
-		expect(elementHTMLElement.className).toBe("addClass addClass-1 oneMore");
+		expect(singleHTMLElement.className).toBe("addClass addClass-1 oneMore");
 	});
 
 	it("Should add a CSS class to many HTMLElements.", function() {

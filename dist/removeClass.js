@@ -7,24 +7,24 @@ import _domElementsAsArray from "./internal/dom/_domElementsAsArray";
  * @category ClassName
  *
  * @param  {(HTMLElement|HTMLCollection|NodeList|Array.<HTMLElement>|Set.<HTMLElement>)} domEls One or many DOM elements.
- * @param  {string} str The CSS class.
+ * @param  {string} className The CSS class name.
  *
  * @example
  * let oneElement = document.querySelector(".link.base");
  * removeClass(oneElement, "link");
  * 
- * console.log(oneElement.className);
+ * oneElement.className;
  * // => "base"
  * 
  * @example
  * let manyElements = document.querySelectorAll(".link.base");
  * removeClass(manyElements, "link");
  *
- * console.log(manyElements[0].className);
+ * manyElements[0].className;
  * // => "base"
  */
-const removeClass = (domEls, str) => {
-	_domElementsAsArray(domEls).forEach(domEl => _changeClassWithMethod(domEl, str, "remove"));
+const removeClass = (domEls, className) => {
+	_domElementsAsArray(domEls).forEach(domEl => _changeClassWithMethod(domEl, className, "remove"));
 };
 
 export default removeClass;

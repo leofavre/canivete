@@ -28,7 +28,7 @@ import _parseBem from "./internal/bem/_parseBem";
  * 	}
  * }, delimiters);
  *
- * console.log(domEl.className);
+ * domEl.className;
  * // => "swiper swiper--slides-5 swiper--current-2 swiper--playing"
  *
  * modifyBemClass(domEl, {
@@ -38,7 +38,7 @@ import _parseBem from "./internal/bem/_parseBem";
  * 	}
  * }, delimiters);
  *
- * console.log(domEl.className);
+ * domEl.className;
  * // => "swiper swiper--slides-5 swiper--current-3"
  */
 const modifyBemClass = (domEl, bemObj, delimiters) => _parseBem(bemObj, domEl, delimiters, true);

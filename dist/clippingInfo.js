@@ -51,19 +51,19 @@ import _getHorizontalAxisInfo from "./internal/clipping/_getHorizontalAxisInfo";
  *
  * let info = clippingInfo(domEl);
  *
- * console.log(info.isClippedTop);
+ * info.isClippedTop;
  * // => true
  *
- * console.log(info.isClippedLeft);
+ * info.isClippedLeft;
  * // => true
  *
- * console.log(info.isFullyVisible);
+ * info.isFullyVisible;
  * // => false
  *
- * console.log(info.isPartiallyVisible);
+ * info.isPartiallyVisible;
  * // => true
  *
- * console.log(info.isInvisible);
+ * info.isInvisible;
  * // => false
  */
 const clippingInfo = (domEl, maskDef) => {

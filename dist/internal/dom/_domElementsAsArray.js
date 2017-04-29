@@ -15,7 +15,7 @@ const _domElementsAsArray = arg => {
 		result = Array.from(arg);
 	}
 
-	_throwErrorIf(!Array.isArray(result) || result.some(item => !isElement(item)), `One or many HTMLElements are expected as parameter.`);
+	_throwErrorIf(!Array.isArray(result) || result.some(item => !isElement(item)), `One or many HTMLElements are expected as the first parameter.`);
 
 	return result;
 };

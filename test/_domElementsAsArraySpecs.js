@@ -8,10 +8,10 @@ describe("_domElementsAsArray", function() {
 	}
 
 	it("Should convert a single HTMLElement to an Array.", function() {
-		let elementHTMLElement = document.querySelector(".domElementsAsArray-1");
-		let elementsArray = _domElementsAsArray(elementHTMLElement);
+		let singleHTMLElement = document.querySelector(".domElementsAsArray-1");
+		let elementsArray = _domElementsAsArray(singleHTMLElement);
 
-		expect(Array.isArray(elementHTMLElement)).toBe(false);
+		expect(Array.isArray(singleHTMLElement)).toBe(false);
 		expect(Array.isArray(elementsArray)).toBe(true);
 		expect(elementsArray.length).toBe(1);
 	});

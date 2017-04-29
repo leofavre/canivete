@@ -8,17 +8,17 @@ describe("removeClass", function() {
 	}
 
 	it("Should add a CSS class to a single HTMLElement.", function() {
-		let elementHTMLElement = document.querySelector(".removeClass-1");
-		removeClass(elementHTMLElement, "oneMore");
+		let singleHTMLElement = document.querySelector(".removeClass-1");
+		removeClass(singleHTMLElement, "oneMore");
 
-		expect(elementHTMLElement.className).toBe("removeClass removeClass-1");
+		expect(singleHTMLElement.className).toBe("removeClass removeClass-1");
 	});
 
 	it("Should not change a CSS class when trying to remove an inexistent class.", function() {
-		let elementHTMLElement = document.querySelector(".removeClass-1");
-		removeClass(elementHTMLElement, "oneMore");
+		let singleHTMLElement = document.querySelector(".removeClass-1");
+		removeClass(singleHTMLElement, "oneMore");
 
-		expect(elementHTMLElement.className).toBe("removeClass removeClass-1");
+		expect(singleHTMLElement.className).toBe("removeClass removeClass-1");
 	});
 
 	it("Should add a CSS class to many HTMLElements.", function() {

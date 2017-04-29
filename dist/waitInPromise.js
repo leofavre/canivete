@@ -18,11 +18,8 @@
  *
  * @example
  * Promise.resolve("waiting")
- * 	.then(waitInPromise(500))
- * 	.then(console.log);
- *
- * // => "waiting"
- * // shown after 500ms.
+ * 	.then(waitInPromise(1000))
+ * 	.then(doSomethingAfterOneSecond);
  */
 const waitInPromise = delay => {
 	return arg => {

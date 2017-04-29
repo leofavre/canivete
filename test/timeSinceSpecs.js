@@ -7,8 +7,8 @@ describe("timeSince", function() {
 
 		setTimeout(() => {
 			result = timeSince(timestamp);
-			expect(result < 110 && result >= 100).toBe(true);
+			expect(result >= 230).toBe(true);
 			done();
-		}, 100);
+		}, 230);
 	});
 });
