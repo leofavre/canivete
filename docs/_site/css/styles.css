@@ -73,7 +73,7 @@ html {
   z-index: 1; }
   .nav h1 {
     position: relative;
-    left: -0.125rem;
+    left: -0.5rem;
     margin: 1.5rem 0;
     font-size: 2.25rem;
     line-height: 1.5rem;
@@ -94,7 +94,8 @@ html {
         top: 8px; } }
   .nav ul ul {
     top: 0;
-    margin-top: 0; }
+    margin-top: 0;
+    margin-left: 1.5rem; }
   .nav ul + ul:before {
     content: "";
     position: relative;
@@ -150,7 +151,7 @@ html {
     position: relative;
     top: 0;
     left: -4.5rem;
-    margin: 40vh 0 0;
+    margin: 50vh 0 0;
     padding: 3.375rem 0 1.125rem;
     font-size: 24rem;
     font-family: "Acropolis A", "Acropolis B";
@@ -171,7 +172,7 @@ html {
   .content h2 + blockquote {
     position: relative;
     top: 0.125rem;
-    margin-bottom: 40vh; }
+    margin-bottom: 50vh; }
     @media only screen and (min-width: 1400px) {
       .content h2 + blockquote {
         top: 3px; } }

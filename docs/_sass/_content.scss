@@ -26,7 +26,7 @@
 		position: relative;
 		top: 0;
 		left: ($grid * -3);
-		margin: 40vh 0 0;
+		margin: 50vh 0 0;
 		padding: 3.375rem 0 1.125rem;
 		font-size: 24rem;
 		font-family: "Acropolis A", "Acropolis B";
@@ -62,7 +62,7 @@
 	h2 + blockquote {
 		position: relative;
 		top: 0.125rem;
-		margin-bottom: 40vh;
+		margin-bottom: 50vh;
 
 		@media only screen and (min-width: 1400px) {
 			top: 3px;
