@@ -183,7 +183,7 @@ html {
   margin-left: 11.375rem; }
   .content h2 {
     position: relative;
-    top: 0.375rem;
+    top: 0.3125rem;
     left: -4.5rem;
     margin: 15rem 0 0;
     padding: 3.375rem 0 1.125rem;
@@ -197,6 +197,14 @@ html {
     word-wrap: break-word;
     width: 61rem;
     overflow: visible; }
+    @media only screen and (max-width: 1100px) {
+      .content h2 {
+        -webkit-transform: scale(0.84);
+            -ms-transform: scale(0.84);
+                transform: scale(0.84);
+        -webkit-transform-origin: 0% 100%;
+            -ms-transform-origin: 0% 100%;
+                transform-origin: 0% 100%; } }
   .content #class-name {
     width: 65rem; }
   .content #promise {

@@ -19,7 +19,7 @@
 
 	h2 {
 		position: relative;
-		top: 0.375rem;
+		top: 0.3125rem;
 		left: ($grid * -3);
 		margin: ($grid * 10) 0 0;
 		padding: 3.375rem 0 1.125rem;
@@ -34,6 +34,11 @@
 		width: 61rem;
 		// height: 14rem;
 		overflow: visible;
+
+		@media only screen and (max-width: 1100px) {
+			transform: scale(0.84);
+			transform-origin: 0% 100%;
+		}
 	}
 
 	#class-name {
