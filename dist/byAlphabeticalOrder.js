@@ -1,5 +1,5 @@
 /**
- * When used inside `[].sort()`, sorts
+ * When used with `[].sort()`, sorts
  * the array in ascending alphabetical order.
  *
  * Note that the parentheses can be ommited.

@@ -30,7 +30,7 @@ import _getHorizontalAxisInfo from "./internal/clipping/_getHorizontalAxisInfo";
  * The mask can be either a DOM element or an object
  * containing numeric values for "top", "bottom",
  * "left" and "right" properties, like a
- * [DOMRect](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect).
+ * [`DOMRect`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect).
  *
  * @category DOM
  *
