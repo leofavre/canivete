@@ -430,7 +430,7 @@ manyElements[0].dataset.level;
 
 ### <a name="selfandparents">`selfAndParents(domEl)`</a>
 
-The same as `parents()`, except it includes
+The same as [`parents()`](#parents), except it includes
 the DOM element as the first item of the result.
 
 #### Parameter

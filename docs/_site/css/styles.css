@@ -265,7 +265,7 @@ html {
     word-spacing: 0.15em; }
   .content blockquote a:after {
     bottom: -3px;
-    background: #c2c0b3;
+    background: #f92672;
     height: 4px; }
   .content a {
     position: relative;
@@ -279,7 +279,7 @@ html {
     bottom: -2px;
     width: calc(100% - 0.125rem);
     height: 2px;
-    background: #c2c0b3;
+    background: #f92672;
     z-index: 1; }
   .content a[name]:after {
     content: normal;

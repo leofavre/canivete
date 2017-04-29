@@ -3,7 +3,7 @@ import _isElementOrDocumentOrWindow from "./internal/dom/_isElementOrDocumentOrW
 import _throwErrorIf from "./internal/common/_throwErrorIf";
 
 /**
- * The same as `parents()`, except it includes
+ * The same as [`parents()`](#parents), except it includes
  * the DOM element as the first item of the result.
  * 
  * @category DOM
