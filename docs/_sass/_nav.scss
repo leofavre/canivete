@@ -19,10 +19,9 @@
 	-webkit-overflow-scrolling: touch;
 	z-index: 1;
 
-	// background-position: 0.3125rem 0;
-	// background-size: $grid $grid;
-	// background-image: linear-gradient(to bottom, lightblue 1px, transparent 1px);
-	// background-attachment: scroll;
+	&--grid {
+		@extend %grid;
+	}
 
 	h1 {
 		position: relative;
@@ -65,6 +64,8 @@
 		width: 50%;
 		height: 1px;
 		background: $hairline-grey;
+		transform: scaleY(0.5);
+		transform-origin: 0 0;
 	}
 
 	li {

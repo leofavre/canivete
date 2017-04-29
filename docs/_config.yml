@@ -14,3 +14,10 @@ markdown: kramdown
 exclude:
   - Gemfile
   - Gemfile.lock
+
+gems:
+  - jekyll-autoprefixer
+
+autoprefixer:
+  browsers:
+  - last 4 versions
