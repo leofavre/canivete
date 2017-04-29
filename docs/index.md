@@ -369,7 +369,7 @@ from the closest to the most distant, recursively.
 ```javascript
 let domChild = document.createElement("div"),
 	domParent = document.createElement("div"),
-	domGrandparent.appendChild(domParent),
+	domGrandparent = document.createElement("div"),
 	body = document.body,
 	html = document.querySelector("html");
 
@@ -403,7 +403,7 @@ the DOM element as the first item of the result.
 ```javascript
 let domChild = document.createElement("div"),
 	domParent = document.createElement("div"),
-	domGrandparent.appendChild(domParent),
+	domGrandparent = document.createElement("div"),
 	body = document.body,
 	html = document.querySelector("html");
 
@@ -436,6 +436,26 @@ This function serves as a polyfill for
 | Type | Description |
 | --- | --- |
 | Array.&lt;HTMLElement&gt; | The DOM elements affected by the event. |
+
+#### Example
+
+```javascript
+let domChild = document.createElement("div"),
+	domParent = document.createElement("div"),
+	domGrandparent = document.createElement("div"),
+	body = document.body,
+	html = document.querySelector("html");
+
+domParent.appendChild(domChild);
+domGrandparent.appendChild(domParent);
+body.appendChild(domGrandparent);
+
+domChild.addEventListener("click", dealWithClick);
+const dealWithClick = evt => eventPath(evt);
+
+// when domChild is clicked:
+// => [domChild, domParent, domGrandparent, body, html, document, window]
+```
 
 ### <a name="trigger">`trigger(domEl, evtName, [bubbles], [cancelable], [detail])`</a>
 
@@ -1078,5 +1098,20 @@ Returns the time passed since a timestamp, in milliseconds;
 | Type | Description |
 | --- | --- |
 | Number | Time passed since the timestamp, in milliseconds. |
+
+#### Example
+
+```javascript
+let timestamp = +new Date(),
+	result = 0;
+
+setTimeout(() => {
+	result = timeSince(timestamp);
+}, 150);
+
+console.log(result);
+// => 150
+// approximately.
+```
 
 

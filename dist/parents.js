@@ -12,7 +12,7 @@ import _throwErrorIf from "./internal/common/_throwErrorIf";
  * @example
  * let domChild = document.createElement("div"),
  * 	domParent = document.createElement("div"),
- * 	domGrandparent.appendChild(domParent),
+ * 	domGrandparent = document.createElement("div"),
  * 	body = document.body,
  * 	html = document.querySelector("html");
  * 

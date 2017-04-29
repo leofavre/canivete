@@ -773,7 +773,7 @@ from the closest to the most distant, recursively.</p>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">domChild</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">),</span>
 	<span class="nx">domParent</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">),</span>
-	<span class="nx">domGrandparent</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">domParent</span><span class="p">),</span>
+	<span class="nx">domGrandparent</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">),</span>
 	<span class="nx">body</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">,</span>
 	<span class="nx">html</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"html"</span><span class="p">);</span>
 
@@ -831,7 +831,7 @@ the DOM element as the first item of the result.</p>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">domChild</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">),</span>
 	<span class="nx">domParent</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">),</span>
-	<span class="nx">domGrandparent</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">domParent</span><span class="p">),</span>
+	<span class="nx">domGrandparent</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">),</span>
 	<span class="nx">body</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">,</span>
 	<span class="nx">html</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"html"</span><span class="p">);</span>
 
@@ -892,6 +892,26 @@ This function serves as a polyfill for
   </tbody>
 </table>
 
+<h4 id="example-6">Example</h4>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">domChild</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">),</span>
+	<span class="nx">domParent</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">),</span>
+	<span class="nx">domGrandparent</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">),</span>
+	<span class="nx">body</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">,</span>
+	<span class="nx">html</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"html"</span><span class="p">);</span>
+
+<span class="nx">domParent</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">domChild</span><span class="p">);</span>
+<span class="nx">domGrandparent</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">domParent</span><span class="p">);</span>
+<span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">domGrandparent</span><span class="p">);</span>
+
+<span class="nx">domChild</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"click"</span><span class="p">,</span> <span class="nx">dealWithClick</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">dealWithClick</span> <span class="o">=</span> <span class="nx">evt</span> <span class="o">=&gt;</span> <span class="nx">eventPath</span><span class="p">(</span><span class="nx">evt</span><span class="p">);</span>
+
+<span class="c1">// when domChild is clicked:</span>
+<span class="c1">// =&gt; [domChild, domParent, domGrandparent, body, html, document, window]</span>
+</code></pre>
+</div>
+
 <h3 id="triggerdomel-evtname-bubbles-cancelable-detail"><a name="trigger"><code class="highlighter-rouge">trigger(domEl, evtName, [bubbles], [cancelable], [detail])</code></a></h3>
 
 <p>Triggers a custom DOM event.</p>
@@ -941,7 +961,7 @@ This function serves as a polyfill for
   </tbody>
 </table>
 
-<h4 id="example-6">Example</h4>
+<h4 id="example-7">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">popupButton</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">".popup__button"</span><span class="p">),</span>
 	<span class="nx">popupLayer</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">".popup__layer"</span><span class="p">);</span>
@@ -1100,7 +1120,7 @@ internal <code class="highlighter-rouge">setTimeout()</code>.</p>
   </tbody>
 </table>
 
-<h4 id="example-7">Example</h4>
+<h4 id="example-8">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="s2">"waiting"</span><span class="p">)</span>
 	<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">waitInPromise</span><span class="p">(</span><span class="mi">500</span><span class="p">))</span>
@@ -1158,7 +1178,7 @@ randomly.</p>
   </tbody>
 </table>
 
-<h4 id="example-8">Example</h4>
+<h4 id="example-9">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">oneOutOf</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
 <span class="c1">// =&gt; true</span>
@@ -1200,7 +1220,7 @@ Also, note that the parentheses can be ommited.</p>
   </tbody>
 </table>
 
-<h4 id="example-9">Example</h4>
+<h4 id="example-10">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">].</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toAverage</span><span class="p">());</span>
 <span class="c1">// =&gt; 6</span>
@@ -1258,7 +1278,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="example-10">Example</h4>
+<h4 id="example-11">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
 	<span class="na">city</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
@@ -1344,7 +1364,7 @@ using <code class="highlighter-rouge">toClosest()</code> can lead to unexpected 
   </tbody>
 </table>
 
-<h4 id="example-11">Example</h4>
+<h4 id="example-12">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">].</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toClosest</span><span class="p">(</span><span class="mi">6</span><span class="p">));</span>
 <span class="c1">// =&gt; 5</span>
@@ -1408,7 +1428,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="example-12">Example</h4>
+<h4 id="example-13">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
 	<span class="na">city</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
@@ -1492,7 +1512,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="example-13">Example</h4>
+<h4 id="example-14">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
 	<span class="na">city</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
@@ -1576,7 +1596,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="example-14">Example</h4>
+<h4 id="example-15">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
 	<span class="na">city</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
@@ -1638,7 +1658,7 @@ Also, note that the parentheses can be ommited.</p>
   </tbody>
 </table>
 
-<h4 id="example-15">Example</h4>
+<h4 id="example-16">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">].</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toSum</span><span class="p">());</span>
 <span class="c1">// =&gt; 24</span>
@@ -1678,7 +1698,7 @@ the array in ascending alphabetical order.</p>
   </tbody>
 </table>
 
-<h4 id="example-16">Example</h4>
+<h4 id="example-17">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">musqueteers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Athos"</span><span class="p">,</span> <span class="s2">"Porthos"</span><span class="p">,</span> <span class="s2">"Aramis"</span><span class="p">];</span>
 
@@ -1741,7 +1761,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
   </tbody>
 </table>
 
-<h4 id="example-17">Example</h4>
+<h4 id="example-18">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">afterFirst</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
 <span class="c1">// =&gt; "lepiped"</span>
@@ -1793,7 +1813,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
   </tbody>
 </table>
 
-<h4 id="example-18">Example</h4>
+<h4 id="example-19">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">afterLast</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
 <span class="c1">// =&gt; "piped"</span>
@@ -1845,7 +1865,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
   </tbody>
 </table>
 
-<h4 id="example-19">Example</h4>
+<h4 id="example-20">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">beforeFirst</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
 <span class="c1">// =&gt; "paral"</span>
@@ -1897,7 +1917,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
   </tbody>
 </table>
 
-<h4 id="example-20">Example</h4>
+<h4 id="example-21">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">beforeLast</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
 <span class="c1">// =&gt; "paralle"</span>
@@ -1949,6 +1969,21 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
     </tr>
   </tbody>
 </table>
+
+<h4 id="example-22">Example</h4>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">timestamp</span> <span class="o">=</span> <span class="o">+</span><span class="k">new</span> <span class="nb">Date</span><span class="p">(),</span>
+	<span class="nx">result</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+	<span class="nx">result</span> <span class="o">=</span> <span class="nx">timeSince</span><span class="p">(</span><span class="nx">timestamp</span><span class="p">);</span>
+<span class="p">},</span> <span class="mi">150</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+<span class="c1">// =&gt; 150</span>
+<span class="c1">// approximately.</span>
+</code></pre>
+</div>
 
 
 			</div>

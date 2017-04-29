@@ -8,10 +8,31 @@ import selfAndParents from "./selfAndParents";
  * @category Event
  * @param {Event} evt The triggered event.
  * @return {Array.<HTMLElement>} The DOM elements affected by the event.
+ * 
+ * @example
+ * let domChild = document.createElement("div"),
+ * 	domParent = document.createElement("div"),
+ * 	domGrandparent = document.createElement("div"),
+ * 	body = document.body,
+ * 	html = document.querySelector("html");
+ * 
+ * domParent.appendChild(domChild);
+ * domGrandparent.appendChild(domParent);
+ * body.appendChild(domGrandparent);
+ * 
+ * domChild.addEventListener("click", dealWithClick);
+ * const dealWithClick = evt => eventPath(evt);
+ *
+ * // when domChild is clicked:
+ * // => [domChild, domParent, domGrandparent, body, html, document, window]
  */
 function eventPath(evt) {
 	let path = (evt.composedPath && evt.composedPath()) || evt.path,
 		target = evt.target;
+
+	if (target == null) {
+		return undefined;
+	}
 
 	if (path != null) {
 		path = (!path.includes(window)) ? path.concat([window]) : path;
