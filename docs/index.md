@@ -129,7 +129,7 @@ domEl.className;
 
 Modifies the CSS classes from a DOM element according
 to the [BEM methodology](https://en.bem.info/methodology/).
-Unlike `modifyBemClass()`, it ommits the original block
+Unlike [`modifyBemClass()`](#modifybemclass), it ommits the original block
 or element CSS class if a modified version is output.
 
 #### Parameters
@@ -269,7 +269,7 @@ manyElements[0].className;
 
 ## DOM
 
->[clippingInfo](#clippinginfo), [parents](#parents), [selfAndParents](#selfandparents) &amp;&nbsp;[setAttr](#setattr)
+>[clippingInfo](#clippinginfo), [parents](#parents), [removeAttr](#removeattr), [selfAndParents](#selfandparents), [setAttr](#setattr) &amp;&nbsp;[setAttrs](#setattrs)
 
 ### <a name="clippinginfo">`clippingInfo(domEl, [maskDef])`</a>
 
@@ -381,6 +381,53 @@ parents(domChild);
 // => [domParent, domGrandparent, body, html, document]
 ```
 
+### <a name="removeattr">`removeAttr(domEls, attrName)`</a>
+
+Removes an attribute from one or many DOM elements using
+native [`Element.removeAttribute()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttribute).
+
+#### Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `domEls` | HTMLElement<br>HTMLCollection<br>NodeList<br>Array.&lt;HTMLElement&gt;<br>Set.&lt;HTMLElement&gt; | One or many DOM elements. |
+| `attrName` | String | The attribute name. |
+
+#### Examples
+
+```javascript
+let oneElement = document.querySelector("a[data-level]");
+removeAttr(oneElement, "data-level");
+
+oneElement.getAttribute("data-level");
+// => null
+
+oneElement.dataset.level;
+// => undefined
+```
+
+```javascript
+let oneElement = document.querySelector("a[data-level]");
+removeAttr(oneElement, "class");
+
+oneElement.getAttribute("class");
+// => null
+
+oneElement.className;
+// => ""
+```
+
+```javascript
+let manyElements = document.querySelectorAll("a[data-level]");
+removeAttr(manyElements, "data-level");
+
+manyElements[0].getAttribute("data-level");
+// => null
+
+manyElements[0].dataset.level;
+// => undefined
+```
+
 ### <a name="selfandparents">`selfAndParents(domEl)`</a>
 
 The same as `parents()`, except it includes
@@ -417,7 +464,8 @@ selfAndParents(domChild);
 
 ### <a name="setattr">`setAttr(domEls, attrName, value)`</a>
 
-Sets an attribute for one or more DOM elements.
+Sets an attribute for one or many DOM elements using
+native [`Element.setAttribute()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute).
 
 #### Parameters
 
@@ -431,9 +479,65 @@ Sets an attribute for one or more DOM elements.
 
 ```javascript
 let oneElement = document.querySelector("a");
-
 setAttr(oneElement, "data-level", 42);
+
+oneElement.getAttribute("data-level");
+// => "42"
+
+oneElement.dataset.level;
+// => "42"
+```
+
+```javascript
+let oneElement = document.querySelector("a");
 setAttr(oneElement, "class", "button");
+
+oneElement.getAttribute("class");
+// => "button"
+
+oneElement.className;
+// => "button"
+```
+
+```javascript
+let manyElements = document.querySelectorAll("a");
+setAttr(manyElements, "data-level", 42);
+
+manyElements[0].getAttribute("data-level");
+// => "42"
+
+manyElements[0].dataset.level;
+// => "42"
+```
+
+### <a name="setattrs">`setAttrs(domEls, attrObj)`</a>
+
+The same as [`setAttr()`](#setattr), except it takes an object
+with attribute name and value pairs to set one or
+many attributes at once.
+
+#### Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `domEls` | HTMLElement<br>HTMLCollection<br>NodeList<br>Array.&lt;HTMLElement&gt;<br>Set.&lt;HTMLElement&gt; | One or many DOM elements. |
+| `attrObj` | Object | The object with attribute name and value pairs, e.g. `{ "data-level": 42 }`. |
+
+#### Examples
+
+```javascript
+let oneElement = document.querySelector("a");
+
+setAttr(oneElement, {
+	"data-level": 42,
+	"class": "button"
+});
+
+oneElement.getAttribute("data-level");
+// => "42"
+
+oneElement.getAttribute("class");
+// => "button"
 
 oneElement.dataset.level;
 // => "42"
@@ -445,8 +549,16 @@ oneElement.className;
 ```javascript
 let manyElements = document.querySelectorAll("a");
 
-setAttr(manyElements, "data-level", 42);
-setAttr(manyElements, "class", "button");
+setAttr(manyElements, {
+	"data-level": 42,
+	"class": "button"
+});
+
+manyElements[0].getAttribute("data-level");
+// => "42"
+
+manyElements[0].getAttribute("class");
+// => "button"
 
 manyElements[0].dataset.level;
 // => "42"
@@ -1139,9 +1251,9 @@ setTimeout(() => {
 	result = timeSince(timestamp);
 }, 150);
 
-console.log(result);
+result;
 // => 150
-// approximately.
+// This value is approximate and may vary.
 ```
 
 

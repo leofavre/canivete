@@ -11,8 +11,10 @@
 * **[DOM](#dom)**
   * [clippingInfo](#clippinginfo)
   * [parents](#parents)
+  * [removeAttr](#removeattr)
   * [selfAndParents](#selfandparents)
   * [setAttr](#setattr)
+  * [setAttrs](#setattrs)
 
 * **[Event](#event)**
   * [eventPath](#eventpath)
