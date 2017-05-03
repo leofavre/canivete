@@ -9,8 +9,9 @@ function _parseModifierProp(modifierObj, domEl, radical, delimiters) {
 			block = radical.split(blockDelimiter)[0],
 			element = radical.split(blockDelimiter)[1];
 
-		let value = modifierObj[modifier],
-			removedBemClass = formatBemClass(block, element, modifier, true, delimiters),
+		let value = modifierObj[modifier];
+
+		let removedBemClass = formatBemClass(block, element, modifier, true, delimiters),
 			addedBemClass = formatBemClass(block, element, modifier, value, delimiters);
 
 		if (value === false) {

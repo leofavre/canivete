@@ -269,7 +269,7 @@ manyElements[0].className;
 
 ## DOM
 
->[clippingInfo](#clippinginfo), [parents](#parents), [removeAttr](#removeattr), [selfAndParents](#selfandparents), [setAttr](#setattr) &amp;&nbsp;[setAttrs](#setattrs)
+>[clippingInfo](#clippinginfo), [parents](#parents), [removeAttr](#removeattr), [removeAttrs](#removeattrs), [selfAndParents](#selfandparents), [setAttr](#setattr) &amp;&nbsp;[setAttrs](#setattrs)
 
 ### <a name="clippinginfo">`clippingInfo(domEl, [maskDef])`</a>
 
@@ -281,7 +281,7 @@ second parameter is omitted.
 The mask can be either a DOM element or an object
 containing numeric values for "top", "bottom",
 "left" and "right" properties, like a
-[DOMRect](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect).
+[`DOMRect`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect).
 
 #### Parameters
 
@@ -426,6 +426,54 @@ manyElements[0].getAttribute("data-level");
 
 manyElements[0].dataset.level;
 // => undefined
+```
+
+### <a name="removeattrs">`removeAttrs(domEls, attrArr)`</a>
+
+The same as [`removeAttr()`](#removeattr), except it takes an
+array with attributes to be removed.
+
+#### Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `domEls` | HTMLElement<br>HTMLCollection<br>NodeList<br>Array.&lt;HTMLElement&gt;<br>Set.&lt;HTMLElement&gt; | One or many DOM elements. |
+| `attrArr` | Array.&lt;string&gt; | The array with attributes to be removed. |
+
+#### Examples
+
+```javascript
+let oneElement = document.querySelector("a[data-level][class]");
+removeAttrs(oneElement, ["data-level", "class"]);
+
+oneElement.getAttribute("data-level");
+// => null
+
+oneElement.getAttribute("class");
+// => null
+
+oneElement.dataset.level;
+// => undefined
+
+oneElement.className;
+// => ""
+```
+
+```javascript
+let manyElements = document.querySelectorAll("a[data-level][class]");
+removeAttrs(manyElements, ["data-level", "class"]);
+
+manyElements[0].getAttribute("data-level");
+// => null
+
+manyElements[0].getAttribute("class");
+// => null
+
+manyElements[0].dataset.level;
+// => undefined
+
+manyElements[0].className;
+// => ""
 ```
 
 ### <a name="selfandparents">`selfAndParents(domEl)`</a>
@@ -1090,7 +1138,7 @@ Also, note that the parentheses can be ommited.
 
 ### <a name="byalphabeticalorder">`byAlphabeticalOrder()`</a>
 
-When used inside `[].sort()`, sorts
+When used with `[].sort()`, sorts
 the array in ascending alphabetical order.
 
 Note that the parentheses can be ommited.

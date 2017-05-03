@@ -60,6 +60,10 @@ const modifyBemClassData = {
 				"level": 42
 			}
 		}
+	}, {
+		original: "menu",
+		expectation: "menu",
+		changes: {}
 	}],
 	"bemDelimitersB": [{
 		original: "menu",
@@ -113,6 +117,10 @@ const modifyBemClassData = {
 				"level": 42
 			}
 		}
+	}, {
+		original: "menu",
+		expectation: "menu",
+		changes: {}
 	}],
 	"bemDelimitersC": [{
 		original: "menu",
@@ -166,6 +174,10 @@ const modifyBemClassData = {
 				"level": 42
 			}
 		}
+	}, {
+		original: "menu",
+		expectation: "menu",
+		changes: {}
 	}]
 };
 
@@ -230,6 +242,10 @@ const modifyBemClassDataCompact = {
 				"level": 42
 			}
 		}
+	}, {
+		original: "menu",
+		expectation: "menu",
+		changes: {}
 	}],
 	"bemDelimitersB": [{
 		original: "menu",
@@ -291,6 +307,10 @@ const modifyBemClassDataCompact = {
 				"level": 42
 			}
 		}
+	}, {
+		original: "menu",
+		expectation: "menu",
+		changes: {}
 	}],
 	"bemDelimitersC": [{
 		original: "menu",
@@ -352,6 +372,10 @@ const modifyBemClassDataCompact = {
 				"level": 42
 			}
 		}
+	}, {
+		original: "menu",
+		expectation: "menu",
+		changes: {}
 	}]
 };
 
@@ -366,9 +390,9 @@ function makeBemTestsFromData(method, delimiterData, methodData) {
 
 function makeBemTest(method, description, initialClassName, expectation, bemObj, delimiterArr) {
 	return it(description, function() {
-		let domNode = makeBemDivWithClassName(initialClassName);
-		method(domNode, bemObj, delimiterArr);
-		expect(domNode.className.split(" ").sort()).toEqual(expectation.split(" ").sort());
+		let domEl = makeBemDivWithClassName(initialClassName);
+		method(domEl, bemObj, delimiterArr);
+		expect(domEl.className.split(" ").sort()).toEqual(expectation.split(" ").sort());
 	});
 }
 
@@ -382,9 +406,9 @@ function makeBemDescription(data, delimiterArr) {
 }
 
 function makeBemDivWithClassName(className) {
-	var domNode = document.createElement("div");
-	domNode.className = className;
-	return domNode;
+	var domEl = document.createElement("div");
+	domEl.className = className;
+	return domEl;
 }
 
 describe(".modifyBemClass", function() {

@@ -12,6 +12,7 @@
   * [clippingInfo](#clippinginfo)
   * [parents](#parents)
   * [removeAttr](#removeattr)
+  * [removeAttrs](#removeattrs)
   * [selfAndParents](#selfandparents)
   * [setAttr](#setattr)
   * [setAttrs](#setattrs)

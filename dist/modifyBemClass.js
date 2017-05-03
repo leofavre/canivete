@@ -1,3 +1,4 @@
+import _validateModifyBemClassArgs from "./internal/bem/_validateModifyBemClassArgs";
 import _parseBem from "./internal/bem/_parseBem";
 
 /**
@@ -41,6 +42,9 @@ import _parseBem from "./internal/bem/_parseBem";
  * domEl.className;
  * // => "swiper swiper--slides-5 swiper--current-3"
  */
-const modifyBemClass = (domEl, bemObj, delimiters) => _parseBem(bemObj, domEl, delimiters, true);
+const modifyBemClass = (domEl, bemObj, delimiters) => {
+	_validateModifyBemClassArgs(domEl, bemObj, delimiters);
+	return _parseBem(bemObj, domEl, delimiters, true);
+};
 
 export default modifyBemClass;
