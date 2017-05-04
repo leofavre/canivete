@@ -1,6 +1,6 @@
-import _getCoords from "./internal/clipping/_getCoords";
-import _getVerticalAxisInfo from "./internal/clipping/_getVerticalAxisInfo";
-import _getHorizontalAxisInfo from "./internal/clipping/_getHorizontalAxisInfo";
+import _getCoords from "./internal/geometry/_getCoords";
+import _getVerticalAxisInfo from "./internal/geometry/_getVerticalAxisInfo";
+import _getHorizontalAxisInfo from "./internal/geometry/_getHorizontalAxisInfo";
 
 /**
  * @typedef {Object} ClippingObject
