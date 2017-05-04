@@ -5,7 +5,7 @@ import removeAttr from "./removeAttr";
  * array with attributes to be removed.
  *
  * @category DOM
- * @param {(HTMLElement|HTMLCollection|NodeList|Array.<HTMLElement>|Set.<HTMLElement>)} domEls One or many DOM elements.
+ * @param {(HTMLElement|HTMLCollection|NodeList|Array.<HTMLElement>|Set.<HTMLElement>)} domEls One or more DOM elements.
  * @param {Array.<string>} attrArr The array with attributes to be removed.
  *
  * @example

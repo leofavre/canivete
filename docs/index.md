@@ -181,13 +181,13 @@ domEl.className;
 
 ### <a name="addclass">`addClass(domEls, className)`</a>
 
-Adds a CSS class to one or many DOM elements.
+Adds a CSS class to one or more DOM elements.
 
 #### Parameters
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `domEls` | HTMLElement<br>HTMLCollection<br>NodeList<br>Array.&lt;HTMLElement&gt;<br>Set.&lt;HTMLElement&gt; | One or many DOM elements. |
+| `domEls` | HTMLElement<br>HTMLCollection<br>NodeList<br>Array.&lt;HTMLElement&gt;<br>Set.&lt;HTMLElement&gt; | One or more DOM elements. |
 | `className` | String | The CSS class name. |
 
 #### Examples
@@ -240,13 +240,13 @@ hasClass(oneElement, "button");
 
 ### <a name="removeclass">`removeClass(domEls, className)`</a>
 
-Removes a CSS class from one or many DOM elements.
+Removes a CSS class from one or more DOM elements.
 
 #### Parameters
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `domEls` | HTMLElement<br>HTMLCollection<br>NodeList<br>Array.&lt;HTMLElement&gt;<br>Set.&lt;HTMLElement&gt; | One or many DOM elements. |
+| `domEls` | HTMLElement<br>HTMLCollection<br>NodeList<br>Array.&lt;HTMLElement&gt;<br>Set.&lt;HTMLElement&gt; | One or more DOM elements. |
 | `className` | String | The CSS class name. |
 
 #### Examples
@@ -265,6 +265,72 @@ removeClass(manyElements, "link");
 
 manyElements[0].className;
 // => "base"
+```
+
+## Collection
+
+>[groupByRecursive](#groupbyrecursive)
+
+### <a name="groupbyrecursive">`groupByRecursive(collection, [...iteratees])`</a>
+
+A recursive implementation of LoDash [`groupBy()`](https://lodash.com/docs/4.17.4#groupBy)
+that can take one or more iteratees to create nested groups.
+
+#### Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `collection` | Array.&lt;Object&gt; | The array of objects. |
+| `...iteratees` | Function | The functions used to group the array of objects by their results. **optional** |
+
+#### Return
+
+| Type | Description |
+| --- | --- |
+| Object | The resulting object. |
+
+#### Example
+
+```javascript
+const stores = [{
+	name: "Iguatemi",
+	city: "Campinas",
+	state: "SP"
+}, {
+	name: "Jardins",
+	city: "São Paulo",
+	state: "SP"
+}, {
+	name: "Iguatemi",
+	city: "São Paulo",
+	state: "SP"
+}, {
+	name: "Pedras",
+	city: "Búzios",
+	state: "RJ"
+}, {
+	name: "Ipanema",
+	city: "Rio de Janeiro",
+	state: "RJ"
+}, {
+	name: "Leblon",
+	city: "Rio de Janeiro",
+	state: "RJ"
+}, {
+	name: "ParkShopping",
+	city: "Brasília",
+	state: "DF"
+}];
+
+const getStateName = item => item.state;
+const getCityName = item => item.city;
+
+groupByRecursive(stores, getStateName, getCityName);
+// => {
+// => 	"SP": { "Campinas": [...], "São Paulo": [...] },
+// => 	"RJ": { "Búzios": [...], "Rio de Janeiro": [...] },
+// => 	"DF": { "Brasília": [...] }
+// => }
 ```
 
 ## DOM
@@ -383,14 +449,14 @@ parents(domChild);
 
 ### <a name="removeattr">`removeAttr(domEls, attrName)`</a>
 
-Removes an attribute from one or many DOM elements using
+Removes an attribute from one or more DOM elements using
 native [`Element.removeAttribute()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttribute).
 
 #### Parameters
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `domEls` | HTMLElement<br>HTMLCollection<br>NodeList<br>Array.&lt;HTMLElement&gt;<br>Set.&lt;HTMLElement&gt; | One or many DOM elements. |
+| `domEls` | HTMLElement<br>HTMLCollection<br>NodeList<br>Array.&lt;HTMLElement&gt;<br>Set.&lt;HTMLElement&gt; | One or more DOM elements. |
 | `attrName` | String | The attribute name. |
 
 #### Examples
@@ -437,7 +503,7 @@ array with attributes to be removed.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `domEls` | HTMLElement<br>HTMLCollection<br>NodeList<br>Array.&lt;HTMLElement&gt;<br>Set.&lt;HTMLElement&gt; | One or many DOM elements. |
+| `domEls` | HTMLElement<br>HTMLCollection<br>NodeList<br>Array.&lt;HTMLElement&gt;<br>Set.&lt;HTMLElement&gt; | One or more DOM elements. |
 | `attrArr` | Array.&lt;string&gt; | The array with attributes to be removed. |
 
 #### Examples
@@ -512,14 +578,14 @@ selfAndParents(domChild);
 
 ### <a name="setattr">`setAttr(domEls, attrName, value)`</a>
 
-Sets an attribute for one or many DOM elements using
+Sets an attribute for one or more DOM elements using
 native [`Element.setAttribute()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute).
 
 #### Parameters
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `domEls` | HTMLElement<br>HTMLCollection<br>NodeList<br>Array.&lt;HTMLElement&gt;<br>Set.&lt;HTMLElement&gt; | One or many DOM elements. |
+| `domEls` | HTMLElement<br>HTMLCollection<br>NodeList<br>Array.&lt;HTMLElement&gt;<br>Set.&lt;HTMLElement&gt; | One or more DOM elements. |
 | `attrName` | String | The attribute name. |
 | `value` | String<br>Number<br>Boolean | The attribute value. |
 
@@ -568,7 +634,7 @@ many attributes at once.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `domEls` | HTMLElement<br>HTMLCollection<br>NodeList<br>Array.&lt;HTMLElement&gt;<br>Set.&lt;HTMLElement&gt; | One or many DOM elements. |
+| `domEls` | HTMLElement<br>HTMLCollection<br>NodeList<br>Array.&lt;HTMLElement&gt;<br>Set.&lt;HTMLElement&gt; | One or more DOM elements. |
 | `attrObj` | Object | The object with attribute name and value pairs, e.g. `{ "data-level": 42 }`. |
 
 #### Examples

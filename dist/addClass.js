@@ -2,11 +2,11 @@ import _changeClassWithMethod from "./internal/dom/_changeClassWithMethod";
 import _domElementsAsArray from "./internal/dom/_domElementsAsArray";
 
 /**
- * Adds a CSS class to one or many DOM elements.
+ * Adds a CSS class to one or more DOM elements.
  *
  * @category ClassName
  * 
- * @param  {(HTMLElement|HTMLCollection|NodeList|Array.<HTMLElement>|Set.<HTMLElement>)} domEls One or many DOM elements.
+ * @param  {(HTMLElement|HTMLCollection|NodeList|Array.<HTMLElement>|Set.<HTMLElement>)} domEls One or more DOM elements.
  * @param  {string} className The CSS class name.
  *
  * @example

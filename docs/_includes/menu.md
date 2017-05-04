@@ -8,6 +8,9 @@
   * [hasClass](#hasclass)
   * [removeClass](#removeclass)
 
+* **[Collection](#collection)**
+  * [groupByRecursive](#groupbyrecursive)
+
 * **[DOM](#dom)**
   * [clippingInfo](#clippinginfo)
   * [parents](#parents)

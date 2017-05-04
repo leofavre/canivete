@@ -2,11 +2,11 @@ import _setAttrBase from "./internal/dom/_setAttrBase";
 import _domElementsAsArray from "./internal/dom/_domElementsAsArray";
 
 /**
- * Removes an attribute from one or many DOM elements using
+ * Removes an attribute from one or more DOM elements using
  * native [`Element.removeAttribute()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttribute).
  *
  * @category DOM
- * @param {(HTMLElement|HTMLCollection|NodeList|Array.<HTMLElement>|Set.<HTMLElement>)} domEls One or many DOM elements.
+ * @param {(HTMLElement|HTMLCollection|NodeList|Array.<HTMLElement>|Set.<HTMLElement>)} domEls One or more DOM elements.
  * @param {string} attrName The attribute name.
  *
  * @example

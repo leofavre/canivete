@@ -2,11 +2,11 @@ import _setAttrBase from "./internal/dom/_setAttrBase";
 import _domElementsAsArray from "./internal/dom/_domElementsAsArray";
 
 /**
- * Sets an attribute for one or many DOM elements using
+ * Sets an attribute for one or more DOM elements using
  * native [`Element.setAttribute()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute).
  *
  * @category DOM
- * @param {(HTMLElement|HTMLCollection|NodeList|Array.<HTMLElement>|Set.<HTMLElement>)} domEls One or many DOM elements.
+ * @param {(HTMLElement|HTMLCollection|NodeList|Array.<HTMLElement>|Set.<HTMLElement>)} domEls One or more DOM elements.
  * @param {string} attrName The attribute name.
  * @param {(string|number|boolean)} value The attribute value.
  *

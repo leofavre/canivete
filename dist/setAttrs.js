@@ -6,7 +6,7 @@ import setAttr from "./setAttr";
  * many attributes at once.
  *
  * @category DOM
- * @param {(HTMLElement|HTMLCollection|NodeList|Array.<HTMLElement>|Set.<HTMLElement>)} domEls One or many DOM elements.
+ * @param {(HTMLElement|HTMLCollection|NodeList|Array.<HTMLElement>|Set.<HTMLElement>)} domEls One or more DOM elements.
  * @param {Object} attrObj The object with attribute name and value pairs, e.g. `{ "data-level": 42 }`.
  *
  * @example
