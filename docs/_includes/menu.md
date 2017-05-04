@@ -12,7 +12,6 @@
   * [groupByRecursive](#groupbyrecursive)
 
 * **[DOM](#dom)**
-  * [clippingInfo](#clippinginfo)
   * [parents](#parents)
   * [removeAttr](#removeattr)
   * [removeAttrs](#removeattrs)
@@ -23,6 +22,9 @@
 * **[Event](#event)**
   * [eventPath](#eventpath)
   * [trigger](#trigger)
+
+* **[Geometry](#geometry)**
+  * [clippingInfo](#clippinginfo)
 
 * **[Promise](#promise)**
   * [eventAsPromise](#eventaspromise)

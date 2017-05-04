@@ -335,83 +335,7 @@ groupByRecursive(stores, getStateName, getCityName);
 
 ## DOM
 
->[clippingInfo](#clippinginfo), [parents](#parents), [removeAttr](#removeattr), [removeAttrs](#removeattrs), [selfAndParents](#selfandparents), [setAttr](#setattr) &amp;&nbsp;[setAttrs](#setattrs)
-
-### <a name="clippinginfo">`clippingInfo(domEl, [maskDef])`</a>
-
-Given a DOM element, returns an object with position
-and clipping information relative to a mask, defined
-by the second parameter, or to the viewport, if the
-second parameter is omitted.
-
-The mask can be either a DOM element or an object
-containing numeric values for "top", "bottom",
-"left" and "right" properties, like a
-[`DOMRect`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect).
-
-#### Parameters
-
-| Name | Type | Description |
-| --- | --- | --- |
-| `domEl` | HTMLElement | The DOM element. |
-| `maskDef` | HTMLElement<br>Object | The mask definition. **optional** |
-
-#### Return
-
-| Type | Description |
-| --- | --- |
-| ClippingObject | Position and clipping information relative to a mask (see table below). |
-
-#### ClippingObject
-
-| Name | Type | Description |
-| --- | --- | --- |
-| `isOffTop` | Boolean | Above and off the mask. |
-| `isOffBottom` | Boolean | Below and off the mask. |
-| `isOffLeft` | Boolean | On the left and off the mask. |
-| `isOffRight` | Boolean | On the right and off the mask. |
-| `isOff` | Boolean | Off the mask. |
-| `isClippedTop` | Boolean | Above and intersecting with the mask. |
-| `isClippedBottom` | Boolean | Below and intersecting with the mask. |
-| `isClippedLeft` | Boolean | On the left and intersecting with the mask. |
-| `isClippedRight` | Boolean | On the right and intersecting with the mask. |
-| `isClipped` | Boolean | Element intersects with the mask. |
-| `isFullyVisible` | Boolean | Fully visible inside the mask. |
-| `isPartiallyVisible` | Boolean | Alias for `isClipped`. |
-| `isInvisible` | Boolean | Alias for `isOff`. |
-| `isAsVisibleAsPossible` | Boolean | As visible as possible (element bigger than mask). |
-| `isNotAsVisibleAsPossible` | Boolean | Not as visible as possible (element bigger than mask). |
-
-#### Example
-
-```javascript
-let domEl = document.createElement("div");
-
-domEl.style.position = "fixed";
-domEl.style.top = "-50px";
-domEl.style.left = "-50px";
-domEl.style.width = "200px";
-domEl.style.height = "200px";
-
-document.body.appendChild(domEl);
-
-let info = clippingInfo(domEl);
-
-info.isClippedTop;
-// => true
-
-info.isClippedLeft;
-// => true
-
-info.isFullyVisible;
-// => false
-
-info.isPartiallyVisible;
-// => true
-
-info.isInvisible;
-// => false
-```
+>[parents](#parents), [removeAttr](#removeattr), [removeAttrs](#removeattrs), [selfAndParents](#selfandparents), [setAttr](#setattr) &amp;&nbsp;[setAttrs](#setattrs)
 
 ### <a name="parents">`parents(domEl)`</a>
 
@@ -746,6 +670,86 @@ let popupButton = document.querySelector(".popup__button"),
 popupButton.addEventListener("click", evt => {
 	trigger(popupLayer, "open");
 });
+```
+
+## Geometry
+
+>[clippingInfo](#clippinginfo)
+
+### <a name="clippinginfo">`clippingInfo(domEl, [maskDef])`</a>
+
+Given a DOM element, returns an object with position
+and clipping information relative to a mask, defined
+by the second parameter, or to the viewport, if the
+second parameter is omitted.
+
+The mask can be either a DOM element or an object
+containing numeric values for "top", "bottom",
+"left" and "right" properties, like a
+[`DOMRect`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect).
+
+#### Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `domEl` | HTMLElement | The DOM element. |
+| `maskDef` | HTMLElement<br>Object | The mask definition. **optional** |
+
+#### Return
+
+| Type | Description |
+| --- | --- |
+| ClippingObject | Position and clipping information relative to a mask (see table below). |
+
+#### ClippingObject
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `isOffTop` | Boolean | Above and off the mask. |
+| `isOffBottom` | Boolean | Below and off the mask. |
+| `isOffLeft` | Boolean | On the left and off the mask. |
+| `isOffRight` | Boolean | On the right and off the mask. |
+| `isOff` | Boolean | Off the mask. |
+| `isClippedTop` | Boolean | Above and intersecting with the mask. |
+| `isClippedBottom` | Boolean | Below and intersecting with the mask. |
+| `isClippedLeft` | Boolean | On the left and intersecting with the mask. |
+| `isClippedRight` | Boolean | On the right and intersecting with the mask. |
+| `isClipped` | Boolean | Element intersects with the mask. |
+| `isFullyVisible` | Boolean | Fully visible inside the mask. |
+| `isPartiallyVisible` | Boolean | Alias for `isClipped`. |
+| `isInvisible` | Boolean | Alias for `isOff`. |
+| `isAsVisibleAsPossible` | Boolean | As visible as possible (element bigger than mask). |
+| `isNotAsVisibleAsPossible` | Boolean | Not as visible as possible (element bigger than mask). |
+
+#### Example
+
+```javascript
+let domEl = document.createElement("div");
+
+domEl.style.position = "fixed";
+domEl.style.top = "-50px";
+domEl.style.left = "-50px";
+domEl.style.width = "200px";
+domEl.style.height = "200px";
+
+document.body.appendChild(domEl);
+
+let info = clippingInfo(domEl);
+
+info.isClippedTop;
+// => true
+
+info.isClippedLeft;
+// => true
+
+info.isFullyVisible;
+// => false
+
+info.isPartiallyVisible;
+// => true
+
+info.isInvisible;
+// => false
 ```
 
 ## Promise

@@ -32,7 +32,7 @@ import _getHorizontalAxisInfo from "./internal/clipping/_getHorizontalAxisInfo";
  * "left" and "right" properties, like a
  * [`DOMRect`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect).
  *
- * @category DOM
+ * @category Geometry
  *
  * @param  {HTMLElement} domEl The DOM element.
  * @param  {(HTMLElement|Object)} [maskDef] The mask definition.
