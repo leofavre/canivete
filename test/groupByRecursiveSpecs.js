@@ -163,4 +163,11 @@ describe("groupByRecursive", function() {
 			}
 		});
 	});
+
+	it("Should still function as the native LoDash groupBy.", function() {
+		expect(groupByRecursive(["one", "two", "three"], "length")).toEqual({
+			"3": ["one", "two"],
+			"5": ["three"]
+		});
+	});
 });
