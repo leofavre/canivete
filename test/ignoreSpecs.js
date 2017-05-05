@@ -2,7 +2,24 @@ import ignore from "../dist/ignore";
 import listen from "../dist/listen";
 import trigger from "../dist/trigger";
 
-describe("listen", function() {
+describe("ignore", function() {
+	it("Should allow document as parameter.", function() {
+		let eventCallback = jasmine.createSpy("eventCallback");
+		expect(() => ignore(document, "open", eventCallback)).not.toThrow();
+	});
+
+	it("Should allow window as parameter.", function() {
+		let eventCallback = jasmine.createSpy("eventCallback");
+		expect(() => ignore(window, "open", eventCallback)).not.toThrow();
+	});
+
+	it("Should allow many dom elements, including document and window, as parameter.", function() {
+		let eventCallback = jasmine.createSpy("eventCallback"),
+			singleDiv = document.createElement("div");
+
+		expect(() => ignore([singleDiv, document, window], "open", eventCallback)).not.toThrow();
+	});
+
 	it("Should ignore a single event of a single DOM element.", function(done) {
 		let eventCallback = jasmine.createSpy("eventCallback"),
 			singleDiv = document.createElement("div");

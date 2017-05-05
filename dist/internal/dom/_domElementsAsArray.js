@@ -1,23 +1,5 @@
-import isElement from "lodash-es/isElement";
-import _throwErrorIf from "../common/_throwErrorIf";
+import _domAsArray from "./_domAsArray";
 
-const _domElementsAsArray = arg => {
-	let result = arg;
-
-	if (arg == null) {
-		return [];
-	}
-
-	if (isElement(arg)) {
-		result = [arg];
-	}
-	else if (arg != null && (typeof arg.length === "number" || typeof arg.size === "number")) {
-		result = Array.from(arg);
-	}
-
-	_throwErrorIf(!Array.isArray(result) || result.some(item => !isElement(item)), `One or more HTMLElements are expected as the first parameter.`);
-
-	return result;
-};
+const _domElementsAsArray = arg => _domAsArray(arg, false);
 
 export default _domElementsAsArray;

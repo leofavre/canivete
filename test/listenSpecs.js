@@ -2,6 +2,23 @@ import listen from "../dist/listen";
 import trigger from "../dist/trigger";
 
 describe("listen", function() {
+	it("Should allow document as parameter.", function() {
+		let eventCallback = jasmine.createSpy("eventCallback");
+		expect(() => listen(document, "open", eventCallback)).not.toThrow();
+	});
+
+	it("Should allow window as parameter.", function() {
+		let eventCallback = jasmine.createSpy("eventCallback");
+		expect(() => listen(window, "open", eventCallback)).not.toThrow();
+	});
+
+	it("Should allow many dom elements, including document and window, as parameter.", function() {
+		let eventCallback = jasmine.createSpy("eventCallback"),
+			singleDiv = document.createElement("div");
+
+		expect(() => listen([singleDiv, document, window], "open", eventCallback)).not.toThrow();
+	});
+
 	it("Should listen for a single event of a single DOM element.", function(done) {
 		let eventCallback = jasmine.createSpy("eventCallback"),
 			singleDiv = document.createElement("div");

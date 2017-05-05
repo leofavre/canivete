@@ -21,7 +21,7 @@ import _throwErrorIf from "./internal/common/_throwErrorIf";
  * });
  */
 const trigger = (domEl, evtName, bubbles = false, cancelable = false, detail = undefined) => {
-	_throwErrorIf(!_isElementOrDocumentOrWindow(domEl), "An HTMLElement, document or window are expected as first parameter.");
+	_throwErrorIf(!_isElementOrDocumentOrWindow(domEl), "An HTMLElement, including document or window, is expected as first parameter.");
 	_throwErrorIf(!isString(evtName), "A string is expected as second parameter.");
 
 	let evt;
