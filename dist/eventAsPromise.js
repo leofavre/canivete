@@ -34,7 +34,7 @@ import _throwErrorIf from "./internal/common/_throwErrorIf";
  *
  * @example
  * let image = document.createElement("img");
- * image.src = "https://www.w3.org/Icons/w3c_home";
+ * image.src = "img.jpg";
  * document.body.appendChild(image);
  *
  * eventAsPromise(image, "load", image => image.complete)

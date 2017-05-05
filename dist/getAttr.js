@@ -10,6 +10,12 @@
  * @param  {HTMLElement} domEl [description] The DOM element.
  * @param  {string} attrName [description] The attribute name.
  * @return {(string|Boolean)} [description] The attribute value.
+ *
+ * @example
+ *
+ * let video = document.createElement("video");
+ * video.src = "video.mp4";
+ * video.controls = true;
  */
 function getAttr(domEl, attrName) {
 	let result = domEl.getAttribute(attrName);

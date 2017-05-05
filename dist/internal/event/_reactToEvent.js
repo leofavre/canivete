@@ -1,4 +1,6 @@
 import _splitEventStr from "./_splitEventStr";
+import _throwErrorIf from "../common/_throwErrorIf";
+import isString from "lodash-es/isString";
 import _domElementsOrDocumentOrWindowToArray from "../dom/_domElementsOrDocumentOrWindowToArray";
 
 const _reactToEvent = (methodName, domEls, eventStr, callback, useCapture) => {
