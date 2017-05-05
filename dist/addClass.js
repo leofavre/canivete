@@ -1,5 +1,5 @@
 import _changeClassWithMethod from "./internal/classname/_changeClassWithMethod";
-import _domElementsAsArray from "./internal/dom/_domElementsAsArray";
+import _domElementsToArray from "./internal/dom/_domElementsToArray";
 
 /**
  * Adds a CSS class to one or more DOM elements.
@@ -24,7 +24,7 @@ import _domElementsAsArray from "./internal/dom/_domElementsAsArray";
  * // => "link"
  */
 const addClass = (domEls, className) => {
-	_domElementsAsArray(domEls).forEach(domEl => _changeClassWithMethod(domEl, className, "add"));
+	_domElementsToArray(domEls).forEach(domEl => _changeClassWithMethod(domEl, className, "add"));
 };
 
 export default addClass;

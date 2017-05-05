@@ -1,5 +1,5 @@
 import _setAttrBase from "./internal/dom/_setAttrBase";
-import _domElementsAsArray from "./internal/dom/_domElementsAsArray";
+import _domElementsToArray from "./internal/dom/_domElementsToArray";
 
 /**
  * Sets an attribute for one or more DOM elements using
@@ -41,7 +41,7 @@ import _domElementsAsArray from "./internal/dom/_domElementsAsArray";
  * // => "42"
  */
 function setAttr(domEls, attrName, value) {
-	_domElementsAsArray(domEls).forEach(domEl => _setAttrBase(domEl, attrName, value));
+	_domElementsToArray(domEls).forEach(domEl => _setAttrBase(domEl, attrName, value));
 }
 
 export default setAttr;

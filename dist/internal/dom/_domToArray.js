@@ -2,7 +2,7 @@ import isElement from "lodash-es/isElement";
 import _isElementOrDocumentOrWindow from "./_isElementOrDocumentOrWindow";
 import _throwErrorIf from "../common/_throwErrorIf";
 
-const _domElementsAsArray = (arg, allowDocumentAndWindow = false) => {
+const _domElementsToArray = (arg, allowDocumentAndWindow = false) => {
 	let result = arg,
 		isDom = allowDocumentAndWindow ? _isElementOrDocumentOrWindow : isElement,
 		errorMsg = allowDocumentAndWindow ? "One or more HTMLElements are expected as the first parameter." : "One or more HTMLElements, including document or window, are expected as the first parameter.";
@@ -23,4 +23,4 @@ const _domElementsAsArray = (arg, allowDocumentAndWindow = false) => {
 	return result;
 };
 
-export default _domElementsAsArray;
+export default _domElementsToArray;

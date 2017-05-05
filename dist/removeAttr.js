@@ -1,5 +1,5 @@
 import _setAttrBase from "./internal/dom/_setAttrBase";
-import _domElementsAsArray from "./internal/dom/_domElementsAsArray";
+import _domElementsToArray from "./internal/dom/_domElementsToArray";
 
 /**
  * Removes an attribute from one or more DOM elements using
@@ -40,7 +40,7 @@ import _domElementsAsArray from "./internal/dom/_domElementsAsArray";
  * // => undefined
  */
 function removeAttr(domEls, attrName) {
-	_domElementsAsArray(domEls).forEach(domEl => _setAttrBase(domEl, attrName, false));
+	_domElementsToArray(domEls).forEach(domEl => _setAttrBase(domEl, attrName, false));
 }
 
 export default removeAttr;

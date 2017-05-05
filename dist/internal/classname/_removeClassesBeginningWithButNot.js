@@ -1,8 +1,8 @@
 import _removeClassesBeginningWithButNotBase from "./_removeClassesBeginningWithButNotBase";
-import _domElementsAsArray from "../dom/_domElementsAsArray";
+import _domElementsToArray from "../dom/_domElementsToArray";
 
 const _removeClassesBeginningWithButNot = (domEls, str) => {
-	_domElementsAsArray(domEls).forEach(domEl => _removeClassesBeginningWithButNotBase(domEl, str));
+	_domElementsToArray(domEls).forEach(domEl => _removeClassesBeginningWithButNotBase(domEl, str));
 };
 
 export default _removeClassesBeginningWithButNot;
