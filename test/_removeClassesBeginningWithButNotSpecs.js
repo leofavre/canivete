@@ -1,4 +1,4 @@
-import _removeClassesBeginningWithButNot from "../dist/internal/dom/_removeClassesBeginningWithButNot";
+import _removeClassesBeginningWithButNot from "../dist/internal/classname/_removeClassesBeginningWithButNot";
 
 describe("_removeClassesBeginningWithButNot", function() {
 	for (let i = 0; i < 5; i++) {

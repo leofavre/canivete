@@ -1,4 +1,4 @@
-import _changeClassWithMethod from "./internal/dom/_changeClassWithMethod";
+import _changeClassWithMethod from "./internal/classname/_changeClassWithMethod";
 import _domElementsAsArray from "./internal/dom/_domElementsAsArray";
 
 /**
