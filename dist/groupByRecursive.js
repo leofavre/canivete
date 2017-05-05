@@ -54,15 +54,16 @@ import at from "lodash-es/at";
  * // => }
  */
 const groupByRecursive = (collection, ...iteratees) => {
-	const doGroup = (collection, iteratee, keys = []) => (keys.length === 0) ? groupBy(collection, iteratee) : set(collection, formatPath(keys), groupBy(simpleAt(collection, keys), iteratee));
+
+	const groupBranch = (collection, iteratee, keys = []) => (keys.length === 0) ? groupBy(collection, iteratee) : set(collection, formatPath(keys), groupBy(simpleAt(collection, keys), iteratee));
 	const getKeysAt = (collection, keys = []) => (keys.length === 0) ? Object.keys(collection) : Object.keys(simpleAt(collection, keys));
 
 	const simpleAt = (collection, keys) => at(collection, formatPath(keys))[0];
-	const formatPath = (keys = []) => (keys.length === 0) ? undefined : keys.join(".");
+	const formatPath = (keys = []) => keys.join(".") || undefined;
 
 	const doGroupByRecursive = (collection, iteratees = [], keys = []) => {
 		if (iteratees.length > 0) {
-			let result = doGroup(collection, iteratees[0], keys);
+			let result = groupBranch(collection, iteratees[0], keys);
 
 			getKeysAt(result, keys).forEach(key => {
 				doGroupByRecursive(result, iteratees.slice(1), keys.concat([key]));

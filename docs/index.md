@@ -607,7 +607,7 @@ manyElements[0].className;
 
 ## Event
 
->[eventPath](#eventpath) &amp;&nbsp;[trigger](#trigger)
+>[eventPath](#eventpath), [ignore](#ignore), [listen](#listen) &amp;&nbsp;[trigger](#trigger)
 
 ### <a name="eventpath">`eventPath(evt)`</a>
 
@@ -646,6 +646,40 @@ const dealWithClick = evt => eventPath(evt);
 // when domChild is clicked:
 // => [domChild, domParent, domGrandparent, body, html, document, window]
 ```
+
+### <a name="ignore">`ignore(eventStr, domEls, callback, [useCapture])`</a>
+
+Removes one or more event listeners from one or more DOM elements.
+This function is a wrapper for
+[`Element.removeEventListener()`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener)
+that accepts a space-separated event names string and a group
+of target DOM elements.
+
+#### Parameters
+
+| Name | Default | Type | Description |
+| --- | --- | --- | --- |
+| `eventStr` |  | String | The event names string. |
+| `domEls` |  | HTMLElement<br>HTMLCollection<br>NodeList<br>Array.&lt;HTMLElement&gt;<br>Set.&lt;HTMLElement&gt; | One or more DOM elements. |
+| `callback` |  | Function | The function to be ignored. |
+| `useCapture` | `false` | Boolean | The event phase being listened for. **optional** |
+
+### <a name="listen">`listen(eventStr, domEls, callback, [useCapture])`</a>
+
+Adds one or more event listeners to one or more DOM elements.
+This function is a wrapper for
+[`Element.addEventListener()`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
+that accepts a space-separated event names string and a group
+of target DOM elements.
+
+#### Parameters
+
+| Name | Default | Type | Description |
+| --- | --- | --- | --- |
+| `eventStr` |  | String | The event names string. |
+| `domEls` |  | HTMLElement<br>HTMLCollection<br>NodeList<br>Array.&lt;HTMLElement&gt;<br>Set.&lt;HTMLElement&gt; | One or more DOM elements. |
+| `callback` |  | Function | The function to be exectuted when the event is dispatched. |
+| `useCapture` | `false` | Boolean | The event phase to be listened for. **optional** |
 
 ### <a name="trigger">`trigger(domEl, evtName, [bubbles], [cancelable], [detail])`</a>
 
@@ -761,7 +795,7 @@ info.isInvisible;
 Transforms a DOM event into a promise.
 
 This functions takes as parameters: a DOM element,
-the name of the event that will be listened for
+the name of the event to be listened for
 and a function that verifies if the event has already
 happened, which receives the DOM element as parameter.
 
@@ -777,7 +811,7 @@ parameters are not a DOM element and a string.
 | Name | Default | Type | Description |
 | --- | --- | --- | --- |
 | `domEl` |  | HTMLElement<br>HTMLDocument<br>Window | The DOM element. |
-| `evtName` |  | String | The event that will be listened for. |
+| `evtName` |  | String | The event to be listened for. |
 | `happened` | `domEl => false` | Function | The verification function. **optional** |
 
 #### Return

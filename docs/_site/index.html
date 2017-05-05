@@ -54,6 +54,8 @@
   <li><strong><a href="#event">Event</a></strong>
     <ul>
       <li><a href="#eventpath">eventPath</a></li>
+      <li><a href="#ignore">ignore</a></li>
+      <li><a href="#listen">listen</a></li>
       <li><a href="#trigger">trigger</a></li>
     </ul>
   </li>
@@ -1055,7 +1057,7 @@ many attributes at once.</p>
 <h2 id="event">Event</h2>
 
 <blockquote>
-  <p><a href="#eventpath">eventPath</a> &amp; <a href="#trigger">trigger</a></p>
+  <p><a href="#eventpath">eventPath</a>, <a href="#ignore">ignore</a>, <a href="#listen">listen</a> &amp; <a href="#trigger">trigger</a></p>
 </blockquote>
 
 <h3 id="eventpathevt"><a name="eventpath"><code class="highlighter-rouge">eventPath(evt)</code></a></h3>
@@ -1120,11 +1122,105 @@ This function serves as a polyfill for
 </code></pre>
 </div>
 
+<h3 id="ignoreeventstr-domels-callback-usecapture"><a name="ignore"><code class="highlighter-rouge">ignore(eventStr, domEls, callback, [useCapture])</code></a></h3>
+
+<p>Removes one or more event listeners from one or more DOM elements.
+This function is a wrapper for
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener"><code class="highlighter-rouge">Element.removeEventListener()</code></a>
+that accepts a space-separated event names string and a group
+of target DOM elements.</p>
+
+<h4 id="parameters-11">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Default</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">eventStr</code></td>
+      <td> </td>
+      <td>String</td>
+      <td>The event names string.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">domEls</code></td>
+      <td> </td>
+      <td>HTMLElement<br />HTMLCollection<br />NodeList<br />Array.&lt;HTMLElement&gt;<br />Set.&lt;HTMLElement&gt;</td>
+      <td>One or more DOM elements.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">callback</code></td>
+      <td> </td>
+      <td>Function</td>
+      <td>The function to be ignored.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">useCapture</code></td>
+      <td><code class="highlighter-rouge">false</code></td>
+      <td>Boolean</td>
+      <td>The event phase being listened for. <strong>optional</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="listeneventstr-domels-callback-usecapture"><a name="listen"><code class="highlighter-rouge">listen(eventStr, domEls, callback, [useCapture])</code></a></h3>
+
+<p>Adds one or more event listeners to one or more DOM elements.
+This function is a wrapper for
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener"><code class="highlighter-rouge">Element.addEventListener()</code></a>
+that accepts a space-separated event names string and a group
+of target DOM elements.</p>
+
+<h4 id="parameters-12">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Default</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">eventStr</code></td>
+      <td> </td>
+      <td>String</td>
+      <td>The event names string.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">domEls</code></td>
+      <td> </td>
+      <td>HTMLElement<br />HTMLCollection<br />NodeList<br />Array.&lt;HTMLElement&gt;<br />Set.&lt;HTMLElement&gt;</td>
+      <td>One or more DOM elements.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">callback</code></td>
+      <td> </td>
+      <td>Function</td>
+      <td>The function to be exectuted when the event is dispatched.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">useCapture</code></td>
+      <td><code class="highlighter-rouge">false</code></td>
+      <td>Boolean</td>
+      <td>The event phase to be listened for. <strong>optional</strong></td>
+    </tr>
+  </tbody>
+</table>
+
 <h3 id="triggerdomel-evtname-bubbles-cancelable-detail"><a name="trigger"><code class="highlighter-rouge">trigger(domEl, evtName, [bubbles], [cancelable], [detail])</code></a></h3>
 
 <p>Triggers a custom DOM event.</p>
 
-<h4 id="parameters-11">Parameters</h4>
+<h4 id="parameters-13">Parameters</h4>
 
 <table>
   <thead>
@@ -1198,7 +1294,7 @@ containing numeric values for “top”, “bottom”,
 “left” and “right” properties, like a
 <a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMRect"><code class="highlighter-rouge">DOMRect</code></a>.</p>
 
-<h4 id="parameters-12">Parameters</h4>
+<h4 id="parameters-14">Parameters</h4>
 
 <table>
   <thead>
@@ -1370,7 +1466,7 @@ containing numeric values for “top”, “bottom”,
 <p>Transforms a DOM event into a promise.</p>
 
 <p>This functions takes as parameters: a DOM element,
-the name of the event that will be listened for
+the name of the event to be listened for
 and a function that verifies if the event has already
 happened, which receives the DOM element as parameter.</p>
 
@@ -1381,7 +1477,7 @@ returns true or when the event occurs for the first time.</p>
 <p>Note that the function throws an error if the first two
 parameters are not a DOM element and a string.</p>
 
-<h4 id="parameters-13">Parameters</h4>
+<h4 id="parameters-15">Parameters</h4>
 
 <table>
   <thead>
@@ -1403,7 +1499,7 @@ parameters are not a DOM element and a string.</p>
       <td><code class="highlighter-rouge">evtName</code></td>
       <td> </td>
       <td>String</td>
-      <td>The event that will be listened for.</td>
+      <td>The event to be listened for.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">happened</code></td>
@@ -1764,7 +1860,7 @@ is returned.</p>
 <p>Note that this function expects the reduced array to be
 formed by objects with the same set of properties.</p>
 
-<h4 id="parameters-14">Parameters</h4>
+<h4 id="parameters-16">Parameters</h4>
 
 <table>
   <thead>
@@ -2099,7 +2195,7 @@ the array in ascending alphabetical order.</p>
 the first occurrence</strong> of the delimiter in a base string.
 If the delimiter is not found, the function returns <code class="highlighter-rouge">undefined</code>.</p>
 
-<h4 id="parameters-15">Parameters</h4>
+<h4 id="parameters-17">Parameters</h4>
 
 <table>
   <thead>
@@ -2151,7 +2247,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
 the last occurrence</strong> of the delimiter in a base string.
 If the delimiter is not found, the function returns <code class="highlighter-rouge">undefined</code>.</p>
 
-<h4 id="parameters-16">Parameters</h4>
+<h4 id="parameters-18">Parameters</h4>
 
 <table>
   <thead>
@@ -2203,7 +2299,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
 the first occurrence</strong> of the delimiter in a base string.
 If the delimiter is not found, the function returns <code class="highlighter-rouge">undefined</code>.</p>
 
-<h4 id="parameters-17">Parameters</h4>
+<h4 id="parameters-19">Parameters</h4>
 
 <table>
   <thead>
@@ -2255,7 +2351,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
 the last occurrence</strong> of the delimiter in a base string.
 If the delimiter is not found, the function returns <code class="highlighter-rouge">undefined</code>.</p>
 
-<h4 id="parameters-18">Parameters</h4>
+<h4 id="parameters-20">Parameters</h4>
 
 <table>
   <thead>

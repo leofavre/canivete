@@ -21,6 +21,8 @@
 
 * **[Event](#event)**
   * [eventPath](#eventpath)
+  * [ignore](#ignore)
+  * [listen](#listen)
   * [trigger](#trigger)
 
 * **[Geometry](#geometry)**

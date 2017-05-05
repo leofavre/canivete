@@ -6,7 +6,7 @@ import _throwErrorIf from "./internal/common/_throwErrorIf";
  * Transforms a DOM event into a promise.
  * 
  * This functions takes as parameters: a DOM element,
- * the name of the event that will be listened for
+ * the name of the event to be listened for
  * and a function that verifies if the event has already
  * happened, which receives the DOM element as parameter.
  *
@@ -20,7 +20,7 @@ import _throwErrorIf from "./internal/common/_throwErrorIf";
  * @category Promise
  *
  * @param  {(HTMLElement|HTMLDocument|Window)} domEl The DOM element.
- * @param  {string} evtName The event that will be listened for.
+ * @param  {string} evtName The event to be listened for.
  * @param  {function} [happened = domEl => false] The verification function.
  * @return {Promise} When fulfilled, returns the DOM element.
  *
