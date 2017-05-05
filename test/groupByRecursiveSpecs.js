@@ -169,5 +169,20 @@ describe("groupByRecursive", function() {
 			"3": ["one", "two"],
 			"5": ["three"]
 		});
+
+		expect(groupByRecursive([6.1, 4.2, 6.3], Math.floor)).toEqual({
+			"4": [4.2],
+			"6": [6.1, 6.3]
+		});
+
+		expect(groupByRecursive(["one", "two", "three"], str => str.slice(0, 1), "length")).toEqual({
+			"o": {
+				"3": ["one"]
+			},
+			"t": {
+				"3": ["two"],
+				"5": ["three"]
+			}
+		});
 	});
 });

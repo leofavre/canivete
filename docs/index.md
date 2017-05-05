@@ -289,7 +289,29 @@ that can take one or more iteratees to create nested groups.
 | --- | --- |
 | Object | The resulting object. |
 
-#### Example
+#### Examples
+
+```javascript
+const getLength = str => str.length;
+const getFirstLetter = str => str.slice(0, 1);
+
+groupByRecursive(["one", "two", "three"], getLength, getFirstLetter);
+// => {
+// => 	"3": {"o": ["one"], "t": ["two"]},
+// => 	"5": {"t": ["three"]}
+// => }
+```
+
+```javascript
+const getLength = str => str.length;
+const getFirstLetter = str => str.slice(0, 1);
+
+groupByRecursive(["one", "two", "three"], getFirstLetter, getLength);
+// => {
+// => 	"o": {"3": ["one"]},
+// => 	"t": {"3": ["two"], "5": ["three"]}
+// => }
+```
 
 ```javascript
 const stores = [{

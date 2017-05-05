@@ -15,6 +15,28 @@ import at from "lodash-es/at";
  * @return {Object} The resulting object.
  *
  * @example
+ *
+ * const getLength = str => str.length;
+ * const getFirstLetter = str => str.slice(0, 1);
+ *
+ * groupByRecursive(["one", "two", "three"], getLength, getFirstLetter);
+ * // => {
+ * // => 	"3": {"o": ["one"], "t": ["two"]},
+ * // => 	"5": {"t": ["three"]}
+ * // => }
+ * 
+ * @example
+ *
+ * const getLength = str => str.length;
+ * const getFirstLetter = str => str.slice(0, 1);
+ *
+ * groupByRecursive(["one", "two", "three"], getFirstLetter, getLength);
+ * // => {
+ * // => 	"o": {"3": ["one"]},
+ * // => 	"t": {"3": ["two"], "5": ["three"]}
+ * // => }
+ *
+ * @example
  * const stores = [{
  * 	name: "Iguatemi",
  * 	city: "Campinas",
