@@ -33,11 +33,11 @@ import _throwErrorIf from "./internal/common/_throwErrorIf";
  * 	.then(doSomethingAfterChange);
  *
  * @example
- * let image = document.createElement("img");
- * image.src = "img.jpg";
- * document.body.appendChild(image);
+ * let imageEl = document.createElement("img");
+ * imageEl.src = "img.jpg";
+ * document.body.appendChild(imageEl);
  *
- * eventAsPromise(image, "load", image => image.complete)
+ * eventAsPromise(imageEl, "load", imageEl => imageEl.complete)
  * 	.then(doSomethingAfterImageLoaded);
  */
 const eventAsPromise = (domEl, evtName, happened = domEl => false) => {

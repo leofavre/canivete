@@ -13,9 +13,18 @@
  *
  * @example
  *
- * let video = document.createElement("video");
- * video.src = "video.mp4";
- * video.controls = true;
+ * let videoEl = document.createElement("video");
+ * videoEl.src = "video.mp4";
+ * videoEl.controls = true;
+ *
+ * getAttr(videoEl, "src");
+ * // => "video.mp4"
+ * 
+ * getAttr(videoEl, "controls");
+ * // => true
+ * 
+ * getAttr(videoEl, "muted");
+ * // => false
  */
 function getAttr(domEl, attrName) {
 	let result = domEl.getAttribute(attrName);

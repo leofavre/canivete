@@ -380,6 +380,23 @@ and the absence will return `false`.
 | --- | --- |
 | String<br>Boolean | [description] The attribute value. |
 
+#### Example
+
+```javascript
+let videoEl = document.createElement("video");
+videoEl.src = "video.mp4";
+videoEl.controls = true;
+
+getAttr(videoEl, "src");
+// => "video.mp4"
+
+getAttr(videoEl, "controls");
+// => true
+
+getAttr(videoEl, "muted");
+// => false
+```
+
 ### <a name="parents">`parents(domEl)`</a>
 
 Returns all parents of a DOM element,
@@ -875,11 +892,11 @@ eventAsPromise(checkbox, "change")
 ```
 
 ```javascript
-let image = document.createElement("img");
-image.src = "https://www.w3.org/Icons/w3c_home";
-document.body.appendChild(image);
+let imageEl = document.createElement("img");
+imageEl.src = "img.jpg";
+document.body.appendChild(imageEl);
 
-eventAsPromise(image, "load", image => image.complete)
+eventAsPromise(imageEl, "load", imageEl => imageEl.complete)
 	.then(doSomethingAfterImageLoaded);
 ```
 

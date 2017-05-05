@@ -411,10 +411,10 @@ function makeBemDivWithClassName(className) {
 	return domEl;
 }
 
-describe(".modifyBemClass", function() {
+describe("modifyBemClass", function() {
 	makeBemTestsFromData(modifyBemClass, delimiterData, modifyBemClassData);
 });
 
-describe(".modifyBemClassCompact", function() {
+describe("modifyBemClassCompact", function() {
 	makeBemTestsFromData(modifyBemClassCompact, delimiterData, modifyBemClassDataCompact);
 });
