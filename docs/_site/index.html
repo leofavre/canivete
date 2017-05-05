@@ -61,7 +61,7 @@
   </li>
   <li><strong><a href="#geometry">Geometry</a></strong>
     <ul>
-      <li><a href="#clippinginfo">clippingInfo</a></li>
+      <li><a href="#getclippinginfo">getClippingInfo</a></li>
     </ul>
   </li>
   <li><strong><a href="#promise">Promise</a></strong>
@@ -1122,9 +1122,9 @@ This function serves as a polyfill for
 </code></pre>
 </div>
 
-<h3 id="ignoreeventstr-domels-callback-usecapture"><a name="ignore"><code class="highlighter-rouge">ignore(eventStr, domEls, callback, [useCapture])</code></a></h3>
+<h3 id="ignoredomels-eventstr-callback-usecapture"><a name="ignore"><code class="highlighter-rouge">ignore(domEls, eventStr, callback, [useCapture])</code></a></h3>
 
-<p>Removes one or more event listeners from one or more DOM elements.
+<p>Removes one or more event listeners from one or more DOM elements at once.
 This function is a wrapper for
 <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener"><code class="highlighter-rouge">Element.removeEventListener()</code></a>
 that accepts a space-separated event names string and a group
@@ -1143,16 +1143,16 @@ of target DOM elements.</p>
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">eventStr</code></td>
-      <td> </td>
-      <td>String</td>
-      <td>The event names string.</td>
-    </tr>
-    <tr>
       <td><code class="highlighter-rouge">domEls</code></td>
       <td> </td>
       <td>HTMLElement<br />HTMLCollection<br />NodeList<br />Array.&lt;HTMLElement&gt;<br />Set.&lt;HTMLElement&gt;</td>
       <td>One or more DOM elements.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">eventStr</code></td>
+      <td> </td>
+      <td>String</td>
+      <td>The event names string.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">callback</code></td>
@@ -1169,9 +1169,9 @@ of target DOM elements.</p>
   </tbody>
 </table>
 
-<h3 id="listeneventstr-domels-callback-usecapture"><a name="listen"><code class="highlighter-rouge">listen(eventStr, domEls, callback, [useCapture])</code></a></h3>
+<h3 id="listendomels-eventstr-callback-usecapture"><a name="listen"><code class="highlighter-rouge">listen(domEls, eventStr, callback, [useCapture])</code></a></h3>
 
-<p>Adds one or more event listeners to one or more DOM elements.
+<p>Adds one or more event listeners to one or more DOM elements at once.
 This function is a wrapper for
 <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener"><code class="highlighter-rouge">Element.addEventListener()</code></a>
 that accepts a space-separated event names string and a group
@@ -1190,16 +1190,16 @@ of target DOM elements.</p>
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">eventStr</code></td>
-      <td> </td>
-      <td>String</td>
-      <td>The event names string.</td>
-    </tr>
-    <tr>
       <td><code class="highlighter-rouge">domEls</code></td>
       <td> </td>
       <td>HTMLElement<br />HTMLCollection<br />NodeList<br />Array.&lt;HTMLElement&gt;<br />Set.&lt;HTMLElement&gt;</td>
       <td>One or more DOM elements.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">eventStr</code></td>
+      <td> </td>
+      <td>String</td>
+      <td>The event names string.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">callback</code></td>
@@ -1236,7 +1236,7 @@ of target DOM elements.</p>
       <td><code class="highlighter-rouge">domEl</code></td>
       <td> </td>
       <td>HTMLElement<br />HTMLDocument<br />Window</td>
-      <td>The DOM element that triggers the event.</td>
+      <td>The target DOM element.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">evtName</code></td>
@@ -1279,10 +1279,10 @@ of target DOM elements.</p>
 <h2 id="geometry">Geometry</h2>
 
 <blockquote>
-  <p><a href="#clippinginfo">clippingInfo</a></p>
+  <p><a href="#getclippinginfo">getClippingInfo</a></p>
 </blockquote>
 
-<h3 id="clippinginfodomel-maskdef"><a name="clippinginfo"><code class="highlighter-rouge">clippingInfo(domEl, [maskDef])</code></a></h3>
+<h3 id="getclippinginfodomel-maskdef"><a name="getclippinginfo"><code class="highlighter-rouge">getClippingInfo(domEl, [maskDef])</code></a></h3>
 
 <p>Given a DOM element, returns an object with position
 and clipping information relative to a mask, defined
@@ -1436,7 +1436,7 @@ containing numeric values for “top”, “bottom”,
 
 <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">domEl</span><span class="p">);</span>
 
-<span class="kd">let</span> <span class="nx">info</span> <span class="o">=</span> <span class="nx">clippingInfo</span><span class="p">(</span><span class="nx">domEl</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">info</span> <span class="o">=</span> <span class="nx">getClippingInfo</span><span class="p">(</span><span class="nx">domEl</span><span class="p">);</span>
 
 <span class="nx">info</span><span class="p">.</span><span class="nx">isClippedTop</span><span class="p">;</span>
 <span class="c1">// =&gt; true</span>

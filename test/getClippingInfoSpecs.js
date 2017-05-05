@@ -1,6 +1,6 @@
-import clippingInfo from "../dist/clippingInfo";
+import getClippingInfo from "../dist/getClippingInfo";
 
-describe("clippingInfo", function() {
+describe("getClippingInfo", function() {
 	let domEl = document.createElement("div");
 	let maskEl = document.createElement("div");
 
@@ -22,7 +22,7 @@ describe("clippingInfo", function() {
 
 	function changeClippingInfo(domEl, maskEl, newTop, newLeft) {
 		changePosition(domEl, newTop, newLeft);
-		return clippingInfo(domEl, maskEl);
+		return getClippingInfo(domEl, maskEl);
 	}
 
 	const availableKeys = [

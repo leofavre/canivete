@@ -647,9 +647,9 @@ const dealWithClick = evt => eventPath(evt);
 // => [domChild, domParent, domGrandparent, body, html, document, window]
 ```
 
-### <a name="ignore">`ignore(eventStr, domEls, callback, [useCapture])`</a>
+### <a name="ignore">`ignore(domEls, eventStr, callback, [useCapture])`</a>
 
-Removes one or more event listeners from one or more DOM elements.
+Removes one or more event listeners from one or more DOM elements at once.
 This function is a wrapper for
 [`Element.removeEventListener()`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener)
 that accepts a space-separated event names string and a group
@@ -659,14 +659,14 @@ of target DOM elements.
 
 | Name | Default | Type | Description |
 | --- | --- | --- | --- |
-| `eventStr` |  | String | The event names string. |
 | `domEls` |  | HTMLElement<br>HTMLCollection<br>NodeList<br>Array.&lt;HTMLElement&gt;<br>Set.&lt;HTMLElement&gt; | One or more DOM elements. |
+| `eventStr` |  | String | The event names string. |
 | `callback` |  | Function | The function to be ignored. |
 | `useCapture` | `false` | Boolean | The event phase being listened for. **optional** |
 
-### <a name="listen">`listen(eventStr, domEls, callback, [useCapture])`</a>
+### <a name="listen">`listen(domEls, eventStr, callback, [useCapture])`</a>
 
-Adds one or more event listeners to one or more DOM elements.
+Adds one or more event listeners to one or more DOM elements at once.
 This function is a wrapper for
 [`Element.addEventListener()`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
 that accepts a space-separated event names string and a group
@@ -676,8 +676,8 @@ of target DOM elements.
 
 | Name | Default | Type | Description |
 | --- | --- | --- | --- |
-| `eventStr` |  | String | The event names string. |
 | `domEls` |  | HTMLElement<br>HTMLCollection<br>NodeList<br>Array.&lt;HTMLElement&gt;<br>Set.&lt;HTMLElement&gt; | One or more DOM elements. |
+| `eventStr` |  | String | The event names string. |
 | `callback` |  | Function | The function to be exectuted when the event is dispatched. |
 | `useCapture` | `false` | Boolean | The event phase to be listened for. **optional** |
 
@@ -689,7 +689,7 @@ Triggers a custom DOM event.
 
 | Name | Default | Type | Description |
 | --- | --- | --- | --- |
-| `domEl` |  | HTMLElement<br>HTMLDocument<br>Window | The DOM element that triggers the event. |
+| `domEl` |  | HTMLElement<br>HTMLDocument<br>Window | The target DOM element. |
 | `evtName` |  | String | The event name. |
 | `bubbles` | `false` | Boolean | Whether the event bubbles. **optional** |
 | `cancelable` | `false` | Boolean | Whether the event can be canceled. **optional** |
@@ -708,9 +708,9 @@ popupButton.addEventListener("click", evt => {
 
 ## Geometry
 
->[clippingInfo](#clippinginfo)
+>[getClippingInfo](#getclippinginfo)
 
-### <a name="clippinginfo">`clippingInfo(domEl, [maskDef])`</a>
+### <a name="getclippinginfo">`getClippingInfo(domEl, [maskDef])`</a>
 
 Given a DOM element, returns an object with position
 and clipping information relative to a mask, defined
@@ -768,7 +768,7 @@ domEl.style.height = "200px";
 
 document.body.appendChild(domEl);
 
-let info = clippingInfo(domEl);
+let info = getClippingInfo(domEl);
 
 info.isClippedTop;
 // => true

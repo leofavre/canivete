@@ -26,7 +26,7 @@
   * [trigger](#trigger)
 
 * **[Geometry](#geometry)**
-  * [clippingInfo](#clippinginfo)
+  * [getClippingInfo](#getclippinginfo)
 
 * **[Promise](#promise)**
   * [eventAsPromise](#eventaspromise)

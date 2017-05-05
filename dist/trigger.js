@@ -6,7 +6,7 @@ import _throwErrorIf from "./internal/common/_throwErrorIf";
  * Triggers a custom DOM event.
  *
  * @category Event
- * @param  {(HTMLElement|HTMLDocument|Window)} domEl The DOM element that triggers the event.
+ * @param  {(HTMLElement|HTMLDocument|Window)} domEl The target DOM element.
  * @param  {string} evtName The event name.
  * @param  {boolean} [bubbles = false] Whether the event bubbles.
  * @param  {boolean} [cancelable = false] Whether the event can be canceled.
