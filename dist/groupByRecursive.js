@@ -6,6 +6,8 @@ import at from "lodash-es/at";
  * A recursive implementation of LoDash [`groupBy()`](https://lodash.com/docs/4.17.4#groupBy)
  * that can take one or more iteratees to create nested groups.
  *
+ * @todo Refactor and separate functions in their own files.
+ *
  * @category Collection
  * 
  * @param  {Array.<Object>} collection The array of objects.
