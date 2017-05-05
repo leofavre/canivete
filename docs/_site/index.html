@@ -43,6 +43,7 @@
   </li>
   <li><strong><a href="#dom">DOM</a></strong>
     <ul>
+      <li><a href="#getattr">getAttr</a></li>
       <li><a href="#parents">parents</a></li>
       <li><a href="#removeattr">removeAttr</a></li>
       <li><a href="#removeattrs">removeAttrs</a></li>
@@ -685,8 +686,57 @@ that can take one or more iteratees to create nested groups.</p>
 <h2 id="dom">DOM</h2>
 
 <blockquote>
-  <p><a href="#parents">parents</a>, <a href="#removeattr">removeAttr</a>, <a href="#removeattrs">removeAttrs</a>, <a href="#selfandparents">selfAndParents</a>, <a href="#setattr">setAttr</a> &amp; <a href="#setattrs">setAttrs</a></p>
+  <p><a href="#getattr">getAttr</a>, <a href="#parents">parents</a>, <a href="#removeattr">removeAttr</a>, <a href="#removeattrs">removeAttrs</a>, <a href="#selfandparents">selfAndParents</a>, <a href="#setattr">setAttr</a> &amp; <a href="#setattrs">setAttrs</a></p>
 </blockquote>
+
+<h3 id="getattrdomel-attrname"><a name="getattr"><code class="highlighter-rouge">getAttr(domEl, attrName)</code></a></h3>
+
+<p>Gets a DOM element attribute using native
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttribute"><code class="highlighter-rouge">Element.getAttribute()</code></a>,
+except that the presence of an attribute without
+a value will return <code class="highlighter-rouge">true</code> instead of an empty string,
+and the absence will return <code class="highlighter-rouge">false</code>.</p>
+
+<h4 id="parameters-7">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">domEl</code></td>
+      <td>HTMLElement</td>
+      <td>[description] The DOM element.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">attrName</code></td>
+      <td>String</td>
+      <td>[description] The attribute name.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="return-3">Return</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>String<br />Boolean</td>
+      <td>[description] The attribute value.</td>
+    </tr>
+  </tbody>
+</table>
 
 <h3 id="parentsdomel"><a name="parents"><code class="highlighter-rouge">parents(domEl)</code></a></h3>
 
@@ -712,7 +762,7 @@ from the closest to the most distant, recursively.</p>
   </tbody>
 </table>
 
-<h4 id="return-3">Return</h4>
+<h4 id="return-4">Return</h4>
 
 <table>
   <thead>
@@ -751,7 +801,7 @@ from the closest to the most distant, recursively.</p>
 <p>Removes an attribute from one or more DOM elements using
 native <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttribute"><code class="highlighter-rouge">Element.removeAttribute()</code></a>.</p>
 
-<h4 id="parameters-7">Parameters</h4>
+<h4 id="parameters-8">Parameters</h4>
 
 <table>
   <thead>
@@ -815,7 +865,7 @@ native <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/removeA
 <p>The same as <a href="#removeattr"><code class="highlighter-rouge">removeAttr()</code></a>, except it takes an
 array with attributes to be removed.</p>
 
-<h4 id="parameters-8">Parameters</h4>
+<h4 id="parameters-9">Parameters</h4>
 
 <table>
   <thead>
@@ -899,7 +949,7 @@ the DOM element as the first item of the result.</p>
   </tbody>
 </table>
 
-<h4 id="return-4">Return</h4>
+<h4 id="return-5">Return</h4>
 
 <table>
   <thead>
@@ -938,7 +988,7 @@ the DOM element as the first item of the result.</p>
 <p>Sets an attribute for one or more DOM elements using
 native <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute"><code class="highlighter-rouge">Element.setAttribute()</code></a>.</p>
 
-<h4 id="parameters-9">Parameters</h4>
+<h4 id="parameters-10">Parameters</h4>
 
 <table>
   <thead>
@@ -1008,7 +1058,7 @@ native <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttr
 with attribute name and value pairs to set one or
 many attributes at once.</p>
 
-<h4 id="parameters-10">Parameters</h4>
+<h4 id="parameters-11">Parameters</h4>
 
 <table>
   <thead>
@@ -1107,7 +1157,7 @@ This function serves as a polyfill for
   </tbody>
 </table>
 
-<h4 id="return-5">Return</h4>
+<h4 id="return-6">Return</h4>
 
 <table>
   <thead>
@@ -1152,7 +1202,7 @@ This function is a wrapper for
 that accepts a space-separated event names string and a group
 of target DOM elements.</p>
 
-<h4 id="parameters-11">Parameters</h4>
+<h4 id="parameters-12">Parameters</h4>
 
 <table>
   <thead>
@@ -1199,7 +1249,7 @@ This function is a wrapper for
 that accepts a space-separated event names string and a group
 of target DOM elements.</p>
 
-<h4 id="parameters-12">Parameters</h4>
+<h4 id="parameters-13">Parameters</h4>
 
 <table>
   <thead>
@@ -1242,7 +1292,7 @@ of target DOM elements.</p>
 
 <p>Triggers a custom DOM event.</p>
 
-<h4 id="parameters-13">Parameters</h4>
+<h4 id="parameters-14">Parameters</h4>
 
 <table>
   <thead>
@@ -1316,7 +1366,7 @@ containing numeric values for “top”, “bottom”,
 “left” and “right” properties, like a
 <a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMRect"><code class="highlighter-rouge">DOMRect</code></a>.</p>
 
-<h4 id="parameters-14">Parameters</h4>
+<h4 id="parameters-15">Parameters</h4>
 
 <table>
   <thead>
@@ -1340,7 +1390,7 @@ containing numeric values for “top”, “bottom”,
   </tbody>
 </table>
 
-<h4 id="return-6">Return</h4>
+<h4 id="return-7">Return</h4>
 
 <table>
   <thead>
@@ -1499,7 +1549,7 @@ returns true or when the event occurs for the first time.</p>
 <p>Note that the function throws an error if the first two
 parameters are not a DOM element and a string.</p>
 
-<h4 id="parameters-15">Parameters</h4>
+<h4 id="parameters-16">Parameters</h4>
 
 <table>
   <thead>
@@ -1532,7 +1582,7 @@ parameters are not a DOM element and a string.</p>
   </tbody>
 </table>
 
-<h4 id="return-7">Return</h4>
+<h4 id="return-8">Return</h4>
 
 <table>
   <thead>
@@ -1601,7 +1651,7 @@ internal <code class="highlighter-rouge">setTimeout()</code>.</p>
   </tbody>
 </table>
 
-<h4 id="return-8">Return</h4>
+<h4 id="return-9">Return</h4>
 
 <table>
   <thead>
@@ -1656,7 +1706,7 @@ randomly.</p>
   </tbody>
 </table>
 
-<h4 id="return-9">Return</h4>
+<h4 id="return-10">Return</h4>
 
 <table>
   <thead>
@@ -1698,7 +1748,7 @@ the average of the values in an array.</p>
 using <code class="highlighter-rouge">toAverage()</code> can lead to unexpected results.
 Also, note that the parentheses can be ommited.</p>
 
-<h4 id="return-10">Return</h4>
+<h4 id="return-11">Return</h4>
 
 <table>
   <thead>
@@ -1756,7 +1806,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="return-11">Return</h4>
+<h4 id="return-12">Return</h4>
 
 <table>
   <thead>
@@ -1842,7 +1892,7 @@ using <code class="highlighter-rouge">toClosest()</code> can lead to unexpected 
   </tbody>
 </table>
 
-<h4 id="return-12">Return</h4>
+<h4 id="return-13">Return</h4>
 
 <table>
   <thead>
@@ -1882,7 +1932,7 @@ is returned.</p>
 <p>Note that this function expects the reduced array to be
 formed by objects with the same set of properties.</p>
 
-<h4 id="parameters-16">Parameters</h4>
+<h4 id="parameters-17">Parameters</h4>
 
 <table>
   <thead>
@@ -1906,7 +1956,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="return-13">Return</h4>
+<h4 id="return-14">Return</h4>
 
 <table>
   <thead>
@@ -1990,7 +2040,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="return-14">Return</h4>
+<h4 id="return-15">Return</h4>
 
 <table>
   <thead>
@@ -2074,7 +2124,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="return-15">Return</h4>
+<h4 id="return-16">Return</h4>
 
 <table>
   <thead>
@@ -2136,7 +2186,7 @@ the sum of the values in an array.</p>
 using <code class="highlighter-rouge">toSum()</code> can lead to unexpected results.
 Also, note that the parentheses can be ommited.</p>
 
-<h4 id="return-16">Return</h4>
+<h4 id="return-17">Return</h4>
 
 <table>
   <thead>
@@ -2176,7 +2226,7 @@ the array in ascending alphabetical order.</p>
 
 <p>Note that the parentheses can be ommited.</p>
 
-<h4 id="return-17">Return</h4>
+<h4 id="return-18">Return</h4>
 
 <table>
   <thead>
@@ -2215,58 +2265,6 @@ the array in ascending alphabetical order.</p>
 
 <p>Returns the string formed by the characters <strong>after
 the first occurrence</strong> of the delimiter in a base string.
-If the delimiter is not found, the function returns <code class="highlighter-rouge">undefined</code>.</p>
-
-<h4 id="parameters-17">Parameters</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">str</code></td>
-      <td>String</td>
-      <td>The base string.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">delimiter</code></td>
-      <td>String</td>
-      <td>The delimiter string.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="return-18">Return</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>String</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="example-18">Example</h4>
-
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">afterFirst</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
-<span class="c1">// =&gt; "lepiped"</span>
-</code></pre>
-</div>
-
-<h3 id="afterlaststr-delimiter"><a name="afterlast"><code class="highlighter-rouge">afterLast(str, delimiter)</code></a></h3>
-
-<p>Returns the string formed by the characters <strong>after
-the last occurrence</strong> of the delimiter in a base string.
 If the delimiter is not found, the function returns <code class="highlighter-rouge">undefined</code>.</p>
 
 <h4 id="parameters-18">Parameters</h4>
@@ -2308,17 +2306,17 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
   </tbody>
 </table>
 
-<h4 id="example-19">Example</h4>
+<h4 id="example-18">Example</h4>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">afterLast</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
-<span class="c1">// =&gt; "piped"</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">afterFirst</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
+<span class="c1">// =&gt; "lepiped"</span>
 </code></pre>
 </div>
 
-<h3 id="beforefirststr-delimiter"><a name="beforefirst"><code class="highlighter-rouge">beforeFirst(str, delimiter)</code></a></h3>
+<h3 id="afterlaststr-delimiter"><a name="afterlast"><code class="highlighter-rouge">afterLast(str, delimiter)</code></a></h3>
 
-<p>Returns the string formed by the characters <strong>before
-the first occurrence</strong> of the delimiter in a base string.
+<p>Returns the string formed by the characters <strong>after
+the last occurrence</strong> of the delimiter in a base string.
 If the delimiter is not found, the function returns <code class="highlighter-rouge">undefined</code>.</p>
 
 <h4 id="parameters-19">Parameters</h4>
@@ -2360,17 +2358,17 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
   </tbody>
 </table>
 
-<h4 id="example-20">Example</h4>
+<h4 id="example-19">Example</h4>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">beforeFirst</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
-<span class="c1">// =&gt; "paral"</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">afterLast</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
+<span class="c1">// =&gt; "piped"</span>
 </code></pre>
 </div>
 
-<h3 id="beforelaststr-delimiter"><a name="beforelast"><code class="highlighter-rouge">beforeLast(str, delimiter)</code></a></h3>
+<h3 id="beforefirststr-delimiter"><a name="beforefirst"><code class="highlighter-rouge">beforeFirst(str, delimiter)</code></a></h3>
 
 <p>Returns the string formed by the characters <strong>before
-the last occurrence</strong> of the delimiter in a base string.
+the first occurrence</strong> of the delimiter in a base string.
 If the delimiter is not found, the function returns <code class="highlighter-rouge">undefined</code>.</p>
 
 <h4 id="parameters-20">Parameters</h4>
@@ -2398,6 +2396,58 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
 </table>
 
 <h4 id="return-21">Return</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>String</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="example-20">Example</h4>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">beforeFirst</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
+<span class="c1">// =&gt; "paral"</span>
+</code></pre>
+</div>
+
+<h3 id="beforelaststr-delimiter"><a name="beforelast"><code class="highlighter-rouge">beforeLast(str, delimiter)</code></a></h3>
+
+<p>Returns the string formed by the characters <strong>before
+the last occurrence</strong> of the delimiter in a base string.
+If the delimiter is not found, the function returns <code class="highlighter-rouge">undefined</code>.</p>
+
+<h4 id="parameters-21">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">str</code></td>
+      <td>String</td>
+      <td>The base string.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">delimiter</code></td>
+      <td>String</td>
+      <td>The delimiter string.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="return-22">Return</h4>
 
 <table>
   <thead>
@@ -2448,7 +2498,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
   </tbody>
 </table>
 
-<h4 id="return-22">Return</h4>
+<h4 id="return-23">Return</h4>
 
 <table>
   <thead>

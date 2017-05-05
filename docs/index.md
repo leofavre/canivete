@@ -357,7 +357,28 @@ groupByRecursive(stores, getStateName, getCityName);
 
 ## DOM
 
->[parents](#parents), [removeAttr](#removeattr), [removeAttrs](#removeattrs), [selfAndParents](#selfandparents), [setAttr](#setattr) &amp;&nbsp;[setAttrs](#setattrs)
+>[getAttr](#getattr), [parents](#parents), [removeAttr](#removeattr), [removeAttrs](#removeattrs), [selfAndParents](#selfandparents), [setAttr](#setattr) &amp;&nbsp;[setAttrs](#setattrs)
+
+### <a name="getattr">`getAttr(domEl, attrName)`</a>
+
+Gets a DOM element attribute using native
+[`Element.getAttribute()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttribute),
+except that the presence of an attribute without
+a value will return `true` instead of an empty string,
+and the absence will return `false`.
+
+#### Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `domEl` | HTMLElement | [description] The DOM element. |
+| `attrName` | String | [description] The attribute name. |
+
+#### Return
+
+| Type | Description |
+| --- | --- |
+| String<br>Boolean | [description] The attribute value. |
 
 ### <a name="parents">`parents(domEl)`</a>
 

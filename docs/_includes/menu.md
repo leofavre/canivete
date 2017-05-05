@@ -12,6 +12,7 @@
   * [groupByRecursive](#groupbyrecursive)
 
 * **[DOM](#dom)**
+  * [getAttr](#getattr)
   * [parents](#parents)
   * [removeAttr](#removeattr)
   * [removeAttrs](#removeattrs)
