@@ -8,7 +8,7 @@ import _reactToEvent from "./internal/event/_reactToEvent";
  * of target DOM elements.
  *
  * @category Event
- * @param {(HTMLElement|HTMLCollection|NodeList|Array.<HTMLElement>|Set.<HTMLElement>)} domEls One or more DOM elements.
+ * @param {(Window|HTMLDocument|HTMLElement|HTMLCollection|NodeList|Array.<HTMLElement>|Set.<HTMLElement>)} domEls One or more DOM elements, including `document` and `window`.
  * @param {string} eventStr The event names string.
  * @param {Function} callback The function to be ignored.
  * @param {Boolean} [useCapture = false] The event phase being listened for.

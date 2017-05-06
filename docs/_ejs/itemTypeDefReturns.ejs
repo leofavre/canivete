@@ -3,7 +3,7 @@
 
 #### <%-typedef.nameCapitalized%>
 
-<%typedef.propertiesTable.forEach(property => {-%>
+<%if(typedef.propertiesTable) typedef.propertiesTable.forEach(property => {-%>
 <%-property%>
 <%})-%>
 <%})-%>

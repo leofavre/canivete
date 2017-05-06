@@ -254,7 +254,7 @@ to the <a href="https://en.bem.info/methodology/">BEM methodology</a>.</p>
     <tr>
       <td><code class="highlighter-rouge">domEl</code></td>
       <td>HTMLElement</td>
-      <td>The modified DOM element.</td>
+      <td>The DOM element.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">bemObj</code></td>
@@ -342,7 +342,7 @@ or element CSS class if a modified version is output.</p>
     <tr>
       <td><code class="highlighter-rouge">domEl</code></td>
       <td>HTMLElement</td>
-      <td>The modified DOM element.</td>
+      <td>The DOM element.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">bemObj</code></td>
@@ -1234,8 +1234,8 @@ of target DOM elements.</p>
     <tr>
       <td><code class="highlighter-rouge">domEls</code></td>
       <td> </td>
-      <td>HTMLElement<br />HTMLCollection<br />NodeList<br />Array.&lt;HTMLElement&gt;<br />Set.&lt;HTMLElement&gt;</td>
-      <td>One or more DOM elements.</td>
+      <td>Window<br />HTMLDocument<br />HTMLElement<br />HTMLCollection<br />NodeList<br />Array.&lt;HTMLElement&gt;<br />Set.&lt;HTMLElement&gt;</td>
+      <td>One or more DOM elements, including <code class="highlighter-rouge">document</code> and <code class="highlighter-rouge">window</code>.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">eventStr</code></td>
@@ -1281,8 +1281,8 @@ of target DOM elements.</p>
     <tr>
       <td><code class="highlighter-rouge">domEls</code></td>
       <td> </td>
-      <td>HTMLElement<br />HTMLCollection<br />NodeList<br />Array.&lt;HTMLElement&gt;<br />Set.&lt;HTMLElement&gt;</td>
-      <td>One or more DOM elements.</td>
+      <td>Window<br />HTMLDocument<br />HTMLElement<br />HTMLCollection<br />NodeList<br />Array.&lt;HTMLElement&gt;<br />Set.&lt;HTMLElement&gt;</td>
+      <td>One or more DOM elements, including <code class="highlighter-rouge">document</code> and <code class="highlighter-rouge">window</code>.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">eventStr</code></td>
@@ -1324,8 +1324,8 @@ of target DOM elements.</p>
     <tr>
       <td><code class="highlighter-rouge">domEl</code></td>
       <td> </td>
-      <td>HTMLElement<br />HTMLDocument<br />Window</td>
-      <td>The target DOM element.</td>
+      <td>Window<br />HTMLDocument<br />HTMLElement</td>
+      <td>The DOM element, including <code class="highlighter-rouge">document</code> and <code class="highlighter-rouge">window</code>.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">evtName</code></td>
@@ -1581,8 +1581,8 @@ parameters are not a DOM element and a string.</p>
     <tr>
       <td><code class="highlighter-rouge">domEl</code></td>
       <td> </td>
-      <td>HTMLElement<br />HTMLDocument<br />Window</td>
-      <td>The DOM element.</td>
+      <td>Window<br />HTMLDocument<br />HTMLElement</td>
+      <td>The DOM element, including <code class="highlighter-rouge">document</code> and <code class="highlighter-rouge">window</code>.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">evtName</code></td>

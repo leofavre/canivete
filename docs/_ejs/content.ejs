@@ -3,10 +3,10 @@ layout: default
 title: Canivete
 ---
 
-<%docs.forEach(category => {-%>
+<%if(docs) docs.forEach(category => {-%>
 ## <%-category.name%>
 
-><%category.items.forEach((item, index, arr) => {-%>
+><%if(category.items) category.items.forEach((item, index, arr) => {-%>
 [<%-item.name%>](#<%-item.href%>)<%if(index < arr.length - 2){-%>, <%}-%><%if(index === arr.length - 2){-%> &amp;&nbsp;<%}-%>
 <%})%>
 

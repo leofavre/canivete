@@ -86,7 +86,7 @@ to the [BEM methodology](https://en.bem.info/methodology/).
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `domEl` | HTMLElement | The modified DOM element. |
+| `domEl` | HTMLElement | The DOM element. |
 | `bemObj` | BemObject | The object describing BEM class changes (see table below). |
 | `delimiters` | Array | The BEM delimiters. |
 
@@ -136,7 +136,7 @@ or element CSS class if a modified version is output.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `domEl` | HTMLElement | The modified DOM element. |
+| `domEl` | HTMLElement | The DOM element. |
 | `bemObj` | BemObject | The object describing BEM class changes (see table below). |
 | `delimiters` | Array | The BEM delimiters. |
 
@@ -719,7 +719,7 @@ of target DOM elements.
 
 | Name | Default | Type | Description |
 | --- | --- | --- | --- |
-| `domEls` |  | HTMLElement<br>HTMLCollection<br>NodeList<br>Array.&lt;HTMLElement&gt;<br>Set.&lt;HTMLElement&gt; | One or more DOM elements. |
+| `domEls` |  | Window<br>HTMLDocument<br>HTMLElement<br>HTMLCollection<br>NodeList<br>Array.&lt;HTMLElement&gt;<br>Set.&lt;HTMLElement&gt; | One or more DOM elements, including `document` and `window`. |
 | `eventStr` |  | String | The event names string. |
 | `callback` |  | Function | The function to be ignored. |
 | `useCapture` | `false` | Boolean | The event phase being listened for. **optional** |
@@ -736,7 +736,7 @@ of target DOM elements.
 
 | Name | Default | Type | Description |
 | --- | --- | --- | --- |
-| `domEls` |  | HTMLElement<br>HTMLCollection<br>NodeList<br>Array.&lt;HTMLElement&gt;<br>Set.&lt;HTMLElement&gt; | One or more DOM elements. |
+| `domEls` |  | Window<br>HTMLDocument<br>HTMLElement<br>HTMLCollection<br>NodeList<br>Array.&lt;HTMLElement&gt;<br>Set.&lt;HTMLElement&gt; | One or more DOM elements, including `document` and `window`. |
 | `eventStr` |  | String | The event names string. |
 | `callback` |  | Function | The function to be exectuted when the event is dispatched. |
 | `useCapture` | `false` | Boolean | The event phase to be listened for. **optional** |
@@ -749,7 +749,7 @@ Triggers a custom DOM event.
 
 | Name | Default | Type | Description |
 | --- | --- | --- | --- |
-| `domEl` |  | HTMLElement<br>HTMLDocument<br>Window | The target DOM element. |
+| `domEl` |  | Window<br>HTMLDocument<br>HTMLElement | The DOM element, including `document` and `window`. |
 | `evtName` |  | String | The event name. |
 | `bubbles` | `false` | Boolean | Whether the event bubbles. **optional** |
 | `cancelable` | `false` | Boolean | Whether the event can be canceled. **optional** |
@@ -870,7 +870,7 @@ parameters are not a DOM element and a string.
 
 | Name | Default | Type | Description |
 | --- | --- | --- | --- |
-| `domEl` |  | HTMLElement<br>HTMLDocument<br>Window | The DOM element. |
+| `domEl` |  | Window<br>HTMLDocument<br>HTMLElement | The DOM element, including `document` and `window`. |
 | `evtName` |  | String | The event to be listened for. |
 | `happened` | `domEl => false` | Function | The verification function. **optional** |
 

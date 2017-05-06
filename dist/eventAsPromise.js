@@ -19,7 +19,7 @@ import _throwErrorIf from "./internal/common/_throwErrorIf";
  *
  * @category Promise
  *
- * @param  {(HTMLElement|HTMLDocument|Window)} domEl The DOM element.
+ * @param  {(Window|HTMLDocument|HTMLElement)} domEl The DOM element, including `document` and `window`.
  * @param  {string} evtName The event to be listened for.
  * @param  {function} [happened = domEl => false] The verification function.
  * @return {Promise} When fulfilled, returns the DOM element.

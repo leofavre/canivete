@@ -1,4 +1,4 @@
-<%docs.forEach(category => {-%>
+<%if(docs) docs.forEach(category => {-%>
 * **[<%-category.name%>](#<%-category.href%>)**
 <%-include menuLoop.ejs-%>
 
