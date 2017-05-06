@@ -7,9 +7,9 @@
  *
  * @category DOM
  * 
- * @param  {HTMLElement} domEl [description] The DOM element.
- * @param  {string} attrName [description] The attribute name.
- * @return {(string|Boolean)} [description] The attribute value.
+ * @param  {HTMLElement} domEl The DOM element.
+ * @param  {string} attrName The attribute name.
+ * @return {(string|Boolean)} The attribute value.
  *
  * @example
  *

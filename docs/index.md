@@ -371,14 +371,14 @@ and the absence will return `false`.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `domEl` | HTMLElement | [description] The DOM element. |
-| `attrName` | String | [description] The attribute name. |
+| `domEl` | HTMLElement | The DOM element. |
+| `attrName` | String | The attribute name. |
 
 #### Return
 
 | Type | Description |
 | --- | --- |
-| String<br>Boolean | [description] The attribute value. |
+| String<br>Boolean | The attribute value. |
 
 #### Example
 
