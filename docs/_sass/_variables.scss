@@ -2,8 +2,10 @@ $grid: 1.5rem;
 $content-width: 38.75rem;
 $full-content-width: $content-width + ($grid * 3);
 
+$dark: #272822;
 $grey: #94917b;
 $light-grey: lighten($grey, 20%);
+
 $code-grey: mix(white, $light-grey, 50%);
 $hairline-grey: mix(black, white, 30%);
 $link-color: #f92672;

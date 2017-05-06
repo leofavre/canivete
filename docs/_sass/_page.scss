@@ -4,7 +4,7 @@
 	font-family: "Whitney SSm A", "Whitney SSm B", sans-serif;
 
 	margin: 0;
-	background: #fff;
+	color: $dark;
 
 	display: flex;
 	flex-direction: column;
@@ -18,7 +18,6 @@
 	margin: 0 auto;
 	width: 100%;
 	overflow: hidden;
-	background-color: #fff;
 
 	display: flex;
 	flex-flow: row nowrap;

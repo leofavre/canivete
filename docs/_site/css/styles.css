@@ -27,7 +27,8 @@ html {
   font-style: normal; }
 html {
   height: 100%;
-  font-size: 16px; }
+  font-size: 16px;
+  color: #272822; }
   @media only screen and (min-width: 1400px) {
     html {
       font-size: 18px; } }
@@ -37,7 +38,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   font-family: "Whitney SSm A", "Whitney SSm B", sans-serif;
   margin: 0;
-  background: #fff;
+  color: #272822;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -53,7 +54,6 @@ html {
   margin: 0 auto;
   width: 100%;
   overflow: hidden;
-  background-color: #fff;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -67,7 +67,7 @@ html {
       -ms-flex: 1 1 auto;
           flex: 1 1 auto; }
 
-.nav--grid, .content__inner--grid {
+.nav--grid, .nav__inner--grid, .content__inner--grid {
   background-position: 0.3125rem 0;
   background-size: 1.5rem 1.5rem;
   background-image: linear-gradient(to bottom, lightblue 1px, transparent 1px);
@@ -117,13 +117,13 @@ html {
   .nav ul ul {
     top: 0;
     margin-top: 0;
-    margin-left: 1.5rem; }
-  .nav ul + ul:before {
+    margin-left: 0; }
+  .nav ul + ul::before {
     content: "";
     position: relative;
     display: block;
     margin: calc(1.5rem - 1px) auto 1.5rem 0;
-    width: 50%;
+    width: 118px;
     height: 1px;
     background: #b3b3b3;
     -webkit-transform: scaleY(0.5);
@@ -142,22 +142,40 @@ html {
         top: 2px; } }
   .nav li strong {
     position: relative;
-    top: -0.125rem;
-    font-size: 1.0625rem;
+    top: -0.0625rem;
+    font-size: 0.875rem;
     font-weight: 800;
     line-height: 1.5rem;
     letter-spacing: 0.045em; }
     @media only screen and (min-width: 1400px) {
       .nav li strong {
-        top: -3px; } }
+        top: -3px; }
+        .nav li strong a {
+          margin-bottom: -2px;
+          padding-top: 1px;
+          padding-bottom: 1px; } }
   .nav li li {
     top: -0.0625rem; }
     @media only screen and (min-width: 1400px) {
       .nav li li {
         top: -1px; } }
+  .nav li a {
+    margin-left: -2.25rem;
+    padding-left: 2.25rem;
+    padding-right: 2.25rem; }
+  .nav li li a::before {
+    content: "";
+    position: relative;
+    top: -2px;
+    display: inline-block;
+    width: 0.5rem;
+    background: #b3b3b3;
+    height: 1px;
+    vertical-align: middle;
+    margin-right: 0.25rem; }
   .nav a {
     display: block;
-    color: #000;
+    color: inherit;
     text-decoration: none; }
 
 .nav__inner {
@@ -245,6 +263,8 @@ html {
     @media only screen and (min-width: 1400px) {
       .content h4 {
         top: 8px; } }
+  .content table + h4 {
+    margin-top: 1.5rem; }
   .content p {
     position: relative;
     top: 0.5rem;
@@ -277,7 +297,7 @@ html {
     height: 4px; }
   .content a {
     position: relative;
-    color: #000;
+    color: inherit;
     text-decoration: none;
     z-index: 2; }
   .content a:after {
@@ -329,7 +349,7 @@ html {
     top: -0.25rem;
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 3rem; }
+    margin-bottom: 1.5rem; }
     @media only screen and (min-width: 1400px) {
       .content table {
         top: -5px; } }
@@ -356,9 +376,10 @@ html {
     font-size: 0.5625rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    font-weight: 400; }
+    font-weight: 500; }
   .content td {
     font-size: 0.875rem;
+    font-family: "Whitney Narrow SSm A", "Whitney Narrow SSm B", sans-serif;
     vertical-align: top;
     padding: 0.75rem 1.5rem 0.75rem 0; }
     @media only screen and (min-width: 1400px) {
