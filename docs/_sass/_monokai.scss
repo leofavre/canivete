@@ -1,23 +1,23 @@
 .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
 .highlight .c, .highlight .cd {
-  color: #75715e;
+  color: $comment;
   // font-style: italic;
 }
 .highlight .cm {
-  color: #75715e;
+  color: $comment;
   // font-style: italic;
 }
 .highlight .c1 {
-  color: #75715e;
+  color: $comment;
   // font-style: italic;
 }
 .highlight .cp {
-  color: #75715e;
+  color: $comment;
   // font-weight: bold;
 }
 .highlight .cs {
-  color: #75715e;
+  color: $comment;
   // font-weight: bold;
   // font-style: italic;
 }
@@ -26,11 +26,11 @@
   background-color: #1e0010;
 }
 .highlight .gi {
-  color: #ffffff;
+  color: $text;
   background-color: #324932;
 }
 .highlight .gd {
-  color: #ffffff;
+  color: $text;
   background-color: #493131;
 }
 .highlight .ge {
@@ -59,39 +59,39 @@
   color: #aaaaaa;
 }
 .highlight .k, .highlight .kv {
-  color: #66d9ef;
+  color: $aqua;
   // font-weight: bold;
 }
 .highlight .kc {
-  color: #66d9ef;
+  color: $aqua;
   // font-weight: bold;
 }
 .highlight .kd {
-  color: #66d9ef;
+  color: $aqua;
   // font-weight: bold;
 }
 .highlight .kp {
-  color: #66d9ef;
+  color: $aqua;
   // font-weight: bold;
 }
 .highlight .kr {
-  color: #66d9ef;
+  color: $aqua;
   // font-weight: bold;
 }
 .highlight .kt {
-  color: #66d9ef;
+  color: $aqua;
   // font-weight: bold;
 }
 .highlight .kn {
-  color: #f92672;
+  color: $link-color;
   // font-weight: bold;
 }
 .highlight .ow {
-  color: #f92672;
+  color: $link-color;
   // font-weight: bold;
 }
 .highlight .o {
-  color: #f92672;
+  color: $link-color;
   // font-weight: bold;
 }
 .highlight .mf {
@@ -168,43 +168,43 @@
   // font-weight: bold;
 }
 .highlight .no {
-  color: #66d9ef;
+  color: $aqua;
 }
 .highlight .bp {
-  color: #f8f8f2;
+  color: $aqua;
 }
 .highlight .nb {
-  color: #f8f8f2;
+  color: $aqua;
 }
 .highlight .ni {
-  color: #f8f8f2;
+  color: $aqua;
 }
 .highlight .nn {
-  color: #f8f8f2;
+  color: $aqua;
 }
 .highlight .vc {
-  color: #f8f8f2;
+  color: $aqua;
 }
 .highlight .vg {
-  color: #f8f8f2;
+  color: $aqua;
 }
 .highlight .vi {
-  color: #f8f8f2;
+  color: $aqua;
 }
 .highlight .nv {
-  color: #f8f8f2;
+  color: $aqua;
 }
 .highlight .w {
-  color: #f8f8f2;
+  color: $aqua;
 }
 .highlight .nl {
-  color: #f8f8f2;
+  color: $aqua;
   // font-weight: bold;
 }
 .highlight .nt {
-  color: #f92672;
+  color: $link-color;
 }
 .highlight {
-  color: #f8f8f2;
+  color: $aqua;
   background-color: #49483e;
 }

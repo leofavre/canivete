@@ -22,10 +22,10 @@ import _parseBem from "./internal/bem/_parseBem";
  * 	delimiters = ["__", "--", "-"];
  *
  * modifyBemClass(domEl, {
- * 	swiper: {
- * 		slides: 5,
- * 		current: 2,
- * 		playing: true
+ * 	"swiper": {
+ * 		"slides": 5,
+ * 		"current": 2,
+ * 		"playing": true
  * 	}
  * }, delimiters);
  *
@@ -33,9 +33,9 @@ import _parseBem from "./internal/bem/_parseBem";
  * // => "swiper swiper--slides-5 swiper--current-2 swiper--playing"
  *
  * modifyBemClass(domEl, {
- * 	swiper: {
- * 		current: 3,
- * 		playing: false
+ * 	"swiper": {
+ * 		"current": 3,
+ * 		"playing": false
  * 	}
  * }, delimiters);
  *

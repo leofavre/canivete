@@ -6,6 +6,7 @@
 	<title>Canivete</title>
 	<link href="https://cloud.typography.com/7861976/6348172/css/fonts.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
+	<link href="css/kern.css" rel="stylesheet">
 </head>
 
 
@@ -299,10 +300,10 @@ to the <a href="https://en.bem.info/methodology/">BEM methodology</a>.</p>
 	<span class="nx">delimiters</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"__"</span><span class="p">,</span> <span class="s2">"--"</span><span class="p">,</span> <span class="s2">"-"</span><span class="p">];</span>
 
 <span class="nx">modifyBemClass</span><span class="p">(</span><span class="nx">domEl</span><span class="p">,</span> <span class="p">{</span>
-	<span class="na">swiper</span><span class="p">:</span> <span class="p">{</span>
-		<span class="na">slides</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-		<span class="na">current</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-		<span class="na">playing</span><span class="p">:</span> <span class="kc">true</span>
+	<span class="s2">"swiper"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"slides"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+		<span class="s2">"current"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+		<span class="s2">"playing"</span><span class="p">:</span> <span class="kc">true</span>
 	<span class="p">}</span>
 <span class="p">},</span> <span class="nx">delimiters</span><span class="p">);</span>
 
@@ -310,9 +311,9 @@ to the <a href="https://en.bem.info/methodology/">BEM methodology</a>.</p>
 <span class="c1">// =&gt; "swiper swiper--slides-5 swiper--current-2 swiper--playing"</span>
 
 <span class="nx">modifyBemClass</span><span class="p">(</span><span class="nx">domEl</span><span class="p">,</span> <span class="p">{</span>
-	<span class="na">swiper</span><span class="p">:</span> <span class="p">{</span>
-		<span class="na">current</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-		<span class="na">playing</span><span class="p">:</span> <span class="kc">false</span>
+	<span class="s2">"swiper"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"current"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+		<span class="s2">"playing"</span><span class="p">:</span> <span class="kc">false</span>
 	<span class="p">}</span>
 <span class="p">},</span> <span class="nx">delimiters</span><span class="p">);</span>
 
@@ -387,10 +388,10 @@ or element CSS class if a modified version is output.</p>
 	<span class="nx">delimiters</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"__"</span><span class="p">,</span> <span class="s2">"--"</span><span class="p">,</span> <span class="s2">"-"</span><span class="p">];</span>
 
 <span class="nx">modifyBemClassCompact</span><span class="p">(</span><span class="nx">domEl</span><span class="p">,</span> <span class="p">{</span>
-	<span class="na">swiper</span><span class="p">:</span> <span class="p">{</span>
-		<span class="na">slides</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-		<span class="na">current</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-		<span class="na">playing</span><span class="p">:</span> <span class="kc">true</span>
+	<span class="s2">"swiper"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"slides"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+		<span class="s2">"current"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+		<span class="s2">"playing"</span><span class="p">:</span> <span class="kc">true</span>
 	<span class="p">}</span>
 <span class="p">},</span> <span class="nx">delimiters</span><span class="p">);</span>
 
@@ -398,9 +399,9 @@ or element CSS class if a modified version is output.</p>
 <span class="c1">// =&gt; "swiper--slides-5 swiper--current-2 swiper--playing"</span>
 
 <span class="nx">modifyBemClassCompact</span><span class="p">(</span><span class="nx">domEl</span><span class="p">,</span> <span class="p">{</span>
-	<span class="na">swiper</span><span class="p">:</span> <span class="p">{</span>
-		<span class="na">current</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-		<span class="na">playing</span><span class="p">:</span> <span class="kc">false</span>
+	<span class="s2">"swiper"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"current"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+		<span class="s2">"playing"</span><span class="p">:</span> <span class="kc">false</span>
 	<span class="p">}</span>
 <span class="p">},</span> <span class="nx">delimiters</span><span class="p">);</span>
 
@@ -642,33 +643,33 @@ that can take one or more iteratees to create nested groups.</p>
 </div>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">stores</span> <span class="o">=</span> <span class="p">[{</span>
-	<span class="na">name</span><span class="p">:</span> <span class="s2">"Iguatemi"</span><span class="p">,</span>
-	<span class="na">city</span><span class="p">:</span> <span class="s2">"Campinas"</span><span class="p">,</span>
-	<span class="na">state</span><span class="p">:</span> <span class="s2">"SP"</span>
+	<span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Iguatemi"</span><span class="p">,</span>
+	<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"Campinas"</span><span class="p">,</span>
+	<span class="s2">"state"</span><span class="p">:</span> <span class="s2">"SP"</span>
 <span class="p">},</span> <span class="p">{</span>
-	<span class="na">name</span><span class="p">:</span> <span class="s2">"Jardins"</span><span class="p">,</span>
-	<span class="na">city</span><span class="p">:</span> <span class="s2">"São Paulo"</span><span class="p">,</span>
-	<span class="na">state</span><span class="p">:</span> <span class="s2">"SP"</span>
+	<span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Jardins"</span><span class="p">,</span>
+	<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"São Paulo"</span><span class="p">,</span>
+	<span class="s2">"state"</span><span class="p">:</span> <span class="s2">"SP"</span>
 <span class="p">},</span> <span class="p">{</span>
-	<span class="na">name</span><span class="p">:</span> <span class="s2">"Iguatemi"</span><span class="p">,</span>
-	<span class="na">city</span><span class="p">:</span> <span class="s2">"São Paulo"</span><span class="p">,</span>
-	<span class="na">state</span><span class="p">:</span> <span class="s2">"SP"</span>
+	<span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Iguatemi"</span><span class="p">,</span>
+	<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"São Paulo"</span><span class="p">,</span>
+	<span class="s2">"state"</span><span class="p">:</span> <span class="s2">"SP"</span>
 <span class="p">},</span> <span class="p">{</span>
-	<span class="na">name</span><span class="p">:</span> <span class="s2">"Pedras"</span><span class="p">,</span>
-	<span class="na">city</span><span class="p">:</span> <span class="s2">"Búzios"</span><span class="p">,</span>
-	<span class="na">state</span><span class="p">:</span> <span class="s2">"RJ"</span>
+	<span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Pedras"</span><span class="p">,</span>
+	<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"Búzios"</span><span class="p">,</span>
+	<span class="s2">"state"</span><span class="p">:</span> <span class="s2">"RJ"</span>
 <span class="p">},</span> <span class="p">{</span>
-	<span class="na">name</span><span class="p">:</span> <span class="s2">"Ipanema"</span><span class="p">,</span>
-	<span class="na">city</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
-	<span class="na">state</span><span class="p">:</span> <span class="s2">"RJ"</span>
+	<span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Ipanema"</span><span class="p">,</span>
+	<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
+	<span class="s2">"state"</span><span class="p">:</span> <span class="s2">"RJ"</span>
 <span class="p">},</span> <span class="p">{</span>
-	<span class="na">name</span><span class="p">:</span> <span class="s2">"Leblon"</span><span class="p">,</span>
-	<span class="na">city</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
-	<span class="na">state</span><span class="p">:</span> <span class="s2">"RJ"</span>
+	<span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Leblon"</span><span class="p">,</span>
+	<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
+	<span class="s2">"state"</span><span class="p">:</span> <span class="s2">"RJ"</span>
 <span class="p">},</span> <span class="p">{</span>
-	<span class="na">name</span><span class="p">:</span> <span class="s2">"ParkShopping"</span><span class="p">,</span>
-	<span class="na">city</span><span class="p">:</span> <span class="s2">"Brasília"</span><span class="p">,</span>
-	<span class="na">state</span><span class="p">:</span> <span class="s2">"DF"</span>
+	<span class="s2">"name"</span><span class="p">:</span> <span class="s2">"ParkShopping"</span><span class="p">,</span>
+	<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"Brasília"</span><span class="p">,</span>
+	<span class="s2">"state"</span><span class="p">:</span> <span class="s2">"DF"</span>
 <span class="p">}];</span>
 
 <span class="kr">const</span> <span class="nx">getStateName</span> <span class="o">=</span> <span class="nx">item</span> <span class="o">=&gt;</span> <span class="nx">item</span><span class="p">.</span><span class="nx">state</span><span class="p">;</span>
@@ -1843,39 +1844,39 @@ formed by objects with the same set of properties.</p>
 <h4 id="example-12">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
-	<span class="na">city</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
-	<span class="na">temperature</span><span class="p">:</span> <span class="mi">96</span><span class="p">,</span>
-	<span class="na">demographics</span><span class="p">:</span> <span class="p">{</span>
-		<span class="na">population</span><span class="p">:</span> <span class="mf">6.32</span>
+	<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
+	<span class="s2">"temperature"</span><span class="p">:</span> <span class="mi">96</span><span class="p">,</span>
+	<span class="s2">"demographics"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"population"</span><span class="p">:</span> <span class="mf">6.32</span>
 	<span class="p">}</span>
 <span class="p">},</span> <span class="p">{</span>
-	<span class="na">city</span><span class="p">:</span> <span class="s2">"São Paulo"</span><span class="p">,</span>
-	<span class="na">temperature</span><span class="p">:</span> <span class="mf">82.5</span><span class="p">,</span>
-	<span class="na">demographics</span><span class="p">:</span> <span class="p">{</span>
-		<span class="na">population</span><span class="p">:</span> <span class="mf">12.04</span>
+	<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"São Paulo"</span><span class="p">,</span>
+	<span class="s2">"temperature"</span><span class="p">:</span> <span class="mf">82.5</span><span class="p">,</span>
+	<span class="s2">"demographics"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"population"</span><span class="p">:</span> <span class="mf">12.04</span>
 	<span class="p">}</span>
 <span class="p">},</span> <span class="p">{</span>
-	<span class="na">city</span><span class="p">:</span> <span class="s2">"Curitiba"</span><span class="p">,</span>
-	<span class="na">temperature</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span>
-	<span class="na">demographics</span><span class="p">:</span> <span class="p">{</span>
-		<span class="na">population</span><span class="p">:</span> <span class="mf">1.752</span>
+	<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"Curitiba"</span><span class="p">,</span>
+	<span class="s2">"temperature"</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span>
+	<span class="s2">"demographics"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"population"</span><span class="p">:</span> <span class="mf">1.752</span>
 	<span class="p">}</span>
 <span class="p">},</span> <span class="p">{</span>
-	<span class="na">city</span><span class="p">:</span> <span class="s2">"Florianópolis"</span><span class="p">,</span>
-	<span class="na">temperature</span><span class="p">:</span> <span class="mi">86</span><span class="p">,</span>
-	<span class="na">demographics</span><span class="p">:</span> <span class="p">{</span>
-		<span class="na">population</span><span class="p">:</span> <span class="mf">0.249</span>
+	<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"Florianópolis"</span><span class="p">,</span>
+	<span class="s2">"temperature"</span><span class="p">:</span> <span class="mi">86</span><span class="p">,</span>
+	<span class="s2">"demographics"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"population"</span><span class="p">:</span> <span class="mf">0.249</span>
 	<span class="p">}</span>
 <span class="p">}];</span>
 
-<span class="c1">// average temperature: 83.625</span>
-<span class="c1">// average population: 5.09025</span>
+<span class="c1">// average "temperature": 83.625</span>
+<span class="c1">// average "population": 5.09025</span>
 
 <span class="nx">cities</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toAverageProp</span><span class="p">(</span><span class="s2">"temperature"</span><span class="p">));</span>
-<span class="c1">// =&gt; { city: "São Paulo", [...] }</span>
+<span class="c1">// =&gt; { "city": "São Paulo", [...] }</span>
 
 <span class="nx">cities</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toAverageProp</span><span class="p">(</span><span class="s2">"demographics.population"</span><span class="p">));</span>
-<span class="c1">// =&gt; { city: "Rio de Janeiro", [...] }</span>
+<span class="c1">// =&gt; { "city": "Rio de Janeiro", [...] }</span>
 </code></pre>
 </div>
 
@@ -1993,36 +1994,36 @@ formed by objects with the same set of properties.</p>
 <h4 id="example-14">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
-	<span class="na">city</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
-	<span class="na">temperature</span><span class="p">:</span> <span class="mi">96</span><span class="p">,</span>
-	<span class="na">demographics</span><span class="p">:</span> <span class="p">{</span>
-		<span class="na">population</span><span class="p">:</span> <span class="mf">6.32</span>
+	<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
+	<span class="s2">"temperature"</span><span class="p">:</span> <span class="mi">96</span><span class="p">,</span>
+	<span class="s2">"demographics"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"population"</span><span class="p">:</span> <span class="mf">6.32</span>
 	<span class="p">}</span>
 <span class="p">},</span> <span class="p">{</span>
-	<span class="na">city</span><span class="p">:</span> <span class="s2">"São Paulo"</span><span class="p">,</span>
-	<span class="na">temperature</span><span class="p">:</span> <span class="mf">82.5</span><span class="p">,</span>
-	<span class="na">demographics</span><span class="p">:</span> <span class="p">{</span>
-		<span class="na">population</span><span class="p">:</span> <span class="mf">12.04</span>
+	<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"São Paulo"</span><span class="p">,</span>
+	<span class="s2">"temperature"</span><span class="p">:</span> <span class="mf">82.5</span><span class="p">,</span>
+	<span class="s2">"demographics"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"population"</span><span class="p">:</span> <span class="mf">12.04</span>
 	<span class="p">}</span>
 <span class="p">},</span> <span class="p">{</span>
-	<span class="na">city</span><span class="p">:</span> <span class="s2">"Curitiba"</span><span class="p">,</span>
-	<span class="na">temperature</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span>
-	<span class="na">demographics</span><span class="p">:</span> <span class="p">{</span>
-		<span class="na">population</span><span class="p">:</span> <span class="mf">1.752</span>
+	<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"Curitiba"</span><span class="p">,</span>
+	<span class="s2">"temperature"</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span>
+	<span class="s2">"demographics"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"population"</span><span class="p">:</span> <span class="mf">1.752</span>
 	<span class="p">}</span>
 <span class="p">},</span> <span class="p">{</span>
-	<span class="na">city</span><span class="p">:</span> <span class="s2">"Florianópolis"</span><span class="p">,</span>
-	<span class="na">temperature</span><span class="p">:</span> <span class="mi">86</span><span class="p">,</span>
-	<span class="na">demographics</span><span class="p">:</span> <span class="p">{</span>
-		<span class="na">population</span><span class="p">:</span> <span class="mf">0.249</span>
+	<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"Florianópolis"</span><span class="p">,</span>
+	<span class="s2">"temperature"</span><span class="p">:</span> <span class="mi">86</span><span class="p">,</span>
+	<span class="s2">"demographics"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"population"</span><span class="p">:</span> <span class="mf">0.249</span>
 	<span class="p">}</span>
 <span class="p">}];</span>
 
 <span class="nx">cities</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toClosestProp</span><span class="p">(</span><span class="s2">"temperature"</span><span class="p">,</span> <span class="mi">75</span><span class="p">));</span>
-<span class="c1">// =&gt; { city: "Curitiba", [...] }</span>
+<span class="c1">// =&gt; { "city": "Curitiba", [...] }</span>
 
 <span class="nx">cities</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toClosestProp</span><span class="p">(</span><span class="s2">"demographics.population"</span><span class="p">,</span> <span class="mi">5</span><span class="p">));</span>
-<span class="c1">// =&gt; { city: "Rio de Janeiro", [...] }</span>
+<span class="c1">// =&gt; { "city": "Rio de Janeiro", [...] }</span>
 </code></pre>
 </div>
 
@@ -2077,36 +2078,36 @@ formed by objects with the same set of properties.</p>
 <h4 id="example-15">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
-	<span class="na">city</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
-	<span class="na">temperature</span><span class="p">:</span> <span class="mi">96</span><span class="p">,</span>
-	<span class="na">demographics</span><span class="p">:</span> <span class="p">{</span>
-		<span class="na">population</span><span class="p">:</span> <span class="mf">6.32</span>
+	<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
+	<span class="s2">"temperature"</span><span class="p">:</span> <span class="mi">96</span><span class="p">,</span>
+	<span class="s2">"demographics"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"population"</span><span class="p">:</span> <span class="mf">6.32</span>
 	<span class="p">}</span>
 <span class="p">},</span> <span class="p">{</span>
-	<span class="na">city</span><span class="p">:</span> <span class="s2">"São Paulo"</span><span class="p">,</span>
-	<span class="na">temperature</span><span class="p">:</span> <span class="mf">82.5</span><span class="p">,</span>
-	<span class="na">demographics</span><span class="p">:</span> <span class="p">{</span>
-		<span class="na">population</span><span class="p">:</span> <span class="mf">12.04</span>
+	<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"São Paulo"</span><span class="p">,</span>
+	<span class="s2">"temperature"</span><span class="p">:</span> <span class="mf">82.5</span><span class="p">,</span>
+	<span class="s2">"demographics"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"population"</span><span class="p">:</span> <span class="mf">12.04</span>
 	<span class="p">}</span>
 <span class="p">},</span> <span class="p">{</span>
-	<span class="na">city</span><span class="p">:</span> <span class="s2">"Curitiba"</span><span class="p">,</span>
-	<span class="na">temperature</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span>
-	<span class="na">demographics</span><span class="p">:</span> <span class="p">{</span>
-		<span class="na">population</span><span class="p">:</span> <span class="mf">1.752</span>
+	<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"Curitiba"</span><span class="p">,</span>
+	<span class="s2">"temperature"</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span>
+	<span class="s2">"demographics"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"population"</span><span class="p">:</span> <span class="mf">1.752</span>
 	<span class="p">}</span>
 <span class="p">},</span> <span class="p">{</span>
-	<span class="na">city</span><span class="p">:</span> <span class="s2">"Florianópolis"</span><span class="p">,</span>
-	<span class="na">temperature</span><span class="p">:</span> <span class="mi">86</span><span class="p">,</span>
-	<span class="na">demographics</span><span class="p">:</span> <span class="p">{</span>
-		<span class="na">population</span><span class="p">:</span> <span class="mf">0.249</span>
+	<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"Florianópolis"</span><span class="p">,</span>
+	<span class="s2">"temperature"</span><span class="p">:</span> <span class="mi">86</span><span class="p">,</span>
+	<span class="s2">"demographics"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"population"</span><span class="p">:</span> <span class="mf">0.249</span>
 	<span class="p">}</span>
 <span class="p">}];</span>
 
 <span class="nx">cities</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toLargestProp</span><span class="p">(</span><span class="s2">"temperature"</span><span class="p">));</span>
-<span class="c1">// =&gt; { city: "Rio de Janeiro", [...] }</span>
+<span class="c1">// =&gt; { "city": "Rio de Janeiro", [...] }</span>
 
 <span class="nx">cities</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toLargestProp</span><span class="p">(</span><span class="s2">"demographics.population"</span><span class="p">));</span>
-<span class="c1">// =&gt; { city: "São Paulo", [...] }</span>
+<span class="c1">// =&gt; { "city": "São Paulo", [...] }</span>
 </code></pre>
 </div>
 
@@ -2161,36 +2162,36 @@ formed by objects with the same set of properties.</p>
 <h4 id="example-16">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
-	<span class="na">city</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
-	<span class="na">temperature</span><span class="p">:</span> <span class="mi">96</span><span class="p">,</span>
-	<span class="na">demographics</span><span class="p">:</span> <span class="p">{</span>
-		<span class="na">population</span><span class="p">:</span> <span class="mf">6.32</span>
+	<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
+	<span class="s2">"temperature"</span><span class="p">:</span> <span class="mi">96</span><span class="p">,</span>
+	<span class="s2">"demographics"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"population"</span><span class="p">:</span> <span class="mf">6.32</span>
 	<span class="p">}</span>
 <span class="p">},</span> <span class="p">{</span>
-	<span class="na">city</span><span class="p">:</span> <span class="s2">"São Paulo"</span><span class="p">,</span>
-	<span class="na">temperature</span><span class="p">:</span> <span class="mf">82.5</span><span class="p">,</span>
-	<span class="na">demographics</span><span class="p">:</span> <span class="p">{</span>
-		<span class="na">population</span><span class="p">:</span> <span class="mf">12.04</span>
+	<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"São Paulo"</span><span class="p">,</span>
+	<span class="s2">"temperature"</span><span class="p">:</span> <span class="mf">82.5</span><span class="p">,</span>
+	<span class="s2">"demographics"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"population"</span><span class="p">:</span> <span class="mf">12.04</span>
 	<span class="p">}</span>
 <span class="p">},</span> <span class="p">{</span>
-	<span class="na">city</span><span class="p">:</span> <span class="s2">"Curitiba"</span><span class="p">,</span>
-	<span class="na">temperature</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span>
-	<span class="na">demographics</span><span class="p">:</span> <span class="p">{</span>
-		<span class="na">population</span><span class="p">:</span> <span class="mf">1.752</span>
+	<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"Curitiba"</span><span class="p">,</span>
+	<span class="s2">"temperature"</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span>
+	<span class="s2">"demographics"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"population"</span><span class="p">:</span> <span class="mf">1.752</span>
 	<span class="p">}</span>
 <span class="p">},</span> <span class="p">{</span>
-	<span class="na">city</span><span class="p">:</span> <span class="s2">"Florianópolis"</span><span class="p">,</span>
-	<span class="na">temperature</span><span class="p">:</span> <span class="mi">86</span><span class="p">,</span>
-	<span class="na">demographics</span><span class="p">:</span> <span class="p">{</span>
-		<span class="na">population</span><span class="p">:</span> <span class="mf">0.249</span>
+	<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"Florianópolis"</span><span class="p">,</span>
+	<span class="s2">"temperature"</span><span class="p">:</span> <span class="mi">86</span><span class="p">,</span>
+	<span class="s2">"demographics"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"population"</span><span class="p">:</span> <span class="mf">0.249</span>
 	<span class="p">}</span>
 <span class="p">}];</span>
 
 <span class="nx">cities</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toSmallestProp</span><span class="p">(</span><span class="s2">"temperature"</span><span class="p">));</span>
-<span class="c1">// =&gt; { city: "Curitiba", [...] }</span>
+<span class="c1">// =&gt; { "city": "Curitiba", [...] }</span>
 
 <span class="nx">cities</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toSmallestProp</span><span class="p">(</span><span class="s2">"demographics.population"</span><span class="p">));</span>
-<span class="c1">// =&gt; { city: "Florianópolis", [...] }</span>
+<span class="c1">// =&gt; { "city": "Florianópolis", [...] }</span>
 </code></pre>
 </div>
 
@@ -2553,6 +2554,8 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
 	</div>
 	<script src="js/scripts.js"></script>
 
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="js/kerning.min.js"></script>
 </body>
 
 </html>

@@ -38,33 +38,33 @@ import at from "lodash-es/at";
  *
  * @example
  * const stores = [{
- * 	name: "Iguatemi",
- * 	city: "Campinas",
- * 	state: "SP"
+ * 	"name": "Iguatemi",
+ * 	"city": "Campinas",
+ * 	"state": "SP"
  * }, {
- * 	name: "Jardins",
- * 	city: "São Paulo",
- * 	state: "SP"
+ * 	"name": "Jardins",
+ * 	"city": "São Paulo",
+ * 	"state": "SP"
  * }, {
- * 	name: "Iguatemi",
- * 	city: "São Paulo",
- * 	state: "SP"
+ * 	"name": "Iguatemi",
+ * 	"city": "São Paulo",
+ * 	"state": "SP"
  * }, {
- * 	name: "Pedras",
- * 	city: "Búzios",
- * 	state: "RJ"
+ * 	"name": "Pedras",
+ * 	"city": "Búzios",
+ * 	"state": "RJ"
  * }, {
- * 	name: "Ipanema",
- * 	city: "Rio de Janeiro",
- * 	state: "RJ"
+ * 	"name": "Ipanema",
+ * 	"city": "Rio de Janeiro",
+ * 	"state": "RJ"
  * }, {
- * 	name: "Leblon",
- * 	city: "Rio de Janeiro",
- * 	state: "RJ"
+ * 	"name": "Leblon",
+ * 	"city": "Rio de Janeiro",
+ * 	"state": "RJ"
  * }, {
- * 	name: "ParkShopping",
- * 	city: "Brasília",
- * 	state: "DF"
+ * 	"name": "ParkShopping",
+ * 	"city": "Brasília",
+ * 	"state": "DF"
  * }];
  * 
  * const getStateName = item => item.state;

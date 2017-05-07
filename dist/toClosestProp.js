@@ -21,36 +21,36 @@ import at from "lodash-es/at";
  *
  * @example
  * let cities = [{
- * 	city: "Rio de Janeiro",
- * 	temperature: 96,
- * 	demographics: {
- * 		population: 6.32
+ * 	"city": "Rio de Janeiro",
+ * 	"temperature": 96,
+ * 	"demographics": {
+ * 		"population": 6.32
  * 	}
  * }, {
- * 	city: "São Paulo",
- * 	temperature: 82.5,
- * 	demographics: {
- * 		population: 12.04
+ * 	"city": "São Paulo",
+ * 	"temperature": 82.5,
+ * 	"demographics": {
+ * 		"population": 12.04
  * 	}
  * }, {
- * 	city: "Curitiba",
- * 	temperature: 70,
- * 	demographics: {
- * 		population: 1.752
+ * 	"city": "Curitiba",
+ * 	"temperature": 70,
+ * 	"demographics": {
+ * 		"population": 1.752
  * 	}
  * }, {
- * 	city: "Florianópolis",
- * 	temperature: 86,
- * 	demographics: {
- * 		population: 0.249
+ * 	"city": "Florianópolis",
+ * 	"temperature": 86,
+ * 	"demographics": {
+ * 		"population": 0.249
  * 	}
  * }];
  *
  * cities.reduce(toClosestProp("temperature", 75));
- * // => { city: "Curitiba", [...] }
+ * // => { "city": "Curitiba", [...] }
  *
  * cities.reduce(toClosestProp("demographics.population", 5));
- * // => { city: "Rio de Janeiro", [...] }
+ * // => { "city": "Rio de Janeiro", [...] }
  */
 const toClosestProp = (path, num) => (prevObj, nextObj, index, arr) => {
 	if (Math.abs(at(prevObj, path)[0] - num) <= Math.abs(at(nextObj, path)[0] - num)) {

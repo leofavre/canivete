@@ -2,10 +2,19 @@ $grid: 1.5rem;
 $content-width: 38.75rem;
 $full-content-width: $content-width + ($grid * 3);
 
-$dark: #272822;
+// $dark: #272822;
 $grey: #94917b;
 $light-grey: lighten($grey, 20%);
 
-$code-grey: mix(white, $light-grey, 50%);
-$hairline-grey: mix(black, white, 30%);
+$text: #b3b3b3;
+$dark: #272822;
+$darker: #1b1c18;
+$aqua: #7ae1e6;
+
+$code-grey: $darker;
+$hairline-grey: mix($darker, white, 30%);
 $link-color: #f92672;
+
+$hairline-dark: mix($darker, black, 30%);
+
+$comment: mix($text, $darker, 30%);

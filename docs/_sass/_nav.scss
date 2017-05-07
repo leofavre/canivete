@@ -33,6 +33,7 @@
 		font-style: italic;
 		font-weight: 800;
 		text-transform: lowercase;
+		color: $aqua;
 
 		@media only screen and (min-width: 1400px) {
 			top: 1px;
@@ -64,7 +65,7 @@
 			margin: calc(#{$grid} - 1px) auto $grid 0;
 			width: 118px;
 			height: 1px;
-			background: $hairline-grey;
+			background: $hairline-dark;
 			transform: scaleY(0.5);
 			transform-origin: 0 0;
 		}
@@ -88,6 +89,7 @@
 		font-weight: 800;
 		line-height: $grid;
 		letter-spacing: 0.045em;
+		color: $aqua;
 
 		@media only screen and (min-width: 1400px) {
 			top: -3px;
@@ -115,22 +117,7 @@
 	}
 
 	li li a {
-		&:hover::before {
-			// width: 1.5rem;
-		}
-
-		&::before {
-			content: "";
-			position: relative;
-			top: -2px;
-			display: inline-block;
-			width: 0.5rem;
-			background: $hairline-grey;
-			height: 1px;
-			vertical-align: middle;
-			margin-right: 0.25rem;
-			// transition: width 0.08s ease-out;
-		}
+		// color: $aqua;
 	}
 
 	a {

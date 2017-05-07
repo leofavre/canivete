@@ -20,39 +20,39 @@ import at from "lodash-es/at";
  *
  * @example
  * let cities = [{
- * 	city: "Rio de Janeiro",
- * 	temperature: 96,
- * 	demographics: {
- * 		population: 6.32
+ * 	"city": "Rio de Janeiro",
+ * 	"temperature": 96,
+ * 	"demographics": {
+ * 		"population": 6.32
  * 	}
  * }, {
- * 	city: "São Paulo",
- * 	temperature: 82.5,
- * 	demographics: {
- * 		population: 12.04
+ * 	"city": "São Paulo",
+ * 	"temperature": 82.5,
+ * 	"demographics": {
+ * 		"population": 12.04
  * 	}
  * }, {
- * 	city: "Curitiba",
- * 	temperature: 70,
- * 	demographics: {
- * 		population: 1.752
+ * 	"city": "Curitiba",
+ * 	"temperature": 70,
+ * 	"demographics": {
+ * 		"population": 1.752
  * 	}
  * }, {
- * 	city: "Florianópolis",
- * 	temperature: 86,
- * 	demographics: {
- * 		population: 0.249
+ * 	"city": "Florianópolis",
+ * 	"temperature": 86,
+ * 	"demographics": {
+ * 		"population": 0.249
  * 	}
  * }];
  *
- * // average temperature: 83.625
- * // average population: 5.09025
+ * // average "temperature": 83.625
+ * // average "population": 5.09025
  *
  * cities.reduce(toAverageProp("temperature"));
- * // => { city: "São Paulo", [...] }
+ * // => { "city": "São Paulo", [...] }
  *
  * cities.reduce(toAverageProp("demographics.population"));
- * // => { city: "Rio de Janeiro", [...] }
+ * // => { "city": "Rio de Janeiro", [...] }
  */
 const toAverageProp = path => {
 	let average;
