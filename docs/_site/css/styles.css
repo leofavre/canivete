@@ -292,7 +292,7 @@ html {
     font-size: 2.5rem;
     line-height: 3rem;
     word-spacing: 0.15em; }
-  .content blockquote a:after {
+  .content blockquote a::after {
     bottom: -3px;
     background: #f92672;
     height: 2px; }
@@ -301,7 +301,7 @@ html {
     color: inherit;
     text-decoration: none;
     z-index: 2; }
-  .content a:after {
+  .content a::after {
     content: "";
     position: absolute;
     left: 0;
@@ -310,7 +310,7 @@ html {
     height: 1px;
     background: #f92672;
     z-index: 1; }
-  .content a[name]:after {
+  .content a[name]::after {
     content: normal;
     display: none; }
   .content ul,
@@ -356,14 +356,14 @@ html {
         top: -5px; } }
   .content tr {
     position: relative; }
-  .content tbody tr:after {
+  .content tbody tr::after {
     content: "";
     position: absolute;
     top: auto;
     left: 0;
     width: 100%;
     height: 1px;
-    background: #080807;
+    background: #bbbbba;
     -webkit-transform: scaleY(0.5);
         -ms-transform: scaleY(0.5);
             transform: scaleY(0.5);

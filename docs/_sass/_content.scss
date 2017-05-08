@@ -156,7 +156,7 @@
 		word-spacing: 0.15em;
 	}
 
-	blockquote a:after {
+	blockquote a::after {
 		bottom: -3px;
 		background: $link-color;
 		height: 2px;
@@ -169,7 +169,7 @@
 		z-index: 2;
 	}
 
-	a:after {
+	a::after {
 		content: "";
 		position: absolute;
 		left: 0;
@@ -180,7 +180,7 @@
 		z-index: 1;
 	}
 
-	a[name]:after {
+	a[name]::after {
 		content: normal;
 		display: none;
 	}
@@ -251,14 +251,14 @@
 		position: relative;
 	}
 
-	tbody tr:after {
+	tbody tr::after {
 		content: "";
 		position: absolute;
 		top: auto;
 		left: 0;
 		width: 100%;
 		height: 1px;
-		background: $hairline-dark;
+		background: $hairline-grey;
 		transform: scaleY(0.5);
 		transform-origin: 0 0;
 	}
