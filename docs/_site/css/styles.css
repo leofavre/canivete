@@ -209,19 +209,7 @@ html {
     line-height: 15rem;
     word-wrap: break-word;
     width: 61rem;
-    overflow: visible;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-flow: column wrap;
-        -ms-flex-flow: column wrap;
-            flex-flow: column wrap;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    min-height: 100vh;
-    margin: 50vh 0 0;
-    padding: 0; }
+    overflow: visible; }
     @media only screen and (max-width: 1100px) {
       .content h2 {
         -webkit-transform: scale(0.84);
@@ -233,10 +221,10 @@ html {
   .content h2 + blockquote {
     position: relative;
     top: 0.125rem;
-    margin-bottom: 15rem;
-    position: relative;
-    top: -20vw;
-    left: auto; }
+    margin-bottom: 15rem; }
+    @media only screen and (min-width: 1400px) {
+      .content h2 + blockquote {
+        top: 3px; } }
   .content h3 {
     position: relative;
     top: 0;
