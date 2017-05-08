@@ -35,9 +35,17 @@
 		// max-height: 39rem;
 		overflow: visible;
 
+		// -- new --
+		display: flex;
+		flex-flow: column wrap;
+		justify-content: center;
+		min-height: 100vh;
+		margin: 0;
+		padding: 0;
+
 		@media only screen and (max-width: 1100px) {
 			transform: scale(0.84);
-			transform-origin: 15% 100%;
+			transform-origin: 0% 100%;
 		}
 	}
 
@@ -52,8 +60,13 @@
 		top: 0.125rem;
 		margin-bottom: ($grid * 10);
 
+		// -- new --
+		position: relative;
+		top: -20vw;
+		left: auto;
+
 		@media only screen and (min-width: 1400px) {
-			top: 3px;
+			// top: 3px;
 		}
 	}
 
