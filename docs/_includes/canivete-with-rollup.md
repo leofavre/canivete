@@ -37,7 +37,7 @@ export default {
 };
 ```
 
-Create a file named "index.js". Import any dependencies from Canivete (or other libraries) using ES6 modules syntax before the rest of your code, like this:
+Create a file named "index.js". Import any dependencies from Canivete (or other libraries) using ES6 module syntax before the rest of your code, like this:
 
 ```js
 import toAverage from "canivete/dist/toAverage";
