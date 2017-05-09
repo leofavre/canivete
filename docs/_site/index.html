@@ -114,114 +114,120 @@
 		<main class="content">
 			<div class="content__inner">
 				<div class="content__intro">
-					## About
+					
+<h2 id="about">About</h2>
 
-Canivete (Brazilian Portuguese for swiss army knife) is an on-going personal project, a place to keep generic, multi-purpose Javascript functions.
+<p>Canivete (Brazilian Portuguese for swiss army knife) is an on-going personal project, a place to keep generic, multi-purpose Javascript functions.</p>
 
-Due to its multi-purpose nature, Canivete is not distributed as a single file, instead, one should import its functions as needed, using [ES6 modules syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import).
+<p>Due to its multi-purpose nature, Canivete is not distributed as a single file, instead, one should import its functions as needed, using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import">ES6 modules syntax</a>.</p>
 
-[Babel](https://babeljs.io/) and [Babel Polyfill](https://babeljs.io/docs/usage/polyfill/) are recommended to make Canivete work in older browsers.
+<p><a href="https://babeljs.io/">Babel</a> and <a href="https://babeljs.io/docs/usage/polyfill/">Babel Polyfill</a> are recommended to make Canivete work in older browsers.</p>
 
-**[Canivete on Github](https://github.com/leofavre/canivete/)**
+<p><strong><a href="https://github.com/leofavre/canivete/">Canivete on Github</a></strong></p>
 
-**[Documentation](https://leofavre.github.io/canivete/)**
+<p><strong><a href="https://leofavre.github.io/canivete/">Documentation</a></strong></p>
 
-## Usage
+<h2 id="usage">Usage</h2>
 
-Since ES6 `import` has virtually [no browser support](https://caniuse.com/#feat=es6-module) at this time, a module bundler is needed to handle Canivete dependencies.
+<p>Since ES6 <code class="highlighter-rouge">import</code> has virtually <a href="https://caniuse.com/#feat=es6-module">no browser support</a> at this time, a module bundler is needed to handle Canivete dependencies.</p>
 
-					### Using Canivete with [Rollup](https://rollupjs.org/)
 
-In your project root folder, install Canivete via NPM.
+					
+<h3 id="using-canivete-with-rollup">Using Canivete with <a href="https://rollupjs.org/">Rollup</a></h3>
 
-```shell
-$ npm install --save leofavre/canivete
-```
+<p>In your project root folder, install Canivete via NPM.</p>
 
-Install Rollup globally via NPM.
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm install --save leofavre/canivete
+</code></pre>
+</div>
 
-```shell
-$ npm install --global rollup
-```
+<p>Install Rollup globally via NPM.</p>
 
-Install the Node Resolve Pulgin for Rollup via NPM.
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm install --global rollup
+</code></pre>
+</div>
 
-```shell
-$ npm install --save-dev rollup-plugin-node-resolve
-```
+<p>Install the Node Resolve Pulgin for Rollup via NPM.</p>
 
-Create a file named "rollup.config.js" with the following content:
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm install --save-dev rollup-plugin-node-resolve
+</code></pre>
+</div>
 
-```js
-import nodeResolve from "rollup-plugin-node-resolve";
+<p>Create a file named “rollup.config.js” with the following content:</p>
 
-export default {
-	entry: "./index.js",
-	dest: "./dist/app.js",
-	plugins: [nodeResolve()],
-	format: "es"
-};
-```
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="nx">nodeResolve</span> <span class="nx">from</span> <span class="s2">"rollup-plugin-node-resolve"</span><span class="p">;</span>
 
-Create a file named "index.js". Import any dependencies from Canivete (or other libraries) using ES6 modules syntax before the rest of your code, like this:
+<span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+	<span class="na">entry</span><span class="p">:</span> <span class="s2">"./index.js"</span><span class="p">,</span>
+	<span class="na">dest</span><span class="p">:</span> <span class="s2">"./dist/app.js"</span><span class="p">,</span>
+	<span class="na">plugins</span><span class="p">:</span> <span class="p">[</span><span class="nx">nodeResolve</span><span class="p">()],</span>
+	<span class="na">format</span><span class="p">:</span> <span class="s2">"es"</span>
+<span class="p">};</span>
+</code></pre>
+</div>
 
-```js
-import toAverage from "canivete/dist/toAverage";
+<p>Create a file named “index.js”. Import any dependencies from Canivete (or other libraries) using ES6 modules syntax before the rest of your code, like this:</p>
 
-const myArray = [8, 10, 12, 14, 16];
-alert(myArray.reduce(toAverage));
-// => 12
-```
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="nx">toAverage</span> <span class="nx">from</span> <span class="s2">"canivete/dist/toAverage"</span><span class="p">;</span>
 
-Use the following shell command to build your project:
+<span class="kr">const</span> <span class="nx">myArray</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">16</span><span class="p">];</span>
+<span class="nx">alert</span><span class="p">(</span><span class="nx">myArray</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toAverage</span><span class="p">));</span>
+<span class="c1">// =&gt; 12</span>
+</code></pre>
+</div>
 
-```shell
-$ rollup -c
-```
+<p>Use the following shell command to build your project:</p>
 
-					### Using Canivete with [Webpack](https://webpack.js.org/)
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>rollup -c
+</code></pre>
+</div>
 
-In your project root folder, install Canivete via NPM.
 
-```shell
-$ npm install --save leofavre/canivete
-```
+					
+<h3 id="using-canivete-with-webpack">Using Canivete with <a href="https://webpack.js.org/">Webpack</a></h3>
 
-Install Webpack via NPM.
+<p>In your project root folder, install Canivete via NPM.</p>
 
-```shell
-$ npm install --save-dev webpack
-```
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm install --save leofavre/canivete
+</code></pre>
+</div>
 
-Create a file named "webpack.config.js" with the following content:
+<p>Install Webpack via NPM.</p>
 
-```js
-const path = require("path");
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm install --save-dev webpack
+</code></pre>
+</div>
 
-module.exports = {
-	entry: "./index.js",
-	output: {
-		path: path.resolve(__dirname, "dist"),
-		filename: "app.js"
-	}
-};
-```
+<p>Create a file named “webpack.config.js” with the following content:</p>
 
-Create a file named "index.js". Import any dependencies from Canivete (or other libraries) using ES6 modules syntax before the rest of your code, like this:
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"path"</span><span class="p">);</span>
 
-```js
-import toAverage from "canivete/dist/toAverage";
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="na">entry</span><span class="p">:</span> <span class="s2">"./index.js"</span><span class="p">,</span>
+	<span class="na">output</span><span class="p">:</span> <span class="p">{</span>
+		<span class="na">path</span><span class="p">:</span> <span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s2">"dist"</span><span class="p">),</span>
+		<span class="na">filename</span><span class="p">:</span> <span class="s2">"app.js"</span>
+	<span class="p">}</span>
+<span class="p">};</span>
+</code></pre>
+</div>
 
-const myArray = [8, 10, 12, 14, 16];
-alert(myArray.reduce(toAverage));
-// => 12
-```
+<p>Create a file named “index.js”. Import any dependencies from Canivete (or other libraries) using ES6 modules syntax before the rest of your code, like this:</p>
 
-Use the following shell command to build your project:
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="nx">toAverage</span> <span class="nx">from</span> <span class="s2">"canivete/dist/toAverage"</span><span class="p">;</span>
 
-```shell
-$ ./node_modules/.bin/webpack
-```
+<span class="kr">const</span> <span class="nx">myArray</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">16</span><span class="p">];</span>
+<span class="nx">alert</span><span class="p">(</span><span class="nx">myArray</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toAverage</span><span class="p">));</span>
+<span class="c1">// =&gt; 12</span>
+</code></pre>
+</div>
+
+<p>Use the following shell command to build your project:</p>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>./node_modules/.bin/webpack
+</code></pre>
+</div>
+
 
 				</div>
 				<div class="content__main">
