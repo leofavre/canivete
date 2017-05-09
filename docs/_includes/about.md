@@ -2,8 +2,6 @@
 
 **[Canivete on Github](https://github.com/leofavre/canivete/)**
 
-**[Documentation](https://leofavre.github.io/canivete/)**
-
 ---
 
 Canivete (Brazilian Portuguese for swiss army knife) is an on-going personal project, a place to keep generic, multi-purpose Javascript functions.
