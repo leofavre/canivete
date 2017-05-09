@@ -12,8 +12,6 @@ Due to its multi-purpose nature, Canivete is not distributed as a single file, i
 
 [Babel](https://babeljs.io/) and [Babel Polyfill](https://babeljs.io/docs/usage/polyfill/) are recommended to make Canivete work in older browsers.
 
----
-
 ## Usage
 
 Since ES6 `import` has virtually [no browser support](https://caniuse.com/#feat=es6-module) at this time, a module bundler is needed to handle Canivete dependencies.
