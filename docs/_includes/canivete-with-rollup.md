@@ -1,5 +1,11 @@
 ### Using Canivete with [Rollup](https://rollupjs.org/)
 
+**[Canivete on Github](https://github.com/leofavre/canivete/)**
+
+**[Documentation](https://leofavre.github.io/canivete/)**
+
+---
+
 In your project root folder, install Canivete via NPM.
 
 ```shell
