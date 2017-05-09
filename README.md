@@ -1,4 +1,8 @@
-## About
+# Canivete
+
+**[Documentation](https://leofavre.github.io/canivete/)**
+
+--
 
 Canivete (Brazilian Portuguese for swiss army knife) is an on-going personal project, a place to keep generic, multi-purpose Javascript functions.
 
@@ -6,11 +10,7 @@ Due to its multi-purpose nature, Canivete is not distributed as a single file, i
 
 [Babel](https://babeljs.io/) and [Babel Polyfill](https://babeljs.io/docs/usage/polyfill/) are recommended to make Canivete work in older browsers.
 
----
-
-**[Canivete on Github](https://github.com/leofavre/canivete/)**
-
-**[Documentation](https://leofavre.github.io/canivete/)**
+--
 
 ## Usage
 
