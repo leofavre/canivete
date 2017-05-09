@@ -7,14 +7,21 @@
 	<div class="page__inner">
 		<nav class="nav">
 			<div class="nav__inner">
-				<h1><a href="#">Canivete</a></h1>
+				<h1><a href="#about">Canivete</a></h1>
 				{% include pagenav.html %}
 				{% include menu.html %}
 			</div>
 		</nav>
 		<main class="content">
 			<div class="content__inner">
-				{{ content }}
+				<div class="content__intro">
+					{% include about.html %}
+					{% include canivete-with-rollup.html %}
+					{% include canivete-with-webpack.html %}
+				</div>
+				<div class="content__main">
+					{{ content }}
+				</div>
 			</div>
 		</main>
 	</div>
