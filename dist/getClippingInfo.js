@@ -14,12 +14,12 @@ import _getHorizontalAxisInfo from "./internal/geometry/_getHorizontalAxisInfo";
  * @property {boolean} isClippedBottom Below and intersecting with the mask.
  * @property {boolean} isClippedLeft On the left and intersecting with the mask.
  * @property {boolean} isClippedRight On the right and intersecting with the mask.
- * @property {boolean} isClipped Element intersects with the mask.
+ * @property {boolean} isClipped Intersecting with the mask.
  * @property {boolean} isFullyVisible Fully visible inside the mask.
  * @property {boolean} isPartiallyVisible Alias for `isClipped`.
  * @property {boolean} isInvisible Alias for `isOff`.
- * @property {boolean} isAsVisibleAsPossible As visible as possible (element bigger than mask).
- * @property {boolean} isNotAsVisibleAsPossible Not as visible as possible (element bigger than mask).
+ * @property {boolean} isAsVisibleAsPossible As visible as possible (the element is taller or wider than the mask).
+ * @property {boolean} isNotAsVisibleAsPossible Not as visible as possible (the element is taller or wider than the mask).
  */
 
 /**

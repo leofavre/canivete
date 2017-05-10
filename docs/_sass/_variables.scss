@@ -18,3 +18,29 @@ $hairline-grey: mix($darker, white, 30%);
 $hairline-dark: mix($darker, black, 30%);
 
 $comment: mix($text, $darker, 30%);
+
+
+
+
+
+$background-color: $dark;
+$text-color: $text;
+
+$logo-color: $aqua;
+$menu-item-color: $aqua;
+
+$intro-h2-color: $darker;
+$content-h2-color: $darker;
+$content-h3-color: $text;
+$content-h3-bg-color: $darker;
+
+$small-code-color: $text;
+$small-code-bg-color: $darker;
+$big-code-color: $text;
+$big-code-bg-color: $darker;
+$optional-color: $darker;
+$optional-bg-color: $aqua;
+
+$link-hairline-color: $link-color;
+$menu-hairline-color: $hairline-dark;
+$table-hairline-color: $hairline-grey;

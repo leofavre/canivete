@@ -29,11 +29,11 @@
 		margin: $grid 0;
 		font-size: $grid * 1.5;
 		line-height: $grid;
-		font-family: "Acropolis A", "Acropolis B";
+		font-family: "Acropolis A", "Acropolis B", cursive;
 		font-style: italic;
 		font-weight: 800;
 		text-transform: lowercase;
-		color: $aqua;
+		color: $logo-color;
 
 		@media only screen and (min-width: 1400px) {
 			top: 1px;
@@ -65,7 +65,7 @@
 			margin: calc(#{$grid} - 1px) auto $grid 0;
 			width: 118px;
 			height: 1px;
-			background: $hairline-dark;
+			background: $menu-hairline-color;
 			transform: scaleY(0.5);
 			transform-origin: 0 0;
 		}
@@ -89,7 +89,7 @@
 		font-weight: 800;
 		line-height: $grid;
 		letter-spacing: 0.045em;
-		color: $aqua;
+		color: $menu-item-color;
 
 		@media only screen and (min-width: 1400px) {
 			top: -3px;

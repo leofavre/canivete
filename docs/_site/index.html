@@ -117,15 +117,15 @@
 					
 <h2 id="about">About</h2>
 
+<p>Canivete (Brazilian Portuguese for swiss army knife) is an on-going personal project, a place to keep generic, multi-purpose Javascript functions.</p>
+
+<p>Due to its multi-purpose nature, Canivete is not distributed as a single file, instead, one should import its functions as needed, using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import">ES6 module syntax</a>.</p>
+
+<p><a href="https://babeljs.io/">Babel</a> and <a href="https://babeljs.io/docs/usage/polyfill/">Babel Polyfill</a> are recommended to make Canivete work in older browsers.</p>
+
 <p><strong><a href="https://github.com/leofavre/canivete/">Canivete on Github</a></strong></p>
 
 <hr />
-
-<p>Canivete (Brazilian Portuguese for swiss army knife) is an on-going personal project, a place to keep generic, multi-purpose Javascript functions.</p>
-
-<p>Due to its multi-purpose nature, Canivete is not distributed as a single file, instead, one should import its functions as needed, using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import">ES6 module syntax</a>.</p>
-
-<p><a href="https://babeljs.io/">Babel</a> and <a href="https://babeljs.io/docs/usage/polyfill/">Babel Polyfill</a> are recommended to make Canivete work in older browsers.</p>
 
 <h2 id="usage">Usage</h2>
 
@@ -135,38 +135,38 @@
 					
 <h3 id="using-canivete-with-rollup">Using Canivete with <a href="https://rollupjs.org/">Rollup</a></h3>
 
-<p>In your project root folder, install Canivete via NPM.</p>
+<p><strong>1.</strong> In your project root folder, install Canivete via NPM.</p>
 
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm install --save leofavre/canivete
 </code></pre>
 </div>
 
-<p>Install Rollup globally via NPM.</p>
+<p><strong>2.</strong> Install Rollup globally via NPM.</p>
 
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm install --global rollup
 </code></pre>
 </div>
 
-<p>Install the Node Resolve Pulgin for Rollup via NPM.</p>
+<p><strong>3.</strong> Install the Node Resolve Pulgin for Rollup via NPM.</p>
 
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm install --save-dev rollup-plugin-node-resolve
 </code></pre>
 </div>
 
-<p>Create a file named “rollup.config.js” with the following content:</p>
+<p><strong>4.</strong> Create a file named “rollup.config.js” with the following content:</p>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="nx">nodeResolve</span> <span class="nx">from</span> <span class="s2">"rollup-plugin-node-resolve"</span><span class="p">;</span>
 
 <span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
-	<span class="na">entry</span><span class="p">:</span> <span class="s2">"./index.js"</span><span class="p">,</span>
-	<span class="na">dest</span><span class="p">:</span> <span class="s2">"./dist/app.js"</span><span class="p">,</span>
-	<span class="na">plugins</span><span class="p">:</span> <span class="p">[</span><span class="nx">nodeResolve</span><span class="p">()],</span>
-	<span class="na">format</span><span class="p">:</span> <span class="s2">"es"</span>
+	<span class="s2">"entry"</span><span class="p">:</span> <span class="s2">"./index.js"</span><span class="p">,</span>
+	<span class="s2">"dest"</span><span class="p">:</span> <span class="s2">"./dist/app.js"</span><span class="p">,</span>
+	<span class="s2">"plugins"</span><span class="p">:</span> <span class="p">[</span><span class="nx">nodeResolve</span><span class="p">()],</span>
+	<span class="s2">"format"</span><span class="p">:</span> <span class="s2">"es"</span>
 <span class="p">};</span>
 </code></pre>
 </div>
 
-<p>Create a file named “index.js”. Import any dependencies from Canivete (or other libraries) using ES6 module syntax before the rest of your code, like this:</p>
+<p><strong>5.</strong> Create a file named “index.js”. Import any dependencies from Canivete using ES6 module syntax before the rest of your code, like this:</p>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="nx">toAverage</span> <span class="nx">from</span> <span class="s2">"canivete/dist/toAverage"</span><span class="p">;</span>
 
@@ -176,7 +176,7 @@
 </code></pre>
 </div>
 
-<p>Use the following shell command to build your project:</p>
+<p><strong>6.</strong> Use the following shell command to build your project:</p>
 
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>rollup -c
 </code></pre>
@@ -186,33 +186,33 @@
 					
 <h3 id="using-canivete-with-webpack">Using Canivete with <a href="https://webpack.js.org/">Webpack</a></h3>
 
-<p>In your project root folder, install Canivete via NPM.</p>
+<p><strong>1.</strong> In your project root folder, install Canivete via NPM.</p>
 
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm install --save leofavre/canivete
 </code></pre>
 </div>
 
-<p>Install Webpack via NPM.</p>
+<p><strong>2.</strong> Install Webpack via NPM.</p>
 
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm install --save-dev webpack
 </code></pre>
 </div>
 
-<p>Create a file named “webpack.config.js” with the following content:</p>
+<p><strong>3.</strong> Create a file named “webpack.config.js” with the following content:</p>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"path"</span><span class="p">);</span>
 
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
-	<span class="na">entry</span><span class="p">:</span> <span class="s2">"./index.js"</span><span class="p">,</span>
-	<span class="na">output</span><span class="p">:</span> <span class="p">{</span>
-		<span class="na">path</span><span class="p">:</span> <span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s2">"dist"</span><span class="p">),</span>
-		<span class="na">filename</span><span class="p">:</span> <span class="s2">"app.js"</span>
+	<span class="s2">"entry"</span><span class="p">:</span> <span class="s2">"./index.js"</span><span class="p">,</span>
+	<span class="s2">"output"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"path"</span><span class="p">:</span> <span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s2">"dist"</span><span class="p">),</span>
+		<span class="s2">"filename"</span><span class="p">:</span> <span class="s2">"app.js"</span>
 	<span class="p">}</span>
 <span class="p">};</span>
 </code></pre>
 </div>
 
-<p>Create a file named “index.js”. Import any dependencies from Canivete (or other libraries) using ES6 module syntax before the rest of your code, like this:</p>
+<p><strong>4.</strong> Create a file named “index.js”. Import any dependencies from Canivete using ES6 module syntax before the rest of your code, like this:</p>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="nx">toAverage</span> <span class="nx">from</span> <span class="s2">"canivete/dist/toAverage"</span><span class="p">;</span>
 
@@ -222,7 +222,7 @@
 </code></pre>
 </div>
 
-<p>Use the following shell command to build your project:</p>
+<p><strong>5.</strong> Use the following shell command to build your project:</p>
 
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>./node_modules/.bin/webpack
 </code></pre>
@@ -1601,7 +1601,7 @@ containing numeric values for “top”, “bottom”,
     <tr>
       <td><code class="highlighter-rouge">isClipped</code></td>
       <td>Boolean</td>
-      <td>Element intersects with the mask.</td>
+      <td>Intersecting with the mask.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">isFullyVisible</code></td>
@@ -1621,12 +1621,12 @@ containing numeric values for “top”, “bottom”,
     <tr>
       <td><code class="highlighter-rouge">isAsVisibleAsPossible</code></td>
       <td>Boolean</td>
-      <td>As visible as possible (element bigger than mask).</td>
+      <td>As visible as possible (the element is taller or wider than the mask).</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">isNotAsVisibleAsPossible</code></td>
       <td>Boolean</td>
-      <td>Not as visible as possible (element bigger than mask).</td>
+      <td>Not as visible as possible (the element is taller or wider than the mask).</td>
     </tr>
   </tbody>
 </table>

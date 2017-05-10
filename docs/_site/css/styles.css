@@ -100,7 +100,7 @@ html {
     margin: 1.5rem 0;
     font-size: 2.25rem;
     line-height: 1.5rem;
-    font-family: "Acropolis A", "Acropolis B";
+    font-family: "Acropolis A", "Acropolis B", cursive;
     font-style: italic;
     font-weight: 800;
     text-transform: lowercase;
@@ -192,14 +192,11 @@ html {
       -ms-flex-negative: 1;
           flex-shrink: 1;
   margin-left: 11.375rem; }
-  .content h1 {
-    color: #7ae1e6; }
   .content h2 {
     position: relative;
-    top: 0.3125rem;
     left: -4.5rem;
     margin: 15rem 0 0;
-    padding: 3.375rem 0 1.125rem;
+    padding: 3rem 0 1.5rem;
     font-size: 24rem;
     font-family: "Acropolis A", "Acropolis B", cursive;
     font-style: italic;
@@ -231,6 +228,7 @@ html {
     font-size: 2rem;
     line-height: 3rem;
     background: #1b1c18;
+    color: #b3b3b3;
     margin: 12rem -3rem 3rem -3rem; }
   .content h3 a {
     display: block;
@@ -267,19 +265,12 @@ html {
   .content p code {
     margin-right: 0.125rem;
     padding: 1px 0.125rem;
-    background-color: #1b1c18; }
+    background-color: #1b1c18;
+    color: #b3b3b3; }
   .content p strong {
     font-weight: 600; }
   .content blockquote {
     margin: 0; }
-  .content blockquote p {
-    margin: 1.5rem 0;
-    font-family: "Whitney Narrow A", "Whitney Narrow B";
-    font-style: normal;
-    font-weight: 300;
-    font-size: 2.5rem;
-    line-height: 3rem;
-    word-spacing: 0.15em; }
   .content blockquote a::after {
     bottom: -3px;
     background: #f92672;
@@ -312,18 +303,19 @@ html {
       .content ol {
         top: calc(0.5rem - 1px); } }
   .content pre {
+    position: relative;
+    top: 0.5rem;
     background-color: #1b1c18;
     color: #b3b3b3;
     margin: 1.5rem -3rem 3rem -3rem;
-    padding: 3.5rem 1.5rem 2.5rem 3rem;
+    padding: 1.5rem 1.5rem 1.5rem 3rem;
     line-height: 1.5rem;
     overflow: auto; }
     @media only screen and (min-width: 1400px) {
       .content pre {
-        padding-top: 62px;
-        padding-bottom: 46px; } }
-  .content pre {
-    line-height: 1.5rem; }
+        top: 8px;
+        padding-top: 27px;
+        padding-bottom: 27px; } }
   .content pre code,
   .content pre span {
     line-height: 1; }
@@ -392,6 +384,7 @@ html {
     font-weight: 400;
     padding: 1px 0.25rem;
     background-color: #1b1c18;
+    color: #b3b3b3;
     white-space: nowrap; }
   .content td em {
     font-style: normal; }
@@ -419,6 +412,64 @@ html {
   margin-bottom: 45rem; }
   .content__inner > *:nth-child(1) {
     margin-top: 0; }
+
+.content blockquote p, .content__intro h3 {
+  position: relative;
+  left: -0.25rem;
+  margin: 1.5rem 0;
+  font-family: "Whitney Narrow A", "Whitney Narrow B", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 2.5rem;
+  line-height: 3rem;
+  word-spacing: 0.15em; }
+
+.content__intro > *:nth-child(1) {
+  margin-top: 0; }
+.content__intro h2 {
+  left: -2.25rem;
+  margin-top: 6rem;
+  padding: 0;
+  font-size: 12rem;
+  color: #1b1c18;
+  line-height: 12rem; }
+.content__intro h3 {
+  top: 0.625rem;
+  margin-top: 6rem;
+  margin-bottom: 3rem;
+  word-spacing: normal;
+  background: none; }
+  .content__intro h3 a {
+    display: inline;
+    padding: 0; }
+.content__intro hr {
+  display: none; }
+.content__intro pre {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem; }
+.content__intro h2 ~ p strong a {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 1rem 1.125rem;
+  background: #f92672;
+  color: #1b1c18;
+  font-family: "Acropolis A", "Acropolis B", cursive;
+  font-weight: bold;
+  font-style: italic;
+  text-transform: lowercase;
+  font-size: 1.75rem;
+  line-height: 1.5rem; }
+  .content__intro h2 ~ p strong a::after {
+    display: none; }
+.content__intro h3 ~ p {
+  text-indent: -1.5rem;
+  left: 1.5rem; }
+.content__intro h3 ~ p strong {
+  display: inline-block;
+  width: 1.1875rem;
+  text-indent: 0; }
 
 .highlight table td {
   padding: 5px; }

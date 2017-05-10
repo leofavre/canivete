@@ -808,12 +808,12 @@ containing numeric values for "top", "bottom",
 | `isClippedBottom` | Boolean | Below and intersecting with the mask. |
 | `isClippedLeft` | Boolean | On the left and intersecting with the mask. |
 | `isClippedRight` | Boolean | On the right and intersecting with the mask. |
-| `isClipped` | Boolean | Element intersects with the mask. |
+| `isClipped` | Boolean | Intersecting with the mask. |
 | `isFullyVisible` | Boolean | Fully visible inside the mask. |
 | `isPartiallyVisible` | Boolean | Alias for `isClipped`. |
 | `isInvisible` | Boolean | Alias for `isOff`. |
-| `isAsVisibleAsPossible` | Boolean | As visible as possible (element bigger than mask). |
-| `isNotAsVisibleAsPossible` | Boolean | Not as visible as possible (element bigger than mask). |
+| `isAsVisibleAsPossible` | Boolean | As visible as possible (the element is taller or wider than the mask). |
+| `isNotAsVisibleAsPossible` | Boolean | Not as visible as possible (the element is taller or wider than the mask). |
 
 #### Example
 

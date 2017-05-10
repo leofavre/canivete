@@ -1,4 +1,4 @@
-# Canivete
+# Canivete [](https://travis-ci.org/leofavre/canivete.svg?branch=master)
 
 **[Documentation](https://leofavre.github.io/canivete/)**
 
