@@ -1,6 +1,6 @@
-import groupByRecursive from "../dist/groupByRecursive";
+import recursiveGroupBy from "../dist/recursiveGroupBy";
 
-describe("groupByRecursive", function() {
+describe("recursiveGroupBy", function() {
 	const stores = [{
 		name: "Iguatemi",
 		city: "Campinas",
@@ -36,7 +36,7 @@ describe("groupByRecursive", function() {
 	const getStateName = item => item.state;
 
 	it("Should group stores by the first letter of their names.", function() {
-		expect(groupByRecursive(stores, getNamesFirstCharacter)).toEqual({
+		expect(recursiveGroupBy(stores, getNamesFirstCharacter)).toEqual({
 			"I": [{
 				name: "Iguatemi",
 				city: "Campinas",
@@ -73,7 +73,7 @@ describe("groupByRecursive", function() {
 	});
 
 	it("Should group stores by state and city.", function() {
-		expect(groupByRecursive(stores, getStateName, getCityName)).toEqual({
+		expect(recursiveGroupBy(stores, getStateName, getCityName)).toEqual({
 			"SP": {
 				"Campinas": [{
 					name: "Iguatemi",
@@ -117,7 +117,7 @@ describe("groupByRecursive", function() {
 	});
 
 	it("Should group stores by the first letter of their names and the name of the city.", function() {
-		expect(groupByRecursive(stores, getNamesFirstCharacter, getCityName)).toEqual({
+		expect(recursiveGroupBy(stores, getNamesFirstCharacter, getCityName)).toEqual({
 			"I": {
 				"Campinas": [{
 					name: "Iguatemi",
@@ -165,17 +165,17 @@ describe("groupByRecursive", function() {
 	});
 
 	it("Should still function as the native LoDash groupBy.", function() {
-		expect(groupByRecursive(["one", "two", "three"], "length")).toEqual({
+		expect(recursiveGroupBy(["one", "two", "three"], "length")).toEqual({
 			"3": ["one", "two"],
 			"5": ["three"]
 		});
 
-		expect(groupByRecursive([6.1, 4.2, 6.3], Math.floor)).toEqual({
+		expect(recursiveGroupBy([6.1, 4.2, 6.3], Math.floor)).toEqual({
 			"4": [4.2],
 			"6": [6.1, 6.3]
 		});
 
-		expect(groupByRecursive(["one", "two", "three"], str => str.slice(0, 1), "length")).toEqual({
+		expect(recursiveGroupBy(["one", "two", "three"], str => str.slice(0, 1), "length")).toEqual({
 			"o": {
 				"3": ["one"]
 			},
