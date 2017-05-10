@@ -361,9 +361,10 @@
 
 	h3 {
 		@extend %subtitle;
-		top: 0.625rem;
-		margin-top: $grid * 4;
-		margin-bottom: $grid * 2;
+		// top: 0.625rem;
+		margin-top: $grid * 3;
+		margin-bottom: ($grid * 2) - 0.625rem;
+		padding-top: ($grid * 1) + 0.625rem;
 		word-spacing: normal;
 		background: none;
 

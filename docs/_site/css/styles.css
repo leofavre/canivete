@@ -434,9 +434,9 @@ html {
   color: #1b1c18;
   line-height: 12rem; }
 .content__intro h3 {
-  top: 0.625rem;
-  margin-top: 6rem;
-  margin-bottom: 3rem;
+  margin-top: 4.5rem;
+  margin-bottom: 2.375rem;
+  padding-top: 2.125rem;
   word-spacing: normal;
   background: none; }
   .content__intro h3 a {
