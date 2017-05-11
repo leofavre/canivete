@@ -38,8 +38,8 @@ html {
   -moz-osx-font-smoothing: grayscale;
   font-family: "Whitney SSm A", "Whitney SSm B", sans-serif;
   margin: 0;
-  color: #b3b3b3;
-  background: #272822;
+  color: #3d464d;
+  background: #fdfdfb;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -104,7 +104,7 @@ html {
     font-style: italic;
     font-weight: 800;
     text-transform: lowercase;
-    color: #7ae1e6; }
+    color: #f92672; }
     @media only screen and (min-width: 1400px) {
       .nav h1 {
         top: 1px; } }
@@ -127,7 +127,7 @@ html {
     margin: calc(1.5rem - 1px) auto 1.5rem 0;
     width: 118px;
     height: 1px;
-    background: #080807;
+    background: #9da2a4;
     -webkit-transform: scaleY(0.5);
         -ms-transform: scaleY(0.5);
             transform: scaleY(0.5);
@@ -149,7 +149,7 @@ html {
     font-weight: 800;
     line-height: 1.5rem;
     letter-spacing: 0.045em;
-    color: #7ae1e6; }
+    color: #3d464d; }
     @media only screen and (min-width: 1400px) {
       .nav li strong {
         top: -3px; }
@@ -201,12 +201,23 @@ html {
     font-family: "Acropolis A", "Acropolis B", cursive;
     font-style: italic;
     font-weight: 800;
-    color: #1b1c18;
+    color: #d4f3f3;
     text-transform: lowercase;
     line-height: 15rem;
     word-wrap: break-word;
     width: 61rem;
-    overflow: visible; }
+    overflow: visible;
+    height: 100vh;
+    padding: 0;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
     @media only screen and (max-width: 1100px) {
       .content h2 {
         -webkit-transform: scale(0.84);
@@ -218,17 +229,22 @@ html {
   .content h2 + blockquote {
     position: relative;
     top: 0.125rem;
-    margin-bottom: 15rem; }
+    margin-bottom: 15rem;
+    margin-bottom: 0;
+    top: -35vh; }
     @media only screen and (min-width: 1400px) {
       .content h2 + blockquote {
         top: 3px; } }
+    @media only screen and (min-width: 1400px) {
+      .content h2 + blockquote {
+        top: -35vh; } }
   .content h3 {
     position: relative;
     top: 0;
     font-size: 2rem;
     line-height: 3rem;
-    background: #1b1c18;
-    color: #b3b3b3;
+    background: #3d464d;
+    color: #7ae1e6;
     margin: 12rem -3rem 3rem -3rem; }
   .content h3 a {
     display: block;
@@ -265,8 +281,8 @@ html {
   .content p code {
     margin-right: 0.125rem;
     padding: 1px 0.125rem;
-    background-color: #1b1c18;
-    color: #b3b3b3; }
+    background-color: #d4f3f3;
+    color: #3d464d; }
   .content p strong {
     font-weight: 600; }
   .content blockquote {
@@ -305,8 +321,8 @@ html {
   .content pre {
     position: relative;
     top: 0.5rem;
-    background-color: #1b1c18;
-    color: #b3b3b3;
+    background-color: #e4e7e9;
+    color: #3d464d;
     margin: 1.5rem -3rem 3rem -3rem;
     padding: 1.5rem 1.5rem 1.5rem 3rem;
     line-height: 1.5rem;
@@ -343,7 +359,7 @@ html {
     left: 0;
     width: 100%;
     height: 1px;
-    background: #bbbbba;
+    background: #9da2a4;
     -webkit-transform: scaleY(0.5);
         -ms-transform: scaleY(0.5);
             transform: scaleY(0.5);
@@ -378,13 +394,13 @@ html {
     line-height: 0.875rem;
     margin-left: 0.125rem;
     padding: 1px 0.25rem;
-    background: #7ae1e6;
-    color: #1b1c18; }
+    background: #3d464d;
+    color: #fdfdfb; }
   .content td code {
     font-weight: 400;
     padding: 1px 0.25rem;
-    background-color: #1b1c18;
-    color: #b3b3b3;
+    background-color: #d4f3f3;
+    color: #3d464d;
     white-space: nowrap; }
   .content td em {
     font-style: normal; }
@@ -427,18 +443,20 @@ html {
 .content__intro > *:nth-child(1) {
   margin-top: 0; }
 .content__intro h2 {
+  height: auto;
   left: -2.25rem;
   margin-top: 6rem;
   padding: 0;
   font-size: 12rem;
-  color: #1b1c18;
+  color: #d4f3f3;
   line-height: 12rem; }
 .content__intro h3 {
   margin-top: 4.5rem;
   margin-bottom: 2.375rem;
   padding-top: 2.125rem;
   word-spacing: normal;
-  background: none; }
+  background: none;
+  color: #3d464d; }
   .content__intro h3 a {
     display: inline;
     padding: 0; }
@@ -453,8 +471,8 @@ html {
   display: inline-block;
   margin-top: 1rem;
   padding: 1rem 1.125rem;
-  background: #f92672;
-  color: #1b1c18;
+  background: #d4f3f3;
+  color: #f92672;
   font-family: "Acropolis A", "Acropolis B", cursive;
   font-weight: bold;
   font-style: italic;
@@ -478,19 +496,19 @@ html {
   margin: 0; }
 
 .highlight .c, .highlight .cd {
-  color: #494947; }
+  color: #9da2a4; }
 
 .highlight .cm {
-  color: #494947; }
+  color: #9da2a4; }
 
 .highlight .c1 {
-  color: #494947; }
+  color: #9da2a4; }
 
 .highlight .cp {
-  color: #494947; }
+  color: #9da2a4; }
 
 .highlight .cs {
-  color: #494947; }
+  color: #9da2a4; }
 
 .highlight .err {
   color: #960050;
@@ -526,22 +544,22 @@ html {
   color: #aaaaaa; }
 
 .highlight .k, .highlight .kv {
-  color: #7ae1e6; }
+  color: #07a; }
 
 .highlight .kc {
-  color: #7ae1e6; }
+  color: #07a; }
 
 .highlight .kd {
-  color: #7ae1e6; }
+  color: #07a; }
 
 .highlight .kp {
-  color: #7ae1e6; }
+  color: #07a; }
 
 .highlight .kr {
-  color: #7ae1e6; }
+  color: #07a; }
 
 .highlight .kt {
-  color: #7ae1e6; }
+  color: #07a; }
 
 .highlight .kn {
   color: #f92672; }
@@ -574,89 +592,89 @@ html {
   color: #ae81ff; }
 
 .highlight .sb {
-  color: #e6db74; }
+  color: #46a805; }
 
 .highlight .sc {
-  color: #e6db74; }
+  color: #46a805; }
 
 .highlight .sd {
-  color: #e6db74; }
+  color: #46a805; }
 
 .highlight .s2 {
-  color: #e6db74; }
+  color: #46a805; }
 
 .highlight .sh {
-  color: #e6db74; }
+  color: #46a805; }
 
 .highlight .si {
-  color: #e6db74; }
+  color: #46a805; }
 
 .highlight .sx {
-  color: #e6db74; }
+  color: #46a805; }
 
 .highlight .sr {
-  color: #e6db74; }
+  color: #46a805; }
 
 .highlight .s1 {
-  color: #e6db74; }
+  color: #46a805; }
 
 .highlight .ss {
-  color: #e6db74; }
+  color: #46a805; }
 
 .highlight .s {
-  color: #e6db74; }
+  color: #46a805; }
 
 .highlight .na {
-  color: #a6e22e; }
+  color: #813dff; }
 
 .highlight .nc {
-  color: #a6e22e; }
+  color: #813dff; }
 
 .highlight .nd {
-  color: #a6e22e; }
+  color: #813dff; }
 
 .highlight .ne {
-  color: #a6e22e; }
+  color: #813dff; }
 
 .highlight .nf {
-  color: #a6e22e; }
+  color: #813dff; }
 
 .highlight .no {
-  color: #7ae1e6; }
+  color: #07a; }
 
 .highlight .bp {
-  color: #7ae1e6; }
+  color: #07a; }
 
 .highlight .nb {
-  color: #7ae1e6; }
+  color: #07a; }
 
 .highlight .ni {
-  color: #7ae1e6; }
+  color: #07a; }
 
 .highlight .nn {
-  color: #7ae1e6; }
+  color: #07a; }
 
 .highlight .vc {
-  color: #7ae1e6; }
+  color: #07a; }
 
 .highlight .vg {
-  color: #7ae1e6; }
+  color: #07a; }
 
 .highlight .vi {
-  color: #7ae1e6; }
+  color: #07a; }
 
 .highlight .nv {
-  color: #7ae1e6; }
+  color: #07a; }
 
 .highlight .w {
-  color: #7ae1e6; }
+  color: #07a; }
 
 .highlight .nl {
-  color: #7ae1e6; }
+  color: #07a; }
 
 .highlight .nt {
   color: #f92672; }
 
 .highlight {
-  color: #7ae1e6;
+  color: #07a;
   background-color: #49483e; }

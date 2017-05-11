@@ -22,6 +22,7 @@ $comment: mix($text, $darker, 30%);
 
 
 
+// sublime text
 
 $background-color: $dark;
 $text-color: $text;
@@ -44,3 +45,40 @@ $optional-bg-color: $aqua;
 $link-hairline-color: $link-color;
 $menu-hairline-color: $hairline-dark;
 $table-hairline-color: $hairline-grey;
+
+
+// bubble gum
+
+$background-color: mix(#fbfbf7, white, 50%);
+$text-color: #3d464d;
+
+$logo-color: #f92672;
+$menu-item-color: $text-color;
+
+$intro-h2-color: #d4f3f3;
+$intro-h3-color: $text-color;
+
+$button-color: $logo-color;
+$button-bg-color: $intro-h2-color;
+
+$content-h2-color: $intro-h2-color;
+$content-h3-color: #7ae1e6;
+$content-h3-bg-color: $text-color;
+
+$small-code-color: $text-color;
+$small-code-bg-color: $content-h2-color;
+$optional-color: $background-color;
+$optional-bg-color: $text-color;
+
+$link-hairline-color: $logo-color;
+$menu-hairline-color: mix($text-color, $background-color, 50%);
+$table-hairline-color: $menu-hairline-color;
+
+$big-code-color: $text-color;
+$big-code-bg-color: mix(#f0f3f5, black, 95%);
+
+$code-blue: #07a;
+$code-red: $logo-color;
+$code-str: #46a805;
+$code-purple: #813dff;
+$comment: $menu-hairline-color;

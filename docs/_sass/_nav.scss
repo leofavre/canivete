@@ -110,14 +110,14 @@
 		}
 	}
 
+	ul ~ ul li li {
+		// font-family: "Fira Code", monospace;
+	}
+
 	li a {
 		margin-left: -2.25rem;
 		padding-left: 2.25rem;
 		padding-right: 2.25rem;
-	}
-
-	li li a {
-		// color: $aqua;
 	}
 
 	a {

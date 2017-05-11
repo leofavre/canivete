@@ -7,25 +7,6 @@ const fs = require("fs");
 
 
 
-const categoriesDescriptions = {
-	"bem": "Functions for dealing with BEM CSS classes.",
-	"class-name": "Functions for adding, removing and checking the&nbsp;presence of CSS classes in DOM elements.",
-	"dom": "Functions for manipulating, traversing and gathering information about the DOM.",
-	"event": "Functions for dealing with DOM and custom events.",
-	"promise": "Functions to use with Promises.",
-	"random": "Functions for dealing with random numbers.",
-	"reduce": "Functions to use with Array reduce.",
-	"sort": "Functions to use with Array sort.",
-	"string": "Functions for manipulating strings.",
-	"time": "Functions for dealing with timestamps."
-};
-
-const getCategoryDescription = key => categoriesDescriptions[key] || "";
-
-
-
-
-
 // Basic functions, like creating or removing folders or loading JSON files.
 
 function asPromise(func, path, data, options, errMsg = "", processOut = arg => arg, processErr = processOut) {
@@ -264,7 +245,6 @@ const formatCategory = funcs => category => {
 	return {
 		name: category,
 		href: formatHref(category),
-		// description: getCategoryDescription(formatHref(category)),
 		items: categoryFunctions
 	};
 };
