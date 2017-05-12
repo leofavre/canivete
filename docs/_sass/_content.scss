@@ -1,7 +1,7 @@
 .content {
 	padding: 0 ($grid * 2) ($grid * 2) (6rem + $grid * 2);
-	// overflow-x: hidden;
-	// overflow-y: auto;
+	overflow-x: hidden;
+	overflow-y: auto;
 	line-height: $grid;
 	-webkit-overflow-scrolling: touch;
 	box-sizing: border-box;
