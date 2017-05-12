@@ -26,7 +26,6 @@ html {
   font-weight: 700;
   font-style: normal; }
 html {
-  height: 100%;
   font-size: 16px;
   color: #272822; }
   @media only screen and (min-width: 1400px) {
@@ -80,9 +79,9 @@ html {
   left: 0;
   margin: 0;
   padding: 1.5rem 2.25rem 1.5rem 2.25rem;
+  padding-right: 0;
   height: 100%;
   box-sizing: border-box;
-  min-width: 14.375rem;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -176,8 +175,6 @@ html {
 
 .content {
   padding: 0 3rem 3rem 9rem;
-  overflow-x: hidden;
-  overflow-y: auto;
   line-height: 1.5rem;
   -webkit-overflow-scrolling: touch;
   box-sizing: border-box;
@@ -206,38 +203,15 @@ html {
     line-height: 15rem;
     word-wrap: break-word;
     width: 61rem;
-    overflow: visible;
-    height: 100vh;
-    padding: 0;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-flow: row wrap;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center; }
+    overflow: visible; }
     @media only screen and (max-width: 1100px) {
       .content h2 {
-        -webkit-transform: scale(0.84);
-            -ms-transform: scale(0.84);
-                transform: scale(0.84);
-        -webkit-transform-origin: 0% 100%;
-            -ms-transform-origin: 0% 100%;
-                transform-origin: 0% 100%; } }
+        left: -9rem; } }
   .content h2 + blockquote {
     position: relative;
-    top: 0.125rem;
-    margin-bottom: 15rem;
     margin-bottom: 0;
-    top: -35vh; }
-    @media only screen and (min-width: 1400px) {
-      .content h2 + blockquote {
-        top: 3px; } }
-    @media only screen and (min-width: 1400px) {
-      .content h2 + blockquote {
-        top: -35vh; } }
+    top: -35vh;
+    width: 110%; }
   .content h3 {
     position: relative;
     top: 0;
@@ -471,14 +445,23 @@ html {
   display: inline-block;
   margin-top: 1rem;
   padding: 1rem 1.125rem;
-  background: #d4f3f3;
+  border: 1px solid #f92672;
   color: #f92672;
   font-family: "Acropolis A", "Acropolis B", cursive;
   font-weight: bold;
   font-style: italic;
   text-transform: lowercase;
   font-size: 1.75rem;
-  line-height: 1.5rem; }
+  line-height: 1.5rem;
+  position: relative;
+  left: -0.25rem;
+  margin: 1.5rem 0;
+  font-family: "Whitney Narrow A", "Whitney Narrow B", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 2.5rem;
+  line-height: 3rem;
+  word-spacing: 0.15em; }
   .content__intro h2 ~ p strong a::after {
     display: none; }
 .content__intro h3 ~ p {

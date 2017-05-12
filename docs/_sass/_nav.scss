@@ -4,10 +4,11 @@
 	left: 0;
 	margin: 0;
 	padding: $grid ($grid * 1.5) $grid ($grid * 1.5);
+	padding-right: 0;
 	height: 100%;
 	box-sizing: border-box;
 
-	min-width: 14.375rem;
+	// min-width: 14.375rem;
 
 	display: flex;
 	flex-flow: row wrap;

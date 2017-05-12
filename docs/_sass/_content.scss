@@ -1,7 +1,7 @@
 .content {
 	padding: 0 ($grid * 2) ($grid * 2) (6rem + $grid * 2);
-	overflow-x: hidden;
-	overflow-y: auto;
+	// overflow-x: hidden;
+	// overflow-y: auto;
 	line-height: $grid;
 	-webkit-overflow-scrolling: touch;
 	box-sizing: border-box;
@@ -36,15 +36,8 @@
 		overflow: visible;
 
 		@media only screen and (max-width: 1100px) {
-			transform: scale(0.84);
-			transform-origin: 0% 100%;
+			left: ($grid * -6);
 		}
-
-		height: 100vh;
-		padding: 0;
-		display: flex;
-		flex-flow: row wrap;
-		align-items: center;
 	}
 
 	h2 + h3,
@@ -55,19 +48,9 @@
 
 	h2 + blockquote {
 		position: relative;
-		top: 0.125rem;
-		margin-bottom: ($grid * 10);
-
-		@media only screen and (min-width: 1400px) {
-			top: 3px;
-		}
-
 		margin-bottom: 0;
 		top: -35vh;
-
-		@media only screen and (min-width: 1400px) {
-			top: -35vh;
-		}
+		width: 110%;
 	}
 
 	h3 {
@@ -404,7 +387,7 @@
 		display: inline-block;
 		margin-top: 1rem;
 		padding: 1rem 1.125rem;
-		background: $button-bg-color;
+		border: 1px solid $button-color;
 		color: $button-color;
 		font-family: "Acropolis A", "Acropolis B", cursive;
 		font-weight: bold;
@@ -412,6 +395,16 @@
 		text-transform: lowercase;
 		font-size: 1.75rem;
 		line-height: 1.5rem;
+
+		position: relative;
+		left: -0.25rem;
+		margin: $grid 0;
+		font-family: "Whitney Narrow A", "Whitney Narrow B", sans-serif;
+		font-style: normal;
+		font-weight: 300;
+		font-size: 2.5rem;
+		line-height: 3rem;
+		word-spacing: 0.15em;
 
 		&::after {
 			display: none;
