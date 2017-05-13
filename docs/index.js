@@ -3,15 +3,21 @@ import './_includes/kerning.min';
 
 Kerning.live();
 
-$('a[href^="#"]').on('click', function() {
-	let target = getScrollTargetByName(getHash(this));
+$('a[href^="#"]').on('click', scrollToAnchor);
+
+function scrollToAnchor(evt) {
+	let target = getScrollTargetByName(getAnchorName(evt.target));
 
 	if (target) {
-		$(".content").scrollTo(target, 600);
-	}
-});
+		evt.preventDefault();
 
-function getHash(el) {
+		$(".content").scrollTo(target, 600, {
+			axis: "y"
+		});
+	}
+}
+
+function getAnchorName(el) {
 	return el.href.split("#")[1];
 }
 
