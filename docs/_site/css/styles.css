@@ -39,7 +39,7 @@ html {
   font-family: "Whitney SSm A", "Whitney SSm B", sans-serif;
   margin: 0;
   color: #3d464d;
-  background: #fdfdfb;
+  background: #fbfbf7;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -104,7 +104,8 @@ html {
     font-style: italic;
     font-weight: 800;
     text-transform: lowercase;
-    color: #f92672; }
+    color: #f92672;
+    cursor: default; }
     @media only screen and (min-width: 1400px) {
       .nav h1 {
         top: 1px; } }
@@ -127,7 +128,7 @@ html {
     margin: calc(1.5rem - 1px) auto 1.5rem 0;
     width: 118px;
     height: 1px;
-    background: #9da2a4;
+    background: #9ca1a2;
     -webkit-transform: scaleY(0.5);
         -ms-transform: scaleY(0.5);
             transform: scaleY(0.5);
@@ -170,6 +171,10 @@ html {
     display: block;
     color: inherit;
     text-decoration: none; }
+  .nav a:hover {
+    background-color: #f0f1f0; }
+  .nav a.selected {
+    background-color: #e4e7e9; }
 
 .nav__inner {
   margin-right: auto; }
@@ -279,7 +284,7 @@ html {
   .content blockquote {
     margin: 0; }
   .content blockquote a::after {
-    bottom: -3px;
+    bottom: -2px;
     background: #f92672;
     height: 2px; }
   .content a {
@@ -350,7 +355,7 @@ html {
     left: 0;
     width: 100%;
     height: 1px;
-    background: #9da2a4;
+    background: #9ca1a2;
     -webkit-transform: scaleY(0.5);
         -ms-transform: scaleY(0.5);
             transform: scaleY(0.5);
@@ -386,7 +391,7 @@ html {
     margin-left: 0.125rem;
     padding: 1px 0.25rem;
     background: #3d464d;
-    color: #fdfdfb; }
+    color: #fbfbf7; }
   .content td code {
     font-weight: 400;
     padding: 1px 0.25rem;
@@ -502,19 +507,19 @@ html {
   margin: 0; }
 
 .highlight .c, .highlight .cd {
-  color: #9da2a4; }
+  color: #9ca1a2; }
 
 .highlight .cm {
-  color: #9da2a4; }
+  color: #9ca1a2; }
 
 .highlight .c1 {
-  color: #9da2a4; }
+  color: #9ca1a2; }
 
 .highlight .cp {
-  color: #9da2a4; }
+  color: #9ca1a2; }
 
 .highlight .cs {
-  color: #9da2a4; }
+  color: #9ca1a2; }
 
 .highlight .err {
   color: #960050;

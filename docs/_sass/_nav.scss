@@ -34,6 +34,7 @@
 		font-weight: 800;
 		text-transform: lowercase;
 		color: $logo-color;
+		cursor: default;
 
 		@media only screen and (min-width: 1400px) {
 			top: 1px;
@@ -124,6 +125,14 @@
 		display: block;
 		color: inherit;
 		text-decoration: none;
+	}
+
+	a:hover {
+		background-color: $menu-item-hover-bg;
+	}
+
+	a.selected {
+		background-color: $menu-item-selected-bg;
 	}
 }
 

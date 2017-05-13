@@ -49,11 +49,10 @@ $table-hairline-color: $hairline-grey;
 
 // bubble gum
 
-$background-color: mix(#fbfbf7, white, 50%);
+$background-color: mix(#fbfbf7, white, 100%);
 $text-color: #3d464d;
 
 $logo-color: #f92672;
-$menu-item-color: $text-color;
 
 $intro-h2-color: #d4f3f3;
 $intro-h3-color: $text-color;
@@ -82,3 +81,7 @@ $code-red: $logo-color;
 $code-str: #46a805;
 $code-purple: #813dff;
 $comment: $menu-hairline-color;
+
+$menu-item-color: $text-color;
+$menu-item-selected-bg: $big-code-bg-color;
+$menu-item-hover-bg: mix($menu-item-selected-bg, $background-color, 50%);
