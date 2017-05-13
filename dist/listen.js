@@ -12,6 +12,15 @@ import _reactToEvent from "./internal/event/_reactToEvent";
  * @param {string} eventStr The event names string.
  * @param {Function} callback The function to be exectuted when the event is dispatched.
  * @param {Boolean} [useCapture = false] The event phase to be listened for.
+ *
+ * @example
+ *
+ * let oneElement = document.querySelector("a");
+ * let manyElements = document.querySelectorAll("a");
+ * 
+ * listen(oneElement, "click", reactToClick, true);
+ * listen(manyElements, "click", reactToClick);
+ * listen(window, "load resize", reactToLoadAndResize);
  */
 const listen = (domEls, eventStr, callback, useCapture = false) => _reactToEvent("addEventListener", domEls, eventStr, callback, useCapture);
 

@@ -12,6 +12,15 @@ import _reactToEvent from "./internal/event/_reactToEvent";
  * @param {string} eventStr The event names string.
  * @param {Function} callback The function to be ignored.
  * @param {Boolean} [useCapture = false] The event phase being listened for.
+ *
+ * @example
+ *
+ * let oneElement = document.querySelector("a");
+ * let manyElements = document.querySelectorAll("a");
+ * 
+ * ignore(oneElement, "click", reactToClick, true);
+ * ignore(manyElements, "click", reactToClick);
+ * ignore(window, "load resize", reactToLoadAndResize);
  */
 const ignore = (domEls, eventStr, callback, useCapture = false) => _reactToEvent("removeEventListener", domEls, eventStr, callback, useCapture);
 

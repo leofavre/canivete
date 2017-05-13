@@ -3,7 +3,7 @@ layout: default
 title: Canivete
 ---
 
-## BEM
+## *BEM*
 
 >[formatBemClass](#formatbemclass), [modifyBemClass](#modifybemclass) &amp;&nbsp;[modifyBemClassCompact](#modifybemclasscompact)
 
@@ -175,7 +175,7 @@ domEl.className;
 // => "swiper--slides-5 swiper--current-3"
 ```
 
-## ClassName
+## *ClassName*
 
 >[addClass](#addclass), [hasClass](#hasclass) &amp;&nbsp;[removeClass](#removeclass)
 
@@ -267,7 +267,7 @@ manyElements[0].className;
 // => "base"
 ```
 
-## Collection
+## *Collection*
 
 >[recursiveGroupBy](#recursivegroupby)
 
@@ -355,7 +355,7 @@ recursiveGroupBy(stores, getStateName, getCityName);
 // => }
 ```
 
-## DOM
+## *DOM*
 
 >[getAttr](#getattr), [parents](#parents), [removeAttr](#removeattr), [removeAttrs](#removeattrs), [selfAndParents](#selfandparents), [setAttr](#setattr) &amp;&nbsp;[setAttrs](#setattrs)
 
@@ -665,7 +665,7 @@ manyElements[0].className;
 // => "button"
 ```
 
-## Event
+## *Event*
 
 >[eventPath](#eventpath), [ignore](#ignore), [listen](#listen) &amp;&nbsp;[trigger](#trigger)
 
@@ -724,6 +724,17 @@ of target DOM elements.
 | `callback` |  | Function | The function to be ignored. |
 | `useCapture` | `false` | Boolean | The event phase being listened for. **optional** |
 
+#### Example
+
+```javascript
+let oneElement = document.querySelector("a");
+let manyElements = document.querySelectorAll("a");
+
+ignore(oneElement, "click", reactToClick, true);
+ignore(manyElements, "click", reactToClick);
+ignore(window, "load resize", reactToLoadAndResize);
+```
+
 ### <a name="listen">`listen(domEls, eventStr, callback, [useCapture])`</a>
 
 Adds one or more event listeners to one or more DOM elements at once.
@@ -740,6 +751,17 @@ of target DOM elements.
 | `eventStr` |  | String | The event names string. |
 | `callback` |  | Function | The function to be exectuted when the event is dispatched. |
 | `useCapture` | `false` | Boolean | The event phase to be listened for. **optional** |
+
+#### Example
+
+```javascript
+let oneElement = document.querySelector("a");
+let manyElements = document.querySelectorAll("a");
+
+listen(oneElement, "click", reactToClick, true);
+listen(manyElements, "click", reactToClick);
+listen(window, "load resize", reactToLoadAndResize);
+```
 
 ### <a name="trigger">`trigger(domEl, evtName, [bubbles], [cancelable], [detail])`</a>
 
@@ -766,7 +788,7 @@ popupButton.addEventListener("click", evt => {
 });
 ```
 
-## Geometry
+## *Geometry*
 
 >[getClippingInfo](#getclippinginfo)
 
@@ -846,7 +868,7 @@ info.isInvisible;
 // => false
 ```
 
-## Promise
+## *Promise*
 
 >[eventAsPromise](#eventaspromise) &amp;&nbsp;[waitInPromise](#waitinpromise)
 
@@ -933,7 +955,7 @@ Promise.resolve("waiting")
 	.then(doSomethingAfterOneSecond);
 ```
 
-## Random
+## *Random*
 
 >[oneOutOf](#oneoutof)
 
@@ -964,7 +986,7 @@ oneOutOf(2);
 // => false
 ```
 
-## Reduce
+## *Reduce*
 
 >[toAverage](#toaverage), [toAverageProp](#toaverageprop), [toClosest](#toclosest), [toClosestProp](#toclosestprop), [toLargestProp](#tolargestprop), [toSmallestProp](#tosmallestprop) &amp;&nbsp;[toSum](#tosum)
 
@@ -1296,7 +1318,7 @@ Also, note that the parentheses can be ommited.
 // => 24
 ```
 
-## Sort
+## *Sort*
 
 >[byAlphabeticalOrder](#byalphabeticalorder)
 
@@ -1325,7 +1347,7 @@ musqueteers.sort(byAlphabeticalOrder);
 // => ["Aramis", "Athos", "Porthos"]
 ```
 
-## String
+## *String*
 
 >[afterFirst](#afterfirst), [afterLast](#afterlast), [beforeFirst](#beforefirst) &amp;&nbsp;[beforeLast](#beforelast)
 
@@ -1433,7 +1455,7 @@ beforeLast("parallelepiped", "le");
 // => "paralle"
 ```
 
-## Time
+## *Time*
 
 >[timeSince](#timesince)
 
