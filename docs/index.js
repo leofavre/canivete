@@ -39,13 +39,15 @@ function markBrowser(hash) {
 }
 
 function safeChangeHash(hash) {
-	let memo = $(".content").scrollTop();
+	let memoPosition = $(".content").scrollTop();
 
 	setTimeout(function() {
-		let current = $(".content").scrollTop();
-		if (current === memo) {
+		let currentPosition = $(".content").scrollTop(),
+			scrollHasStopped = (currentPosition === memoPosition);
+
+		if (scrollHasStopped) {
 			document.location.hash = hash;
-			$(".content").scrollTop(memo);
+			$(".content").scrollTop(memoPosition);
 		}
 	}, 100);
 }

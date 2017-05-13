@@ -2187,13 +2187,15 @@ function markBrowser(hash) {
 }
 
 function safeChangeHash(hash) {
-	var memo = $(".content").scrollTop();
+	var memoPosition = $(".content").scrollTop();
 
 	setTimeout(function () {
-		var current = $(".content").scrollTop();
-		if (current === memo) {
+		var currentPosition = $(".content").scrollTop(),
+		    scrollHasStopped = currentPosition === memoPosition;
+
+		if (scrollHasStopped) {
 			document.location.hash = hash;
-			$(".content").scrollTop(memo);
+			$(".content").scrollTop(memoPosition);
 		}
 	}, 100);
 }
