@@ -11,6 +11,7 @@ github_username: leofavre
 
 # Build settings
 markdown: kramdown
+
 exclude:
   - Gemfile
   - Gemfile.lock

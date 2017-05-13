@@ -19,5 +19,6 @@ export default {
 			jsnext: true
 		})
 	],
-	format: "es"
+	format: "es",
+	context: "this"
 };

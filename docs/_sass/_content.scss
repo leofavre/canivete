@@ -14,15 +14,14 @@
 	margin-left: 14.375rem - 3rem;
 
 	h1 {
-		// color: $aqua;
+
 	}
 
 	h2 {
 		position: relative;
-		// top: 0.75rem;
 		left: ($grid * -3);
 		margin: ($grid * 10) 0 0;
-		padding: ($grid * 2) 0 $grid;
+		padding: 0;
 		font-size: 24rem;
 		font-family: "Acropolis A", "Acropolis B", cursive;
 		font-style: italic;
@@ -32,24 +31,30 @@
 		line-height: 15rem;
 		word-wrap: break-word;
 		width: 61rem;
-		// max-height: 39rem;
 		overflow: visible;
 
+		display: flex;
+		flex-flow: row wrap;
+		height: 100vh;
+
 		@media only screen and (max-width: 1100px) {
-			left: ($grid * -6);
+			font-size: 21rem;
+			line-height: 13.5rem;
+			width: 54rem;
 		}
 	}
 
-	h2 + h3,
-	h2 + p + h3,
-	h2 + blockquote + p + h3 {
-		// margin-top: ($grid * 2);
+	h2 > * {
+		position: relative;
+		top: -0.05em;
+		margin: auto 0;
+		min-width: 0;
 	}
 
 	h2 + blockquote {
 		position: relative;
-		margin-bottom: 0;
 		top: -35vh;
+		margin-bottom: 0;
 		width: 110%;
 	}
 
@@ -338,6 +343,10 @@
 	font-size: 2.5rem;
 	line-height: 3rem;
 	word-spacing: 0.15em;
+
+	@media only screen and (max-width: 1100px) {
+		font-size: 2rem;
+	}
 }
 
 .content__intro {
@@ -346,7 +355,7 @@
 	}
 
 	h2 {
-		// top: 0.375rem;
+		display: block;
 		height: auto;
 		left: -2.25rem;
 		margin-top: $grid * 4;
@@ -354,6 +363,10 @@
 		font-size: 12rem;
 		color: $intro-h2-color;
 		line-height: 12rem;
+	}
+
+	h2 > * {
+		position: static;
 	}
 
 	h3 {
