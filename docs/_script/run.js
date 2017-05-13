@@ -43,6 +43,8 @@ const removeNewslines = str => str; // str.replace(/(?:\r\n|\r|\n)/g, " ");
 
 const exportSiteUsingJekyll = path => () => execAsPromise(`cd ${path} && bundle exec jekyll build`);
 
+const exportScriptWithRollUp = () => execAsPromise(`rollup -c rollup.docs.config.js`);
+
 const capitalizeFirstLetter = str => str.charAt(0).toUpperCase() + str.slice(1);
 
 const escapeHtmlTag = str => str.replace(/\</g, "&lt;").replace(/\>/g, "&gt;");
@@ -282,6 +284,7 @@ Promise.resolve()
 	.then(exportDocsUsingTemplate("./docs/temp/processed.json", "./docs/_includes", "menu", "./docs/_ejs/menu.ejs"))
 	// .then(removeDir("./docs/temp")) // *
 	.then(exportSiteUsingJekyll("./docs"))
+	.then(exportScriptWithRollUp)
 	.catch();
 
 // If I could stream exportJsDocsAsJson into exportDocsUsingTemplate,
