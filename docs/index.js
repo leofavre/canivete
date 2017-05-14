@@ -30,7 +30,7 @@ function markBrowser() {
 	let hash = getHash(getCurrentlyReadableChapter());
 	let memoPosition = $(".content").scrollTop();
 	document.location.hash = hash;
-	$(".content").scrollTop(memoPosition);
+	$(".content").scrollTop(memoPosition).scrollLeft(0);
 }
 
 function getCurrentlyReadableChapter() {
@@ -42,6 +42,21 @@ function getHash(domEl) {
 	return domEl.href ? domEl.href.split("#")[1] : "" ||
 		domEl.getAttribute("id") ||
 		domEl.getAttribute("name");
+}
+
+function getAutoHeight(domEl) {
+	$domEl = $(domEl);
+
+	let memoCSS = $domEl.attr("style");
+
+	$domEl.css({
+		transition: "all 0s",
+		height: "auto"
+	});
+
+	let memoHeight = $domEl.height();
+	$domEl.attr("style", memoCSS || "");
+	return memoHeight;
 }
 
 function getChapterByHash(hash) {

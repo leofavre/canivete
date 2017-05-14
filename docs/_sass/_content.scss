@@ -1,17 +1,10 @@
 .content {
-	padding: 0 ($grid * 2) ($grid * 2) (6rem + $grid * 2);
+	flex: 1 1 auto;
 	overflow-x: hidden;
 	overflow-y: auto;
 	line-height: $grid;
 	-webkit-overflow-scrolling: touch;
-	box-sizing: border-box;
-
-	width: calc(#{6rem + $full-content-width} + ((100% - #{$full-content-width}) / 2));
-	flex-basis: auto;
-	flex-grow: 0;
-	flex-shrink: 1;
-
-	margin-left: 14.375rem - 3rem;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
 
 	h1 {
 
@@ -38,6 +31,7 @@
 		height: 100vh;
 
 		@media only screen and (max-width: 1100px) {
+			left: ($grid * -1.5);
 			font-size: 21rem;
 			line-height: 13.5rem;
 			width: 54rem;
@@ -55,7 +49,7 @@
 		position: relative;
 		top: -35vh;
 		margin-bottom: 0;
-		width: 110%;
+		// width: 110%;
 	}
 
 	h3 {
@@ -140,8 +134,6 @@
 	}
 
 	blockquote a::after {
-		bottom: -2px;
-		height: calc(100% + 2px);
 		border-bottom: 2px solid $link-hairline-color;
 	}
 
@@ -156,9 +148,9 @@
 		content: "";
 		position: absolute;
 		left: 0;
-		bottom: -3px;
+		bottom: -2px;
 		width: 100%;
-		height: calc(100% + 3px);
+		height: calc(100% + 2px);
 		background: transparent;
 		border-bottom: 1px solid $link-hairline-color;
 		z-index: 1;
@@ -330,8 +322,17 @@
 }
 
 .content__inner {
-	max-width: $full-content-width;
+	$content-left-padding: ($grid * 4);
+	$content-right-padding: ($grid * 2);
+
+	margin-left: calc(0.25 * (100vw - #{$nav-width + $full-content-width + $content-left-padding + $content-right-padding}));
 	margin-bottom: 50vh;
+	padding: 0 $content-right-padding 0 $content-left-padding;
+	max-width: $full-content-width;
+
+	@media only screen and (max-width: #{$nav-width + $full-content-width + $content-left-padding + $content-right-padding}) {
+		margin-left: 0;
+	}
 
 	> *:nth-child(1), {
 		margin-top: 0;

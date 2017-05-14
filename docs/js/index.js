@@ -927,7 +927,7 @@ function markBrowser() {
 	var hash = getHash(getCurrentlyReadableChapter());
 	var memoPosition = $(".content").scrollTop();
 	document.location.hash = hash;
-	$(".content").scrollTop(memoPosition);
+	$(".content").scrollTop(memoPosition).scrollLeft(0);
 }
 
 function getCurrentlyReadableChapter() {

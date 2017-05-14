@@ -51,9 +51,13 @@ html {
   overflow: auto; }
 
 .page__inner {
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
   position: relative;
   margin: 0 auto;
   width: 100%;
+  height: 100%;
   overflow: hidden;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -61,12 +65,9 @@ html {
   -webkit-flex-flow: row nowrap;
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
-  -webkit-justify-content: flex-end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-flex: 1 1 auto;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto; }
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start; }
 
 .nav--grid, .nav__inner--grid, .content__inner--grid {
   background-position: 0.3125rem 0;
@@ -75,14 +76,13 @@ html {
   background-attachment: scroll; }
 
 .nav {
-  position: fixed;
-  top: 0;
-  left: 0;
+  -webkit-flex: 0 0 14.5rem;
+      -ms-flex: 0 0 14.5rem;
+          flex: 0 0 14.5rem;
   margin: 0;
-  padding: 1.5rem 0.375rem 1.5rem 2.25rem;
+  padding: 1.5rem 0 1.5rem 2.25rem;
   height: 100%;
   box-sizing: border-box;
-  min-width: 14.375rem;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -93,6 +93,7 @@ html {
   overflow-y: auto;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
   z-index: 1; }
   .nav h1 {
     position: relative;
@@ -112,14 +113,14 @@ html {
   .nav ul {
     position: relative;
     top: 0.5rem;
-    margin: 0 1.5rem 0 -2.25rem;
+    margin: 0 0 0 -2.25rem;
     padding: 0; }
     @media only screen and (min-width: 1400px) {
       .nav ul {
         top: 8px; } }
   .nav ul ul {
     top: 0;
-    margin: 0 0 1.5rem 0;
+    margin: 0;
     overflow: hidden; }
   .nav ul ~ ul::before {
     content: "";
@@ -163,6 +164,8 @@ html {
     @media only screen and (min-width: 1400px) {
       .nav li li {
         top: -1px; } }
+  .nav ul ~ ul li li:nth-last-child(1) {
+    margin-bottom: 1.5rem; }
   .nav li a {
     padding-left: 2.25rem;
     padding-right: 2.25rem; }
@@ -179,23 +182,14 @@ html {
   margin-right: auto; }
 
 .content {
-  padding: 0 3rem 3rem 9rem;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
   overflow-x: hidden;
   overflow-y: auto;
   line-height: 1.5rem;
   -webkit-overflow-scrolling: touch;
-  box-sizing: border-box;
-  width: calc(49.25rem + ((100% - 43.25rem) / 2));
-  -webkit-flex-basis: auto;
-      -ms-flex-preferred-size: auto;
-          flex-basis: auto;
-  -webkit-flex-grow: 0;
-      -ms-flex-positive: 0;
-          flex-grow: 0;
-  -webkit-flex-shrink: 1;
-      -ms-flex-negative: 1;
-          flex-shrink: 1;
-  margin-left: 11.375rem; }
+  -ms-overflow-style: -ms-autohiding-scrollbar; }
   .content h2 {
     position: relative;
     left: -4.5rem;
@@ -220,6 +214,7 @@ html {
     height: 100vh; }
     @media only screen and (max-width: 1100px) {
       .content h2 {
+        left: -2.25rem;
         font-size: 21rem;
         line-height: 13.5rem;
         width: 54rem; } }
@@ -231,8 +226,7 @@ html {
   .content h2 + blockquote {
     position: relative;
     top: -35vh;
-    margin-bottom: 0;
-    width: 110%; }
+    margin-bottom: 0; }
   .content h3 {
     position: relative;
     top: 0;
@@ -282,8 +276,6 @@ html {
   .content blockquote {
     margin: 0; }
   .content blockquote a::after {
-    bottom: -2px;
-    height: calc(100% + 2px);
     border-bottom: 2px solid #f92672; }
   .content a {
     position: relative;
@@ -294,9 +286,9 @@ html {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -3px;
+    bottom: -2px;
     width: 100%;
-    height: calc(100% + 3px);
+    height: calc(100% + 2px);
     background: transparent;
     border-bottom: 1px solid #f92672;
     z-index: 1; }
@@ -424,8 +416,13 @@ html {
     width: 20%; }
 
 .content__inner {
-  max-width: 43.25rem;
-  margin-bottom: 50vh; }
+  margin-left: calc(0.25 * (100vw - 66.75rem));
+  margin-bottom: 50vh;
+  padding: 0 3rem 0 6rem;
+  max-width: 43.25rem; }
+  @media only screen and (max-width: 66.75rem) {
+    .content__inner {
+      margin-left: 0; } }
   .content__inner > *:nth-child(1) {
     margin-top: 0; }
 
