@@ -4,6 +4,7 @@ import throttle from "lodash-es/throttle";
 import debounce from "lodash-es/debounce";
 
 const navButtons = $(".nav").find("a").get();
+const navCollapsableButtons = $(navButtons).get().filter(domEl => $(domEl).parent().is("strong"));
 const navTargets = $(".content").find("h2, h3 > a").get().filter(domEl => !!getHash(domEl));
 
 function scrollToChapter(evt) {

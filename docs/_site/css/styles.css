@@ -125,7 +125,7 @@ html {
     content: "";
     position: relative;
     display: block;
-    margin: 1.5rem auto 1.5rem 0;
+    margin: 1.5rem auto 1.5rem 2.25rem;
     width: 118px;
     height: 1px;
     background: #9ca1a2;
@@ -171,7 +171,7 @@ html {
     color: inherit;
     text-decoration: none; }
   .nav a:hover {
-    background-color: #f0f1f0; }
+    background-color: #f5f6f4; }
   .nav a.selected {
     background-color: #e4e7e9; }
 
