@@ -44,7 +44,7 @@
 	ul {
 		position: relative;
 		top: 0.5rem;
-		margin: $grid 0;
+		margin: 0 $grid 0 -2.25rem;
 		padding: 0;
 
 		@media only screen and (min-width: 1400px) {
@@ -54,22 +54,20 @@
 
 	ul ul {
 		top: 0;
-		margin-top: 0;
-		margin-left: 0;
+		margin: 0 0 $grid 0;
+		overflow: hidden;
 	}
 
-	ul + ul {
-		&::before {
-			content: "";
-			position: relative;
-			display: block;
-			margin: calc(#{$grid} - 1px) auto $grid 0;
-			width: 118px;
-			height: 1px;
-			background: $menu-hairline-color;
-			transform: scaleY(0.5);
-			transform-origin: 0 0;
-		}
+	ul ~ ul::before {
+		content: "";
+		position: relative;
+		display: block;
+		margin: $grid auto $grid 0;
+		width: 118px;
+		height: 1px;
+		background: $menu-hairline-color;
+		transform: scaleY(0.5);
+		transform-origin: 0 0;
 	}
 
 	li {
@@ -111,12 +109,11 @@
 		}
 	}
 
-	ul ~ ul li li {
-		// font-family: "Fira Code", monospace;
+	ul ~ ul li li a {
+		// text-indent: $grid / 2;
 	}
 
 	li a {
-		margin-left: -2.25rem;
 		padding-left: 2.25rem;
 		padding-right: 2.25rem;
 	}

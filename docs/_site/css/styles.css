@@ -112,20 +112,20 @@ html {
   .nav ul {
     position: relative;
     top: 0.5rem;
-    margin: 1.5rem 0;
+    margin: 0 1.5rem 0 -2.25rem;
     padding: 0; }
     @media only screen and (min-width: 1400px) {
       .nav ul {
         top: 8px; } }
   .nav ul ul {
     top: 0;
-    margin-top: 0;
-    margin-left: 0; }
-  .nav ul + ul::before {
+    margin: 0 0 1.5rem 0;
+    overflow: hidden; }
+  .nav ul ~ ul::before {
     content: "";
     position: relative;
     display: block;
-    margin: calc(1.5rem - 1px) auto 1.5rem 0;
+    margin: 1.5rem auto 1.5rem 0;
     width: 118px;
     height: 1px;
     background: #9ca1a2;
@@ -164,7 +164,6 @@ html {
       .nav li li {
         top: -1px; } }
   .nav li a {
-    margin-left: -2.25rem;
     padding-left: 2.25rem;
     padding-right: 2.25rem; }
   .nav a {
@@ -275,7 +274,6 @@ html {
       .content p {
         top: calc(0.5rem - 1px); } }
   .content p code {
-    margin-right: 0.125rem;
     padding: 1px 0.125rem;
     background-color: #d4f3f3;
     color: #3d464d; }
@@ -285,8 +283,8 @@ html {
     margin: 0; }
   .content blockquote a::after {
     bottom: -2px;
-    background: #f92672;
-    height: 2px; }
+    height: calc(100% + 2px);
+    border-bottom: 2px solid #f92672; }
   .content a {
     position: relative;
     color: inherit;
@@ -297,13 +295,19 @@ html {
     position: absolute;
     left: 0;
     bottom: -3px;
-    width: calc(100% - 0.125rem);
-    height: 1px;
-    background: #f92672;
+    width: 100%;
+    height: calc(100% + 3px);
+    background: transparent;
+    border-bottom: 1px solid #f92672;
     z-index: 1; }
+  .content a:hover::after {
+    background: rgba(249, 38, 114, 0.2);
+    mix-blend-mode: multiply; }
   .content a[name]::after {
     content: normal;
     display: none; }
+  .content a[name]:hover::after {
+    background: transparent; }
   .content ul,
   .content ol {
     position: relative;
@@ -421,7 +425,7 @@ html {
 
 .content__inner {
   max-width: 43.25rem;
-  margin-bottom: 45rem; }
+  margin-bottom: 50vh; }
   .content__inner > *:nth-child(1) {
     margin-top: 0; }
 

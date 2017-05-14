@@ -1,6 +1,5 @@
 import "./_includes/jquery.scrollTo.min";
 import "./_includes/kerning.min";
-import toClosestProp from "../dist/toClosestProp";
 import throttle from "lodash-es/throttle";
 import debounce from "lodash-es/debounce";
 

@@ -70,6 +70,8 @@ $optional-color: $background-color;
 $optional-bg-color: $text-color;
 
 $link-hairline-color: $logo-color;
+$link-hover-color: rgba($link-hairline-color, 0.2);
+
 $menu-hairline-color: mix($text-color, $background-color, 50%);
 $table-hairline-color: $menu-hairline-color;
 
