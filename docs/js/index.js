@@ -2166,38 +2166,18 @@ function scrollToChapter(evt) {
 	}
 }
 
-function markNavAndBrowser() {
+function markNav() {
 	var hash = getHash(getCurrentlyReadableChapter());
-	markNav(hash);
-	markBrowser(hash);
-}
-
-function markNav(hash) {
 	var markedNavButton = getNavButtonByHash(hash);
 	$(navButtons).removeClass("selected");
 	$(markedNavButton).addClass("selected");
 }
 
-function markBrowser(hash) {
-	var newHash = "#" + hash;
-
-	if (document.location.hash !== newHash) {
-		safeChangeHash(newHash);
-	}
-}
-
-function safeChangeHash(hash) {
+function markBrowser() {
+	var hash = getHash(getCurrentlyReadableChapter());
 	var memoPosition = $(".content").scrollTop();
-
-	setTimeout(function () {
-		var currentPosition = $(".content").scrollTop(),
-		    scrollHasStopped = currentPosition === memoPosition;
-
-		if (scrollHasStopped) {
-			document.location.hash = hash;
-			$(".content").scrollTop(memoPosition);
-		}
-	}, 100);
+	document.location.hash = hash;
+	$(".content").scrollTop(memoPosition);
 }
 
 function getCurrentlyReadableChapter() {
@@ -2224,5 +2204,7 @@ function getLastItem(arr) {
 }
 
 $("a[href^=\"#\"]").on("click", scrollToChapter);
-$(".content").on("scroll", throttle(markNavAndBrowser, 30));
-$("window").on("load resize", throttle(markNavAndBrowser, 290));
+
+$(".content").on("scroll", throttle(markNav, 30)).on("scroll", debounce(markBrowser, 300));
+
+$(window).on("resize", throttle(markNav, 30)).on("resize", debounce(markBrowser, 300));
