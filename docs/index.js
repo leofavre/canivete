@@ -6,6 +6,8 @@ import debounce from "lodash-es/debounce";
 const navButtons = $(".nav").find("a").get();
 const navCollapsableButtons = $(navButtons).get().filter(domEl => $(domEl).parent().is("strong"));
 const navTargets = $(".content").find("h2, h3 > a").get().filter(domEl => !!getHash(domEl));
+const $content = $(".content");
+const $window = $(window);
 
 function scrollToChapter(evt) {
 	let chapter = getChapterByHash(getHash(evt.target));
@@ -13,7 +15,7 @@ function scrollToChapter(evt) {
 	if (chapter) {
 		evt.preventDefault();
 
-		$(".content").scrollTo(chapter, 600, {
+		$content.scrollTo(chapter, 600, {
 			axis: "y"
 		});
 	}
@@ -27,14 +29,22 @@ function markNav() {
 }
 
 function markBrowser() {
-	let hash = getHash(getCurrentlyReadableChapter());
-	let memoPosition = $(".content").scrollTop();
-	document.location.hash = hash;
-	$(".content").scrollTop(memoPosition).scrollLeft(0);
+	let hash = `#${getHash(getCurrentlyReadableChapter())}`;
+	let memoPosition = $content.scrollTop();
+
+	if (document.location.hash !== hash) {
+		document.location.hash = hash;
+	}
+
+	if ($content.scrollTop() !== memoPosition) {
+		$content.scrollTop(memoPosition);
+	}
+
+	$content.scrollLeft(0); // for IE.
 }
 
 function getCurrentlyReadableChapter() {
-	let anchorsAboveTheFold = navTargets.filter(titleEl => titleEl.getBoundingClientRect().top < $(window).height() * 0.5);
+	let anchorsAboveTheFold = navTargets.filter(titleEl => titleEl.getBoundingClientRect().top < $window.height() * 0.5);
 	return getLastItem(anchorsAboveTheFold);
 }
 
@@ -73,10 +83,10 @@ function getLastItem(arr) {
 
 $(`a[href^="#"]`).on("click", scrollToChapter);
 
-$(".content")
+$content
 	.on("scroll", throttle(markNav, 30))
 	.on("scroll", debounce(markBrowser, 300));
 
-$(window)
+$window
 	.on("resize", throttle(markNav, 30))
 	.on("resize", debounce(markBrowser, 300));

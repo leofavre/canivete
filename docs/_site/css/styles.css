@@ -189,7 +189,9 @@ html {
   overflow-y: auto;
   line-height: 1.5rem;
   -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: -ms-autohiding-scrollbar; }
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  height: 100%;
+  display: block; }
   .content h2 {
     position: relative;
     left: -4.5rem;
@@ -202,7 +204,6 @@ html {
     color: #d4f3f3;
     text-transform: lowercase;
     line-height: 15rem;
-    word-wrap: break-word;
     width: 61rem;
     overflow: visible;
     display: -webkit-flex;
@@ -211,7 +212,9 @@ html {
     -webkit-flex-flow: row wrap;
         -ms-flex-flow: row wrap;
             flex-flow: row wrap;
-    height: 100vh; }
+    height: 100vh;
+    overflow-wrap: break-word;
+    word-wrap: break-word; }
     @media only screen and (max-width: 1100px) {
       .content h2 {
         left: -2.25rem;
@@ -419,7 +422,8 @@ html {
   margin-left: calc(0.25 * (100vw - 66.75rem));
   margin-bottom: 50vh;
   padding: 0 3rem 0 6rem;
-  max-width: 43.25rem; }
+  max-width: 43.25rem;
+  height: 100%; }
   @media only screen and (max-width: 66.75rem) {
     .content__inner {
       margin-left: 0; } }

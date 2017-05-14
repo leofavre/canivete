@@ -5,6 +5,8 @@
 	line-height: $grid;
 	-webkit-overflow-scrolling: touch;
 	-ms-overflow-style: -ms-autohiding-scrollbar;
+	height: 100%;
+	display: block;
 
 	h1 {
 
@@ -22,13 +24,15 @@
 		color: $content-h2-color;
 		text-transform: lowercase;
 		line-height: 15rem;
-		word-wrap: break-word;
 		width: 61rem;
 		overflow: visible;
 
 		display: flex;
 		flex-flow: row wrap;
 		height: 100vh;
+
+		overflow-wrap: break-word;
+		word-wrap: break-word;
 
 		@media only screen and (max-width: 1100px) {
 			left: ($grid * -1.5);
@@ -49,7 +53,6 @@
 		position: relative;
 		top: -35vh;
 		margin-bottom: 0;
-		// width: 110%;
 	}
 
 	h3 {
@@ -329,6 +332,7 @@
 	margin-bottom: 50vh;
 	padding: 0 $content-right-padding 0 $content-left-padding;
 	max-width: $full-content-width;
+	height: 100%;
 
 	@media only screen and (max-width: #{$nav-width + $full-content-width + $content-left-padding + $content-right-padding}) {
 		margin-left: 0;

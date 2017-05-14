@@ -903,6 +903,8 @@ var navCollapsableButtons = $(navButtons).get().filter(function (domEl) {
 var navTargets = $(".content").find("h2, h3 > a").get().filter(function (domEl) {
 	return !!getHash(domEl);
 });
+var $content = $(".content");
+var $window = $(window);
 
 function scrollToChapter(evt) {
 	var chapter = getChapterByHash(getHash(evt.target));
@@ -910,7 +912,7 @@ function scrollToChapter(evt) {
 	if (chapter) {
 		evt.preventDefault();
 
-		$(".content").scrollTo(chapter, 600, {
+		$content.scrollTo(chapter, 600, {
 			axis: "y"
 		});
 	}
@@ -924,15 +926,23 @@ function markNav() {
 }
 
 function markBrowser() {
-	var hash = getHash(getCurrentlyReadableChapter());
-	var memoPosition = $(".content").scrollTop();
-	document.location.hash = hash;
-	$(".content").scrollTop(memoPosition).scrollLeft(0);
+	var hash = "#" + getHash(getCurrentlyReadableChapter());
+	var memoPosition = $content.scrollTop();
+
+	if (document.location.hash !== hash) {
+		document.location.hash = hash;
+	}
+
+	if ($content.scrollTop() !== memoPosition) {
+		$content.scrollTop(memoPosition);
+	}
+
+	$content.scrollLeft(0); // for IE.
 }
 
 function getCurrentlyReadableChapter() {
 	var anchorsAboveTheFold = navTargets.filter(function (titleEl) {
-		return titleEl.getBoundingClientRect().top < $(window).height() * 0.5;
+		return titleEl.getBoundingClientRect().top < $window.height() * 0.5;
 	});
 	return getLastItem(anchorsAboveTheFold);
 }
@@ -955,6 +965,6 @@ function getLastItem(arr) {
 
 $("a[href^=\"#\"]").on("click", scrollToChapter);
 
-$(".content").on("scroll", throttle(markNav, 30)).on("scroll", debounce(markBrowser, 300));
+$content.on("scroll", throttle(markNav, 30)).on("scroll", debounce(markBrowser, 300));
 
-$(window).on("resize", throttle(markNav, 30)).on("resize", debounce(markBrowser, 300));
+$window.on("resize", throttle(markNav, 30)).on("resize", debounce(markBrowser, 300));
