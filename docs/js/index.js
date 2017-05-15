@@ -380,6 +380,118 @@ var _typeof$1 = typeof Symbol === "function" && typeof Symbol.iterator === "symb
   }();
 })(jQuery);
 
+/*! https://mths.be/scrollingelement v1.5.2 by @diegoperini & @mathias | MIT license */
+if (!('scrollingElement' in document)) (function () {
+
+	function computeStyle(element) {
+		if (window.getComputedStyle) {
+			// Support Firefox < 4 which throws on a single parameter.
+			return getComputedStyle(element, null);
+		}
+		// Support Internet Explorer < 9.
+		return element.currentStyle;
+	}
+
+	function isBodyElement(element) {
+		// The `instanceof` check gives the correct result for e.g. `body` in a
+		// non-HTML namespace.
+		if (window.HTMLBodyElement) {
+			return element instanceof HTMLBodyElement;
+		}
+		// Fall back to a `tagName` check for old browsers.
+		return (/body/i.test(element.tagName)
+		);
+	}
+
+	function getNextBodyElement(frameset) {
+		// We use this function to be correct per spec in case `document.body` is
+		// a `frameset` but there exists a later `body`. Since `document.body` is
+		// a `frameset`, we know the root is an `html`, and there was no `body`
+		// before the `frameset`, so we just need to look at siblings after the
+		// `frameset`.
+		var current = frameset;
+		while (current = current.nextSibling) {
+			if (current.nodeType == 1 && isBodyElement(current)) {
+				return current;
+			}
+		}
+		// No `body` found.
+		return null;
+	}
+
+	// Note: standards mode / quirks mode can be toggled at runtime via
+	// `document.write`.
+	var isCompliantCached;
+	var isCompliant = function isCompliant() {
+		var isStandardsMode = /^CSS1/.test(document.compatMode);
+		if (!isStandardsMode) {
+			// In quirks mode, the result is equivalent to the non-compliant
+			// standards mode behavior.
+			return false;
+		}
+		if (isCompliantCached === void 0) {
+			// When called for the first time, check whether the browser is
+			// standard-compliant, and cache the result.
+			var iframe = document.createElement('iframe');
+			iframe.style.height = '1px';
+			(document.body || document.documentElement || document).appendChild(iframe);
+			var doc = iframe.contentWindow.document;
+			doc.write('<!DOCTYPE html><div style="height:9999em">x</div>');
+			doc.close();
+			isCompliantCached = doc.documentElement.scrollHeight > doc.body.scrollHeight;
+			iframe.parentNode.removeChild(iframe);
+		}
+		return isCompliantCached;
+	};
+
+	function isRendered(style) {
+		return style.display != 'none' && !(style.visibility == 'collapse' && /^table-(.+-group|row|column)$/.test(style.display));
+	}
+
+	function isScrollable(body) {
+		// A `body` element is scrollable if `body` and `html` both have
+		// non-`visible` overflow and are both being rendered.
+		var bodyStyle = computeStyle(body);
+		var htmlStyle = computeStyle(document.documentElement);
+		return bodyStyle.overflow != 'visible' && htmlStyle.overflow != 'visible' && isRendered(bodyStyle) && isRendered(htmlStyle);
+	}
+
+	var scrollingElement = function scrollingElement() {
+		if (isCompliant()) {
+			return document.documentElement;
+		}
+		var body = document.body;
+		// Note: `document.body` could be a `frameset` element, or `null`.
+		// `tagName` is uppercase in HTML, but lowercase in XML.
+		var isFrameset = body && !/body/i.test(body.tagName);
+		body = isFrameset ? getNextBodyElement(body) : body;
+		// If `body` is itself scrollable, it is not the `scrollingElement`.
+		return body && isScrollable(body) ? null : body;
+	};
+
+	if (Object.defineProperty) {
+		// Support modern browsers that lack a native implementation.
+		Object.defineProperty(document, 'scrollingElement', {
+			'get': scrollingElement
+		});
+	} else if (document.__defineGetter__) {
+		// Support Firefox ≤ 3.6.9, Safari ≤ 4.1.3.
+		document.__defineGetter__('scrollingElement', scrollingElement);
+	} else {
+		// IE ≤ 4 lacks `attachEvent`, so it only gets this one assignment. IE ≤ 7
+		// gets it too, but the value is updated later (see `propertychange`).
+		document.scrollingElement = scrollingElement();
+		document.attachEvent && document.attachEvent('onpropertychange', function () {
+			// This is for IE ≤ 7 only.
+			// A `propertychange` event fires when `<body>` is parsed because
+			// `document.activeElement` then changes.
+			if (window.event.propertyName == 'activeElement') {
+				document.scrollingElement = scrollingElement();
+			}
+		});
+	}
+})();
+
 var _typeof$2 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 /**
@@ -901,20 +1013,61 @@ var navButtons = $(".nav").find("a").get();
 var navCollapsableButtons = $(navButtons).get().filter(function (domEl) {
 	return $(domEl).parent().is("strong");
 });
-var navTargets = $(".content").find("h2, h3 > a").get().filter(function (domEl) {
+var chapterAnchors = $(".content").find("h2, h3 > a").get().filter(function (domEl) {
 	return !!getHash(domEl);
 });
 
 function getScrollTarget() {
-	return $(".content");
+	return isSingleColumnLayout() ? getScrollingElement() : $(".content");
+}
+
+function getCurrentlyReadableChapter() {
+	var anchorsAboveTheFold = chapterAnchors.filter(isAboveTheFold);
+	return getLastItem(anchorsAboveTheFold);
+}
+
+function getHash(domEl) {
+	return domEl.href ? domEl.href.split("#")[1] : "" || domEl.getAttribute("id") || domEl.getAttribute("name");
+}
+
+function getChapterByHash(hash) {
+	return $("[id=\"" + hash + "\"], [name=\"" + hash + "\"]")[0];
+}
+
+function getNavButtonByHash(hash) {
+	return $(navButtons).filter("a[href$=\"#" + hash + "\"]")[0];
+}
+
+function getLastItem(arr) {
+	return arr[arr.length - 1];
+}
+
+function getScrollingElement() {
+	return document.scrollingElement;
+}
+
+function isSingleColumnLayout() {
+	return $window.width() < 1024;
+}
+
+function isAboveTheFold(domEl) {
+	return domEl.getBoundingClientRect().top < $window.height() * 0.35;
+}
+
+function ignoreScrollNavigationEvents(domEl) {
+	$(domEl).off("scroll");
 }
 
 function listenForScrollNavigationEvents(domEl) {
-	$(domEl).on("scroll", throttle(markNav, 30)).on("scroll", debounce(markBrowser, 300));
+	$(domEl).on("scroll", throttle(markNav, 100)).on("scroll", debounce(markBrowser, 350));
 }
 
-function listenForScrollAnchorEvents() {
+function updateScrollAnchorEvents() {
 	$("a[href^=\"#\"]").on("click", scrollToChapter);
+}
+
+function listenForLayoutChange() {
+	$window.on("resize", debounce(updateScrollBehaviour, 300)).on("resize", debounce(markNav, 350)).on("resize", debounce(markBrowser, 350));
 }
 
 function removeNonBreakingSpacesFromTds() {
@@ -922,6 +1075,14 @@ function removeNonBreakingSpacesFromTds() {
 		var $this = $(this);
 		$this.html($this.html().replace(/&nbsp;/g, ''));
 	});
+}
+
+function updateScrollBehaviour() {
+	ignoreScrollNavigationEvents(getScrollTarget());
+	ignoreScrollNavigationEvents(window);
+
+	listenForScrollNavigationEvents(getScrollTarget());
+	listenForScrollNavigationEvents(window);
 }
 
 function scrollToChapter(evt) {
@@ -945,45 +1106,14 @@ function markNav() {
 }
 
 function markBrowser() {
-	var $scrollTarget = getScrollTarget(),
-	    hash = "#" + getHash(getCurrentlyReadableChapter()),
-	    memoPosition = $scrollTarget.scrollTop();
+	var hash = "#" + getHash(getCurrentlyReadableChapter());
 
 	if (document.location.hash !== hash) {
-		document.location.hash = hash;
+		history.pushState(null, null, hash);
 	}
-
-	if ($scrollTarget.scrollTop() !== memoPosition) {
-		$scrollTarget.scrollTop(memoPosition);
-	}
-
-	$scrollTarget.scrollLeft(0); // for IE.
 }
 
-function getCurrentlyReadableChapter() {
-	var anchorsAboveTheFold = navTargets.filter(function (titleEl) {
-		return titleEl.getBoundingClientRect().top < $window.height() * 0.5;
-	});
-	return getLastItem(anchorsAboveTheFold);
-}
-
-function getHash(domEl) {
-	return domEl.href ? domEl.href.split("#")[1] : "" || domEl.getAttribute("id") || domEl.getAttribute("name");
-}
-
-function getChapterByHash(hash) {
-	return $("[id=\"" + hash + "\"], [name=\"" + hash + "\"]")[0];
-}
-
-function getNavButtonByHash(hash) {
-	return $(navButtons).filter("a[href$=\"#" + hash + "\"]")[0];
-}
-
-function getLastItem(arr) {
-	return arr[arr.length - 1];
-}
-
-listenForScrollAnchorEvents();
-listenForScrollNavigationEvents(getScrollTarget());
-listenForScrollNavigationEvents(window);
+updateScrollAnchorEvents();
+updateScrollBehaviour();
+listenForLayoutChange();
 removeNonBreakingSpacesFromTds();
