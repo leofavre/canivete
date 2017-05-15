@@ -90,3 +90,8 @@ $content
 $window
 	.on("resize", throttle(markNav, 30))
 	.on("resize", debounce(markBrowser, 300));
+
+$("td").each(function() {
+	var $this = $(this);
+	$this.html($this.html().replace(/&nbsp;/g, ''));
+});

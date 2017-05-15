@@ -236,7 +236,7 @@
   <p><a href="#formatbemclass">formatBemClass</a>, <a href="#modifybemclass">modifyBemClass</a> &amp; <a href="#modifybemclasscompact">modifyBemClassCompact</a></p>
 </blockquote>
 
-<h3 id="formatbemclassblock-element-modifier-value-delimiters"><a name="formatbemclass"><code class="highlighter-rouge">formatBemClass(block, [element], [modifier], [value], delimiters)</code></a></h3>
+<h3 id="formatbemclass-block-element-modifier-value-delimiters"><a name="formatbemclass"><code class="highlighter-rouge">formatBemClass (block, [element], [modifier], [value], delimiters)</code></a></h3>
 
 <p>Formats a CSS class according to the
 <a href="https://en.bem.info/methodology/">BEM methodology</a>.
@@ -352,7 +352,7 @@ for the modifier and an array of BEM delimiters, e.g. <code class="highlighter-r
 </code></pre>
 </div>
 
-<h3 id="modifybemclassdomel-bemobj-delimiters"><a name="modifybemclass"><code class="highlighter-rouge">modifyBemClass(domEl, bemObj, delimiters)</code></a></h3>
+<h3 id="modifybemclass-domel-bemobj-delimiters"><a name="modifybemclass"><code class="highlighter-rouge">modifyBemClass (domEl, bemObj, delimiters)</code></a></h3>
 
 <p>Modifies the CSS classes from a DOM element according
 to the <a href="https://en.bem.info/methodology/">BEM methodology</a>.</p>
@@ -438,7 +438,7 @@ to the <a href="https://en.bem.info/methodology/">BEM methodology</a>.</p>
 </code></pre>
 </div>
 
-<h3 id="modifybemclasscompactdomel-bemobj-delimiters"><a name="modifybemclasscompact"><code class="highlighter-rouge">modifyBemClassCompact(domEl, bemObj, delimiters)</code></a></h3>
+<h3 id="modifybemclasscompact-domel-bemobj-delimiters"><a name="modifybemclasscompact"><code class="highlighter-rouge">modifyBemClassCompact (domEl, bemObj, delimiters)</code></a></h3>
 
 <p>Modifies the CSS classes from a DOM element according
 to the <a href="https://en.bem.info/methodology/">BEM methodology</a>.
@@ -532,7 +532,7 @@ or element CSS class if a modified version is output.</p>
   <p><a href="#addclass">addClass</a>, <a href="#hasclass">hasClass</a> &amp; <a href="#removeclass">removeClass</a></p>
 </blockquote>
 
-<h3 id="addclassdomels-classname"><a name="addclass"><code class="highlighter-rouge">addClass(domEls, className)</code></a></h3>
+<h3 id="addclass-domels-classname"><a name="addclass"><code class="highlighter-rouge">addClass (domEls, className)</code></a></h3>
 
 <p>Adds a CSS class to one or more DOM elements.</p>
 
@@ -578,7 +578,7 @@ or element CSS class if a modified version is output.</p>
 </code></pre>
 </div>
 
-<h3 id="hasclassdomel-classname"><a name="hasclass"><code class="highlighter-rouge">hasClass(domEl, className)</code></a></h3>
+<h3 id="hasclass-domel-classname"><a name="hasclass"><code class="highlighter-rouge">hasClass (domEl, className)</code></a></h3>
 
 <p>Verifies if a DOM element has a CSS class.</p>
 
@@ -636,7 +636,7 @@ or element CSS class if a modified version is output.</p>
 </code></pre>
 </div>
 
-<h3 id="removeclassdomels-classname"><a name="removeclass"><code class="highlighter-rouge">removeClass(domEls, className)</code></a></h3>
+<h3 id="removeclass-domels-classname"><a name="removeclass"><code class="highlighter-rouge">removeClass (domEls, className)</code></a></h3>
 
 <p>Removes a CSS class from one or more DOM elements.</p>
 
@@ -688,7 +688,7 @@ or element CSS class if a modified version is output.</p>
   <p><a href="#recursivegroupby">recursiveGroupBy</a></p>
 </blockquote>
 
-<h3 id="recursivegroupbycollection-iteratees"><a name="recursivegroupby"><code class="highlighter-rouge">recursiveGroupBy(collection, [...iteratees])</code></a></h3>
+<h3 id="recursivegroupby-collection-iteratees"><a name="recursivegroupby"><code class="highlighter-rouge">recursiveGroupBy (collection, [...iteratees])</code></a></h3>
 
 <p>A recursive implementation of LoDash <a href="https://lodash.com/docs/4.17.4#groupBy"><code class="highlighter-rouge">groupBy()</code></a>
 that can take one or more iteratees to create nested groups.</p>
@@ -806,7 +806,7 @@ that can take one or more iteratees to create nested groups.</p>
   <p><a href="#getattr">getAttr</a>, <a href="#parents">parents</a>, <a href="#removeattr">removeAttr</a>, <a href="#removeattrs">removeAttrs</a>, <a href="#selfandparents">selfAndParents</a>, <a href="#setattr">setAttr</a> &amp; <a href="#setattrs">setAttrs</a></p>
 </blockquote>
 
-<h3 id="getattrdomel-attrname"><a name="getattr"><code class="highlighter-rouge">getAttr(domEl, attrName)</code></a></h3>
+<h3 id="getattr-domel-attrname"><a name="getattr"><code class="highlighter-rouge">getAttr (domEl, attrName)</code></a></h3>
 
 <p>Gets a DOM element attribute using native
 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttribute"><code class="highlighter-rouge">Element.getAttribute()</code></a>,
@@ -872,7 +872,7 @@ and the absence will return <code class="highlighter-rouge">false</code>.</p>
 </code></pre>
 </div>
 
-<h3 id="parentsdomel"><a name="parents"><code class="highlighter-rouge">parents(domEl)</code></a></h3>
+<h3 id="parents-domel"><a name="parents"><code class="highlighter-rouge">parents (domEl)</code></a></h3>
 
 <p>Returns all parents of a DOM element,
 from the closest to the most distant, recursively.</p>
@@ -930,7 +930,7 @@ from the closest to the most distant, recursively.</p>
 </code></pre>
 </div>
 
-<h3 id="removeattrdomels-attrname"><a name="removeattr"><code class="highlighter-rouge">removeAttr(domEls, attrName)</code></a></h3>
+<h3 id="removeattr-domels-attrname"><a name="removeattr"><code class="highlighter-rouge">removeAttr (domEls, attrName)</code></a></h3>
 
 <p>Removes an attribute from one or more DOM elements using
 native <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttribute"><code class="highlighter-rouge">Element.removeAttribute()</code></a>.</p>
@@ -994,7 +994,7 @@ native <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/removeA
 </code></pre>
 </div>
 
-<h3 id="removeattrsdomels-attrarr"><a name="removeattrs"><code class="highlighter-rouge">removeAttrs(domEls, attrArr)</code></a></h3>
+<h3 id="removeattrs-domels-attrarr"><a name="removeattrs"><code class="highlighter-rouge">removeAttrs (domEls, attrArr)</code></a></h3>
 
 <p>The same as <a href="#removeattr"><code class="highlighter-rouge">removeAttr()</code></a>, except it takes an
 array with attributes to be removed.</p>
@@ -1059,7 +1059,7 @@ array with attributes to be removed.</p>
 </code></pre>
 </div>
 
-<h3 id="selfandparentsdomel"><a name="selfandparents"><code class="highlighter-rouge">selfAndParents(domEl)</code></a></h3>
+<h3 id="selfandparents-domel"><a name="selfandparents"><code class="highlighter-rouge">selfAndParents (domEl)</code></a></h3>
 
 <p>The same as <a href="#parents"><code class="highlighter-rouge">parents()</code></a>, except it includes
 the DOM element as the first item of the result.</p>
@@ -1117,7 +1117,7 @@ the DOM element as the first item of the result.</p>
 </code></pre>
 </div>
 
-<h3 id="setattrdomels-attrname-value"><a name="setattr"><code class="highlighter-rouge">setAttr(domEls, attrName, value)</code></a></h3>
+<h3 id="setattr-domels-attrname-value"><a name="setattr"><code class="highlighter-rouge">setAttr (domEls, attrName, value)</code></a></h3>
 
 <p>Sets an attribute for one or more DOM elements using
 native <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute"><code class="highlighter-rouge">Element.setAttribute()</code></a>.</p>
@@ -1186,7 +1186,7 @@ native <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttr
 </code></pre>
 </div>
 
-<h3 id="setattrsdomels-attrobj"><a name="setattrs"><code class="highlighter-rouge">setAttrs(domEls, attrObj)</code></a></h3>
+<h3 id="setattrs-domels-attrobj"><a name="setattrs"><code class="highlighter-rouge">setAttrs (domEls, attrObj)</code></a></h3>
 
 <p>The same as <a href="#setattr"><code class="highlighter-rouge">setAttr()</code></a>, except it takes an object
 with attribute name and value pairs to set one or
@@ -1266,7 +1266,7 @@ many attributes at once.</p>
   <p><a href="#eventpath">eventPath</a>, <a href="#ignore">ignore</a>, <a href="#listen">listen</a> &amp; <a href="#trigger">trigger</a></p>
 </blockquote>
 
-<h3 id="eventpathevt"><a name="eventpath"><code class="highlighter-rouge">eventPath(evt)</code></a></h3>
+<h3 id="eventpath-evt"><a name="eventpath"><code class="highlighter-rouge">eventPath (evt)</code></a></h3>
 
 <p>Returns an array with all DOM elements affected by an event.
 This function serves as a polyfill for
@@ -1328,7 +1328,7 @@ This function serves as a polyfill for
 </code></pre>
 </div>
 
-<h3 id="ignoredomels-eventstr-callback-usecapture"><a name="ignore"><code class="highlighter-rouge">ignore(domEls, eventStr, callback, [useCapture])</code></a></h3>
+<h3 id="ignore-domels-eventstr-callback-usecapture"><a name="ignore"><code class="highlighter-rouge">ignore (domEls, eventStr, callback, [useCapture])</code></a></h3>
 
 <p>Removes one or more event listeners from one or more DOM elements at once.
 This function is a wrapper for
@@ -1386,7 +1386,7 @@ of target DOM elements.</p>
 </code></pre>
 </div>
 
-<h3 id="listendomels-eventstr-callback-usecapture"><a name="listen"><code class="highlighter-rouge">listen(domEls, eventStr, callback, [useCapture])</code></a></h3>
+<h3 id="listen-domels-eventstr-callback-usecapture"><a name="listen"><code class="highlighter-rouge">listen (domEls, eventStr, callback, [useCapture])</code></a></h3>
 
 <p>Adds one or more event listeners to one or more DOM elements at once.
 This function is a wrapper for
@@ -1444,7 +1444,7 @@ of target DOM elements.</p>
 </code></pre>
 </div>
 
-<h3 id="triggerdomel-evtname-bubbles-cancelable-detail"><a name="trigger"><code class="highlighter-rouge">trigger(domEl, evtName, [bubbles], [cancelable], [detail])</code></a></h3>
+<h3 id="trigger-domel-evtname-bubbles-cancelable-detail"><a name="trigger"><code class="highlighter-rouge">trigger (domEl, evtName, [bubbles], [cancelable], [detail])</code></a></h3>
 
 <p>Triggers a custom DOM event.</p>
 
@@ -1510,7 +1510,7 @@ of target DOM elements.</p>
   <p><a href="#getclippinginfo">getClippingInfo</a></p>
 </blockquote>
 
-<h3 id="getclippinginfodomel-maskdef"><a name="getclippinginfo"><code class="highlighter-rouge">getClippingInfo(domEl, [maskDef])</code></a></h3>
+<h3 id="getclippinginfo-domel-maskdef"><a name="getclippinginfo"><code class="highlighter-rouge">getClippingInfo (domEl, [maskDef])</code></a></h3>
 
 <p>Given a DOM element, returns an object with position
 and clipping information relative to a mask, defined
@@ -1689,7 +1689,7 @@ containing numeric values for “top”, “bottom”,
   <p><a href="#eventaspromise">eventAsPromise</a> &amp; <a href="#waitinpromise">waitInPromise</a></p>
 </blockquote>
 
-<h3 id="eventaspromisedomel-evtname-happened"><a name="eventaspromise"><code class="highlighter-rouge">eventAsPromise(domEl, evtName, [happened])</code></a></h3>
+<h3 id="eventaspromise-domel-evtname-happened"><a name="eventaspromise"><code class="highlighter-rouge">eventAsPromise (domEl, evtName, [happened])</code></a></h3>
 
 <p>Transforms a DOM event into a promise.</p>
 
@@ -1775,7 +1775,7 @@ parameters are not a DOM element and a string.</p>
 </code></pre>
 </div>
 
-<h3 id="waitinpromisedelay"><a name="waitinpromise"><code class="highlighter-rouge">waitInPromise(delay)</code></a></h3>
+<h3 id="waitinpromise-delay"><a name="waitinpromise"><code class="highlighter-rouge">waitInPromise (delay)</code></a></h3>
 
 <p>Delays the chaining of a promise by a specified
 time in milliseconds.</p>
@@ -1838,7 +1838,7 @@ internal <code class="highlighter-rouge">setTimeout()</code>.</p>
   <p><a href="#oneoutof">oneOutOf</a></p>
 </blockquote>
 
-<h3 id="oneoutofnum"><a name="oneoutof"><code class="highlighter-rouge">oneOutOf(num)</code></a></h3>
+<h3 id="oneoutof-num"><a name="oneoutof"><code class="highlighter-rouge">oneOutOf (num)</code></a></h3>
 
 <p>Returns <code class="highlighter-rouge">true</code> approximately one out of <code class="highlighter-rouge">num</code> times,
 randomly.</p>
@@ -1895,7 +1895,7 @@ randomly.</p>
   <p><a href="#toaverage">toAverage</a>, <a href="#toaverageprop">toAverageProp</a>, <a href="#toclosest">toClosest</a>, <a href="#toclosestprop">toClosestProp</a>, <a href="#tolargestprop">toLargestProp</a>, <a href="#tosmallestprop">toSmallestProp</a> &amp; <a href="#tosum">toSum</a></p>
 </blockquote>
 
-<h3 id="toaverage"><a name="toaverage"><code class="highlighter-rouge">toAverage()</code></a></h3>
+<h3 id="toaverage-"><a name="toaverage"><code class="highlighter-rouge">toAverage ()</code></a></h3>
 
 <p>When used with <code class="highlighter-rouge">[].reduce()</code>, returns
 the average of the values in an array.</p>
@@ -1931,7 +1931,7 @@ Also, note that the parentheses can be ommited.</p>
 </code></pre>
 </div>
 
-<h3 id="toaverageproppath"><a name="toaverageprop"><code class="highlighter-rouge">toAverageProp(path)</code></a></h3>
+<h3 id="toaverageprop-path"><a name="toaverageprop"><code class="highlighter-rouge">toAverageProp (path)</code></a></h3>
 
 <p>When used with <code class="highlighter-rouge">[].reduce()</code>, returns
 the object in an array in which a specific property,
@@ -2018,7 +2018,7 @@ formed by objects with the same set of properties.</p>
 </code></pre>
 </div>
 
-<h3 id="toclosestnum"><a name="toclosest"><code class="highlighter-rouge">toClosest(num)</code></a></h3>
+<h3 id="toclosest-num"><a name="toclosest"><code class="highlighter-rouge">toClosest (num)</code></a></h3>
 
 <p>When used with <code class="highlighter-rouge">[].reduce()</code>, returns
 the closest value to the one passed as parameter.</p>
@@ -2075,7 +2075,7 @@ using <code class="highlighter-rouge">toClosest()</code> can lead to unexpected 
 </code></pre>
 </div>
 
-<h3 id="toclosestproppath-num"><a name="toclosestprop"><code class="highlighter-rouge">toClosestProp(path, num)</code></a></h3>
+<h3 id="toclosestprop-path-num"><a name="toclosestprop"><code class="highlighter-rouge">toClosestProp (path, num)</code></a></h3>
 
 <p>When used with <code class="highlighter-rouge">[].reduce()</code>, returns
 the object in an array in which a specific property,
@@ -2165,7 +2165,7 @@ formed by objects with the same set of properties.</p>
 </code></pre>
 </div>
 
-<h3 id="tolargestproppath"><a name="tolargestprop"><code class="highlighter-rouge">toLargestProp(path)</code></a></h3>
+<h3 id="tolargestprop-path"><a name="tolargestprop"><code class="highlighter-rouge">toLargestProp (path)</code></a></h3>
 
 <p>When used with <code class="highlighter-rouge">[].reduce()</code>, returns
 the object in an array in which a specific property
@@ -2249,7 +2249,7 @@ formed by objects with the same set of properties.</p>
 </code></pre>
 </div>
 
-<h3 id="tosmallestproppath"><a name="tosmallestprop"><code class="highlighter-rouge">toSmallestProp(path)</code></a></h3>
+<h3 id="tosmallestprop-path"><a name="tosmallestprop"><code class="highlighter-rouge">toSmallestProp (path)</code></a></h3>
 
 <p>When used with <code class="highlighter-rouge">[].reduce()</code>, returns
 the object in an array in which a specific property
@@ -2333,7 +2333,7 @@ formed by objects with the same set of properties.</p>
 </code></pre>
 </div>
 
-<h3 id="tosum"><a name="tosum"><code class="highlighter-rouge">toSum()</code></a></h3>
+<h3 id="tosum-"><a name="tosum"><code class="highlighter-rouge">toSum ()</code></a></h3>
 
 <p>When used with <code class="highlighter-rouge">[].reduce()</code>, returns
 the sum of the values in an array.</p>
@@ -2375,7 +2375,7 @@ Also, note that the parentheses can be ommited.</p>
   <p><a href="#byalphabeticalorder">byAlphabeticalOrder</a></p>
 </blockquote>
 
-<h3 id="byalphabeticalorder"><a name="byalphabeticalorder"><code class="highlighter-rouge">byAlphabeticalOrder()</code></a></h3>
+<h3 id="byalphabeticalorder-"><a name="byalphabeticalorder"><code class="highlighter-rouge">byAlphabeticalOrder ()</code></a></h3>
 
 <p>When used with <code class="highlighter-rouge">[].sort()</code>, sorts
 the array in ascending alphabetical order.</p>
@@ -2417,7 +2417,7 @@ the array in ascending alphabetical order.</p>
   <p><a href="#afterfirst">afterFirst</a>, <a href="#afterlast">afterLast</a>, <a href="#beforefirst">beforeFirst</a> &amp; <a href="#beforelast">beforeLast</a></p>
 </blockquote>
 
-<h3 id="afterfirststr-delimiter"><a name="afterfirst"><code class="highlighter-rouge">afterFirst(str, delimiter)</code></a></h3>
+<h3 id="afterfirst-str-delimiter"><a name="afterfirst"><code class="highlighter-rouge">afterFirst (str, delimiter)</code></a></h3>
 
 <p>Returns the string formed by the characters <strong>after
 the first occurrence</strong> of the delimiter in a base string.
@@ -2469,7 +2469,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
 </code></pre>
 </div>
 
-<h3 id="afterlaststr-delimiter"><a name="afterlast"><code class="highlighter-rouge">afterLast(str, delimiter)</code></a></h3>
+<h3 id="afterlast-str-delimiter"><a name="afterlast"><code class="highlighter-rouge">afterLast (str, delimiter)</code></a></h3>
 
 <p>Returns the string formed by the characters <strong>after
 the last occurrence</strong> of the delimiter in a base string.
@@ -2521,7 +2521,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
 </code></pre>
 </div>
 
-<h3 id="beforefirststr-delimiter"><a name="beforefirst"><code class="highlighter-rouge">beforeFirst(str, delimiter)</code></a></h3>
+<h3 id="beforefirst-str-delimiter"><a name="beforefirst"><code class="highlighter-rouge">beforeFirst (str, delimiter)</code></a></h3>
 
 <p>Returns the string formed by the characters <strong>before
 the first occurrence</strong> of the delimiter in a base string.
@@ -2573,7 +2573,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
 </code></pre>
 </div>
 
-<h3 id="beforelaststr-delimiter"><a name="beforelast"><code class="highlighter-rouge">beforeLast(str, delimiter)</code></a></h3>
+<h3 id="beforelast-str-delimiter"><a name="beforelast"><code class="highlighter-rouge">beforeLast (str, delimiter)</code></a></h3>
 
 <p>Returns the string formed by the characters <strong>before
 the last occurrence</strong> of the delimiter in a base string.
@@ -2631,7 +2631,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
   <p><a href="#timesince">timeSince</a></p>
 </blockquote>
 
-<h3 id="timesincetimestamp"><a name="timesince"><code class="highlighter-rouge">timeSince(timestamp)</code></a></h3>
+<h3 id="timesince-timestamp"><a name="timesince"><code class="highlighter-rouge">timeSince (timestamp)</code></a></h3>
 
 <p>Returns the time passed since a timestamp, in milliseconds;</p>
 

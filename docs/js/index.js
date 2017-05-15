@@ -968,3 +968,8 @@ $("a[href^=\"#\"]").on("click", scrollToChapter);
 $content.on("scroll", throttle(markNav, 30)).on("scroll", debounce(markBrowser, 300));
 
 $window.on("resize", throttle(markNav, 30)).on("resize", debounce(markBrowser, 300));
+
+$("td").each(function () {
+	var $this = $(this);
+	$this.html($this.html().replace(/&nbsp;/g, ''));
+});

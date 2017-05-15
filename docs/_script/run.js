@@ -180,7 +180,7 @@ const formatHref = name => name.toLowerCase().replace(/ /g, "-");
 
 const formatSignature = (name, params) => {
 	params = formatSignatureParams(params);
-	return `${name}(${params})`;
+	return `${name} (${params})`;
 };
 
 const formatSignatureParams = params => {

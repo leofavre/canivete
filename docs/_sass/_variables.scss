@@ -1,54 +1,19 @@
 $grid: 1.5rem;
-$content-width: 38.75rem;
-$full-content-width: $content-width + ($grid * 3);
+$full-content-width: 42rem;
 $nav-width: 14.5rem;
 
-// $dark: #272822;
-$grey: #94917b;
-$light-grey: lighten($grey, 20%);
 
-$text: #b3b3b3;
-$dark: #272822;
-$darker: #1b1c18;
-$aqua: #7ae1e6;
+// breakpoints
 
-$code-grey: $darker;
-$link-color: #f92672;
-
-$hairline-grey: mix($darker, white, 30%);
-$hairline-dark: mix($darker, black, 30%);
-
-$comment: mix($text, $darker, 30%);
+$bigger-than-desktop: "only screen and (min-width: 1400px)";
+$smaller-than-desktop: "only screen and (max-width: 1100px)";
+$smaller-than-landscape-tablet: "only screen and (max-width: 1023px)";
+$smaller-than-portrait-tablet: "only screen and (max-width: 700px)";
+$smaller-than-landscape-phone: "only screen and (max-width: 550px)";
+$portrait-phone: "only screen and (max-width: 400px)";
 
 
-
-
-// sublime text
-
-$background-color: $dark;
-$text-color: $text;
-
-$logo-color: $aqua;
-$menu-item-color: $aqua;
-
-$intro-h2-color: $darker;
-$content-h2-color: $darker;
-$content-h3-color: $text;
-$content-h3-bg-color: $darker;
-
-$small-code-color: $text;
-$small-code-bg-color: $darker;
-$big-code-color: $text;
-$big-code-bg-color: $darker;
-$optional-color: $darker;
-$optional-bg-color: $aqua;
-
-$link-hairline-color: $link-color;
-$menu-hairline-color: $hairline-dark;
-$table-hairline-color: $hairline-grey;
-
-
-// bubble gum
+// bubble gum color scheme
 
 $background-color: mix(#fbfbf7, white, 100%);
 $text-color: #3d464d;

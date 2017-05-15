@@ -7,7 +7,7 @@ title: Canivete
 
 >[formatBemClass](#formatbemclass), [modifyBemClass](#modifybemclass) &amp;&nbsp;[modifyBemClassCompact](#modifybemclasscompact)
 
-### <a name="formatbemclass">`formatBemClass(block, [element], [modifier], [value], delimiters)`</a>
+### <a name="formatbemclass">`formatBemClass (block, [element], [modifier], [value], delimiters)`</a>
 
 Formats a CSS class according to the
 [BEM methodology](https://en.bem.info/methodology/).
@@ -77,7 +77,7 @@ formatBemClass("button", null, "level", "42", delimiters);
 // => "button--level-42"
 ```
 
-### <a name="modifybemclass">`modifyBemClass(domEl, bemObj, delimiters)`</a>
+### <a name="modifybemclass">`modifyBemClass (domEl, bemObj, delimiters)`</a>
 
 Modifies the CSS classes from a DOM element according
 to the [BEM methodology](https://en.bem.info/methodology/).
@@ -125,7 +125,7 @@ domEl.className;
 // => "swiper swiper--slides-5 swiper--current-3"
 ```
 
-### <a name="modifybemclasscompact">`modifyBemClassCompact(domEl, bemObj, delimiters)`</a>
+### <a name="modifybemclasscompact">`modifyBemClassCompact (domEl, bemObj, delimiters)`</a>
 
 Modifies the CSS classes from a DOM element according
 to the [BEM methodology](https://en.bem.info/methodology/).
@@ -179,7 +179,7 @@ domEl.className;
 
 >[addClass](#addclass), [hasClass](#hasclass) &amp;&nbsp;[removeClass](#removeclass)
 
-### <a name="addclass">`addClass(domEls, className)`</a>
+### <a name="addclass">`addClass (domEls, className)`</a>
 
 Adds a CSS class to one or more DOM elements.
 
@@ -208,7 +208,7 @@ manyElements[0].className;
 // => "link"
 ```
 
-### <a name="hasclass">`hasClass(domEl, className)`</a>
+### <a name="hasclass">`hasClass (domEl, className)`</a>
 
 Verifies if a DOM element has a CSS class.
 
@@ -238,7 +238,7 @@ hasClass(oneElement, "button");
 // => false
 ```
 
-### <a name="removeclass">`removeClass(domEls, className)`</a>
+### <a name="removeclass">`removeClass (domEls, className)`</a>
 
 Removes a CSS class from one or more DOM elements.
 
@@ -271,7 +271,7 @@ manyElements[0].className;
 
 >[recursiveGroupBy](#recursivegroupby)
 
-### <a name="recursivegroupby">`recursiveGroupBy(collection, [...iteratees])`</a>
+### <a name="recursivegroupby">`recursiveGroupBy (collection, [...iteratees])`</a>
 
 A recursive implementation of LoDash [`groupBy()`](https://lodash.com/docs/4.17.4#groupBy)
 that can take one or more iteratees to create nested groups.
@@ -359,7 +359,7 @@ recursiveGroupBy(stores, getStateName, getCityName);
 
 >[getAttr](#getattr), [parents](#parents), [removeAttr](#removeattr), [removeAttrs](#removeattrs), [selfAndParents](#selfandparents), [setAttr](#setattr) &amp;&nbsp;[setAttrs](#setattrs)
 
-### <a name="getattr">`getAttr(domEl, attrName)`</a>
+### <a name="getattr">`getAttr (domEl, attrName)`</a>
 
 Gets a DOM element attribute using native
 [`Element.getAttribute()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttribute),
@@ -397,7 +397,7 @@ getAttr(videoEl, "muted");
 // => false
 ```
 
-### <a name="parents">`parents(domEl)`</a>
+### <a name="parents">`parents (domEl)`</a>
 
 Returns all parents of a DOM element,
 from the closest to the most distant, recursively.
@@ -431,7 +431,7 @@ parents(domChild);
 // => [domParent, domGrandparent, body, html, document]
 ```
 
-### <a name="removeattr">`removeAttr(domEls, attrName)`</a>
+### <a name="removeattr">`removeAttr (domEls, attrName)`</a>
 
 Removes an attribute from one or more DOM elements using
 native [`Element.removeAttribute()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttribute).
@@ -478,7 +478,7 @@ manyElements[0].dataset.level;
 // => undefined
 ```
 
-### <a name="removeattrs">`removeAttrs(domEls, attrArr)`</a>
+### <a name="removeattrs">`removeAttrs (domEls, attrArr)`</a>
 
 The same as [`removeAttr()`](#removeattr), except it takes an
 array with attributes to be removed.
@@ -526,7 +526,7 @@ manyElements[0].className;
 // => ""
 ```
 
-### <a name="selfandparents">`selfAndParents(domEl)`</a>
+### <a name="selfandparents">`selfAndParents (domEl)`</a>
 
 The same as [`parents()`](#parents), except it includes
 the DOM element as the first item of the result.
@@ -560,7 +560,7 @@ selfAndParents(domChild);
 // => [domChild, domParent, domGrandparent, body, html, document]
 ```
 
-### <a name="setattr">`setAttr(domEls, attrName, value)`</a>
+### <a name="setattr">`setAttr (domEls, attrName, value)`</a>
 
 Sets an attribute for one or more DOM elements using
 native [`Element.setAttribute()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute).
@@ -608,7 +608,7 @@ manyElements[0].dataset.level;
 // => "42"
 ```
 
-### <a name="setattrs">`setAttrs(domEls, attrObj)`</a>
+### <a name="setattrs">`setAttrs (domEls, attrObj)`</a>
 
 The same as [`setAttr()`](#setattr), except it takes an object
 with attribute name and value pairs to set one or
@@ -669,7 +669,7 @@ manyElements[0].className;
 
 >[eventPath](#eventpath), [ignore](#ignore), [listen](#listen) &amp;&nbsp;[trigger](#trigger)
 
-### <a name="eventpath">`eventPath(evt)`</a>
+### <a name="eventpath">`eventPath (evt)`</a>
 
 Returns an array with all DOM elements affected by an event.
 This function serves as a polyfill for
@@ -707,7 +707,7 @@ const dealWithClick = evt => eventPath(evt);
 // => [domChild, domParent, domGrandparent, body, html, document, window]
 ```
 
-### <a name="ignore">`ignore(domEls, eventStr, callback, [useCapture])`</a>
+### <a name="ignore">`ignore (domEls, eventStr, callback, [useCapture])`</a>
 
 Removes one or more event listeners from one or more DOM elements at once.
 This function is a wrapper for
@@ -735,7 +735,7 @@ ignore(manyElements, "click", reactToClick);
 ignore(window, "load resize", reactToLoadAndResize);
 ```
 
-### <a name="listen">`listen(domEls, eventStr, callback, [useCapture])`</a>
+### <a name="listen">`listen (domEls, eventStr, callback, [useCapture])`</a>
 
 Adds one or more event listeners to one or more DOM elements at once.
 This function is a wrapper for
@@ -763,7 +763,7 @@ listen(manyElements, "click", reactToClick);
 listen(window, "load resize", reactToLoadAndResize);
 ```
 
-### <a name="trigger">`trigger(domEl, evtName, [bubbles], [cancelable], [detail])`</a>
+### <a name="trigger">`trigger (domEl, evtName, [bubbles], [cancelable], [detail])`</a>
 
 Triggers a custom DOM event.
 
@@ -792,7 +792,7 @@ popupButton.addEventListener("click", evt => {
 
 >[getClippingInfo](#getclippinginfo)
 
-### <a name="getclippinginfo">`getClippingInfo(domEl, [maskDef])`</a>
+### <a name="getclippinginfo">`getClippingInfo (domEl, [maskDef])`</a>
 
 Given a DOM element, returns an object with position
 and clipping information relative to a mask, defined
@@ -872,7 +872,7 @@ info.isInvisible;
 
 >[eventAsPromise](#eventaspromise) &amp;&nbsp;[waitInPromise](#waitinpromise)
 
-### <a name="eventaspromise">`eventAsPromise(domEl, evtName, [happened])`</a>
+### <a name="eventaspromise">`eventAsPromise (domEl, evtName, [happened])`</a>
 
 Transforms a DOM event into a promise.
 
@@ -922,7 +922,7 @@ eventAsPromise(imageEl, "load", imageEl => imageEl.complete)
 	.then(doSomethingAfterImageLoaded);
 ```
 
-### <a name="waitinpromise">`waitInPromise(delay)`</a>
+### <a name="waitinpromise">`waitInPromise (delay)`</a>
 
 Delays the chaining of a promise by a specified
 time in milliseconds.
@@ -959,7 +959,7 @@ Promise.resolve("waiting")
 
 >[oneOutOf](#oneoutof)
 
-### <a name="oneoutof">`oneOutOf(num)`</a>
+### <a name="oneoutof">`oneOutOf (num)`</a>
 
 Returns `true` approximately one out of `num` times,
 randomly.
@@ -990,7 +990,7 @@ oneOutOf(2);
 
 >[toAverage](#toaverage), [toAverageProp](#toaverageprop), [toClosest](#toclosest), [toClosestProp](#toclosestprop), [toLargestProp](#tolargestprop), [toSmallestProp](#tosmallestprop) &amp;&nbsp;[toSum](#tosum)
 
-### <a name="toaverage">`toAverage()`</a>
+### <a name="toaverage">`toAverage ()`</a>
 
 When used with `[].reduce()`, returns
 the average of the values in an array.
@@ -1015,7 +1015,7 @@ Also, note that the parentheses can be ommited.
 // => 6
 ```
 
-### <a name="toaverageprop">`toAverageProp(path)`</a>
+### <a name="toaverageprop">`toAverageProp (path)`</a>
 
 When used with `[].reduce()`, returns
 the object in an array in which a specific property,
@@ -1078,7 +1078,7 @@ cities.reduce(toAverageProp("demographics.population"));
 // => { "city": "Rio de Janeiro", [...] }
 ```
 
-### <a name="toclosest">`toClosest(num)`</a>
+### <a name="toclosest">`toClosest (num)`</a>
 
 When used with `[].reduce()`, returns
 the closest value to the one passed as parameter.
@@ -1111,7 +1111,7 @@ using `toClosest()` can lead to unexpected results.
 // => 3
 ```
 
-### <a name="toclosestprop">`toClosestProp(path, num)`</a>
+### <a name="toclosestprop">`toClosestProp (path, num)`</a>
 
 When used with `[].reduce()`, returns
 the object in an array in which a specific property,
@@ -1173,7 +1173,7 @@ cities.reduce(toClosestProp("demographics.population", 5));
 // => { "city": "Rio de Janeiro", [...] }
 ```
 
-### <a name="tolargestprop">`toLargestProp(path)`</a>
+### <a name="tolargestprop">`toLargestProp (path)`</a>
 
 When used with `[].reduce()`, returns
 the object in an array in which a specific property
@@ -1233,7 +1233,7 @@ cities.reduce(toLargestProp("demographics.population"));
 // => { "city": "São Paulo", [...] }
 ```
 
-### <a name="tosmallestprop">`toSmallestProp(path)`</a>
+### <a name="tosmallestprop">`toSmallestProp (path)`</a>
 
 When used with `[].reduce()`, returns
 the object in an array in which a specific property
@@ -1293,7 +1293,7 @@ cities.reduce(toSmallestProp("demographics.population"));
 // => { "city": "Florianópolis", [...] }
 ```
 
-### <a name="tosum">`toSum()`</a>
+### <a name="tosum">`toSum ()`</a>
 
 When used with `[].reduce()`, returns
 the sum of the values in an array.
@@ -1322,7 +1322,7 @@ Also, note that the parentheses can be ommited.
 
 >[byAlphabeticalOrder](#byalphabeticalorder)
 
-### <a name="byalphabeticalorder">`byAlphabeticalOrder()`</a>
+### <a name="byalphabeticalorder">`byAlphabeticalOrder ()`</a>
 
 When used with `[].sort()`, sorts
 the array in ascending alphabetical order.
@@ -1351,7 +1351,7 @@ musqueteers.sort(byAlphabeticalOrder);
 
 >[afterFirst](#afterfirst), [afterLast](#afterlast), [beforeFirst](#beforefirst) &amp;&nbsp;[beforeLast](#beforelast)
 
-### <a name="afterfirst">`afterFirst(str, delimiter)`</a>
+### <a name="afterfirst">`afterFirst (str, delimiter)`</a>
 
 Returns the string formed by the characters **after
 the first occurrence** of the delimiter in a base string.
@@ -1377,7 +1377,7 @@ afterFirst("parallelepiped", "le");
 // => "lepiped"
 ```
 
-### <a name="afterlast">`afterLast(str, delimiter)`</a>
+### <a name="afterlast">`afterLast (str, delimiter)`</a>
 
 Returns the string formed by the characters **after
 the last occurrence** of the delimiter in a base string.
@@ -1403,7 +1403,7 @@ afterLast("parallelepiped", "le");
 // => "piped"
 ```
 
-### <a name="beforefirst">`beforeFirst(str, delimiter)`</a>
+### <a name="beforefirst">`beforeFirst (str, delimiter)`</a>
 
 Returns the string formed by the characters **before
 the first occurrence** of the delimiter in a base string.
@@ -1429,7 +1429,7 @@ beforeFirst("parallelepiped", "le");
 // => "paral"
 ```
 
-### <a name="beforelast">`beforeLast(str, delimiter)`</a>
+### <a name="beforelast">`beforeLast (str, delimiter)`</a>
 
 Returns the string formed by the characters **before
 the last occurrence** of the delimiter in a base string.
@@ -1459,7 +1459,7 @@ beforeLast("parallelepiped", "le");
 
 >[timeSince](#timesince)
 
-### <a name="timesince">`timeSince(timestamp)`</a>
+### <a name="timesince">`timeSince (timestamp)`</a>
 
 Returns the time passed since a timestamp, in milliseconds;
 

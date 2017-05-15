@@ -26,11 +26,11 @@
   background-color: #1e0010;
 }
 .highlight .gi {
-  color: $text;
+  color: $text-color;
   background-color: #324932;
 }
 .highlight .gd {
-  color: $text;
+  color: $text-color;
   background-color: #493131;
 }
 .highlight .ge {
@@ -203,8 +203,4 @@
 }
 .highlight .nt {
   color: $code-red;
-}
-.highlight {
-  color: $code-blue;
-  background-color: #49483e;
 }

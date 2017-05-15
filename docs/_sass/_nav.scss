@@ -1,7 +1,9 @@
 .nav {
+	position: fixed;
+
 	flex: 0 0 $nav-width;
 	margin: 0;
-	padding: $grid 0 $grid ($grid * 1.5);
+	padding: $grid ($grid * 0.5) $grid ($grid * 1.5);
 	height: 100%;
 	box-sizing: border-box;
 
@@ -14,10 +16,14 @@
 	white-space: nowrap;
 	-webkit-overflow-scrolling: touch;
 	-ms-overflow-style: -ms-autohiding-scrollbar;
-	z-index: 1;
+	z-index: 2;
 
 	&--grid {
 		@extend %grid;
+	}
+
+	@media #{$smaller-than-landscape-tablet} {
+		transform: translateY(-100%);
 	}
 
 	h1 {
@@ -33,7 +39,7 @@
 		color: $logo-color;
 		cursor: default;
 
-		@media only screen and (min-width: 1400px) {
+		@media #{$bigger-than-desktop} {
 			top: 1px;
 		}
 	}
@@ -44,7 +50,7 @@
 		margin: 0 0 0 -2.25rem;
 		padding: 0;
 
-		@media only screen and (min-width: 1400px) {
+		@media #{$bigger-than-desktop} {
 			top: 8px;
 		}
 	}
@@ -73,7 +79,7 @@
 		line-height: $grid;
 		font-size: 14px;
 
-		@media only screen and (min-width: 1400px) {
+		@media #{$bigger-than-desktop} {
 			top: 2px;
 		}
 	}
@@ -87,7 +93,7 @@
 		letter-spacing: 0.045em;
 		color: $menu-item-color;
 
-		@media only screen and (min-width: 1400px) {
+		@media #{$bigger-than-desktop} {
 			top: -3px;
 
 			a {
@@ -101,7 +107,7 @@
 	li li {
 		top: -0.0625rem;
 
-		@media only screen and (min-width: 1400px) {
+		@media #{$bigger-than-desktop} {
 			top: -1px;
 		}
 	}
@@ -120,16 +126,29 @@
 	}
 
 	a {
+		position: relative;
 		display: block;
+		width: calc(100% - #{$grid / 2});
 		color: inherit;
 		text-decoration: none;
+		box-sizing: border-box;
 	}
 
-	a:hover {
+	a::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+	}
+
+	a:hover::before {
 		background-color: $menu-item-hover-bg;
 	}
 
-	a.selected {
+	a.selected::before {
 		background-color: $menu-item-selected-bg;
 	}
 }
