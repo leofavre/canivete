@@ -896,6 +896,7 @@ function throttle(func, wait, options) {
   });
 }
 
+var $window = $(window);
 var navButtons = $(".nav").find("a").get();
 var navCollapsableButtons = $(navButtons).get().filter(function (domEl) {
 	return $(domEl).parent().is("strong");
@@ -903,16 +904,34 @@ var navCollapsableButtons = $(navButtons).get().filter(function (domEl) {
 var navTargets = $(".content").find("h2, h3 > a").get().filter(function (domEl) {
 	return !!getHash(domEl);
 });
-var $content = $(".content");
-var $window = $(window);
+
+function getScrollTarget() {
+	return $(".content");
+}
+
+function listenForScrollNavigationEvents(domEl) {
+	$(domEl).on("scroll", throttle(markNav, 30)).on("scroll", debounce(markBrowser, 300));
+}
+
+function listenForScrollAnchorEvents() {
+	$("a[href^=\"#\"]").on("click", scrollToChapter);
+}
+
+function removeNonBreakingSpacesFromTds() {
+	$("td").each(function () {
+		var $this = $(this);
+		$this.html($this.html().replace(/&nbsp;/g, ''));
+	});
+}
 
 function scrollToChapter(evt) {
-	var chapter = getChapterByHash(getHash(evt.target));
+	var $scrollTarget = getScrollTarget(),
+	    chapter = getChapterByHash(getHash(evt.target));
 
 	if (chapter) {
 		evt.preventDefault();
 
-		$content.scrollTo(chapter, 600, {
+		$scrollTarget.scrollTo(chapter, 600, {
 			axis: "y"
 		});
 	}
@@ -926,18 +945,19 @@ function markNav() {
 }
 
 function markBrowser() {
-	var hash = "#" + getHash(getCurrentlyReadableChapter());
-	var memoPosition = $content.scrollTop();
+	var $scrollTarget = getScrollTarget(),
+	    hash = "#" + getHash(getCurrentlyReadableChapter()),
+	    memoPosition = $scrollTarget.scrollTop();
 
 	if (document.location.hash !== hash) {
 		document.location.hash = hash;
 	}
 
-	if ($content.scrollTop() !== memoPosition) {
-		$content.scrollTop(memoPosition);
+	if ($scrollTarget.scrollTop() !== memoPosition) {
+		$scrollTarget.scrollTop(memoPosition);
 	}
 
-	$content.scrollLeft(0); // for IE.
+	$scrollTarget.scrollLeft(0); // for IE.
 }
 
 function getCurrentlyReadableChapter() {
@@ -963,13 +983,7 @@ function getLastItem(arr) {
 	return arr[arr.length - 1];
 }
 
-$("a[href^=\"#\"]").on("click", scrollToChapter);
-
-$content.on("scroll", throttle(markNav, 30)).on("scroll", debounce(markBrowser, 300));
-
-$window.on("resize", throttle(markNav, 30)).on("resize", debounce(markBrowser, 300));
-
-$("td").each(function () {
-	var $this = $(this);
-	$this.html($this.html().replace(/&nbsp;/g, ''));
-});
+listenForScrollAnchorEvents();
+listenForScrollNavigationEvents(getScrollTarget());
+listenForScrollNavigationEvents(window);
+removeNonBreakingSpacesFromTds();
