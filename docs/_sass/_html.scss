@@ -7,4 +7,8 @@ html {
 	@media #{$bigger-than-desktop} {
 		font-size: 18px;
 	}
+
+	@media #{$smaller-than-landscape-phone} {
+		font-size: 15px;
+	}
 }

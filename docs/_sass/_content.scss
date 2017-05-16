@@ -216,6 +216,7 @@
 		font-size: 1rem;
 		letter-spacing: -0.025em;
 		line-height: $grid;
+		hyphens: auto;
 
 		@media #{$bigger-than-desktop} {
 			top: calc(0.5rem - 1px);
@@ -223,6 +224,10 @@
 
 		@media #{$smaller-than-portrait-tablet} {
 			line-height: $grid * 1.25;
+		}
+
+		@media #{$smaller-than-landscape-phone} {
+			width: calc(100% + #{$grid * 0.5});
 		}
 	}
 
@@ -244,6 +249,7 @@
 
 	blockquote p {
 		@extend %subtitle;
+		hyphens: none;
 	}
 
 	a {

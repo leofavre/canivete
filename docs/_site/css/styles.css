@@ -60,6 +60,9 @@ html {
   @media only screen and (min-width: 1400px) {
     html {
       font-size: 18px; } }
+  @media only screen and (max-width: 550px) {
+    html {
+      font-size: 15px; } }
 
 .page {
   -webkit-font-smoothing: antialiased;
@@ -415,13 +418,19 @@ html {
     margin: 1.5rem 0 1.5rem;
     font-size: 1rem;
     letter-spacing: -0.025em;
-    line-height: 1.5rem; }
+    line-height: 1.5rem;
+    -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+            hyphens: auto; }
     @media only screen and (min-width: 1400px) {
       .content p {
         top: calc(0.5rem - 1px); } }
     @media only screen and (max-width: 700px) {
       .content p {
         line-height: 1.875rem; } }
+    @media only screen and (max-width: 550px) {
+      .content p {
+        width: calc(100% + 0.75rem); } }
   .content p code {
     padding: 1px 0.125rem;
     background-color: #d4f3f3;
@@ -432,6 +441,10 @@ html {
     font-weight: 600; }
   .content blockquote {
     margin: 0; }
+  .content blockquote p {
+    -webkit-hyphens: none;
+        -ms-hyphens: none;
+            hyphens: none; }
   .content a {
     position: relative;
     color: inherit;
