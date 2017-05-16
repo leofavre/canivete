@@ -2,7 +2,6 @@
 
 #about {
 	-letter-kern: 0.01em -0.01em -0.02em 0em 0;
-	margin-bottom: -1.5rem;
 }
 
 /* usage */
@@ -21,26 +20,12 @@
 
 #classname {
 	-letter-kern: -0.05em -0.01em 0.015em -0.01em 0.015em -0.01em -0.015em -0.025em 0;
-	width: 65rem;
-}
-
-@media only screen and (max-width: 1100px) {
-	#classname {
-		width: 57rem;
-	}
 }
 
 /* collection */
 
 #collection {
 	-letter-kern: -0.04em -0.04em 0 -0.03em -0.035em -0.035em 0.035em -0.035em -0.02em 0;
-	width: 58rem;
-}
-
-@media only screen and (max-width: 1100px) {
-	#collection {
-		width: 51rem;
-	}
 }
 
 /* dom */
@@ -59,13 +44,6 @@
 
 #geometry {
 	-letter-kern: -0.015em -0.035em -0.02em -0.025em -0.03em 0.035em 0 0;
-	width: 50rem;
-}
-
-@media only screen and (max-width: 1100px) {
-	#geometry {
-		width: 44rem;
-	}
 }
 
 #geometry .char4 {
@@ -80,13 +58,6 @@
 
 #promise {
 	-letter-kern: 0 -0.03em -0.02em -0.02em 0.01em -0.015em 0;
-	width: 50rem;
-}
-
-@media only screen and (max-width: 1100px) {
-	#promise {
-		width: 44rem;
-	}
 }
 
 #promise .char4 {
@@ -125,11 +96,4 @@
 
 #time {
 	-letter-kern: 0.04em -0.02em -0.025em 0;
-	width: 45rem;
-}
-
-@media only screen and (max-width: 1100px) {
-	#time {
-		width: 40rem;
-	}
 }

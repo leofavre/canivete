@@ -12,7 +12,7 @@
 
 	}
 
-	h2 {
+	.content__main h2 {
 		position: relative;
 		left: ($grid * -3);
 		margin: ($grid * 10) 0 0;
@@ -30,10 +30,63 @@
 		display: flex;
 		flex-flow: row wrap;
 		align-items: center;
-		height: 100vh;
+		height: 96vh;
 
 		overflow-wrap: break-word;
 		word-wrap: break-word;
+
+		&#about {
+			margin-bottom: -1.5rem;
+		}
+
+		&#bem {
+			@media #{$content-almost-touches-margins} { left: -6.25vw; }
+		}
+
+		&#classname {
+			width: 65rem;
+			@media #{$smaller-than-desktop} { width: 57rem; }
+			@media #{$smaller-than-landscape-tablet} { width: 48rem; }
+			@media #{$content-almost-touches-margins} { width: 96vw; }
+		}
+
+		&#collection {
+			width: 58rem;
+			@media #{$smaller-than-desktop} { width: 51rem; }
+			@media #{$smaller-than-landscape-tablet} { width: 46rem; }
+			@media #{$content-almost-touches-margins} { width: 96vw; }
+		}
+
+		&#dom {
+			@media #{$content-almost-touches-margins} { width: 104vw; left: -6.25vw; }
+		}
+
+		&#geometry {
+			width: 50rem;
+			@media #{$smaller-than-desktop} { width: 44rem; left: 0; }
+			@media #{$content-almost-touches-margins} { width: 94vw; }
+		}
+
+		&#promise {
+			width: 50rem;
+			@media #{$smaller-than-desktop} { width: 44rem; left: 0.75rem; }
+			@media #{$content-almost-touches-margins} { width: 90vw; left: 1.5625vw; }
+		}
+
+		&#random {
+			@media #{$content-almost-touches-margins} { width: 104vw; }
+		}
+
+		&#sort {
+			@media #{$content-almost-touches-margins} { left: -4.6875vw; }
+		}
+
+		&#time {
+			width: 45rem;
+			@media #{$smaller-than-desktop} { width: 40rem; }
+			@media #{$smaller-than-landscape-tablet} { width: 37rem; }
+			@media #{$content-almost-touches-margins} { width: 76vw; }
+		}
 
 		@media #{$smaller-than-desktop} {
 			left: ($grid * -2);
@@ -41,19 +94,50 @@
 			line-height: 13.5rem;
 			width: 54rem;
 		}
+
+		@media #{$smaller-than-landscape-tablet} {
+			margin-top: ($grid * 6);
+			padding-top: ($grid * 4);
+			width: 48rem;
+			height: auto;
+
+			font-size: 18.75rem;
+			line-height: 0.65;
+		}
+
+		@media #{$content-almost-touches-margins} {
+			font-size: 42vw;
+			width: 100vw;
+			left: -3.125vw;
+		}
+
+		@media #{$smaller-than-portrait-tablet} {
+			margin-top: 0;
+			color: $content-h2-small-color;
+		}
 	}
 
-	h2 > * {
+	.content__main h2 > * {
 		position: relative;
 		top: -0.05em;
 		margin: auto 0;
 		min-width: 0;
 	}
 
-	h2 + blockquote {
+	.content__main h2 + blockquote {
 		position: relative;
-		top: -35vh;
-		margin-bottom: 0;
+		margin-top: -33vh;
+		margin-bottom: calc(33vh + #{$grid * 4});
+
+		@media #{$smaller-than-landscape-tablet} {
+			margin-top: ($grid * -4);
+			margin-bottom: ($grid * 8);
+		}
+
+		@media #{$smaller-than-portrait-tablet} {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
 	}
 
 	h3 {
@@ -66,7 +150,7 @@
 		color: $content-h3-color;
 
 		@media #{$smaller-than-portrait-tablet} {
-			margin-top: $grid * 5;
+			margin-top: $grid * 4;
 			margin-left: $grid * -1;
 			margin-right: $grid * -1;
 			margin-bottom: $grid * 1.25;
@@ -481,15 +565,12 @@
 }
 
 .content__inner {
-	$content-left-padding: ($grid * 3);
-	$content-right-padding: ($grid * 2);
-
 	margin-left: calc(#{$nav-width} + (0.25 * (100vw - #{$nav-width + $full-content-width + $content-left-padding + $content-right-padding})));
 	margin-bottom: 50vh;
 	padding: 0 $content-right-padding 0 $content-left-padding;
 	max-width: $full-content-width;
 
-	@media only screen and (max-width: #{$nav-width + $full-content-width + $content-left-padding + $content-right-padding}) {
+	@media #{$content-touches-menu} {
 		margin-left: $nav-width;
 	}
 
@@ -547,14 +628,37 @@
 	}
 
 	h2 {
+		position: relative;
 		display: block;
 		height: auto;
 		left: -2.25rem;
-		margin-top: $grid * 4;
+		margin: ($grid * 4) 0 0;
 		padding: 0;
-		font-size: 12rem;
 		color: $intro-h2-color;
-		line-height: 12rem;
+		font-family: "Acropolis A", "Acropolis B", cursive;
+		font-style: italic;
+		font-weight: 800;
+		font-size: 12rem;
+		line-height: 1;
+		text-transform: lowercase;
+
+		@media #{$smaller-than-desktop} {
+			font-size: 9rem;
+			left: -1rem;
+		}
+
+		@media #{$content-almost-touches-margins} {
+			font-size: 17.56vw;
+			left: -1vw;
+		}
+
+		@media #{$smaller-than-portrait-tablet} {
+			color: $intro-h2-small-color;
+		}
+
+		&#about {
+			margin-bottom: ($grid * -1);
+		}
 	}
 
 	h2 > * {
@@ -569,6 +673,7 @@
 		padding-top: ($grid * 1) + 0.625rem;
 		word-spacing: normal;
 		background: none;
+		font-weight: 300;
 		color: $intro-h3-color;
 
 		a {
@@ -603,8 +708,8 @@
 		border: 1px solid $button-color;
 		color: $button-color;
 		font-family: "Acropolis A", "Acropolis B", cursive;
-		font-weight: bold;
 		font-style: italic;
+		font-weight: 800;
 		text-transform: lowercase;
 		font-size: 1.75rem;
 		line-height: 1.5rem;

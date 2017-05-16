@@ -1018,7 +1018,7 @@ var chapterAnchors = $(".content").find("h2, h3 > a").get().filter(function (dom
 });
 
 function getScrollTarget() {
-	return isSingleColumnLayout() ? getScrollingElement() : $(".content");
+	return isSingleColumnLayout() ? getScrollingElement() : $(".content").get(0);
 }
 
 function getCurrentlyReadableChapter() {
@@ -1047,19 +1047,28 @@ function getScrollingElement() {
 }
 
 function isSingleColumnLayout() {
-	return $window.width() < 1024;
+	return true;
+	// return $window.width() < 1024;
 }
 
 function isAboveTheFold(domEl) {
 	return domEl.getBoundingClientRect().top < $window.height() * 0.35;
 }
 
-function ignoreScrollNavigationEvents(domEl) {
-	$(domEl).off("scroll");
+function ignoreScrollNavigationEvents() {
+	for (var _len = arguments.length, domEls = Array(_len), _key = 0; _key < _len; _key++) {
+		domEls[_key] = arguments[_key];
+	}
+
+	$(domEls).off("scroll");
 }
 
-function listenForScrollNavigationEvents(domEl) {
-	$(domEl).on("scroll", throttle(markNav, 100)).on("scroll", debounce(markBrowser, 350));
+function listenForScrollNavigationEvents() {
+	for (var _len2 = arguments.length, domEls = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+		domEls[_key2] = arguments[_key2];
+	}
+
+	$(domEls).on("scroll", throttle(markNav, 100)).on("scroll", debounce(markBrowser, 350));
 }
 
 function updateScrollAnchorEvents() {
@@ -1078,15 +1087,14 @@ function removeNonBreakingSpacesFromTds() {
 }
 
 function updateScrollBehaviour() {
-	ignoreScrollNavigationEvents(getScrollTarget());
-	ignoreScrollNavigationEvents(window);
-
-	listenForScrollNavigationEvents(getScrollTarget());
-	listenForScrollNavigationEvents(window);
+	ignoreScrollNavigationEvents(getScrollTarget(), window);
+	listenForScrollNavigationEvents(getScrollTarget(), window);
 }
 
 function scrollToChapter(evt) {
-	var $scrollTarget = getScrollTarget(),
+	console.log("scroll to chapter");
+
+	var $scrollTarget = $(getScrollTarget()),
 	    chapter = getChapterByHash(getHash(evt.target));
 
 	if (chapter) {
@@ -1108,8 +1116,8 @@ function markNav() {
 function markBrowser() {
 	var hash = "#" + getHash(getCurrentlyReadableChapter());
 
-	if (document.location.hash !== hash) {
-		history.pushState(null, null, hash);
+	if (document.location.hash !== hash && history.replaceState) {
+		history.replaceState(null, null, hash);
 	}
 }
 

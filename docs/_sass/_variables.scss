@@ -2,6 +2,9 @@ $grid: 1.5rem;
 $full-content-width: 42rem;
 $nav-width: 14.5rem;
 
+$content-left-padding: ($grid * 3);
+$content-right-padding: ($grid * 2);
+
 
 // breakpoints
 
@@ -9,6 +12,8 @@ $bigger-than-desktop: "only screen and (min-width: 1400px)";
 $smaller-than-desktop: "only screen and (max-width: 1100px)";
 $bigger-than-landscape-tablet: "only screen and (min-width: 1024px)";
 $smaller-than-landscape-tablet: "only screen and (max-width: 1023px)";
+$content-touches-menu: "only screen and (max-width: #{$nav-width + $full-content-width + $content-left-padding + $content-right-padding})";
+$content-almost-touches-margins: "only screen and (max-width: 820px)";
 $smaller-than-portrait-tablet: "only screen and (max-width: 700px)";
 $smaller-than-landscape-phone: "only screen and (max-width: 550px)";
 $portrait-phone: "only screen and (max-width: 400px)";
@@ -22,12 +27,14 @@ $text-color: #3d464d;
 $logo-color: #f92672;
 
 $intro-h2-color: #d4f3f3;
+$intro-h2-small-color: mix(#7ae1e6, $intro-h2-color, 15%);
 $intro-h3-color: $text-color;
 
 $button-color: $logo-color;
-$button-bg-color: $intro-h2-color;
+$button-bg-color: #d4f3f3;
 
-$content-h2-color: $intro-h2-color;
+$content-h2-color: #d4f3f3;
+$content-h2-small-color: mix(#7ae1e6, $content-h2-color, 15%);
 $content-h3-color: #7ae1e6;
 $content-h3-bg-color: $text-color;
 

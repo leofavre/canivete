@@ -25,22 +25,33 @@ html {
   src: url("../fonts/eot/FiraCode-Bold.eot") format("embedded-opentype"), url("../fonts/woff2/FiraCode-Bold.woff2") format("woff2"), url("../fonts/woff/FiraCode-Bold.woff") format("woff"), url("../fonts/ttf/FiraCode-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal; }
-@media only screen and (max-width: 1023px) {
+.layout {
+  	/*
+  	@media only screen and (min-width: 1024px) {
+  		height: 100%;
+  
+  		.page {
+  			height: 100%;
+  		}
+  
+  		.page__inner {
+  			height: 100%;
+  			overflow: hidden;
+  		}
+  
+  		.content {
+  			overflow: auto;
+  			overflow-x: hidden;
+  			overflow-y: auto;
+  		}
+  	}
+  	*/ }
   .layout .content {
-    width: 100%;
-    overflow: hidden; } }
-@media only screen and (min-width: 1024px) {
-  .layout {
-    height: 100%; }
-    .layout .page {
-      height: 100%; }
-    .layout .page__inner {
-      height: 100%;
-      overflow: hidden; }
+    overflow: hidden; }
+  @media only screen and (max-width: 1023px) {
     .layout .content {
-      overflow: auto;
-      overflow-x: hidden;
-      overflow-y: auto; } }
+      width: 100%;
+      overflow: hidden; } }
 
 html {
   font-size: 16px;
@@ -219,7 +230,7 @@ html {
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar;
   display: block; }
-  .content h2 {
+  .content .content__main h2 {
     position: relative;
     left: -4.5rem;
     margin: 15rem 0 0;
@@ -242,24 +253,116 @@ html {
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
-    height: 100vh;
+    height: 96vh;
     overflow-wrap: break-word;
     word-wrap: break-word; }
+    .content .content__main h2#about {
+      margin-bottom: -1.5rem; }
+    @media only screen and (max-width: 820px) {
+      .content .content__main h2#bem {
+        left: -6.25vw; } }
+    .content .content__main h2#classname {
+      width: 65rem; }
+      @media only screen and (max-width: 1100px) {
+        .content .content__main h2#classname {
+          width: 57rem; } }
+      @media only screen and (max-width: 1023px) {
+        .content .content__main h2#classname {
+          width: 48rem; } }
+      @media only screen and (max-width: 820px) {
+        .content .content__main h2#classname {
+          width: 96vw; } }
+    .content .content__main h2#collection {
+      width: 58rem; }
+      @media only screen and (max-width: 1100px) {
+        .content .content__main h2#collection {
+          width: 51rem; } }
+      @media only screen and (max-width: 1023px) {
+        .content .content__main h2#collection {
+          width: 46rem; } }
+      @media only screen and (max-width: 820px) {
+        .content .content__main h2#collection {
+          width: 96vw; } }
+    @media only screen and (max-width: 820px) {
+      .content .content__main h2#dom {
+        width: 104vw;
+        left: -6.25vw; } }
+    .content .content__main h2#geometry {
+      width: 50rem; }
+      @media only screen and (max-width: 1100px) {
+        .content .content__main h2#geometry {
+          width: 44rem;
+          left: 0; } }
+      @media only screen and (max-width: 820px) {
+        .content .content__main h2#geometry {
+          width: 94vw; } }
+    .content .content__main h2#promise {
+      width: 50rem; }
+      @media only screen and (max-width: 1100px) {
+        .content .content__main h2#promise {
+          width: 44rem;
+          left: 0.75rem; } }
+      @media only screen and (max-width: 820px) {
+        .content .content__main h2#promise {
+          width: 90vw;
+          left: 1.5625vw; } }
+    @media only screen and (max-width: 820px) {
+      .content .content__main h2#random {
+        width: 104vw; } }
+    @media only screen and (max-width: 820px) {
+      .content .content__main h2#sort {
+        left: -4.6875vw; } }
+    .content .content__main h2#time {
+      width: 45rem; }
+      @media only screen and (max-width: 1100px) {
+        .content .content__main h2#time {
+          width: 40rem; } }
+      @media only screen and (max-width: 1023px) {
+        .content .content__main h2#time {
+          width: 37rem; } }
+      @media only screen and (max-width: 820px) {
+        .content .content__main h2#time {
+          width: 76vw; } }
     @media only screen and (max-width: 1100px) {
-      .content h2 {
+      .content .content__main h2 {
         left: -3rem;
         font-size: 21rem;
         line-height: 13.5rem;
         width: 54rem; } }
-  .content h2 > * {
+    @media only screen and (max-width: 1023px) {
+      .content .content__main h2 {
+        margin-top: 9rem;
+        padding-top: 6rem;
+        width: 48rem;
+        height: auto;
+        font-size: 18.75rem;
+        line-height: 0.65; } }
+    @media only screen and (max-width: 820px) {
+      .content .content__main h2 {
+        font-size: 42vw;
+        width: 100vw;
+        left: -3.125vw; } }
+    @media only screen and (max-width: 700px) {
+      .content .content__main h2 {
+        margin-top: 0;
+        color: #c7f0f1; } }
+  .content .content__main h2 > * {
     position: relative;
     top: -0.05em;
     margin: auto 0;
     min-width: 0; }
-  .content h2 + blockquote {
+  .content .content__main h2 + blockquote {
     position: relative;
-    top: -35vh;
-    margin-bottom: 0; }
+    margin-top: -33vh;
+    margin-bottom: calc(33vh + 6rem); }
+    @media only screen and (max-width: 1023px) {
+      .content .content__main h2 + blockquote {
+        margin-top: -6rem;
+        margin-bottom: 12rem; } }
+    @media only screen and (max-width: 700px) {
+      .content .content__main h2 + blockquote {
+        margin-top: 0;
+        margin-bottom: 0; } }
   .content h3 {
     position: relative;
     top: 0;
@@ -270,7 +373,7 @@ html {
     color: #7ae1e6; }
     @media only screen and (max-width: 700px) {
       .content h3 {
-        margin-top: 7.5rem;
+        margin-top: 6rem;
         margin-left: -1.5rem;
         margin-right: -1.5rem;
         margin-bottom: 1.875rem;
@@ -598,14 +701,32 @@ html {
 .content__intro > *:nth-child(1) {
   margin-top: 0; }
 .content__intro h2 {
+  position: relative;
   display: block;
   height: auto;
   left: -2.25rem;
-  margin-top: 6rem;
+  margin: 6rem 0 0;
   padding: 0;
-  font-size: 12rem;
   color: #d4f3f3;
-  line-height: 12rem; }
+  font-family: "Acropolis A", "Acropolis B", cursive;
+  font-style: italic;
+  font-weight: 800;
+  font-size: 12rem;
+  line-height: 1;
+  text-transform: lowercase; }
+  @media only screen and (max-width: 1100px) {
+    .content__intro h2 {
+      font-size: 9rem;
+      left: -1rem; } }
+  @media only screen and (max-width: 820px) {
+    .content__intro h2 {
+      font-size: 17.56vw;
+      left: -1vw; } }
+  @media only screen and (max-width: 700px) {
+    .content__intro h2 {
+      color: #c7f0f1; } }
+  .content__intro h2#about {
+    margin-bottom: -1.5rem; }
 .content__intro h2 > * {
   position: static; }
 .content__intro h3 {
@@ -614,6 +735,7 @@ html {
   padding-top: 2.125rem;
   word-spacing: normal;
   background: none;
+  font-weight: 300;
   color: #3d464d; }
   .content__intro h3 a {
     display: inline;
@@ -639,8 +761,8 @@ html {
   border: 1px solid #f92672;
   color: #f92672;
   font-family: "Acropolis A", "Acropolis B", cursive;
-  font-weight: bold;
   font-style: italic;
+  font-weight: 800;
   text-transform: lowercase;
   font-size: 1.75rem;
   line-height: 1.5rem;

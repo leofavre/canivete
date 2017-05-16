@@ -10,7 +10,7 @@ const navCollapsableButtons = $(navButtons).get().filter(domEl => $(domEl).paren
 const chapterAnchors = $(".content").find("h2, h3 > a").get().filter(domEl => !!getHash(domEl));
 
 function getScrollTarget() {
-	return isSingleColumnLayout() ? getScrollingElement() : $(".content");
+	return isSingleColumnLayout() ? getScrollingElement() : $(".content").get(0);
 }
 
 function getCurrentlyReadableChapter() {
@@ -56,19 +56,20 @@ function getScrollingElement() {
 };
 
 function isSingleColumnLayout() {
-	return $window.width() < 1024;
+	return true;
+	// return $window.width() < 1024;
 }
 
 function isAboveTheFold(domEl) {
 	return domEl.getBoundingClientRect().top < $window.height() * 0.35;
 }
 
-function ignoreScrollNavigationEvents(domEl) {
-	$(domEl).off("scroll");
+function ignoreScrollNavigationEvents(...domEls) {
+	$(domEls).off("scroll");
 }
 
-function listenForScrollNavigationEvents(domEl) {
-	$(domEl)
+function listenForScrollNavigationEvents(...domEls) {
+	$(domEls)
 		.on("scroll", throttle(markNav, 100))
 		.on("scroll", debounce(markBrowser, 350));
 }
@@ -92,15 +93,14 @@ function removeNonBreakingSpacesFromTds() {
 }
 
 function updateScrollBehaviour() {
-	ignoreScrollNavigationEvents(getScrollTarget());
-	ignoreScrollNavigationEvents(window);
-
-	listenForScrollNavigationEvents(getScrollTarget());
-	listenForScrollNavigationEvents(window);
+	ignoreScrollNavigationEvents(getScrollTarget(), window);
+	listenForScrollNavigationEvents(getScrollTarget(), window);
 }
 
 function scrollToChapter(evt) {
-	let $scrollTarget = getScrollTarget(),
+	console.log("scroll to chapter");
+
+	let $scrollTarget = $(getScrollTarget()),
 		chapter = getChapterByHash(getHash(evt.target));
 
 	if (chapter) {
@@ -122,8 +122,8 @@ function markNav() {
 function markBrowser() {
 	let hash = `#${getHash(getCurrentlyReadableChapter())}`;
 
-	if (document.location.hash !== hash) {
-		history.pushState(null, null, hash);
+	if (document.location.hash !== hash && history.replaceState) {
+		history.replaceState(null, null, hash);
 	}
 }
 

@@ -1,6 +1,10 @@
 .layout {
 
 	// single column
+	
+	.content {
+		overflow: hidden;
+	}
 
 	@media #{$smaller-than-landscape-tablet} {
 		.content {
@@ -11,6 +15,7 @@
 
 	// two columns
 
+	/*
 	@media #{$bigger-than-landscape-tablet} {
 		height: 100%;
 
@@ -29,4 +34,5 @@
 			overflow-y: auto;
 		}
 	}
+	*/
 }
