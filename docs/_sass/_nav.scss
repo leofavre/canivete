@@ -1,5 +1,6 @@
 .nav {
 	position: fixed;
+	transform: translateZ(0%);
 
 	flex: 0 0 $nav-width;
 	margin: 0;
