@@ -16,14 +16,19 @@
 	white-space: nowrap;
 	-webkit-overflow-scrolling: touch;
 	-ms-overflow-style: -ms-autohiding-scrollbar;
-	z-index: 2;
+	z-index: 5;
 
 	&--grid {
 		@extend %grid;
 	}
 
 	@media #{$smaller-than-landscape-tablet} {
-		transform: translateY(-100%);
+		display: block;
+		margin: 0;
+		padding: 0;
+		width: 0;
+		height: 100%;
+		overflow: visible;
 	}
 
 	h1 {
@@ -41,6 +46,23 @@
 
 		@media #{$bigger-than-desktop} {
 			top: 1px;
+		}
+
+		@media #{$smaller-than-landscape-tablet} {
+			position: fixed;
+			display: block;
+			top: 0;
+			left: 0;
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			background: $nav-mobile-header-background;
+			box-sizing: border-box;
+			font-size: 24px;
+			text-align: center;
+			line-height: $nav-mobile-height + 2;
+			// letter-spacing: 0.01em;
+			z-index: 50;
 		}
 	}
 
@@ -136,12 +158,11 @@
 
 	a::before {
 		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: -1;
+		display: block;
+		margin-bottom: ($grid * -1);
+		margin-left: -2.25rem;
+		width: calc(100% + 4.5rem);
+		height: $grid;
 	}
 
 	a:hover::before {
@@ -158,5 +179,26 @@
 
 	&--grid {
 		@extend %grid;
+	}
+}
+
+.nav__drawer {
+	@media #{$smaller-than-landscape-tablet} {
+		position: fixed;
+		top: $nav-mobile-height;
+		left: 0;
+		height: calc(100% - #{$nav-mobile-height});
+		background: #fff;
+		overflow: auto;
+
+		transform: translateX(-100%);
+
+		ul {
+			margin: 0;
+		}
+
+		> ul:nth-child(1) {
+			margin-top: $grid;
+		}
 	}
 }

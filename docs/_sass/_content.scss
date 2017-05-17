@@ -1,7 +1,4 @@
 .content {
-	flex: 1 1 auto;
-	// overflow-x: hidden;
-	// overflow-y: auto;
 	line-height: $grid;
 	-webkit-overflow-scrolling: touch;
 	-ms-overflow-style: -ms-autohiding-scrollbar;
@@ -12,7 +9,7 @@
 
 	}
 
-	.content__main h2 {
+	&__main h2 {
 		position: relative;
 		left: ($grid * -3);
 		margin: ($grid * 10) 0 0;
@@ -97,7 +94,7 @@
 
 		@media #{$smaller-than-landscape-tablet} {
 			margin-top: ($grid * 6);
-			padding-top: ($grid * 4);
+			padding-top: ($grid * 6);
 			width: 48rem;
 			height: auto;
 
@@ -117,14 +114,14 @@
 		}
 	}
 
-	.content__main h2 > * {
+	&__main h2 > * {
 		position: relative;
 		top: -0.05em;
 		margin: auto 0;
 		min-width: 0;
 	}
 
-	.content__main h2 + blockquote {
+	&__main h2 + blockquote {
 		position: relative;
 		margin-top: -33vh;
 		margin-bottom: calc(33vh + #{$grid * 4});
@@ -140,26 +137,26 @@
 		}
 	}
 
-	h3 {
+	&__main h3 {
 		position: relative;
 		top: 0;
 		margin: ($grid * 8) ($grid * -2) ($grid * 2) ($grid * -2);
 		font-size: 2rem;
 		line-height: ($grid * 2);
-		background: $content-h3-bg-color;
-		color: $content-h3-color;
 
 		@media #{$smaller-than-portrait-tablet} {
-			margin-top: $grid * 4;
-			margin-left: $grid * -1;
-			margin-right: $grid * -1;
-			margin-bottom: $grid * 1.25;
+			margin-top: ($grid * 2);
+			margin-left: ($grid * -1);
+			margin-right: ($grid * -1);
+			margin-bottom: ($grid * 1.25);
+
 			font-size: 1.35rem;
-			line-height: $grid * 1.35;
+			line-height: ($grid * 1.35);
 		}
 	}
 
-	h3 a {
+	&__main h3 a {
+		position: relative;
 		display: block;
 		padding: (0.875rem + $grid) ($grid * 2) (0.625rem + $grid) ($grid * 2);
 
@@ -168,14 +165,35 @@
 			padding-bottom: 39px;
 		}
 
+		@media #{$smaller-than-landscape-tablet} {
+			padding-top: calc(#{$nav-mobile-height} + #{0.875rem + $grid});
+		}
+
 		@media #{$smaller-than-portrait-tablet} {
-			padding-top: (0.375rem + $grid);
+			padding-top: calc(#{$nav-mobile-height} + #{0.375rem + $grid});
 			padding-left: $grid;
 			padding-right: $grid;
 		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: $content-h3-bg-color;
+			z-index: -1;
+
+			@media #{$smaller-than-landscape-tablet} {
+				height: calc(100% - #{$nav-mobile-height});
+			}
+		}
 	}
 
-	h3 code {
+	&__main h3 code {
+		position: relative;
+		color: $content-h3-color;
 		font-weight: 500;
 	}
 
@@ -590,10 +608,6 @@
 		padding: 0 $grid;
 	}
 
-	> *:nth-child(1), {
-		margin-top: 0;
-	}
-
 	&--grid {
 		@extend %grid;
 	}
@@ -629,17 +643,19 @@
 }
 
 .content__intro {
-	> *:nth-child(1), {
-		margin-top: 0;
+	@media #{$bigger-than-landscape-tablet} {
+		> *:nth-child(1), {
+			margin-top: 0;
+		}
 	}
 
 	h2 {
 		position: relative;
 		display: block;
-		height: auto;
-		left: -2.25rem;
 		margin: ($grid * 4) 0 0;
 		padding: 0;
+		height: auto;
+		left: -2.25rem;
 		color: $intro-h2-color;
 		font-family: "Acropolis A", "Acropolis B", cursive;
 		font-style: italic;
@@ -647,6 +663,11 @@
 		font-size: 12rem;
 		line-height: 1;
 		text-transform: lowercase;
+
+		@media #{$smaller-than-landscape-tablet} {
+			margin: 0;
+			padding: ($grid * 4) 0 0;
+		}
 
 		@media #{$smaller-than-desktop} {
 			font-size: 9rem;
@@ -681,6 +702,13 @@
 		background: none;
 		font-weight: 300;
 		color: $intro-h3-color;
+		letter-spacing: -0.015em;
+		word-spacing: normal;
+
+		@media #{$smaller-than-landscape-tablet} {
+			margin-top: $grid * 1;
+			padding-top: ($grid * 3) + 0.625rem;
+		}
 
 		a {
 			display: inline;

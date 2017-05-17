@@ -1,6 +1,7 @@
 $grid: 1.5rem;
 $full-content-width: 42rem;
 $nav-width: 14.5rem;
+$nav-mobile-height: 50px;
 
 $content-left-padding: ($grid * 3);
 $content-right-padding: ($grid * 2);
@@ -61,3 +62,5 @@ $comment: $menu-hairline-color;
 $menu-item-color: $text-color;
 $menu-item-selected-bg: $big-code-bg-color;
 $menu-item-hover-bg: mix($menu-item-selected-bg, $background-color, 25%);
+
+$nav-mobile-header-background: #32383e;

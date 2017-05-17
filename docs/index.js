@@ -1,6 +1,5 @@
 import "./_includes/jquery.scrollTo.min";
 import "./_includes/kerning.min";
-import "./_includes/scrollingelement";
 import throttle from "lodash-es/throttle";
 import debounce from "lodash-es/debounce";
 
@@ -10,7 +9,7 @@ const navCollapsableButtons = $(navButtons).get().filter(domEl => $(domEl).paren
 const chapterAnchors = $(".content").find("h2, h3 > a").get().filter(domEl => !!getHash(domEl));
 
 function getScrollTarget() {
-	return isSingleColumnLayout() ? getScrollingElement() : $(".content").get(0);
+	return $(".page__inner").get(0);
 }
 
 function getCurrentlyReadableChapter() {
@@ -51,15 +50,6 @@ function getLastItem(arr) {
 	return arr[arr.length - 1];
 }
 
-function getScrollingElement() {
-	return document.scrollingElement;
-};
-
-function isSingleColumnLayout() {
-	return true;
-	// return $window.width() < 1024;
-}
-
 function isAboveTheFold(domEl) {
 	return domEl.getBoundingClientRect().top < $window.height() * 0.35;
 }
@@ -98,8 +88,6 @@ function updateScrollBehaviour() {
 }
 
 function scrollToChapter(evt) {
-	console.log("scroll to chapter");
-
 	let $scrollTarget = $(getScrollTarget()),
 		chapter = getChapterByHash(getHash(evt.target));
 
