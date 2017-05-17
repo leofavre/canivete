@@ -37,6 +37,7 @@ import at from "lodash-es/at";
  * // => }
  *
  * @example
+ *
  * const stores = [{
  * 	"name": "Iguatemi",
  * 	"city": "Campinas",

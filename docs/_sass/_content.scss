@@ -258,6 +258,10 @@
 		letter-spacing: normal;
 	}
 
+	p a:hover code {
+		background-color: mix($small-code-bg-color, $link-hover-color, 50%);
+	}
+
 	p strong {
 		font-weight: 600;
 	}
@@ -275,32 +279,24 @@
 		position: relative;
 		color: inherit;
 		text-decoration: none;
-		z-index: 2;
-	}
-
-	a::after {
-		content: "";
-		position: absolute;
-		left: 0;
-		bottom: -2px;
-		width: 100%;
-		height: calc(100% + 2px);
-		background: transparent;
+		padding: 1px 0;
 		border-bottom: 1px solid $link-hairline-color;
-		z-index: 1;
+		z-index: 2;
+
+		@media #{$bigger-than-desktop} {
+			padding: 1px 0 2px;
+		}
 	}
 
-	a:hover::after {
+	a:hover {
 		background: $link-hover-color;
-		mix-blend-mode: multiply;
 	}
 
-	a[name]::after {
-		content: normal;
-		display: none;
+	a[name] {
+		border: none;
 	}
 
-	a[name]:hover::after {
+	a[name]:hover {
 		background: transparent;
 	}
 
@@ -625,14 +621,15 @@
 	line-height: ($grid * 2);
 	word-spacing: 0.15em;
 
-	& a::after {
+	& a {
+		padding: 1px 0;
 		border-bottom: 2px solid $link-hairline-color;
 	}
 
 	@media #{$smaller-than-desktop} {
 		font-size: 2rem;
 
-		& a::after {
+		& a {
 			border-bottom: 1px solid $link-hairline-color;
 		}
 	}
