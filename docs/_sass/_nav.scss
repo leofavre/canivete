@@ -60,7 +60,7 @@
 			box-sizing: border-box;
 			font-size: 24px;
 			text-align: center;
-			line-height: $nav-mobile-height + 2;
+			line-height: $nav-mobile-height;
 			// letter-spacing: 0.01em;
 			z-index: 50;
 		}
@@ -185,9 +185,9 @@
 .nav__drawer {
 	@media #{$smaller-than-landscape-tablet} {
 		position: fixed;
-		top: $nav-mobile-height;
+		top: $nav-mobile-height - 2;
 		left: 0;
-		height: calc(100% - #{$nav-mobile-height});
+		height: calc(100% - #{$nav-mobile-height - 2});
 		background: #fff;
 		overflow: auto;
 

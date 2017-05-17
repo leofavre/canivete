@@ -1,5 +1,6 @@
 import "./_includes/jquery.scrollTo.min";
 import "./_includes/kerning.min";
+import "./_includes/scrollingelement";
 import throttle from "lodash-es/throttle";
 import debounce from "lodash-es/debounce";
 
@@ -9,7 +10,7 @@ const navCollapsableButtons = $(navButtons).get().filter(domEl => $(domEl).paren
 const chapterAnchors = $(".content").find("h2, h3 > a").get().filter(domEl => !!getHash(domEl));
 
 function getScrollTarget() {
-	return $(".page__inner").get(0);
+	return useNativeScroll() ? getScrollingElement() : $(".page__inner").get(0);
 }
 
 function getCurrentlyReadableChapter() {
@@ -48,6 +49,14 @@ function getNavButtonByHash(hash) {
 
 function getLastItem(arr) {
 	return arr[arr.length - 1];
+}
+
+function getScrollingElement() {
+	return document.scrollingElement;
+};
+
+function useNativeScroll() {
+	return $("html").hasClass("mode--native-scroll");
 }
 
 function isAboveTheFold(domEl) {

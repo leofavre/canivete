@@ -37,6 +37,9 @@ html {
     html {
       font-size: 15px; } }
 
+html.mode--native-scroll {
+  height: auto; }
+
 .page {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -45,6 +48,8 @@ html {
   color: #3d464d;
   background: #fbfbf7;
   height: 100%; }
+  .mode--native-scroll .page {
+    height: auto; }
 
 .page__inner {
   position: relative;
@@ -53,7 +58,12 @@ html {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
-  overflow-y: auto; }
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar; }
+  .mode--native-scroll .page__inner {
+    height: auto;
+    overflow: auto; }
 
 .nav--grid, .nav__inner--grid, .content__inner--grid {
   background-position: 0.3125rem 0;
@@ -118,7 +128,7 @@ html {
         box-sizing: border-box;
         font-size: 24px;
         text-align: center;
-        line-height: 52px;
+        line-height: 44px;
         z-index: 50; } }
   .nav ul {
     position: relative;
@@ -204,9 +214,9 @@ html {
 @media only screen and (max-width: 1023px) {
   .nav__drawer {
     position: fixed;
-    top: 50px;
+    top: 42px;
     left: 0;
-    height: calc(100% - 50px);
+    height: calc(100% - 42px);
     background: #fff;
     overflow: auto;
     -webkit-transform: translateX(-100%);
@@ -221,7 +231,8 @@ html {
   line-height: 1.5rem;
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar;
-  display: block; }
+  display: block;
+  overflow: hidden; }
   .content__main h2 {
     position: relative;
     left: -4.5rem;
@@ -379,10 +390,10 @@ html {
         padding-bottom: 39px; } }
     @media only screen and (max-width: 1023px) {
       .content__main h3 a {
-        padding-top: calc(50px + 2.375rem); } }
+        padding-top: calc(42px + 2.375rem); } }
     @media only screen and (max-width: 700px) {
       .content__main h3 a {
-        padding-top: calc(50px + 1.875rem);
+        padding-top: calc(42px + 1.875rem);
         padding-left: 1.5rem;
         padding-right: 1.5rem; } }
     .content__main h3 a::before {
@@ -396,7 +407,7 @@ html {
       z-index: -1; }
       @media only screen and (max-width: 1023px) {
         .content__main h3 a::before {
-          height: calc(100% - 50px); } }
+          height: calc(100% - 42px); } }
   .content__main h3 code {
     position: relative;
     color: #7ae1e6;

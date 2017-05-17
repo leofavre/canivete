@@ -8,6 +8,10 @@
 	background: $background-color;
 
 	height: 100%;
+
+	.mode--native-scroll & {
+		height: auto;
+	}
 }
 
 .page__inner {
@@ -18,4 +22,12 @@
 	height: 100%;
 	overflow-x: hidden;
 	overflow-y: auto;
+
+	-webkit-overflow-scrolling: touch;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+
+	.mode--native-scroll & {
+		height: auto;
+		overflow: auto;
+	}
 }

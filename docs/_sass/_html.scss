@@ -12,3 +12,7 @@ html {
 		font-size: 15px;
 	}
 }
+
+html.mode--native-scroll {
+	height: auto;
+}
