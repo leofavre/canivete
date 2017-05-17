@@ -7,10 +7,14 @@
 	color: $text-color;
 	background: $background-color;
 
-	height: 100%;
+	height: auto;
 
 	.mode--native-scroll & {
 		height: auto;
+	}
+
+	.mode--local-scroll & {
+		height: 100%;
 	}
 }
 
@@ -19,9 +23,8 @@
 	display: block;
 	margin: 0 auto;
 	width: 100%;
-	height: 100%;
-	overflow-x: hidden;
-	overflow-y: auto;
+	height: auto;
+	overflow: auto;
 
 	-webkit-overflow-scrolling: touch;
 	-ms-overflow-style: -ms-autohiding-scrollbar;
@@ -29,5 +32,11 @@
 	.mode--native-scroll & {
 		height: auto;
 		overflow: auto;
+	}
+
+	.mode--local-scroll & {
+		height: 100%;
+		overflow-x: hidden;
+		overflow-y: auto;
 	}
 }

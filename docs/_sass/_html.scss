@@ -1,5 +1,5 @@
 html {
-	height: 100%;
+	height: auto;
 	font-size: 16px;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
@@ -15,4 +15,8 @@ html {
 
 html.mode--native-scroll {
 	height: auto;
+}
+
+html.mode--local-scroll {
+	height: 100%;
 }

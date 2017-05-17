@@ -26,4 +26,18 @@ describe("waitInPromise", function() {
 			done();
 		}, 10);
 	});
+
+	it("Should pass along the original Promise argument", function(done) {
+		let timerCallback = jasmine.createSpy("timerCallback");
+
+		Promise.resolve("previousValue")
+			.then(waitInPromise(undefined))
+			.then(value => expect(value).toBe("previousValue"))
+			.then(timerCallback);
+
+		setTimeout(function() {
+			expect(timerCallback).toHaveBeenCalled();
+			done();
+		}, 10);
+	});
 });

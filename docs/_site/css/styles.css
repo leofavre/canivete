@@ -26,7 +26,7 @@ html {
   font-weight: 700;
   font-style: normal; }
 html {
-  height: 100%;
+  height: auto;
   font-size: 16px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%; }
@@ -40,6 +40,9 @@ html {
 html.mode--native-scroll {
   height: auto; }
 
+html.mode--local-scroll {
+  height: 100%; }
+
 .page {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -47,23 +50,28 @@ html.mode--native-scroll {
   margin: 0;
   color: #3d464d;
   background: #fbfbf7;
-  height: 100%; }
+  height: auto; }
   .mode--native-scroll .page {
     height: auto; }
+  .mode--local-scroll .page {
+    height: 100%; }
 
 .page__inner {
   position: relative;
   display: block;
   margin: 0 auto;
   width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
+  height: auto;
+  overflow: auto;
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar; }
   .mode--native-scroll .page__inner {
     height: auto;
     overflow: auto; }
+  .mode--local-scroll .page__inner {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto; }
 
 .nav--grid, .nav__inner--grid, .content__inner--grid {
   background-position: 0.3125rem 0;
@@ -73,8 +81,6 @@ html.mode--native-scroll {
 
 .nav {
   position: fixed;
-  -webkit-transform: translateZ(0%);
-          transform: translateZ(0%);
   -webkit-flex: 0 0 14.5rem;
       -ms-flex: 0 0 14.5rem;
           flex: 0 0 14.5rem;
@@ -244,7 +250,7 @@ html.mode--native-scroll {
     font-family: "Acropolis A", "Acropolis B", cursive;
     font-style: italic;
     font-weight: 800;
-    color: #d4f3f3;
+    color: #c7efef;
     text-transform: lowercase;
     line-height: 15rem;
     width: 61rem;
@@ -350,7 +356,7 @@ html.mode--native-scroll {
     @media only screen and (max-width: 700px) {
       .content__main h2 {
         margin-top: 0;
-        color: #c7f0f1; } }
+        color: #bbedee; } }
   .content__main h2 > * {
     position: relative;
     top: -0.05em;
@@ -451,7 +457,7 @@ html.mode--native-scroll {
         width: calc(100% + 0.75rem); } }
   .content p code {
     padding: 1px 0.125rem;
-    background-color: #d4f3f3;
+    background-color: #c7efef;
     color: #3d464d;
     white-space: nowrap;
     letter-spacing: normal; }
@@ -656,7 +662,7 @@ html.mode--native-scroll {
   .content td code {
     font-weight: 400;
     padding: 1px 0.25rem;
-    background-color: #d4f3f3;
+    background-color: #c7efef;
     color: #3d464d;
     white-space: nowrap; }
   .content td em {
@@ -737,7 +743,7 @@ html.mode--native-scroll {
   padding: 0;
   height: auto;
   left: -2.25rem;
-  color: #d4f3f3;
+  color: #c7efef;
   font-family: "Acropolis A", "Acropolis B", cursive;
   font-style: italic;
   font-weight: 800;
@@ -758,7 +764,7 @@ html.mode--native-scroll {
       left: -1vw; } }
   @media only screen and (max-width: 700px) {
     .content__intro h2 {
-      color: #c7f0f1; } }
+      color: #bbedee; } }
   .content__intro h2#about {
     margin-bottom: -1.5rem; }
 .content__intro h2 > * {
