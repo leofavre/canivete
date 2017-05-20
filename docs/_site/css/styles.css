@@ -537,7 +537,7 @@ html.mode--local-scroll {
   @media (hover: none) {
     .content p a:active code {
       background-color: rgba(204, 219, 227, 0.6); } }
-  .content p strong {
+  .content strong {
     font-weight: 600; }
   .content blockquote {
     margin: 0; }
@@ -576,11 +576,30 @@ html.mode--local-scroll {
     position: relative;
     top: 0.5rem;
     margin: 1.5rem 0;
+    padding-left: 1.5rem;
     line-height: 1.5rem; }
     @media only screen and (min-width: 1400px) {
       .content ul,
       .content ol {
         top: calc(0.5rem - 1px); } }
+  .content li {
+    position: relative;
+    list-style: none; }
+    .content li::before {
+      content: "";
+      position: absolute;
+      top: 0.625rem;
+      left: -1.5rem;
+      display: inline-block;
+      width: 0.375rem;
+      height: 0.375rem;
+      background-color: #3d464d;
+      -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+              transform: rotate(45deg);
+      -webkit-transform-origin: center;
+          -ms-transform-origin: center;
+              transform-origin: center; }
   .content pre {
     position: relative;
     display: block;
@@ -828,7 +847,9 @@ html.mode--local-scroll {
   font-weight: 800;
   font-size: 12rem;
   line-height: 1;
-  text-transform: lowercase; }
+  text-transform: lowercase;
+  font-size: 9rem;
+  left: -1rem; }
   @media only screen and (max-width: 1023px) {
     .content__intro h2 {
       margin: 0;

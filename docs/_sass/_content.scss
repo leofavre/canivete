@@ -274,7 +274,7 @@
 		@media (hover: none) { background-color: mix($small-code-bg-color, $link-hover-color, 50%); }
 	}
 
-	p strong {
+	strong {
 		font-weight: 600;
 	}
 
@@ -336,6 +336,7 @@
 		position: relative;
 		top: 0.5rem;
 		margin: $grid 0;
+		padding-left: $grid;
 		line-height: $grid;
 
 		@media #{$bigger-than-desktop} {
@@ -344,7 +345,21 @@
 	}
 
 	li {
+		position: relative;
+		list-style: none;
 
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0.625rem;
+			left: ($grid * -1);
+			display: inline-block;
+			width: 0.375rem;
+			height: 0.375rem;
+			background-color: $text-color;
+			transform: rotate(45deg);
+			transform-origin: center;
+		}
 	}
 
 	pre {
@@ -679,6 +694,9 @@
 		font-size: 12rem;
 		line-height: 1;
 		text-transform: lowercase;
+
+		font-size: 9rem;
+		left: -1rem;
 
 		@media #{$smaller-than-landscape-tablet} {
 			margin: 0;
