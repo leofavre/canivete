@@ -510,10 +510,7 @@ html.mode--local-scroll {
     margin: 1.5rem 0 1.5rem;
     font-size: 1rem;
     letter-spacing: -0.025em;
-    line-height: 1.5rem;
-    -webkit-hyphens: auto;
-        -ms-hyphens: auto;
-            hyphens: auto; }
+    line-height: 1.5rem; }
     @media only screen and (min-width: 1400px) {
       .content p {
         top: calc(0.5rem - 1px); } }
@@ -522,7 +519,10 @@ html.mode--local-scroll {
         line-height: 1.875rem; } }
     @media only screen and (max-width: 550px) {
       .content p {
-        width: calc(100% + 0.75rem); } }
+        width: calc(100% + 0.75rem);
+        -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+                hyphens: auto; } }
   .content p code {
     background-color: #c7efef;
     color: #3d464d;
