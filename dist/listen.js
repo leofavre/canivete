@@ -2,7 +2,7 @@ import _reactToEvent from "./internal/event/_reactToEvent";
 
 /**
  * Adds one or more event listeners to one or more DOM elements at once.
- * This function is a wrapper for
+ * The function is a wrapper for
  * [`Element.addEventListener()`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
  * that accepts a space-separated event names string and a group
  * of target DOM elements.

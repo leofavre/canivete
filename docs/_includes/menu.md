@@ -21,7 +21,7 @@
   * [setAttrs](#setattrs)
 
 * **[Event](#event)**
-  * [eventPath](#eventpath)
+  * [getEventPath](#geteventpath)
   * [ignore](#ignore)
   * [listen](#listen)
   * [trigger](#trigger)

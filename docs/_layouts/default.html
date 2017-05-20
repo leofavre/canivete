@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html class="mode mode--local-scroll" lang="en-US">
+<html class="mode mode--local-scroll" lang="en-US" ontouchstart="return true;">
 {% include head.html %}
 <body class="page">
 	<div class="page__inner">
 		<nav class="nav">
 			<div class="nav__inner">
-				<h1>Canivete</h1>
-				<div class="nav__drawer">
+				<h1><span>Canivete</span></h1>
+				<svg class="nav__switch nav__switch--off" xmlns="http://www.w3.org/2000/svg" width="21" height="17" viewBox="0 0 21 17"><rect width="21" height="3"/><rect y="7" width="21" height="3"/><rect y="14" width="21" height="3"/></svg>
+				<div class="nav__drawer nav__drawer--off">
 					{% include pagenav.html %}
 					{% include menu.html %}
 				</div>

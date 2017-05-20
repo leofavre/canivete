@@ -2,7 +2,7 @@ import selfAndParents from "./selfAndParents";
 
 /**
  * Returns an array with all DOM elements affected by an event.
- * This function serves as a polyfill for
+ * The function serves as a polyfill for
  * [`Event.composedPath()`](https://dom.spec.whatwg.org/#dom-event-composedpath).
  *
  * @category Event
@@ -21,12 +21,12 @@ import selfAndParents from "./selfAndParents";
  * body.appendChild(domGrandparent);
  * 
  * domChild.addEventListener("click", dealWithClick);
- * const dealWithClick = evt => eventPath(evt);
+ * const dealWithClick = evt => getEventPath(evt);
  *
  * // when domChild is clicked:
  * // => [domChild, domParent, domGrandparent, body, html, document, window]
  */
-function eventPath(evt) {
+function getEventPath(evt) {
 	let path = (evt.composedPath && evt.composedPath()) || evt.path,
 		target = evt.target;
 
@@ -46,4 +46,4 @@ function eventPath(evt) {
 	return selfAndParents(target).concat([window]);
 }
 
-export default eventPath;
+export default getEventPath;

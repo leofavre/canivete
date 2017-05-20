@@ -1,7 +1,7 @@
-import eventPath from "../dist/eventPath";
+import getEventPath from "../dist/getEventPath";
 import trigger from "../dist/trigger";
 
-describe("eventPath", function() {
+describe("getEventPath", function() {
 	it(`Should return an array with all DOM elements affected by an event.`, function(done) {
 		let domChild = document.createElement("div"),
 			domParent = document.createElement("div"),
@@ -14,7 +14,7 @@ describe("eventPath", function() {
 		body.appendChild(domGrandparent);
 
 		const dealWithChildEvent = evt => {
-			expect(eventPath(evt)).toEqual([
+			expect(getEventPath(evt)).toEqual([
 				domChild,
 				domParent,
 				domGrandparent,
@@ -26,7 +26,7 @@ describe("eventPath", function() {
 		};
 
 		const dealWithGrandparentEvent = evt => {
-			expect(eventPath(evt)).toEqual([
+			expect(getEventPath(evt)).toEqual([
 				domGrandparent,
 				body,
 				html,
@@ -46,7 +46,7 @@ describe("eventPath", function() {
 
 	it(`Should always end with window.`, function(done) {
 		const dealWithWindowEvent = evt => {
-			expect(eventPath(evt)).toEqual([window]);
+			expect(getEventPath(evt)).toEqual([window]);
 			done();
 		};
 
@@ -54,13 +54,13 @@ describe("eventPath", function() {
 		trigger(window, "test");
 	});
 
-	it(`Should return undefined when trying to run eventPath on something other than an event.`, function() {
-		expect(eventPath(document.createElement("div"))).toBe(undefined);
-		expect(eventPath("laser")).toBe(undefined);
-		expect(eventPath(0)).toBe(undefined);
-		expect(eventPath(document.createTextNode("laser"))).toBe(undefined);
-		expect(eventPath(document.querySelectorAll("div"))).toBe(undefined);
-		expect(eventPath(window)).toBe(undefined);
-		expect(eventPath(document)).toBe(undefined);
+	it(`Should return undefined when trying to run getEventPath on something other than an event.`, function() {
+		expect(getEventPath(document.createElement("div"))).toBe(undefined);
+		expect(getEventPath("laser")).toBe(undefined);
+		expect(getEventPath(0)).toBe(undefined);
+		expect(getEventPath(document.createTextNode("laser"))).toBe(undefined);
+		expect(getEventPath(document.querySelectorAll("div"))).toBe(undefined);
+		expect(getEventPath(window)).toBe(undefined);
+		expect(getEventPath(document)).toBe(undefined);
 	});
 });

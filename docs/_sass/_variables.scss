@@ -1,7 +1,7 @@
 $grid: 1.5rem;
 $full-content-width: 42rem;
 $nav-width: 14.5rem;
-$nav-mobile-height: 44px;
+$nav-mobile-height: 41px;
 
 $content-left-padding: ($grid * 3);
 $content-right-padding: ($grid * 2);
@@ -9,6 +9,7 @@ $content-right-padding: ($grid * 2);
 
 // breakpoints
 
+$way-bigger-than-desktop: "only screen and (min-width: 1672px)";
 $bigger-than-desktop: "only screen and (min-width: 1400px)";
 $smaller-than-desktop: "only screen and (max-width: 1100px)";
 $bigger-than-landscape-tablet: "only screen and (min-width: 1024px)";
@@ -64,3 +65,4 @@ $menu-item-selected-bg: $big-code-bg-color;
 $menu-item-hover-bg: mix($menu-item-selected-bg, $background-color, 25%);
 
 $nav-mobile-header-background: #32383e;
+$nav-switch-color: $logo-color;

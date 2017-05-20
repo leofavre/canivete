@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="mode mode--local-scroll" lang="en-US">
+<html class="mode mode--local-scroll" lang="en-US" ontouchstart="return true;">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,8 +13,9 @@
 	<div class="page__inner">
 		<nav class="nav">
 			<div class="nav__inner">
-				<h1>Canivete</h1>
-				<div class="nav__drawer">
+				<h1><span>Canivete</span></h1>
+				<svg class="nav__switch nav__switch--off" xmlns="http://www.w3.org/2000/svg" width="21" height="17" viewBox="0 0 21 17"><rect width="21" height="3"/><rect y="7" width="21" height="3"/><rect y="14" width="21" height="3"/></svg>
+				<div class="nav__drawer nav__drawer--off">
 					<ul>
 	<li><a href="#about">About</a></li>
 	<li><a href="#usage">Usage</a></li>
@@ -54,7 +55,7 @@
   </li>
   <li><strong><a href="#event">Event</a></strong>
     <ul>
-      <li><a href="#eventpath">eventPath</a></li>
+      <li><a href="#geteventpath">getEventPath</a></li>
       <li><a href="#ignore">ignore</a></li>
       <li><a href="#listen">listen</a></li>
       <li><a href="#trigger">trigger</a></li>
@@ -1265,10 +1266,10 @@ many attributes at once.</p>
 <h2 id="event"><em>Event</em></h2>
 
 <blockquote>
-  <p><a href="#eventpath">eventPath</a>, <a href="#ignore">ignore</a>, <a href="#listen">listen</a> &amp; <a href="#trigger">trigger</a></p>
+  <p><a href="#geteventpath">getEventPath</a>, <a href="#ignore">ignore</a>, <a href="#listen">listen</a> &amp; <a href="#trigger">trigger</a></p>
 </blockquote>
 
-<h3 id="eventpath-evt"><a name="eventpath"><code class="highlighter-rouge">eventPath (evt)</code></a></h3>
+<h3 id="geteventpath-evt"><a name="geteventpath"><code class="highlighter-rouge">getEventPath (evt)</code></a></h3>
 
 <p>Returns an array with all DOM elements affected by an event.
 This function serves as a polyfill for
@@ -1323,7 +1324,7 @@ This function serves as a polyfill for
 <span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">domGrandparent</span><span class="p">);</span>
 
 <span class="nx">domChild</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"click"</span><span class="p">,</span> <span class="nx">dealWithClick</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">dealWithClick</span> <span class="o">=</span> <span class="nx">evt</span> <span class="o">=&gt;</span> <span class="nx">eventPath</span><span class="p">(</span><span class="nx">evt</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">dealWithClick</span> <span class="o">=</span> <span class="nx">evt</span> <span class="o">=&gt;</span> <span class="nx">getEventPath</span><span class="p">(</span><span class="nx">evt</span><span class="p">);</span>
 
 <span class="c1">// when domChild is clicked:</span>
 <span class="c1">// =&gt; [domChild, domParent, domGrandparent, body, html, document, window]</span>

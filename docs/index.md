@@ -667,9 +667,9 @@ manyElements[0].className;
 
 ## *Event*
 
->[eventPath](#eventpath), [ignore](#ignore), [listen](#listen) &amp;&nbsp;[trigger](#trigger)
+>[getEventPath](#geteventpath), [ignore](#ignore), [listen](#listen) &amp;&nbsp;[trigger](#trigger)
 
-### <a name="eventpath">`eventPath (evt)`</a>
+### <a name="geteventpath">`getEventPath (evt)`</a>
 
 Returns an array with all DOM elements affected by an event.
 This function serves as a polyfill for
@@ -701,7 +701,7 @@ domGrandparent.appendChild(domParent);
 body.appendChild(domGrandparent);
 
 domChild.addEventListener("click", dealWithClick);
-const dealWithClick = evt => eventPath(evt);
+const dealWithClick = evt => getEventPath(evt);
 
 // when domChild is clicked:
 // => [domChild, domParent, domGrandparent, body, html, document, window]

@@ -8,7 +8,7 @@ import at from "lodash-es/at";
  * If two or more results are found, the first one
  * is returned.
  *
- * Note that this function expects the reduced array to be
+ * Note that the function expects the reduced array to be
  * formed by objects with the same set of properties.
  *
  * @category Reduce

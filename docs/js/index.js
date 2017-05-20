@@ -495,33 +495,31 @@ if (!('scrollingElement' in document)) (function () {
 var _typeof$2 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 /**
- * Checks if `value` is the
- * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
- * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+ * Checks if `value` is object-like. A value is object-like if it's not `null`
+ * and has a `typeof` result of "object".
  *
  * @static
  * @memberOf _
- * @since 0.1.0
+ * @since 4.0.0
  * @category Lang
  * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+ * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
  * @example
  *
- * _.isObject({});
+ * _.isObjectLike({});
  * // => true
  *
- * _.isObject([1, 2, 3]);
+ * _.isObjectLike([1, 2, 3]);
  * // => true
  *
- * _.isObject(_.noop);
- * // => true
+ * _.isObjectLike(_.noop);
+ * // => false
  *
- * _.isObject(null);
+ * _.isObjectLike(null);
  * // => false
  */
-function isObject(value) {
-  var type = typeof value === 'undefined' ? 'undefined' : _typeof$2(value);
-  return value != null && (type == 'object' || type == 'function');
+function isObjectLike(value) {
+  return value != null && (typeof value === 'undefined' ? 'undefined' : _typeof$2(value)) == 'object';
 }
 
 var _typeof$4 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -537,41 +535,21 @@ var freeSelf = (typeof self === 'undefined' ? 'undefined' : _typeof$3(self)) == 
 /** Used as a reference to the global object. */
 var root = freeGlobal || freeSelf || Function('return this')();
 
-/**
- * Gets the timestamp of the number of milliseconds that have elapsed since
- * the Unix epoch (1 January 1970 00:00:00 UTC).
- *
- * @static
- * @memberOf _
- * @since 2.4.0
- * @category Date
- * @returns {number} Returns the timestamp.
- * @example
- *
- * _.defer(function(stamp) {
- *   console.log(_.now() - stamp);
- * }, _.now());
- * // => Logs the number of milliseconds it took for the deferred invocation.
- */
-var now = function now() {
-  return root.Date.now();
-};
-
 /** Built-in value references. */
 var _Symbol = root.Symbol;
 
 /** Used for built-in method references. */
-var objectProto = Object.prototype;
+var objectProto$1 = Object.prototype;
 
 /** Used to check objects for own properties. */
-var hasOwnProperty = objectProto.hasOwnProperty;
+var hasOwnProperty$1 = objectProto$1.hasOwnProperty;
 
 /**
  * Used to resolve the
  * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
  * of values.
  */
-var nativeObjectToString = objectProto.toString;
+var nativeObjectToString = objectProto$1.toString;
 
 /** Built-in value references. */
 var symToStringTag$1 = _Symbol ? _Symbol.toStringTag : undefined;
@@ -584,7 +562,7 @@ var symToStringTag$1 = _Symbol ? _Symbol.toStringTag : undefined;
  * @returns {string} Returns the raw `toStringTag`.
  */
 function getRawTag(value) {
-  var isOwn = hasOwnProperty.call(value, symToStringTag$1),
+  var isOwn = hasOwnProperty$1.call(value, symToStringTag$1),
       tag = value[symToStringTag$1];
 
   try {
@@ -604,14 +582,14 @@ function getRawTag(value) {
 }
 
 /** Used for built-in method references. */
-var objectProto$1 = Object.prototype;
+var objectProto$2 = Object.prototype;
 
 /**
  * Used to resolve the
  * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
  * of values.
  */
-var nativeObjectToString$1 = objectProto$1.toString;
+var nativeObjectToString$1 = objectProto$2.toString;
 
 /**
  * Converts `value` to a string using `Object.prototype.toString`.
@@ -645,37 +623,269 @@ function baseGetTag(value) {
   return symToStringTag && symToStringTag in Object(value) ? getRawTag(value) : objectToString(value);
 }
 
-var _typeof$6 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+/**
+ * Creates a unary function that invokes `func` with its argument transformed.
+ *
+ * @private
+ * @param {Function} func The function to wrap.
+ * @param {Function} transform The argument transform.
+ * @returns {Function} Returns the new function.
+ */
+function overArg(func, transform) {
+  return function (arg) {
+    return func(transform(arg));
+  };
+}
+
+/** Built-in value references. */
+var getPrototype = overArg(Object.getPrototypeOf, Object);
+
+/** `Object#toString` result references. */
+var objectTag = '[object Object]';
+
+/** Used for built-in method references. */
+var funcProto = Function.prototype;
+var objectProto = Object.prototype;
+
+/** Used to resolve the decompiled source of functions. */
+var funcToString = funcProto.toString;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/** Used to infer the `Object` constructor. */
+var objectCtorString = funcToString.call(Object);
 
 /**
- * Checks if `value` is object-like. A value is object-like if it's not `null`
- * and has a `typeof` result of "object".
+ * Checks if `value` is a plain object, that is, an object created by the
+ * `Object` constructor or one with a `[[Prototype]]` of `null`.
  *
  * @static
  * @memberOf _
- * @since 4.0.0
+ * @since 0.8.0
  * @category Lang
  * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+ * @returns {boolean} Returns `true` if `value` is a plain object, else `false`.
  * @example
  *
- * _.isObjectLike({});
- * // => true
+ * function Foo() {
+ *   this.a = 1;
+ * }
  *
- * _.isObjectLike([1, 2, 3]);
- * // => true
- *
- * _.isObjectLike(_.noop);
+ * _.isPlainObject(new Foo);
  * // => false
  *
- * _.isObjectLike(null);
+ * _.isPlainObject([1, 2, 3]);
+ * // => false
+ *
+ * _.isPlainObject({ 'x': 0, 'y': 0 });
+ * // => true
+ *
+ * _.isPlainObject(Object.create(null));
+ * // => true
+ */
+function isPlainObject(value) {
+  if (!isObjectLike(value) || baseGetTag(value) != objectTag) {
+    return false;
+  }
+  var proto = getPrototype(value);
+  if (proto === null) {
+    return true;
+  }
+  var Ctor = hasOwnProperty.call(proto, 'constructor') && proto.constructor;
+  return typeof Ctor == 'function' && Ctor instanceof Ctor && funcToString.call(Ctor) == objectCtorString;
+}
+
+/**
+ * Checks if `value` is likely a DOM element.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a DOM element, else `false`.
+ * @example
+ *
+ * _.isElement(document.body);
+ * // => true
+ *
+ * _.isElement('<body>');
  * // => false
  */
-function isObjectLike(value) {
-  return value != null && (typeof value === 'undefined' ? 'undefined' : _typeof$6(value)) == 'object';
+function isElement(value) {
+  return isObjectLike(value) && value.nodeType === 1 && !isPlainObject(value);
+}
+
+var _isElementOrDocumentOrWindow = function _isElementOrDocumentOrWindow(arg) {
+  return isElement(arg) || arg === document || arg === window;
+};
+
+var _throwErrorIf = function _throwErrorIf(condition, error) {
+	if (condition) {
+		throw new Error(error);
+	}
+};
+
+/**
+ * Returns all parents of a DOM element,
+ * from the closest to the most distant, recursively.
+ * 
+ * @category DOM
+ * @param  {HTMLElement} domEl The DOM element.
+ * @return {Array.<HTMLElement>} The DOM element parents.
+ *
+ * @example
+ * let domChild = document.createElement("div"),
+ * 	domParent = document.createElement("div"),
+ * 	domGrandparent = document.createElement("div"),
+ * 	body = document.body,
+ * 	html = document.querySelector("html");
+ * 
+ * domParent.appendChild(domChild);
+ * domGrandparent.appendChild(domParent);
+ * body.appendChild(domGrandparent);
+ * 
+ * parents(domChild);
+ * // => [domParent, domGrandparent, body, html, document]
+ */
+function parents(domEl) {
+  var memo = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
+
+  if (memo.length === 0) {
+    _throwErrorIf(!_isElementOrDocumentOrWindow(domEl), "An HTMLElement is expected as parameter.");
+  }
+
+  var parentNode = domEl.parentNode;
+  return !parentNode ? memo : parents(parentNode, memo.concat([parentNode]));
+}
+
+/**
+ * The same as [`parents()`](#parents), except it includes
+ * the DOM element as the first item of the result.
+ * 
+ * @category DOM
+ * @param  {HTMLElement} domEl The DOM element.
+ * @return {Array.<HTMLElement>} The DOM element and its parents.
+ * 
+ * @example
+ * let domChild = document.createElement("div"),
+ * 	domParent = document.createElement("div"),
+ * 	domGrandparent = document.createElement("div"),
+ * 	body = document.body,
+ * 	html = document.querySelector("html");
+ * 
+ * domParent.appendChild(domChild);
+ * domGrandparent.appendChild(domParent);
+ * body.appendChild(domGrandparent);
+ * 
+ * selfAndParents(domChild);
+ * // => [domChild, domParent, domGrandparent, body, html, document]
+ */
+var selfAndParents = function selfAndParents(domEl) {
+  _throwErrorIf(!_isElementOrDocumentOrWindow(domEl), "An HTMLElement is expected as parameter.");
+  return [domEl].concat(parents(domEl));
+};
+
+/**
+ * Returns an array with all DOM elements affected by an event.
+ * This function serves as a polyfill for
+ * [`Event.composedPath()`](https://dom.spec.whatwg.org/#dom-event-composedpath).
+ *
+ * @category Event
+ * @param {Event} evt The triggered event.
+ * @return {Array.<HTMLElement>} The DOM elements affected by the event.
+ * 
+ * @example
+ * let domChild = document.createElement("div"),
+ * 	domParent = document.createElement("div"),
+ * 	domGrandparent = document.createElement("div"),
+ * 	body = document.body,
+ * 	html = document.querySelector("html");
+ * 
+ * domParent.appendChild(domChild);
+ * domGrandparent.appendChild(domParent);
+ * body.appendChild(domGrandparent);
+ * 
+ * domChild.addEventListener("click", dealWithClick);
+ * const dealWithClick = evt => getEventPath(evt);
+ *
+ * // when domChild is clicked:
+ * // => [domChild, domParent, domGrandparent, body, html, document, window]
+ */
+function getEventPath(evt) {
+  var path = evt.composedPath && evt.composedPath() || evt.path,
+      target = evt.target;
+
+  if (target == null) {
+    return undefined;
+  }
+
+  if (path != null) {
+    path = !path.includes(window) ? path.concat([window]) : path;
+    return path;
+  }
+
+  if (target === window) {
+    return [window];
+  }
+
+  return selfAndParents(target).concat([window]);
 }
 
 var _typeof$5 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+/**
+ * Checks if `value` is the
+ * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
+ * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+ * @example
+ *
+ * _.isObject({});
+ * // => true
+ *
+ * _.isObject([1, 2, 3]);
+ * // => true
+ *
+ * _.isObject(_.noop);
+ * // => true
+ *
+ * _.isObject(null);
+ * // => false
+ */
+function isObject(value) {
+  var type = typeof value === 'undefined' ? 'undefined' : _typeof$5(value);
+  return value != null && (type == 'object' || type == 'function');
+}
+
+/**
+ * Gets the timestamp of the number of milliseconds that have elapsed since
+ * the Unix epoch (1 January 1970 00:00:00 UTC).
+ *
+ * @static
+ * @memberOf _
+ * @since 2.4.0
+ * @category Date
+ * @returns {number} Returns the timestamp.
+ * @example
+ *
+ * _.defer(function(stamp) {
+ *   console.log(_.now() - stamp);
+ * }, _.now());
+ * // => Logs the number of milliseconds it took for the deferred invocation.
+ */
+var now = function now() {
+  return root.Date.now();
+};
+
+var _typeof$6 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 /** `Object#toString` result references. */
 var symbolTag = '[object Symbol]';
@@ -698,7 +908,7 @@ var symbolTag = '[object Symbol]';
  * // => false
  */
 function isSymbol(value) {
-  return (typeof value === 'undefined' ? 'undefined' : _typeof$5(value)) == 'symbol' || isObjectLike(value) && baseGetTag(value) == symbolTag;
+  return (typeof value === 'undefined' ? 'undefined' : _typeof$6(value)) == 'symbol' || isObjectLike(value) && baseGetTag(value) == symbolTag;
 }
 
 /** Used as references for various `Number` constants. */
@@ -1009,6 +1219,9 @@ function throttle(func, wait, options) {
 }
 
 var $window = $(window);
+var logo = $("h1").find("span").get(0);
+var navSwitch = $(".nav__switch").get(0);
+var navDrawer = $(".nav__drawer").get(0);
 var navButtons = $(".nav").find("a").get();
 var navCollapsableButtons = $(navButtons).get().filter(function (domEl) {
 	return $(domEl).parent().is("strong");
@@ -1071,6 +1284,7 @@ function listenForScrollNavigationEvents() {
 }
 
 function updateScrollAnchorEvents() {
+	$(logo).on("click", scrollToTop);
 	$("a[href^=\"#\"]").on("click", scrollToChapter);
 }
 
@@ -1090,17 +1304,68 @@ function updateScrollBehaviour() {
 	listenForScrollNavigationEvents(getScrollTarget(), window);
 }
 
-function scrollToChapter(evt) {
-	var $scrollTarget = $(getScrollTarget()),
-	    chapter = getChapterByHash(getHash(evt.target));
+function updateDrawerBehaviour() {
+	var $scrollTarget = $(getScrollTarget());
 
-	if (chapter) {
+	$(navSwitch).on("click", toggleDrawer);
+	$scrollTarget.on("click", closeDrawerOnClickOutside);
+}
+
+function changeDrawer(func) {
+	func();
+
+	if (!isDrawerVisible()) {
+		// $(navDrawer).one("transitionend", moveDrawerScrollToTop);
+	}
+}
+
+function toggleDrawer() {
+	changeDrawer(function () {
+		$(navDrawer).toggleClass("nav__drawer--off");
+		$(navSwitch).toggleClass("nav__switch--off");
+	});
+}
+
+function closeDrawer() {
+	changeDrawer(function () {
+		$(navDrawer).addClass("nav__drawer--off");
+		$(navSwitch).addClass("nav__switch--off");
+	});
+}
+
+function closeDrawerOnClickOutside(evt) {
+	if (isEventOutsideDrawer(evt)) {
+		closeDrawer();
+	}
+}
+
+function isEventOutsideDrawer(evt) {
+	var eventPath = getEventPath(evt);
+	return !eventPath.includes(navSwitch) && !eventPath.includes(navDrawer);
+}
+
+function isDrawerVisible() {
+	return !$(navDrawer).hasClass("nav__drawer--off");
+}
+
+function scrollTo(position, evt) {
+	var $scrollTarget = $(getScrollTarget());
+
+	if (position != null) {
 		evt.preventDefault();
-
-		$scrollTarget.scrollTo(chapter, 600, {
+		$scrollTarget.scrollTo(position, 600, {
 			axis: "y"
 		});
 	}
+}
+
+function scrollToTop(evt) {
+	scrollTo(0, evt);
+}
+
+function scrollToChapter(evt) {
+	var chapter = getChapterByHash(getHash(evt.target));
+	scrollTo(chapter, evt);
 }
 
 function markNav() {
@@ -1118,6 +1383,7 @@ function markBrowser() {
 	}
 }
 
+updateDrawerBehaviour();
 updateScrollAnchorEvents();
 updateScrollBehaviour();
 listenForLayoutChange();

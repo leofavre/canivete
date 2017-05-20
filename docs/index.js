@@ -1,10 +1,14 @@
 import "./_includes/jquery.scrollTo.min";
 import "./_includes/kerning.min";
 import "./_includes/scrollingelement";
+import getEventPath from "../dist/getEventPath";
 import throttle from "lodash-es/throttle";
 import debounce from "lodash-es/debounce";
 
 const $window = $(window);
+const logo = $("h1").find("span").get(0);
+const navSwitch = $(".nav__switch").get(0);
+const navDrawer = $(".nav__drawer").get(0);
 const navButtons = $(".nav").find("a").get();
 const navCollapsableButtons = $(navButtons).get().filter(domEl => $(domEl).parent().is("strong"));
 const chapterAnchors = $(".content").find("h2, h3 > a").get().filter(domEl => !!getHash(domEl));
@@ -74,6 +78,7 @@ function listenForScrollNavigationEvents(...domEls) {
 }
 
 function updateScrollAnchorEvents() {
+	$(logo).on("click", scrollToTop);
 	$(`a[href^="#"]`).on("click", scrollToChapter);
 }
 
@@ -96,17 +101,72 @@ function updateScrollBehaviour() {
 	listenForScrollNavigationEvents(getScrollTarget(), window);
 }
 
-function scrollToChapter(evt) {
-	let $scrollTarget = $(getScrollTarget()),
-		chapter = getChapterByHash(getHash(evt.target));
+function updateDrawerBehaviour() {
+	let $scrollTarget = $(getScrollTarget());
 
-	if (chapter) {
+	$(navSwitch).on("click", toggleDrawer);
+	$scrollTarget.on("click", closeDrawerOnClickOutside);
+}
+
+function changeDrawer(func) {
+	func();
+
+	if (!isDrawerVisible()) {
+		$(navDrawer).one("transitionend", moveDrawerScrollToTop);
+	}
+}
+
+function toggleDrawer() {
+	changeDrawer(() => {
+		$(navDrawer).toggleClass("nav__drawer--off");
+		$(navSwitch).toggleClass("nav__switch--off");
+	});
+}
+
+function closeDrawer() {
+	changeDrawer(() => {
+		$(navDrawer).addClass("nav__drawer--off");
+		$(navSwitch).addClass("nav__switch--off");
+	});
+}
+
+function closeDrawerOnClickOutside(evt) {
+	if (isEventOutsideDrawer(evt)) {
+		closeDrawer();
+	}
+}
+
+function isEventOutsideDrawer(evt) {
+	let eventPath = getEventPath(evt);
+	return !eventPath.includes(navSwitch) && !eventPath.includes(navDrawer);
+}
+
+function isDrawerVisible() {
+	return !$(navDrawer).hasClass("nav__drawer--off");
+}
+
+function moveDrawerScrollToTop() {
+	navDrawer.scrollTop = 0;
+}
+
+function scrollTo(position, evt) {
+	let $scrollTarget = $(getScrollTarget());
+
+	if (position != null) {
 		evt.preventDefault();
-
-		$scrollTarget.scrollTo(chapter, 600, {
+		$scrollTarget.scrollTo(position, 600, {
 			axis: "y"
 		});
 	}
+}
+
+function scrollToTop(evt) {
+	scrollTo(0, evt);
+}
+
+function scrollToChapter(evt) {
+	let chapter = getChapterByHash(getHash(evt.target));
+	scrollTo(chapter, evt);
 }
 
 function markNav() {
@@ -124,6 +184,7 @@ function markBrowser() {
 	}
 }
 
+updateDrawerBehaviour();
 updateScrollAnchorEvents();
 updateScrollBehaviour();
 listenForLayoutChange();

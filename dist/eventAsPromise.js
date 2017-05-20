@@ -5,12 +5,12 @@ import _throwErrorIf from "./internal/common/_throwErrorIf";
 /**
  * Transforms a DOM event into a promise.
  * 
- * This functions takes as parameters: a DOM element,
+ * The functions takes as parameters: a DOM element,
  * the name of the event to be listened for
  * and a function that verifies if the event has already
  * happened, which receives the DOM element as parameter.
  *
- * Like all promises in Javascript, this function will
+ * Like all promises in Javascript, the function will
  * only fulfill once, either if the verification function
  * returns true or when the event occurs for the first time.
  *

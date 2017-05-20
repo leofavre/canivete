@@ -251,11 +251,15 @@
 	}
 
 	p code {
-		padding: 1px 0.125rem;
+		// padding: 1px 0.125rem;
 		background-color: $small-code-bg-color;
 		color: $small-code-color;
 		white-space: nowrap;
 		letter-spacing: normal;
+	}
+
+	p a code {
+		@extend %a-hairline;
 	}
 
 	p a:hover code {
@@ -279,21 +283,32 @@
 		position: relative;
 		color: inherit;
 		text-decoration: none;
-		padding: 1px 0;
-		border-bottom: 1px solid $link-hairline-color;
+		// padding: 1px 0 1px;
+		// border-bottom: 1px solid $link-hairline-color;
 		z-index: 2;
 
+		@extend %a-hairline;
+		background-color: transparent;
+
 		@media #{$bigger-than-desktop} {
-			padding: 1px 0 2px;
+			// padding: 1px 0 2px;
 		}
 	}
 
+	%a-hairline {
+		background-position: 0 1.05em;
+		background-size: 1rem 1rem;
+		background-image: linear-gradient(to bottom, $link-hairline-color 1px, transparent 1px);
+		background-repeat: repeat-x;
+	}
+
 	a:hover {
-		background: $link-hover-color;
+		background-color: $link-hover-color;
 	}
 
 	a[name] {
 		border: none;
+		background: transparent;
 	}
 
 	a[name]:hover {
@@ -591,6 +606,11 @@
 	padding: 0 $content-right-padding 0 $content-left-padding;
 	max-width: $full-content-width;
 
+	@media #{$way-bigger-than-desktop} {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
 	@media #{$content-touches-menu} {
 		margin-left: $nav-width;
 	}
@@ -622,15 +642,15 @@
 	word-spacing: 0.15em;
 
 	& a {
-		padding: 1px 0;
-		border-bottom: 2px solid $link-hairline-color;
+		// padding: 1px 0;
+		// border-bottom: 2px solid $link-hairline-color;
 	}
 
 	@media #{$smaller-than-desktop} {
 		font-size: 2rem;
 
 		& a {
-			border-bottom: 1px solid $link-hairline-color;
+			// border-bottom: 1px solid $link-hairline-color;
 		}
 	}
 

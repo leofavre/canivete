@@ -2,7 +2,7 @@
  * Delays the chaining of a promise by a specified
  * time in milliseconds.
  *
- * This function is curried so as to be used inside
+ * The function is curried so as to be used inside
  * the `.then()` method, passing along the resolved
  * value of the previous promise step to the next.
  *
