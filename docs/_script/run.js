@@ -41,11 +41,25 @@ const byAlphabeticalOrder = (strA, strB) => (strA > strB) ? +1 : (strA < strB) ?
 
 const removeNewslines = str => str; // str.replace(/(?:\r\n|\r|\n)/g, " ");
 
-const exportSiteUsingJekyll = path => () => execAsPromise(`cd ${path} && bundle exec jekyll build`);
+const exportSiteUsingJekyll = path => () => execAsPromise(`cd ${path} && bundle exec jekyll build --verbose`);
 
 const exportScriptWithRollUp = () => () => execAsPromise(`rollup -c rollup.docs.config.js`);
 
 const capitalizeFirstLetter = str => str.charAt(0).toUpperCase() + str.slice(1);
+
+const capitalizeFirstLetterAfter = char => str => {
+	let splitStr = str.split(char),
+		beforeChar = splitStr[0],
+		afterChar = splitStr[1];
+
+	if (afterChar != null) {
+		return `${beforeChar}${char}${capitalizeFirstLetter(afterChar)}`;
+	}
+	
+	return str;
+};
+
+const replaceAsteriskForWord = str => str.replace(/\*/, "All");
 
 const escapeHtmlTag = str => str.replace(/\</g, "&lt;").replace(/\>/g, "&gt;");
 
@@ -271,6 +285,8 @@ const processTypeDefs = flow([
 
 const processType = flow([
 	capitalizeFirstLetter,
+	capitalizeFirstLetterAfter("<"),
+	replaceAsteriskForWord,
 	escapeHtmlTag
 ]);
 

@@ -23,7 +23,7 @@ for the modifier and an array of BEM delimiters, e.g. `__`,
 | `element` |  | String | The BEM element. **optional** |
 | `modifier` |  | String | The BEM modifier. **optional** |
 | `value` | `true` | String<br>Number<br>Boolean | The BEM modifier value. **optional** |
-| `delimiters` |  | Array.&lt;string&gt; | The BEM delimiters. |
+| `delimiters` |  | Array.&lt;String&gt; | The BEM delimiters. |
 
 #### Return
 
@@ -488,7 +488,7 @@ array with attributes to be removed.
 | Name | Type | Description |
 | --- | --- | --- |
 | `domEls` | HTMLElement<br>HTMLCollection<br>NodeList<br>Array.&lt;HTMLElement&gt;<br>Set.&lt;HTMLElement&gt; | One or more DOM elements. |
-| `attrArr` | Array.&lt;string&gt; | The array with attributes to be removed. |
+| `attrArr` | Array.&lt;String&gt; | The array with attributes to be removed. |
 
 #### Examples
 
@@ -672,7 +672,7 @@ manyElements[0].className;
 ### <a name="geteventpath">`getEventPath (evt)`</a>
 
 Returns an array with all DOM elements affected by an event.
-This function serves as a polyfill for
+The function serves as a polyfill for
 [`Event.composedPath()`](https://dom.spec.whatwg.org/#dom-event-composedpath).
 
 #### Parameter
@@ -710,7 +710,7 @@ const dealWithClick = evt => getEventPath(evt);
 ### <a name="ignore">`ignore (domEls, eventStr, callback, [useCapture])`</a>
 
 Removes one or more event listeners from one or more DOM elements at once.
-This function is a wrapper for
+The function is a wrapper for
 [`Element.removeEventListener()`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener)
 that accepts a space-separated event names string and a group
 of target DOM elements.
@@ -738,7 +738,7 @@ ignore(window, "load resize", reactToLoadAndResize);
 ### <a name="listen">`listen (domEls, eventStr, callback, [useCapture])`</a>
 
 Adds one or more event listeners to one or more DOM elements at once.
-This function is a wrapper for
+The function is a wrapper for
 [`Element.addEventListener()`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
 that accepts a space-separated event names string and a group
 of target DOM elements.
@@ -775,7 +775,7 @@ Triggers a custom DOM event.
 | `evtName` |  | String | The event name. |
 | `bubbles` | `false` | Boolean | Whether the event bubbles. **optional** |
 | `cancelable` | `false` | Boolean | Whether the event can be canceled. **optional** |
-| `detail` |  | * | Any information passed along. **optional** |
+| `detail` |  | All | Any information passed along. **optional** |
 
 #### Example
 
@@ -876,12 +876,12 @@ info.isInvisible;
 
 Transforms a DOM event into a promise.
 
-This functions takes as parameters: a DOM element,
+The functions takes as parameters: a DOM element,
 the name of the event to be listened for
 and a function that verifies if the event has already
 happened, which receives the DOM element as parameter.
 
-Like all promises in Javascript, this function will
+Like all promises in Javascript, the function will
 only fulfill once, either if the verification function
 returns true or when the event occurs for the first time.
 
@@ -927,7 +927,7 @@ eventAsPromise(imageEl, "load", imageEl => imageEl.complete)
 Delays the chaining of a promise by a specified
 time in milliseconds.
 
-This function is curried so as to be used inside
+The function is curried so as to be used inside
 the `.then()` method, passing along the resolved
 value of the previous promise step to the next.
 
@@ -1024,7 +1024,7 @@ passed as parameter, has the closest value to the average.
 If two or more results are found, the first one
 is returned.
 
-Note that this function expects the reduced array to be
+Note that the function expects the reduced array to be
 formed by objects with the same set of properties.
 
 #### Parameter
@@ -1121,7 +1121,7 @@ also passed as parameter.
 If two or more results are found, the first one
 is returned.
 
-Note that this function expects the reduced array to be
+Note that the function expects the reduced array to be
 formed by objects with the same set of properties.
 
 #### Parameters
@@ -1182,7 +1182,7 @@ has the largest property.
 If two or more results are found, the first one
 is returned.
 
-Note that this function expects the reduced array to be
+Note that the function expects the reduced array to be
 formed by objects with the same set of properties.
 
 #### Parameter
@@ -1242,7 +1242,7 @@ has the smallest property.
 If two or more results are found, the first one
 is returned.
 
-Note that this function expects the reduced array to be
+Note that the function expects the reduced array to be
 formed by objects with the same set of properties.
 
 #### Parameter

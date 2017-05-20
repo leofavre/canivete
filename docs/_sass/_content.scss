@@ -251,7 +251,6 @@
 	}
 
 	p code {
-		// padding: 1px 0.125rem;
 		background-color: $small-code-bg-color;
 		color: $small-code-color;
 		white-space: nowrap;
@@ -262,8 +261,17 @@
 		@extend %a-hairline;
 	}
 
-	p a:hover code {
+	p a:hover code,
+	p a:active code {
 		background-color: mix($small-code-bg-color, $link-hover-color, 50%);
+	}
+
+	p a:hover code {
+		@media (hover: none) { background-color: transparent; }
+	}
+
+	p a:active code {
+		@media (hover: none) { background-color: mix($small-code-bg-color, $link-hover-color, 50%); }
 	}
 
 	p strong {
@@ -283,8 +291,6 @@
 		position: relative;
 		color: inherit;
 		text-decoration: none;
-		// padding: 1px 0 1px;
-		// border-bottom: 1px solid $link-hairline-color;
 		z-index: 2;
 
 		@extend %a-hairline;
@@ -302,8 +308,17 @@
 		background-repeat: repeat-x;
 	}
 
-	a:hover {
+	a:hover,
+	a:active {
 		background-color: $link-hover-color;
+	}
+
+	a:hover {
+		@media (hover: none) { background-color: transparent; }
+	}
+
+	a:active {
+		@media (hover: none) { background-color: $link-hover-color; }
 	}
 
 	a[name] {
@@ -311,7 +326,8 @@
 		background: transparent;
 	}
 
-	a[name]:hover {
+	a[name]:hover,
+	a[name]:active {
 		background: transparent;
 	}
 
@@ -467,13 +483,9 @@
 
 		@media #{$smaller-than-portrait-tablet} {
 			position: relative;
-			// top: -0.125rem;
 			display: block;
 			width: auto;
 			padding: 0.25rem 0;
-
-			// text-indent: $grid * -0.5;
-			// margin-left: $grid * 0.5;
 
 			&:empty {
 				display: none;
@@ -481,7 +493,6 @@
 
 			&::before {
 				position: relative;
-				// top: 0.25rem;
 				display: block;
 
 				font-size: 0.5625rem;
@@ -489,11 +500,7 @@
 				text-transform: uppercase;
 				letter-spacing: 0.175em;
 				font-weight: 500;
-				// color: rgba($text-color, 0.5);
 			}
-
-			// $fake-col-width: 27.5%;
-			// $fake-col-left: percentage($fake-col-width / (100% - $fake-col-width) * -1);
 
 			$fake-col-width: 3.75rem;
 			$fake-col-left: -3.75rem;
@@ -641,17 +648,8 @@
 	line-height: ($grid * 2);
 	word-spacing: 0.15em;
 
-	& a {
-		// padding: 1px 0;
-		// border-bottom: 2px solid $link-hairline-color;
-	}
-
 	@media #{$smaller-than-desktop} {
 		font-size: 2rem;
-
-		& a {
-			// border-bottom: 1px solid $link-hairline-color;
-		}
 	}
 
 	@media #{$smaller-than-portrait-tablet} {
@@ -712,7 +710,6 @@
 
 	h3 {
 		@extend %subtitle;
-		// top: 0.625rem;
 		margin-top: $grid * 3;
 		margin-bottom: ($grid * 2) - 0.625rem;
 		padding-top: ($grid * 1) + 0.625rem;

@@ -168,8 +168,17 @@
 		height: $grid;
 	}
 
-	a:hover::before {
+	a:hover::before,
+	a:active::before {
 		background-color: $menu-item-hover-bg;
+	}
+
+	a:hover::before {
+		@media (hover: none) { background-color: transparent; }
+	}
+
+	a:active::before {
+		@media (hover: none) { background-color: $menu-item-hover-bg; }
 	}
 
 	a.selected::before {

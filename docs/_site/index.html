@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="mode mode--local-scroll" lang="en-US" ontouchstart="return true;">
+<html class="mode mode--local-scroll" lang="en-US">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,7 +9,7 @@
 	<link href="css/kern.css" rel="stylesheet">
 </head>
 
-<body class="page">
+<body class="page" ontouchstart="">
 	<div class="page__inner">
 		<nav class="nav">
 			<div class="nav__inner">
@@ -286,7 +286,7 @@ for the modifier and an array of BEM delimiters, e.g. <code class="highlighter-r
     <tr>
       <td><code class="highlighter-rouge">delimiters</code></td>
       <td> </td>
-      <td>Array.&lt;string&gt;</td>
+      <td>Array.&lt;String&gt;</td>
       <td>The BEM delimiters.</td>
     </tr>
   </tbody>
@@ -1020,7 +1020,7 @@ array with attributes to be removed.</p>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">attrArr</code></td>
-      <td>Array.&lt;string&gt;</td>
+      <td>Array.&lt;String&gt;</td>
       <td>The array with attributes to be removed.</td>
     </tr>
   </tbody>
@@ -1272,7 +1272,7 @@ many attributes at once.</p>
 <h3 id="geteventpath-evt"><a name="geteventpath"><code class="highlighter-rouge">getEventPath (evt)</code></a></h3>
 
 <p>Returns an array with all DOM elements affected by an event.
-This function serves as a polyfill for
+The function serves as a polyfill for
 <a href="https://dom.spec.whatwg.org/#dom-event-composedpath"><code class="highlighter-rouge">Event.composedPath()</code></a>.</p>
 
 <h4 id="parameter-2">Parameter</h4>
@@ -1334,7 +1334,7 @@ This function serves as a polyfill for
 <h3 id="ignore-domels-eventstr-callback-usecapture"><a name="ignore"><code class="highlighter-rouge">ignore (domEls, eventStr, callback, [useCapture])</code></a></h3>
 
 <p>Removes one or more event listeners from one or more DOM elements at once.
-This function is a wrapper for
+The function is a wrapper for
 <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener"><code class="highlighter-rouge">Element.removeEventListener()</code></a>
 that accepts a space-separated event names string and a group
 of target DOM elements.</p>
@@ -1392,7 +1392,7 @@ of target DOM elements.</p>
 <h3 id="listen-domels-eventstr-callback-usecapture"><a name="listen"><code class="highlighter-rouge">listen (domEls, eventStr, callback, [useCapture])</code></a></h3>
 
 <p>Adds one or more event listeners to one or more DOM elements at once.
-This function is a wrapper for
+The function is a wrapper for
 <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener"><code class="highlighter-rouge">Element.addEventListener()</code></a>
 that accepts a space-separated event names string and a group
 of target DOM elements.</p>
@@ -1490,7 +1490,7 @@ of target DOM elements.</p>
     <tr>
       <td><code class="highlighter-rouge">detail</code></td>
       <td> </td>
-      <td>*</td>
+      <td>All</td>
       <td>Any information passed along. <strong>optional</strong></td>
     </tr>
   </tbody>
@@ -1696,12 +1696,12 @@ containing numeric values for “top”, “bottom”,
 
 <p>Transforms a DOM event into a promise.</p>
 
-<p>This functions takes as parameters: a DOM element,
+<p>The functions takes as parameters: a DOM element,
 the name of the event to be listened for
 and a function that verifies if the event has already
 happened, which receives the DOM element as parameter.</p>
 
-<p>Like all promises in Javascript, this function will
+<p>Like all promises in Javascript, the function will
 only fulfill once, either if the verification function
 returns true or when the event occurs for the first time.</p>
 
@@ -1783,7 +1783,7 @@ parameters are not a DOM element and a string.</p>
 <p>Delays the chaining of a promise by a specified
 time in milliseconds.</p>
 
-<p>This function is curried so as to be used inside
+<p>The function is curried so as to be used inside
 the <code class="highlighter-rouge">.then()</code> method, passing along the resolved
 value of the previous promise step to the next.</p>
 
@@ -1943,7 +1943,7 @@ passed as parameter, has the closest value to the average.</p>
 <p>If two or more results are found, the first one
 is returned.</p>
 
-<p>Note that this function expects the reduced array to be
+<p>Note that the function expects the reduced array to be
 formed by objects with the same set of properties.</p>
 
 <h4 id="parameter-5">Parameter</h4>
@@ -2088,7 +2088,7 @@ also passed as parameter.</p>
 <p>If two or more results are found, the first one
 is returned.</p>
 
-<p>Note that this function expects the reduced array to be
+<p>Note that the function expects the reduced array to be
 formed by objects with the same set of properties.</p>
 
 <h4 id="parameters-17">Parameters</h4>
@@ -2177,7 +2177,7 @@ has the largest property.</p>
 <p>If two or more results are found, the first one
 is returned.</p>
 
-<p>Note that this function expects the reduced array to be
+<p>Note that the function expects the reduced array to be
 formed by objects with the same set of properties.</p>
 
 <h4 id="parameter-7">Parameter</h4>
@@ -2261,7 +2261,7 @@ has the smallest property.</p>
 <p>If two or more results are found, the first one
 is returned.</p>
 
-<p>Note that this function expects the reduced array to be
+<p>Note that the function expects the reduced array to be
 formed by objects with the same set of properties.</p>
 
 <h4 id="parameter-8">Parameter</h4>

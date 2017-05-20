@@ -3,12 +3,6 @@ html {
 
 @font-face {
   font-family: "Fira Code";
-  src: url("../fonts/eot/FiraCode-Light.eot");
-  src: url("../fonts/eot/FiraCode-Light.eot") format("embedded-opentype"), url("../fonts/woff2/FiraCode-Light.woff2") format("woff2"), url("../fonts/woff/FiraCode-Light.woff") format("woff"), url("../fonts/ttf/FiraCode-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal; }
-@font-face {
-  font-family: "Fira Code";
   src: url("../fonts/eot/FiraCode-Regular.eot");
   src: url("../fonts/eot/FiraCode-Regular.eot") format("embedded-opentype"), url("../fonts/woff2/FiraCode-Regular.woff2") format("woff2"), url("../fonts/woff/FiraCode-Regular.woff") format("woff"), url("../fonts/ttf/FiraCode-Regular.ttf") format("truetype");
   font-weight: 400;
@@ -18,12 +12,6 @@ html {
   src: url("../fonts/eot/FiraCode-Medium.eot");
   src: url("../fonts/eot/FiraCode-Medium.eot") format("embedded-opentype"), url("../fonts/woff2/FiraCode-Medium.woff2") format("woff2"), url("../fonts/woff/FiraCode-Medium.woff") format("woff"), url("../fonts/ttf/FiraCode-Medium.ttf") format("truetype");
   font-weight: 500;
-  font-style: normal; }
-@font-face {
-  font-family: "Fira Code";
-  src: url("../fonts/eot/FiraCode-Bold.eot");
-  src: url("../fonts/eot/FiraCode-Bold.eot") format("embedded-opentype"), url("../fonts/woff2/FiraCode-Bold.woff2") format("woff2"), url("../fonts/woff/FiraCode-Bold.woff") format("woff"), url("../fonts/ttf/FiraCode-Bold.ttf") format("truetype");
-  font-weight: 700;
   font-style: normal; }
 html {
   height: auto;
@@ -214,8 +202,15 @@ html.mode--local-scroll {
     margin-left: -2.25rem;
     width: calc(100% + 4.5rem);
     height: 1.5rem; }
-  .nav a:hover::before {
+  .nav a:hover::before,
+  .nav a:active::before {
     background-color: #f5f6f4; }
+  @media (hover: none) {
+    .nav a:hover::before {
+      background-color: transparent; } }
+  @media (hover: none) {
+    .nav a:active::before {
+      background-color: #f5f6f4; } }
   .nav a.selected::before {
     background-color: #e4e7e9; }
 
@@ -533,8 +528,15 @@ html.mode--local-scroll {
     color: #3d464d;
     white-space: nowrap;
     letter-spacing: normal; }
-  .content p a:hover code {
+  .content p a:hover code,
+  .content p a:active code {
     background-color: rgba(204, 219, 227, 0.6); }
+  @media (hover: none) {
+    .content p a:hover code {
+      background-color: transparent; } }
+  @media (hover: none) {
+    .content p a:active code {
+      background-color: rgba(204, 219, 227, 0.6); } }
   .content p strong {
     font-weight: 600; }
   .content blockquote {
@@ -554,12 +556,20 @@ html.mode--local-scroll {
     background-size: 1rem 1rem;
     background-image: linear-gradient(to bottom, #f92672 1px, transparent 1px);
     background-repeat: repeat-x; }
-  .content a:hover {
+  .content a:hover,
+  .content a:active {
     background-color: rgba(249, 38, 114, 0.2); }
+  @media (hover: none) {
+    .content a:hover {
+      background-color: transparent; } }
+  @media (hover: none) {
+    .content a:active {
+      background-color: rgba(249, 38, 114, 0.2); } }
   .content a[name] {
     border: none;
     background: transparent; }
-  .content a[name]:hover {
+  .content a[name]:hover,
+  .content a[name]:active {
     background: transparent; }
   .content ul,
   .content ol {

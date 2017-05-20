@@ -789,7 +789,7 @@ var selfAndParents = function selfAndParents(domEl) {
 
 /**
  * Returns an array with all DOM elements affected by an event.
- * This function serves as a polyfill for
+ * The function serves as a polyfill for
  * [`Event.composedPath()`](https://dom.spec.whatwg.org/#dom-event-composedpath).
  *
  * @category Event
@@ -1315,7 +1315,7 @@ function changeDrawer(func) {
 	func();
 
 	if (!isDrawerVisible()) {
-		// $(navDrawer).one("transitionend", moveDrawerScrollToTop);
+		$(navDrawer).one("transitionend", moveDrawerScrollToTop);
 	}
 }
 
@@ -1346,6 +1346,10 @@ function isEventOutsideDrawer(evt) {
 
 function isDrawerVisible() {
 	return !$(navDrawer).hasClass("nav__drawer--off");
+}
+
+function moveDrawerScrollToTop() {
+	navDrawer.scrollTop = 0;
 }
 
 function scrollTo(position, evt) {
