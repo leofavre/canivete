@@ -41,7 +41,7 @@ const byAlphabeticalOrder = (strA, strB) => (strA > strB) ? +1 : (strA < strB) ?
 
 const removeNewslines = str => str; // str.replace(/(?:\r\n|\r|\n)/g, " ");
 
-const exportSiteUsingJekyll = path => () => execAsPromise(`cd ${path} && bundle exec jekyll build --verbose`);
+const exportSiteUsingJekyll = path => () => execAsPromise(`cd ${path} && bundle exec jekyll build --incremental`);
 
 const exportScriptWithRollUp = () => () => execAsPromise(`rollup -c rollup.docs.config.js`);
 
