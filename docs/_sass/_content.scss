@@ -692,8 +692,8 @@
 	h2 {
 		position: relative;
 		display: block;
-		margin: ($grid * 4) 0 0;
-		padding: $grid 0 0;
+		margin: ($grid * 4) 0 -0.25rem;
+		padding: ($grid + 0.25rem) 0 0;
 		height: auto;
 		left: -0.5rem;
 		color: $intro-h2-color;
@@ -705,8 +705,8 @@
 		text-transform: lowercase;
 
 		@media #{$smaller-than-landscape-tablet} {
-			margin: 0;
-			padding: ($grid * 4) 0 0;
+			margin: 0 0 -0.25rem;
+			padding: ($grid * 4 + 0.25rem) 0 0;
 		}
 
 		@media #{$smaller-than-portrait-tablet} {

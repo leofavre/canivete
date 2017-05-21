@@ -859,8 +859,8 @@ html.mode--local-scroll {
 .content__intro h2 {
   position: relative;
   display: block;
-  margin: 6rem 0 0;
-  padding: 1.5rem 0 0;
+  margin: 6rem 0 -0.25rem;
+  padding: 1.75rem 0 0;
   height: auto;
   left: -0.5rem;
   color: #3d464d;
@@ -872,8 +872,8 @@ html.mode--local-scroll {
   text-transform: lowercase; }
   @media only screen and (max-width: 1023px) {
     .content__intro h2 {
-      margin: 0;
-      padding: 6rem 0 0; } }
+      margin: 0 0 -0.25rem;
+      padding: 6.25rem 0 0; } }
   @media only screen and (max-width: 700px) {
     .content__intro h2 {
       color: #3d464d; } }
