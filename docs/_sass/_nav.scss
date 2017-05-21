@@ -47,7 +47,7 @@
 			cursor: pointer;
 		}
 
-		@media #{$bigger-than-desktop} {
+		@media #{$bigger-than-big-screen} {
 			top: 1px;
 		}
 
@@ -75,7 +75,7 @@
 		margin: 0 0 0 -2.25rem;
 		padding: 0;
 
-		@media #{$bigger-than-desktop} {
+		@media #{$bigger-than-big-screen} {
 			top: 8px;
 		}
 	}
@@ -104,7 +104,7 @@
 		line-height: $grid;
 		font-size: 14px;
 
-		@media #{$bigger-than-desktop} {
+		@media #{$bigger-than-big-screen} {
 			top: 2px;
 		}
 	}
@@ -118,7 +118,7 @@
 		letter-spacing: 0.045em;
 		color: $menu-item-color;
 
-		@media #{$bigger-than-desktop} {
+		@media #{$bigger-than-big-screen} {
 			top: -3px;
 
 			a {
@@ -132,7 +132,7 @@
 	li li {
 		top: -0.0625rem;
 
-		@media #{$bigger-than-desktop} {
+		@media #{$bigger-than-big-screen} {
 			top: -1px;
 		}
 	}

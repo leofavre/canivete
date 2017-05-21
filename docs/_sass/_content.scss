@@ -161,7 +161,7 @@
 		display: block;
 		padding: (0.875rem + $grid) ($grid * 2) (0.625rem + $grid) ($grid * 2);
 
-		@media #{$bigger-than-desktop} {
+		@media #{$bigger-than-big-screen} {
 			padding-top: 42px;
 			padding-bottom: 39px;
 		}
@@ -207,7 +207,7 @@
 		letter-spacing: 0.045em;
 		margin: ($grid * 2) 0 $grid;
 
-		@media #{$bigger-than-desktop} {
+		@media #{$bigger-than-big-screen} {
 			top: 8px;
 		}
 
@@ -236,7 +236,7 @@
 		letter-spacing: -0.025em;
 		line-height: $grid;
 
-		@media #{$bigger-than-desktop} {
+		@media #{$bigger-than-big-screen} {
 			top: calc(0.5rem - 1px);
 		}
 
@@ -295,10 +295,6 @@
 
 		@extend %a-hairline;
 		background-color: transparent;
-
-		@media #{$bigger-than-desktop} {
-			// padding: 1px 0 2px;
-		}
 	}
 
 	%a-hairline {
@@ -339,7 +335,7 @@
 		padding-left: $grid;
 		line-height: $grid;
 
-		@media #{$bigger-than-desktop} {
+		@media #{$bigger-than-big-screen} {
 			top: calc(0.5rem - 1px);
 		}
 	}
@@ -373,7 +369,7 @@
 		line-height: $grid;
 		overflow: auto;
 
-		@media #{$bigger-than-desktop} {
+		@media #{$bigger-than-big-screen} {
 			top: 8px;
 			padding-top: 27px;
 			padding-bottom: 27px;
@@ -413,7 +409,7 @@
 		border-collapse: collapse;
 		margin-bottom: $grid;
 
-		@media #{$bigger-than-desktop} {
+		@media #{$bigger-than-big-screen} {
 			top: -5px;
 		}
 
@@ -491,7 +487,7 @@
 		vertical-align: top;
 		padding: ($grid / 2) $grid ($grid / 2) 0;
 
-		@media #{$bigger-than-desktop} {
+		@media #{$bigger-than-big-screen} {
 			padding-top: 14px;
 			padding-bottom: 13px;
 		}
@@ -628,7 +624,7 @@
 	padding: 0 $content-right-padding 0 $content-left-padding;
 	max-width: $full-content-width;
 
-	@media #{$way-bigger-than-desktop} {
+	@media #{$way-bigger-than-big-screen} {
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -670,6 +666,12 @@
 	@media #{$smaller-than-portrait-tablet} {
 		font-size: 1.75rem;
 		line-height: ($grid * 1.5);
+	}
+
+	a {
+		@media #{$bigger-than-desktop} {
+			background-image: linear-gradient(to bottom, $link-hairline-color 2px, transparent 1px);
+		}
 	}
 }
 
@@ -719,6 +721,34 @@
 
 		&#about {
 			margin-bottom: ($grid * -1);
+		}
+	}
+
+	#about ~ p + p + p + p {
+		@extend %subtitle;
+		margin-top: 0;
+		margin-bottom: 0;
+		padding-bottom: 1.1875rem;
+		top: 0.625rem;
+		word-spacing: normal;
+
+		a {
+			background-image: none;
+			color: $button-color;
+
+			&:hover {
+				background: none;
+				color: $button-hover-color;
+			}
+		}
+
+		img {
+			position: relative;
+			top: -0.375rem;
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: 0.25rem;
+			width: $grid * 2;
 		}
 	}
 

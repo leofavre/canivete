@@ -813,7 +813,7 @@ html.mode--local-scroll {
     .content__inner {
       padding: 0 1.5rem; } }
 
-.content blockquote p, .content__intro h3 {
+.content blockquote p, .content__intro #about ~ p + p + p + p, .content__intro h3 {
   position: relative;
   left: -0.25rem;
   margin: 1.5rem 0;
@@ -824,12 +824,15 @@ html.mode--local-scroll {
   line-height: 3rem;
   word-spacing: 0.15em; }
   @media only screen and (max-width: 1100px) {
-    .content blockquote p, .content__intro h3 {
+    .content blockquote p, .content__intro #about ~ p + p + p + p, .content__intro h3 {
       font-size: 2rem; } }
   @media only screen and (max-width: 700px) {
-    .content blockquote p, .content__intro h3 {
+    .content blockquote p, .content__intro #about ~ p + p + p + p, .content__intro h3 {
       font-size: 1.75rem;
       line-height: 2.25rem; } }
+  @media only screen and (min-width: 1101px) {
+    .content blockquote p a, .content__intro #about ~ p + p + p + p a, .content__intro h3 a {
+      background-image: linear-gradient(to bottom, #f92672 2px, transparent 1px); } }
 
 @media only screen and (min-width: 1024px) {
   .content__intro > *:nth-child(1) {
@@ -867,6 +870,25 @@ html.mode--local-scroll {
       color: #bbedee; } }
   .content__intro h2#about {
     margin-bottom: -1.5rem; }
+.content__intro #about ~ p + p + p + p {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 1.1875rem;
+  top: 0.625rem;
+  word-spacing: normal; }
+  .content__intro #about ~ p + p + p + p a {
+    background-image: none;
+    color: #3d464d; }
+    .content__intro #about ~ p + p + p + p a:hover {
+      background: none;
+      color: #f92672; }
+  .content__intro #about ~ p + p + p + p img {
+    position: relative;
+    top: -0.375rem;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.25rem;
+    width: 3rem; }
 .content__intro h2 > * {
   position: static; }
 .content__intro h3 {
@@ -904,8 +926,8 @@ html.mode--local-scroll {
   display: inline-block;
   margin-top: 1rem;
   padding: 1rem 1.125rem;
-  border: 1px solid #f92672;
-  color: #f92672;
+  border: 1px solid #3d464d;
+  color: #3d464d;
   font-family: "Acropolis A", "Acropolis B", cursive;
   font-style: italic;
   font-weight: 800;
