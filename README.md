@@ -20,6 +20,6 @@ Here's how to use Canivete with [Rollup](https://github.com/leofavre/canivete-wi
 
 * **Canivete** Coding and documentation by [Leonardo Favre](https://github.com/leofavre/)
 * **Website** Coding and layout by [Leonardo Favre](https://github.com/leofavre/)
-* **Typography** Acropolis and Whitney by [Hoefler & Co.](https://www.typography.com/) and Fira Code by [Nikita Prokopov](https://github.com/tonsky/FiraCode/)
+* **Typography** [Acropolis](https://www.typography.com/fonts/acropolis/overview/) and [Whitney](https://www.typography.com/fonts/whitney/overview/) by [Hoefler & Co.](https://www.typography.com/) and [Fira Code](https://github.com/tonsky/FiraCode) by [Nikita Prokopov](https://github.com/tonsky/)
 
 Canivete is released under The Unlicense license and depends on [LoDash](https://lodash.com/), released under the MIT license.
