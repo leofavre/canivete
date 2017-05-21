@@ -26,7 +26,7 @@ import selfAndParents from "./selfAndParents";
  * // when domChild is clicked:
  * // => [domChild, domParent, domGrandparent, body, html, document, window]
  */
-function getEventPath(evt) {
+const getEventPath = evt => {
 	let path = (evt.composedPath && evt.composedPath()) || evt.path,
 		target = evt.target;
 
@@ -44,6 +44,6 @@ function getEventPath(evt) {
 	}
 
 	return selfAndParents(target).concat([window]);
-}
+};
 
 export default getEventPath;

@@ -39,8 +39,8 @@ import _domElementsToArray from "./internal/dom/_domElementsToArray";
  * manyElements[0].dataset.level;
  * // => undefined
  */
-function removeAttr(domEls, attrName) {
+const removeAttr = (domEls, attrName) => {
 	_domElementsToArray(domEls).forEach(domEl => _setAttrBase(domEl, attrName, false));
-}
+};
 
 export default removeAttr;

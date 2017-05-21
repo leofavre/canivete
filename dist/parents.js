@@ -23,13 +23,13 @@ import _throwErrorIf from "./internal/common/_throwErrorIf";
  * parents(domChild);
  * // => [domParent, domGrandparent, body, html, document]
  */
-function parents(domEl, memo = []) {
+const parents = (domEl, memo = []) => {
 	if (memo.length === 0) {
 		_throwErrorIf(!_isElementOrDocumentOrWindow(domEl), "An HTMLElement is expected as parameter.");
 	}
 
 	let parentNode = domEl.parentNode;
 	return (!parentNode) ? memo : parents(parentNode, memo.concat([parentNode]));
-}
+};
 
 export default parents;

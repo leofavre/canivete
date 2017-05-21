@@ -56,9 +56,8 @@ const toClosestProp = (path, num) => (prevObj, nextObj, index, arr) => {
 	if (Math.abs(at(prevObj, path)[0] - num) <= Math.abs(at(nextObj, path)[0] - num)) {
 		return prevObj;
 	}
-	else {
-		return nextObj;
-	}
+	
+	return nextObj;
 };
 
 export default toClosestProp;

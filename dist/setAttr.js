@@ -40,8 +40,8 @@ import _domElementsToArray from "./internal/dom/_domElementsToArray";
  * manyElements[0].dataset.level;
  * // => "42"
  */
-function setAttr(domEls, attrName, value) {
+const setAttr = (domEls, attrName, value) => {
 	_domElementsToArray(domEls).forEach(domEl => _setAttrBase(domEl, attrName, value));
-}
+};
 
 export default setAttr;

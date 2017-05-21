@@ -26,10 +26,10 @@
  * getAttr(videoEl, "muted");
  * // => false
  */
-function getAttr(domEl, attrName) {
+const getAttr = (domEl, attrName) => {
 	let result = domEl.getAttribute(attrName);
 	result = (result === "") ? true : (result == null) ? false : result;
 	return result;
-}
+};
 
 export default getAttr;

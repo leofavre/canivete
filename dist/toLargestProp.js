@@ -54,9 +54,8 @@ const toLargestProp = path => (prevObj, nextObj) => {
 	if (at(prevObj, path)[0] >= at(nextObj, path)[0]) {
 		return prevObj;
 	}
-	else {
-		return nextObj;
-	};
+	
+	return nextObj;
 };
 
 export default toLargestProp;

@@ -54,9 +54,8 @@ const toSmallestProp = path => (prevObj, nextObj) => {
 	if (at(nextObj, path)[0] >= at(prevObj, path)[0]) {
 		return prevObj;
 	}
-	else {
-		return nextObj;
-	};
+	
+	return nextObj;
 };
 
 export default toSmallestProp;
