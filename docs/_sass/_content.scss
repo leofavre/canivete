@@ -661,6 +661,8 @@
 
 	@media #{$smaller-than-desktop} {
 		font-size: 2rem;
+		margin-top: 4.6875rem;
+		margin-bottom: 2.1875rem;
 	}
 
 	@media #{$smaller-than-portrait-tablet} {
@@ -686,41 +688,24 @@
 		position: relative;
 		display: block;
 		margin: ($grid * 4) 0 0;
-		padding: 0;
+		padding: $grid 0 0;
 		height: auto;
-		left: -2.25rem;
+		left: -0.5rem;
 		color: $intro-h2-color;
+		font-size: 4.5rem;
 		font-family: "Acropolis A", "Acropolis B", cursive;
 		font-style: italic;
 		font-weight: 800;
-		font-size: 12rem;
 		line-height: 1;
 		text-transform: lowercase;
-
-		font-size: 9rem;
-		left: -1rem;
 
 		@media #{$smaller-than-landscape-tablet} {
 			margin: 0;
 			padding: ($grid * 4) 0 0;
 		}
 
-		@media #{$smaller-than-desktop} {
-			font-size: 9rem;
-			left: -1rem;
-		}
-
-		@media #{$content-almost-touches-margins} {
-			font-size: 17.56vw;
-			left: -1vw;
-		}
-
 		@media #{$smaller-than-portrait-tablet} {
 			color: $intro-h2-small-color;
-		}
-
-		&#about {
-			margin-bottom: ($grid * -1);
 		}
 	}
 
@@ -728,9 +713,15 @@
 		@extend %subtitle;
 		margin-top: 0;
 		margin-bottom: 0;
-		padding-bottom: 1.1875rem;
+		font-size: 1.75rem;
+		padding-top: 0.3125rem;
+		padding-bottom: 1rem;
 		top: 0.625rem;
 		word-spacing: normal;
+
+		@media #{$bigger-than-big-screen} {
+			padding-top: 5px;
+		}
 
 		a {
 			background-image: none;
@@ -740,15 +731,24 @@
 				background: none;
 				color: $button-hover-color;
 			}
-		}
 
-		img {
-			position: relative;
-			top: -0.375rem;
-			display: inline-block;
-			vertical-align: middle;
-			margin-right: 0.25rem;
-			width: $grid * 2;
+			&::before {
+				content: "";
+				position: relative;
+				top: -0.375rem;
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: 0.4375rem;
+				width: $grid * 2;
+				height: $grid * 2;
+				background: $button-color url("../media/github.svg");
+				background-size: cover;
+				border-radius: 100%;
+			}
+
+			&:hover::before {
+				background-color: $button-hover-color;
+			}
 		}
 	}
 
@@ -768,9 +768,14 @@
 		letter-spacing: -0.015em;
 		word-spacing: normal;
 
+		@media #{$smaller-than-desktop} {
+			margin-top: 4.6875rem;
+			margin-bottom: 2.1875rem;
+		}
+
 		@media #{$smaller-than-landscape-tablet} {
-			margin-top: $grid * 1;
-			padding-top: ($grid * 3) + 0.625rem;
+			margin-top: 0;
+			padding-top: 5.3125rem;
 		}
 
 		a {

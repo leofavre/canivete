@@ -29,12 +29,12 @@ $text-color: #3d464d;
 
 $logo-color: #f92672;
 
-$intro-h2-color: #c7efef;
-$intro-h2-small-color: mix(#7ae1e6, $intro-h2-color, 15%);
+$intro-h2-color: $text-color;
+$intro-h2-small-color: $text-color;
 $intro-h3-color: $text-color;
 
-$button-color: $text-color;
-$button-hover-color: $logo-color;
+$button-color: $logo-color;
+$button-hover-color: $text-color;
 
 $content-h2-color: #c7efef;
 $content-h2-small-color: mix(#7ae1e6, $content-h2-color, 15%);

@@ -825,7 +825,9 @@ html.mode--local-scroll {
   word-spacing: 0.15em; }
   @media only screen and (max-width: 1100px) {
     .content blockquote p, .content__intro #about ~ p + p + p + p, .content__intro h3 {
-      font-size: 2rem; } }
+      font-size: 2rem;
+      margin-top: 4.6875rem;
+      margin-bottom: 2.1875rem; } }
   @media only screen and (max-width: 700px) {
     .content blockquote p, .content__intro #about ~ p + p + p + p, .content__intro h3 {
       font-size: 1.75rem;
@@ -841,54 +843,54 @@ html.mode--local-scroll {
   position: relative;
   display: block;
   margin: 6rem 0 0;
-  padding: 0;
+  padding: 1.5rem 0 0;
   height: auto;
-  left: -2.25rem;
-  color: #c7efef;
+  left: -0.5rem;
+  color: #3d464d;
+  font-size: 4.5rem;
   font-family: "Acropolis A", "Acropolis B", cursive;
   font-style: italic;
   font-weight: 800;
-  font-size: 12rem;
   line-height: 1;
-  text-transform: lowercase;
-  font-size: 9rem;
-  left: -1rem; }
+  text-transform: lowercase; }
   @media only screen and (max-width: 1023px) {
     .content__intro h2 {
       margin: 0;
       padding: 6rem 0 0; } }
-  @media only screen and (max-width: 1100px) {
-    .content__intro h2 {
-      font-size: 9rem;
-      left: -1rem; } }
-  @media only screen and (max-width: 820px) {
-    .content__intro h2 {
-      font-size: 17.56vw;
-      left: -1vw; } }
   @media only screen and (max-width: 700px) {
     .content__intro h2 {
-      color: #bbedee; } }
-  .content__intro h2#about {
-    margin-bottom: -1.5rem; }
+      color: #3d464d; } }
 .content__intro #about ~ p + p + p + p {
   margin-top: 0;
   margin-bottom: 0;
-  padding-bottom: 1.1875rem;
+  font-size: 1.75rem;
+  padding-top: 0.3125rem;
+  padding-bottom: 1rem;
   top: 0.625rem;
   word-spacing: normal; }
+  @media only screen and (min-width: 1400px) {
+    .content__intro #about ~ p + p + p + p {
+      padding-top: 5px; } }
   .content__intro #about ~ p + p + p + p a {
     background-image: none;
-    color: #3d464d; }
+    color: #f92672; }
     .content__intro #about ~ p + p + p + p a:hover {
       background: none;
-      color: #f92672; }
-  .content__intro #about ~ p + p + p + p img {
-    position: relative;
-    top: -0.375rem;
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 0.25rem;
-    width: 3rem; }
+      color: #3d464d; }
+    .content__intro #about ~ p + p + p + p a::before {
+      content: "";
+      position: relative;
+      top: -0.375rem;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 0.4375rem;
+      width: 3rem;
+      height: 3rem;
+      background: #f92672 url("../media/github.svg");
+      background-size: cover;
+      border-radius: 100%; }
+    .content__intro #about ~ p + p + p + p a:hover::before {
+      background-color: #3d464d; }
 .content__intro h2 > * {
   position: static; }
 .content__intro h3 {
@@ -901,10 +903,14 @@ html.mode--local-scroll {
   color: #3d464d;
   letter-spacing: -0.015em;
   word-spacing: normal; }
+  @media only screen and (max-width: 1100px) {
+    .content__intro h3 {
+      margin-top: 4.6875rem;
+      margin-bottom: 2.1875rem; } }
   @media only screen and (max-width: 1023px) {
     .content__intro h3 {
-      margin-top: 1.5rem;
-      padding-top: 5.125rem; } }
+      margin-top: 0;
+      padding-top: 5.3125rem; } }
   .content__intro h3 a {
     display: inline;
     padding: 0; }
@@ -926,8 +932,8 @@ html.mode--local-scroll {
   display: inline-block;
   margin-top: 1rem;
   padding: 1rem 1.125rem;
-  border: 1px solid #3d464d;
-  color: #3d464d;
+  border: 1px solid #f92672;
+  color: #f92672;
   font-family: "Acropolis A", "Acropolis B", cursive;
   font-style: italic;
   font-weight: 800;
