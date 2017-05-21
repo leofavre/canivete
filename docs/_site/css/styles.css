@@ -947,7 +947,8 @@ html.mode--local-scroll {
     display: none; }
 .content__intro h3 ~ p {
   text-indent: -1.5rem;
-  margin-left: 1.5rem; }
+  margin-left: 1.5rem;
+  width: calc(100% - 0.75rem); }
 .content__intro h3 ~ p strong {
   display: inline-block;
   width: 1.1875rem;

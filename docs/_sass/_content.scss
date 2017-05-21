@@ -829,6 +829,7 @@
 	h3 ~ p {
 		text-indent: $grid * -1;
 		margin-left: $grid;
+		width: calc(100% - #{$grid * 0.5});
 	}
 
 	h3 ~ p strong {
