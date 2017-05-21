@@ -110,7 +110,18 @@ html.mode--local-scroll {
     text-transform: lowercase;
     color: #f92672; }
     .nav h1 span {
-      cursor: pointer; }
+      display: inline-block;
+      cursor: pointer;
+      color: #f92672; }
+    .nav h1 span:hover,
+    .nav h1 span:active {
+      color: #dd2b6c; }
+    @media (hover: none) {
+      .nav h1 span:hover {
+        color: #f92672; } }
+    @media (hover: none) {
+      .nav h1 span:active {
+        color: #dd2b6c; } }
     @media only screen and (min-width: 1400px) {
       .nav h1 {
         top: 1px; } }
@@ -127,7 +138,7 @@ html.mode--local-scroll {
         box-sizing: border-box;
         font-size: 24px;
         text-align: center;
-        line-height: 41px;
+        line-height: 40px;
         z-index: 10; } }
   .nav ul {
     position: relative;
@@ -220,9 +231,9 @@ html.mode--local-scroll {
 @media only screen and (max-width: 1023px) {
   .nav__drawer {
     position: fixed;
-    top: 39px;
+    top: 38px;
     left: 0;
-    height: calc(100% - 39px);
+    height: calc(100% - 38px);
     background: #fff;
     overflow: auto;
     box-shadow: 5px 0 2px -2px rgba(0, 0, 0, 0.1);
@@ -254,7 +265,7 @@ html.mode--local-scroll {
       display: block;
       cursor: pointer; }
       .nav__switch > * {
-        fill: #f92672;
+        fill: #fbfbf7;
         transition: -webkit-transform 0.12s ease-in-out;
         transition: transform 0.12s ease-in-out;
         transition: transform 0.12s ease-in-out, -webkit-transform 0.12s ease-in-out; }
@@ -466,10 +477,10 @@ html.mode--local-scroll {
         padding-bottom: 39px; } }
     @media only screen and (max-width: 1023px) {
       .content__main h3 a {
-        padding-top: calc(39px + 2.375rem); } }
+        padding-top: calc(38px + 2.375rem); } }
     @media only screen and (max-width: 700px) {
       .content__main h3 a {
-        padding-top: calc(39px + 1.875rem);
+        padding-top: calc(38px + 1.875rem);
         padding-left: 1.5rem;
         padding-right: 1.5rem; } }
     .content__main h3 a::before {
@@ -483,7 +494,7 @@ html.mode--local-scroll {
       z-index: -1; }
       @media only screen and (max-width: 1023px) {
         .content__main h3 a::before {
-          height: calc(100% - 39px); } }
+          height: calc(100% - 38px); } }
   .content__main h3 code {
     position: relative;
     color: #7ae1e6;
@@ -510,7 +521,8 @@ html.mode--local-scroll {
     margin: 1.5rem 0 1.5rem;
     font-size: 1rem;
     letter-spacing: -0.025em;
-    line-height: 1.5rem; }
+    line-height: 1.5rem;
+    max-width: 40rem; }
     @media only screen and (min-width: 1400px) {
       .content p {
         top: calc(0.5rem - 1px); } }
@@ -874,9 +886,15 @@ html.mode--local-scroll {
   .content__intro #about ~ p + p + p + p a {
     background-image: none;
     color: #f92672; }
-    .content__intro #about ~ p + p + p + p a:hover {
+    .content__intro #about ~ p + p + p + p a:hover, .content__intro #about ~ p + p + p + p a:active {
       background: none;
-      color: #3d464d; }
+      color: #dd2b6c; }
+    @media (hover: none) {
+      .content__intro #about ~ p + p + p + p a:hover {
+        color: #f92672; } }
+    @media (hover: none) {
+      .content__intro #about ~ p + p + p + p a:active {
+        color: #dd2b6c; } }
     .content__intro #about ~ p + p + p + p a::before {
       content: "";
       position: relative;
@@ -887,10 +905,15 @@ html.mode--local-scroll {
       width: 3rem;
       height: 3rem;
       background: #f92672 url("../media/github.svg");
-      background-size: cover;
-      border-radius: 100%; }
-    .content__intro #about ~ p + p + p + p a:hover::before {
-      background-color: #3d464d; }
+      background-size: cover; }
+    .content__intro #about ~ p + p + p + p a:hover::before, .content__intro #about ~ p + p + p + p a:active::before {
+      background-color: #dd2b6c; }
+    @media (hover: none) {
+      .content__intro #about ~ p + p + p + p a:hover::before {
+        background-color: #f92672; } }
+    @media (hover: none) {
+      .content__intro #about ~ p + p + p + p a:active::before {
+        background-color: #dd2b6c; } }
 .content__intro h2 > * {
   position: static; }
 .content__intro h3 {

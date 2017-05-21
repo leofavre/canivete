@@ -400,7 +400,7 @@ getAttr(videoEl, "muted");
 ### <a name="parents">`parents (domEl)`</a>
 
 Returns all parents of a DOM element,
-from the closest to the most distant, recursively.
+from the closest to the most distant.
 
 #### Parameter
 
@@ -434,7 +434,7 @@ parents(domChild);
 ### <a name="removeattr">`removeAttr (domEls, attrName)`</a>
 
 Removes an attribute from one or more DOM elements using
-native [`Element.removeAttribute()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttribute).
+[`Element.removeAttribute()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttribute).
 
 #### Parameters
 
@@ -529,7 +529,7 @@ manyElements[0].className;
 ### <a name="selfandparents">`selfAndParents (domEl)`</a>
 
 The same as [`parents()`](#parents), except it includes
-the DOM element as the first item of the result.
+the DOM element itself.
 
 #### Parameter
 

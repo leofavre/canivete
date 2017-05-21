@@ -235,6 +235,7 @@
 		font-size: 1rem;
 		letter-spacing: -0.025em;
 		line-height: $grid;
+		max-width: 40rem;
 
 		@media #{$bigger-than-big-screen} {
 			top: calc(0.5rem - 1px);
@@ -727,9 +728,18 @@
 			background-image: none;
 			color: $button-color;
 
-			&:hover {
+			&:hover,
+			&:active {
 				background: none;
 				color: $button-hover-color;
+			}
+
+			&:hover {
+				@media (hover: none) { color: $button-color; }
+			}
+
+			&:active {
+				@media (hover: none) { color: $button-hover-color; }
 			}
 
 			&::before {
@@ -743,11 +753,19 @@
 				height: $grid * 2;
 				background: $button-color url("../media/github.svg");
 				background-size: cover;
-				border-radius: 100%;
+			}
+
+			&:hover::before,
+			&:active::before {
+				background-color: $button-hover-color;
 			}
 
 			&:hover::before {
-				background-color: $button-hover-color;
+				@media (hover: none) { background-color: $button-color; }
+			}
+
+			&:active::before {
+				@media (hover: none) { background-color: $button-hover-color; }
 			}
 		}
 	}

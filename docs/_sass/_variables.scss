@@ -1,7 +1,7 @@
 $grid: 1.5rem;
 $full-content-width: 42rem;
 $nav-width: 14.5rem;
-$nav-mobile-height: 41px;
+$nav-mobile-height: 40px;
 
 $content-left-padding: ($grid * 3);
 $content-right-padding: ($grid * 2);
@@ -28,13 +28,14 @@ $background-color: mix(#fbfbf7, white, 100%);
 $text-color: #3d464d;
 
 $logo-color: #f92672;
+$logo-hover-color: mix($text-color, $logo-color, 15%);
 
 $intro-h2-color: $text-color;
 $intro-h2-small-color: $text-color;
 $intro-h3-color: $text-color;
 
 $button-color: $logo-color;
-$button-hover-color: $text-color;
+$button-hover-color: $logo-hover-color;
 
 $content-h2-color: #c7efef;
 $content-h2-small-color: mix(#7ae1e6, $content-h2-color, 15%);
@@ -66,4 +67,4 @@ $menu-item-selected-bg: $big-code-bg-color;
 $menu-item-hover-bg: mix($menu-item-selected-bg, $background-color, 25%);
 
 $nav-mobile-header-background: #32383e;
-$nav-switch-color: $logo-color;
+$nav-switch-color: $background-color;

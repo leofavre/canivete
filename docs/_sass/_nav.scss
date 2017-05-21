@@ -44,7 +44,22 @@
 		color: $logo-color;
 
 		span {
+			display: inline-block;
 			cursor: pointer;
+			color: $logo-color;
+		}
+
+		span:hover,
+		span:active {
+			color: $logo-hover-color;
+		}
+
+		span:hover {
+			@media (hover: none) { color: $logo-color; }
+		}
+
+		span:active {
+			@media (hover: none) { color: $logo-hover-color; }
 		}
 
 		@media #{$bigger-than-big-screen} {
