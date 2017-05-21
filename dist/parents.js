@@ -3,7 +3,7 @@ import _throwErrorIf from "./internal/common/_throwErrorIf";
 
 /**
  * Returns all parents of a DOM element,
- * from the closest to the most distant, recursively.
+ * from the closest to the most distant.
  * 
  * @category DOM
  * @param  {HTMLElement} domEl The DOM element.

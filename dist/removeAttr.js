@@ -3,7 +3,7 @@ import _domElementsToArray from "./internal/dom/_domElementsToArray";
 
 /**
  * Removes an attribute from one or more DOM elements using
- * native [`Element.removeAttribute()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttribute).
+ * [`Element.removeAttribute()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttribute).
  *
  * @category DOM
  * @param {(HTMLElement|HTMLCollection|NodeList|Array.<HTMLElement>|Set.<HTMLElement>)} domEls One or more DOM elements.

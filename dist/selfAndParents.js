@@ -4,7 +4,7 @@ import _throwErrorIf from "./internal/common/_throwErrorIf";
 
 /**
  * The same as [`parents()`](#parents), except it includes
- * the DOM element as the first item of the result.
+ * the DOM element itself.
  * 
  * @category DOM
  * @param  {HTMLElement} domEl The DOM element.
