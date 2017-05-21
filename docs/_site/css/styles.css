@@ -447,8 +447,8 @@ html.mode--local-scroll {
     margin-bottom: calc(33vh + 6rem); }
     @media only screen and (max-width: 1023px) {
       .content__main h2 + blockquote {
-        margin-top: -6rem;
-        margin-bottom: 12rem; } }
+        margin-top: 0;
+        margin-bottom: 0; } }
     @media only screen and (max-width: 700px) {
       .content__main h2 + blockquote {
         margin-top: 0;
@@ -837,9 +837,7 @@ html.mode--local-scroll {
   word-spacing: 0.15em; }
   @media only screen and (max-width: 1100px) {
     .content blockquote p, .content__intro #about ~ p + p + p + p, .content__intro h3 {
-      font-size: 2rem;
-      margin-top: 4.6875rem;
-      margin-bottom: 2.1875rem; } }
+      font-size: 2rem; } }
   @media only screen and (max-width: 700px) {
     .content blockquote p, .content__intro #about ~ p + p + p + p, .content__intro h3 {
       font-size: 1.75rem;

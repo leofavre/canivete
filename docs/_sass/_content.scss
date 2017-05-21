@@ -128,8 +128,10 @@
 		margin-bottom: calc(33vh + #{$grid * 4});
 
 		@media #{$smaller-than-landscape-tablet} {
-			margin-top: ($grid * -4);
-			margin-bottom: ($grid * 8);
+			// margin-top: ($grid * -4);
+			// margin-bottom: ($grid * 8);
+			margin-top: 0;
+			margin-bottom: 0;
 		}
 
 		@media #{$smaller-than-portrait-tablet} {
@@ -650,28 +652,26 @@
 }
 
 %subtitle {
-	position: relative;
-	left: -0.25rem;
-	margin: $grid 0;
-	font-family: "Whitney Narrow A", "Whitney Narrow B", sans-serif;
-	font-style: normal;
-	font-weight: 300;
-	font-size: 2.5rem;
-	line-height: ($grid * 2);
-	word-spacing: 0.15em;
+    position: relative;
+    left: -0.25rem;
+    margin: $grid 0;
+    font-family: "Whitney Narrow A", "Whitney Narrow B", sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 2.5rem;
+    line-height: ($grid * 2);
+    word-spacing: 0.15em;
+ 
+    @media #{$smaller-than-desktop} {
+        font-size: 2rem;
+    }
+ 
+    @media #{$smaller-than-portrait-tablet} {
+        font-size: 1.75rem;
+        line-height: ($grid * 1.5);
+    }
 
-	@media #{$smaller-than-desktop} {
-		font-size: 2rem;
-		margin-top: 4.6875rem;
-		margin-bottom: 2.1875rem;
-	}
-
-	@media #{$smaller-than-portrait-tablet} {
-		font-size: 1.75rem;
-		line-height: ($grid * 1.5);
-	}
-
-	a {
+    a {
 		@media #{$bigger-than-desktop} {
 			background-image: linear-gradient(to bottom, $link-hairline-color 2px, transparent 1px);
 		}
