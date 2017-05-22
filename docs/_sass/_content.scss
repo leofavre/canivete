@@ -368,16 +368,17 @@
 	pre {
 		position: relative;
 		display: block;
-		top: 0.5rem;
+		top: 0.5625rem;
 		color: $big-code-color;
 		background-color: $big-code-bg-color;
 		margin: $grid ($grid * -2) ($grid * 2) ($grid * -2);
 		padding: $grid $grid $grid ($grid * 2);
 		line-height: $grid;
 		overflow: auto;
+		font-size: 0.9375rem;
 
 		@media #{$bigger-than-big-screen} {
-			top: 8px;
+			top: 9px;
 			padding-top: 27px;
 			padding-bottom: 27px;
 		}

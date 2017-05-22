@@ -622,16 +622,17 @@ html.mode--local-scroll {
   .content pre {
     position: relative;
     display: block;
-    top: 0.5rem;
+    top: 0.5625rem;
     color: #3d464d;
     background-color: #e4e7e9;
     margin: 1.5rem -3rem 3rem -3rem;
     padding: 1.5rem 1.5rem 1.5rem 3rem;
     line-height: 1.5rem;
-    overflow: auto; }
+    overflow: auto;
+    font-size: 0.9375rem; }
     @media only screen and (min-width: 1400px) {
       .content pre {
-        top: 8px;
+        top: 9px;
         padding-top: 27px;
         padding-bottom: 27px; } }
     @media only screen and (max-width: 700px) {
