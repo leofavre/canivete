@@ -4,7 +4,7 @@
 
 ---
 
-Canivete (Brazilian Portuguese for swiss army knife) is an on-going personal project by [Leonardo Favre](https://github.com/leofavre/), a place to keep generic, multi-purpose Javascript functions.
+Canivete (Brazilian Portuguese for swiss army knife) is an on-going personal project by [Leonardo Favre](http://leofavre.com/), a place to keep generic, multi-purpose Javascript functions.
 
 Due to its multi-purpose nature, Canivete is not distributed as a single file, instead, one should import its functions as needed, using [ES6 module syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import).
 
@@ -18,8 +18,8 @@ Here's how to use Canivete with [Rollup](https://github.com/leofavre/canivete-wi
 
 ## Credits
 
-* **Canivete** Coding and documentation by [Leonardo Favre](https://github.com/leofavre/)
-* **Website** Coding and layout by [Leonardo Favre](https://github.com/leofavre/)
+* **Canivete** Coding and documentation by [Leonardo Favre](http://leofavre.com/)
+* **Website** Coding and layout by [Leonardo Favre](http://leofavre.com/)
 * **Typography** [Acropolis](https://www.typography.com/fonts/acropolis/overview/) and [Whitney](https://www.typography.com/fonts/whitney/overview/) by [Hoefler & Co.](https://www.typography.com/) and [Fira Code](https://github.com/tonsky/FiraCode) by [Nikita Prokopov](https://github.com/tonsky/)
 
 Canivete is released under The Unlicense license and depends on [LoDash](https://lodash.com/), released under the MIT license.
