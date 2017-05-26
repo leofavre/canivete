@@ -111,6 +111,7 @@
 
 		@media #{$smaller-than-portrait-tablet} {
 			margin-top: 0;
+			padding-top: ($grid * 4);
 			color: $content-h2-small-color;
 		}
 	}
@@ -148,7 +149,7 @@
 		line-height: ($grid * 2);
 
 		@media #{$smaller-than-portrait-tablet} {
-			margin-top: ($grid * 2);
+			margin-top: ($grid * 1);
 			margin-left: ($grid * -1);
 			margin-right: ($grid * -1);
 			margin-bottom: ($grid * 1.25);

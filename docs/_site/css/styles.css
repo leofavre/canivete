@@ -435,6 +435,7 @@ html.mode--local-scroll {
     @media only screen and (max-width: 700px) {
       .content__main h2 {
         margin-top: 0;
+        padding-top: 6rem;
         color: #bbedee; } }
   .content__main h2 > * {
     position: relative;
@@ -461,7 +462,7 @@ html.mode--local-scroll {
     line-height: 3rem; }
     @media only screen and (max-width: 700px) {
       .content__main h3 {
-        margin-top: 3rem;
+        margin-top: 1.5rem;
         margin-left: -1.5rem;
         margin-right: -1.5rem;
         margin-bottom: 1.875rem;
