@@ -1,6 +1,6 @@
-import recursiveGroupBy from "../dist/recursiveGroupBy";
+import deepGroupBy from "../dist/deepGroupBy";
 
-describe("recursiveGroupBy", function() {
+describe("deepGroupBy", function() {
 	const stores = [{
 		name: "Iguatemi",
 		city: "Campinas",
@@ -36,7 +36,7 @@ describe("recursiveGroupBy", function() {
 	const getStateName = item => item.state;
 
 	it("Should group stores by the first letter of their names.", function() {
-		expect(recursiveGroupBy(stores, getNamesFirstCharacter)).toEqual({
+		expect(deepGroupBy(stores, getNamesFirstCharacter)).toEqual({
 			"I": [{
 				name: "Iguatemi",
 				city: "Campinas",
@@ -73,7 +73,7 @@ describe("recursiveGroupBy", function() {
 	});
 
 	it("Should group stores by state and city.", function() {
-		expect(recursiveGroupBy(stores, getStateName, getCityName)).toEqual({
+		expect(deepGroupBy(stores, getStateName, getCityName)).toEqual({
 			"SP": {
 				"Campinas": [{
 					name: "Iguatemi",
@@ -117,7 +117,7 @@ describe("recursiveGroupBy", function() {
 	});
 
 	it("Should group stores by the first letter of their names and the name of the city.", function() {
-		expect(recursiveGroupBy(stores, getNamesFirstCharacter, getCityName)).toEqual({
+		expect(deepGroupBy(stores, getNamesFirstCharacter, getCityName)).toEqual({
 			"I": {
 				"Campinas": [{
 					name: "Iguatemi",
@@ -165,17 +165,17 @@ describe("recursiveGroupBy", function() {
 	});
 
 	it("Should still function as the native LoDash groupBy.", function() {
-		expect(recursiveGroupBy(["one", "two", "three"], "length")).toEqual({
+		expect(deepGroupBy(["one", "two", "three"], "length")).toEqual({
 			"3": ["one", "two"],
 			"5": ["three"]
 		});
 
-		expect(recursiveGroupBy([6.1, 4.2, 6.3], Math.floor)).toEqual({
+		expect(deepGroupBy([6.1, 4.2, 6.3], Math.floor)).toEqual({
 			"4": [4.2],
 			"6": [6.1, 6.3]
 		});
 
-		expect(recursiveGroupBy(["one", "two", "three"], str => str.slice(0, 1), "length")).toEqual({
+		expect(deepGroupBy(["one", "two", "three"], str => str.slice(0, 1), "length")).toEqual({
 			"o": {
 				"3": ["one"]
 			},

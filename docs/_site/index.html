@@ -46,7 +46,7 @@
   </li>
   <li><strong><a href="#collection">Collection</a></strong>
     <ul>
-      <li><a href="#recursivegroupby">recursiveGroupBy</a></li>
+      <li><a href="#deepgroupby">deepGroupBy</a></li>
     </ul>
   </li>
   <li><strong><a href="#dom">DOM</a></strong>
@@ -709,10 +709,10 @@ or element CSS class if a modified version is output.</p>
 <h2 id="collection"><em>Collection</em></h2>
 
 <blockquote>
-  <p><a href="#recursivegroupby">recursiveGroupBy</a></p>
+  <p><a href="#deepgroupby">deepGroupBy</a></p>
 </blockquote>
 
-<h3 id="recursivegroupby-collection-iteratees"><a name="recursivegroupby"><code class="highlighter-rouge">recursiveGroupBy (collection, [...iteratees])</code></a></h3>
+<h3 id="deepgroupby-collection-iteratees"><a name="deepgroupby"><code class="highlighter-rouge">deepGroupBy (collection, [...iteratees])</code></a></h3>
 
 <p>A recursive implementation of LoDash <a href="https://lodash.com/docs/4.17.4#groupBy"><code class="highlighter-rouge">groupBy()</code></a>
 that can take one or more iteratees to create nested groups.</p>
@@ -763,7 +763,7 @@ that can take one or more iteratees to create nested groups.</p>
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">getLength</span> <span class="o">=</span> <span class="nx">str</span> <span class="o">=&gt;</span> <span class="nx">str</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
 <span class="kr">const</span> <span class="nx">getFirstLetter</span> <span class="o">=</span> <span class="nx">str</span> <span class="o">=&gt;</span> <span class="nx">str</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 
-<span class="nx">recursiveGroupBy</span><span class="p">([</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">],</span> <span class="nx">getLength</span><span class="p">,</span> <span class="nx">getFirstLetter</span><span class="p">);</span>
+<span class="nx">deepGroupBy</span><span class="p">([</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">],</span> <span class="nx">getLength</span><span class="p">,</span> <span class="nx">getFirstLetter</span><span class="p">);</span>
 <span class="c1">// =&gt; {</span>
 <span class="c1">// =&gt; 	"3": {"o": ["one"], "t": ["two"]},</span>
 <span class="c1">// =&gt; 	"5": {"t": ["three"]}</span>
@@ -774,7 +774,7 @@ that can take one or more iteratees to create nested groups.</p>
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">getLength</span> <span class="o">=</span> <span class="nx">str</span> <span class="o">=&gt;</span> <span class="nx">str</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
 <span class="kr">const</span> <span class="nx">getFirstLetter</span> <span class="o">=</span> <span class="nx">str</span> <span class="o">=&gt;</span> <span class="nx">str</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 
-<span class="nx">recursiveGroupBy</span><span class="p">([</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">],</span> <span class="nx">getFirstLetter</span><span class="p">,</span> <span class="nx">getLength</span><span class="p">);</span>
+<span class="nx">deepGroupBy</span><span class="p">([</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">],</span> <span class="nx">getFirstLetter</span><span class="p">,</span> <span class="nx">getLength</span><span class="p">);</span>
 <span class="c1">// =&gt; {</span>
 <span class="c1">// =&gt; 	"o": {"3": ["one"]},</span>
 <span class="c1">// =&gt; 	"t": {"3": ["two"], "5": ["three"]}</span>
@@ -815,7 +815,7 @@ that can take one or more iteratees to create nested groups.</p>
 <span class="kr">const</span> <span class="nx">getStateName</span> <span class="o">=</span> <span class="nx">item</span> <span class="o">=&gt;</span> <span class="nx">item</span><span class="p">.</span><span class="nx">state</span><span class="p">;</span>
 <span class="kr">const</span> <span class="nx">getCityName</span> <span class="o">=</span> <span class="nx">item</span> <span class="o">=&gt;</span> <span class="nx">item</span><span class="p">.</span><span class="nx">city</span><span class="p">;</span>
 
-<span class="nx">recursiveGroupBy</span><span class="p">(</span><span class="nx">stores</span><span class="p">,</span> <span class="nx">getStateName</span><span class="p">,</span> <span class="nx">getCityName</span><span class="p">);</span>
+<span class="nx">deepGroupBy</span><span class="p">(</span><span class="nx">stores</span><span class="p">,</span> <span class="nx">getStateName</span><span class="p">,</span> <span class="nx">getCityName</span><span class="p">);</span>
 <span class="c1">// =&gt; {</span>
 <span class="c1">// =&gt; 	"SP": { "Campinas": [...], "São Paulo": [...] },</span>
 <span class="c1">// =&gt; 	"RJ": { "Búzios": [...], "Rio de Janeiro": [...] },</span>

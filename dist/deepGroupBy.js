@@ -19,7 +19,7 @@ import at from "lodash-es/at";
  * const getLength = str => str.length;
  * const getFirstLetter = str => str.slice(0, 1);
  *
- * recursiveGroupBy(["one", "two", "three"], getLength, getFirstLetter);
+ * deepGroupBy(["one", "two", "three"], getLength, getFirstLetter);
  * // => {
  * // => 	"3": {"o": ["one"], "t": ["two"]},
  * // => 	"5": {"t": ["three"]}
@@ -30,7 +30,7 @@ import at from "lodash-es/at";
  * const getLength = str => str.length;
  * const getFirstLetter = str => str.slice(0, 1);
  *
- * recursiveGroupBy(["one", "two", "three"], getFirstLetter, getLength);
+ * deepGroupBy(["one", "two", "three"], getFirstLetter, getLength);
  * // => {
  * // => 	"o": {"3": ["one"]},
  * // => 	"t": {"3": ["two"], "5": ["three"]}
@@ -71,14 +71,14 @@ import at from "lodash-es/at";
  * const getStateName = item => item.state;
  * const getCityName = item => item.city;
  *
- * recursiveGroupBy(stores, getStateName, getCityName);
+ * deepGroupBy(stores, getStateName, getCityName);
  * // => {
  * // => 	"SP": { "Campinas": [...], "São Paulo": [...] },
  * // => 	"RJ": { "Búzios": [...], "Rio de Janeiro": [...] },
  * // => 	"DF": { "Brasília": [...] }
  * // => }
  */
-const recursiveGroupBy = (collection, ...iteratees) => {
+const deepGroupBy = (collection, ...iteratees) => {
 
 	const groupBranch = (collection, iteratee, keys = []) => (keys.length === 0) ? groupBy(collection, iteratee) : set(collection, formatPath(keys), groupBy(simpleAt(collection, keys), iteratee));
 	const getKeysAt = (collection, keys = []) => (keys.length === 0) ? Object.keys(collection) : Object.keys(simpleAt(collection, keys));
@@ -103,4 +103,4 @@ const recursiveGroupBy = (collection, ...iteratees) => {
 	return doGroupByRecursive(collection, iteratees);
 };
 
-export default recursiveGroupBy;
+export default deepGroupBy;

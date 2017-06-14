@@ -9,7 +9,7 @@
   * [removeClass](#removeclass)
 
 * **[Collection](#collection)**
-  * [recursiveGroupBy](#recursivegroupby)
+  * [deepGroupBy](#deepgroupby)
 
 * **[DOM](#dom)**
   * [getAttr](#getattr)

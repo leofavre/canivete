@@ -269,9 +269,9 @@ manyElements[0].className;
 
 ## *Collection*
 
->[recursiveGroupBy](#recursivegroupby)
+>[deepGroupBy](#deepgroupby)
 
-### <a name="recursivegroupby">`recursiveGroupBy (collection, [...iteratees])`</a>
+### <a name="deepgroupby">`deepGroupBy (collection, [...iteratees])`</a>
 
 A recursive implementation of LoDash [`groupBy()`](https://lodash.com/docs/4.17.4#groupBy)
 that can take one or more iteratees to create nested groups.
@@ -295,7 +295,7 @@ that can take one or more iteratees to create nested groups.
 const getLength = str => str.length;
 const getFirstLetter = str => str.slice(0, 1);
 
-recursiveGroupBy(["one", "two", "three"], getLength, getFirstLetter);
+deepGroupBy(["one", "two", "three"], getLength, getFirstLetter);
 // => {
 // => 	"3": {"o": ["one"], "t": ["two"]},
 // => 	"5": {"t": ["three"]}
@@ -306,7 +306,7 @@ recursiveGroupBy(["one", "two", "three"], getLength, getFirstLetter);
 const getLength = str => str.length;
 const getFirstLetter = str => str.slice(0, 1);
 
-recursiveGroupBy(["one", "two", "three"], getFirstLetter, getLength);
+deepGroupBy(["one", "two", "three"], getFirstLetter, getLength);
 // => {
 // => 	"o": {"3": ["one"]},
 // => 	"t": {"3": ["two"], "5": ["three"]}
@@ -347,7 +347,7 @@ const stores = [{
 const getStateName = item => item.state;
 const getCityName = item => item.city;
 
-recursiveGroupBy(stores, getStateName, getCityName);
+deepGroupBy(stores, getStateName, getCityName);
 // => {
 // => 	"SP": { "Campinas": [...], "São Paulo": [...] },
 // => 	"RJ": { "Búzios": [...], "Rio de Janeiro": [...] },
