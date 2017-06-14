@@ -1,12 +1,13 @@
 import _defaultComparator from "./_defaultComparator";
 import _customComparator from "./_customComparator";
+import isString from "lodash-es/isString";
 
 const _parseSortField = field => {
-	let isString = (typeof field === "string");
+	let useDefault = isString(field);
 
 	return {
-		prop: (isString) ? field : field.prop,
-		comparator: (isString) ? _defaultComparator : _customComparator(field.primer, field.reverse)
+		path: (useDefault) ? field : field.path,
+		comparator: (useDefault) ? _defaultComparator : _customComparator(field.primer, field.reverse)
 	};
 };
 

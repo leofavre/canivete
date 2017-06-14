@@ -1,3 +1,5 @@
+import _defaultComparator from "./internal/sort/_defaultComparator";
+
 /**
  * When used with `[].sort()`, sorts
  * the array in ascending alphabetical order.
@@ -17,9 +19,7 @@
  * musqueteers.sort(byAlphabeticalOrder);
  * // => ["Aramis", "Athos", "Porthos"]
  */
-const byAlphabeticalOrder = (...args) => {
-	let func = (strA, strB) => (strA > strB) ? +1 : (strA < strB) ? -1 : 0;
-	return (args.length === 0) ? func : func(...args);
-};
+const byAlphabeticalOrder = (...args) =>
+	(args.length === 0) ? _defaultComparator : _defaultComparator(...args);
 
 export default byAlphabeticalOrder;

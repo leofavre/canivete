@@ -4,7 +4,7 @@
  *
  * The function is curried so as to be used inside
  * the `.then()` method, passing along the resolved
- * value of the previous promise step to the next.
+ * value from the previous promise step to the next.
  *
  * Note that if a non-numeric parameter is passed,
  * the promise resolves without delay, skipping the
@@ -21,15 +21,9 @@
  * 	.then(waitInPromise(1000))
  * 	.then(doSomethingAfterOneSecond);
  */
-const waitInPromise = delay => {
-	return arg => {
-		if (Number.isFinite(delay) && delay > 0) {
-			return new Promise(resolve => {
-				setTimeout(() => resolve(arg), delay);
-			});
-		}
-		return Promise.resolve(arg);
-	};
-};
+const waitInPromise = delay => arg =>
+	(Number.isFinite(delay) && delay > 0) ?
+	new Promise(resolve => setTimeout(() => resolve(arg), delay)) :
+	Promise.resolve(arg);
 
 export default waitInPromise;

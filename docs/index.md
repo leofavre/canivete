@@ -929,7 +929,7 @@ time in milliseconds.
 
 The function is curried so as to be used inside
 the `.then()` method, passing along the resolved
-value of the previous promise step to the next.
+value from the previous promise step to the next.
 
 Note that if a non-numeric parameter is passed,
 the promise resolves without delay, skipping the
