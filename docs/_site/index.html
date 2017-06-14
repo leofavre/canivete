@@ -98,6 +98,7 @@
   <li><strong><a href="#sort">Sort</a></strong>
     <ul>
       <li><a href="#byalphabeticalorder">byAlphabeticalOrder</a></li>
+      <li><a href="#byprops">byProps</a></li>
     </ul>
   </li>
   <li><strong><a href="#string">String</a></strong>
@@ -2396,7 +2397,7 @@ Also, note that the parentheses can be ommited.</p>
 <h2 id="sort"><em>Sort</em></h2>
 
 <blockquote>
-  <p><a href="#byalphabeticalorder">byAlphabeticalOrder</a></p>
+  <p><a href="#byalphabeticalorder">byAlphabeticalOrder</a> &amp; <a href="#byprops">byProps</a></p>
 </blockquote>
 
 <h3 id="byalphabeticalorder-"><a name="byalphabeticalorder"><code class="highlighter-rouge">byAlphabeticalOrder ()</code></a></h3>
@@ -2432,6 +2433,159 @@ the array in ascending alphabetical order.</p>
 
 <span class="nx">musqueteers</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="nx">byAlphabeticalOrder</span><span class="p">);</span>
 <span class="c1">// =&gt; ["Aramis", "Athos", "Porthos"]</span>
+</code></pre>
+</div>
+
+<h3 id="byprops-fields"><a name="byprops"><code class="highlighter-rouge">byProps (...fields)</code></a></h3>
+
+<p>When used with <code class="highlighter-rouge">[].sort()</code>, returns an array of
+objects sorted by one or more criteria, passed as
+parameters.</p>
+
+<p>Each parameter can be eitheir a path to an object
+property, passed as a string, or an object containing
+a path to an object property, a boolean value indicating
+if the result should be reversed, and a function to
+process each value before sorting.</p>
+
+<h4 id="parameter-9">Parameter</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">...fields</code></td>
+      <td>String<br />SortField</td>
+      <td>The criteria used to sort the array of objects.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="sortfield">SortField</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">path</code></td>
+      <td>String</td>
+      <td>The path to the property of an object.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">primer</code></td>
+      <td>Function</td>
+      <td>The function used to process each value before sorting. <strong>optional</strong></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">reverse</code></td>
+      <td>Boolean</td>
+      <td>Whether the result should be reversed. <strong>optional</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="return-19">Return</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Array.&lt;Object&gt;</td>
+      <td>The resulting array.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="examples-9">Examples</h4>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">places</span> <span class="o">=</span> <span class="p">[{</span>
+	<span class="na">name</span><span class="p">:</span> <span class="s2">"Ipanema"</span><span class="p">,</span>
+	<span class="na">location</span><span class="p">:</span> <span class="p">{</span>
+		<span class="na">city</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
+		<span class="na">state</span><span class="p">:</span> <span class="s2">"RJ"</span>
+	<span class="p">}</span>
+<span class="p">},</span> <span class="p">{</span>
+	<span class="na">name</span><span class="p">:</span> <span class="s2">"Pedras"</span><span class="p">,</span>
+	<span class="na">location</span><span class="p">:</span> <span class="p">{</span>
+		<span class="na">city</span><span class="p">:</span> <span class="s2">"Búzios"</span><span class="p">,</span>
+		<span class="na">state</span><span class="p">:</span> <span class="s2">"RJ"</span>
+	<span class="p">}</span>
+<span class="p">},</span> <span class="p">{</span>
+	<span class="na">name</span><span class="p">:</span> <span class="s2">"Morumbi"</span><span class="p">,</span>
+	<span class="na">location</span><span class="p">:</span> <span class="p">{</span>
+		<span class="na">city</span><span class="p">:</span> <span class="s2">"São Paulo"</span><span class="p">,</span>
+		<span class="na">state</span><span class="p">:</span> <span class="s2">"SP"</span>
+	<span class="p">}</span>
+<span class="p">}];</span>
+
+<span class="nx">places</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="nx">byProps</span><span class="p">(</span><span class="s2">"name"</span><span class="p">));</span>
+<span class="c1">// Sorts places by name</span>
+<span class="c1">// =&gt; [</span>
+<span class="c1">// =&gt;	{ name: "Ipanema", [...] },</span>
+<span class="c1">// =&gt;	{ name: "Morumbi", [...] },</span>
+<span class="c1">// =&gt;	{ name: "Pedras", [...] }</span>
+<span class="c1">// =&gt; ]</span>
+
+<span class="nx">places</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="nx">byProps</span><span class="p">({</span> <span class="na">path</span><span class="p">:</span> <span class="s2">"name"</span><span class="p">,</span> <span class="na">reverse</span><span class="p">:</span> <span class="kc">true</span> <span class="p">});</span>
+<span class="c1">// Sorts places by name in reversed order</span>
+<span class="c1">// =&gt; [</span>
+<span class="c1">// =&gt;	{ name: "Pedras", [...] },</span>
+<span class="c1">// =&gt;	{ name: "Morumbi", [...] },</span>
+<span class="c1">// =&gt;	{ name: "Ipanema", [...] }</span>
+<span class="c1">// =&gt; ]</span>
+
+<span class="nx">places</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="nx">byProps</span><span class="p">(</span><span class="s2">"location.state"</span><span class="p">,</span> <span class="s2">"location.city"</span><span class="p">,</span> <span class="s2">"name"</span><span class="p">));</span>
+<span class="c1">// Sorts places by state, city and name</span>
+<span class="c1">// =&gt; [</span>
+<span class="c1">// =&gt;	{ name: "Pedras", [...] },</span>
+<span class="c1">// =&gt;	{ name: "Ipanema", [...] },</span>
+<span class="c1">// =&gt;	{ name: "Morumbi", [...] }</span>
+<span class="c1">// =&gt; ]</span>
+
+<span class="nx">places</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="nx">byProps</span><span class="p">({</span> <span class="na">path</span><span class="p">:</span> <span class="s2">"location.state"</span><span class="p">,</span> <span class="na">reverse</span><span class="p">:</span> <span class="kc">true</span> <span class="p">},</span> <span class="s2">"location.city"</span><span class="p">,</span> <span class="s2">"name"</span><span class="p">));</span>
+<span class="c1">// Sorts places by state (in reversed order), city and name</span>
+<span class="c1">// =&gt; [</span>
+<span class="c1">// =&gt;	{ name: "Morumbi", [...] },</span>
+<span class="c1">// =&gt;	{ name: "Pedras", [...] },</span>
+<span class="c1">// =&gt;	{ name: "Ipanema", [...] }</span>
+<span class="c1">// =&gt; ]</span>
+</code></pre>
+</div>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="p">[{</span>
+	<span class="na">value</span><span class="p">:</span> <span class="mi">35</span>
+<span class="p">},</span> <span class="p">{</span>
+	<span class="na">value</span><span class="p">:</span> <span class="o">-</span><span class="mi">20</span>
+<span class="p">},</span> <span class="p">{</span>
+	<span class="na">value</span><span class="p">:</span> <span class="mi">3</span>
+<span class="p">},</span> <span class="p">{</span>
+	<span class="na">value</span><span class="p">:</span> <span class="mf">0.8</span>
+<span class="p">}];</span>
+
+<span class="nx">numbers</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="nx">byProps</span><span class="p">(</span><span class="s2">"value"</span><span class="p">));</span>
+<span class="c1">// Sorts numbers by value in ascending order</span>
+<span class="c1">// =&gt; [{ value: -20 }, { value: 0.8 }, { value: 3 }, { value: 35 }]</span>
+
+<span class="nx">numbers</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="nx">byProps</span><span class="p">({</span> <span class="na">path</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">primer</span><span class="p">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span> <span class="p">}));</span>
+<span class="c1">// Sorts numbers by value in ascending order but ignoring the minus sign</span>
+<span class="c1">// =&gt; [{ value: 0.8 }, { value: 3 }, { value: -20 }, { value: 35 }]</span>
 </code></pre>
 </div>
 
@@ -2471,7 +2625,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
   </tbody>
 </table>
 
-<h4 id="return-19">Return</h4>
+<h4 id="return-20">Return</h4>
 
 <table>
   <thead>
@@ -2523,7 +2677,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
   </tbody>
 </table>
 
-<h4 id="return-20">Return</h4>
+<h4 id="return-21">Return</h4>
 
 <table>
   <thead>
@@ -2575,7 +2729,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
   </tbody>
 </table>
 
-<h4 id="return-21">Return</h4>
+<h4 id="return-22">Return</h4>
 
 <table>
   <thead>
@@ -2627,7 +2781,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
   </tbody>
 </table>
 
-<h4 id="return-22">Return</h4>
+<h4 id="return-23">Return</h4>
 
 <table>
   <thead>
@@ -2659,7 +2813,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
 
 <p>Returns the time passed since a timestamp, in milliseconds;</p>
 
-<h4 id="parameter-9">Parameter</h4>
+<h4 id="parameter-10">Parameter</h4>
 
 <table>
   <thead>
@@ -2678,7 +2832,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
   </tbody>
 </table>
 
-<h4 id="return-23">Return</h4>
+<h4 id="return-24">Return</h4>
 
 <table>
   <thead>

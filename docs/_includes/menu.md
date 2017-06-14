@@ -47,6 +47,7 @@
 
 * **[Sort](#sort)**
   * [byAlphabeticalOrder](#byalphabeticalorder)
+  * [byProps](#byprops)
 
 * **[String](#string)**
   * [afterFirst](#afterfirst)

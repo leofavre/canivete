@@ -457,7 +457,7 @@ describe("byProps", function() {
 	it("Should be able to combine primer and reverse properties of the sort field.", function() {
 		expect(unsortedNumeric.sort(byProps({
 				path: "value",
-				primer: num => Math.abs(num),
+				primer: Math.abs,
 				reverse: true
 			})))
 			.toEqual(sortedNumericAbsoluteDESC);
@@ -466,7 +466,7 @@ describe("byProps", function() {
 	it("Should be able to combine primer and reverse properties of the sort field with a composed path.", function() {
 		expect(deepUnsortedNumeric.sort(byProps({
 				path: "value.inner",
-				primer: num => Math.abs(num),
+				primer: Math.abs,
 				reverse: true
 			})))
 			.toEqual(deepSortedNumericAbsoluteDESC);
@@ -531,5 +531,9 @@ describe("byProps", function() {
 				primer: str => str.slice(1)
 			})))
 			.toEqual(sortedWordsBySecondLetterAndBeyond);
+	});
+
+	it("Should throw an error if no sort criterias are passed as parameters.", function() {
+		expect(() => unsortedWords.sort(byProps())).toThrow();
 	});
 });

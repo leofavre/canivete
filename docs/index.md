@@ -1320,7 +1320,7 @@ Also, note that the parentheses can be ommited.
 
 ## *Sort*
 
->[byAlphabeticalOrder](#byalphabeticalorder)
+>[byAlphabeticalOrder](#byalphabeticalorder) &amp;&nbsp;[byProps](#byprops)
 
 ### <a name="byalphabeticalorder">`byAlphabeticalOrder ()`</a>
 
@@ -1345,6 +1345,114 @@ musqueteers.sort(byAlphabeticalOrder());
 
 musqueteers.sort(byAlphabeticalOrder);
 // => ["Aramis", "Athos", "Porthos"]
+```
+
+### <a name="byprops">`byProps (...fields)`</a>
+
+When used with `[].sort()`, returns an array of
+objects sorted by one or more criteria, passed as
+parameters.
+
+Each parameter can be eitheir a path to an object
+property, passed as a string, or an object containing
+a path to an object property, a boolean value indicating
+if the result should be reversed, and a function to
+process each value before sorting.
+
+#### Parameter
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `...fields` | String<br>SortField | The criteria used to sort the array of objects. |
+
+#### SortField
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `path` | String | The path to the property of an object. |
+| `primer` | Function | The function used to process each value before sorting. **optional** |
+| `reverse` | Boolean | Whether the result should be reversed. **optional** |
+
+#### Return
+
+| Type | Description |
+| --- | --- |
+| Array.&lt;Object&gt; | The resulting array. |
+
+#### Examples
+
+```javascript
+let places = [{
+	name: "Ipanema",
+	location: {
+		city: "Rio de Janeiro",
+		state: "RJ"
+	}
+}, {
+	name: "Pedras",
+	location: {
+		city: "Búzios",
+		state: "RJ"
+	}
+}, {
+	name: "Morumbi",
+	location: {
+		city: "São Paulo",
+		state: "SP"
+	}
+}];
+
+places.sort(byProps("name"));
+// Sorts places by name
+// => [
+// =>	{ name: "Ipanema", [...] },
+// =>	{ name: "Morumbi", [...] },
+// =>	{ name: "Pedras", [...] }
+// => ]
+
+places.sort(byProps({ path: "name", reverse: true });
+// Sorts places by name in reversed order
+// => [
+// =>	{ name: "Pedras", [...] },
+// =>	{ name: "Morumbi", [...] },
+// =>	{ name: "Ipanema", [...] }
+// => ]
+
+places.sort(byProps("location.state", "location.city", "name"));
+// Sorts places by state, city and name
+// => [
+// =>	{ name: "Pedras", [...] },
+// =>	{ name: "Ipanema", [...] },
+// =>	{ name: "Morumbi", [...] }
+// => ]
+
+places.sort(byProps({ path: "location.state", reverse: true }, "location.city", "name"));
+// Sorts places by state (in reversed order), city and name
+// => [
+// =>	{ name: "Morumbi", [...] },
+// =>	{ name: "Pedras", [...] },
+// =>	{ name: "Ipanema", [...] }
+// => ]
+```
+
+```javascript
+let numbers = [{
+	value: 35
+}, {
+	value: -20
+}, {
+	value: 3
+}, {
+	value: 0.8
+}];
+
+numbers.sort(byProps("value"));
+// Sorts numbers by value in ascending order
+// => [{ value: -20 }, { value: 0.8 }, { value: 3 }, { value: 35 }]
+
+numbers.sort(byProps({ path: "value", primer: Math.abs }));
+// Sorts numbers by value in ascending order but ignoring the minus sign
+// => [{ value: 0.8 }, { value: 3 }, { value: -20 }, { value: 35 }]
 ```
 
 ## *String*

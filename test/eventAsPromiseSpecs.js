@@ -39,7 +39,7 @@ describe("eventAsPromise", function() {
 			eventAsPromise(image, "load", image => image.complete)
 				.then(image => expect(image.src).toBe(imageSrc))
 				.then(done);
-		}, 500);
+		}, 1000);
 	});
 
 	it(`Should throw an error when the first parameter is not a DOM element, document or window.`, function() {
