@@ -274,8 +274,9 @@ manyElements[0].className;
 ### <a name="deepgroupby">`deepGroupBy (collection, [...iteratees])`</a>
 
 Groups the contents of an array by one or more iteratees.
-Unlike Lodash [`groupBy()`](https://lodash.com/docs/4.17.4#groupBy),
-this function can create nested groups, but cannot receive
+This function is similar to Lodash
+[`groupBy()`](https://lodash.com/docs/4.17.4#groupBy),
+except it can create nested groups but cannot receive
 strings for iteratees.
 
 #### Parameters

@@ -3,8 +3,9 @@ import _simpleSet from "./internal/helpers/_simpleSet";
 
 /**
  * Groups the contents of an array by one or more iteratees.
- * Unlike Lodash [`groupBy()`](https://lodash.com/docs/4.17.4#groupBy),
- * this function can create nested groups, but cannot receive
+ * This function is similar to Lodash
+ * [`groupBy()`](https://lodash.com/docs/4.17.4#groupBy),
+ * except it can create nested groups but cannot receive
  * strings for iteratees.
  *
  * @category Collection
@@ -82,8 +83,9 @@ const deepGroupBy = (collection, ...iteratees) => {
 		result = {};
 
 	paths.forEach((path, index) => {
-		let currentValue = _simpleAt(result, path);
-		let newValue = (typeof currentValue === "undefined") ? [collection[index]] : currentValue.concat([collection[index]]);
+		let currentValue = _simpleAt(result, path) || [],
+			newValue = currentValue.concat([collection[index]]);
+
 		_simpleSet(result, path, newValue);
 	});
 
