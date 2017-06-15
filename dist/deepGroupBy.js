@@ -9,7 +9,7 @@ import _simpleSet from "./internal/helpers/_simpleSet";
  *
  * @category Collection
  * 
- * @param  {Array.<Object>} collection The original array.
+ * @param  {Array} collection The original array.
  * @param  {...Function} [...iteratees] The functions used to group the array of objects by their results.
  * @return {Object} The resulting object.
  *
