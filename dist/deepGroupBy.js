@@ -1,16 +1,15 @@
-import groupBy from "lodash-es/groupBy";
-import set from "lodash-es/set";
-import at from "lodash-es/at";
+import _simpleAt from "./internal/helpers/_simpleAt";
+import _simpleSet from "./internal/helpers/_simpleSet";
 
 /**
- * A recursive implementation of LoDash [`groupBy()`](https://lodash.com/docs/4.17.4#groupBy)
- * that can take one or more iteratees to create nested groups.
- *
- * @todo Refactor and separate functions in their own files.
+ * Groups the contents of an array by one or more iteratees.
+ * Unlike Lodash [`groupBy()`](https://lodash.com/docs/4.17.4#groupBy),
+ * this function can create nested groups, but cannot receive
+ * strings for iteratees.
  *
  * @category Collection
  * 
- * @param  {Array.<Object>} collection The array of objects.
+ * @param  {Array.<Object>} collection The original array.
  * @param  {...Function} [...iteratees] The functions used to group the array of objects by their results.
  * @return {Object} The resulting object.
  *
@@ -79,28 +78,16 @@ import at from "lodash-es/at";
  * // => }
  */
 const deepGroupBy = (collection, ...iteratees) => {
+	let paths = collection.map(value => iteratees.map(iteratee => iteratee(value))),
+		result = {};
 
-	const groupBranch = (collection, iteratee, keys = []) => (keys.length === 0) ? groupBy(collection, iteratee) : set(collection, formatPath(keys), groupBy(simpleAt(collection, keys), iteratee));
-	const getKeysAt = (collection, keys = []) => (keys.length === 0) ? Object.keys(collection) : Object.keys(simpleAt(collection, keys));
+	paths.forEach((path, index) => {
+		let currentValue = _simpleAt(result, path);
+		let newValue = (typeof currentValue === "undefined") ? [collection[index]] : currentValue.concat([collection[index]]);
+		_simpleSet(result, path, newValue);
+	});
 
-	const simpleAt = (collection, keys) => at(collection, formatPath(keys))[0];
-	const formatPath = (keys = []) => keys.join(".") || undefined;
-
-	const doGroupByRecursive = (collection, iteratees = [], keys = []) => {
-		if (iteratees.length > 0) {
-			let result = groupBranch(collection, iteratees[0], keys);
-
-			getKeysAt(result, keys).forEach(key => {
-				doGroupByRecursive(result, iteratees.slice(1), keys.concat([key]));
-			});
-
-			return result;
-		}
-
-		return collection;
-	};
-
-	return doGroupByRecursive(collection, iteratees);
+	return result;
 };
 
 export default deepGroupBy;

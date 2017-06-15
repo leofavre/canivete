@@ -250,7 +250,7 @@
   <li><strong>Typography</strong> <a href="https://www.typography.com/fonts/acropolis/overview/">Acropolis</a> and <a href="https://www.typography.com/fonts/whitney/overview/">Whitney</a> by <a href="https://www.typography.com/">Hoefler &amp; Co.</a> and <a href="https://github.com/tonsky/FiraCode">Fira Code</a> by <a href="https://github.com/tonsky/">Nikita Prokopov</a></li>
 </ul>
 
-<p>Canivete is released under The Unlicense license and depends on <a href="https://lodash.com/">LoDash</a>, released under the MIT license.</p>
+<p>Canivete is released under The Unlicense license.</p>
 
 
 				</div>
@@ -715,8 +715,10 @@ or element CSS class if a modified version is output.</p>
 
 <h3 id="deepgroupby-collection-iteratees"><a name="deepgroupby"><code class="highlighter-rouge">deepGroupBy (collection, [...iteratees])</code></a></h3>
 
-<p>A recursive implementation of LoDash <a href="https://lodash.com/docs/4.17.4#groupBy"><code class="highlighter-rouge">groupBy()</code></a>
-that can take one or more iteratees to create nested groups.</p>
+<p>Groups the contents of an array by one or more iteratees.
+Unlike Lodash <a href="https://lodash.com/docs/4.17.4#groupBy"><code class="highlighter-rouge">groupBy()</code></a>,
+this function can create nested groups, but cannot receive
+strings for iteratees.</p>
 
 <h4 id="parameters-6">Parameters</h4>
 
@@ -732,7 +734,7 @@ that can take one or more iteratees to create nested groups.</p>
     <tr>
       <td><code class="highlighter-rouge">collection</code></td>
       <td>Array.&lt;Object&gt;</td>
-      <td>The array of objects.</td>
+      <td>The original array.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">...iteratees</code></td>

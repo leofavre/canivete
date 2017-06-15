@@ -1,4 +1,4 @@
-import _isString from "../dist/internal/string/_isString";
+import _isString from "../dist/internal/helpers/_isString";
 
 describe("_isString", function() {
 	it(`"Should return false if passed anything other than a string.`, function() {
@@ -16,10 +16,13 @@ describe("_isString", function() {
 		expect(_isString(15)).toBe(false);
 		expect(_isString(15.45)).toBe(false);
 		expect(_isString(Math.PI)).toBe(false);
-
 		expect(_isString("")).toBe(true);
 		expect(_isString("345")).toBe(true);
 		expect(_isString(new String("window"))).toBe(true);
 		expect(_isString(new String("😋📋👌"))).toBe(true);
+		expect(_isString(0)).toBe(false);
+		expect(_isString(1)).toBe(false);
+		expect(_isString(true)).toBe(false);
+		expect(_isString(false)).toBe(false);
 	});
 });

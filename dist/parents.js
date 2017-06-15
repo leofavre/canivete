@@ -1,5 +1,5 @@
 import _isElementOrDocumentOrWindow from "./internal/dom/_isElementOrDocumentOrWindow";
-import _throwErrorIf from "./internal/common/_throwErrorIf";
+import _throwErrorIf from "./internal/validation/_throwErrorIf";
 
 /**
  * Returns all parents of a DOM element,

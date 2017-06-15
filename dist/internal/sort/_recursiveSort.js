@@ -1,9 +1,9 @@
-import at from "lodash-es/at";
+import _simpleAt from "../helpers/_simpleAt";
 
 const _recursiveSort = fields => (objA, objB) => {
 	let field = fields[0],
 		path = field.path,
-		result = field.comparator(at(objA, path)[0], at(objB, path)[0]),
+		result = field.comparator(_simpleAt(objA, path), _simpleAt(objB, path)),
 		nextFields = fields.slice(1);
 
 	if (result !== 0 || nextFields.length === 0) {

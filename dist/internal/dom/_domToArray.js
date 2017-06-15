@@ -1,10 +1,10 @@
-import isElement from "lodash-es/isElement";
+import _isElement from "../helpers/_isElement";
 import _isElementOrDocumentOrWindow from "./_isElementOrDocumentOrWindow";
-import _throwErrorIf from "../common/_throwErrorIf";
+import _throwErrorIf from "../validation/_throwErrorIf";
 
 const _domElementsToArray = (arg, allowDocumentAndWindow = false) => {
 	let result = arg,
-		isDom = allowDocumentAndWindow ? _isElementOrDocumentOrWindow : isElement,
+		isDom = allowDocumentAndWindow ? _isElementOrDocumentOrWindow : _isElement,
 		errorMsg = allowDocumentAndWindow ? "One or more HTMLElements are expected as the first parameter." : "One or more HTMLElements, including document or window, are expected as the first parameter.";
 
 	if (arg == null) {

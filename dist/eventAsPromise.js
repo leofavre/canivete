@@ -1,6 +1,6 @@
-import isString from "lodash-es/isString";
+import _isString from "./internal/helpers/_isString";
 import _isElementOrDocumentOrWindow from "./internal/dom/_isElementOrDocumentOrWindow";
-import _throwErrorIf from "./internal/common/_throwErrorIf";
+import _throwErrorIf from "./internal/validation/_throwErrorIf";
 
 /**
  * Transforms a DOM event into a promise.
@@ -42,7 +42,7 @@ import _throwErrorIf from "./internal/common/_throwErrorIf";
  */
 const eventAsPromise = (domEl, evtName, happened = domEl => false) => {
 	_throwErrorIf(!_isElementOrDocumentOrWindow(domEl), "An HTMLElement, document or window are expected as first parameter.");
-	_throwErrorIf(!isString(evtName), "A string is expected as second parameter.");
+	_throwErrorIf(!_isString(evtName), "A string is expected as second parameter.");
 
 	return new Promise(resolve => {
 		const dealWithEvent = evt => {

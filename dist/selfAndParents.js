@@ -1,6 +1,6 @@
 import parents from "./parents";
 import _isElementOrDocumentOrWindow from "./internal/dom/_isElementOrDocumentOrWindow";
-import _throwErrorIf from "./internal/common/_throwErrorIf";
+import _throwErrorIf from "./internal/validation/_throwErrorIf";
 
 /**
  * The same as [`parents()`](#parents), except it includes

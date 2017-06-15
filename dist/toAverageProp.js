@@ -1,5 +1,5 @@
 import toAverage from "./toAverage";
-import at from "lodash-es/at";
+import _simpleAt from "./internal/helpers/_simpleAt";
 
 /**
  * When used with `[].reduce()`, returns
@@ -58,9 +58,9 @@ const toAverageProp = path => {
 	let average;
 
 	return (prevObj, nextObj, index, arr) => {
-		average = average || arr.map(obj => at(obj, path)[0]).reduce(toAverage());
+		average = average || arr.map(obj => _simpleAt(obj, path)).reduce(toAverage());
 
-		if (Math.abs(at(prevObj, path)[0] - average) <= Math.abs(at(nextObj, path)[0] - average)) {
+		if (Math.abs(_simpleAt(prevObj, path) - average) <= Math.abs(_simpleAt(nextObj, path) - average)) {
 			return prevObj;
 		}
 		else {

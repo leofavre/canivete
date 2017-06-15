@@ -1,6 +1,6 @@
 import _formatBemRadical from "./internal/bem/_formatBemRadical";
 import _formatBemModifier from "./internal/bem/_formatBemModifier";
-import _throwErrorIf from "./internal/common/_throwErrorIf";
+import _throwErrorIf from "./internal/validation/_throwErrorIf";
 
 /**
  * Formats a CSS class according to the

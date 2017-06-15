@@ -1,4 +1,4 @@
-import at from "lodash-es/at";
+import _simpleAt from "./internal/helpers/_simpleAt";
 
 /**
  * When used with `[].reduce()`, returns
@@ -51,10 +51,10 @@ import at from "lodash-es/at";
  * // => { "city": "Florianópolis", [...] }
  */
 const toSmallestProp = path => (prevObj, nextObj) => {
-	if (at(nextObj, path)[0] >= at(prevObj, path)[0]) {
+	if (_simpleAt(nextObj, path) >= _simpleAt(prevObj, path)) {
 		return prevObj;
 	}
-	
+
 	return nextObj;
 };
 

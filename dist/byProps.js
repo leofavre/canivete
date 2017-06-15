@@ -1,6 +1,6 @@
 import _recursiveSort from "./internal/sort/_recursiveSort";
 import _parseSortFields from "./internal/sort/_parseSortFields";
-import _throwErrorIf from "./internal/common/_throwErrorIf";
+import _throwErrorIf from "./internal/validation/_throwErrorIf";
 
 /**
  * @typedef {Object} SortField

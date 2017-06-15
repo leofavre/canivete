@@ -1,10 +1,10 @@
-import isElement from "lodash-es/isElement";
-import _throwErrorIf from "../common/_throwErrorIf";
+import _isElement from "../helpers/_isElement";
+import _throwErrorIf from "../validation/_throwErrorIf";
 
 const _getCoords = (maskDef, allowElementOnly) => {
 	let maskCoords;
 
-	if (isElement(maskDef)) {
+	if (_isElement(maskDef)) {
 		maskCoords = maskDef.getBoundingClientRect();
 	}
 	else if (maskDef != null && !allowElementOnly) {

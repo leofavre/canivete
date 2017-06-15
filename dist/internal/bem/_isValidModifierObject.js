@@ -1,11 +1,11 @@
-import isString from "lodash-es/isString";
-import isBoolean from "lodash-es/isBoolean";
-import isPlainObject from "lodash-es/isPlainObject";
+import _isString from "../helpers/_isString";
+import _isBoolean from "../helpers/_isBoolean";
+import _isPlainObject from "../helpers/_isPlainObject";
 
 const _isValidModifierObject = modifierObj => {
-	return isPlainObject(modifierObj) && Object.keys(modifierObj).every(key => {
+	return _isPlainObject(modifierObj) && Object.keys(modifierObj).every(key => {
 		let prop = modifierObj[key];
-		return isBoolean(prop) || isString(prop) || Number.isFinite(prop);
+		return _isBoolean(prop) || _isString(prop) || Number.isFinite(prop);
 	});
 };
 

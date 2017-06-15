@@ -163,26 +163,4 @@ describe("deepGroupBy", function() {
 			}
 		});
 	});
-
-	it("Should still function as the native LoDash groupBy.", function() {
-		expect(deepGroupBy(["one", "two", "three"], "length")).toEqual({
-			"3": ["one", "two"],
-			"5": ["three"]
-		});
-
-		expect(deepGroupBy([6.1, 4.2, 6.3], Math.floor)).toEqual({
-			"4": [4.2],
-			"6": [6.1, 6.3]
-		});
-
-		expect(deepGroupBy(["one", "two", "three"], str => str.slice(0, 1), "length")).toEqual({
-			"o": {
-				"3": ["one"]
-			},
-			"t": {
-				"3": ["two"],
-				"5": ["three"]
-			}
-		});
-	});
 });
