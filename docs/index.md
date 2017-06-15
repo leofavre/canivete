@@ -282,7 +282,7 @@ strings for iteratees.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `collection` | Array.&lt;Object&gt; | The original array. |
+| `collection` | Array | The original array. |
 | `...iteratees` | Function | The functions used to group the array of objects by their results. **optional** |
 
 #### Return
