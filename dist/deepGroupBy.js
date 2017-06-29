@@ -5,7 +5,7 @@ import _simpleSet from "./internal/helpers/_simpleSet";
  * Groups the contents of an array by one or more iteratees.
  * This function is similar to Lodash
  * [`groupBy()`](https://lodash.com/docs/4.17.4#groupBy),
- * except it can create nested groups, but cannot receive
+ * except it can create nested groups but cannot receive
  * strings for iteratees.
  *
  * @category Collection

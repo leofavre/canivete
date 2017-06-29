@@ -10,44 +10,45 @@ import setAttr from "./setAttr";
  * @param {Object} attrObj The object with attribute name and value pairs, e.g. `{ "data-level": 42 }`.
  *
  * @example
- * let oneElement = document.querySelector("a");
+ * let oneElement = createDomElement('<p>Level 42</p>');
  * 
- * setAttr(oneElement, {
+ * setAttrs(oneElement, {
  * 	"data-level": 42,
- * 	"class": "button"
+ * 	"class": "level"
  * });
  *
  * oneElement.getAttribute("data-level");
  * // => "42"
  *
- * oneElement.getAttribute("class");
- * // => "button"
- *
  * oneElement.dataset.level;
  * // => "42"
  *
+ * oneElement.getAttribute("class");
+ * // => "level"
+ *
  * oneElement.className;
- * // => "button"
+ * // => "level"
  *
  * @example
- * let manyElements = document.querySelectorAll("a");
+ * let listElement = createDomElement('<ul><li>A</li><li>B</li><li>C</li></ul>'),
+ * 	manyElements = listElement.querySelectorAll("li");
  * 
- * setAttr(manyElements, {
+ * setAttrs(manyElements, {
  * 	"data-level": 42,
- * 	"class": "button"
+ * 	"class": "item"
  * });
  *
  * manyElements[0].getAttribute("data-level");
  * // => "42"
  *
- * manyElements[0].getAttribute("class");
- * // => "button"
- *
- * manyElements[0].dataset.level;
+ * manyElements[1].getAttribute("data-level");
  * // => "42"
  *
  * manyElements[0].className;
- * // => "button"
+ * // => "item"
+ *
+ * manyElements[1].className;
+ * // => "item"
  */
 const setAttrs = (domEls, attrObj) => {
 	Object.keys(attrObj).forEach(attrKey => setAttr(domEls, attrKey, attrObj[attrKey]));
