@@ -9,7 +9,7 @@ import removeAttr from "./removeAttr";
  * @param {Array.<string>} attrArr The array with attributes to be removed.
  *
  * @example
- * let oneElement = document.querySelector("a[data-level][class]");
+ * let oneElement = createDomElement('<p class="level" data-level="42">Level 42</p>');
  * removeAttrs(oneElement, ["data-level", "class"]);
  *
  * oneElement.getAttribute("data-level");
@@ -25,7 +25,9 @@ import removeAttr from "./removeAttr";
  * // => ""
  *
  * @example
- * let manyElements = document.querySelectorAll("a[data-level][class]");
+ * let listElement = createDomElement('<ul><li class="item" data-level="1">A</li><li class="item" data-level="2">B</li></ul>'),
+ * 	manyElements = listElement.querySelectorAll("li");
+ * 
  * removeAttrs(manyElements, ["data-level", "class"]);
  *
  * manyElements[0].getAttribute("data-level");

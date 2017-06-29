@@ -370,6 +370,8 @@ except that the presence of an attribute without
 a value will return `true` instead of an empty string,
 and the absence will return `false`.
 
+The function also treats boolean values using HTML4 syntax.
+
 #### Parameters
 
 | Name | Type | Description |
@@ -383,12 +385,26 @@ and the absence will return `false`.
 | --- | --- |
 | String<br>Boolean | The attribute value. |
 
-#### Example
+#### Examples
 
 ```javascript
-let videoEl = document.createElement("video");
-videoEl.src = "video.mp4";
-videoEl.controls = true;
+// HTML5 syntax
+let inputDomEl.innerHTML = '<input type="checkbox" checked>';
+
+getAttr(inputDomEl, "checked");
+// => true
+```
+
+```javascript
+// HTML4 syntax
+let inputDomEl.innerHTML = '<input type="checkbox" checked="checked">';
+
+getAttr(inputDomEl, "checked");
+// => true
+```
+
+```javascript
+let videoEl.innerHTML = '<video src="video.mp4" controls>';
 
 getAttr(videoEl, "src");
 // => "video.mp4"
@@ -567,6 +583,8 @@ selfAndParents(domChild);
 
 Sets an attribute for one or more DOM elements using
 native [`Element.setAttribute()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute).
+
+The function also treats boolean values using HTML4 syntax.
 
 #### Parameters
 

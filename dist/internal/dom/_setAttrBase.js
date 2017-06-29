@@ -1,6 +1,4 @@
 const _setAttrBase = (domEl, attrName, value) => {
-	attrName = (attrName === "className") ? "class" : attrName;
-
 	if (value != null && value !== "") {
 		if (typeof value === "boolean") {
 			if (value === false) {

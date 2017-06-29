@@ -10,7 +10,7 @@ import _domElementsToArray from "./internal/dom/_domElementsToArray";
  * @param {string} attrName The attribute name.
  *
  * @example
- * let oneElement = document.querySelector("a[data-level]");
+ * let oneElement = createDomElement('<p data-level="42">Level 42</p>');
  * removeAttr(oneElement, "data-level");
  *
  * oneElement.getAttribute("data-level");
@@ -20,7 +20,7 @@ import _domElementsToArray from "./internal/dom/_domElementsToArray";
  * // => undefined
  *
  * @example
- * let oneElement = document.querySelector("a[data-level]");
+ * let oneElement = createDomElement('<a class="button" href="/news">News</a>');
  * removeAttr(oneElement, "class");
  *
  * oneElement.getAttribute("class");
@@ -30,14 +30,16 @@ import _domElementsToArray from "./internal/dom/_domElementsToArray";
  * // => ""
  *
  * @example
- * let manyElements = document.querySelectorAll("a[data-level]");
- * removeAttr(manyElements, "data-level");
+ * let listElement = createDomElement('<ul><li class="item">A</li><li class="item">B</li></ul>'),
+ * 	manyElements = listElement.querySelectorAll("li");
  *
- * manyElements[0].getAttribute("data-level");
+ * removeAttr(manyElements, "class");
+ *
+ * manyElements[0].getAttribute("class");
  * // => null
  *
- * manyElements[0].dataset.level;
- * // => undefined
+ * manyElements[0].className;
+ * // => ""
  */
 const removeAttr = (domEls, attrName) => {
 	_domElementsToArray(domEls).forEach(domEl => _setAttrBase(domEl, attrName, false));

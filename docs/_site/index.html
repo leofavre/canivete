@@ -842,6 +842,8 @@ except that the presence of an attribute without
 a value will return <code class="highlighter-rouge">true</code> instead of an empty string,
 and the absence will return <code class="highlighter-rouge">false</code>.</p>
 
+<p>The function also treats boolean values using HTML4 syntax.</p>
+
 <h4 id="parameters-7">Parameters</h4>
 
 <table>
@@ -883,11 +885,25 @@ and the absence will return <code class="highlighter-rouge">false</code>.</p>
   </tbody>
 </table>
 
-<h4 id="example-3">Example</h4>
+<h4 id="examples-4">Examples</h4>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">videoEl</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"video"</span><span class="p">);</span>
-<span class="nx">videoEl</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="s2">"video.mp4"</span><span class="p">;</span>
-<span class="nx">videoEl</span><span class="p">.</span><span class="nx">controls</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// HTML5 syntax</span>
+<span class="kd">let</span> <span class="nx">inputDomEl</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">'&lt;input type="checkbox" checked&gt;'</span><span class="p">;</span>
+
+<span class="nx">getAttr</span><span class="p">(</span><span class="nx">inputDomEl</span><span class="p">,</span> <span class="s2">"checked"</span><span class="p">);</span>
+<span class="c1">// =&gt; true</span>
+</code></pre>
+</div>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// HTML4 syntax</span>
+<span class="kd">let</span> <span class="nx">inputDomEl</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">'&lt;input type="checkbox" checked="checked"&gt;'</span><span class="p">;</span>
+
+<span class="nx">getAttr</span><span class="p">(</span><span class="nx">inputDomEl</span><span class="p">,</span> <span class="s2">"checked"</span><span class="p">);</span>
+<span class="c1">// =&gt; true</span>
+</code></pre>
+</div>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">videoEl</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">'&lt;video src="video.mp4" controls&gt;'</span><span class="p">;</span>
 
 <span class="nx">getAttr</span><span class="p">(</span><span class="nx">videoEl</span><span class="p">,</span> <span class="s2">"src"</span><span class="p">);</span>
 <span class="c1">// =&gt; "video.mp4"</span>
@@ -941,7 +957,7 @@ from the closest to the most distant.</p>
   </tbody>
 </table>
 
-<h4 id="example-4">Example</h4>
+<h4 id="example-3">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">domChild</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">),</span>
 	<span class="nx">domParent</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">),</span>
@@ -987,7 +1003,7 @@ from the closest to the most distant.</p>
   </tbody>
 </table>
 
-<h4 id="examples-4">Examples</h4>
+<h4 id="examples-5">Examples</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">oneElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"a[data-level]"</span><span class="p">);</span>
 <span class="nx">removeAttr</span><span class="p">(</span><span class="nx">oneElement</span><span class="p">,</span> <span class="s2">"data-level"</span><span class="p">);</span>
@@ -1051,7 +1067,7 @@ array with attributes to be removed.</p>
   </tbody>
 </table>
 
-<h4 id="examples-5">Examples</h4>
+<h4 id="examples-6">Examples</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">oneElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"a[data-level][class]"</span><span class="p">);</span>
 <span class="nx">removeAttrs</span><span class="p">(</span><span class="nx">oneElement</span><span class="p">,</span> <span class="p">[</span><span class="s2">"data-level"</span><span class="p">,</span> <span class="s2">"class"</span><span class="p">]);</span>
@@ -1128,7 +1144,7 @@ the DOM element itself.</p>
   </tbody>
 </table>
 
-<h4 id="example-5">Example</h4>
+<h4 id="example-4">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">domChild</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">),</span>
 	<span class="nx">domParent</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">),</span>
@@ -1149,6 +1165,8 @@ the DOM element itself.</p>
 
 <p>Sets an attribute for one or more DOM elements using
 native <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute"><code class="highlighter-rouge">Element.setAttribute()</code></a>.</p>
+
+<p>The function also treats boolean values using HTML4 syntax.</p>
 
 <h4 id="parameters-10">Parameters</h4>
 
@@ -1179,7 +1197,7 @@ native <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttr
   </tbody>
 </table>
 
-<h4 id="examples-6">Examples</h4>
+<h4 id="examples-7">Examples</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">oneElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"a"</span><span class="p">);</span>
 <span class="nx">setAttr</span><span class="p">(</span><span class="nx">oneElement</span><span class="p">,</span> <span class="s2">"data-level"</span><span class="p">,</span> <span class="mi">42</span><span class="p">);</span>
@@ -1244,7 +1262,7 @@ many attributes at once.</p>
   </tbody>
 </table>
 
-<h4 id="examples-7">Examples</h4>
+<h4 id="examples-8">Examples</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">oneElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"a"</span><span class="p">);</span>
 
@@ -1336,7 +1354,7 @@ The function serves as a polyfill for
   </tbody>
 </table>
 
-<h4 id="example-6">Example</h4>
+<h4 id="example-5">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">domChild</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">),</span>
 	<span class="nx">domParent</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">),</span>
@@ -1403,7 +1421,7 @@ of target DOM elements.</p>
   </tbody>
 </table>
 
-<h4 id="example-7">Example</h4>
+<h4 id="example-6">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">oneElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"a"</span><span class="p">);</span>
 <span class="kd">let</span> <span class="nx">manyElements</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">"a"</span><span class="p">);</span>
@@ -1461,7 +1479,7 @@ of target DOM elements.</p>
   </tbody>
 </table>
 
-<h4 id="example-8">Example</h4>
+<h4 id="example-7">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">oneElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"a"</span><span class="p">);</span>
 <span class="kd">let</span> <span class="nx">manyElements</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">"a"</span><span class="p">);</span>
@@ -1521,7 +1539,7 @@ of target DOM elements.</p>
   </tbody>
 </table>
 
-<h4 id="example-9">Example</h4>
+<h4 id="example-8">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">popupButton</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">".popup__button"</span><span class="p">),</span>
 	<span class="nx">popupLayer</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">".popup__layer"</span><span class="p">);</span>
@@ -1680,7 +1698,7 @@ containing numeric values for “top”, “bottom”,
   </tbody>
 </table>
 
-<h4 id="example-10">Example</h4>
+<h4 id="example-9">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">domEl</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">);</span>
 
@@ -1783,7 +1801,7 @@ parameters are not a DOM element and a string.</p>
   </tbody>
 </table>
 
-<h4 id="examples-8">Examples</h4>
+<h4 id="examples-9">Examples</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">checkbox</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"input"</span><span class="p">);</span>
 <span class="nx">checkbox</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s2">"checkbox"</span><span class="p">;</span>
@@ -1852,7 +1870,7 @@ internal <code class="highlighter-rouge">setTimeout()</code>.</p>
   </tbody>
 </table>
 
-<h4 id="example-11">Example</h4>
+<h4 id="example-10">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="s2">"waiting"</span><span class="p">)</span>
 	<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">waitInPromise</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span>
@@ -1907,7 +1925,7 @@ randomly.</p>
   </tbody>
 </table>
 
-<h4 id="example-12">Example</h4>
+<h4 id="example-11">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">oneOutOf</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
 <span class="c1">// =&gt; true</span>
@@ -1949,7 +1967,7 @@ Also, note that the parentheses can be ommited.</p>
   </tbody>
 </table>
 
-<h4 id="example-13">Example</h4>
+<h4 id="example-12">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">].</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toAverage</span><span class="p">());</span>
 <span class="c1">// =&gt; 6</span>
@@ -2007,7 +2025,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="example-14">Example</h4>
+<h4 id="example-13">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
 	<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
@@ -2093,7 +2111,7 @@ using <code class="highlighter-rouge">toClosest()</code> can lead to unexpected 
   </tbody>
 </table>
 
-<h4 id="example-15">Example</h4>
+<h4 id="example-14">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">].</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toClosest</span><span class="p">(</span><span class="mi">6</span><span class="p">));</span>
 <span class="c1">// =&gt; 5</span>
@@ -2157,7 +2175,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="example-16">Example</h4>
+<h4 id="example-15">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
 	<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
@@ -2241,7 +2259,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="example-17">Example</h4>
+<h4 id="example-16">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
 	<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
@@ -2325,7 +2343,7 @@ formed by objects with the same set of properties.</p>
   </tbody>
 </table>
 
-<h4 id="example-18">Example</h4>
+<h4 id="example-17">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[{</span>
 	<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"Rio de Janeiro"</span><span class="p">,</span>
@@ -2387,7 +2405,7 @@ Also, note that the parentheses can be ommited.</p>
   </tbody>
 </table>
 
-<h4 id="example-19">Example</h4>
+<h4 id="example-18">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">].</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">toSum</span><span class="p">());</span>
 <span class="c1">// =&gt; 24</span>
@@ -2427,7 +2445,7 @@ the array in ascending alphabetical order.</p>
   </tbody>
 </table>
 
-<h4 id="example-20">Example</h4>
+<h4 id="example-19">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">musqueteers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Athos"</span><span class="p">,</span> <span class="s2">"Porthos"</span><span class="p">,</span> <span class="s2">"Aramis"</span><span class="p">];</span>
 
@@ -2516,7 +2534,7 @@ process each value before sorting.</p>
   </tbody>
 </table>
 
-<h4 id="examples-9">Examples</h4>
+<h4 id="examples-10">Examples</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">places</span> <span class="o">=</span> <span class="p">[{</span>
 	<span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Ipanema"</span><span class="p">,</span>
@@ -2643,7 +2661,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
   </tbody>
 </table>
 
-<h4 id="example-21">Example</h4>
+<h4 id="example-20">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">afterFirst</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
 <span class="c1">// =&gt; "lepiped"</span>
@@ -2695,7 +2713,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
   </tbody>
 </table>
 
-<h4 id="example-22">Example</h4>
+<h4 id="example-21">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">afterLast</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
 <span class="c1">// =&gt; "piped"</span>
@@ -2747,7 +2765,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
   </tbody>
 </table>
 
-<h4 id="example-23">Example</h4>
+<h4 id="example-22">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">beforeFirst</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
 <span class="c1">// =&gt; "paral"</span>
@@ -2799,7 +2817,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
   </tbody>
 </table>
 
-<h4 id="example-24">Example</h4>
+<h4 id="example-23">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">beforeLast</span><span class="p">(</span><span class="s2">"parallelepiped"</span><span class="p">,</span> <span class="s2">"le"</span><span class="p">);</span>
 <span class="c1">// =&gt; "paralle"</span>
@@ -2852,7 +2870,7 @@ If the delimiter is not found, the function returns <code class="highlighter-rou
   </tbody>
 </table>
 
-<h4 id="example-25">Example</h4>
+<h4 id="example-24">Example</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">timestamp</span> <span class="o">=</span> <span class="o">+</span><span class="k">new</span> <span class="nb">Date</span><span class="p">(),</span>
 	<span class="nx">result</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>

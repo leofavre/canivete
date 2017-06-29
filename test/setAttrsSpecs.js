@@ -1,8 +1,9 @@
+import _createDomElement from "../dist/internal/dom/_createDomElement";
 import setAttrs from "../dist/setAttrs";
 
 describe("setAttrs", function() {
 	it("Should set many attributes at once.", function() {
-		let singleHTMLElement = document.createElement("div");
+		let singleHTMLElement = _createDomElement("<div/>");
 		setAttrs(singleHTMLElement, {
 			"data-active": true,
 			"data-level": 42
@@ -17,8 +18,37 @@ describe("setAttrs", function() {
 		expect(singleHTMLElement.dataset.level).toBe("42");
 	});
 
+	it("Should set many attributes at once.", function() {
+		let oneElement = _createDomElement('<p>Level 42</p>');
+
+		setAttrs(oneElement, {
+			"data-level": 42,
+			"class": "level"
+		});
+
+		expect(oneElement.getAttribute("data-level")).toBe("42");
+		expect(oneElement.getAttribute("class")).toBe("level");
+		expect(oneElement.dataset.level).toBe("42");
+		expect(oneElement.className).toBe("level");
+	});
+
+	it("Should accept a group of DOM nodes.", function() {
+		let listElement = _createDomElement('<ul><li>A</li><li>B</li><li>C</li></ul>'),
+			manyElements = listElement.querySelectorAll("li");
+
+		setAttrs(manyElements, {
+			"data-level": 42,
+			"class": "item"
+		});
+
+		expect(manyElements[0].getAttribute("data-level")).toBe("42");
+		expect(manyElements[0].getAttribute("class")).toBe("item");
+		expect(manyElements[0].dataset.level).toBe("42");
+		expect(manyElements[0].className).toBe("item");
+	});
+
 	it("Should add the attribute name to the tag if passed true.", function() {
-		let singleHTMLElement = document.createElement("div");
+		let singleHTMLElement = _createDomElement("<div/>");
 		setAttrs(singleHTMLElement, {
 			"data-active": true
 		});
@@ -29,7 +59,7 @@ describe("setAttrs", function() {
 	});
 
 	it("Should remove the attribute name to the tag if passed false.", function() {
-		let singleHTMLElement = document.createElement("div");
+		let singleHTMLElement = _createDomElement("<div/>");
 		setAttrs(singleHTMLElement, {
 			"data-active": false
 		});
@@ -39,31 +69,9 @@ describe("setAttrs", function() {
 		expect(singleHTMLElement.dataset.active).toBe(undefined);
 	});
 
-	it("Should accept class or className.", function() {
-		let singleHTMLElement = document.createElement("div");
-		setAttrs(singleHTMLElement, {
-			"className": "button"
-		});
-
-		expect(singleHTMLElement.hasAttribute("class")).toBe(true);
-		expect(singleHTMLElement.getAttribute("class")).toBe("button");
-		expect(singleHTMLElement.className).toBe("button");
-	});
-
-	it("Should accept class or className.", function() {
-		let singleHTMLElement = document.createElement("div");
-		setAttrs(singleHTMLElement, {
-			"class": "button"
-		});
-
-		expect(singleHTMLElement.hasAttribute("class")).toBe(true);
-		expect(singleHTMLElement.getAttribute("class")).toBe("button");
-		expect(singleHTMLElement.className).toBe("button");
-	});
-
 	it("Should accept a group of DOM nodes.", function() {
-		let domElA = document.createElement("div"),
-			domElB = document.createElement("div");
+		let domElA = _createDomElement("<div/>"),
+			domElB = _createDomElement("<div/>");
 
 		setAttrs([domElA, domElB], {
 			"data-level": 42
@@ -76,8 +84,8 @@ describe("setAttrs", function() {
 	});
 
 	it("Should accept a group of DOM nodes.", function() {
-		let domElA = document.createElement("div"),
-			domElB = document.createElement("div");
+		let domElA = _createDomElement("<div/>"),
+			domElB = _createDomElement("<div/>");
 
 		domElA.className = "setAttrs";
 		domElB.className = "setAttrs";
