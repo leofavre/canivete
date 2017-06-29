@@ -10,22 +10,24 @@ import removeAttr from "./removeAttr";
  *
  * @example
  * let oneElement = createDomElement('<p class="level" data-level="42">Level 42</p>');
+ * 
  * removeAttrs(oneElement, ["data-level", "class"]);
  *
  * oneElement.getAttribute("data-level");
  * // => null
  *
- * oneElement.getAttribute("class");
- * // => null
- *
  * oneElement.dataset.level;
  * // => undefined
  *
+ * oneElement.getAttribute("class");
+ * // => null
+ * 
  * oneElement.className;
  * // => ""
  *
  * @example
- * let listElement = createDomElement('<ul><li class="item" data-level="1">A</li><li class="item" data-level="2">B</li></ul>'),
+ * let listHtml = '<ul><li class="item" data-level="1">A</li><li class="item" data-level="1">B</li></ul>',
+ * 	listElement = createDomElement(listHtml),
  * 	manyElements = listElement.querySelectorAll("li");
  * 
  * removeAttrs(manyElements, ["data-level", "class"]);
@@ -33,13 +35,13 @@ import removeAttr from "./removeAttr";
  * manyElements[0].getAttribute("data-level");
  * // => null
  *
- * manyElements[0].getAttribute("class");
+ * manyElements[1].getAttribute("data-level");
  * // => null
  *
- * manyElements[0].dataset.level;
- * // => undefined
- *
  * manyElements[0].className;
+ * // => ""
+ *
+ * manyElements[1].className;
  * // => ""
  */
 const removeAttrs = (domEls, attrArr) => {

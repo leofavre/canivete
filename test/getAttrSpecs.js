@@ -8,10 +8,9 @@ describe("getAttr", function() {
 	});
 
 	it("Should return a boolean attribute from a DOM element written in HTML4 syntax.", function() {
-		let inputElement = _createDomElement('<input type="checkbox" checked="checked">');
+		let inputElement = _createDomElement('<input type="checkbox" checked="checked"/>');
 		expect(getAttr(inputElement, "checked")).toBe(true);
 	});
-
 
 	it("Should return an attribute from a DOM element.", function() {
 		let linkElement = _createDomElement('<a href="#test">');

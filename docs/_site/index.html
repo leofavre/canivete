@@ -840,9 +840,9 @@ strings for iteratees.</p>
 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttribute"><code class="highlighter-rouge">Element.getAttribute()</code></a>,
 except that the presence of an attribute without
 a value will return <code class="highlighter-rouge">true</code> instead of an empty string,
-and the absence will return <code class="highlighter-rouge">false</code>.</p>
-
-<p>The function also treats boolean values using HTML4 syntax.</p>
+and the absence will return <code class="highlighter-rouge">false</code>. The function also
+deals with boolean values using old HTML4 syntax,
+like <code class="highlighter-rouge">&lt;option selected="selected"&gt;</code>.</p>
 
 <h4 id="parameters-7">Parameters</h4>
 
@@ -888,30 +888,30 @@ and the absence will return <code class="highlighter-rouge">false</code>.</p>
 <h4 id="examples-4">Examples</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// HTML5 syntax</span>
-<span class="kd">let</span> <span class="nx">inputDomEl</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">'&lt;input type="checkbox" checked&gt;'</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">inputElement</span> <span class="o">=</span> <span class="nx">createDomElement</span><span class="p">(</span><span class="s1">'&lt;input type="checkbox" checked&gt;'</span><span class="p">);</span>
 
-<span class="nx">getAttr</span><span class="p">(</span><span class="nx">inputDomEl</span><span class="p">,</span> <span class="s2">"checked"</span><span class="p">);</span>
+<span class="nx">getAttr</span><span class="p">(</span><span class="nx">inputElement</span><span class="p">,</span> <span class="s2">"checked"</span><span class="p">);</span>
 <span class="c1">// =&gt; true</span>
 </code></pre>
 </div>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// HTML4 syntax</span>
-<span class="kd">let</span> <span class="nx">inputDomEl</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">'&lt;input type="checkbox" checked="checked"&gt;'</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">inputElement</span> <span class="o">=</span> <span class="nx">createDomElement</span><span class="p">(</span><span class="s1">'&lt;input type="checkbox" checked="checked"/&gt;'</span><span class="p">);</span>
 
-<span class="nx">getAttr</span><span class="p">(</span><span class="nx">inputDomEl</span><span class="p">,</span> <span class="s2">"checked"</span><span class="p">);</span>
+<span class="nx">getAttr</span><span class="p">(</span><span class="nx">inputElement</span><span class="p">,</span> <span class="s2">"checked"</span><span class="p">);</span>
 <span class="c1">// =&gt; true</span>
 </code></pre>
 </div>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">videoEl</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">'&lt;video src="video.mp4" controls&gt;'</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">videoElement</span> <span class="o">=</span> <span class="nx">createDomElement</span><span class="p">(</span><span class="s1">'&lt;video src="video.mp4" controls&gt;'</span><span class="p">);</span>
 
-<span class="nx">getAttr</span><span class="p">(</span><span class="nx">videoEl</span><span class="p">,</span> <span class="s2">"src"</span><span class="p">);</span>
+<span class="nx">getAttr</span><span class="p">(</span><span class="nx">videoElement</span><span class="p">,</span> <span class="s2">"src"</span><span class="p">);</span>
 <span class="c1">// =&gt; "video.mp4"</span>
 
-<span class="nx">getAttr</span><span class="p">(</span><span class="nx">videoEl</span><span class="p">,</span> <span class="s2">"controls"</span><span class="p">);</span>
+<span class="nx">getAttr</span><span class="p">(</span><span class="nx">videoElement</span><span class="p">,</span> <span class="s2">"controls"</span><span class="p">);</span>
 <span class="c1">// =&gt; true</span>
 
-<span class="nx">getAttr</span><span class="p">(</span><span class="nx">videoEl</span><span class="p">,</span> <span class="s2">"muted"</span><span class="p">);</span>
+<span class="nx">getAttr</span><span class="p">(</span><span class="nx">videoElement</span><span class="p">,</span> <span class="s2">"muted"</span><span class="p">);</span>
 <span class="c1">// =&gt; false</span>
 </code></pre>
 </div>
@@ -976,7 +976,7 @@ from the closest to the most distant.</p>
 
 <h3 id="removeattr-domels-attrname"><a name="removeattr"><code class="highlighter-rouge">removeAttr (domEls, attrName)</code></a></h3>
 
-<p>Removes an attribute from one or more DOM elements using
+<p>Removes an attribute from one or more DOM elements using native
 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttribute"><code class="highlighter-rouge">Element.removeAttribute()</code></a>.</p>
 
 <h4 id="parameters-8">Parameters</h4>
@@ -1005,7 +1005,8 @@ from the closest to the most distant.</p>
 
 <h4 id="examples-5">Examples</h4>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">oneElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"a[data-level]"</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">oneElement</span> <span class="o">=</span> <span class="nx">createDomElement</span><span class="p">(</span><span class="s1">'&lt;p data-level="42"&gt;Level 42&lt;/p&gt;'</span><span class="p">);</span>
+
 <span class="nx">removeAttr</span><span class="p">(</span><span class="nx">oneElement</span><span class="p">,</span> <span class="s2">"data-level"</span><span class="p">);</span>
 
 <span class="nx">oneElement</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">"data-level"</span><span class="p">);</span>
@@ -1016,7 +1017,8 @@ from the closest to the most distant.</p>
 </code></pre>
 </div>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">oneElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"a[data-level]"</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">oneElement</span> <span class="o">=</span> <span class="nx">createDomElement</span><span class="p">(</span><span class="s1">'&lt;a class="button" href="/news"&gt;News&lt;/a&gt;'</span><span class="p">);</span>
+
 <span class="nx">removeAttr</span><span class="p">(</span><span class="nx">oneElement</span><span class="p">,</span> <span class="s2">"class"</span><span class="p">);</span>
 
 <span class="nx">oneElement</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">"class"</span><span class="p">);</span>
@@ -1027,14 +1029,17 @@ from the closest to the most distant.</p>
 </code></pre>
 </div>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">manyElements</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">"a[data-level]"</span><span class="p">);</span>
-<span class="nx">removeAttr</span><span class="p">(</span><span class="nx">manyElements</span><span class="p">,</span> <span class="s2">"data-level"</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">listHtml</span> <span class="o">=</span> <span class="s1">'&lt;ul&gt;&lt;li class="item"&gt;A&lt;/li&gt;&lt;li class="item"&gt;B&lt;/li&gt;&lt;/ul&gt;'</span><span class="p">;</span>
+	<span class="nx">listElement</span> <span class="o">=</span> <span class="nx">createDomElement</span><span class="p">(</span><span class="nx">listElement</span><span class="p">),</span>
+	<span class="nx">manyElements</span> <span class="o">=</span> <span class="nx">listElement</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">"li"</span><span class="p">);</span>
 
-<span class="nx">manyElements</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">"data-level"</span><span class="p">);</span>
-<span class="c1">// =&gt; null</span>
+<span class="nx">removeAttr</span><span class="p">(</span><span class="nx">manyElements</span><span class="p">,</span> <span class="s2">"class"</span><span class="p">);</span>
 
-<span class="nx">manyElements</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">level</span><span class="p">;</span>
-<span class="c1">// =&gt; undefined</span>
+<span class="nx">manyElements</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">className</span><span class="p">;</span>
+<span class="c1">// =&gt; ""</span>
+
+<span class="nx">manyElements</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">className</span><span class="p">;</span>
+<span class="c1">// =&gt; ""</span>
 </code></pre>
 </div>
 
@@ -1069,36 +1074,40 @@ array with attributes to be removed.</p>
 
 <h4 id="examples-6">Examples</h4>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">oneElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"a[data-level][class]"</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">oneElement</span> <span class="o">=</span> <span class="nx">createDomElement</span><span class="p">(</span><span class="s1">'&lt;p class="level" data-level="42"&gt;Level 42&lt;/p&gt;'</span><span class="p">);</span>
+
 <span class="nx">removeAttrs</span><span class="p">(</span><span class="nx">oneElement</span><span class="p">,</span> <span class="p">[</span><span class="s2">"data-level"</span><span class="p">,</span> <span class="s2">"class"</span><span class="p">]);</span>
 
 <span class="nx">oneElement</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">"data-level"</span><span class="p">);</span>
 <span class="c1">// =&gt; null</span>
 
-<span class="nx">oneElement</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">"class"</span><span class="p">);</span>
-<span class="c1">// =&gt; null</span>
-
 <span class="nx">oneElement</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">level</span><span class="p">;</span>
 <span class="c1">// =&gt; undefined</span>
+
+<span class="nx">oneElement</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">"class"</span><span class="p">);</span>
+<span class="c1">// =&gt; null</span>
 
 <span class="nx">oneElement</span><span class="p">.</span><span class="nx">className</span><span class="p">;</span>
 <span class="c1">// =&gt; ""</span>
 </code></pre>
 </div>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">manyElements</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">"a[data-level][class]"</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">listHtml</span> <span class="o">=</span> <span class="s1">'&lt;ul&gt;&lt;li class="item" data-level="1"&gt;A&lt;/li&gt;&lt;li class="item" data-level="1"&gt;B&lt;/li&gt;&lt;/ul&gt;'</span><span class="p">,</span>
+	<span class="nx">listElement</span> <span class="o">=</span> <span class="nx">createDomElement</span><span class="p">(</span><span class="nx">listHtml</span><span class="p">),</span>
+	<span class="nx">manyElements</span> <span class="o">=</span> <span class="nx">listElement</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">"li"</span><span class="p">);</span>
+
 <span class="nx">removeAttrs</span><span class="p">(</span><span class="nx">manyElements</span><span class="p">,</span> <span class="p">[</span><span class="s2">"data-level"</span><span class="p">,</span> <span class="s2">"class"</span><span class="p">]);</span>
 
 <span class="nx">manyElements</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">"data-level"</span><span class="p">);</span>
 <span class="c1">// =&gt; null</span>
 
-<span class="nx">manyElements</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">"class"</span><span class="p">);</span>
+<span class="nx">manyElements</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">"data-level"</span><span class="p">);</span>
 <span class="c1">// =&gt; null</span>
 
-<span class="nx">manyElements</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">level</span><span class="p">;</span>
-<span class="c1">// =&gt; undefined</span>
-
 <span class="nx">manyElements</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">className</span><span class="p">;</span>
+<span class="c1">// =&gt; ""</span>
+
+<span class="nx">manyElements</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">className</span><span class="p">;</span>
 <span class="c1">// =&gt; ""</span>
 </code></pre>
 </div>
@@ -1163,10 +1172,8 @@ the DOM element itself.</p>
 
 <h3 id="setattr-domels-attrname-value"><a name="setattr"><code class="highlighter-rouge">setAttr (domEls, attrName, value)</code></a></h3>
 
-<p>Sets an attribute for one or more DOM elements using
-native <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute"><code class="highlighter-rouge">Element.setAttribute()</code></a>.</p>
-
-<p>The function also treats boolean values using HTML4 syntax.</p>
+<p>Sets an attribute for one or more DOM elements using native
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute"><code class="highlighter-rouge">Element.setAttribute()</code></a>.</p>
 
 <h4 id="parameters-10">Parameters</h4>
 
@@ -1199,7 +1206,8 @@ native <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttr
 
 <h4 id="examples-7">Examples</h4>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">oneElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"a"</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">oneElement</span> <span class="o">=</span> <span class="nx">createDomElement</span><span class="p">(</span><span class="s1">'&lt;p&gt;Level 42&lt;/p&gt;'</span><span class="p">);</span>
+
 <span class="nx">setAttr</span><span class="p">(</span><span class="nx">oneElement</span><span class="p">,</span> <span class="s2">"data-level"</span><span class="p">,</span> <span class="mi">42</span><span class="p">);</span>
 
 <span class="nx">oneElement</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">"data-level"</span><span class="p">);</span>
@@ -1210,7 +1218,8 @@ native <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttr
 </code></pre>
 </div>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">oneElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"a"</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">oneElement</span> <span class="o">=</span> <span class="nx">createDomElement</span><span class="p">(</span><span class="s1">'&lt;a href="/news"&gt;News&lt;/a&gt;'</span><span class="p">);</span>
+
 <span class="nx">setAttr</span><span class="p">(</span><span class="nx">oneElement</span><span class="p">,</span> <span class="s2">"class"</span><span class="p">,</span> <span class="s2">"button"</span><span class="p">);</span>
 
 <span class="nx">oneElement</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">"class"</span><span class="p">);</span>
@@ -1221,14 +1230,16 @@ native <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttr
 </code></pre>
 </div>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">manyElements</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">"a"</span><span class="p">);</span>
-<span class="nx">setAttr</span><span class="p">(</span><span class="nx">manyElements</span><span class="p">,</span> <span class="s2">"data-level"</span><span class="p">,</span> <span class="mi">42</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">listElement</span> <span class="o">=</span> <span class="nx">createDomElement</span><span class="p">(</span><span class="s1">'&lt;ul&gt;&lt;li&gt;A&lt;/li&gt;&lt;li&gt;B&lt;/li&gt;&lt;li&gt;C&lt;/li&gt;&lt;/ul&gt;'</span><span class="p">),</span>
+	<span class="nx">manyElements</span> <span class="o">=</span> <span class="nx">listElement</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">"li"</span><span class="p">);</span>
 
-<span class="nx">manyElements</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">"data-level"</span><span class="p">);</span>
-<span class="c1">// =&gt; "42"</span>
+<span class="nx">setAttr</span><span class="p">(</span><span class="nx">manyElements</span><span class="p">,</span> <span class="s2">"class"</span><span class="p">,</span> <span class="s2">"item"</span><span class="p">);</span>
 
-<span class="nx">manyElements</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">level</span><span class="p">;</span>
-<span class="c1">// =&gt; "42"</span>
+<span class="nx">manyElements</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">className</span><span class="p">;</span>
+<span class="c1">// =&gt; "item"</span>
+
+<span class="nx">manyElements</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">className</span><span class="p">;</span>
+<span class="c1">// =&gt; "item"</span>
 </code></pre>
 </div>
 
@@ -1264,45 +1275,46 @@ many attributes at once.</p>
 
 <h4 id="examples-8">Examples</h4>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">oneElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"a"</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">oneElement</span> <span class="o">=</span> <span class="nx">createDomElement</span><span class="p">(</span><span class="s1">'&lt;p&gt;Level 42&lt;/p&gt;'</span><span class="p">);</span>
 
-<span class="nx">setAttr</span><span class="p">(</span><span class="nx">oneElement</span><span class="p">,</span> <span class="p">{</span>
+<span class="nx">setAttrs</span><span class="p">(</span><span class="nx">oneElement</span><span class="p">,</span> <span class="p">{</span>
 	<span class="s2">"data-level"</span><span class="p">:</span> <span class="mi">42</span><span class="p">,</span>
-	<span class="s2">"class"</span><span class="p">:</span> <span class="s2">"button"</span>
+	<span class="s2">"class"</span><span class="p">:</span> <span class="s2">"level"</span>
 <span class="p">});</span>
 
 <span class="nx">oneElement</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">"data-level"</span><span class="p">);</span>
 <span class="c1">// =&gt; "42"</span>
 
-<span class="nx">oneElement</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">"class"</span><span class="p">);</span>
-<span class="c1">// =&gt; "button"</span>
-
 <span class="nx">oneElement</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">level</span><span class="p">;</span>
 <span class="c1">// =&gt; "42"</span>
 
+<span class="nx">oneElement</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">"class"</span><span class="p">);</span>
+<span class="c1">// =&gt; "level"</span>
+
 <span class="nx">oneElement</span><span class="p">.</span><span class="nx">className</span><span class="p">;</span>
-<span class="c1">// =&gt; "button"</span>
+<span class="c1">// =&gt; "level"</span>
 </code></pre>
 </div>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">manyElements</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">"a"</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">listElement</span> <span class="o">=</span> <span class="nx">createDomElement</span><span class="p">(</span><span class="s1">'&lt;ul&gt;&lt;li&gt;A&lt;/li&gt;&lt;li&gt;B&lt;/li&gt;&lt;li&gt;C&lt;/li&gt;&lt;/ul&gt;'</span><span class="p">),</span>
+	<span class="nx">manyElements</span> <span class="o">=</span> <span class="nx">listElement</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">"li"</span><span class="p">);</span>
 
-<span class="nx">setAttr</span><span class="p">(</span><span class="nx">manyElements</span><span class="p">,</span> <span class="p">{</span>
+<span class="nx">setAttrs</span><span class="p">(</span><span class="nx">manyElements</span><span class="p">,</span> <span class="p">{</span>
 	<span class="s2">"data-level"</span><span class="p">:</span> <span class="mi">42</span><span class="p">,</span>
-	<span class="s2">"class"</span><span class="p">:</span> <span class="s2">"button"</span>
+	<span class="s2">"class"</span><span class="p">:</span> <span class="s2">"item"</span>
 <span class="p">});</span>
 
 <span class="nx">manyElements</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">"data-level"</span><span class="p">);</span>
 <span class="c1">// =&gt; "42"</span>
 
-<span class="nx">manyElements</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">"class"</span><span class="p">);</span>
-<span class="c1">// =&gt; "button"</span>
-
-<span class="nx">manyElements</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">level</span><span class="p">;</span>
+<span class="nx">manyElements</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">"data-level"</span><span class="p">);</span>
 <span class="c1">// =&gt; "42"</span>
 
 <span class="nx">manyElements</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">className</span><span class="p">;</span>
-<span class="c1">// =&gt; "button"</span>
+<span class="c1">// =&gt; "item"</span>
+
+<span class="nx">manyElements</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">className</span><span class="p">;</span>
+<span class="c1">// =&gt; "item"</span>
 </code></pre>
 </div>
 

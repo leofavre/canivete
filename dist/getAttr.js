@@ -5,9 +5,9 @@ import _isBooleanAttribute from "./internal/dom/_isBooleanAttribute";
  * [`Element.getAttribute()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttribute),
  * except that the presence of an attribute without
  * a value will return `true` instead of an empty string,
- * and the absence will return `false`.
- * 
- * The function also deals with boolean values using old HTML4 syntax.
+ * and the absence will return `false`. The function also
+ * deals with boolean values using old HTML4 syntax,
+ * like `<option selected="selected">`.
  *
  * @category DOM
  * 
@@ -24,7 +24,7 @@ import _isBooleanAttribute from "./internal/dom/_isBooleanAttribute";
  *
  * @example
  * // HTML4 syntax
- * let inputElement = createDomElement('<input type="checkbox" checked="checked">');
+ * let inputElement = createDomElement('<input type="checkbox" checked="checked"/>');
  *
  * getAttr(inputElement, "checked");
  * // => true

@@ -2,8 +2,8 @@ import _setAttrBase from "./internal/dom/_setAttrBase";
 import _domElementsToArray from "./internal/dom/_domElementsToArray";
 
 /**
- * Sets an attribute for one or more DOM elements using
- * native [`Element.setAttribute()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute).
+ * Sets an attribute for one or more DOM elements using native
+ * [`Element.setAttribute()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute).
  *
  * @category DOM
  * @param {(HTMLElement|HTMLCollection|NodeList|Array.<HTMLElement>|Set.<HTMLElement>)} domEls One or more DOM elements.
@@ -12,6 +12,7 @@ import _domElementsToArray from "./internal/dom/_domElementsToArray";
  *
  * @example
  * let oneElement = createDomElement('<p>Level 42</p>');
+ * 
  * setAttr(oneElement, "data-level", 42);
  *
  * oneElement.getAttribute("data-level");
@@ -22,6 +23,7 @@ import _domElementsToArray from "./internal/dom/_domElementsToArray";
  *
  * @example
  * let oneElement = createDomElement('<a href="/news">News</a>');
+ * 
  * setAttr(oneElement, "class", "button");
  *
  * oneElement.getAttribute("class");
@@ -36,10 +38,10 @@ import _domElementsToArray from "./internal/dom/_domElementsToArray";
  * 
  * setAttr(manyElements, "class", "item");
  *
- * manyElements[0].getAttribute("class");
+ * manyElements[0].className;
  * // => "item"
  *
- * manyElements[0].className;
+ * manyElements[1].className;
  * // => "item"
  */
 const setAttr = (domEls, attrName, value) => {

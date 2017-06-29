@@ -368,9 +368,9 @@ Gets a DOM element attribute using native
 [`Element.getAttribute()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttribute),
 except that the presence of an attribute without
 a value will return `true` instead of an empty string,
-and the absence will return `false`.
-
-The function also treats boolean values using HTML4 syntax.
+and the absence will return `false`. The function also
+deals with boolean values using old HTML4 syntax,
+like `<option selected="selected">`.
 
 #### Parameters
 
@@ -389,30 +389,30 @@ The function also treats boolean values using HTML4 syntax.
 
 ```javascript
 // HTML5 syntax
-let inputDomEl.innerHTML = '<input type="checkbox" checked>';
+let inputElement = createDomElement('<input type="checkbox" checked>');
 
-getAttr(inputDomEl, "checked");
+getAttr(inputElement, "checked");
 // => true
 ```
 
 ```javascript
 // HTML4 syntax
-let inputDomEl.innerHTML = '<input type="checkbox" checked="checked">';
+let inputElement = createDomElement('<input type="checkbox" checked="checked"/>');
 
-getAttr(inputDomEl, "checked");
+getAttr(inputElement, "checked");
 // => true
 ```
 
 ```javascript
-let videoEl.innerHTML = '<video src="video.mp4" controls>';
+let videoElement = createDomElement('<video src="video.mp4" controls>');
 
-getAttr(videoEl, "src");
+getAttr(videoElement, "src");
 // => "video.mp4"
 
-getAttr(videoEl, "controls");
+getAttr(videoElement, "controls");
 // => true
 
-getAttr(videoEl, "muted");
+getAttr(videoElement, "muted");
 // => false
 ```
 
@@ -452,7 +452,7 @@ parents(domChild);
 
 ### <a name="removeattr">`removeAttr (domEls, attrName)`</a>
 
-Removes an attribute from one or more DOM elements using
+Removes an attribute from one or more DOM elements using native
 [`Element.removeAttribute()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttribute).
 
 #### Parameters
@@ -465,7 +465,8 @@ Removes an attribute from one or more DOM elements using
 #### Examples
 
 ```javascript
-let oneElement = document.querySelector("a[data-level]");
+let oneElement = createDomElement('<p data-level="42">Level 42</p>');
+
 removeAttr(oneElement, "data-level");
 
 oneElement.getAttribute("data-level");
@@ -476,7 +477,8 @@ oneElement.dataset.level;
 ```
 
 ```javascript
-let oneElement = document.querySelector("a[data-level]");
+let oneElement = createDomElement('<a class="button" href="/news">News</a>');
+
 removeAttr(oneElement, "class");
 
 oneElement.getAttribute("class");
@@ -487,14 +489,17 @@ oneElement.className;
 ```
 
 ```javascript
-let manyElements = document.querySelectorAll("a[data-level]");
-removeAttr(manyElements, "data-level");
+let listHtml = '<ul><li class="item">A</li><li class="item">B</li></ul>';
+	listElement = createDomElement(listElement),
+	manyElements = listElement.querySelectorAll("li");
 
-manyElements[0].getAttribute("data-level");
-// => null
+removeAttr(manyElements, "class");
 
-manyElements[0].dataset.level;
-// => undefined
+manyElements[0].className;
+// => ""
+
+manyElements[1].className;
+// => ""
 ```
 
 ### <a name="removeattrs">`removeAttrs (domEls, attrArr)`</a>
@@ -512,36 +517,40 @@ array with attributes to be removed.
 #### Examples
 
 ```javascript
-let oneElement = document.querySelector("a[data-level][class]");
+let oneElement = createDomElement('<p class="level" data-level="42">Level 42</p>');
+
 removeAttrs(oneElement, ["data-level", "class"]);
 
 oneElement.getAttribute("data-level");
 // => null
 
-oneElement.getAttribute("class");
-// => null
-
 oneElement.dataset.level;
 // => undefined
+
+oneElement.getAttribute("class");
+// => null
 
 oneElement.className;
 // => ""
 ```
 
 ```javascript
-let manyElements = document.querySelectorAll("a[data-level][class]");
+let listHtml = '<ul><li class="item" data-level="1">A</li><li class="item" data-level="1">B</li></ul>',
+	listElement = createDomElement(listHtml),
+	manyElements = listElement.querySelectorAll("li");
+
 removeAttrs(manyElements, ["data-level", "class"]);
 
 manyElements[0].getAttribute("data-level");
 // => null
 
-manyElements[0].getAttribute("class");
+manyElements[1].getAttribute("data-level");
 // => null
 
-manyElements[0].dataset.level;
-// => undefined
-
 manyElements[0].className;
+// => ""
+
+manyElements[1].className;
 // => ""
 ```
 
@@ -581,10 +590,8 @@ selfAndParents(domChild);
 
 ### <a name="setattr">`setAttr (domEls, attrName, value)`</a>
 
-Sets an attribute for one or more DOM elements using
-native [`Element.setAttribute()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute).
-
-The function also treats boolean values using HTML4 syntax.
+Sets an attribute for one or more DOM elements using native
+[`Element.setAttribute()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute).
 
 #### Parameters
 
@@ -597,7 +604,8 @@ The function also treats boolean values using HTML4 syntax.
 #### Examples
 
 ```javascript
-let oneElement = document.querySelector("a");
+let oneElement = createDomElement('<p>Level 42</p>');
+
 setAttr(oneElement, "data-level", 42);
 
 oneElement.getAttribute("data-level");
@@ -608,7 +616,8 @@ oneElement.dataset.level;
 ```
 
 ```javascript
-let oneElement = document.querySelector("a");
+let oneElement = createDomElement('<a href="/news">News</a>');
+
 setAttr(oneElement, "class", "button");
 
 oneElement.getAttribute("class");
@@ -619,14 +628,16 @@ oneElement.className;
 ```
 
 ```javascript
-let manyElements = document.querySelectorAll("a");
-setAttr(manyElements, "data-level", 42);
+let listElement = createDomElement('<ul><li>A</li><li>B</li><li>C</li></ul>'),
+	manyElements = listElement.querySelectorAll("li");
 
-manyElements[0].getAttribute("data-level");
-// => "42"
+setAttr(manyElements, "class", "item");
 
-manyElements[0].dataset.level;
-// => "42"
+manyElements[0].className;
+// => "item"
+
+manyElements[1].className;
+// => "item"
 ```
 
 ### <a name="setattrs">`setAttrs (domEls, attrObj)`</a>
@@ -645,45 +656,46 @@ many attributes at once.
 #### Examples
 
 ```javascript
-let oneElement = document.querySelector("a");
+let oneElement = createDomElement('<p>Level 42</p>');
 
-setAttr(oneElement, {
+setAttrs(oneElement, {
 	"data-level": 42,
-	"class": "button"
+	"class": "level"
 });
 
 oneElement.getAttribute("data-level");
 // => "42"
 
-oneElement.getAttribute("class");
-// => "button"
-
 oneElement.dataset.level;
 // => "42"
 
+oneElement.getAttribute("class");
+// => "level"
+
 oneElement.className;
-// => "button"
+// => "level"
 ```
 
 ```javascript
-let manyElements = document.querySelectorAll("a");
+let listElement = createDomElement('<ul><li>A</li><li>B</li><li>C</li></ul>'),
+	manyElements = listElement.querySelectorAll("li");
 
-setAttr(manyElements, {
+setAttrs(manyElements, {
 	"data-level": 42,
-	"class": "button"
+	"class": "item"
 });
 
 manyElements[0].getAttribute("data-level");
 // => "42"
 
-manyElements[0].getAttribute("class");
-// => "button"
-
-manyElements[0].dataset.level;
+manyElements[1].getAttribute("data-level");
 // => "42"
 
 manyElements[0].className;
-// => "button"
+// => "item"
+
+manyElements[1].className;
+// => "item"
 ```
 
 ## *Event*

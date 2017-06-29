@@ -20,11 +20,11 @@ import setAttr from "./setAttr";
  * oneElement.getAttribute("data-level");
  * // => "42"
  *
- * oneElement.getAttribute("class");
- * // => "level"
- *
  * oneElement.dataset.level;
  * // => "42"
+ *
+ * oneElement.getAttribute("class");
+ * // => "level"
  *
  * oneElement.className;
  * // => "level"
@@ -41,13 +41,13 @@ import setAttr from "./setAttr";
  * manyElements[0].getAttribute("data-level");
  * // => "42"
  *
- * manyElements[0].getAttribute("class");
- * // => "item"
- *
- * manyElements[0].dataset.level;
+ * manyElements[1].getAttribute("data-level");
  * // => "42"
  *
  * manyElements[0].className;
+ * // => "item"
+ *
+ * manyElements[1].className;
  * // => "item"
  */
 const setAttrs = (domEls, attrObj) => {
