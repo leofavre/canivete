@@ -823,7 +823,7 @@ popupButton.addEventListener("click", evt => {
 
 ## *Geometry*
 
->[getClippingInfo](#getclippinginfo)
+>[getClippingInfo](#getclippinginfo) &amp;&nbsp;[getDistanceBetweenCoords](#getdistancebetweencoords)
 
 ### <a name="getclippinginfo">`getClippingInfo (domEl, [maskDef])`</a>
 
@@ -899,6 +899,48 @@ info.isPartiallyVisible;
 
 info.isInvisible;
 // => false
+```
+
+### <a name="getdistancebetweencoords">`getDistanceBetweenCoords (coordA, coordB)`</a>
+
+Calculates and returns the distance between two points,
+given their cartesian coordinates, represented, each one,
+by an array of numbers.
+
+For example, the point in a plane A(x, y) should be passed
+to the function as the array [x, y]. Likewise, the point in
+3D space A(x, y, z) should be passed as [x, y, z].
+
+The function can deal with cartesian coordinates in
+[*n*-dimensional spaces](https://en.wikipedia.org/wiki/Euclidean_distance#n_dimensions).
+
+#### Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `coordA` | Array.&lt;Number&gt; | A cartesian coordinate represented as an array. |
+| `coordB` | Array.&lt;Number&gt; | A cartesian coordinate represented as an array. |
+
+#### Return
+
+| Type | Description |
+| --- | --- |
+| Number | The distance between the two cartesian coordinates. |
+
+#### Example
+
+```javascript
+getDistanceBetweenCoords([0, 0], [3, 4]);
+// => 5
+
+getDistanceBetweenCoords([2, 1], [5, 5]);
+// => 5
+
+getDistanceBetweenCoords([2, 1, 8], [5, 5, 0]);
+// => 9.433981132056603
+
+getDistanceBetweenCoords([2], [5]);
+// => 3
 ```
 
 ## *Promise*
