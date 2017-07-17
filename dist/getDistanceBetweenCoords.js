@@ -32,10 +32,12 @@ import _throwErrorIf from "./internal/validation/_throwErrorIf";
  * // => 3
  */
 const getDistanceBetweenCoords = (coordA, coordB) => {
-	let areParamsValid = Array.from(arguments)
-		.every(coord => Array.isArray(coord) && coord.every(Number.isFinite) && coor.length === coordA.length);
+	let areParamsValid = [coordA, coordB]
+		.every(coord => Array.isArray(coord) &&
+			coord.every(Number.isFinite) &&
+			coord.length === coordA.length);
 
-	_throwErrorIf(!areParamsValid, "Two arrays of numbers with the same length are expected as parameters");
+	_throwErrorIf(!areParamsValid, "Two arrays of numbers with the same length, representing cartesian coordinates, are expected as parameters.");
 
 	return Math.sqrt(coordA
 		.map((coord, index) => Math.pow(coord - coordB[index], 2))
