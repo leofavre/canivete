@@ -908,18 +908,18 @@ given their cartesian coordinates, represented, each one,
 by an array of numbers.
 
 For example, the point in a plane A(x, y) should be passed
-to the function as the array [x, y]. Likewise, the point in
+to the function as an array [x, y]. Likewise, the point in
 3D space A(x, y, z) should be passed as [x, y, z].
 
-The function can deal with cartesian coordinates in
-[*n*-dimensional spaces](https://en.wikipedia.org/wiki/Euclidean_distance#n_dimensions).
+The function deals with cartesian coordinates in
+[n-dimensional spaces](https://en.wikipedia.org/wiki/Euclidean_distance#n_dimensions).
 
 #### Parameters
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `coordA` | Array.&lt;Number&gt; | A cartesian coordinate represented as an array. |
-| `coordB` | Array.&lt;Number&gt; | A cartesian coordinate represented as an array. |
+| `coordA` | Array.&lt;Number&gt; | An array representing a cartesian coordinate. |
+| `coordB` | Array.&lt;Number&gt; | An array representing a cartesian coordinate. |
 
 #### Return
 

@@ -7,15 +7,15 @@ import _throwErrorIf from "./internal/validation/_throwErrorIf";
  * by an array of numbers.
  *
  * For example, the point in a plane A(x, y) should be passed
- * to the function as the array [x, y]. Likewise, the point in
+ * to the function as an array [x, y]. Likewise, the point in
  * 3D space A(x, y, z) should be passed as [x, y, z].
  *
- * The function can deal with cartesian coordinates in
+ * The function deals with cartesian coordinates in
  * [n-dimensional spaces](https://en.wikipedia.org/wiki/Euclidean_distance#n_dimensions).
  *
  * @category Geometry
- * @param {Array.<number>} coordA A cartesian coordinate represented as an array.
- * @param {Array.<number>} coordB A cartesian coordinate represented as an array.
+ * @param {Array.<number>} coordA An array representing a cartesian coordinate.
+ * @param {Array.<number>} coordB An array representing a cartesian coordinate.
  * @return {number} The distance between the two cartesian coordinates.
  *
  * @example
