@@ -28,6 +28,7 @@
 
 * **[Geometry](#geometry)**
   * [getClippingInfo](#getclippinginfo)
+  * [getDistanceBetweenCoords](#getdistancebetweencoords)
 
 * **[Promise](#promise)**
   * [eventAsPromise](#eventaspromise)

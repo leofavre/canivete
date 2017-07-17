@@ -1,6 +1,6 @@
 {
   "name": "canivete",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "Canivete Javascript toolkit",
   "scripts": {
     "test": "mkdir -p ./test/temp && rollup -c rollup.test.config.js && karma start && rm -r ./test/temp",
