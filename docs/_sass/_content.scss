@@ -10,6 +10,24 @@
 
 	}
 
+	&__logo {
+		display: block;
+		height: $grid * 16;
+		margin-top: $grid;
+		margin-left: -3.25rem;
+
+		@media #{$content-touches-menu} {
+			margin-top: $grid * 4;
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: $grid * -2;
+		}
+
+		@media #{$smaller-than-landscape-phone} {
+			height: 65.45454545vw;
+		}
+	}
+
 	&__main h2 {
 		position: relative;
 		left: ($grid * -3);
@@ -687,14 +705,14 @@
 .content__intro {
 	@media #{$bigger-than-landscape-tablet} {
 		> *:nth-child(1), {
-			margin-top: 0;
+			// margin-top: 0;
 		}
 	}
 
 	h2 {
 		position: relative;
 		display: block;
-		margin: ($grid * 4) 0 -0.25rem;
+		margin: ($grid * 2) 0 -0.25rem;
 		padding: ($grid + 0.25rem) 0 0;
 		height: auto;
 		left: -0.5rem;
@@ -716,73 +734,13 @@
 		}
 	}
 
-	#about ~ p + p + p + p {
-		@extend %subtitle;
-		margin-top: 0;
-		margin-bottom: 0;
-		font-size: 1.75rem;
-		padding-top: 0.3125rem;
-		padding-bottom: 1rem;
-		top: 0.625rem;
-		word-spacing: normal;
-
-		@media #{$bigger-than-big-screen} {
-			padding-top: 5px;
-		}
-
-		a {
-			background-image: none;
-			color: $button-color;
-
-			&:hover,
-			&:active {
-				background: none;
-				color: $button-hover-color;
-			}
-
-			&:hover {
-				@media (hover: none) { color: $button-color; }
-			}
-
-			&:active {
-				@media (hover: none) { color: $button-hover-color; }
-			}
-
-			&::before {
-				content: "";
-				position: relative;
-				top: -0.375rem;
-				display: inline-block;
-				vertical-align: middle;
-				margin-right: 0.4375rem;
-				width: $grid * 2;
-				height: $grid * 2;
-				background: $button-color url("../media/github.svg");
-				background-size: cover;
-			}
-
-			&:hover::before,
-			&:active::before {
-				background-color: $button-hover-color;
-			}
-
-			&:hover::before {
-				@media (hover: none) { background-color: $button-color; }
-			}
-
-			&:active::before {
-				@media (hover: none) { background-color: $button-hover-color; }
-			}
-		}
-	}
-
 	h2 > * {
 		position: static;
 	}
 
 	h3 {
 		@extend %subtitle;
-		margin-top: $grid * 3;
+		margin-top: $grid;
 		margin-bottom: ($grid * 2) - 0.625rem;
 		padding-top: ($grid * 1) + 0.625rem;
 		word-spacing: normal;
@@ -866,6 +824,40 @@
 			display: inline-block;
 			width: 1.1875rem;
 			text-indent: 0;
+		}
+	}
+
+	a[href*="github.com/leofavre/canivete"] {
+		display: inline-block;
+		padding: 0.75rem 1rem 0.75rem 3.75rem;
+		background: $text-color;
+		color: #fff;
+		font-weight: 600;
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0.8rem;
+			display: block;
+			vertical-align: middle;
+			width: 2.35rem;
+			height: 100%;
+			background: url(../media/github.svg) no-repeat center;
+			background-size: contain;
+		}
+
+		&:hover,
+		&:active {
+			background-color: $logo-hover-color;
+		}
+
+		&:hover {
+			@media (hover: none) { background-color: transparent; }
+		}
+
+		&:active {
+			@media (hover: none) { background-color: $logo-hover-color; }
 		}
 	}
 }

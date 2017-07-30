@@ -170,17 +170,33 @@ function scrollToChapter(evt) {
 }
 
 function markNav() {
-	let hash = getHash(getCurrentlyReadableChapter());
-	let markedNavButton = getNavButtonByHash(hash);
 	$(navButtons).removeClass("selected");
-	$(markedNavButton).addClass("selected");
+
+	let currentlyReadableChapter = getCurrentlyReadableChapter();
+
+	if (currentlyReadableChapter) {
+		let hash = getHash(currentlyReadableChapter);
+		let markedNavButton = getNavButtonByHash(hash);
+		$(markedNavButton).addClass("selected");
+	}
 }
 
 function markBrowser() {
-	let hash = `#${getHash(getCurrentlyReadableChapter())}`;
+	let currentlyReadableChapter = getCurrentlyReadableChapter();
 
-	if (document.location.hash !== hash && history.replaceState) {
-		history.replaceState(null, null, hash);
+	if (history.replaceState) {
+		if (currentlyReadableChapter) {
+			let hash = `#${getHash(currentlyReadableChapter)}`;
+
+			if (document.location.hash !== hash) {
+				history.replaceState(null, null, hash);
+			}
+		}
+		else {
+			if (document.location.hash !== "") {
+				history.replaceState(null, null, document.location.origin + document.location.pathname);
+			}
+		}
 	}
 }
 
