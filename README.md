@@ -1,3 +1,5 @@
+![](http://canivete.leofavre.com/media/canivete.svg)
+
 # Canivete ![](https://travis-ci.org/leofavre/canivete.svg?branch=master)
 
 **[Documentation](http://canivete.leofavre.com/)**
