@@ -16,7 +16,7 @@
 		margin-top: $grid;
 		margin-left: -3.25rem;
 
-		@media #{$content-touches-menu} {
+		@media #{$smaller-than-landscape-tablet} {
 			margin-top: $grid * 4;
 			margin-left: auto;
 			margin-right: auto;

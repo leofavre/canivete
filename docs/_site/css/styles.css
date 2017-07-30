@@ -325,7 +325,7 @@ html.mode--local-scroll {
     height: 24rem;
     margin-top: 1.5rem;
     margin-left: -3.25rem; }
-    @media only screen and (max-width: 64rem) {
+    @media only screen and (max-width: 1023px) {
       .content__logo {
         margin-top: 6rem;
         margin-left: auto;
