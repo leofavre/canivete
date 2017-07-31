@@ -3,7 +3,7 @@ import _simpleAt from "./internal/helpers/_simpleAt";
 /**
  * When used with `[].reduce()`, returns
  * the object in an array in which a specific property
- * has the largest property.
+ * has the largest value.
  *
  * If two or more results are found, the first one
  * is returned.
