@@ -853,7 +853,7 @@
 		}
 
 		&:hover {
-			@media (hover: none) { background-color: transparent; }
+			@media (hover: none) { background-color: $text-color; }
 		}
 
 		&:active {

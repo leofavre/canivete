@@ -983,7 +983,7 @@ html.mode--local-scroll {
     background-color: #c02e75; }
   @media (hover: none) {
     .content__intro a[href*="github.com/leofavre/canivete"]:hover {
-      background-color: transparent; } }
+      background-color: #3d464d; } }
   @media (hover: none) {
     .content__intro a[href*="github.com/leofavre/canivete"]:active {
       background-color: #c02e75; } }
