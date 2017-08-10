@@ -14,7 +14,7 @@ Due to its multi-purpose nature, Canivete is not distributed as a single file, i
 
 ## Usage
 
-Since ES6 modules have virtually [no browser support](https://caniuse.com/#feat=es6-module) at this time, a module bundler is needed to handle Canivete dependencies.
+Since ES6 modules have virtually no browser support at this time, a module bundler is needed to handle Canivete dependencies.
 
 Here's how to use Canivete with [Rollup](https://github.com/leofavre/canivete-with-rollup) and [Webpack](https://github.com/leofavre/canivete-with-webpack).
 
