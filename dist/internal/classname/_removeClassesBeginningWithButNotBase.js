@@ -1,14 +1,14 @@
-import removeClass from "../../removeClass";
+import removeClass from '../../removeClass';
 
 const _removeClassesBeginningWithButNotBase = (domEl, str) => {
-	for (let i = domEl.classList.length - 1; i >= 0; i--) {
-		let currentClass = domEl.classList.item(i);
+  for (let i = domEl.classList.length - 1; i >= 0; i -= 1) {
+    const currentClass = domEl.classList.item(i);
 
-		if (currentClass !== str && currentClass.startsWith(str)) {
-			removeClass(domEl, currentClass);
-		}
-	}
-	return domEl;
+    if (currentClass !== str && currentClass.startsWith(str)) {
+      removeClass(domEl, currentClass);
+    }
+  }
+  return domEl;
 };
 
 export default _removeClassesBeginningWithButNotBase;

@@ -1,14 +1,14 @@
-const _createFragment = htmlStr => {
-	let domEl = document.createElement("div"),
-		result = document.createDocumentFragment();
+const _createFragment = (htmlStr) => {
+  const domEl = document.createElement('div');
+  const result = document.createDocumentFragment();
 
-	domEl.innerHTML = htmlStr;
+  domEl.innerHTML = htmlStr;
 
-	Array.from(domEl.children).forEach(child => {
-		result.appendChild(child);
-	});
+  Array.from(domEl.children).forEach((child) => {
+    result.appendChild(child);
+  });
 
-	return result;
+  return result;
 };
 
 export default _createFragment;

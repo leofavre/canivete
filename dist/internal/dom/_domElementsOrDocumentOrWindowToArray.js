@@ -1,4 +1,4 @@
-import _domToArray from "./_domToArray";
+import _domToArray from './_domToArray';
 
 const _domElementsOrDocumentOrWindowToArray = arg => _domToArray(arg, true);
 
