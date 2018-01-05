@@ -34,6 +34,7 @@
     "window": false,
     "document": false,
     "alert": false,
-    "console": false
+    "console": false,
+    "CustomEvent": false
   }
 }
