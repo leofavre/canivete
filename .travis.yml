@@ -16,8 +16,12 @@ before_install:
 
 addons:
   firefox: latest
-  chrome: latest
+  chrome: stable
 
 sudo: required
 
-dist: trusty  
+dist: trusty
+
+branches:
+  only:
+  - master
