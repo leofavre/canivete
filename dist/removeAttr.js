@@ -33,8 +33,8 @@ import _domElementsToArray from "./internal/dom/_domElementsToArray";
  *
  * @example
  * let listHtml = '<ul><li class="item">A</li><li class="item">B</li></ul>';
- * 	listElement = createDomElement(listElement),
- * 	manyElements = listElement.querySelectorAll("li");
+ *   listElement = createDomElement(listElement),
+ *   manyElements = listElement.querySelectorAll("li");
  *
  * removeAttr(manyElements, "class");
  *
@@ -45,7 +45,7 @@ import _domElementsToArray from "./internal/dom/_domElementsToArray";
  * // => ""
  */
 const removeAttr = (domEls, attrName) => {
-	_domElementsToArray(domEls).forEach(domEl => _setAttrBase(domEl, attrName, false));
+  _domElementsToArray(domEls).forEach(domEl => _setAttrBase(domEl, attrName, false));
 };
 
 export default removeAttr;

@@ -15,32 +15,32 @@ import _parseBem from "./internal/bem/_parseBem";
  *
  * @example
  * let domEl = document.createElement("div"),
- * 	delimiters = ["__", "--", "-"];
+ *   delimiters = ["__", "--", "-"];
  *
  * modifyBemClassCompact(domEl, {
- * 	"swiper": {
- * 		"slides": 5,
- * 		"current": 2,
- * 		"playing": true
- * 	}
+ *   "swiper": {
+ *     "slides": 5,
+ *     "current": 2,
+ *     "playing": true
+ *   }
  * }, delimiters);
  *
  * domEl.className;
  * // => "swiper--slides-5 swiper--current-2 swiper--playing"
  *
  * modifyBemClassCompact(domEl, {
- * 	"swiper": {
- * 		"current": 3,
- * 		"playing": false
- * 	}
+ *   "swiper": {
+ *     "current": 3,
+ *     "playing": false
+ *   }
  * }, delimiters);
  *
  * domEl.className;
  * // => "swiper--slides-5 swiper--current-3"
  */
 const modifyBemClassCompact = (domEl, bemObj, delimiters) => {
-	_validateModifyBemClassArgs(domEl, bemObj, delimiters);
-	return _parseBem(bemObj, domEl, delimiters, false);
+  _validateModifyBemClassArgs(domEl, bemObj, delimiters);
+  return _parseBem(bemObj, domEl, delimiters, false);
 };
 
 export default modifyBemClassCompact;

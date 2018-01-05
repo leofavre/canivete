@@ -42,14 +42,14 @@ import _isBooleanAttribute from "./internal/dom/_isBooleanAttribute";
  * // => false
  */
 const getAttr = (domEl, attrName) => {
-	let value = domEl.getAttribute(attrName);
-	
-	if (_isBooleanAttribute(attrName) && attrName === value) {
-		value = true;
-	}
+  let value = domEl.getAttribute(attrName);
+  
+  if (_isBooleanAttribute(attrName) && attrName === value) {
+    value = true;
+  }
 
-	value = (value === "") ? true : (value == null) ? false : value;
-	return value;
+  value = (value === "") ? true : (value == null) ? false : value;
+  return value;
 };
 
 export default getAttr;

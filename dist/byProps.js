@@ -27,66 +27,66 @@ import _throwErrorIf from "./internal/validation/_throwErrorIf";
  *
  * @example
  * let places = [{
- * 	"name": "Ipanema",
- * 	"location": {
- * 		"city": "Rio de Janeiro",
- * 		"state": "RJ"
- * 	}
+ *   "name": "Ipanema",
+ *   "location": {
+ *     "city": "Rio de Janeiro",
+ *     "state": "RJ"
+ *   }
  * }, {
- * 	"name": "Pedras",
- * 	"location": {
- * 		"city": "Búzios",
- * 		"state": "RJ"
- * 	}
+ *   "name": "Pedras",
+ *   "location": {
+ *     "city": "Búzios",
+ *     "state": "RJ"
+ *   }
  * }, {
- * 	"name": "Morumbi",
- * 	"location": {
- * 		"city": "São Paulo",
- * 		"state": "SP"
- * 	}
+ *   "name": "Morumbi",
+ *   "location": {
+ *     "city": "São Paulo",
+ *     "state": "SP"
+ *   }
  * }];
  *
  * places.sort(byProps("name"));
  * // Sorts places by name
  * // => [
- * // =>	{ "name": "Ipanema", [...] },
- * // =>	{ "name": "Morumbi", [...] },
- * // =>	{ "name": "Pedras", [...] }
+ * // =>  { "name": "Ipanema", [...] },
+ * // =>  { "name": "Morumbi", [...] },
+ * // =>  { "name": "Pedras", [...] }
  * // => ]
  *
  * places.sort(byProps({ "path": "name", "reverse": true });
  * // Sorts places by name in reversed order
  * // => [
- * // =>	{ "name": "Pedras", [...] },
- * // =>	{ "name": "Morumbi", [...] },
- * // =>	{ "name": "Ipanema", [...] }
+ * // =>  { "name": "Pedras", [...] },
+ * // =>  { "name": "Morumbi", [...] },
+ * // =>  { "name": "Ipanema", [...] }
  * // => ]
  *
  * places.sort(byProps("location.state", "location.city", "name"));
  * // Sorts places by state, city and name
  * // => [
- * // =>	{ "name": "Pedras", [...] },
- * // =>	{ "name": "Ipanema", [...] },
- * // =>	{ "name": "Morumbi", [...] }
+ * // =>  { "name": "Pedras", [...] },
+ * // =>  { "name": "Ipanema", [...] },
+ * // =>  { "name": "Morumbi", [...] }
  * // => ]
  *
  * places.sort(byProps({ "path": "location.state", "reverse": true }, "location.city", "name"));
  * // Sorts places by state (in reversed order), city and name
  * // => [
- * // =>	{ "name": "Morumbi", [...] },
- * // =>	{ "name": "Pedras", [...] },
- * // =>	{ "name": "Ipanema", [...] }
+ * // =>  { "name": "Morumbi", [...] },
+ * // =>  { "name": "Pedras", [...] },
+ * // =>  { "name": "Ipanema", [...] }
  * // => ]
  *
  * @example
  * let numbers = [{
- * 	"value": 35
+ *   "value": 35
  * }, {
- * 	"value": -20
+ *   "value": -20
  * }, {
- * 	"value": 3
+ *   "value": 3
  * }, {
- * 	"value": 0.8
+ *   "value": 0.8
  * }];
  *
  * numbers.sort(byProps("value"));
@@ -98,8 +98,8 @@ import _throwErrorIf from "./internal/validation/_throwErrorIf";
  * // => [{ "value": 0.8 }, { "value": 3 }, { "value": -20 }, { "value": 35 }]
  */
 const byProps = (...fields) => {
-	_throwErrorIf(fields.length === 0, "One or more sort criterias should be passed as parameters.");
-	return _recursiveSort(_parseSortFields(fields));
+  _throwErrorIf(fields.length === 0, "One or more sort criterias should be passed as parameters.");
+  return _recursiveSort(_parseSortFields(fields));
 };
 
 export default byProps;

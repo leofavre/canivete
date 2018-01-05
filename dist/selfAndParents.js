@@ -12,10 +12,10 @@ import _throwErrorIf from "./internal/validation/_throwErrorIf";
  * 
  * @example
  * let domChild = document.createElement("div"),
- * 	domParent = document.createElement("div"),
- * 	domGrandparent = document.createElement("div"),
- * 	body = document.body,
- * 	html = document.querySelector("html");
+ *   domParent = document.createElement("div"),
+ *   domGrandparent = document.createElement("div"),
+ *   body = document.body,
+ *   html = document.querySelector("html");
  * 
  * domParent.appendChild(domChild);
  * domGrandparent.appendChild(domParent);
@@ -25,8 +25,8 @@ import _throwErrorIf from "./internal/validation/_throwErrorIf";
  * // => [domChild, domParent, domGrandparent, body, html, document]
  */
 const selfAndParents = domEl => {
-	_throwErrorIf(!_isElementOrDocumentOrWindow(domEl), "An HTMLElement is expected as parameter.");
-	return [domEl].concat(parents(domEl));
+  _throwErrorIf(!_isElementOrDocumentOrWindow(domEl), "An HTMLElement is expected as parameter.");
+  return [domEl].concat(parents(domEl));
 };
 
 export default selfAndParents;

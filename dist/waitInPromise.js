@@ -18,12 +18,12 @@
  *
  * @example
  * Promise.resolve("waiting")
- * 	.then(waitInPromise(1000))
- * 	.then(doSomethingAfterOneSecond);
+ *   .then(waitInPromise(1000))
+ *   .then(doSomethingAfterOneSecond);
  */
 const waitInPromise = delay => arg =>
-	(Number.isFinite(delay) && delay > 0) ?
-	new Promise(resolve => setTimeout(() => resolve(arg), delay)) :
-	Promise.resolve(arg);
+  (Number.isFinite(delay) && delay > 0) ?
+  new Promise(resolve => setTimeout(() => resolve(arg), delay)) :
+  Promise.resolve(arg);
 
 export default waitInPromise;

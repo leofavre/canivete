@@ -34,7 +34,7 @@ import _domElementsToArray from "./internal/dom/_domElementsToArray";
  *
  * @example
  * let listElement = createDomElement('<ul><li>A</li><li>B</li><li>C</li></ul>'),
- * 	manyElements = listElement.querySelectorAll("li");
+ *   manyElements = listElement.querySelectorAll("li");
  * 
  * setAttr(manyElements, "class", "item");
  *
@@ -45,7 +45,7 @@ import _domElementsToArray from "./internal/dom/_domElementsToArray";
  * // => "item"
  */
 const setAttr = (domEls, attrName, value) => {
-	_domElementsToArray(domEls).forEach(domEl => _setAttrBase(domEl, attrName, value));
+  _domElementsToArray(domEls).forEach(domEl => _setAttrBase(domEl, attrName, value));
 };
 
 export default setAttr;

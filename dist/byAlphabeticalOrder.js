@@ -20,6 +20,6 @@ import _defaultComparator from "./internal/sort/_defaultComparator";
  * // => ["Aramis", "Athos", "Porthos"]
  */
 const byAlphabeticalOrder = (...args) =>
-	(args.length === 0) ? _defaultComparator : _defaultComparator(...args);
+  (args.length === 0) ? _defaultComparator : _defaultComparator(...args);
 
 export default byAlphabeticalOrder;

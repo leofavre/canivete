@@ -27,8 +27,8 @@ import removeAttr from "./removeAttr";
  *
  * @example
  * let listHtml = '<ul><li class="item" data-level="1">A</li><li class="item" data-level="1">B</li></ul>',
- * 	listElement = createDomElement(listHtml),
- * 	manyElements = listElement.querySelectorAll("li");
+ *   listElement = createDomElement(listHtml),
+ *   manyElements = listElement.querySelectorAll("li");
  * 
  * removeAttrs(manyElements, ["data-level", "class"]);
  *
@@ -45,7 +45,7 @@ import removeAttr from "./removeAttr";
  * // => ""
  */
 const removeAttrs = (domEls, attrArr) => {
-	attrArr.forEach(attrName => removeAttr(domEls, attrName));
+  attrArr.forEach(attrName => removeAttr(domEls, attrName));
 };
 
 export default removeAttrs;

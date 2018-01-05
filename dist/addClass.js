@@ -24,7 +24,7 @@ import _domElementsToArray from "./internal/dom/_domElementsToArray";
  * // => "link"
  */
 const addClass = (domEls, className) => {
-	_domElementsToArray(domEls).forEach(domEl => _changeClassWithMethod(domEl, className, "add"));
+  _domElementsToArray(domEls).forEach(domEl => _changeClassWithMethod(domEl, className, "add"));
 };
 
 export default addClass;

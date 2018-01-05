@@ -24,7 +24,7 @@ import _domElementsToArray from "./internal/dom/_domElementsToArray";
  * // => "base"
  */
 const removeClass = (domEls, className) => {
-	_domElementsToArray(domEls).forEach(domEl => _changeClassWithMethod(domEl, className, "remove"));
+  _domElementsToArray(domEls).forEach(domEl => _changeClassWithMethod(domEl, className, "remove"));
 };
 
 export default removeClass;

@@ -11,10 +11,10 @@ import selfAndParents from "./selfAndParents";
  * 
  * @example
  * let domChild = document.createElement("div"),
- * 	domParent = document.createElement("div"),
- * 	domGrandparent = document.createElement("div"),
- * 	body = document.body,
- * 	html = document.querySelector("html");
+ *   domParent = document.createElement("div"),
+ *   domGrandparent = document.createElement("div"),
+ *   body = document.body,
+ *   html = document.querySelector("html");
  * 
  * domParent.appendChild(domChild);
  * domGrandparent.appendChild(domParent);
@@ -27,23 +27,23 @@ import selfAndParents from "./selfAndParents";
  * // => [domChild, domParent, domGrandparent, body, html, document, window]
  */
 const getEventPath = evt => {
-	let path = (evt.composedPath && evt.composedPath()) || evt.path,
-		target = evt.target;
+  let path = (evt.composedPath && evt.composedPath()) || evt.path,
+    target = evt.target;
 
-	if (target == null) {
-		return undefined;
-	}
+  if (target == null) {
+    return undefined;
+  }
 
-	if (path != null) {
-		path = (!path.includes(window)) ? path.concat([window]) : path;
-		return path;
-	}
+  if (path != null) {
+    path = (!path.includes(window)) ? path.concat([window]) : path;
+    return path;
+  }
 
-	if (target === window) {
-		return [window];
-	}
+  if (target === window) {
+    return [window];
+  }
 
-	return selfAndParents(target).concat([window]);
+  return selfAndParents(target).concat([window]);
 };
 
 export default getEventPath;

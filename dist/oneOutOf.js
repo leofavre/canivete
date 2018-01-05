@@ -18,8 +18,8 @@ import _throwErrorIf from "./internal/validation/_throwErrorIf";
  * // => false
  */
 const oneOutOf = num => {
-	_throwErrorIf((!Number.isFinite(num) || num < 1), "A number greater than 1 is expected as parameter.");
-	return (num === 1) ? true : _random(1, num) === num;
+  _throwErrorIf((!Number.isFinite(num) || num < 1), "A number greater than 1 is expected as parameter.");
+  return (num === 1) ? true : _random(1, num) === num;
 };
 
 export default oneOutOf;

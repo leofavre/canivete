@@ -11,10 +11,10 @@ import _throwErrorIf from "./internal/validation/_throwErrorIf";
  *
  * @example
  * let domChild = document.createElement("div"),
- * 	domParent = document.createElement("div"),
- * 	domGrandparent = document.createElement("div"),
- * 	body = document.body,
- * 	html = document.querySelector("html");
+ *   domParent = document.createElement("div"),
+ *   domGrandparent = document.createElement("div"),
+ *   body = document.body,
+ *   html = document.querySelector("html");
  * 
  * domParent.appendChild(domChild);
  * domGrandparent.appendChild(domParent);
@@ -24,12 +24,12 @@ import _throwErrorIf from "./internal/validation/_throwErrorIf";
  * // => [domParent, domGrandparent, body, html, document]
  */
 const parents = (domEl, memo = []) => {
-	if (memo.length === 0) {
-		_throwErrorIf(!_isElementOrDocumentOrWindow(domEl), "An HTMLElement is expected as parameter.");
-	}
+  if (memo.length === 0) {
+    _throwErrorIf(!_isElementOrDocumentOrWindow(domEl), "An HTMLElement is expected as parameter.");
+  }
 
-	let parentNode = domEl.parentNode;
-	return (!parentNode) ? memo : parents(parentNode, memo.concat([parentNode]));
+  let parentNode = domEl.parentNode;
+  return (!parentNode) ? memo : parents(parentNode, memo.concat([parentNode]));
 };
 
 export default parents;

@@ -19,8 +19,8 @@
  * // => 24
  */
 const toSum = (...args) => {
-	let func = (prevNum, nextNum) => prevNum + nextNum;
-	return (args.length === 0) ? func : func(...args);
+  let func = (prevNum, nextNum) => prevNum + nextNum;
+  return (args.length === 0) ? func : func(...args);
 };
 
 export default toSum;

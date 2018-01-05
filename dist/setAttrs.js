@@ -13,8 +13,8 @@ import setAttr from "./setAttr";
  * let oneElement = createDomElement('<p>Level 42</p>');
  * 
  * setAttrs(oneElement, {
- * 	"data-level": 42,
- * 	"class": "level"
+ *   "data-level": 42,
+ *   "class": "level"
  * });
  *
  * oneElement.getAttribute("data-level");
@@ -31,11 +31,11 @@ import setAttr from "./setAttr";
  *
  * @example
  * let listElement = createDomElement('<ul><li>A</li><li>B</li><li>C</li></ul>'),
- * 	manyElements = listElement.querySelectorAll("li");
+ *   manyElements = listElement.querySelectorAll("li");
  * 
  * setAttrs(manyElements, {
- * 	"data-level": 42,
- * 	"class": "item"
+ *   "data-level": 42,
+ *   "class": "item"
  * });
  *
  * manyElements[0].getAttribute("data-level");
@@ -51,7 +51,7 @@ import setAttr from "./setAttr";
  * // => "item"
  */
 const setAttrs = (domEls, attrObj) => {
-	Object.keys(attrObj).forEach(attrKey => setAttr(domEls, attrKey, attrObj[attrKey]));
+  Object.keys(attrObj).forEach(attrKey => setAttr(domEls, attrKey, attrObj[attrKey]));
 };
 
 export default setAttrs;

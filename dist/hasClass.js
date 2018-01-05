@@ -21,8 +21,8 @@ import _throwErrorIf from "./internal/validation/_throwErrorIf";
  * // => false
  */
 const hasClass = (domEl, className) => {
-	_throwErrorIf(!_isElement(domEl), "An HTMLElement is expected as parameter.");
-	return domEl.classList.contains(className);
+  _throwErrorIf(!_isElement(domEl), "An HTMLElement is expected as parameter.");
+  return domEl.classList.contains(className);
 };
 
 export default hasClass;

@@ -21,8 +21,8 @@ import _simpleSet from "./internal/helpers/_simpleSet";
  *
  * deepGroupBy(["one", "two", "three"], getLength, getFirstLetter);
  * // => {
- * // => 	"3": {"o": ["one"], "t": ["two"]},
- * // => 	"5": {"t": ["three"]}
+ * // =>   "3": {"o": ["one"], "t": ["two"]},
+ * // =>   "5": {"t": ["three"]}
  * // => }
  * 
  * @example
@@ -32,40 +32,40 @@ import _simpleSet from "./internal/helpers/_simpleSet";
  *
  * deepGroupBy(["one", "two", "three"], getFirstLetter, getLength);
  * // => {
- * // => 	"o": {"3": ["one"]},
- * // => 	"t": {"3": ["two"], "5": ["three"]}
+ * // =>   "o": {"3": ["one"]},
+ * // =>   "t": {"3": ["two"], "5": ["three"]}
  * // => }
  *
  * @example
  *
  * const stores = [{
- * 	"name": "Iguatemi",
- * 	"city": "Campinas",
- * 	"state": "SP"
+ *   "name": "Iguatemi",
+ *   "city": "Campinas",
+ *   "state": "SP"
  * }, {
- * 	"name": "Jardins",
- * 	"city": "São Paulo",
- * 	"state": "SP"
+ *   "name": "Jardins",
+ *   "city": "São Paulo",
+ *   "state": "SP"
  * }, {
- * 	"name": "Iguatemi",
- * 	"city": "São Paulo",
- * 	"state": "SP"
+ *   "name": "Iguatemi",
+ *   "city": "São Paulo",
+ *   "state": "SP"
  * }, {
- * 	"name": "Pedras",
- * 	"city": "Búzios",
- * 	"state": "RJ"
+ *   "name": "Pedras",
+ *   "city": "Búzios",
+ *   "state": "RJ"
  * }, {
- * 	"name": "Ipanema",
- * 	"city": "Rio de Janeiro",
- * 	"state": "RJ"
+ *   "name": "Ipanema",
+ *   "city": "Rio de Janeiro",
+ *   "state": "RJ"
  * }, {
- * 	"name": "Leblon",
- * 	"city": "Rio de Janeiro",
- * 	"state": "RJ"
+ *   "name": "Leblon",
+ *   "city": "Rio de Janeiro",
+ *   "state": "RJ"
  * }, {
- * 	"name": "ParkShopping",
- * 	"city": "Brasília",
- * 	"state": "DF"
+ *   "name": "ParkShopping",
+ *   "city": "Brasília",
+ *   "state": "DF"
  * }];
  * 
  * const getStateName = item => item.state;
@@ -73,23 +73,23 @@ import _simpleSet from "./internal/helpers/_simpleSet";
  *
  * deepGroupBy(stores, getStateName, getCityName);
  * // => {
- * // => 	"SP": { "Campinas": [...], "São Paulo": [...] },
- * // => 	"RJ": { "Búzios": [...], "Rio de Janeiro": [...] },
- * // => 	"DF": { "Brasília": [...] }
+ * // =>   "SP": { "Campinas": [...], "São Paulo": [...] },
+ * // =>   "RJ": { "Búzios": [...], "Rio de Janeiro": [...] },
+ * // =>   "DF": { "Brasília": [...] }
  * // => }
  */
 const deepGroupBy = (collection, ...iteratees) => {
-	let paths = collection.map(value => iteratees.map(iteratee => iteratee(value))),
-		result = {};
+  let paths = collection.map(value => iteratees.map(iteratee => iteratee(value))),
+    result = {};
 
-	paths.forEach((path, index) => {
-		let currentValue = _simpleAt(result, path) || [],
-			newValue = currentValue.concat([collection[index]]);
+  paths.forEach((path, index) => {
+    let currentValue = _simpleAt(result, path) || [],
+      newValue = currentValue.concat([collection[index]]);
 
-		_simpleSet(result, path, newValue);
-	});
+    _simpleSet(result, path, newValue);
+  });
 
-	return result;
+  return result;
 };
 
 export default deepGroupBy;

@@ -61,31 +61,31 @@ import _throwErrorIf from "./internal/validation/_throwErrorIf";
  * // => "button--level-42"
  */
 const formatBemClass = (...args) => {
-	let block = args[0] || "";
-	let delimiters = args[args.length - 1];
+  let block = args[0] || "";
+  let delimiters = args[args.length - 1];
 
-	_throwErrorIf((args.length < 2), "At least a string representing a BEM block and an array representing BEM delimiters should be passed as parameters.");
+  _throwErrorIf((args.length < 2), "At least a string representing a BEM block and an array representing BEM delimiters should be passed as parameters.");
 
-	let element,
-		modifier,
-		value = true;
+  let element,
+    modifier,
+    value = true;
 
-	if (args.length > 2) {
-		element = args[1];
-	}
+  if (args.length > 2) {
+    element = args[1];
+  }
 
-	if (args.length > 3) {
-		modifier = args[2];
-	}
+  if (args.length > 3) {
+    modifier = args[2];
+  }
 
-	if (args.length > 4) {
-		value = args[3];
-	}
+  if (args.length > 4) {
+    value = args[3];
+  }
 
-	let radical = _formatBemRadical(block, element, delimiters);
-	let classModifier = _formatBemModifier(modifier, value, delimiters);
+  let radical = _formatBemRadical(block, element, delimiters);
+  let classModifier = _formatBemModifier(modifier, value, delimiters);
 
-	return `${radical}${classModifier}`;
+  return `${radical}${classModifier}`;
 };
 
 export default formatBemClass;

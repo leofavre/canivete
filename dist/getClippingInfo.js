@@ -68,44 +68,44 @@ import _getHorizontalAxisInfo from "./internal/geometry/_getHorizontalAxisInfo";
  * // => false
  */
 const getClippingInfo = (domEl, maskDef) => {
-	let domCoords  = _getCoordsFromElement(domEl);
-	let maskCoords = _getCoordsFromElementOrObjectOrWindow(maskDef),
-		vertAxis   = _getVerticalAxisInfo(domCoords, maskCoords),
-		horzAxis   = _getHorizontalAxisInfo(domCoords, maskCoords);
+  let domCoords  = _getCoordsFromElement(domEl);
+  let maskCoords = _getCoordsFromElementOrObjectOrWindow(maskDef),
+    vertAxis   = _getVerticalAxisInfo(domCoords, maskCoords),
+    horzAxis   = _getHorizontalAxisInfo(domCoords, maskCoords);
 
-	let isOffTop                 = vertAxis.isOffBefore,
-		isOffBottom              = vertAxis.isOffAfter,
-		isOffLeft                = horzAxis.isOffBefore,
-		isOffRight               = horzAxis.isOffAfter,
-		isOff                    = isOffTop || isOffBottom || isOffLeft || isOffRight,
-		isClippedTop             = !isOff && (vertAxis.isClippedBefore),
-		isClippedBottom          = !isOff && (vertAxis.isClippedAfter),
-		isClippedLeft            = !isOff && (horzAxis.isClippedBefore),
-		isClippedRight           = !isOff && (horzAxis.isClippedAfter),
-		isClipped                = isClippedTop || isClippedBottom || isClippedLeft || isClippedRight,
-		isFullyVisible           = vertAxis.isContained && horzAxis.isContained,
-		isInvisible              = isOff,
-		isAsVisibleAsPossible    = isFullyVisible || (vertAxis.isWrapper && horzAxis.isWrapper) || (vertAxis.isContained && horzAxis.isWrapper) || (vertAxis.isWrapper && horzAxis.isContained),
-		isNotAsVisibleAsPossible = isInvisible || !isAsVisibleAsPossible,
-		isPartiallyVisible       = isClipped;
+  let isOffTop                 = vertAxis.isOffBefore,
+    isOffBottom              = vertAxis.isOffAfter,
+    isOffLeft                = horzAxis.isOffBefore,
+    isOffRight               = horzAxis.isOffAfter,
+    isOff                    = isOffTop || isOffBottom || isOffLeft || isOffRight,
+    isClippedTop             = !isOff && (vertAxis.isClippedBefore),
+    isClippedBottom          = !isOff && (vertAxis.isClippedAfter),
+    isClippedLeft            = !isOff && (horzAxis.isClippedBefore),
+    isClippedRight           = !isOff && (horzAxis.isClippedAfter),
+    isClipped                = isClippedTop || isClippedBottom || isClippedLeft || isClippedRight,
+    isFullyVisible           = vertAxis.isContained && horzAxis.isContained,
+    isInvisible              = isOff,
+    isAsVisibleAsPossible    = isFullyVisible || (vertAxis.isWrapper && horzAxis.isWrapper) || (vertAxis.isContained && horzAxis.isWrapper) || (vertAxis.isWrapper && horzAxis.isContained),
+    isNotAsVisibleAsPossible = isInvisible || !isAsVisibleAsPossible,
+    isPartiallyVisible       = isClipped;
 
-	return {
-		isOffTop,
-		isOffBottom,
-		isOffLeft,
-		isOffRight,
-		isOff,
-		isClippedTop,
-		isClippedBottom,
-		isClippedLeft,
-		isClippedRight,
-		isClipped,
-		isFullyVisible,
-		isPartiallyVisible,
-		isInvisible,
-		isAsVisibleAsPossible,
-		isNotAsVisibleAsPossible
-	};
+  return {
+    isOffTop,
+    isOffBottom,
+    isOffLeft,
+    isOffRight,
+    isOff,
+    isClippedTop,
+    isClippedBottom,
+    isClippedLeft,
+    isClippedRight,
+    isClipped,
+    isFullyVisible,
+    isPartiallyVisible,
+    isInvisible,
+    isAsVisibleAsPossible,
+    isNotAsVisibleAsPossible
+  };
 };
 
 export default getClippingInfo;

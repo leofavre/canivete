@@ -14,31 +14,31 @@ import _throwErrorIf from "./internal/validation/_throwErrorIf";
  *
  * @example
  * let popupButton = document.querySelector(".popup__button"),
- * 	popupLayer = document.querySelector(".popup__layer");
+ *   popupLayer = document.querySelector(".popup__layer");
  * 
  * popupButton.addEventListener("click", evt => {
- * 	trigger(popupLayer, "open");
+ *   trigger(popupLayer, "open");
  * });
  */
 const trigger = (domEl, evtName, bubbles = false, cancelable = false, detail = undefined) => {
-	_throwErrorIf(!_isElementOrDocumentOrWindow(domEl), "An HTMLElement, including document or window, is expected as first parameter.");
-	_throwErrorIf(!_isString(evtName), "A string is expected as second parameter.");
+  _throwErrorIf(!_isElementOrDocumentOrWindow(domEl), "An HTMLElement, including document or window, is expected as first parameter.");
+  _throwErrorIf(!_isString(evtName), "A string is expected as second parameter.");
 
-	let evt;
+  let evt;
 
-	if (window.CustomEvent != null) {
-		evt = document.createEvent("CustomEvent");
-		evt.initCustomEvent(evtName, bubbles, cancelable, detail);
-	}
-	else {
-		evt = new CustomEvent(evtName, {
-			bubbles,
-			cancelable,
-			detail
-		});
-	}
+  if (window.CustomEvent != null) {
+    evt = document.createEvent("CustomEvent");
+    evt.initCustomEvent(evtName, bubbles, cancelable, detail);
+  }
+  else {
+    evt = new CustomEvent(evtName, {
+      bubbles,
+      cancelable,
+      detail
+    });
+  }
 
-	domEl.dispatchEvent(evt);
+  domEl.dispatchEvent(evt);
 };
 
 export default trigger;

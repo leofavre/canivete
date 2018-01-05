@@ -30,7 +30,7 @@ import _throwErrorIf from "./internal/validation/_throwErrorIf";
  * document.body.appendChild(checkbox);
  *
  * eventAsPromise(checkbox, "change")
- * 	.then(doSomethingAfterChange);
+ *   .then(doSomethingAfterChange);
  *
  * @example
  * let imageEl = document.createElement("img");
@@ -38,25 +38,25 @@ import _throwErrorIf from "./internal/validation/_throwErrorIf";
  * document.body.appendChild(imageEl);
  *
  * eventAsPromise(imageEl, "load", imageEl => imageEl.complete)
- * 	.then(doSomethingAfterImageLoaded);
+ *   .then(doSomethingAfterImageLoaded);
  */
 const eventAsPromise = (domEl, evtName, happened = domEl => false) => {
-	_throwErrorIf(!_isElementOrDocumentOrWindow(domEl), "An HTMLElement, document or window are expected as first parameter.");
-	_throwErrorIf(!_isString(evtName), "A string is expected as second parameter.");
+  _throwErrorIf(!_isElementOrDocumentOrWindow(domEl), "An HTMLElement, document or window are expected as first parameter.");
+  _throwErrorIf(!_isString(evtName), "A string is expected as second parameter.");
 
-	return new Promise(resolve => {
-		const dealWithEvent = evt => {
-			domEl.removeEventListener(evtName, dealWithEvent, true);
-			resolve(domEl);
-		};
+  return new Promise(resolve => {
+    const dealWithEvent = evt => {
+      domEl.removeEventListener(evtName, dealWithEvent, true);
+      resolve(domEl);
+    };
 
-		if (happened(domEl)) {
-			resolve(domEl);
-		}
-		else {
-			domEl.addEventListener(evtName, dealWithEvent, true);
-		}
-	});
+    if (happened(domEl)) {
+      resolve(domEl);
+    }
+    else {
+      domEl.addEventListener(evtName, dealWithEvent, true);
+    }
+  });
 };
 
 export default eventAsPromise;
