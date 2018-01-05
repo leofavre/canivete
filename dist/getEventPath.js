@@ -1,4 +1,4 @@
-import selfAndParents from "./selfAndParents";
+import selfAndParents from './selfAndParents';
 
 /**
  * Returns an array with all DOM elements affected by an event.
@@ -8,27 +8,27 @@ import selfAndParents from "./selfAndParents";
  * @category Event
  * @param {Event} evt The triggered event.
  * @return {Array.<HTMLElement>} The DOM elements affected by the event.
- * 
+ *
  * @example
- * let domChild = document.createElement("div"),
- *   domParent = document.createElement("div"),
- *   domGrandparent = document.createElement("div"),
+ * let domChild = document.createElement('div'),
+ *   domParent = document.createElement('div'),
+ *   domGrandparent = document.createElement('div'),
  *   body = document.body,
- *   html = document.querySelector("html");
- * 
+ *   html = document.querySelector('html');
+ *
  * domParent.appendChild(domChild);
  * domGrandparent.appendChild(domParent);
  * body.appendChild(domGrandparent);
- * 
- * domChild.addEventListener("click", dealWithClick);
+ *
+ * domChild.addEventListener('click', dealWithClick);
  * const dealWithClick = evt => getEventPath(evt);
  *
  * // when domChild is clicked:
  * // => [domChild, domParent, domGrandparent, body, html, document, window]
  */
-const getEventPath = evt => {
-  let path = (evt.composedPath && evt.composedPath()) || evt.path,
-    target = evt.target;
+const getEventPath = (evt) => {
+  let path = (evt.composedPath && evt.composedPath()) || evt.path;
+  const { target } = evt;
 
   if (target == null) {
     return undefined;

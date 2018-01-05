@@ -1,5 +1,5 @@
-import _setAttrBase from "./internal/dom/_setAttrBase";
-import _domElementsToArray from "./internal/dom/_domElementsToArray";
+import _setAttrBase from './internal/dom/_setAttrBase';
+import _domElementsToArray from './internal/dom/_domElementsToArray';
 
 /**
  * Sets an attribute for one or more DOM elements using native
@@ -12,40 +12,41 @@ import _domElementsToArray from "./internal/dom/_domElementsToArray";
  *
  * @example
  * let oneElement = createDomElement('<p>Level 42</p>');
- * 
- * setAttr(oneElement, "data-level", 42);
  *
- * oneElement.getAttribute("data-level");
- * // => "42"
+ * setAttr(oneElement, 'data-level', 42);
+ *
+ * oneElement.getAttribute('data-level');
+ * // => '42'
  *
  * oneElement.dataset.level;
- * // => "42"
+ * // => '42'
  *
  * @example
  * let oneElement = createDomElement('<a href="/news">News</a>');
- * 
- * setAttr(oneElement, "class", "button");
  *
- * oneElement.getAttribute("class");
- * // => "button"
+ * setAttr(oneElement, 'class', 'button');
+ *
+ * oneElement.getAttribute('class');
+ * // => 'button'
  *
  * oneElement.className;
- * // => "button"
+ * // => 'button'
  *
  * @example
  * let listElement = createDomElement('<ul><li>A</li><li>B</li><li>C</li></ul>'),
- *   manyElements = listElement.querySelectorAll("li");
- * 
- * setAttr(manyElements, "class", "item");
+ *   manyElements = listElement.querySelectorAll('li');
+ *
+ * setAttr(manyElements, 'class', 'item');
  *
  * manyElements[0].className;
- * // => "item"
+ * // => 'item'
  *
  * manyElements[1].className;
- * // => "item"
+ * // => 'item'
  */
 const setAttr = (domEls, attrName, value) => {
-  _domElementsToArray(domEls).forEach(domEl => _setAttrBase(domEl, attrName, value));
+  _domElementsToArray(domEls).forEach(domEl =>
+    _setAttrBase(domEl, attrName, value));
 };
 
 export default setAttr;

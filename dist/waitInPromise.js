@@ -9,7 +9,7 @@
  * Note that if a non-numeric parameter is passed,
  * the promise resolves without delay, skipping the
  * internal `setTimeout()`.
- * 
+ *
  * @category Promise
  *
  * @param  {number} delay The delay in milliseconds.
@@ -17,13 +17,13 @@
  * @public
  *
  * @example
- * Promise.resolve("waiting")
+ * Promise.resolve('waiting')
  *   .then(waitInPromise(1000))
  *   .then(doSomethingAfterOneSecond);
  */
 const waitInPromise = delay => arg =>
-  (Number.isFinite(delay) && delay > 0) ?
-  new Promise(resolve => setTimeout(() => resolve(arg), delay)) :
-  Promise.resolve(arg);
+  (Number.isFinite(delay) && delay > 0 ?
+    new Promise(resolve => setTimeout(() => resolve(arg), delay)) :
+    Promise.resolve(arg));
 
 export default waitInPromise;

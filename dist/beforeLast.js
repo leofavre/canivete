@@ -1,4 +1,4 @@
-import _sliceOnOccurrence from "./internal/string/_sliceOnOccurrence";
+import _sliceOnOccurrence from './internal/string/_sliceOnOccurrence';
 
 /**
  * Returns the string formed by the characters **before
@@ -13,9 +13,10 @@ import _sliceOnOccurrence from "./internal/string/_sliceOnOccurrence";
  * @public
  *
  * @example
- * beforeLast("parallelepiped", "le");
- * // => "paralle"
+ * beforeLast('parallelepiped', 'le');
+ * // => 'paralle'
  */
-const beforeLast = (str, delimiter) => _sliceOnOccurrence("before", "last", str, delimiter);
+const beforeLast = (str, delimiter) =>
+  _sliceOnOccurrence('before', 'last', str, delimiter);
 
 export default beforeLast;

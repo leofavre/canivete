@@ -1,4 +1,4 @@
-import _reactToEvent from "./internal/event/_reactToEvent";
+import _reactToEvent from './internal/event/_reactToEvent';
 
 /**
  * Adds one or more event listeners to one or more DOM elements at once.
@@ -15,13 +15,14 @@ import _reactToEvent from "./internal/event/_reactToEvent";
  *
  * @example
  *
- * let oneElement = document.querySelector("a");
- * let manyElements = document.querySelectorAll("a");
- * 
- * listen(oneElement, "click", reactToClick, true);
- * listen(manyElements, "click", reactToClick);
- * listen(window, "load resize", reactToLoadAndResize);
+ * let oneElement = document.querySelector('a');
+ * let manyElements = document.querySelectorAll('a');
+ *
+ * listen(oneElement, 'click', reactToClick, true);
+ * listen(manyElements, 'click', reactToClick);
+ * listen(window, 'load resize', reactToLoadAndResize);
  */
-const listen = (domEls, eventStr, callback, useCapture = false) => _reactToEvent("addEventListener", domEls, eventStr, callback, useCapture);
+const listen = (domEls, eventStr, callback, useCapture = false) =>
+  _reactToEvent('addEventListener', domEls, eventStr, callback, useCapture);
 
 export default listen;

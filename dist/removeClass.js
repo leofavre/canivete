@@ -1,5 +1,5 @@
-import _changeClassWithMethod from "./internal/classname/_changeClassWithMethod";
-import _domElementsToArray from "./internal/dom/_domElementsToArray";
+import _changeClassWithMethod from './internal/classname/_changeClassWithMethod';
+import _domElementsToArray from './internal/dom/_domElementsToArray';
 
 /**
  * Removes a CSS class from one or more DOM elements.
@@ -10,21 +10,22 @@ import _domElementsToArray from "./internal/dom/_domElementsToArray";
  * @param  {string} className The CSS class name.
  *
  * @example
- * let oneElement = document.querySelector(".link.base");
- * removeClass(oneElement, "link");
- * 
+ * let oneElement = document.querySelector('.link.base');
+ * removeClass(oneElement, 'link');
+ *
  * oneElement.className;
- * // => "base"
- * 
+ * // => 'base'
+ *
  * @example
- * let manyElements = document.querySelectorAll(".link.base");
- * removeClass(manyElements, "link");
+ * let manyElements = document.querySelectorAll('.link.base');
+ * removeClass(manyElements, 'link');
  *
  * manyElements[0].className;
- * // => "base"
+ * // => 'base'
  */
 const removeClass = (domEls, className) => {
-  _domElementsToArray(domEls).forEach(domEl => _changeClassWithMethod(domEl, className, "remove"));
+  _domElementsToArray(domEls).forEach(domEl =>
+    _changeClassWithMethod(domEl, className, 'remove'));
 };
 
 export default removeClass;

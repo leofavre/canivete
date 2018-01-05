@@ -19,7 +19,7 @@
  * // => 24
  */
 const toSum = (...args) => {
-  let func = (prevNum, nextNum) => prevNum + nextNum;
+  const func = (prevNum, nextNum) => prevNum + nextNum;
   return (args.length === 0) ? func : func(...args);
 };
 

@@ -1,5 +1,5 @@
-import toSum from "./toSum";
-import _throwErrorIf from "./internal/validation/_throwErrorIf";
+import toSum from './toSum';
+import _throwErrorIf from './internal/validation/_throwErrorIf';
 
 /**
  * Calculates and returns the distance between two points,
@@ -32,15 +32,21 @@ import _throwErrorIf from "./internal/validation/_throwErrorIf";
  * // => 3
  */
 const getDistanceBetweenCoords = (coordA, coordB) => {
-  let areParamsValid = [coordA, coordB]
-    .every(coord => Array.isArray(coord) &&
-      coord.every(Number.isFinite) &&
-      coord.length === coordA.length);
+  const isParamValid = coord =>
+    Array.isArray(coord) &&
+    coord.every(Number.isFinite) &&
+    coord.length === coordA.length;
 
-  _throwErrorIf(!areParamsValid, "Two arrays of numbers with the same length, representing cartesian coordinates, are expected as parameters.");
+  const areParamsValid = [coordA, coordB].every(isParamValid);
+
+  _throwErrorIf(
+    !areParamsValid,
+    'Two arrays of numbers with the same length, ' +
+    'representing cartesian coordinates, are expected as parameters.',
+  );
 
   return Math.sqrt(coordA
-    .map((coord, index) => Math.pow(coord - coordB[index], 2))
+    .map((coord, index) => (coord - coordB[index]) ** 2)
     .reduce(toSum));
 };
 

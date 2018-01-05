@@ -1,5 +1,5 @@
-import toAverage from "./toAverage";
-import _simpleAt from "./internal/helpers/_simpleAt";
+import toAverage from './toAverage';
+import _simpleAt from './internal/helpers/_simpleAt';
 
 /**
  * When used with `[].reduce()`, returns
@@ -20,52 +20,55 @@ import _simpleAt from "./internal/helpers/_simpleAt";
  *
  * @example
  * let cities = [{
- *   "city": "Rio de Janeiro",
- *   "temperature": 96,
- *   "demographics": {
- *     "population": 6.32
+ *   'city': 'Rio de Janeiro',
+ *   'temperature': 96,
+ *   'demographics': {
+ *     'population': 6.32
  *   }
  * }, {
- *   "city": "São Paulo",
- *   "temperature": 82.5,
- *   "demographics": {
- *     "population": 12.04
+ *   'city': 'São Paulo',
+ *   'temperature': 82.5,
+ *   'demographics': {
+ *     'population': 12.04
  *   }
  * }, {
- *   "city": "Curitiba",
- *   "temperature": 70,
- *   "demographics": {
- *     "population": 1.752
+ *   'city': 'Curitiba',
+ *   'temperature': 70,
+ *   'demographics': {
+ *     'population': 1.752
  *   }
  * }, {
- *   "city": "Florianópolis",
- *   "temperature": 86,
- *   "demographics": {
- *     "population": 0.249
+ *   'city': 'Florianópolis',
+ *   'temperature': 86,
+ *   'demographics': {
+ *     'population': 0.249
  *   }
  * }];
  *
- * // average "temperature": 83.625
- * // average "population": 5.09025
+ * // average 'temperature': 83.625
+ * // average 'population': 5.09025
  *
- * cities.reduce(toAverageProp("temperature"));
- * // => { "city": "São Paulo", [...] }
+ * cities.reduce(toAverageProp('temperature'));
+ * // => { 'city': 'São Paulo', [...] }
  *
- * cities.reduce(toAverageProp("demographics.population"));
- * // => { "city": "Rio de Janeiro", [...] }
+ * cities.reduce(toAverageProp('demographics.population'));
+ * // => { 'city': 'Rio de Janeiro', [...] }
  */
-const toAverageProp = path => {
+const toAverageProp = (path) => {
   let average;
 
   return (prevObj, nextObj, index, arr) => {
-    average = average || arr.map(obj => _simpleAt(obj, path)).reduce(toAverage());
+    average = average ||
+      arr.map(obj => _simpleAt(obj, path)).reduce(toAverage());
 
-    if (Math.abs(_simpleAt(prevObj, path) - average) <= Math.abs(_simpleAt(nextObj, path) - average)) {
+    if (
+      Math.abs(_simpleAt(prevObj, path) - average) <=
+      Math.abs(_simpleAt(nextObj, path) - average)
+    ) {
       return prevObj;
     }
-    else {
-      return nextObj;
-    }
+
+    return nextObj;
   };
 };
 

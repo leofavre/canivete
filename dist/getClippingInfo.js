@@ -1,7 +1,7 @@
-import _getCoordsFromElement from "./internal/geometry/_getCoordsFromElement";
-import _getCoordsFromElementOrObjectOrWindow from "./internal/geometry/_getCoordsFromElementOrObjectOrWindow";
-import _getVerticalAxisInfo from "./internal/geometry/_getVerticalAxisInfo";
-import _getHorizontalAxisInfo from "./internal/geometry/_getHorizontalAxisInfo";
+import _getCoordsFromElement from './internal/geometry/_getCoordsFromElement';
+import _getCoordsFromElementOrObjectOrWindow from './internal/geometry/_getCoordsFromElementOrObjectOrWindow';
+import _getVerticalAxisInfo from './internal/geometry/_getVerticalAxisInfo';
+import _getHorizontalAxisInfo from './internal/geometry/_getHorizontalAxisInfo';
 
 /**
  * @typedef {Object} ClippingObject
@@ -29,8 +29,8 @@ import _getHorizontalAxisInfo from "./internal/geometry/_getHorizontalAxisInfo";
  * second parameter is omitted.
  *
  * The mask can be either a DOM element or an object
- * containing numeric values for "top", "bottom",
- * "left" and "right" properties, like a
+ * containing numeric values for 'top', 'bottom',
+ * 'left' and 'right' properties, like a
  * [`DOMRect`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect).
  *
  * @category Geometry
@@ -40,13 +40,13 @@ import _getHorizontalAxisInfo from "./internal/geometry/_getHorizontalAxisInfo";
  * @return {ClippingObject} Position and clipping information relative to a mask (see table below).
  *
  * @example
- * let domEl = document.createElement("div");
+ * let domEl = document.createElement('div');
  *
- * domEl.style.position = "fixed";
- * domEl.style.top = "-50px";
- * domEl.style.left = "-50px";
- * domEl.style.width = "200px";
- * domEl.style.height = "200px";
+ * domEl.style.position = 'fixed';
+ * domEl.style.top = '-50px';
+ * domEl.style.left = '-50px';
+ * domEl.style.width = '200px';
+ * domEl.style.height = '200px';
  *
  * document.body.appendChild(domEl);
  *
@@ -68,26 +68,30 @@ import _getHorizontalAxisInfo from "./internal/geometry/_getHorizontalAxisInfo";
  * // => false
  */
 const getClippingInfo = (domEl, maskDef) => {
-  let domCoords  = _getCoordsFromElement(domEl);
-  let maskCoords = _getCoordsFromElementOrObjectOrWindow(maskDef),
-    vertAxis   = _getVerticalAxisInfo(domCoords, maskCoords),
-    horzAxis   = _getHorizontalAxisInfo(domCoords, maskCoords);
+  const domCoords = _getCoordsFromElement(domEl);
+  const maskCoords = _getCoordsFromElementOrObjectOrWindow(maskDef);
+  const vertAxis = _getVerticalAxisInfo(domCoords, maskCoords);
+  const horzAxis = _getHorizontalAxisInfo(domCoords, maskCoords);
 
-  let isOffTop                 = vertAxis.isOffBefore,
-    isOffBottom              = vertAxis.isOffAfter,
-    isOffLeft                = horzAxis.isOffBefore,
-    isOffRight               = horzAxis.isOffAfter,
-    isOff                    = isOffTop || isOffBottom || isOffLeft || isOffRight,
-    isClippedTop             = !isOff && (vertAxis.isClippedBefore),
-    isClippedBottom          = !isOff && (vertAxis.isClippedAfter),
-    isClippedLeft            = !isOff && (horzAxis.isClippedBefore),
-    isClippedRight           = !isOff && (horzAxis.isClippedAfter),
-    isClipped                = isClippedTop || isClippedBottom || isClippedLeft || isClippedRight,
-    isFullyVisible           = vertAxis.isContained && horzAxis.isContained,
-    isInvisible              = isOff,
-    isAsVisibleAsPossible    = isFullyVisible || (vertAxis.isWrapper && horzAxis.isWrapper) || (vertAxis.isContained && horzAxis.isWrapper) || (vertAxis.isWrapper && horzAxis.isContained),
-    isNotAsVisibleAsPossible = isInvisible || !isAsVisibleAsPossible,
-    isPartiallyVisible       = isClipped;
+  const isOffTop = vertAxis.isOffBefore;
+  const isOffBottom = vertAxis.isOffAfter;
+  const isOffLeft = horzAxis.isOffBefore;
+  const isOffRight = horzAxis.isOffAfter;
+  const isOff = isOffTop || isOffBottom || isOffLeft || isOffRight;
+  const isClippedTop = !isOff && (vertAxis.isClippedBefore);
+  const isClippedBottom = !isOff && (vertAxis.isClippedAfter);
+  const isClippedLeft = !isOff && (horzAxis.isClippedBefore);
+  const isClippedRight = !isOff && (horzAxis.isClippedAfter);
+  const isClipped = isClippedTop || isClippedBottom ||
+    isClippedLeft || isClippedRight;
+  const isFullyVisible = vertAxis.isContained && horzAxis.isContained;
+  const isInvisible = isOff;
+  const isAsVisibleAsPossible = isFullyVisible ||
+    (vertAxis.isWrapper && horzAxis.isWrapper) ||
+    (vertAxis.isContained && horzAxis.isWrapper) ||
+    (vertAxis.isWrapper && horzAxis.isContained);
+  const isNotAsVisibleAsPossible = isInvisible || !isAsVisibleAsPossible;
+  const isPartiallyVisible = isClipped;
 
   return {
     isOffTop,
@@ -104,7 +108,7 @@ const getClippingInfo = (domEl, maskDef) => {
     isPartiallyVisible,
     isInvisible,
     isAsVisibleAsPossible,
-    isNotAsVisibleAsPossible
+    isNotAsVisibleAsPossible,
   };
 };
 

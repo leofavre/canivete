@@ -1,5 +1,5 @@
-import _validateModifyBemClassArgs from "./internal/bem/_validateModifyBemClassArgs";
-import _parseBem from "./internal/bem/_parseBem";
+import _validateModifyBemClassArgs from './internal/bem/_validateModifyBemClassArgs';
+import _parseBem from './internal/bem/_parseBem';
 
 /**
  * @typedef {Object} BemObject
@@ -18,29 +18,29 @@ import _parseBem from "./internal/bem/_parseBem";
  * @param  {Array} delimiters The BEM delimiters.
  *
  * @example
- * let domEl = document.createElement("div"),
- *   delimiters = ["__", "--", "-"];
+ * let domEl = document.createElement('div'),
+ *   delimiters = ['__', '--', '-'];
  *
  * modifyBemClass(domEl, {
- *   "swiper": {
- *     "slides": 5,
- *     "current": 2,
- *     "playing": true
+ *   'swiper': {
+ *     'slides': 5,
+ *     'current': 2,
+ *     'playing': true
  *   }
  * }, delimiters);
  *
  * domEl.className;
- * // => "swiper swiper--slides-5 swiper--current-2 swiper--playing"
+ * // => 'swiper swiper--slides-5 swiper--current-2 swiper--playing'
  *
  * modifyBemClass(domEl, {
- *   "swiper": {
- *     "current": 3,
- *     "playing": false
+ *   'swiper': {
+ *     'current': 3,
+ *     'playing': false
  *   }
  * }, delimiters);
  *
  * domEl.className;
- * // => "swiper swiper--slides-5 swiper--current-3"
+ * // => 'swiper swiper--slides-5 swiper--current-3'
  */
 const modifyBemClass = (domEl, bemObj, delimiters) => {
   _validateModifyBemClassArgs(domEl, bemObj, delimiters);

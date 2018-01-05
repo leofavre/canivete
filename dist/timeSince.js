@@ -8,7 +8,7 @@
  * @example
  * let timestamp = +new Date(),
  *   result = 0;
- * 
+ *
  * setTimeout(() => {
  *   result = timeSince(timestamp);
  * }, 150);
@@ -17,8 +17,7 @@
  * // => 150
  * // This value is approximate and may vary.
  */
-const timeSince = timestamp => {
-  return Number.isFinite(timestamp) ? ((+new Date()) - timestamp) : undefined;
-};
+const timeSince = timestamp =>
+  (Number.isFinite(timestamp) ? (+new Date()) - timestamp : undefined);
 
 export default timeSince;

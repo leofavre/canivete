@@ -19,9 +19,12 @@
  * // => 6
  */
 const toAverage = (...args) => {
-  let func = (prevNum, nextNum, index, arr) => {
-    let isLastIteration = (index === arr.length - 1);
-    return (!isLastIteration) ? (prevNum + nextNum) : (prevNum + nextNum) / arr.length;
+  const func = (prevNum, nextNum, index, arr) => {
+    const isLastIteration = (index === arr.length - 1);
+
+    return !isLastIteration ?
+      prevNum + nextNum :
+      (prevNum + nextNum) / arr.length;
   };
 
   return (args.length === 0) ? func : func(...args);

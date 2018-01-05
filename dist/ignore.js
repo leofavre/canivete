@@ -1,4 +1,4 @@
-import _reactToEvent from "./internal/event/_reactToEvent";
+import _reactToEvent from './internal/event/_reactToEvent';
 
 /**
  * Removes one or more event listeners from one or more DOM elements at once.
@@ -15,13 +15,14 @@ import _reactToEvent from "./internal/event/_reactToEvent";
  *
  * @example
  *
- * let oneElement = document.querySelector("a");
- * let manyElements = document.querySelectorAll("a");
- * 
- * ignore(oneElement, "click", reactToClick, true);
- * ignore(manyElements, "click", reactToClick);
- * ignore(window, "load resize", reactToLoadAndResize);
+ * let oneElement = document.querySelector('a');
+ * let manyElements = document.querySelectorAll('a');
+ *
+ * ignore(oneElement, 'click', reactToClick, true);
+ * ignore(manyElements, 'click', reactToClick);
+ * ignore(window, 'load resize', reactToLoadAndResize);
  */
-const ignore = (domEls, eventStr, callback, useCapture = false) => _reactToEvent("removeEventListener", domEls, eventStr, callback, useCapture);
+const ignore = (domEls, eventStr, callback, useCapture = false) =>
+  _reactToEvent('removeEventListener', domEls, eventStr, callback, useCapture);
 
 export default ignore;

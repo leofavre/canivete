@@ -1,4 +1,4 @@
-import _simpleAt from "./internal/helpers/_simpleAt";
+import _simpleAt from './internal/helpers/_simpleAt';
 
 /**
  * When used with `[].reduce()`, returns
@@ -19,36 +19,36 @@ import _simpleAt from "./internal/helpers/_simpleAt";
  *
  * @example
  * let cities = [{
- *   "city": "Rio de Janeiro",
- *   "temperature": 96,
- *   "demographics": {
- *     "population": 6.32
+ *   'city': 'Rio de Janeiro',
+ *   'temperature': 96,
+ *   'demographics': {
+ *     'population': 6.32
  *   }
  * }, {
- *   "city": "São Paulo",
- *   "temperature": 82.5,
- *   "demographics": {
- *     "population": 12.04
+ *   'city': 'São Paulo',
+ *   'temperature': 82.5,
+ *   'demographics': {
+ *     'population': 12.04
  *   }
  * }, {
- *   "city": "Curitiba",
- *   "temperature": 70,
- *   "demographics": {
- *     "population": 1.752
+ *   'city': 'Curitiba',
+ *   'temperature': 70,
+ *   'demographics': {
+ *     'population': 1.752
  *   }
  * }, {
- *   "city": "Florianópolis",
- *   "temperature": 86,
- *   "demographics": {
- *     "population": 0.249
+ *   'city': 'Florianópolis',
+ *   'temperature': 86,
+ *   'demographics': {
+ *     'population': 0.249
  *   }
  * }];
  *
- * cities.reduce(toLargestProp("temperature"));
- * // => { "city": "Rio de Janeiro", [...] }
+ * cities.reduce(toLargestProp('temperature'));
+ * // => { 'city': 'Rio de Janeiro', [...] }
  *
- * cities.reduce(toLargestProp("demographics.population"));
- * // => { "city": "São Paulo", [...] }
+ * cities.reduce(toLargestProp('demographics.population'));
+ * // => { 'city': 'São Paulo', [...] }
  */
 const toLargestProp = path => (prevObj, nextObj) => {
   if (_simpleAt(prevObj, path) >= _simpleAt(nextObj, path)) {

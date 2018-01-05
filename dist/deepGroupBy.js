@@ -1,5 +1,5 @@
-import _simpleAt from "./internal/helpers/_simpleAt";
-import _simpleSet from "./internal/helpers/_simpleSet";
+import _simpleAt from './internal/helpers/_simpleAt';
+import _simpleSet from './internal/helpers/_simpleSet';
 
 /**
  * Groups the contents of an array by one or more iteratees.
@@ -9,7 +9,7 @@ import _simpleSet from "./internal/helpers/_simpleSet";
  * strings for iteratees.
  *
  * @category Collection
- * 
+ *
  * @param  {Array} collection The original array.
  * @param  {...Function} [...iteratees] The functions used to group the array of objects by their results.
  * @return {Object} The resulting object.
@@ -19,73 +19,74 @@ import _simpleSet from "./internal/helpers/_simpleSet";
  * const getLength = str => str.length;
  * const getFirstLetter = str => str.slice(0, 1);
  *
- * deepGroupBy(["one", "two", "three"], getLength, getFirstLetter);
+ * deepGroupBy(['one', 'two', 'three'], getLength, getFirstLetter);
  * // => {
- * // =>   "3": {"o": ["one"], "t": ["two"]},
- * // =>   "5": {"t": ["three"]}
+ * // =>   '3': {'o': ['one'], 't': ['two']},
+ * // =>   '5': {'t': ['three']}
  * // => }
- * 
+ *
  * @example
  *
  * const getLength = str => str.length;
  * const getFirstLetter = str => str.slice(0, 1);
  *
- * deepGroupBy(["one", "two", "three"], getFirstLetter, getLength);
+ * deepGroupBy(['one', 'two', 'three'], getFirstLetter, getLength);
  * // => {
- * // =>   "o": {"3": ["one"]},
- * // =>   "t": {"3": ["two"], "5": ["three"]}
+ * // =>   'o': {'3': ['one']},
+ * // =>   't': {'3': ['two'], '5': ['three']}
  * // => }
  *
  * @example
  *
  * const stores = [{
- *   "name": "Iguatemi",
- *   "city": "Campinas",
- *   "state": "SP"
+ *   'name': 'Iguatemi',
+ *   'city': 'Campinas',
+ *   'state': 'SP'
  * }, {
- *   "name": "Jardins",
- *   "city": "São Paulo",
- *   "state": "SP"
+ *   'name': 'Jardins',
+ *   'city': 'São Paulo',
+ *   'state': 'SP'
  * }, {
- *   "name": "Iguatemi",
- *   "city": "São Paulo",
- *   "state": "SP"
+ *   'name': 'Iguatemi',
+ *   'city': 'São Paulo',
+ *   'state': 'SP'
  * }, {
- *   "name": "Pedras",
- *   "city": "Búzios",
- *   "state": "RJ"
+ *   'name': 'Pedras',
+ *   'city': 'Búzios',
+ *   'state': 'RJ'
  * }, {
- *   "name": "Ipanema",
- *   "city": "Rio de Janeiro",
- *   "state": "RJ"
+ *   'name': 'Ipanema',
+ *   'city': 'Rio de Janeiro',
+ *   'state': 'RJ'
  * }, {
- *   "name": "Leblon",
- *   "city": "Rio de Janeiro",
- *   "state": "RJ"
+ *   'name': 'Leblon',
+ *   'city': 'Rio de Janeiro',
+ *   'state': 'RJ'
  * }, {
- *   "name": "ParkShopping",
- *   "city": "Brasília",
- *   "state": "DF"
+ *   'name': 'ParkShopping',
+ *   'city': 'Brasília',
+ *   'state': 'DF'
  * }];
- * 
+ *
  * const getStateName = item => item.state;
  * const getCityName = item => item.city;
  *
  * deepGroupBy(stores, getStateName, getCityName);
  * // => {
- * // =>   "SP": { "Campinas": [...], "São Paulo": [...] },
- * // =>   "RJ": { "Búzios": [...], "Rio de Janeiro": [...] },
- * // =>   "DF": { "Brasília": [...] }
+ * // =>   'SP': { 'Campinas': [...], 'São Paulo': [...] },
+ * // =>   'RJ': { 'Búzios': [...], 'Rio de Janeiro': [...] },
+ * // =>   'DF': { 'Brasília': [...] }
  * // => }
  */
 const deepGroupBy = (collection, ...iteratees) => {
-  let paths = collection.map(value => iteratees.map(iteratee => iteratee(value))),
-    result = {};
+  const paths = collection.map(value =>
+    iteratees.map(iteratee => iteratee(value)));
+
+  const result = {};
 
   paths.forEach((path, index) => {
-    let currentValue = _simpleAt(result, path) || [],
-      newValue = currentValue.concat([collection[index]]);
-
+    const currentValue = _simpleAt(result, path) || [];
+    const newValue = currentValue.concat([collection[index]]);
     _simpleSet(result, path, newValue);
   });
 
