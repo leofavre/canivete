@@ -1074,6 +1074,11 @@ Note that reducing arrays with non-numeric values
 using `toAverage()` can lead to unexpected results.
 Also, note that the parentheses can be ommited.
 
+#### Parameter
+
+|  |
+|  |
+
 #### Return
 
 | Type | Description |
@@ -1377,6 +1382,11 @@ Note that reducing arrays with non-numeric values
 using `toSum()` can lead to unexpected results.
 Also, note that the parentheses can be ommited.
 
+#### Parameter
+
+|  |
+|  |
+
 #### Return
 
 | Type | Description |
@@ -1403,6 +1413,11 @@ When used with `[].sort()`, sorts
 the array in ascending alphabetical order.
 
 Note that the parentheses can be ommited.
+
+#### Parameter
+
+|  |
+|  |
 
 #### Return
 

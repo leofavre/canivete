@@ -1,0 +1,105 @@
+/* about */
+
+#about {
+	-letter-kern: 0.01em -0.01em -0.02em 0em 0;
+}
+
+/* usage */
+
+#usage {
+	-letter-kern: 0.03em -0.02em -0.01em -0.015em 0;
+}
+
+/* credits */
+
+#credits {
+	-letter-kern: 0 -0.02em -0.03em 0em -0.02em 0 0;
+}
+
+/* bem */
+
+#bem {
+	-letter-kern: -0.01em 0 0;
+}
+
+/* classname */
+
+#classname {
+	-letter-kern: -0.05em -0.01em 0.015em -0.01em 0.015em -0.01em -0.015em -0.025em 0;
+}
+
+/* collection */
+
+#collection {
+	-letter-kern: -0.04em -0.04em 0 -0.03em -0.035em -0.035em 0.035em -0.035em -0.02em 0;
+}
+
+/* dom */
+
+#dom {
+	-letter-kern: -0.02em -0.02em 0;
+}
+
+/* event */
+
+#event {
+	-letter-kern: -0.01em -0.03em 0 -0.02em 0;
+}
+
+/* geometry */
+
+#geometry {
+	-letter-kern: -0.015em -0.035em -0.02em -0.025em -0.03em 0.035em 0 0;
+}
+
+#geometry .char4 {
+	margin-left: 0.42em;
+}
+
+#geometry .char6 {
+	margin-left: -0.09em;
+}
+
+/* promise */
+
+#promise {
+	-letter-kern: 0 -0.03em -0.02em -0.02em 0.01em -0.015em 0;
+}
+
+#promise .char4 {
+	margin-left: 0.32em;
+}
+
+/* random */
+
+#random {
+	-letter-kern: -0.03em -0.01em 0 -0.02em -0.02em 0;
+}
+
+#random .char4 {
+	margin-left: -0.07em;
+}
+
+/* reduce */
+
+#reduce {
+	-letter-kern: -0.03em -0.03em 0 0 -0.04em 0;
+}
+
+/* sort */
+
+#sort {
+	-letter-kern: -0.01em -0.025em 0.01em 0;
+}
+
+/* string */
+
+#string {
+	-letter-kern: 0 0.035em 0 0 0 0;
+}
+
+/* time */
+
+#time {
+	-letter-kern: 0.04em -0.02em -0.025em 0;
+}
