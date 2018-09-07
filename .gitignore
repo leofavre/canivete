@@ -1,11 +1,5 @@
-dist/scrapeNirvanaProduct.js
-node_modules
-test/temp
-docs/temp
-docs/script/example.json
-docs/.sass-cache
-docs/.jekyll-metadata
-docs/.gitignore
+coverage/
+node_modules/
+temp/
+.sass-cache/
 .DS_Store
-*.sublime-project
-*.sublime-workspace
