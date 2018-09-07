@@ -1,5 +1,8 @@
 coverage/
 node_modules/
 temp/
+docs/_site/
 .sass-cache/
+
 .DS_Store
+.jekyll-metadata
