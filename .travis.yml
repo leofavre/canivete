@@ -16,7 +16,7 @@ before_install:
 
 addons:
   firefox: latest
-  chrome: latest
+  chrome: stable
 
 sudo: required
 
