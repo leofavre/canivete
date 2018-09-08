@@ -6,3 +6,4 @@ docs/_site/
 
 .DS_Store
 .jekyll-metadata
+npm-debug.log
