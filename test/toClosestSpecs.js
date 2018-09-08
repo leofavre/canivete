@@ -1,4 +1,4 @@
-import toClosest from "../dist/toClosest";
+import toClosest from "../dist/toClosest.js";
 
 describe("toClosest", function() {
 	it(`Should return the closest value to a specific number in an array when used with Array.prototype.reduce().`, function() {

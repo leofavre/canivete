@@ -1,5 +1,5 @@
-import modifyBemClass from "../dist/modifyBemClass";
-import modifyBemClassCompact from "../dist/modifyBemClassCompact";
+import modifyBemClass from "../dist/modifyBemClass.js";
+import modifyBemClassCompact from "../dist/modifyBemClassCompact.js";
 
 const delimiterData = {
 	"bemDelimitersA": ["__", "--", "-"],

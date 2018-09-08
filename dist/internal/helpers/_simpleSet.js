@@ -1,5 +1,5 @@
-import _parsePath from "./_parsePath";
-import _isPlainObject from "./_isPlainObject";
+import _parsePath from "./_parsePath.js";
+import _isPlainObject from "./_isPlainObject.js";
 
 const _simpleSet = (obj, path, value) =>
 	_parsePath(path).reduce((obj, key, index, arr) => {

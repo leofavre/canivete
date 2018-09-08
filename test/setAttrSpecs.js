@@ -1,5 +1,5 @@
-import _createDomElement from "../dist/internal/dom/_createDomElement";
-import setAttr from "../dist/setAttr";
+import _createDomElement from "../dist/internal/dom/_createDomElement.js";
+import setAttr from "../dist/setAttr.js";
 
 describe("setAttr", function() {
 	it("Should add the attribute name to the tag if passed true.", function() {

@@ -1,4 +1,4 @@
-import _getAxisInfo from "./_getAxisInfo";
+import _getAxisInfo from "./_getAxisInfo.js";
 
 const _getVerticalAxisInfo = (domCoords, maskCoords) => _getAxisInfo(domCoords, maskCoords, false);
 

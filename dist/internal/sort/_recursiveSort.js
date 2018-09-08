@@ -1,4 +1,4 @@
-import _simpleAt from "../helpers/_simpleAt";
+import _simpleAt from "../helpers/_simpleAt.js";
 
 const _recursiveSort = fields => (objA, objB) => {
 	let field = fields[0],

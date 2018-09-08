@@ -1,4 +1,4 @@
-import _joinBemEntityWithDelimiter from "./_joinBemEntityWithDelimiter";
+import _joinBemEntityWithDelimiter from "./_joinBemEntityWithDelimiter.js";
 
 function _formatBemModifier(modifier, value, delimiters) {
 	let modifierDelimiter = delimiters[1],

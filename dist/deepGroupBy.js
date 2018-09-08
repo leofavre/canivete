@@ -1,5 +1,5 @@
-import _simpleAt from "./internal/helpers/_simpleAt";
-import _simpleSet from "./internal/helpers/_simpleSet";
+import _simpleAt from "./internal/helpers/_simpleAt.js";
+import _simpleSet from "./internal/helpers/_simpleSet.js";
 
 /**
  * Groups the contents of an array by one or more iteratees.

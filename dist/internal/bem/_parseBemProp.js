@@ -1,8 +1,8 @@
-import addClass from "../../addClass";
-import removeClass from "../../removeClass";
-import _hasNoModifiers from "./_hasNoModifiers";
-import _hasAllModifiersSetToFalse from "./_hasAllModifiersSetToFalse";
-import _parseModifier from "./_parseModifier";
+import addClass from "../../addClass.js";
+import removeClass from "../../removeClass.js";
+import _hasNoModifiers from "./_hasNoModifiers.js";
+import _hasAllModifiersSetToFalse from "./_hasAllModifiersSetToFalse.js";
+import _parseModifier from "./_parseModifier.js";
 
 function _parseBemProp(bemObj, domEl, delimiters, shouldRepeatBemRadical) {
 	return function(radical) {

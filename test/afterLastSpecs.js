@@ -1,4 +1,4 @@
-import afterLast from "../dist/afterLast";
+import afterLast from "../dist/afterLast.js";
 
 describe("afterLast", function() {
 	it(`Should find "llelepiped" after the last "a" in "Parallelepiped".`, function() {

@@ -1,6 +1,6 @@
-import _recursiveSort from "./internal/sort/_recursiveSort";
-import _parseSortFields from "./internal/sort/_parseSortFields";
-import _throwErrorIf from "./internal/validation/_throwErrorIf";
+import _recursiveSort from "./internal/sort/_recursiveSort.js";
+import _parseSortFields from "./internal/sort/_parseSortFields.js";
+import _throwErrorIf from "./internal/validation/_throwErrorIf.js";
 
 /**
  * @typedef {Object} SortField

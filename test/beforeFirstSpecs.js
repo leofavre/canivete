@@ -1,4 +1,4 @@
-import beforeFirst from "../dist/beforeFirst";
+import beforeFirst from "../dist/beforeFirst.js";
 
 describe("beforeFirst", function() {
 	it(`Should find "P" before the first "a" in "Parallelepiped".`, function() {

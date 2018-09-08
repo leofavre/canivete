@@ -1,4 +1,4 @@
-import setAttr from "./setAttr";
+import setAttr from "./setAttr.js";
 
 /**
  * The same as [`setAttr()`](#setattr), except it takes an object

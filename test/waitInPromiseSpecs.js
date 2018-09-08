@@ -1,4 +1,4 @@
-import waitInPromise from "../dist/waitInPromise";
+import waitInPromise from "../dist/waitInPromise.js";
 
 describe("waitInPromise", function() {
 	it(`Should delay the chaining of the Promise by 100ms and pass along the previously resolved value to the next .then().`, function(done) {

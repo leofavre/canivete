@@ -1,4 +1,4 @@
-import beforeLast from "../dist/beforeLast";
+import beforeLast from "../dist/beforeLast.js";
 
 describe("beforeLast", function() {
 	it(`Should find "Par" before the last "a" in "Parallelepiped".`, function() {

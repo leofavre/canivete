@@ -1,4 +1,4 @@
-import selfAndParents from "../dist/selfAndParents";
+import selfAndParents from "../dist/selfAndParents.js";
 
 describe("selfAndParents", function() {
 	it(`Should return all selfAndParents of a DOM element.`, function() {

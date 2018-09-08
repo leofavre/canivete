@@ -1,5 +1,5 @@
-import _createDomElement from "../dist/internal/dom/_createDomElement";
-import removeAttrs from "../dist/removeAttrs";
+import _createDomElement from "../dist/internal/dom/_createDomElement.js";
+import removeAttrs from "../dist/removeAttrs.js";
 
 describe("removeAttrs", function() {
 	it("Should remove many attributes from a DOM element.", function() {

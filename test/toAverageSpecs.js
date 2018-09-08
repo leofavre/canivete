@@ -1,4 +1,4 @@
-import toAverage from "../dist/toAverage";
+import toAverage from "../dist/toAverage.js";
 
 describe("toAverage", function() {
 	it(`Should return the average of all items in an array when used with Array.prototype.reduce().`, function() {

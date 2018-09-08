@@ -1,4 +1,4 @@
-import selfAndParents from "./selfAndParents";
+import selfAndParents from "./selfAndParents.js";
 
 /**
  * Returns an array with all DOM elements affected by an event.

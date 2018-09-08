@@ -1,4 +1,4 @@
-import getClippingInfo from "../dist/getClippingInfo";
+import getClippingInfo from "../dist/getClippingInfo.js";
 
 describe("getClippingInfo", function() {
 	let domEl = document.createElement("div");

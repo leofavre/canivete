@@ -1,4 +1,4 @@
-import getDistanceBetweenCoords from "../dist/getDistanceBetweenCoords";
+import getDistanceBetweenCoords from "../dist/getDistanceBetweenCoords.js";
 
 describe("getDistanceBetweenCoords", function() {
 	const errorMsg = "Two arrays of numbers with the same length, representing cartesian coordinates, are expected as parameters.";

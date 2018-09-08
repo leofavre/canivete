@@ -1,4 +1,4 @@
-import removeAttr from "./removeAttr";
+import removeAttr from "./removeAttr.js";
 
 /**
  * The same as [`removeAttr()`](#removeattr), except it takes an

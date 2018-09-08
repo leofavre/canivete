@@ -1,6 +1,6 @@
-import _isString from "../helpers/_isString";
-import _isBoolean from "../helpers/_isBoolean";
-import _isPlainObject from "../helpers/_isPlainObject";
+import _isString from "../helpers/_isString.js";
+import _isBoolean from "../helpers/_isBoolean.js";
+import _isPlainObject from "../helpers/_isPlainObject.js";
 
 const _isValidModifierObject = modifierObj => {
 	return _isPlainObject(modifierObj) && Object.keys(modifierObj).every(key => {

@@ -1,4 +1,4 @@
-import timeSince from "../dist/timeSince";
+import timeSince from "../dist/timeSince.js";
 
 describe("timeSince", function() {
 	it(`"Should return the time passed since a timestamp, in milliseconds.`, function(done) {

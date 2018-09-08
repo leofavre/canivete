@@ -1,7 +1,7 @@
-import _getCoordsFromElement from "./internal/geometry/_getCoordsFromElement";
-import _getCoordsFromElementOrObjectOrWindow from "./internal/geometry/_getCoordsFromElementOrObjectOrWindow";
-import _getVerticalAxisInfo from "./internal/geometry/_getVerticalAxisInfo";
-import _getHorizontalAxisInfo from "./internal/geometry/_getHorizontalAxisInfo";
+import _getCoordsFromElement from "./internal/geometry/_getCoordsFromElement.js";
+import _getCoordsFromElementOrObjectOrWindow from "./internal/geometry/_getCoordsFromElementOrObjectOrWindow.js";
+import _getVerticalAxisInfo from "./internal/geometry/_getVerticalAxisInfo.js";
+import _getHorizontalAxisInfo from "./internal/geometry/_getHorizontalAxisInfo.js";
 
 /**
  * @typedef {Object} ClippingObject

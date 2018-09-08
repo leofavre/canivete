@@ -1,4 +1,4 @@
-import _reactToEvent from "./internal/event/_reactToEvent";
+import _reactToEvent from "./internal/event/_reactToEvent.js";
 
 /**
  * Removes one or more event listeners from one or more DOM elements at once.

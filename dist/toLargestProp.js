@@ -1,4 +1,4 @@
-import _simpleAt from "./internal/helpers/_simpleAt";
+import _simpleAt from "./internal/helpers/_simpleAt.js";
 
 /**
  * When used with `[].reduce()`, returns

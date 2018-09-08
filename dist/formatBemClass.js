@@ -1,6 +1,6 @@
-import _formatBemRadical from "./internal/bem/_formatBemRadical";
-import _formatBemModifier from "./internal/bem/_formatBemModifier";
-import _throwErrorIf from "./internal/validation/_throwErrorIf";
+import _formatBemRadical from "./internal/bem/_formatBemRadical.js";
+import _formatBemModifier from "./internal/bem/_formatBemModifier.js";
+import _throwErrorIf from "./internal/validation/_throwErrorIf.js";
 
 /**
  * Formats a CSS class according to the

@@ -1,7 +1,7 @@
-import _isElement from "../helpers/_isElement";
-import _isValidBemObject from "./_isValidBemObject";
-import _isValidDelimiterArray from "./_isValidDelimiterArray";
-import _throwErrorIf from "../validation/_throwErrorIf";
+import _isElement from "../helpers/_isElement.js";
+import _isValidBemObject from "./_isValidBemObject.js";
+import _isValidDelimiterArray from "./_isValidDelimiterArray.js";
+import _throwErrorIf from "../validation/_throwErrorIf.js";
 
 const _validateModifyBemClassArgs = (domEl, bemObj, delimiters) => {
 	_throwErrorIf(!_isElement(domEl), `An HTMLElement is expected as the first parameter.`);

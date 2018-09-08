@@ -1,4 +1,4 @@
-import hasClass from "../dist/hasClass";
+import hasClass from "../dist/hasClass.js";
 
 describe("hasClass", function() {
 	it("Should verify if an HTMLElement has a CSS class.", function() {

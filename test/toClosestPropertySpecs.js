@@ -1,4 +1,4 @@
-import toClosestProp from "../dist/toClosestProp";
+import toClosestProp from "../dist/toClosestProp.js";
 
 describe("toClosestProp", function() {
 	var mockup = [{

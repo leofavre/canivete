@@ -1,5 +1,5 @@
-import _getAxisStartProp from "./_getAxisStartProp";
-import _getAxisEndProp from "./_getAxisEndProp";
+import _getAxisStartProp from "./_getAxisStartProp.js";
+import _getAxisEndProp from "./_getAxisEndProp.js";
 
 const _getAxisInfo = (domCoords, maskCoords, isHorizontal) => {
 	let startProp           = _getAxisStartProp(isHorizontal),

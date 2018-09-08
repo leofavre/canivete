@@ -1,4 +1,4 @@
-import byAlphabeticalOrder from "../dist/byAlphabeticalOrder";
+import byAlphabeticalOrder from "../dist/byAlphabeticalOrder.js";
 
 describe("byAlphabeticalOrder", function() {
 	it("Should order an array by alphabetical order.", function() {

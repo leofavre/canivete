@@ -1,4 +1,4 @@
-import toLargestProp from "../dist/toLargestProp";
+import toLargestProp from "../dist/toLargestProp.js";
 
 describe("toLargestProp", function() {
 	var mockup = [{

@@ -1,4 +1,4 @@
-import trigger from "../dist/trigger";
+import trigger from "../dist/trigger.js";
 
 describe("trigger", function() {
 	it(`Should trigger a custom event, captured by the emmiter itself.`, function(done) {

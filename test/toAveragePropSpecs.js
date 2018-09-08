@@ -1,4 +1,4 @@
-import toAverageProp from "../dist/toAverageProp";
+import toAverageProp from "../dist/toAverageProp.js";
 
 describe("toAverageProp", function() {
 	var mockup = [{

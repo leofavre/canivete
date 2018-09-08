@@ -1,5 +1,5 @@
-import _setAttrBase from "./internal/dom/_setAttrBase";
-import _domElementsToArray from "./internal/dom/_domElementsToArray";
+import _setAttrBase from "./internal/dom/_setAttrBase.js";
+import _domElementsToArray from "./internal/dom/_domElementsToArray.js";
 
 /**
  * Sets an attribute for one or more DOM elements using native

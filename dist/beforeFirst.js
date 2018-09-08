@@ -1,4 +1,4 @@
-import _sliceOnOccurrence from "./internal/string/_sliceOnOccurrence";
+import _sliceOnOccurrence from "./internal/string/_sliceOnOccurrence.js";
 
 /**
  * Returns the string formed by the characters **before

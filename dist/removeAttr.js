@@ -1,5 +1,5 @@
-import _setAttrBase from "./internal/dom/_setAttrBase";
-import _domElementsToArray from "./internal/dom/_domElementsToArray";
+import _setAttrBase from "./internal/dom/_setAttrBase.js";
+import _domElementsToArray from "./internal/dom/_domElementsToArray.js";
 
 /**
  * Removes an attribute from one or more DOM elements using native

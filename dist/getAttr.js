@@ -1,4 +1,4 @@
-import _isBooleanAttribute from "./internal/dom/_isBooleanAttribute";
+import _isBooleanAttribute from "./internal/dom/_isBooleanAttribute.js";
 
 /**
  * Gets a DOM element attribute using native
