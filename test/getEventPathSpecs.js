@@ -1,5 +1,5 @@
-import getEventPath from "../dist/getEventPath";
-import trigger from "../dist/trigger";
+import getEventPath from "../dist/getEventPath.js";
+import trigger from "../dist/trigger.js";
 
 describe("getEventPath", function() {
 	it(`Should return an array with all DOM elements affected by an event.`, function(done) {

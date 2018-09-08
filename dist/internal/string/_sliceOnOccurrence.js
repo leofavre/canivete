@@ -1,5 +1,5 @@
-import _isString from "../helpers/_isString";
-import _throwErrorIf from "../validation/_throwErrorIf";
+import _isString from "../helpers/_isString.js";
+import _throwErrorIf from "../validation/_throwErrorIf.js";
 
 const _sliceOnOccurrence = (type, position, str, delimiter) => {
 	_throwErrorIf(!_isString(str), "A string is expected as the first parameter.");

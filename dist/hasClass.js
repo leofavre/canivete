@@ -1,5 +1,5 @@
-import _isElement from "./internal/helpers/_isElement";
-import _throwErrorIf from "./internal/validation/_throwErrorIf";
+import _isElement from "./internal/helpers/_isElement.js";
+import _throwErrorIf from "./internal/validation/_throwErrorIf.js";
 
 /**
  * Verifies if a DOM element has a CSS class.

@@ -1,4 +1,4 @@
-import _isBoolean from "../dist/internal/helpers/_isBoolean";
+import _isBoolean from "../dist/internal/helpers/_isBoolean.js";
 
 describe("_isBoolean", function() {
 	it(`"Should return false if passed anything other than a string.`, function() {

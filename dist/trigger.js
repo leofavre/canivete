@@ -1,6 +1,6 @@
-import _isString from "./internal/helpers/_isString";
-import _isElementOrDocumentOrWindow from "./internal/dom/_isElementOrDocumentOrWindow";
-import _throwErrorIf from "./internal/validation/_throwErrorIf";
+import _isString from "./internal/helpers/_isString.js";
+import _isElementOrDocumentOrWindow from "./internal/dom/_isElementOrDocumentOrWindow.js";
+import _throwErrorIf from "./internal/validation/_throwErrorIf.js";
 
 /**
  * Triggers a custom DOM event.

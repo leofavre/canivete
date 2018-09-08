@@ -1,4 +1,4 @@
-import _defaultComparator from "./_defaultComparator";
+import _defaultComparator from "./_defaultComparator.js";
 
 const _customComparator = (primer, reverse) => {
 	let result = _defaultComparator;

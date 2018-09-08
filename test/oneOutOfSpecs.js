@@ -1,4 +1,4 @@
-import oneOutOf from "../dist/oneOutOf";
+import oneOutOf from "../dist/oneOutOf.js";
 
 function testRandomness(num) {
 	let expectedPositive = 1 / num;

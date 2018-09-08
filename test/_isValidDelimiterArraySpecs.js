@@ -1,4 +1,4 @@
-import _isValidDelimiterArray from "../dist/internal/bem/_isValidDelimiterArray";
+import _isValidDelimiterArray from "../dist/internal/bem/_isValidDelimiterArray.js";
 
 describe("_isValidDelimiterArray", function() {
 	it(`"Should return false if passed anything other than a BEM delimiter array.`, function() {

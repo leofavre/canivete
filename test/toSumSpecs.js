@@ -1,4 +1,4 @@
-import toSum from "../dist/toSum";
+import toSum from "../dist/toSum.js";
 
 describe("toSum", function() {
 	it(`Should return the sum of all items in an array when used with Array.prototype.reduce().`, function() {

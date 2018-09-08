@@ -1,5 +1,5 @@
-import _isElement from "../helpers/_isElement";
-import _throwErrorIf from "../validation/_throwErrorIf";
+import _isElement from "../helpers/_isElement.js";
+import _throwErrorIf from "../validation/_throwErrorIf.js";
 
 const _getCoords = (maskDef, allowElementOnly) => {
 	let maskCoords;

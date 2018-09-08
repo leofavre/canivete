@@ -1,6 +1,6 @@
-import _defaultComparator from "./_defaultComparator";
-import _customComparator from "./_customComparator";
-import _isString from "../helpers/_isString";
+import _defaultComparator from "./_defaultComparator.js";
+import _customComparator from "./_customComparator.js";
+import _isString from "../helpers/_isString.js";
 
 const _parseSortField = field => {
 	let useDefault = _isString(field);

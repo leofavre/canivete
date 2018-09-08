@@ -1,4 +1,4 @@
-import deepGroupBy from "../dist/deepGroupBy";
+import deepGroupBy from "../dist/deepGroupBy.js";
 
 describe("deepGroupBy", function() {
 	const stores = [{

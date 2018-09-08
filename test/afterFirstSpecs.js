@@ -1,4 +1,4 @@
-import afterFirst from "../dist/afterFirst";
+import afterFirst from "../dist/afterFirst.js";
 
 describe("afterFirst", function() {
 	it(`Should find "rallelepiped" after the first "a" in "Parallelepiped".`, function() {

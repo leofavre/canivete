@@ -1,5 +1,5 @@
-import _createDomElement from "../dist/internal/dom/_createDomElement";
-import setAttrs from "../dist/setAttrs";
+import _createDomElement from "../dist/internal/dom/_createDomElement.js";
+import setAttrs from "../dist/setAttrs.js";
 
 describe("setAttrs", function() {
 	it("Should set many attributes at once.", function() {

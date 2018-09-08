@@ -1,4 +1,4 @@
-import formatBemClass from "../dist/formatBemClass";
+import formatBemClass from "../dist/formatBemClass.js";
 
 describe("formatBemClass", function() {
 	let delimiters = ["__", "--", "-"];

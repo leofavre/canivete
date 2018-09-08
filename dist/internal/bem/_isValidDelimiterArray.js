@@ -1,4 +1,4 @@
-import _isString from "../helpers/_isString";
+import _isString from "../helpers/_isString.js";
 
 const _isValidDelimiterArray = delimiters => {
 	return Array.isArray(delimiters) && delimiters.length === 3 && delimiters.every(delimiter => _isString(delimiter) && delimiter !== "");

@@ -1,6 +1,6 @@
-import _isElement from "../helpers/_isElement";
-import _isElementOrDocumentOrWindow from "./_isElementOrDocumentOrWindow";
-import _throwErrorIf from "../validation/_throwErrorIf";
+import _isElement from "../helpers/_isElement.js";
+import _isElementOrDocumentOrWindow from "./_isElementOrDocumentOrWindow.js";
+import _throwErrorIf from "../validation/_throwErrorIf.js";
 
 const _domElementsToArray = (arg, allowDocumentAndWindow = false) => {
 	let result = arg,

@@ -1,5 +1,5 @@
-import _validateModifyBemClassArgs from "./internal/bem/_validateModifyBemClassArgs";
-import _parseBem from "./internal/bem/_parseBem";
+import _validateModifyBemClassArgs from "./internal/bem/_validateModifyBemClassArgs.js";
+import _parseBem from "./internal/bem/_parseBem.js";
 
 /**
  * Modifies the CSS classes from a DOM element according

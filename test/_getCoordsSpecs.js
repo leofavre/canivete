@@ -1,4 +1,4 @@
-import _getCoords from "../dist/internal/geometry/_getCoords";
+import _getCoords from "../dist/internal/geometry/_getCoords.js";
 
 describe("_getCoords", function() {
 	let maskEl = document.createElement("div");

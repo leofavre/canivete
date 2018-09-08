@@ -1,5 +1,5 @@
-import listen from "../dist/listen";
-import trigger from "../dist/trigger";
+import listen from "../dist/listen.js";
+import trigger from "../dist/trigger.js";
 
 describe("listen", function() {
 	it("Should allow document as parameter.", function() {

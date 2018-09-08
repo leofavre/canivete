@@ -1,4 +1,4 @@
-import _isValidBemObject from "../dist/internal/bem/_isValidBemObject";
+import _isValidBemObject from "../dist/internal/bem/_isValidBemObject.js";
 
 describe("_isValidBemObject", function() {
 	it(`"Should return false if passed anything other than a BEM modifier object.`, function() {

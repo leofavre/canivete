@@ -1,4 +1,4 @@
-import addClass from "../dist/addClass";
+import addClass from "../dist/addClass.js";
 
 describe("addClass", function() {
 	for (let i = 0; i < 5; i++) {

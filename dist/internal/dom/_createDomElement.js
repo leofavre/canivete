@@ -1,4 +1,4 @@
-import _throwErrorIf from "../validation/_throwErrorIf";
+import _throwErrorIf from "../validation/_throwErrorIf.js";
 
 const _createDomElement = htmlStr => {
 	let domEl = document.createElement("div");

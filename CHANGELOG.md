@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 2.3.0 — 2018-09-07
+## 2.3.0 — 2018-09-08
 
 ### Added
-- Started CHANGELOG.
+- ES6 Imports.

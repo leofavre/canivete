@@ -1,4 +1,4 @@
-import _parseSortField from "./_parseSortField";
+import _parseSortField from "./_parseSortField.js";
 
 const _parseSortFields = fields => fields.map(_parseSortField);
 

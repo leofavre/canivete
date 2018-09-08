@@ -1,5 +1,5 @@
-import _changeClassWithMethod from "./internal/classname/_changeClassWithMethod";
-import _domElementsToArray from "./internal/dom/_domElementsToArray";
+import _changeClassWithMethod from "./internal/classname/_changeClassWithMethod.js";
+import _domElementsToArray from "./internal/dom/_domElementsToArray.js";
 
 /**
  * Removes a CSS class from one or more DOM elements.

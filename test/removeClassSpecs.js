@@ -1,4 +1,4 @@
-import removeClass from "../dist/removeClass";
+import removeClass from "../dist/removeClass.js";
 
 describe("removeClass", function() {
 	for (let i = 0; i < 5; i++) {

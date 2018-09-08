@@ -1,7 +1,7 @@
-import _splitEventStr from "./_splitEventStr";
-import _throwErrorIf from "../validation/_throwErrorIf";
-import _isString from "../helpers/_isString";
-import _domElementsOrDocumentOrWindowToArray from "../dom/_domElementsOrDocumentOrWindowToArray";
+import _splitEventStr from "./_splitEventStr.js";
+import _throwErrorIf from "../validation/_throwErrorIf.js";
+import _isString from "../helpers/_isString.js";
+import _domElementsOrDocumentOrWindowToArray from "../dom/_domElementsOrDocumentOrWindowToArray.js";
 
 const _reactToEvent = (methodName, domEls, eventStr, callback, useCapture) => {
 	_throwErrorIf(!_isString(eventStr), "A string is expected as second parameter.");

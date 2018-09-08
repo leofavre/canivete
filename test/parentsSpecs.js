@@ -1,4 +1,4 @@
-import parents from "../dist/parents";
+import parents from "../dist/parents.js";
 
 describe("parents", function() {
 	it(`Should return all parents of a DOM element.`, function() {

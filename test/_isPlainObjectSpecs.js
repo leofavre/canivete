@@ -1,4 +1,4 @@
-import _isPlainObject from "../dist/internal/helpers/_isPlainObject";
+import _isPlainObject from "../dist/internal/helpers/_isPlainObject.js";
 
 class Foo {
 	constructor(a) {

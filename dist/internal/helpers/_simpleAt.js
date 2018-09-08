@@ -1,4 +1,4 @@
-import _parsePath from "./_parsePath";
+import _parsePath from "./_parsePath.js";
 
 const _simpleAt = (obj, path) =>
 	_parsePath(path).reduce((obj, key) => {

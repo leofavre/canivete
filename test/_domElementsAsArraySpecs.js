@@ -1,4 +1,4 @@
-import _domElementsToArray from "../dist/internal/dom/_domElementsToArray";
+import _domElementsToArray from "../dist/internal/dom/_domElementsToArray.js";
 
 describe("_domElementsToArray", function() {
 	for (let i = 0; i < 5; i++) {

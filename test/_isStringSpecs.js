@@ -1,4 +1,4 @@
-import _isString from "../dist/internal/helpers/_isString";
+import _isString from "../dist/internal/helpers/_isString.js";
 
 describe("_isString", function() {
 	it(`"Should return false if passed anything other than a string.`, function() {

@@ -1,6 +1,6 @@
-import ignore from "../dist/ignore";
-import listen from "../dist/listen";
-import trigger from "../dist/trigger";
+import ignore from "../dist/ignore.js";
+import listen from "../dist/listen.js";
+import trigger from "../dist/trigger.js";
 
 describe("ignore", function() {
 	it("Should allow document as parameter.", function() {

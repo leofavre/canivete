@@ -1,4 +1,4 @@
-import byProps from "../dist/byProps";
+import byProps from "../dist/byProps.js";
 
 describe("byProps", function() {
 

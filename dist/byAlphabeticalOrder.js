@@ -1,4 +1,4 @@
-import _defaultComparator from "./internal/sort/_defaultComparator";
+import _defaultComparator from "./internal/sort/_defaultComparator.js";
 
 /**
  * When used with `[].sort()`, sorts

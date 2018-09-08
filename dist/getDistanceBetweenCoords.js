@@ -1,5 +1,5 @@
-import toSum from "./toSum";
-import _throwErrorIf from "./internal/validation/_throwErrorIf";
+import toSum from "./toSum.js";
+import _throwErrorIf from "./internal/validation/_throwErrorIf.js";
 
 /**
  * Calculates and returns the distance between two points,

@@ -1,5 +1,5 @@
-import _random from "./internal/helpers/_random";
-import _throwErrorIf from "./internal/validation/_throwErrorIf";
+import _random from "./internal/helpers/_random.js";
+import _throwErrorIf from "./internal/validation/_throwErrorIf.js";
 
 /**
  * Returns `true` approximately one out of `num` times,

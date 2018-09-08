@@ -1,5 +1,5 @@
-import _createDomElement from "../dist/internal/dom/_createDomElement";
-import getAttr from "../dist/getAttr";
+import _createDomElement from "../dist/internal/dom/_createDomElement.js";
+import getAttr from "../dist/getAttr.js";
 
 describe("getAttr", function() {
 	it("Should return a boolean attribute from a DOM element written in HTML5 syntax.", function() {

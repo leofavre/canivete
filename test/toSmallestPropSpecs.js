@@ -1,4 +1,4 @@
-import toSmallestProp from "../dist/toSmallestProp";
+import toSmallestProp from "../dist/toSmallestProp.js";
 
 describe("toSmallestProp", function() {
 	var mockup = [{

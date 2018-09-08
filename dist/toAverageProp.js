@@ -1,5 +1,5 @@
-import toAverage from "./toAverage";
-import _simpleAt from "./internal/helpers/_simpleAt";
+import toAverage from "./toAverage.js";
+import _simpleAt from "./internal/helpers/_simpleAt.js";
 
 /**
  * When used with `[].reduce()`, returns
